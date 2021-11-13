@@ -2,6 +2,8 @@
 - Install the [Lua Language Server](https://marketplace.visualstudio.com/items?itemName=sumneko.lua) extension
 - Either run `CfxLua.code-workspace`, or copy the settings to an existing workspace
 
+![image](https://user-images.githubusercontent.com/65407488/141656446-21f9105a-9371-4bb3-9089-ab672930f830.png)
+
 ### Native declarations
 - Install [NodeJS](https://nodejs.org/en/)
 - Download [JetbrainIDE-CFX.RE](https://github.com/TasoOneAsia/JetbrainIDE-CFX.RE)
@@ -12,6 +14,8 @@
 	- `npm install -g typescript`
 - Once all dependencies have been installed, execute `npm run start` and follow the prompts
 - Once the files have been built, move them to `cfxlua-vscode/.vscode/natives`
+
+![image](https://user-images.githubusercontent.com/65407488/141656539-77221fb4-6ed7-4352-8a5b-cdc1c02de8fd.png)
 
 **Thanks to CitizenFX, alloc8or, iTexZoz, and TasoOneAsia**
 
