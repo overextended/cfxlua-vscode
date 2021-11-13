@@ -8,11 +8,12 @@
 - Open a terminal in the folder containing `JetbrainIDE-CFX.RE`
 - Execute the following commands, in order
 	- `npm i`
-	- `npm install -g ts-node
-	- `npm install -g typescript
+	- `npm install -g ts-node`
+	- `npm install -g typescript`
 - Once all dependencies have been installed, execute `npm run start` and follow the prompts
 - Once the files have been built, move them to `cfxlua-vscode/.vscode/natives`
-Thanks to CitizenFX, alloc8or, iTexZoz, and TasoOneAsia
+
+**Thanks to CitizenFX, alloc8or, iTexZoz, and TasoOneAsia**
 
 ##### Try the following snippet in a .lua file
 ```lua
@@ -31,10 +32,14 @@ end
 
 
 -- Safe navigation prevents errors when indexing nil values.
-if foo?.bar then			-- if foo and foo.bar then
-	print(foobar('bar'))	--	   print(foobar('bar'))
-end							-- end
+if foo?.bar then
+	print(foobar('bar'))
+end	
+
+-- if foo and foo.bar then
+--	   print(foobar('bar'))
+-- end
 ```
 
 ### Todo: Create annotations for non-standard functions and types from [LuaGLM](https://github.com/citizenfx/lua/tree/luaglm-dev/cfx)
-Thanks to CitizenFX, and gottfriedleibniz
+**Thanks to CitizenFX, and gottfriedleibniz**
