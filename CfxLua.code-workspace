@@ -8,7 +8,11 @@
   "settings": {
     "Lua.color.mode": "Semantic",
     "Lua.completion.autoRequire": false,
-    "Lua.diagnostics.disable": ["lowercase-global", "undefined-global"],
+    "Lua.diagnostics.disable": [
+      "lowercase-global",
+      "undefined-global",
+      "undefined-field"
+    ],
     "Lua.diagnostics.enable": true,
     "Lua.diagnostics.globals": [],
     "Lua.misc.parameters": [],
@@ -20,6 +24,7 @@
     "Lua.workspace.checkThirdParty": false,
     "Lua.workspace.library": [
       "../.vscode/natives",
+      "../.vscode/luaglm.lua",
       "~/AppData/Local/citizenfx/sdk-storage/server/latest/citizen/scripting/lua/deferred.lua",
       "~/AppData/Local/citizenfx/sdk-storage/server/latest/citizen/scripting/lua/json.lua",
       "~/AppData/Local/citizenfx/sdk-storage/server/latest/citizen/scripting/lua/MessagePack.lua",
@@ -29,6 +34,6 @@
       ".vscode",
       ".github"
     ],
-    "Lua.workspace.useGitIgnore": false,
+    "Lua.workspace.useGitIgnore": false
   }
 }
