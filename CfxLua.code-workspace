@@ -1,0 +1,34 @@
+{
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
+
+  "settings": {
+    "Lua.color.mode": "Semantic",
+    "Lua.completion.autoRequire": false,
+    "Lua.diagnostics.disable": ["lowercase-global", "undefined-global"],
+    "Lua.diagnostics.enable": true,
+    "Lua.diagnostics.globals": [],
+    "Lua.misc.parameters": [],
+    "Lua.runtime.nonstandardSymbol": ["/**/", "`", "+=", "-=", "*=", "/="],
+    "Lua.runtime.path": ["?.lua", "?/init.lua"],
+    "Lua.runtime.plugin": ".vscode/plugin.lua",
+    "Lua.runtime.version": "Lua 5.4",
+    "Lua.telemetry.enable": false,
+    "Lua.workspace.checkThirdParty": false,
+    "Lua.workspace.library": [
+      ".vscode/natives",
+      "~/AppData/Local/citizenfx/sdk-storage/server/latest/citizen/scripting/lua/deferred.lua",
+      "~/AppData/Local/citizenfx/sdk-storage/server/latest/citizen/scripting/lua/json.lua",
+      "~/AppData/Local/citizenfx/sdk-storage/server/latest/citizen/scripting/lua/MessagePack.lua",
+      "~/AppData/Local/citizenfx/sdk-storage/server/latest/citizen/scripting/lua/scheduler.lua"
+    ],
+    "Lua.workspace.ignoreDir": [
+      ".vscode",
+      ".github"
+    ],
+    "Lua.workspace.useGitIgnore": true,
+  }
+}
