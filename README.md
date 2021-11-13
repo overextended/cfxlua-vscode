@@ -1,6 +1,7 @@
 ### CfxLua workspace for VSCode (or FXCode)
 - Install the [Lua Language Server](https://marketplace.visualstudio.com/items?itemName=sumneko.lua) extension
 - Either run `CfxLua.code-workspace`, or copy the settings to an existing workspace
+- I recommend keeping the workspace in `server-data` (one level above cache and resources directories)
 
 ![image](https://user-images.githubusercontent.com/65407488/141656446-21f9105a-9371-4bb3-9089-ab672930f830.png)
 
