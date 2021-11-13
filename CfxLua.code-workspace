@@ -1,7 +1,7 @@
 {
   "folders": [
     {
-      "path": "."
+      "path": "./resources"
     }
   ],
 
@@ -14,12 +14,12 @@
     "Lua.misc.parameters": [],
     "Lua.runtime.nonstandardSymbol": ["/**/", "`", "+=", "-=", "*=", "/="],
     "Lua.runtime.path": ["?.lua", "?/init.lua"],
-    "Lua.runtime.plugin": ".vscode/plugin.lua",
+    "Lua.runtime.plugin": "../.vscode/plugin.lua",
     "Lua.runtime.version": "Lua 5.4",
     "Lua.telemetry.enable": false,
     "Lua.workspace.checkThirdParty": false,
     "Lua.workspace.library": [
-      ".vscode/natives",
+      "../.vscode/natives",
       "~/AppData/Local/citizenfx/sdk-storage/server/latest/citizen/scripting/lua/deferred.lua",
       "~/AppData/Local/citizenfx/sdk-storage/server/latest/citizen/scripting/lua/json.lua",
       "~/AppData/Local/citizenfx/sdk-storage/server/latest/citizen/scripting/lua/MessagePack.lua",
@@ -29,6 +29,6 @@
       ".vscode",
       ".github"
     ],
-    "Lua.workspace.useGitIgnore": true,
+    "Lua.workspace.useGitIgnore": false,
   }
 }
