@@ -2,6 +2,18 @@
 - Install the [Lua Language Server](https://marketplace.visualstudio.com/items?itemName=sumneko.lua) extension
 - Either run `CfxLua.code-workspace`, or copy the settings to an existing workspace
 - I recommend keeping the workspace in `server-data` (one level above cache and resources directories)
+- If you want to keep these files separate from your resources, you can hard-code the destinations
+```json
+"Lua.runtime.plugin": "E:/GTA/cfxlua-vscode/.vscode/plugin.lua",
+"Lua.workspace.library": [
+	"E:/GTA/cfxlua-vscode/.vscode/natives",
+	"E:/GTA/cfxlua-vscode/.vscode/luaglm.lua",
+	"~/AppData/Local/citizenfx/sdk-storage/server/latest/citizen/scripting/lua/deferred.lua",
+	"~/AppData/Local/citizenfx/sdk-storage/server/latest/citizen/scripting/lua/json.lua",
+	"~/AppData/Local/citizenfx/sdk-storage/server/latest/citizen/scripting/lua/MessagePack.lua",
+	"~/AppData/Local/citizenfx/sdk-storage/server/latest/citizen/scripting/lua/scheduler.lua",
+],
+```
 
 ![image](https://user-images.githubusercontent.com/65407488/141656446-21f9105a-9371-4bb3-9089-ab672930f830.png)
 
@@ -39,12 +51,41 @@ end
 -- Safe navigation prevents errors when indexing nil values.
 if foo?.bar then
 	print(foobar('bar'))
-end	
+end
 
 -- if foo and foo.bar then
 --	   print(foobar('bar'))
 -- end
 ```
 
-### Todo: Create annotations for non-standard functions and types from [LuaGLM](https://github.com/citizenfx/lua/tree/luaglm-dev/cfx)
+### Support for non-standard functions and types from [LuaGLM](https://github.com/citizenfx/lua/blob/luaglm-dev/cfx/README.md)
+Some of these are beyond my level of technical skills or require testing for me to fully understand their usage.
+
+#### GLM
+- [x] vectors
+- [x] quaternerion
+- [x] matrices (partial)
+- [ ] annotations
+
+#### Power patches
+- [x] compound operators *
+- [x] safe navigation
+- [ ] in unpacking
+- [ ] set constructors
+- [x] c-style comments *
+- [x] compile time jenkins' hash *
+- [ ] string blobs
+
+#### Extended API
+- [x] table
+- [x] string
+
+_* Supported by Lua Language Server_
+#### Requires testing and experimentation
+- [ ] blobs
+- [ ] in unpacking
 **Thanks to CitizenFX, and gottfriedleibniz**
+
+### Considerations
+- exports
+- events
