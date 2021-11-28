@@ -69,5 +69,3 @@ GlobalState = {}
 ---@param eventName string
 ---@param callback fun(body: table, resultCallback: function)
 function RegisterNUICallback(eventName, callback) end
-
-exports = {}

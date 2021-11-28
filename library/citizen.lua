@@ -1,3 +1,5 @@
+Citizen = {}
+
 ---@param threadFunction function
 --- Creates a new coroutine to execute a function.
 function Citizen.CreateThread(threadFunction) end
