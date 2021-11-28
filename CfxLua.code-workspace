@@ -2,7 +2,7 @@
   "folders": [
     {
       "path": "./resources"
-    }
+    },
   ],
 
   "settings": {
@@ -23,12 +23,7 @@
     "Lua.telemetry.enable": false,
     "Lua.workspace.checkThirdParty": false,
     "Lua.workspace.library": [
-      "../.vscode/natives",
-      "../.vscode/luaglm.lua",
-      "~/AppData/Local/citizenfx/sdk-storage/server/latest/citizen/scripting/lua/deferred.lua",
-      "~/AppData/Local/citizenfx/sdk-storage/server/latest/citizen/scripting/lua/json.lua",
-      "~/AppData/Local/citizenfx/sdk-storage/server/latest/citizen/scripting/lua/MessagePack.lua",
-      "~/AppData/Local/citizenfx/sdk-storage/server/latest/citizen/scripting/lua/scheduler.lua"
+      "../library",
     ],
     "Lua.workspace.ignoreDir": [
       ".vscode",
