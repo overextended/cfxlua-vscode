@@ -105,23 +105,23 @@ mat4x4 = mat
 
 -- TODO: more random functions
 
-function bvec() end
-function bvec1() end
-function bvec2() end
-function bvec3() end
-function bvec4() end
-function cross() end
-function defer() end
-function dot() end
-function each() end
-function inv() end
-function ivec() end
-function ivec1() end
-function ivec2() end
-function ivec3() end
-function ivec4() end
-function norm() end
-function slerp() end
+function bvec(...) end
+function bvec1(...) end
+function bvec2(...) end
+function bvec3(...) end
+function bvec4(...) end
+function cross(...) end
+function defer(...) end
+function dot(...) end
+function each(...) end
+function inv(...) end
+function ivec(...) end
+function ivec1(...) end
+function ivec2(...) end
+function ivec3(...) end
+function ivec4(...) end
+function norm(...) end
+function slerp(...) end
 
-function quat() end
+function quat(...) end
 qua = quat
