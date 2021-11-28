@@ -62,3 +62,66 @@ function utf8.strcmputf8i(stringLH, stringRH) end
 
 --- Return all arguments with non-number/boolean/string values changed to nil.
 function scrub(...) end
+
+---@class vector
+
+---@type vector
+function vector(x, y, z, w) end
+vec = vector
+vec4 = vec
+vector4 = vec
+
+---@type vector
+function vector1(x) end
+vec1 = vector1
+
+---@type vector
+function vector2(x, y) end
+vec2 = vector2
+
+---@type vector
+function vector3(x, y, z) end
+vec3 = vector3
+
+---@class matrix
+-- TODO: don't be lazy properly define matrices
+
+---@type matrix
+function mat(...) end
+mat4 = mat
+mat4x4 = mat
+mat2x2 = mat
+mat2 = mat
+mat2x3 = mat
+mat2x4 = mat
+mat3x2 = mat
+mat3x3 = mat
+mat3 = mat
+mat3x4 = mat
+mat4x2 = mat
+mat4x3 = mat
+mat4x4 = mat
+
+
+-- TODO: more random functions
+
+function bvec() end
+function bvec1() end
+function bvec2() end
+function bvec3() end
+function bvec4() end
+function cross() end
+function defer() end
+function dot() end
+function each() end
+function inv() end
+function ivec() end
+function ivec1() end
+function ivec2() end
+function ivec3() end
+function ivec4() end
+function norm() end
+function slerp() end
+
+function quat() end
+qua = quat

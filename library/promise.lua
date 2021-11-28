@@ -1,3 +1,5 @@
+---@class promise
+
 promise = {}
 
 -- TODO: annotations
