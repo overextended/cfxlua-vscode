@@ -18,7 +18,7 @@
     "Lua.misc.parameters": [],
     "Lua.runtime.nonstandardSymbol": ["/**/", "`", "+=", "-=", "*=", "/="],
     "Lua.runtime.path": ["?.lua", "?/init.lua"],
-    "Lua.runtime.plugin": "../.vscode/plugin.lua",
+    "Lua.runtime.plugin": "../plugin.lua",
     "Lua.runtime.version": "Lua 5.4",
     "Lua.telemetry.enable": false,
     "Lua.workspace.checkThirdParty": false,

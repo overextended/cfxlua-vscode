@@ -60,6 +60,5 @@ utf8.strlenutf8 = utf8.len
 --- greater than the second string.
 function utf8.strcmputf8i(stringLH, stringRH) end
 
----@param ... any
 --- Return all arguments with non-number/boolean/string values changed to nil.
 function scrub(...) end
