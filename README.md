@@ -4,14 +4,10 @@
 - I recommend keeping the workspace in `server-data` (one level above cache and resources directories)
 - If you want to keep these files separate from your resources, you can hard-code the destinations
 ```json
-"Lua.runtime.plugin": "E:/GTA/cfxlua-vscode/.vscode/plugin.lua",
+"Lua.runtime.plugin": "E:/GTA/cfxlua-vscode/plugin.lua",
 "Lua.workspace.library": [
-	"E:/GTA/cfxlua-vscode/.vscode/natives",
-	"E:/GTA/cfxlua-vscode/.vscode/luaglm.lua",
-	"~/AppData/Local/citizenfx/sdk-storage/server/latest/citizen/scripting/lua/deferred.lua",
-	"~/AppData/Local/citizenfx/sdk-storage/server/latest/citizen/scripting/lua/json.lua",
-	"~/AppData/Local/citizenfx/sdk-storage/server/latest/citizen/scripting/lua/MessagePack.lua",
-	"~/AppData/Local/citizenfx/sdk-storage/server/latest/citizen/scripting/lua/scheduler.lua",
+	"E:/GTA/cfxlua-vscode/library",
+	"E:/GTA/cfxlua-vscode/library/natives",
 ],
 ```
 
@@ -26,7 +22,7 @@
 	- `npm install -g ts-node`
 	- `npm install -g typescript`
 - Once all dependencies have been installed, execute `npm run start` and follow the prompts
-- Once the files have been built, move them to `cfxlua-vscode/.vscode/natives`
+- Once the files have been built, move them to `cfxlua-vscode/library/natives`
 
 ![image](https://user-images.githubusercontent.com/65407488/141656539-77221fb4-6ed7-4352-8a5b-cdc1c02de8fd.png)
 
