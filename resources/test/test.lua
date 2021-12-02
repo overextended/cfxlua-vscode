@@ -5,10 +5,10 @@ local foo = {
 }
 
 ---@param v string
----@return string, string
+---@return string, nil
 --- Hover over any reference to `foobar` to view annotations.
 local function foobar(v)
-	return 'foobar', (foo[v]?.baz or 'undefined')
+	return 'foobar', (foo[v]?.baz or nil)
 end
 
 

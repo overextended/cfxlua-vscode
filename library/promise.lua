@@ -1,3 +1,7 @@
+/*
+	Functions from [https://github.com/citizenfx/fivem/blob/master/data/shared/citizen/scripting/lua/deferred.lua]
+*/
+
 ---@class promise
 
 promise = {}

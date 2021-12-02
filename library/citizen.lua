@@ -1,21 +1,29 @@
+/*
+	Citizen namespace
+*/
+
 Citizen = {}
 
 ---@param threadFunction function
---- Creates a new coroutine to execute a function.
+--- Creates a coroutine to handle code asynchronously.
 function Citizen.CreateThread(threadFunction) end
 CreateThread = Citizen.CreateThread
 
 ---@param msec number
 ---@param callback function
---- Executes a function after the given time has passed.
+--- Executes a coroutine after the given time has passed in milliseconds.
 function Citizen.SetTimeout(msec, callback) end
 SetTimeout = Citizen.SetTimeout
 
 ---@param msec number
---- Causes the current coroutine to yield for the given time.
+--- Yields a coroutine, pausing execution for the given time in milliseconds
 function Citizen.Wait(msec) end
 Wait = Citizen.Wait
 
+---@param message string
+--- Outputs the message to trace listeners, including the console and log file.
+function Citizen.Trace(message) end
+
 ---@param promise promise
---- Causes the current coroutine to yield until the promise is resolved.
+--- Yields a coroutine until a promise has been resolved.
 function Citizen.Await(promise) end

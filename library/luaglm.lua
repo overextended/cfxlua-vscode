@@ -1,4 +1,7 @@
---- https://github.com/citizenfx/lua/blob/luaglm-dev/cfx/README.md
+
+/*
+	Lua 5.4 functions [https://github.com/citizenfx/lua/blob/luaglm-dev/cfx/README.md]
+*/
 
 ---@param input any
 ---@param ignore_casing? boolean
@@ -82,6 +85,8 @@ vec2 = vector2
 ---@type vector
 function vector3(x, y, z) end
 vec3 = vector3
+
+---@alias vector3 vector
 
 ---@class matrix
 -- TODO: don't be lazy properly define matrices

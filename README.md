@@ -7,7 +7,6 @@
 "Lua.runtime.plugin": "E:/GTA/cfxlua-vscode/plugin.lua",
 "Lua.workspace.library": [
 	"E:/GTA/cfxlua-vscode/library",
-	"E:/GTA/cfxlua-vscode/library/natives",
 ],
 ```
 
@@ -22,6 +21,7 @@
 	- `npm install -g ts-node`
 	- `npm install -g typescript`
 - Once all dependencies have been installed, execute `npm run start` and follow the prompts
+- You will want to build CFX as well as game natives
 - Once the files have been built, move them to `cfxlua-vscode/library/natives`
 
 ![image](https://user-images.githubusercontent.com/65407488/141656539-77221fb4-6ed7-4352-8a5b-cdc1c02de8fd.png)
@@ -37,10 +37,10 @@ local foo = {
 }
 
 ---@param v string
----@return string, string
+---@return string, nil
 --- Hover over any reference to `foobar` to view annotations.
 local function foobar(v)
-	return 'foobar', (foo[v]?.baz or 'undefined')
+	return 'foobar', (foo[v]?.baz or nil)
 end
 
 
@@ -52,6 +52,8 @@ end
 -- if foo and foo.bar then
 --	   print(foobar('bar'))
 -- end
+
+GetPlayerPed()
 ```
 
 ### Support for non-standard functions and types from [LuaGLM](https://github.com/citizenfx/lua/blob/luaglm-dev/cfx/README.md)
@@ -61,7 +63,7 @@ Some of these are beyond my level of technical skills or require testing for me 
 - [x] vectors
 - [x] quaternerion
 - [x] matrices (partial)
-- [ ] annotations
+- [x] annotations
 
 #### Power patches
 - [x] compound operators *
@@ -80,6 +82,7 @@ _* Supported by Lua Language Server_
 #### Requires testing and experimentation
 - [ ] blobs
 - [ ] in unpacking
+
 **Thanks to CitizenFX, and gottfriedleibniz**
 
 ### Considerations

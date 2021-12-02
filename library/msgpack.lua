@@ -1,3 +1,7 @@
+/*
+	Functions from the msgpack library
+*/
+
 --- [gottfriedleibniz/lua-cmsgpack](https://github.com/gottfriedleibniz/lua-cmsgpack)
 msgpack = {}
 

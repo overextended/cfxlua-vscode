@@ -1,3 +1,7 @@
+/*
+	Functions from [https://github.com/citizenfx/fivem/blob/master/data/shared/citizen/scripting/lua/scheduler.lua]
+*/
+
 ---@param player number
 ---@return table
 --- Return an array of the player's identifiers.

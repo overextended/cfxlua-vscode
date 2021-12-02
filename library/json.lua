@@ -1,3 +1,7 @@
+/*
+	Functions from the JSON library
+*/
+
 --- [gottfriedleibniz/lua-rapidjson](https://github.com/gottfriedleibniz/lua-rapidjson)
 json = {}
 
