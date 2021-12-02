@@ -29,6 +29,7 @@
       ".vscode",
       ".github"
     ],
-    "Lua.workspace.useGitIgnore": false
+    "Lua.workspace.useGitIgnore": false,
+    "Lua.workspace.preloadFileSize": 250
   }
 }
