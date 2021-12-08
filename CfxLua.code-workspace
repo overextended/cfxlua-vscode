@@ -27,7 +27,8 @@
     ],
     "Lua.workspace.ignoreDir": [
       ".vscode",
-      ".github"
+      ".github",
+      "fxmanifest.lua",
     ],
     "Lua.workspace.useGitIgnore": false,
     "Lua.workspace.preloadFileSize": 250
