@@ -1,18 +1,14 @@
 function OnSetText(uri, text)
     local diffs = {}
+    local count = 0
 
-	for start, finish in text:gmatch '()%?%.+()' do -- prevent diagnostic errors from safe navigation (foo?.bar)
-        diffs[#diffs+1] = {
-            start  = start,
-            finish = finish - 2,
-            text   = ''
-        }
-    end
+    -- prevent diagnostic errors from safe navigation (foo?.bar and foo?[bar])
+	for safeNav in text:gmatch '()%?[%.%[]+' do
+        count = count + 1
 
-    for start, finish in text:gmatch '()%?%[+()' do -- prevent diagnostic errors from safe navigation (foo?['bar'])
-        diffs[#diffs+1] = {
-            start  = start,
-            finish = finish - 2,
+        diffs[count] = {
+            start  = safeNav,
+            finish = safeNav,
             text   = ''
         }
     end
