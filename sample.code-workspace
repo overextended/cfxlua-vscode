@@ -1,0 +1,25 @@
+{
+  "folders": [
+    {
+      "path": "./resources"
+    }
+  ],
+
+  "settings": {
+    "Lua.diagnostics.enable": true,
+    "Lua.runtime.nonstandardSymbol": ["/**/", "`", "+=", "-=", "*=", "/="],
+    "Lua.runtime.plugin": "../plugin.lua",
+    "Lua.workspace.library": ["../library"],
+    "Lua.runtime.version": "Lua 5.4",
+    "Lua.completion.callSnippet": "Replace",
+    "Lua.completion.autoRequire": false,
+    "editor.semanticHighlighting.enabled": true,
+    "Lua.IntelliSense.traceBeSetted": true,
+    "Lua.IntelliSense.traceLocalSet": true,
+    "Lua.IntelliSense.traceFieldInject": true,
+    "Lua.IntelliSense.traceReturn": true,
+    "Lua.workspace.preloadFileSize": 400,
+    "Lua.workspace.ignoreDir": [".vscode", ".github", "fxmanifest.lua"],
+    "Lua.workspace.useGitIgnore": true
+  }
+}

@@ -67,26 +67,34 @@ function utf8.strcmputf8i(stringLH, stringRH) end
 function scrub(...) end
 
 ---@class vector
-
+---@param x number
+---@param y number
+---@param z? number
+---@param w? number
 ---@type vector
 function vector(x, y, z, w) end
 vec = vector
-vec4 = vec
-vector4 = vec
 
----@type vector
-function vector1(x) end
-vec1 = vector1
-
----@type vector
+---@class vector2
+---@param x number
+---@param y number
 function vector2(x, y) end
 vec2 = vector2
 
----@type vector
+---@class vector3
+---@param x number
+---@param y number
+---@param z number
 function vector3(x, y, z) end
 vec3 = vector3
 
----@alias vector3 vector
+---@class vector4
+---@param x number
+---@param y number
+---@param z number
+---@param w number
+function vector4(x, y, z, w) end
+vec4 = vector4
 
 ---@class matrix
 -- TODO: don't be lazy properly define matrices
@@ -108,23 +116,12 @@ mat4x3 = mat
 mat4x4 = mat
 
 
--- TODO: more random functions
-
-function bvec(...) end
-function bvec1(...) end
-function bvec2(...) end
-function bvec3(...) end
-function bvec4(...) end
+-- TODO
 function cross(...) end
 function defer(...) end
 function dot(...) end
 function each(...) end
 function inv(...) end
-function ivec(...) end
-function ivec1(...) end
-function ivec2(...) end
-function ivec3(...) end
-function ivec4(...) end
 function norm(...) end
 function slerp(...) end
 
