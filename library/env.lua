@@ -24,6 +24,8 @@ function PerformHttpRequest(url, cb, method, data, headers, options) end
 function GetPlayers() end
 
 ---@class statebag
+---@field __data any
+---@field state table<string, unknown>
 
 ---@param ent number
 ---@return statebag
@@ -32,7 +34,7 @@ function Entity(ent) end
 ---@param ent number
 ---@return statebag
 function Player(ent) end
-LocalPlayer = Player(1)
+LocalPlayer = Player(-1)
 
 ---@type statebag
 GlobalState = {}
