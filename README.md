@@ -4,28 +4,23 @@
 -   Press `Ctrl + Shift + P` and click `Preferences: Open Settings (JSON)
 -   Add the following settings to the object, and set the plugin and library directory
 ```json
-  "Lua.color.mode": "Semantic",
-  "Lua.completion.autoRequire": false,
-  "Lua.diagnostics.disable": [
-    "lowercase-global",
-    "undefined-global",
-    "undefined-field"
-  ],
-  "Lua.diagnostics.enable": true,
-  "Lua.runtime.nonstandardSymbol": ["/**/", "`", "+=", "-=", "*=", "/="],
-  "Lua.runtime.path": ["?.lua", "?/init.lua"],
-  "Lua.runtime.plugin": "{{YOUR DIRECTORY}}/plugin.lua",
-  "Lua.runtime.version": "Lua 5.4",
-  "Lua.telemetry.enable": false,
-  "Lua.workspace.checkThirdParty": false,
-  "Lua.workspace.library": ["{{YOUR DIRECTORY}}/library"],
-  "Lua.workspace.ignoreDir": [".vscode", ".github", "fxmanifest.lua"],
-  "Lua.workspace.useGitIgnore": false,
-  "Lua.workspace.preloadFileSize": 500,
-  "Lua.IntelliSense.traceBeSetted": true,
-  "Lua.IntelliSense.traceLocalSet": true,
-  "Lua.IntelliSense.traceFieldInject": true,
-  "Lua.IntelliSense.traceReturn": true
+    "Lua.diagnostics.enable": true,
+    "Lua.runtime.nonstandardSymbol": ["/**/", "`", "+=", "-=", "*=", "/="],
+    "Lua.runtime.plugin": "{{YOUR DIRECTORY}}/plugin.lua",
+    "Lua.runtime.version": "Lua 5.4",
+    "Lua.completion.autoRequire": false,
+    "Lua.IntelliSense.traceBeSetted": true,
+    "Lua.IntelliSense.traceLocalSet": true,
+    "Lua.IntelliSense.traceFieldInject": true,
+    "Lua.IntelliSense.traceReturn": true,
+    "Lua.workspace.preloadFileSize": 2000,
+    "Lua.workspace.ignoreDir": [".vscode", ".github", ".git"],
+    "Lua.workspace.library": ["{{YOUR DIRECTORY}}/library"],
+    "Lua.workspace.useGitIgnore": true,
+    "Lua.diagnostics.disable": ["lowercase-global", "undefined-field"],
+    "Lua.workspace.checkThirdParty": false,
+    "Lua.telemetry.enable": true,
+    "Lua.diagnostics.globals": ["source"]
 ```
 
 ![image](https://user-images.githubusercontent.com/65407488/141656446-21f9105a-9371-4bb3-9089-ab672930f830.png)

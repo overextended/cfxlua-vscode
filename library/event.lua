@@ -1,7 +1,3 @@
-/*
-	Events
-*/
-
 ---@param eventName string
 ---@param eventRoutine function
 ---@return table
@@ -17,6 +13,7 @@ function RemoveEventHandler(eventData) end
 --- Registers an event as safe for network, allowing it to be triggered by both the client and server.
 --- [Documentation](https://docs.fivem.net/docs/scripting-manual/working-with-events/listening-for-events/)
 function RegisterNetEvent(eventName, cb) end
+
 RegisterServerEvent = RegisterNetEvent
 
 ---@param eventName string
@@ -49,9 +46,4 @@ function TriggerServerEvent(eventName, ...) end
 ---@param ... any
 function TriggerLatentServerEvent(eventName, bps, ...) end
 
-exports = setmetatable({}, {
-	--- f
-	__call = function()
-
-	end
-})
+exports = {}

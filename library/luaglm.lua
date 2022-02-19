@@ -1,7 +1,4 @@
-
-/*
-	Lua 5.4 functions [https://github.com/citizenfx/lua/blob/luaglm-dev/cfx/README.md]
-*/
+-- https://github.com/citizenfx/lua/blob/luaglm-dev/cfx/README.md
 
 ---@param input any
 ---@param ignore_casing? boolean
@@ -73,12 +70,14 @@ function scrub(...) end
 ---@param w? number
 ---@type vector
 function vector(x, y, z, w) end
+
 vec = vector
 
 ---@class vector2
 ---@param x number
 ---@param y number
 function vector2(x, y) end
+
 vec2 = vector2
 
 ---@class vector3
@@ -86,6 +85,7 @@ vec2 = vector2
 ---@param y number
 ---@param z number
 function vector3(x, y, z) end
+
 vec3 = vector3
 
 ---@class vector4
@@ -94,6 +94,7 @@ vec3 = vector3
 ---@param z number
 ---@param w number
 function vector4(x, y, z, w) end
+
 vec4 = vector4
 
 ---@class matrix
@@ -101,6 +102,7 @@ vec4 = vector4
 
 ---@type matrix
 function mat(...) end
+
 mat4 = mat
 mat4x4 = mat
 mat2x2 = mat
@@ -118,12 +120,19 @@ mat4x4 = mat
 
 -- TODO
 function cross(...) end
+
 function defer(...) end
+
 function dot(...) end
+
 function each(...) end
+
 function inv(...) end
+
 function norm(...) end
+
 function slerp(...) end
 
 function quat(...) end
+
 qua = quat

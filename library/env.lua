@@ -1,6 +1,4 @@
-/*
-	Functions from [https://github.com/citizenfx/fivem/blob/master/data/shared/citizen/scripting/lua/scheduler.lua]
-*/
+-- https://github.com/citizenfx/fivem/blob/master/data/shared/citizen/scripting/lua/scheduler.lua
 
 ---@param player number
 ---@return table
@@ -34,6 +32,7 @@ function Entity(ent) end
 ---@param ent number
 ---@return statebag
 function Player(ent) end
+
 LocalPlayer = Player(-1)
 
 ---@type statebag
@@ -42,3 +41,6 @@ GlobalState = {}
 ---@param eventName string
 ---@param callback fun(body: table, resultCallback: function)
 function RegisterNUICallback(eventName, callback) end
+
+---@param message table
+function SendNUIMessage(message) end
