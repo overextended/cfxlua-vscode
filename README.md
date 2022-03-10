@@ -14,10 +14,10 @@
     "Lua.IntelliSense.traceFieldInject": true,
     "Lua.IntelliSense.traceReturn": true,
     "Lua.workspace.preloadFileSize": 2000,
-    "Lua.workspace.ignoreDir": [".vscode", ".github", ".git"],
+    "Lua.workspace.ignoreDir": [".vscode", ".github", ".git", "**/node_modules"],
     "Lua.workspace.library": ["{{YOUR DIRECTORY}}/library"],
     "Lua.workspace.useGitIgnore": true,
-    "Lua.diagnostics.disable": ["lowercase-global", "undefined-field"],
+    "Lua.diagnostics.disable": ["lowercase-global", "undefined-field", "undefined-global"],
     "Lua.workspace.checkThirdParty": false,
     "Lua.telemetry.enable": true,
     "Lua.diagnostics.globals": ["source"]
