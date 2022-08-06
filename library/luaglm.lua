@@ -17,12 +17,15 @@
 ---@field x number
 ---@field y number
 ---@field z number
+---@field xy vector2
 
 ---@class vector4
 ---@field x number
 ---@field y number
 ---@field z number
 ---@field w number
+---@field xy vector2
+---@field xyz vector3
 
 ---@alias matrix vector[]
 
