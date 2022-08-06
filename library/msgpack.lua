@@ -1,40 +1,79 @@
---- [gottfriedleibniz/lua-cmsgpack](https://github.com/gottfriedleibniz/lua-cmsgpack)
+---@meta
+
 msgpack = {}
 
-function msgpack.extend(...) end
+---Refer to [lua-cmsgpack#configuration](https://github.com/gottfriedleibniz/lua-cmsgpack#configuration).
+---@param option string
+function msgpack.getoption(option) end
 
-function msgpack.extend_clear(...) end
+---Set a global encoding/decoding option; see msgpack.getoption.
+---@param option string
+---@param value any
+function msgpack.setoption(option, value) end
 
-function msgpack.extend_get(...) end
+---@type lightuserdata
+msgpack.null = nil
+msgpack.sentinel = msgpack.null
 
-function msgpack.getoption(...) end
-
-function msgpack.gettype(...) end
-
-function msgpack.new() end
-
-function msgpack.next(...) end
-
-function msgpack.null() end
-
+---Receives any number of arguments and pack their values.
+---Refer to [lua-cmsgpack#packing](https://github.com/gottfriedleibniz/lua-cmsgpack#packing).
+---@return string
 function msgpack.pack(...) end
 
+---Receives any number of arguments and pack their values as an array, handling intermediate nil values.
+---Refer to [lua-cmsgpack#packing](https://github.com/gottfriedleibniz/lua-cmsgpack#packing).
+---@return string
 function msgpack.pack_args(...) end
 
-msgpack.packers = {}
-function msgpack.safe(...) end
+---Refer to [lua-cmsgpack#packing](https://github.com/gottfriedleibniz/lua-cmsgpack#packing).
+---@return userdata
+function msgpack.new() end
 
-msgpack.sentinel = msgpack.null
-function msgpack.set_array(...) end
+---Refer to [lua-cmsgpack#unpacking](https://github.com/gottfriedleibniz/lua-cmsgpack#unpacking).
+---@param string string
+---@param offset number?
+---@param limit number?
+---@param endposition number?
+---@return any
+function msgpack.unpack(string, offset, limit, endposition) end
 
-function msgpack.set_integer(...) end
+---Register an extension-type with a pack and unpack methods, and a unique identifier.
+---Refer to [lua-cmsgpack#extensions](https://github.com/gottfriedleibniz/lua-cmsgpack#extensions).
+---@param encoder table
+function msgpack.extend(encoder) end
 
-function msgpack.set_number(...) end
+---Get the extension-type definition for encoding/decoding tables/userdata definitions.
+---Refer to [lua-cmsgpack#extensions](https://github.com/gottfriedleibniz/lua-cmsgpack#extensions).
+---@return table
+function msgpack.extend_get(ext_id) end
 
-function msgpack.set_string(...) end
+---Explicitly remove the extension definition for all type identifiers provided.
+---Refer to [lua-cmsgpack#extensions](https://github.com/gottfriedleibniz/lua-cmsgpack#extensions).
+---@vararg string
+function msgpack.extend_clear(...) end
 
-function msgpack.setoption(...) end
+---Associate the name of a Lua type to an encoder table.
+---@param type_string string
+---@param ext_id number?
+function msgpack.settype(type_string, ext_id) end
 
-function msgpack.settype(...) end
+---Get the encoder table associated to the name of a Lua type.
+---@param type_string string
+---@return table
+function msgpack.gettype(type_string) end
 
-function msgpack.unpack(...) end
+---Setoption that only processes: "string", "string_compat", "string_binary".
+---@param string_value string
+function msgpack.set_string(string_value) end
+
+---Setoption that only processes: "without_hole", "with_hole", "always_as_map".
+---@param array_value string
+function msgpack.set_array(array_value) end
+
+---Setoption that only processes: "signed", "unsigned".
+---@param integer_value string
+function msgpack.set_integer(integer_value) end
+
+---Setoption that only processes: "float", "double".
+---@param number_value string
+function msgpack.set_number(number_value) end

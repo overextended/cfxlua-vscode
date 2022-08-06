@@ -1,13 +1,14 @@
--- https://github.com/citizenfx/fivem/blob/master/data/shared/citizen/scripting/lua/scheduler.lua
+---@meta
 
----@param player number
----@return table
---- Return an array of the player's identifiers.
+---Return an array of the player's identifiers.
+---@param player number|string
+---@return string[]
 function GetPlayerIdentifiers(player) end
 
----@return table
---- Return an array of the player's tokens.
-function GetPlayerTokens() end
+---Return an array of the player's tokens.
+---@param player number|string
+---@return string[]
+function GetPlayerTokens(player) end
 
 ---@param url string
 ---@param cb function
@@ -17,25 +18,29 @@ function GetPlayerTokens() end
 ---@param options table
 function PerformHttpRequest(url, cb, method, data, headers, options) end
 
----@return table
---- Return an array of all current players.
+---Return an array of all current players.
+---@return string[]
 function GetPlayers() end
 
+---@class state
+---@field get fun(self, key: string): any
+---@field set fun(self, key: string, value: any)
+
 ---@class statebag
----@field __data any
----@field state table<string, unknown>
+---@field state state
+---@field __data number
 
----@param ent number
+---@param entity number|string
 ---@return statebag
-function Entity(ent) end
+function Entity(entity) end
 
----@param ent number
+---@param player number|string
 ---@return statebag
-function Player(ent) end
+function Player(player) end
 
 LocalPlayer = Player(-1)
 
----@type statebag
+---@type state
 GlobalState = {}
 
 ---@param eventName string
