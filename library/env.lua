@@ -10,11 +10,12 @@ function GetPlayerIdentifiers(player) end
 ---@return string[]
 function GetPlayerTokens(player) end
 
----@param url string
----@param cb function
----@param method? string
----@param data? string
----@param headers? table
+---Performs a HTTP request using the specified parameters and returns the HTTP response in a callback.
+---@param url string  a string of the URL to request
+---@param cb function  the callback function to call after the request is finished
+---@param method? string  the HTTP method to use. default: `'GET'`
+---@param data? string  a string of data to send with the request. default: `''`
+---@param headers? table  a table of request headers. default: `{}`
 ---@param options? table
 function PerformHttpRequest(url, cb, method, data, headers, options) end
 
