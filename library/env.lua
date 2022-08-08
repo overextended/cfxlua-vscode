@@ -12,10 +12,10 @@ function GetPlayerTokens(player) end
 
 ---@param url string
 ---@param cb function
----@param method string
----@param data any
----@param headers table
----@param options table
+---@param method? string
+---@param data? any
+---@param headers? table
+---@param options? table
 function PerformHttpRequest(url, cb, method, data, headers, options) end
 
 ---Return an array of all current players.
