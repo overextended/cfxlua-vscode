@@ -13,7 +13,7 @@ function GetPlayerTokens(player) end
 ---@param url string
 ---@param cb function
 ---@param method? string
----@param data? any
+---@param data? string
 ---@param headers? table
 ---@param options? table
 function PerformHttpRequest(url, cb, method, data, headers, options) end
