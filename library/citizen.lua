@@ -34,4 +34,5 @@ function Citizen.Trace(message) end
 
 ---Yields a coroutine until a promise has been resolved.
 ---@param promise promise
+---@return unknown
 function Citizen.Await(promise) end
