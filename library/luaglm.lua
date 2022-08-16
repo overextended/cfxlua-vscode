@@ -12,12 +12,26 @@
 ---@class vector2
 ---@field x number
 ---@field y number
+---@operator add(vector2|number): vector2
+---@operator sub(vector2|number): vector2
+---@operator mul(vector2|number): vector2
+---@operator div(vector2|number): vector2
+---@operator unm: vector2
+---@operator unm: vector2
+---@operator len: number
 
 ---@class vector3
 ---@field x number
 ---@field y number
 ---@field z number
 ---@field xy vector2
+---@operator add(vector3|number): vector3
+---@operator sub(vector3|number): vector3
+---@operator mul(vector3|number): vector3
+---@operator div(vector3|number): vector3
+---@operator unm: vector3
+---@operator unm: vector3
+---@operator len: number
 
 ---@class vector4
 ---@field x number
@@ -26,6 +40,13 @@
 ---@field w number
 ---@field xy vector2
 ---@field xyz vector3
+---@operator add(vector4|number): vector4
+---@operator sub(vector4|number): vector4
+---@operator mul(vector4|number): vector4
+---@operator div(vector4|number): vector4
+---@operator unm: vector4
+---@operator unm: vector4
+---@operator len: number
 
 ---@alias matrix vector[]
 
