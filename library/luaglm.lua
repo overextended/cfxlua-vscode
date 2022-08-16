@@ -74,9 +74,10 @@ function table.create(narr, nrec) end
 function table.wipe(t) end
 
 ---An efficient table shallow-copy implementation using memcpy.
----@param t table
----@param t2? table a preallocated destination table
----@return table
+--- @generic T
+--- @param t T
+--- @param t2? table a preallocated destination table
+--- @return T
 function table.clone(t, t2) end
 
 ---Return the type of table being used, either "empty", "array", "hash", or "mixed".\
