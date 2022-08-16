@@ -83,7 +83,7 @@ function table.clone(t, t2) end
 ---Return the type of table being used, either "empty", "array", "hash", or "mixed".\
 ---Once an array becomes mixed or has its values nil'd it will remain "mixed" or "hash".
 ---@param t table
----@return string
+---@return 'empty' | 'array' | 'hash' | 'mixed'
 function table.type(t) end
 
 ---Joins strings together with a delimiter.
