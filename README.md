@@ -39,7 +39,7 @@
 ### Native declarations
 
 -   Install [NodeJS](https://nodejs.org/en/)
--   Download [JetbrainIDE-CFX.RE](https://github.com/TasoOneAsia/JetbrainIDE-CFX.RE)
+-   Download [JetbrainIDE-CFX.RE](https://github.com/thelindat/JetbrainIDE-CFX.RE)
 -   Open a terminal in the folder containing `JetbrainIDE-CFX.RE`
 -   Execute the following commands, in order
     -   `npm i`
