@@ -16,12 +16,20 @@
     "Lua.IntelliSense.traceFieldInject": true,
     "Lua.IntelliSense.traceReturn": true,
     "Lua.workspace.preloadFileSize": 2000,
-    "Lua.workspace.ignoreDir": [".vscode", ".github", ".git", "**/node_modules"],
+    "Lua.workspace.ignoreDir": [
+      ".vscode",
+      ".github",
+      ".git",
+      "**/node_modules"
+    ],
     "Lua.workspace.library": ["../library"],
     "Lua.workspace.useGitIgnore": true,
-    "Lua.diagnostics.disable": ["lowercase-global", "undefined-field", "undefined-global"],
+    "Lua.diagnostics.disable": [
+      "lowercase-global",
+      "undefined-field",
+      "missing-parameter"
+    ],
     "Lua.workspace.checkThirdParty": false,
-    "Lua.telemetry.enable": true,
-    "Lua.diagnostics.globals": ["source"]
+    "Lua.telemetry.enable": true
   }
 }
