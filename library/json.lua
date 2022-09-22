@@ -18,7 +18,7 @@ json.sentinel = json.null
 ---Create a string representing an object.
 ---Refer to [lua-rapidjson#encoding](https://github.com/gottfriedleibniz/lua-rapidjson#encoding).
 ---@param object any
----@param options? table
+---@param options? { indent?: boolean, indent_amt?: integer, exception?: fun(reason: 'reference cycle' | 'custom encoder failed' | 'unsupported type' | 'error encoding number', value: string): string | nil, string | nil }
 ---@return string
 function json.encode(object, options) end
 
@@ -26,8 +26,11 @@ function json.encode(object, options) end
 ---Refer to [lua-rapidjson#encoding](https://github.com/gottfriedleibniz/lua-rapidjson#decoding).
 ---@param string string
 ---@param position? integer
----@return any?
-function json.decode(string, position) end
+---@param null? any
+---@param objectmeta? table
+---@param arraymeta? table
+---@return any? object, integer? errPos, string? errMessage
+function json.decode(string, position, null, objectmeta, arraymeta) end
 
 ---@return table
 ---Returns a metatable with the 'object' __jsontype field.
