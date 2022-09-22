@@ -42,7 +42,7 @@ function json.array() end
 ---@return boolean
 function json.isobject(value) end
 
----Return true if the provided table has metatable with an 'object' __jsontype field.
+---Return true if the provided table has metatable with an 'array' __jsontype field.
 ---@param value table
 ---@return boolean
 function json.isarray(value) end
