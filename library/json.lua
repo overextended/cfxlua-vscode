@@ -17,17 +17,17 @@ json.sentinel = json.null
 
 ---Create a string representing an object.
 ---Refer to [lua-rapidjson#encoding](https://github.com/gottfriedleibniz/lua-rapidjson#encoding).
----@param table table
+---@param object any
 ---@param options? table
 ---@return string
-function json.encode(table, options) end
+function json.encode(object, options) end
 
 ---Decode a JSON encoded string.
 ---Refer to [lua-rapidjson#encoding](https://github.com/gottfriedleibniz/lua-rapidjson#decoding).
 ---@param string string
----@param options? table
----@return table?
-function json.decode(string, options) end
+---@param position? integer
+---@return any?
+function json.decode(string, position) end
 
 ---@return table
 ---Returns a metatable with the 'object' __jsontype field.
