@@ -9,7 +9,7 @@ function OnSetText(uri, text)
 		diffs[count] = {
 			start  = safeNav,
 			finish = safeNav,
-			text   = ''
+			text   = '',
 		}
 	end
 
