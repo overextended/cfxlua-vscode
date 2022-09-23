@@ -17,17 +17,20 @@ json.sentinel = json.null
 
 ---Create a string representing an object.
 ---Refer to [lua-rapidjson#encoding](https://github.com/gottfriedleibniz/lua-rapidjson#encoding).
----@param table table
----@param options? table
+---@param object any
+---@param options? { indent?: boolean, indent_amt?: integer, exception?: fun(reason: 'reference cycle' | 'custom encoder failed' | 'unsupported type' | 'error encoding number', value: string): string | nil, string | nil }
 ---@return string
-function json.encode(table, options) end
+function json.encode(object, options) end
 
 ---Decode a JSON encoded string.
 ---Refer to [lua-rapidjson#encoding](https://github.com/gottfriedleibniz/lua-rapidjson#decoding).
 ---@param string string
----@param options? table
----@return table?
-function json.decode(string, options) end
+---@param position? integer
+---@param null? any
+---@param objectmeta? table
+---@param arraymeta? table
+---@return any? object, integer? errPos, string? errMessage
+function json.decode(string, position, null, objectmeta, arraymeta) end
 
 ---@return table
 ---Returns a metatable with the 'object' __jsontype field.
@@ -42,7 +45,7 @@ function json.array() end
 ---@return boolean
 function json.isobject(value) end
 
----Return true if the provided table has metatable with an 'object' __jsontype field.
+---Return true if the provided table has metatable with an 'array' __jsontype field.
 ---@param value table
 ---@return boolean
 function json.isarray(value) end
