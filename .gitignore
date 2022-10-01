@@ -1,1 +1,4 @@
-library/natives
+node_modules
+Lua/natives
+dist
+*.vsix
