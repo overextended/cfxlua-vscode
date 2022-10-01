@@ -1,7 +1,8 @@
 local foo = {
 	bar = {
 		'baz'
-	}
+	},
+	bar2 = 'baz2'
 }
 
 ---@param v string
@@ -20,5 +21,12 @@ end
 -- if foo and foo.bar then
 --	   print(foobar('bar'))
 -- end
+
+
+-- In unpacking can be easier to write and read.
+-- local bar, bar2 = t.bar, t.bar2
+local bar, bar2 in foo
+print(bar)
+print(bar2)
 
 GetPlayerPed()
