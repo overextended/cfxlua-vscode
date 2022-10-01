@@ -1,11 +1,12 @@
 function OnSetText(uri, text)
+	if string.find(uri, '.vscode') or text:sub(1, 8) == "---@meta" then return end
+
 	local diffs = {}
 	local count = 0
 
 	-- prevent diagnostic errors from safe navigation (foo?.bar and foo?[bar])
 	for safeNav in text:gmatch '()%?[%.%[]+' do
 		count = count + 1
-
 		diffs[count] = {
 			start  = safeNav,
 			finish = safeNav,
