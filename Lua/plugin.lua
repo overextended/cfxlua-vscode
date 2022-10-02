@@ -1,11 +1,16 @@
+local str_find = string.find
+local str_sub = string.sub
+local str_gmatch = string.gmatch
+local str_gsub = string.gsub
+
 function OnSetText(uri, text)
-	if string.find(uri, '[\\/]%.vscode[\\/]') or text:sub(1, 8) == "---@meta" then return end
+	if str_find(uri, '[\\/]%.vscode[\\/]') or str_sub(text, 1, 8) == "---@meta" then return end
 
 	local diffs = {}
 	local count = 0
 
 	-- prevent diagnostic errors from safe navigation (foo?.bar and foo?[bar])
-	for safeNav in text:gmatch '()%?[%.%[]+' do
+	for safeNav in str_gmatch(text, '()%?[%.%[]+') do
 		count = count + 1
 		diffs[count] = {
 			start  = safeNav,
@@ -15,8 +20,8 @@ function OnSetText(uri, text)
 	end
 
 	-- prevent diagnostic errors from in unpacking (a, b, c in t)
-	for vars, inPos, afterInPos, tablePos, tableName, finishPos in text:gmatch '([_%w, ]*)%s+()in()%s+()([_%w]*%s-%(?.-%)?)()' do
-		if not vars:find('^%s*for%s') then
+	for vars, inPos, afterInPos, tablePos, tableName, finishPos in str_gmatch(text, '([_%w, ]*)%s+()in()%s+()([_%w]*%s-%(?.-%)?)()') do
+		if not str_find(vars, '^%s*for%s') then
 			-- replace 'in' with '='
 			count = count + 1
 			diffs[count] = {
@@ -25,11 +30,11 @@ function OnSetText(uri, text)
 				text = '='
 			}
 
-			-- replace 't' with 't.a, t.b, t.c'
 			local tableVars = ''
-			vars = vars:gsub('^%s*local%s', '')
+			vars = str_gsub(vars, '^%s*local%s', '')
 
-			for varName in vars:gsub('%s+', ''):gmatch('([_%w]+)') do
+			-- replace 't' with 't.a, t.b, t.c'
+			for varName in str_gmatch(str_gsub(vars, '%s+', ''), '([_%w]+)') do
 				if #tableVars > 0 then tableVars = tableVars .. ',' end
 				tableVars = tableVars .. tableName .. '.' .. varName
 			end
