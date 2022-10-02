@@ -1,5 +1,5 @@
 function OnSetText(uri, text)
-	if string.find(uri, '.vscode') or text:sub(1, 8) == "---@meta" then return end
+	if string.find(uri, '[\\/]%.vscode[\\/]') or text:sub(1, 8) == "---@meta" then return end
 
 	local diffs = {}
 	local count = 0
