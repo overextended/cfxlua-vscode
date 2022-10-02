@@ -15,7 +15,7 @@ function OnSetText(uri, text)
 	end
 
 	-- prevent diagnostic errors from in unpacking (a, b, c in t)
-	for vars, inPos, afterInPos, tablePos, tableName, finishPos in text:gmatch '([_%w, ]*)%s+()in()%s+()([_%w]*)()' do
+	for vars, inPos, afterInPos, tablePos, tableName, finishPos in text:gmatch '([_%w, ]*)%s+()in()%s+()([_%w]*%s-%(?.-%)?)()' do
 		if tableName ~= 'ipairs' and tableName ~= 'pairs' and not vars:find('^%s*for%s') then
 			-- replace 'in' with '='
 			count = count + 1
