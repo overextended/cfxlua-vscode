@@ -16,7 +16,7 @@ function OnSetText(uri, text)
 
 	-- prevent diagnostic errors from in unpacking (a, b, c in t)
 	for vars, inPos, afterInPos, tablePos, tableName, finishPos in text:gmatch '([_%w, ]*)%s+()in()%s+()([_%w]*)()' do
-		if tableName ~= 'ipairs' and tableName ~= 'pairs' and vars:sub(1, 3) ~= 'for' then
+		if tableName ~= 'ipairs' and tableName ~= 'pairs' and not vars:find('^%s*for%s') then
 			-- replace 'in' with '='
 			count = count + 1
 			diffs[count] = {
@@ -26,8 +26,8 @@ function OnSetText(uri, text)
 			}
 
 			-- replace 't' with 't.a, t.b, t.c'
-			if vars:sub(1, 5) == 'local' then vars = vars:sub(7) end
 			local tableVars = ''
+			vars = vars:gsub('^%s*local%s', '')
 
 			for varName in vars:gsub('%s+', ''):gmatch('([_%w]+)') do
 				if #tableVars > 0 then tableVars = tableVars .. ',' end
