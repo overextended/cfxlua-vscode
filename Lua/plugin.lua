@@ -9,6 +9,16 @@ function OnSetText(uri, text)
 	local diffs = {}
 	local count = 0
 
+	-- prevent diagnostic errors in fxmanifest.lua and __resource.lua files
+	if str_find(uri, 'fxmanifest%.lua$') or str_find(uri, '__resource%.lua$') then
+		count = count + 1
+		diffs[count] = {
+			start = 1,
+			finish = 0,
+			text = '---@diagnostic disable: undefined-global\n'
+		}
+	end
+
 	-- prevent diagnostic errors from safe navigation (foo?.bar and foo?[bar])
 	for safeNav in str_gmatch(text, '()%?[%.%[]+') do
 		count = count + 1
