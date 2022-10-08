@@ -26,6 +26,7 @@ function GetPlayers() end
 ---@class state
 ---@field get fun(self, key: string): any
 ---@field set fun(self, key: string, value: any, replicated: boolean?)
+---@field [string] any
 
 ---@class statebag
 ---@field state state

@@ -208,3 +208,11 @@ function each(...) end
 function quat(...) end
 
 qua = quat
+
+---Returns the current time in nanoseconds.
+---@return number
+function os.nanotime() end
+
+---Returns the current time in microseconds
+---@return number
+function os.microtime() end
