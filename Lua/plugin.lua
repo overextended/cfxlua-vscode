@@ -30,8 +30,8 @@ function OnSetText(uri, text)
 	end
 
 	-- prevent diagnostic errors from in unpacking (a, b, c in t)
-	for vars, inPos, afterInPos, tablePos, tableName, finishPos in str_gmatch(text, '([_%w, ]*)%s+()in()%s+()([_%w]*%s-%(?.-%)?)()') do
-		if not str_find(vars, '^%s*for%s') then
+	for vars, inPos, afterInPos, tablePos, tableName, finishPos in str_gmatch(text, '([_%w, ]*)%s+()in()[     ]+()([_%w]*%s-%(?.-%)?)()') do
+		if #tableName > 0 and not str_find(vars, '^%s*for%s') then
 			-- replace 'in' with '='
 			count = count + 1
 			diffs[count] = {
