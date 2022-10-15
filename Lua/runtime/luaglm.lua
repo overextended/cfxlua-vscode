@@ -5,13 +5,19 @@
 
 ---@class vector
 ---@field x number
----@field y number
+---@field y? number
 ---@field z? number
 ---@field w? number
+---@field r number
+---@field g? number
+---@field b? number
+---@field a? number
 
 ---@class vector2
 ---@field x number
 ---@field y number
+---@field r number
+---@field g number
 ---@operator add(vector2|number): vector2
 ---@operator sub(vector2|number): vector2
 ---@operator mul(vector2|number): vector2
@@ -24,6 +30,9 @@
 ---@field x number
 ---@field y number
 ---@field z number
+---@field r number
+---@field g number
+---@field b number
 ---@field xy vector2
 ---@operator add(vector3|number): vector3
 ---@operator sub(vector3|number): vector3
@@ -38,6 +47,10 @@
 ---@field y number
 ---@field z number
 ---@field w number
+---@field r number
+---@field g number
+---@field b number
+---@field a number
 ---@field xy vector2
 ---@field xyz vector3
 ---@operator add(vector4|number): vector4
@@ -125,14 +138,14 @@ function utf8.strcmputf8i(stringLH, stringRH) end
 function scrub(...) end
 
 ---@param x number
----@param y number
+---@param y? number
 ---@param z? number
 ---@param w? number
 ---@return vector
 function vector(x, y, z, w) end
 
 ---@param x number
----@param y number
+---@param y? number
 ---@return vector2
 function vector2(x, y) end
 
@@ -143,11 +156,19 @@ function vector2(x, y) end
 function vector3(x, y, z) end
 
 ---@param x number
+---@return vector3
+function vector3(x) end
+
+---@param x number
 ---@param y number
 ---@param z number
 ---@param w number
 ---@return vector4
 function vector4(x, y, z, w) end
+
+---@param x number
+---@return vector4
+function vector4(x) end
 
 vec = vector
 vec2 = vector2
