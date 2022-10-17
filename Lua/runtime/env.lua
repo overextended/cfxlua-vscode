@@ -29,7 +29,7 @@ function GetPlayers() end
 ---@field [string] any
 
 ---@class EntityInterface
----@field state state
+---@field state StateBag
 ---@field __data number
 
 ---@param entity number|string
