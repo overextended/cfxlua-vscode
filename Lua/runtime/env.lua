@@ -23,31 +23,31 @@ function PerformHttpRequest(url, cb, method, data, headers, options) end
 ---@return string[]
 function GetPlayers() end
 
----@class state
+---@class StateBag
 ---@field get fun(self, key: string): any
----@field set fun(self, key: string, value: any, replicated: boolean?)
+---@field set fun(self, key: string, value: any, replicated?: boolean)
 ---@field [string] any
 
----@class statebag
+---@class EntityInterface
 ---@field state state
 ---@field __data number
 
 ---@param entity number|string
----@return statebag
+---@return EntityInterface
 function Entity(entity) end
 
 ---@param player number|string
----@return statebag
+---@return EntityInterface
 function Player(player) end
 
 LocalPlayer = Player(-1)
 
----@type state
+---@type StateBag
 GlobalState = {}
 
 ---@param eventName string
----@param callback fun(body: table, resultCallback: function)
+---@param callback fun(body: any, resultCallback: function)
 function RegisterNUICallback(eventName, callback) end
 
----@param message table
+---@param message any
 function SendNUIMessage(message) end
