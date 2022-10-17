@@ -1,8 +1,8 @@
 ---@meta
 
+---[lua-rapidjson](https://github.com/citizenfx/lua-rapidjson/tree/grit)
 json = {}
 
----Refer to [lua-rapidjson#configuration](https://github.com/gottfriedleibniz/lua-rapidjson#configuration).
 ---@param option string
 function json.getoption(option) end
 
@@ -16,14 +16,12 @@ json.null = nil
 json.sentinel = json.null
 
 ---Create a string representing an object.
----Refer to [lua-rapidjson#encoding](https://github.com/gottfriedleibniz/lua-rapidjson#encoding).
 ---@param object any
 ---@param options? { indent?: boolean, indent_amt?: integer, exception?: fun(reason: 'reference cycle' | 'custom encoder failed' | 'unsupported type' | 'error encoding number', value: string): string | nil, string | nil }
 ---@return string
 function json.encode(object, options) end
 
 ---Decode a JSON encoded string.
----Refer to [lua-rapidjson#encoding](https://github.com/gottfriedleibniz/lua-rapidjson#decoding).
 ---@param string string
 ---@param position? integer
 ---@param null? any

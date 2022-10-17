@@ -1,8 +1,9 @@
 ---@meta
 
+---[lua-cmsgpack](https://github.com/citizenfx/lua-cmsgpack/tree/grit)
 msgpack = {}
 
----Refer to [lua-cmsgpack#configuration](https://github.com/gottfriedleibniz/lua-cmsgpack#configuration).
+---Refer to [lua-cmsgpack#configuration](https://github.com/citizenfx/lua-cmsgpack/tree/grit#configuration).
 ---@param option string
 function msgpack.getoption(option) end
 
@@ -16,20 +17,20 @@ msgpack.null = nil
 msgpack.sentinel = msgpack.null
 
 ---Receives any number of arguments and pack their values.
----Refer to [lua-cmsgpack#packing](https://github.com/gottfriedleibniz/lua-cmsgpack#packing).
+---Refer to [lua-cmsgpack#packing](https://github.com/citizenfx/lua-cmsgpack/tree/grit#packing).
 ---@return string
 function msgpack.pack(...) end
 
 ---Receives any number of arguments and pack their values as an array, handling intermediate nil values.
----Refer to [lua-cmsgpack#packing](https://github.com/gottfriedleibniz/lua-cmsgpack#packing).
+---Refer to [lua-cmsgpack#packing](https://github.com/citizenfx/lua-cmsgpack/tree/grit#packing).
 ---@return string
 function msgpack.pack_args(...) end
 
----Refer to [lua-cmsgpack#packing](https://github.com/gottfriedleibniz/lua-cmsgpack#packing).
+---Refer to [lua-cmsgpack#packing](https://github.com/citizenfx/lua-cmsgpack/tree/grit#packing).
 ---@return userdata
 function msgpack.new() end
 
----Refer to [lua-cmsgpack#unpacking](https://github.com/gottfriedleibniz/lua-cmsgpack#unpacking).
+---Refer to [lua-cmsgpack#unpacking](https://github.com/citizenfx/lua-cmsgpack/tree/grit#unpacking).
 ---@param string string
 ---@param offset number?
 ---@param limit number?
@@ -38,17 +39,17 @@ function msgpack.new() end
 function msgpack.unpack(string, offset, limit, endposition) end
 
 ---Register an extension-type with a pack and unpack methods, and a unique identifier.
----Refer to [lua-cmsgpack#extensions](https://github.com/gottfriedleibniz/lua-cmsgpack#extensions).
+---Refer to [lua-cmsgpack#extensions](https://github.com/citizenfx/lua-cmsgpack/tree/grit#extensions).
 ---@param encoder table
 function msgpack.extend(encoder) end
 
 ---Get the extension-type definition for encoding/decoding tables/userdata definitions.
----Refer to [lua-cmsgpack#extensions](https://github.com/gottfriedleibniz/lua-cmsgpack#extensions).
+---Refer to [lua-cmsgpack#extensions](https://github.com/citizenfx/lua-cmsgpack/tree/grit#extensions).
 ---@return table
 function msgpack.extend_get(ext_id) end
 
 ---Explicitly remove the extension definition for all type identifiers provided.
----Refer to [lua-cmsgpack#extensions](https://github.com/gottfriedleibniz/lua-cmsgpack#extensions).
+---Refer to [lua-cmsgpack#extensions](https://github.com/citizenfx/lua-cmsgpack/tree/grit#extensions).
 ---@vararg string
 function msgpack.extend_clear(...) end
 
