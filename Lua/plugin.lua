@@ -4,7 +4,15 @@ local str_gmatch = string.gmatch
 local str_gsub = string.gsub
 
 function OnSetText(uri, text)
-	if str_find(uri, '[\\/]%.vscode[\\/]') or str_sub(text, 1, 8) == "---@meta" then return end
+	if str_find(uri, '[\\/]%.vscode[\\/]') or str_sub(text, 1, 8) == '---@meta' then return end
+
+	if str_sub(text, 1, 4) == 'FXAP' then
+		return {{
+			start = 1,
+			finish = #text,
+			text = ''
+		}}
+	end
 
 	local diffs = {}
 	local count = 0
