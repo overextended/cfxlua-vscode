@@ -7,12 +7,8 @@ function getExtensionPath(extensionId: string) {
   return vscode.extensions.getExtension(extensionId)?.extensionPath;
 }
 
-function getLuaConfig() {
-  return vscode.workspace.getConfiguration("Lua");
-}
-
 function setPlugin(enable: boolean) {
-  const config = getLuaConfig();
+  const config = vscode.workspace.getConfiguration("Lua");
   const extensionPath = getExtensionPath(extensionId);
   const pluginPath = pathJoin(extensionPath!, "Lua", "plugin.lua");
 
@@ -35,7 +31,7 @@ function setPlugin(enable: boolean) {
 function setExternalLibrary(folder: string, enable: boolean) {
   const extensionPath = getExtensionPath(extensionId);
   const folderPath = pathJoin(extensionPath!, "Lua", folder);
-  const config = getLuaConfig();
+  const config = vscode.workspace.getConfiguration("Lua");
   const library: string[] | undefined = config.get("workspace.library");
 
   if (library && extensionPath) {
@@ -65,17 +61,32 @@ function setExternalLibrary(folder: string, enable: boolean) {
   }
 }
 
+// todo: command or such to easily swap out the native library
+export function setNativeLibrary() {
+  const config = vscode.workspace.getConfiguration("cfxlua");
+  let game: string = config.get("game") || "GTAV";
+  game = game ? game.toUpperCase() : "GTAV";
+
+  if (game !== "GTAV") { setExternalLibrary(`natives/GTAV`, false); }
+  if (game !== "RDR3") { setExternalLibrary(`natives/RDR3`, false); }
+
+  setExternalLibrary(`natives/${game}`, true);
+}
+
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
 export function activate(context: vscode.ExtensionContext) {
   setPlugin(true);
   setExternalLibrary("runtime", true);
-  setExternalLibrary("natives", true);
+  setExternalLibrary("natives/CFX-NATIVE", true);
+  setNativeLibrary();
 }
 
 // this method is called when your extension is deactivated
 export function deactivate() {
   setPlugin(false);
   setExternalLibrary("runtime", false);
-  setExternalLibrary("natives", false);
+  setExternalLibrary("natives/CFX-NATIVE", false);
+  setExternalLibrary("natives/GTAV", false);
+  setExternalLibrary("natives/RDR3", false);
 }
