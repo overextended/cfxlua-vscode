@@ -51,15 +51,3 @@ function RegisterNUICallback(eventName, callback) end
 
 ---@param message any
 function SendNUIMessage(message) end
-
----Equivalent to CREATE_VEHICLE, but it uses 'server setter' logic (like the former CREATE_AUTOMOBILE) as a workaround for reliability concerns regarding entity creation RPC.
----
----Unlike CREATE_AUTOMOBILE, this supports other vehicle types as well.  
----@param modelHash number
----@param type 'automobile' | 'bike' | 'boat' | 'heli' | 'plane' | 'submarine' | 'trailer' | 'train'
----@param x number
----@param y number
----@param z number
----@param heading number
----@return number
-function CreateVehicleServerSetter(modelHash, type, x, y, z, heading) end
