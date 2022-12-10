@@ -24,14 +24,6 @@ function BlockDecisionMakerEvent(name, eventType) end
 ---```
 ---eventType: https://alloc8or.re/gta5/doc/enums/eEventType.txt
 ---```
----[Native Documentation](https://docs.fivem.net/natives/?_0x4FC9381A7AEE8968)
----@param name number | string
----@param eventType number
-function ClearDecisionMakerEventResponse(name, eventType) end
-
----```
----eventType: https://alloc8or.re/gta5/doc/enums/eEventType.txt
----```
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x7FD8F3BE76F89422)
 ---@param eventType number
 ---@param entity number
@@ -51,6 +43,14 @@ function AddShockingEventForEntity(eventType, entity, duration) end
 ---@return boolean
 function IsShockingEventInSphere(eventType, x, y, z, radius) end
 
+---```
+---eventType: https://alloc8or.re/gta5/doc/enums/eEventType.txt
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x4FC9381A7AEE8968)
+---@param name number | string
+---@param eventType number
+function ClearDecisionMakerEventResponse(name, eventType) end
+
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x2CDA538C44C6CCE5)
 ---@param event any
@@ -68,20 +68,16 @@ function RemoveAllShockingEvents(p0) end
 ---@param name number | string
 function SetDecisionMaker(ped, name) end
 
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x340F1415B68AEADE)
+function RemoveShockingEventSpawnBlockingAreas() end
+
 ---```
 ---eventType: https://alloc8or.re/gta5/doc/enums/eEventType.txt
 ---```
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x3FD2EC8BF1F1CF30)
 ---@param eventType number
 function SuppressShockingEventTypeNextFrame(eventType) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x5F3B7749C112D552)
-function SuppressAgitationEventsNextFrame() end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x340F1415B68AEADE)
-function RemoveShockingEventSpawnBlockingAreas() end
 
 ---```
 ---eventType: https://alloc8or.re/gta5/doc/enums/eEventType.txt
@@ -94,4 +90,8 @@ function UnblockDecisionMakerEvent(name, eventType) end
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x2F9A292AD0A3BD89)
 function SuppressShockingEventsNextFrame() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x5F3B7749C112D552)
+function SuppressAgitationEventsNextFrame() end
 

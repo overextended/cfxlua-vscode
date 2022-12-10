@@ -1,6 +1,11 @@
 ---@meta
 
 ---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x8D30F648014A92B5)
+---@return boolean
+function GetExtraContentPackHasBeenInstalled() end
+
+---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x10D0A8F259E93EC9)
 ---@return boolean
 function GetIsLoadingScreenActive() end
@@ -13,11 +18,6 @@ function GetIsLoadingScreenActive() end
 ---@param unused any
 ---@return boolean, boolean
 function HasCloudRequestsFinished(unused) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x8D30F648014A92B5)
----@return boolean
-function GetExtraContentPackHasBeenInstalled() end
 
 ---```
 ---Only used once in scripts, in maintransition.
@@ -47,9 +47,9 @@ function N_0x241fca5b1aa14f75() end
 function IsDlcPresent(dlcHash) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x9489659372A81585)
+---[Native Documentation](https://docs.fivem.net/natives/?_0xA213B11DFF526300)
 ---@return boolean
-function N_0x9489659372a81585() end
+function N_0xa213b11dff526300() end
 
 ---GET_IS_LOADING_\*
 ---
@@ -61,9 +61,9 @@ function N_0x9489659372a81585() end
 function N_0xc4637a6d03c24cc3() end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xA213B11DFF526300)
+---[Native Documentation](https://docs.fivem.net/natives/?_0x9489659372A81585)
 ---@return boolean
-function N_0xa213b11dff526300() end
+function N_0x9489659372a81585() end
 
 ---```
 ---Unloads GROUP_MAP (GTAO/MP) DLC data and loads GROUP_MAP_SP DLC. Neither are loaded by default, 0888C3502DBBEEF5 is a cognate to this function and loads MP DLC (and unloads SP DLC by extension).
@@ -74,11 +74,6 @@ function N_0xa213b11dff526300() end
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xD7C10C4A637992C9)
 function OnEnterSp() end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xF2E07819EF1A5289)
----@return boolean
-function N_0xf2e07819ef1a5289() end
-
 ---```
 ---This loads the GTA:O dlc map parts (high end garages, apartments).
 ---Works in singleplayer.
@@ -86,4 +81,9 @@ function N_0xf2e07819ef1a5289() end
 ---```
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x0888C3502DBBEEF5)
 function OnEnterMp() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xF2E07819EF1A5289)
+---@return boolean
+function N_0xf2e07819ef1a5289() end
 

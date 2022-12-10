@@ -1,15 +1,6 @@
 ---@meta
 
 ---```
----Deletes the given context from the background scripts context map.
----
----NativeDB Introduced: v323
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0xDC2BACD920D0A0DD)
----@param contextName string
-function BgEndContext(contextName) end
-
----```
 ---Inserts the given context into the background scripts context map.
 ---
 ---NativeDB Introduced: v323
@@ -28,13 +19,13 @@ function BgStartContext(contextName) end
 function BgEndContextHash(contextHash) end
 
 ---```
----Hashed version of 0x9D5A25BADB742ACD.
+---Deletes the given context from the background scripts context map.
 ---
 ---NativeDB Introduced: v323
 ---```
----[Native Documentation](https://docs.fivem.net/natives/?_0x75B18E49607874C7)
----@param contextHash number | string
-function BgStartContextHash(contextHash) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0xDC2BACD920D0A0DD)
+---@param contextName string
+function BgEndContext(contextName) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xFC04745FBE67C19A)
@@ -42,11 +33,14 @@ function BgStartContextHash(contextHash) end
 ---@return boolean
 function DoesScriptExist(scriptName) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xF86AA3C56BA31381)
----@param scriptHash number | string
----@return boolean
-function DoesScriptWithNameHashExist(scriptHash) end
+---```
+---Hashed version of 0x9D5A25BADB742ACD.
+---
+---NativeDB Introduced: v323
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x75B18E49607874C7)
+---@param contextHash number | string
+function BgStartContextHash(contextHash) end
 
 ---```
 ---eventGroup: 0 = SCRIPT_EVENT_QUEUE_AI (CEventGroupScriptAI), 1 = SCRIPT_EVENT_QUEUE_NETWORK (CEventGroupScriptNetwork)
@@ -57,6 +51,12 @@ function DoesScriptWithNameHashExist(scriptHash) end
 ---@return number
 function GetEventAtIndex(eventGroup, eventIndex) end
 
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xF86AA3C56BA31381)
+---@param scriptHash number | string
+---@return boolean
+function DoesScriptWithNameHashExist(scriptHash) end
+
 ---```
 ---eventGroup: 0 = SCRIPT_EVENT_QUEUE_AI (CEventGroupScriptAI), 1 = SCRIPT_EVENT_QUEUE_NETWORK (CEventGroupScriptNetwork)
 ---```
@@ -65,11 +65,6 @@ function GetEventAtIndex(eventGroup, eventIndex) end
 ---@param eventIndex number
 ---@return boolean
 function GetEventExists(eventGroup, eventIndex) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x8A1C8B1738FFE87E)
----@return number
-function GetHashOfThisScriptName() end
 
 ---```
 ---eventGroup: 0 = SCRIPT_EVENT_QUEUE_AI (CEventGroupScriptAI), 1 = SCRIPT_EVENT_QUEUE_NETWORK (CEventGroupScriptNetwork)
@@ -83,9 +78,9 @@ function GetHashOfThisScriptName() end
 function GetEventData(eventGroup, eventIndex, eventDataSize) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x18C1270EA7F199BC)
----@return boolean
-function GetNoLoadingScreen() end
+---[Native Documentation](https://docs.fivem.net/natives/?_0xC30338E8088E2E21)
+---@return number
+function GetIdOfThisThread() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x05A42BA9FC8DA96B)
@@ -114,15 +109,19 @@ function GetNumberOfEvents(eventGroup) end
 function GetNumberOfReferencesOfScriptWithNameHash(scriptHash) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xC30338E8088E2E21)
+---[Native Documentation](https://docs.fivem.net/natives/?_0x8A1C8B1738FFE87E)
 ---@return number
-function GetIdOfThisThread() end
+function GetHashOfThisScriptName() end
 
 ---Returns if a script has been loaded into the game. Used to see if a script was loaded after requesting.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xE6CC9F3BA0FB9EF1)
 ---@param scriptName string
 ---@return boolean
 function HasScriptLoaded(scriptName) end
+
+---Updates the display of the MP/SP loading buttons, and locks the state so that other options are not displayed or changed. This can only be done once.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xB1577667C3708F9B)
+function LockLoadingScreenButtons() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x442E0A7EDE4A738A)
@@ -146,10 +145,6 @@ function HasScriptWithNameHashLoaded(scriptHash) end
 ---@return boolean
 function N_0x0f6f1ebbc4e1d5e6(scriptIndex, p1) end
 
----Updates the display of the MP/SP loading buttons, and locks the state so that other options are not displayed or changed. This can only be done once.
----[Native Documentation](https://docs.fivem.net/natives/?_0xB1577667C3708F9B)
-function LockLoadingScreenButtons() end
-
 ---```
 ---BG_*
 ---
@@ -162,27 +157,6 @@ function LockLoadingScreenButtons() end
 function N_0x22e21fbcfc88c149(scriptIndex, p1) end
 
 ---```
----BG_*
----
----NativeDB Introduced: v323
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x829CD22E043A2577)
----@param p0 number | string
----@return number
-function N_0x829cd22e043a2577(p0) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x46E9AE36D8FA6417)
----@param threadId number
----@return boolean
-function IsThreadActive(threadId) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x6EB5F71AA68F2E8E)
----@param scriptName string
-function RequestScript(scriptName) end
-
----```
 ---Sets bit 1 in GtaThread+0x154
 ---
 ---BG_*
@@ -192,12 +166,42 @@ function RequestScript(scriptName) end
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x760910B49D2B98EA)
 function N_0x760910b49d2b98ea() end
 
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x46E9AE36D8FA6417)
+---@param threadId number
+---@return boolean
+function IsThreadActive(threadId) end
+
 ---```
----If the function returns 0, the end of the iteration has been reached.
+---BG_*
+---
+---NativeDB Introduced: v323
 ---```
----[Native Documentation](https://docs.fivem.net/natives/?_0x30B4FA1C82DD4B9F)
+---[Native Documentation](https://docs.fivem.net/natives/?_0x829CD22E043A2577)
+---@param p0 number | string
 ---@return number
-function ScriptThreadIteratorGetNextThreadId() end
+function N_0x829cd22e043a2577(p0) end
+
+---```
+---Returns true if bit 0 in GtaThread+0x154 is set.
+---
+---BG_*
+---
+---NativeDB Introduced: v323
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x836B62713E0534CA)
+---@return boolean
+function N_0x836b62713e0534ca() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x18C1270EA7F199BC)
+---@return boolean
+function GetNoLoadingScreen() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x6EB5F71AA68F2E8E)
+---@param scriptName string
+function RequestScript(scriptName) end
 
 ---Starts a new iteration of the current threads.
 ---Call this first, then SCRIPT_THREAD_ITERATOR_GET_NEXT_THREAD_ID (0x30B4FA1C82DD4B9F)
@@ -216,26 +220,21 @@ function SetNoLoadingScreen(toggle) end
 ---@param scriptHash number | string
 function RequestScriptWithNameHash(scriptHash) end
 
+---```
+---If the function returns 0, the end of the iteration has been reached.
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x30B4FA1C82DD4B9F)
+---@return number
+function ScriptThreadIteratorGetNextThreadId() end
+
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC5BC038960E9DB27)
 ---@param scriptHash number | string
 function SetScriptWithNameHashAsNoLongerNeeded(scriptHash) end
 
----```
----Returns true if bit 0 in GtaThread+0x154 is set.
----
----BG_*
----
----NativeDB Introduced: v323
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x836B62713E0534CA)
----@return boolean
-function N_0x836b62713e0534ca() end
-
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xC8B189ED9138BCD4)
----@param threadId number
-function TerminateThread(threadId) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x078EBE9809CCD637)
+function ShutdownLoadingScreen() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC90D2DCACD56184C)
@@ -265,8 +264,9 @@ function TriggerScriptEvent(eventGroup, eventDataSize, playerBits) end
 function TriggerScriptEvent_2(eventGroup, eventDataSize, playerBits) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x078EBE9809CCD637)
-function ShutdownLoadingScreen() end
+---[Native Documentation](https://docs.fivem.net/natives/?_0xC8B189ED9138BCD4)
+---@param threadId number
+function TerminateThread(threadId) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x1090044AD1DA76FA)

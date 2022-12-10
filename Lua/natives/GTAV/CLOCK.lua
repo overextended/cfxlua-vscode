@@ -21,24 +21,22 @@ function AddToClockTime(hours, minutes, seconds) end
 ---@return number
 function GetClockDayOfWeek() end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xC8CA9670B9D83B3B)
----@param hour number
----@param minute number
----@param second number
-function AdvanceClockTimeTo(hour, minute, second) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xBBC72712E80257A1)
----@return number
-function GetClockMonth() end
-
 ---```
 ---Gets the current ingame hour, expressed without zeros. (09:34 will be represented as 9)  
 ---```
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x25223CA6B4D20B7F)
 ---@return number
 function GetClockHours() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x3D10BC92A4DB1D35)
+---@return number
+function GetClockDayOfMonth() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xBBC72712E80257A1)
+---@return number
+function GetClockMonth() end
 
 ---```
 ---Gets the current ingame clock second. Note that ingame clock seconds change really fast since a day in GTA is only 48 minutes in real life.  
@@ -48,14 +46,16 @@ function GetClockHours() end
 function GetClockSeconds() end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x3D10BC92A4DB1D35)
----@return number
-function GetClockDayOfMonth() end
+---[Native Documentation](https://docs.fivem.net/natives/?_0xC8CA9670B9D83B3B)
+---@param hour number
+---@param minute number
+---@param second number
+function AdvanceClockTimeTo(hour, minute, second) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x4055E40BD2DBEC1D)
----@param toggle boolean
-function PauseClock(toggle) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x961777E64BDAF717)
+---@return number
+function GetClockYear() end
 
 ---```
 ---Gets local system time as year, month, day, hour, minute and second.  
@@ -74,13 +74,6 @@ function PauseClock(toggle) end
 function GetLocalTime() end
 
 ---```
----Gets the current ingame clock minute.  
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x13D2B8ADD79640F2)
----@return number
-function GetClockMinutes() end
-
----```
 ---Gets system time as year, month, day, hour, minute and second.  
 ---Example usage:  
 ---	int year;  
@@ -95,18 +88,17 @@ function GetClockMinutes() end
 ---@return number, number, number, number, number, number
 function GetPosixTime() end
 
----Returns how many real ms are equal to one game minute.
----A getter for [`SetMillisecondsPerGameMinute`](#\_0x36CA2554).
----[Native Documentation](https://docs.fivem.net/natives/?_0x2F8B4D1C595B11DB)
+---```
+---Gets the current ingame clock minute.  
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x13D2B8ADD79640F2)
 ---@return number
-function GetMillisecondsPerGameMinute() end
+function GetClockMinutes() end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xB096419DF0D06CE7)
----@param day number
----@param month number
----@param year number
-function SetClockDate(day, month, year) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x4055E40BD2DBEC1D)
+---@param toggle boolean
+function PauseClock(toggle) end
 
 ---```
 ---Gets current UTC time
@@ -114,6 +106,13 @@ function SetClockDate(day, month, year) end
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x8117E09A19EEF4D3)
 ---@return number, number, number, number, number, number
 function GetUtcTime() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xB096419DF0D06CE7)
+---@param day number
+---@param month number
+---@param year number
+function SetClockDate(day, month, year) end
 
 ---```
 ---SET_CLOCK_TIME(12, 34, 56);  
@@ -124,8 +123,9 @@ function GetUtcTime() end
 ---@param second number
 function SetClockTime(hour, minute, second) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x961777E64BDAF717)
+---Returns how many real ms are equal to one game minute.
+---A getter for [`SetMillisecondsPerGameMinute`](#\_0x36CA2554).
+---[Native Documentation](https://docs.fivem.net/natives/?_0x2F8B4D1C595B11DB)
 ---@return number
-function GetClockYear() end
+function GetMillisecondsPerGameMinute() end
 

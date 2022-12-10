@@ -1,20 +1,20 @@
 ---@meta
 
+---Note: you must use VAR_STRING
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x16794E044C9EFB58)
+---@param text string
+---@param x number
+---@param y number
+function BgDisplayText(text, x, y) end
+
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_undefined)
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xA1253A3C870B6843)
 ---@param scaleX number
 ---@param scaleY number
 function BgSetTextScale(scaleX, scaleY) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_undefined)
----@param x number
----@param y number
----@return any
-function BgDisplayText(x, y) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_undefined)
+---https://github.com/femga/rdr3_discoveries/tree/master/useful_info_from_rpfs/colours
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x16FA5CE47F184F1E)
 ---@param red number
 ---@param green number
 ---@param blue number

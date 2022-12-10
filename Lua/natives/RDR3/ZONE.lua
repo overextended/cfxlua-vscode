@@ -1,17 +1,51 @@
 ---@meta
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_undefined)
+---Returns name hash, see common:/data/levels/rdr3/mapzones.meta
+---
+---type (-1 matches any type):
+---class CMapZone
+---{
+---public:
+---	enum class Type
+---	{
+---		STATE,
+---		TOWN,
+---		LAKE,
+---		RIVER,
+---		OIL_SPILL,
+---		SWAMP,
+---		OCEAN,
+---		CREEK,
+---		POND,
+---		GLACIER,
+---		DISTRICT,
+---		TEXT_PRINTED,
+---		TEXT_WRITTEN
+---	};
+---};
+---
+---https://github.com/femga/rdr3_discoveries/tree/master/zones & https://alloc8or.re/rdr3/doc/enums/CMapZone__Type.txt
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x43AD8FC02B429D33)
 ---@param x number
 ---@param y number
 ---@param z number
 ---@param type number
+---@return number
 function GetMapZoneAtCoords(x, y, z, type) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_undefined)
+---Returns the zone's name hash if its type matches one of the following:
+---- LAKE
+---- RIVER
+---- OIL_SPILL
+---- SWAMP
+---- OCEAN
+---- CREEK
+---- POND
+---- GLACIER
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x5BA7A68A346A5A91)
 ---@param x number
 ---@param y number
 ---@param z number
+---@return number
 function GetWaterMapZoneAtCoords(x, y, z) end
 

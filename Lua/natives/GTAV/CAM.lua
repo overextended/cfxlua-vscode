@@ -80,21 +80,29 @@ function AttachCamToPedBone(cam, ped, boneIndex, x, y, z, heading) end
 ---@param p2 number
 function AddCamSplineNodeUsingGameplayFrame(cam, p1, p2) end
 
----This native works with vehicles only.
----Bone indexes are usually given by this native [GET_ENTITY_BONE_INDEX_BY_NAME](#\_0xFB71170B7E76ACBA).
----[Native Documentation](https://docs.fivem.net/natives/?_0x8DB3F12A02CAEF72)
+---```
+---Example from michael2 script.  
+---CAM::ANIMATED_SHAKE_CAM(l_5069, "shake_cam_all@", "light", "", 1f);  
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0xA2746EEAE3E577CD)
 ---@param cam number
----@param vehicle number
----@param boneIndex number
----@param relativeRotation boolean
----@param rotX number
----@param rotY number
----@param rotZ number
----@param offX number
----@param offY number
----@param offZ number
----@param fixedDirection boolean
-function AttachCamToVehicleBone(cam, vehicle, boneIndex, relativeRotation, rotX, rotY, rotZ, offX, offY, offZ, fixedDirection) end
+---@param p1 string
+---@param p2 string
+---@param p3 string
+---@param amplitude number
+function AnimatedShakeCam(cam, p1, p2, p3, amplitude) end
+
+---```
+---Last param determines if its relative to the Entity  
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0xFEDB7D269E8C60E3)
+---@param cam number
+---@param entity number
+---@param xOffset number
+---@param yOffset number
+---@param zOffset number
+---@param isRelative boolean
+function AttachCamToEntity(cam, entity, xOffset, yOffset, zOffset, isRelative) end
 
 ---```
 ---NativeDB Introduced: v1180
@@ -142,17 +150,28 @@ function ClampGameplayCamPitch(minimum, maximum) end
 ---@return number
 function CreateCam(camName, active) end
 
----```
----Last param determines if its relative to the Entity  
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0xFEDB7D269E8C60E3)
+---This native works with vehicles only.
+---Bone indexes are usually given by this native [GET_ENTITY_BONE_INDEX_BY_NAME](#\_0xFB71170B7E76ACBA).
+---[Native Documentation](https://docs.fivem.net/natives/?_0x8DB3F12A02CAEF72)
 ---@param cam number
----@param entity number
----@param xOffset number
----@param yOffset number
----@param zOffset number
----@param isRelative boolean
-function AttachCamToEntity(cam, entity, xOffset, yOffset, zOffset, isRelative) end
+---@param vehicle number
+---@param boneIndex number
+---@param relativeRotation boolean
+---@param rotX number
+---@param rotY number
+---@param rotZ number
+---@param offX number
+---@param offY number
+---@param offZ number
+---@param fixedDirection boolean
+function AttachCamToVehicleBone(cam, vehicle, boneIndex, relativeRotation, rotX, rotY, rotZ, offX, offY, offZ, fixedDirection) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x5E3CF89C6BCCA67D)
+---@param camHash number | string
+---@param active boolean
+---@return number
+function CreateCamera(camHash, active) end
 
 ---```
 ---minimum: Degrees between -180f and 180f.
@@ -183,6 +202,13 @@ function ClampGameplayCamYaw(minimum, maximum) end
 ---@return number
 function CreateCameraWithParams(camHash, posX, posY, posZ, rotX, rotY, rotZ, fov, active, rotationOrder) end
 
+---```
+---BOOL param indicates whether the cam should be destroyed if it belongs to the calling script.  
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x8E5FB15663F79120)
+---@param bScriptHostCam boolean
+function DestroyAllCams(bScriptHostCam) end
+
 ---Create a camera with the specified cam name/type, You can use `SET_CAM_` natives to manipulate the camera.
 ---
 ---Camera names found in the b617d scripts:
@@ -208,30 +234,12 @@ function CreateCameraWithParams(camHash, posX, posY, posZ, rotX, rotY, rotZ, fov
 function CreateCamWithParams(camName, posX, posY, posZ, rotX, rotY, rotZ, fov, active, rotationOrder) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x5E3CF89C6BCCA67D)
----@param camHash number | string
----@param active boolean
----@return number
-function CreateCamera(camHash, active) end
-
----```
----Example from michael2 script.  
----CAM::ANIMATED_SHAKE_CAM(l_5069, "shake_cam_all@", "light", "", 1f);  
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0xA2746EEAE3E577CD)
----@param cam number
----@param p1 string
----@param p2 string
----@param p3 string
----@param amplitude number
-function AnimatedShakeCam(cam, p1, p2, p3, amplitude) end
-
----```
----BOOL param indicates whether the cam should be destroyed if it belongs to the calling script.  
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x8E5FB15663F79120)
----@param bScriptHostCam boolean
-function DestroyAllCams(bScriptHostCam) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x741B0129D4560F31)
+---@param p0 any
+---@param p1 number
+---@param p2 any
+---@param entity number
+function CreateCinematicShot(p0, p1, p2, entity) end
 
 ---```
 ---some camera effect that is used in the drunk-cheat, and turned off (by setting it to 0.0) along with the shaking effects once the drunk cheat is disabled.  
@@ -254,17 +262,17 @@ function DetachCam(cam) end
 function DestroyCam(cam, bScriptHostCam) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x1A31FE0049E542F6)
+function DisableAimCamThisUpdate() end
+
+---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x2AED6301F67007D5)
 ---@param entity number
 function DisableCamCollisionForEntity(entity) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x741B0129D4560F31)
----@param p0 any
----@param p1 number
----@param p2 any
----@param entity number
-function CreateCinematicShot(p0, p1, p2, entity) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0xADFF1B2A555F5FBA)
+function DisableVehicleFirstPersonCamThisFrame() end
 
 ---```
 ---Disables first person camera for the current frame.  
@@ -276,29 +284,9 @@ function CreateCinematicShot(p0, p1, p2, entity) end
 function DisableFirstPersonCamThisFrame() end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xADFF1B2A555F5FBA)
-function DisableVehicleFirstPersonCamThisFrame() end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x49482F9FCD825AAA)
 ---@param entity number
 function DisableCamCollisionForObject(entity) end
-
----```
----Fades the screen out.  
----duration: The time the fade should take, in milliseconds.  
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x891B5B39AC6302AF)
----@param duration number
-function DoScreenFadeOut(duration) end
-
----```
----Returns whether or not the passed camera handle exists.  
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0xA7A932170592B50E)
----@param cam number
----@return boolean
-function DoesCamExist(cam) end
 
 ---```
 ---Fades the screen in.  
@@ -314,16 +302,32 @@ function DoScreenFadeIn(duration) end
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xEA7F0AD7E9BA676F)
 function EnableCrosshairThisFrame() end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xA41BCD7213805AAC)
----@param p0 boolean
-function ForceCinematicRenderingThisUpdate(p0) end
+---```
+---Fades the screen out.  
+---duration: The time the fade should take, in milliseconds.  
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x891B5B39AC6302AF)
+---@param duration number
+function DoScreenFadeOut(duration) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA10B2DB49E92A6B0)
 ---@param cam number
 ---@return number
 function GetCamAnimCurrentPhase(cam) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xA41BCD7213805AAC)
+---@param p0 boolean
+function ForceCinematicRenderingThisUpdate(p0) end
+
+---```
+---Returns whether or not the passed camera handle exists.  
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0xA7A932170592B50E)
+---@param cam number
+---@return boolean
+function DoesCamExist(cam) end
 
 ---Enumerated type defined in camControlHelperMetadataViewModes:
 ---
@@ -343,15 +347,13 @@ function GetCamAnimCurrentPhase(cam) end
 ---@return number
 function GetCamActiveViewModeContext() end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x1A31FE0049E542F6)
-function DisableAimCamThisUpdate() end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xB60A9CFEB21CA6AA)
+---```
+---NativeDB Introduced: v2699
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x06D153C0B99B6128)
 ---@param cam number
 ---@return number
-function GetCamFarClip(cam) end
+function GetCamDofStrength(cam) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xBAC038F7459AE5AE)
@@ -360,24 +362,16 @@ function GetCamFarClip(cam) end
 function GetCamCoord(cam) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x255F8DAFD540D397)
----@param cam number
----@return number
-function GetCamFarDof(cam) end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC520A34DAFBF24B1)
 ---@param cam number
 ---@return number
 function GetCamNearClip(cam) end
 
----```
----NativeDB Introduced: v2699
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x06D153C0B99B6128)
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xB60A9CFEB21CA6AA)
 ---@param cam number
 ---@return number
-function GetCamDofStrength(cam) end
+function GetCamFarClip(cam) end
 
 ---```
 ---The last parameter, as in other "ROT" methods, is usually 2.  
@@ -389,20 +383,6 @@ function GetCamDofStrength(cam) end
 function GetCamRot(cam, rotationOrder) end
 
 ---```
----I'm pretty sure the parameter is the camera as usual, but I am not certain so I'm going to leave it as is.  
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0xD9D0E694C8282C96)
----@param cam number
----@return number
-function GetCamSplineNodePhase(cam) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xB22B17DF858716A6)
----@param cam number
----@return number
-function GetCamSplineNodeIndex(cam) end
-
----```
 ---NativeDB Introduced: v2699
 ---```
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC2612D223D915A1C)
@@ -411,10 +391,24 @@ function GetCamSplineNodeIndex(cam) end
 function GetCamNearDof(cam) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xC3330A45CCCDB26A)
+---[Native Documentation](https://docs.fivem.net/natives/?_0x255F8DAFD540D397)
 ---@param cam number
 ---@return number
-function GetCamFov(cam) end
+function GetCamFarDof(cam) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xB22B17DF858716A6)
+---@param cam number
+---@return number
+function GetCamSplineNodeIndex(cam) end
+
+---```
+---I'm pretty sure the parameter is the camera as usual, but I am not certain so I'm going to leave it as is.  
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0xD9D0E694C8282C96)
+---@param cam number
+---@return number
+function GetCamSplineNodePhase(cam) end
 
 ---```
 ---Can use this with SET_CAM_SPLINE_PHASE to set the float it this native returns.  
@@ -425,11 +419,6 @@ function GetCamFov(cam) end
 ---@return number
 function GetCamSplinePhase(cam) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xDFC8CBC606FDB0FC)
----@return number
-function GetFinalRenderedCamFarClip() end
-
 ---See [`GET_FOLLOW_PED_CAM_VIEW_MODE`](#\_0x8D4D46230B2C353A) for the view mode enum.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xEE778F8C7E1142E2)
 ---@param context number
@@ -437,14 +426,37 @@ function GetFinalRenderedCamFarClip() end
 function GetCamViewModeForContext(context) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x162F9D995753DC19)
+---[Native Documentation](https://docs.fivem.net/natives/?_0xC3330A45CCCDB26A)
+---@param cam number
 ---@return number
-function GetFinalRenderedCamMotionBlurStrength() end
+function GetCamFov(cam) end
+
+---```
+---NativeDB Introduced: v2372
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x77C3CEC46BE286F6)
+---@return number
+function GetDebugCamera() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA200EB1EE790F448)
 ---@return vector3
 function GetFinalRenderedCamCoord() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xDFC8CBC606FDB0FC)
+---@return number
+function GetFinalRenderedCamFarClip() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x162F9D995753DC19)
+---@return number
+function GetFinalRenderedCamMotionBlurStrength() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x80EC114669DAEFF4)
+---@return number
+function GetFinalRenderedCamFov() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA03502FC581F7D9B)
@@ -455,18 +467,6 @@ function GetFinalRenderedCamNearDof() end
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xD0082607100D7193)
 ---@return number
 function GetFinalRenderedCamNearClip() end
-
----```
----NativeDB Introduced: v2372
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x77C3CEC46BE286F6)
----@return number
-function GetDebugCamera() end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x9780F32BCAF72431)
----@return number
-function GetFinalRenderedCamFarDof() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x5F35F6732C3FBBA0)
@@ -501,6 +501,11 @@ function GetFinalRenderedInWhenFriendlyRot(player, rotationOrder) end
 ---@return number
 function GetFocusPedOnScreen(p0, p1, p2, p3, p4, p5, p6, p7, p8) end
 
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x7EC52CC40597D170)
+---@return number
+function GetFirstPersonAimCamZoomFactor() end
+
 ---```cpp
 ---// view mode enumeration
 ---enum _0xA11D7CA8
@@ -516,20 +521,15 @@ function GetFocusPedOnScreen(p0, p1, p2, p3, p4, p5, p6, p7, p8) end
 ---@return number
 function GetFollowPedCamViewMode() end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x7EC52CC40597D170)
----@return number
-function GetFirstPersonAimCamZoomFactor() end
-
 ---See [`GET_FOLLOW_PED_CAM_VIEW_MODE`](#\_0x8D4D46230B2C353A) for the follow mode enum.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA4FF579AC0E3AAAE)
 ---@return number
 function GetFollowVehicleCamViewMode() end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x14D6F5678D8F1B37)
----@return vector3
-function GetGameplayCamCoord() end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x9780F32BCAF72431)
+---@return number
+function GetFinalRenderedCamFarDof() end
 
 ---See [`GET_FOLLOW_PED_CAM_VIEW_MODE`](#\_0x8D4D46230B2C353A) for the follow mode enum.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x33E6C8EFD0CD93E9)
@@ -552,14 +552,14 @@ function GetGameplayCamFov() end
 function GetGameplayCamRelativePitch() end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x5234F9F10919EABA)
----@return number
-function GetRenderingCam() end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x743607648ADD4587)
 ---@return number
 function GetGameplayCamRelativeHeading() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x14D6F5678D8F1B37)
+---@return vector3
+function GetGameplayCamCoord() end
 
 ---```
 ---p0 dosen't seem to change much, I tried it with 0, 1, 2:  
@@ -585,14 +585,15 @@ function GetGameplayCamRot(rotationOrder) end
 ---@return boolean
 function IsAimCamThirdPersonActive() end
 
----Resets the vehicle idle camera timer. Calling this in a loop will disable the idle camera.
----[Native Documentation](https://docs.fivem.net/natives/?_0x9E4CFFF989258472)
-function InvalidateVehicleIdleCam() end
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x5234F9F10919EABA)
+---@return number
+function GetRenderingCam() end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x80EC114669DAEFF4)
----@return number
-function GetFinalRenderedCamFov() end
+---[Native Documentation](https://docs.fivem.net/natives/?_0xD7360051C885628B)
+---@return boolean
+function IsBonnetCinematicCamRendering() end
 
 ---Resets the idle camera timer. Calling that in a loop once every few seconds is enough to disable the idle cinematic camera.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xF4F2C0D4EE209E20)
@@ -606,6 +607,10 @@ function InvalidateIdleCam() end
 ---@return boolean
 function IsCamActive(cam) end
 
+---Resets the vehicle idle camera timer. Calling this in a loop will disable the idle camera.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x9E4CFFF989258472)
+function InvalidateVehicleIdleCam() end
+
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x68EDDA28A5976D07)
 ---@return boolean
@@ -617,6 +622,12 @@ function IsAimCamActive() end
 ---@return boolean
 function IsCamInterpolating(cam) end
 
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x6B24BFE83A2BE47B)
+---@param cam number
+---@return boolean
+function IsCamShaking(cam) end
+
 ---[Animations list](https://alexguirre.github.io/animations-list/)
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC90621D8A0CEECF2)
 ---@param cam number
@@ -626,16 +637,52 @@ function IsCamInterpolating(cam) end
 function IsCamPlayingAnim(cam, animName, animDictionary) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x6B24BFE83A2BE47B)
----@param cam number
+---[Native Documentation](https://docs.fivem.net/natives/?_0x0290F35C0AD97864)
+---@param p0 any
 ---@return boolean
-function IsCamShaking(cam) end
+function IsCamSplinePaused(p0) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x02EC0AF5C5A49B7A)
 ---@param cam number
 ---@return boolean
 function IsCamRendering(cam) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xB15162CB5826E9E8)
+---@return boolean
+function IsCinematicCamRendering() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xBBC08F6B4CB8FF0A)
+---@return boolean
+function IsCinematicCamShaking() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xCA9D2AA3E326D720)
+---@return boolean
+function IsCinematicIdleCamRendering() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xCBBDE6D335D6D496)
+---@return boolean
+function IsFollowVehicleCamActive() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x5E346D934122613F)
+---@return boolean
+function IsFirstPersonAimCamActive() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xCC9F3371A7C28BC9)
+---@param p0 any
+---@return boolean
+function IsCinematicShotActive(p0) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xC6D3D26810C8E0F9)
+---@return boolean
+function IsFollowPedCamActive() end
 
 ---```
 ---NativeDB Introduced: v1493
@@ -645,56 +692,9 @@ function IsCamRendering(cam) end
 function IsCinematicCamInputActive() end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x0290F35C0AD97864)
----@param p0 any
----@return boolean
-function IsCamSplinePaused(p0) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xB15162CB5826E9E8)
----@return boolean
-function IsCinematicCamRendering() end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xD7360051C885628B)
----@return boolean
-function IsBonnetCinematicCamRendering() end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x5E346D934122613F)
----@return boolean
-function IsFirstPersonAimCamActive() end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xCA9D2AA3E326D720)
----@return boolean
-function IsCinematicIdleCamRendering() end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xCC9F3371A7C28BC9)
----@param p0 any
----@return boolean
-function IsCinematicShotActive(p0) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xCBBDE6D335D6D496)
----@return boolean
-function IsFollowVehicleCamActive() end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x70FDA869F3317EA9)
 ---@return boolean
 function IsGameplayCamLookingBehind() end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xE520FF1AD2785B40)
----@return boolean
-function IsGameplayHintActive() end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xBBC08F6B4CB8FF0A)
----@return boolean
-function IsCinematicCamShaking() end
 
 ---```
 ---Examples when this function will return 0 are:
@@ -713,19 +713,9 @@ function IsGameplayCamRendering() end
 function IsGameplayCamShaking() end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xB16FCE9DDC7BA182)
+---[Native Documentation](https://docs.fivem.net/natives/?_0xE520FF1AD2785B40)
 ---@return boolean
-function IsScreenFadedOut() end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xC6D3D26810C8E0F9)
----@return boolean
-function IsFollowPedCamActive() end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x5C544BC6C57AC575)
----@return boolean
-function IsScreenFadingIn() end
+function IsGameplayHintActive() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x797AC7CB535BA28F)
@@ -736,6 +726,16 @@ function IsScreenFadingOut() end
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x4F32C0D5A90A9B40)
 ---@return boolean
 function IsInVehicleCamDisabled() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x5C544BC6C57AC575)
+---@return boolean
+function IsScreenFadingIn() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xB16FCE9DDC7BA182)
+---@return boolean
+function IsScreenFadedOut() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xE33D59DA70B58FDF)
@@ -751,10 +751,6 @@ function IsSphereVisible(x, y, z, radius) end
 ---@return boolean
 function IsScreenFadedIn() end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x0AA27680A0BD43FA)
-function N_0x0aa27680a0bd43fa() end
-
 ---```
 ---In drunk_controller.c4, sub_309
 ---if (CAM::IS_SCRIPT_GLOBAL_SHAKING()) {
@@ -765,21 +761,9 @@ function N_0x0aa27680a0bd43fa() end
 ---@return boolean
 function IsScriptGlobalShaking() end
 
----```
----some camera effect that is (also) used in the drunk-cheat, and turned off (by setting it to 0.0) along with the shaking effects once the drunk cheat is disabled. Possibly a cinematic or script-cam version of _0x487A82C650EB7799  
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x0225778816FDC28C)
----@param p0 number
-function N_0x0225778816fdc28c(p0) end
-
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x17FCA7199A530203)
 function N_0x17fca7199a530203() end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x1F2300CB7FA7B7F6)
----@return any
-function N_0x1f2300cb7fa7b7f6() end
 
 ---```
 ---Hardcoded to only work in multiplayer.  
@@ -788,11 +772,17 @@ function N_0x1f2300cb7fa7b7f6() end
 ---@param p0 number
 function N_0x12ded8ca53d47ea5(p0) end
 
+---```
+---some camera effect that is (also) used in the drunk-cheat, and turned off (by setting it to 0.0) along with the shaking effects once the drunk cheat is disabled. Possibly a cinematic or script-cam version of _0x487A82C650EB7799  
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x0225778816FDC28C)
+---@param p0 number
+function N_0x0225778816fdc28c(p0) end
+
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x271401846BD26E92)
+---[Native Documentation](https://docs.fivem.net/natives/?_0x247ACBC4ABBC9D1C)
 ---@param p0 boolean
----@param p1 boolean
-function N_0x271401846bd26e92(p0, p1) end
+function N_0x247acbc4abbc9d1c(p0) end
 
 ---```
 ---NativeDB Introduced: v2189
@@ -808,6 +798,17 @@ function N_0x271401846bd26e92(p0, p1) end
 ---@param p7 any
 ---@param p8 any
 function N_0x202a5ed9ce01d6e7(p0, p1, p2, p3, p4, p5, p6, p7, p8) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x271401846BD26E92)
+---@param p0 boolean
+---@param p1 boolean
+function N_0x271401846bd26e92(p0, p1) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x1F2300CB7FA7B7F6)
+---@return any
+function N_0x1f2300cb7fa7b7f6() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x2F7F2B26DD3F18EE)
@@ -842,17 +843,16 @@ function N_0x271017b9ba825366(p0, p1) end
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x380B4968D1E09E55)
 function N_0x380b4968d1e09e55() end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x247ACBC4ABBC9D1C)
----@param p0 boolean
-function N_0x247acbc4abbc9d1c(p0) end
-
 ---```
 ---NativeDB Introduced: v323
 ---```
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x324C5AA411DA7737)
 ---@param p0 any
 function N_0x324c5aa411da7737(p0) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x0AA27680A0BD43FA)
+function N_0x0aa27680a0bd43fa() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x4008EDF7D6E48175)
@@ -879,24 +879,13 @@ function N_0x469f2ecdec046337(p0) end
 ---@param p2 number
 function N_0x5d96cfb59da076a0(vehicle, p1, p2) end
 
----```
----A*
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x4879E4FE39074CDF)
----@return boolean
-function N_0x4879e4fe39074cdf() end
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x62374889A4D59F72)
+function N_0x62374889a4d59f72() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x5A43C76F7FC7BA5F)
 function N_0x5a43c76f7fc7ba5f() end
-
----```
----W*
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x5C48A1D6E3B33179)
----@param cam number
----@return boolean
-function N_0x5c48a1d6e3b33179(cam) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x5C41E6BABC9E2112)
@@ -911,6 +900,18 @@ function N_0x5c41e6babc9e2112(p0) end
 ---@param p1 boolean
 function N_0x661b5c8654add825(cam, p1) end
 
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x62ECFCFDEE7885D6)
+function N_0x62ecfcfdee7885d6() end
+
+---```
+---W*
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x5C48A1D6E3B33179)
+---@param cam number
+---@return boolean
+function N_0x5c48a1d6e3b33179(cam) end
+
 ---```
 ---_RESET_*
 ---
@@ -924,12 +925,13 @@ function N_0x661b5c8654add825(cam, p1) end
 function N_0x7295c203dd659dfe() end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x62374889A4D59F72)
-function N_0x62374889a4d59f72() end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x7B8A361C1813FBEF)
 function N_0x7b8a361c1813fbef() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x705A276EBFF3133D)
+---@return boolean
+function N_0x705a276ebff3133d() end
 
 ---```
 ---SET_FOLLOW_*
@@ -939,10 +941,6 @@ function N_0x7b8a361c1813fbef() end
 ---@param p1 boolean
 function N_0x9dfe13ecdc1ec196(p0, p1) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x62ECFCFDEE7885D6)
-function N_0x62ecfcfdee7885d6() end
-
 ---```
 ---NativeDB Introduced: v1734
 ---```
@@ -951,10 +949,13 @@ function N_0x62ecfcfdee7885d6() end
 ---@return boolean
 function N_0x79c0e43eb9b944e2(hash) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x705A276EBFF3133D)
----@return boolean
-function N_0x705a276ebff3133d() end
+---B\*
+---
+---```
+---NativeDB Introduced: v1734
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x9F97DA93681F87EA)
+function N_0x9f97da93681f87ea() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x91EF6EE6419E5B97)
@@ -968,18 +969,10 @@ function N_0x91ef6ee6419e5b97(p0) end
 function N_0xa2767257a320fc82(p0, p1) end
 
 ---```
----NativeDB Introduced: v1180
+---NativeDB Introduced: v2189
 ---```
----[Native Documentation](https://docs.fivem.net/natives/?_0xB1381B97F70C7B30)
-function N_0xb1381b97f70c7b30() end
-
----B\*
----
----```
----NativeDB Introduced: v1734
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x9F97DA93681F87EA)
-function N_0x9f97da93681f87ea() end
+---[Native Documentation](https://docs.fivem.net/natives/?_0xA7092AFE81944852)
+function N_0xa7092afe81944852() end
 
 ---```
 ---NativeDB Introduced: v2189
@@ -990,25 +983,34 @@ function N_0x9f97da93681f87ea() end
 function N_0xaabd62873ffb1a33(p0, p1) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xC8391C309684595A)
+function N_0xc8391c309684595a() end
+
+---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xBF72910D0F26F025)
 ---@return any
 function N_0xbf72910d0f26f025() end
-
----```
----NativeDB Introduced: v2189
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0xA7092AFE81944852)
-function N_0xa7092afe81944852() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC8B5C4A79CC18B94)
 ---@param cam number
 function N_0xc8b5c4a79cc18b94(cam) end
 
+---```
+---NativeDB Introduced: v1180
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0xB1381B97F70C7B30)
+function N_0xb1381b97f70c7b30() end
+
 ---**This native does absolutely nothing, just a nullsub**
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xCCD078C2665D2973)
 ---@param p0 boolean
 function N_0xccd078c2665d2973(p0) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xDB90C6CCA48940F1)
+---@param p0 boolean
+function N_0xdb90c6cca48940f1(p0) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xCED08CBE8EBB97C7)
@@ -1023,28 +1025,19 @@ function N_0xced08cbe8ebb97c7(p0, p1) end
 function N_0xe111a7c0d200cbc5(p0, p1) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xC8391C309684595A)
-function N_0xc8391c309684595a() end
+---[Native Documentation](https://docs.fivem.net/natives/?_0xDD79DF9F4D26E1C9)
+function N_0xdd79df9f4d26e1c9() end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xDB90C6CCA48940F1)
----@param p0 boolean
-function N_0xdb90c6cca48940f1(p0) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0xEAF0FA793D05C592)
+---@return any
+function N_0xeaf0fa793d05c592() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xF55E4046F6F831DC)
 ---@param p0 any
 ---@param p1 number
 function N_0xf55e4046f6f831dc(p0, p1) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xDD79DF9F4D26E1C9)
-function N_0xdd79df9f4d26e1c9() end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xFD3151CD37EA2245)
----@param entity number
-function N_0xfd3151cd37ea2245(entity) end
 
 ---```
 ---Max value for p1 is 15.  
@@ -1070,6 +1063,11 @@ function OverrideCamSplineMotionBlur(cam, p1, p2, p3) end
 ---@param animDictionary string
 ---@return boolean
 function PlaySynchronizedCamAnim(camera, scene, animName, animDictionary) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xFD3151CD37EA2245)
+---@param entity number
+function N_0xfd3151cd37ea2245(entity) end
 
 ---```
 ---Atleast one time in a script for the zRot Rockstar uses GET_ENTITY_HEADING to help fill the parameter.  
@@ -1169,11 +1167,6 @@ function ReplayFreeCamGetMaxRange() end
 ---@param easeRotation number
 function SetCamActiveWithInterp(camTo, camFrom, duration, easeLocation, easeRotation) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xEAF0FA793D05C592)
----@return any
-function N_0xeaf0fa793d05c592() end
-
 ---```
 ---Allows you to aim and shoot at the direction the camera is facing.  
 ---```
@@ -1181,6 +1174,13 @@ function N_0xeaf0fa793d05c592() end
 ---@param cam number
 ---@param toggle boolean
 function SetCamAffectsAiming(cam, toggle) end
+
+---```
+---A*
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x4879E4FE39074CDF)
+---@return boolean
+function N_0x4879e4fe39074cdf() end
 
 ---```
 ---Sets the position of the cam.  
@@ -1193,26 +1193,20 @@ function SetCamAffectsAiming(cam, toggle) end
 function SetCamCoord(cam, posX, posY, posZ) end
 
 ---```
+---Set camera as active/inactive.  
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x026FB97D0A425F84)
+---@param cam number
+---@param active boolean
+function SetCamActive(cam, active) end
+
+---```
 ---NOTE: Debugging functions are not present in the retail version of the game.  
 ---```
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x1B93E0107865DD40)
 ---@param camera number
 ---@param name string
 function SetCamDebugName(camera, name) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x4145A4C44FF3B5A6)
----@param cam number
----@param phase number
-function SetCamAnimCurrentPhase(cam, phase) end
-
----```
----This native has its name defined inside its codE  
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x7DD234D6F3914C5B)
----@param camera number
----@param p1 number
-function SetCamDofFnumberOfLens(camera, p1) end
 
 ---```
 ---Native name labeled within its code
@@ -1223,12 +1217,26 @@ function SetCamDofFnumberOfLens(camera, p1) end
 function SetCamDofFocalLengthMultiplier(camera, multiplier) end
 
 ---```
+---This native has its name defined inside its codE  
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x7DD234D6F3914C5B)
+---@param camera number
+---@param p1 number
+function SetCamDofFnumberOfLens(camera, p1) end
+
+---```
 ---This native has a name defined inside its code  
 ---```
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC3654A441402562D)
 ---@param camera number
 ---@param p1 number
 function SetCamDofMaxNearInFocusDistance(camera, p1) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x4145A4C44FF3B5A6)
+---@param cam number
+---@param phase number
+function SetCamAnimCurrentPhase(cam, phase) end
 
 ---```
 ---This native has a name defined inside its code  
@@ -1237,14 +1245,6 @@ function SetCamDofMaxNearInFocusDistance(camera, p1) end
 ---@param camera number
 ---@param p1 number
 function SetCamDofMaxNearInFocusDistanceBlendLevel(camera, p1) end
-
----```
----This native has a name defined inside its code  
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0xC669EEA5D031B7DE)
----@param camera number
----@param p1 number
-function SetCamDofFocusDistanceBias(camera, p1) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x3CF48F6F96E749DC)
@@ -1265,18 +1265,12 @@ function SetCamDofPlanes(cam, p1, p2, p3, p4) end
 function SetCamEffect(p0) end
 
 ---```
----Set camera as active/inactive.  
+---This native has a name defined inside its code  
 ---```
----[Native Documentation](https://docs.fivem.net/natives/?_0x026FB97D0A425F84)
----@param cam number
----@param active boolean
-function SetCamActive(cam, active) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x5EE29B4D7D5DF897)
----@param cam number
----@param dofStrength number
-function SetCamDofStrength(cam, dofStrength) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0xC669EEA5D031B7DE)
+---@param camera number
+---@param p1 number
+function SetCamDofFocusDistanceBias(camera, p1) end
 
 ---```
 ---The native seems to only be called once.  
@@ -1290,10 +1284,16 @@ function SetCamDofStrength(cam, dofStrength) end
 function SetCamInheritRollVehicle(cam, p1) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xAE306F2A904BF86E)
+---[Native Documentation](https://docs.fivem.net/natives/?_0xEDD91296CD01AEE0)
 ---@param cam number
----@param farClip number
-function SetCamFarClip(cam, farClip) end
+---@param farDOF number
+function SetCamFarDof(cam, farDOF) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x5EE29B4D7D5DF897)
+---@param cam number
+---@param dofStrength number
+function SetCamDofStrength(cam, dofStrength) end
 
 ---```
 ---Sets the field of view of the cam.  
@@ -1307,22 +1307,16 @@ function SetCamFarClip(cam, farClip) end
 function SetCamFov(cam, fieldOfView) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x6F0F77FBA9A8F2E6)
----@param cam number
----@param strength number
-function SetCamMotionBlurStrength(cam, strength) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xEDD91296CD01AEE0)
----@param cam number
----@param farDOF number
-function SetCamFarDof(cam, farDOF) end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC7848EFCCC545182)
 ---@param cam number
 ---@param nearClip number
 function SetCamNearClip(cam, nearClip) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x6F0F77FBA9A8F2E6)
+---@param cam number
+---@param strength number
+function SetCamMotionBlurStrength(cam, strength) end
 
 ---```
 ---Sets the rotation of the cam.  
@@ -1336,6 +1330,12 @@ function SetCamNearClip(cam, nearClip) end
 ---@param rotZ number
 ---@param rotationOrder number
 function SetCamRot(cam, rotX, rotY, rotZ, rotationOrder) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xAE306F2A904BF86E)
+---@param cam number
+---@param farClip number
+function SetCamFarClip(cam, farClip) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xBFD8727AEA3CCEBA)
@@ -1354,23 +1354,24 @@ function SetCamRot(cam, rotX, rotY, rotZ, rotationOrder) end
 function SetCamParams(cam, posX, posY, posZ, rotX, rotY, rotZ, fieldOfView, transitionSpeed, p9, p10, rotationOrder) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x3FA4BF0A7AB7DE2C)
----@param cam number
----@param nearDOF number
-function SetCamNearDof(cam, nearDOF) end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xD93DB43B82BC0D00)
 ---@param cam number
 ---@param amplitude number
 function SetCamShakeAmplitude(cam, amplitude) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x7BF1A54AE67AC070)
+---```
+---I named p1 as timeDuration as it is obvious. I'm assuming tho it is ran in ms(Milliseconds) as usual.  
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x1381539FEE034CDA)
 ---@param cam number
----@param p1 number
----@param flags number
-function SetCamSplineNodeExtraFlags(cam, p1, flags) end
+---@param timeDuration number
+function SetCamSplineDuration(cam, timeDuration) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x3FA4BF0A7AB7DE2C)
+---@param cam number
+---@param nearDOF number
+function SetCamNearDof(cam, nearDOF) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x83B8201ED82A9A2D)
@@ -1386,13 +1387,19 @@ function SetCamSplineNodeEase(cam, p1, p2, p3) end
 ---@param p1 number
 function SetCamSplinePhase(cam, p1) end
 
----```
----I named p1 as timeDuration as it is obvious. I'm assuming tho it is ran in ms(Milliseconds) as usual.  
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x1381539FEE034CDA)
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x7BF1A54AE67AC070)
 ---@param cam number
----@param timeDuration number
-function SetCamSplineDuration(cam, timeDuration) end
+---@param p1 number
+---@param flags number
+function SetCamSplineNodeExtraFlags(cam, p1, flags) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xA6385DEB180F319F)
+---@param cam number
+---@param p1 number
+---@param scale number
+function SetCamSplineNodeVelocityScale(cam, p1, scale) end
 
 ---Sets the smoothing style for a DEFAULT_SPLINE_CAMERA
 ---Ranges from 0 to 3 in rockstar scripts although there are actually 26
@@ -1447,16 +1454,17 @@ function SetCamSplineDuration(cam, timeDuration) end
 function SetCamSplineSmoothingStyle(cam, smoothingStyle) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x16A96863A17552BB)
----@param cam number
----@param toggle boolean
-function SetCamUseShallowDofMode(cam, toggle) end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x2A2173E46DAECD12)
 ---@param context number
 ---@param viewMode number
 function SetCamViewModeForContext(context, viewMode) end
+
+---```
+---Toggles the vehicle cinematic cam; requires the player ped to be in a vehicle to work.
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0xDCF0754AC3D6FD4E)
+---@param toggle boolean
+function SetCinematicModeActive(toggle) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC724C701C30B2FE7)
@@ -1464,11 +1472,15 @@ function SetCamViewModeForContext(context, viewMode) end
 function SetCinematicCamShakeAmplitude(p0) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xA6385DEB180F319F)
+---[Native Documentation](https://docs.fivem.net/natives/?_0x16A96863A17552BB)
 ---@param cam number
----@param p1 number
----@param scale number
-function SetCamSplineNodeVelocityScale(cam, p1, scale) end
+---@param toggle boolean
+function SetCamUseShallowDofMode(cam, toggle) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x0AF7B437918103B3)
+---@param distance number
+function SetFirstPersonAimCamNearClipThisUpdate(distance) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xDC9DA9E8789F5246)
@@ -1479,28 +1491,10 @@ function SetCinematicNewsChannelActiveThisUpdate() end
 ---@param p0 boolean
 function SetCinematicButtonActive(p0) end
 
----```
----Toggles the vehicle cinematic cam; requires the player ped to be in a vehicle to work.
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0xDCF0754AC3D6FD4E)
----@param toggle boolean
-function SetCinematicModeActive(toggle) end
-
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x70894BD0915C5BCA)
 ---@param zoomFactor number
 function SetFirstPersonAimCamZoomFactor(zoomFactor) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x0AF7B437918103B3)
----@param distance number
-function SetFirstPersonAimCamNearClipThisUpdate(distance) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xBCFC632DB7673BF0)
----@param minAngle number
----@param maxAngle number
-function SetFirstPersonCamPitchRange(minAngle, maxAngle) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x503F5920162365B2)
@@ -1511,12 +1505,10 @@ function SetFirstPersonCamPitchRange(minAngle, maxAngle) end
 function SetFlyCamHorizontalResponse(cam, p1, p2, p3) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xE827B9382CFB41BA)
+---[Native Documentation](https://docs.fivem.net/natives/?_0xF9D02130ECDD1D77)
 ---@param cam number
----@param p1 number
----@param p2 number
----@param p3 number
-function SetFlyCamVerticalSpeedMultiplier(cam, p1, p2, p3) end
+---@param height number
+function SetFlyCamMaxHeight(cam, height) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC91C6C55199308CA)
@@ -1526,32 +1518,13 @@ function SetFlyCamVerticalSpeedMultiplier(cam, p1, p2, p3) end
 ---@param z number
 function SetFlyCamCoordAndConstrain(cam, x, y, z) end
 
----See [`GET_FOLLOW_PED_CAM_VIEW_MODE`](#\_0x8D4D46230B2C353A) for the follow mode enum.
----[Native Documentation](https://docs.fivem.net/natives/?_0xAC253D7842768F48)
----@param viewMode number
-function SetFollowVehicleCamViewMode(viewMode) end
-
----See [`GET_FOLLOW_PED_CAM_VIEW_MODE`](#\_0x8D4D46230B2C353A) for the follow mode enum.
----[Native Documentation](https://docs.fivem.net/natives/?_0x5A4F9EDF1673F704)
----@param viewMode number
-function SetFollowPedCamViewMode(viewMode) end
-
----```
----NativeDB Introduced: v1365
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x5C90CAB09951A12F)
----@param seatIndex number
-function SetFollowTurretSeatCam(seatIndex) end
-
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x8BBACBF51DA047A8)
----@param ped number
-function SetGameplayCamFollowPedThisUpdate(ped) end
-
----See [`GET_FOLLOW_PED_CAM_VIEW_MODE`](#\_0x8D4D46230B2C353A) for the follow mode enum.
----[Native Documentation](https://docs.fivem.net/natives/?_0x19464CB6E4078C8A)
----@param zoomLevel number
-function SetFollowVehicleCamZoomLevel(zoomLevel) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0xE827B9382CFB41BA)
+---@param cam number
+---@param p1 number
+---@param p2 number
+---@param p3 number
+function SetFlyCamVerticalSpeedMultiplier(cam, p1, p2, p3) end
 
 ---```
 ---From the scripts:
@@ -1568,10 +1541,43 @@ function SetFollowVehicleCamZoomLevel(zoomLevel) end
 ---@return boolean
 function SetFollowPedCamThisUpdate(camName, p1) end
 
+---See [`GET_FOLLOW_PED_CAM_VIEW_MODE`](#\_0x8D4D46230B2C353A) for the follow mode enum.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xAC253D7842768F48)
+---@param viewMode number
+function SetFollowVehicleCamViewMode(viewMode) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xBCFC632DB7673BF0)
+---@param minAngle number
+---@param maxAngle number
+function SetFirstPersonCamPitchRange(minAngle, maxAngle) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x8BBACBF51DA047A8)
+---@param ped number
+function SetGameplayCamFollowPedThisUpdate(ped) end
+
+---See [`GET_FOLLOW_PED_CAM_VIEW_MODE`](#\_0x8D4D46230B2C353A) for the follow mode enum.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x5A4F9EDF1673F704)
+---@param viewMode number
+function SetFollowPedCamViewMode(viewMode) end
+
+---See [`GET_FOLLOW_PED_CAM_VIEW_MODE`](#\_0x8D4D46230B2C353A) for the follow mode enum.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x19464CB6E4078C8A)
+---@param zoomLevel number
+function SetFollowVehicleCamZoomLevel(zoomLevel) end
+
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x759E13EBC1C15C5A)
 ---@param pitch number
 function SetGameplayCamRawPitch(pitch) end
+
+---```
+---NativeDB Introduced: v1365
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x5C90CAB09951A12F)
+---@param seatIndex number
+function SetFollowTurretSeatCam(seatIndex) end
 
 ---```
 ---Sets gameplay camera to hash
@@ -1584,14 +1590,6 @@ function SetGameplayCamRawPitch(pitch) end
 ---@param camName string
 function SetGameplayCamHash(camName) end
 
----```
----Sets the camera position relative to heading in float from -360 to +360.  
----Heading is alwyas 0 in aiming camera.  
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0xB4EC2312F4E5B1F1)
----@param heading number
-function SetGameplayCamRelativeHeading(heading) end
-
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x48608C3464F58AB4)
 ---@param roll number
@@ -1599,11 +1597,13 @@ function SetGameplayCamRelativeHeading(heading) end
 ---@param yaw number
 function SetGameplayCamRelativeRotation(roll, pitch, yaw) end
 
----This native sets the camera's pitch (rotation on the x-axis).
----[Native Documentation](https://docs.fivem.net/natives/?_0x6D0858B8EDFD2B7D)
----@param angle number
----@param scalingFactor number
-function SetGameplayCamRelativePitch(angle, scalingFactor) end
+---```
+---Sets the camera position relative to heading in float from -360 to +360.  
+---Heading is alwyas 0 in aiming camera.  
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0xB4EC2312F4E5B1F1)
+---@param heading number
+function SetGameplayCamRelativeHeading(heading) end
 
 ---```
 ---From b617 scripts:
@@ -1615,18 +1615,29 @@ function SetGameplayCamRelativePitch(angle, scalingFactor) end
 ---@param vehicleName string
 function SetGameplayCamVehicleCamera(vehicleName) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xF9D02130ECDD1D77)
----@param cam number
----@param height number
-function SetFlyCamMaxHeight(cam, height) end
-
 ---```
 ---Sets the amplitude for the gameplay (i.e. 3rd or 1st) camera to shake. Used in script "drunk_controller.ysc.c4" to simulate making the player drunk.  
 ---```
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA87E00932DB4D85D)
 ---@param amplitude number
 function SetGameplayCamShakeAmplitude(amplitude) end
+
+---```
+---Does nothing  
+---```
+---
+---```
+---NativeDB Added Parameter 2: Any p1
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x103991D4A307D472)
+---@param yaw number
+function SetGameplayCamRawYaw(yaw) end
+
+---This native sets the camera's pitch (rotation on the x-axis).
+---[Native Documentation](https://docs.fivem.net/natives/?_0x6D0858B8EDFD2B7D)
+---@param angle number
+---@param scalingFactor number
+function SetGameplayCamRelativePitch(angle, scalingFactor) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xD51ADCD2D8BC0FB3)
@@ -1654,26 +1665,15 @@ function SetGameplayCoordHint(x, y, z, duration, blendOutDuration, blendInDurati
 ---@param p8 any
 function SetGameplayEntityHint(entity, xOffset, yOffset, zOffset, p4, p5, p6, p7, p8) end
 
----```
----Does nothing  
----```
----
----```
----NativeDB Added Parameter 2: Any p1
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x103991D4A307D472)
----@param yaw number
-function SetGameplayCamRawYaw(yaw) end
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x5D7B620DAE436138)
+---@param xOffset number
+function SetGameplayHintAnimOffsetx(xOffset) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x11FA5D3479C7DD47)
 ---@param vehicleModel number | string
 function SetGameplayCamVehicleCameraName(vehicleModel) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x5D7B620DAE436138)
----@param xOffset number
-function SetGameplayHintAnimOffsetx(xOffset) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xF8BDBF3D573049A1)
@@ -1689,6 +1689,18 @@ function SetGameplayHintFov(FOV) end
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC92717EF615B6704)
 ---@param yOffset number
 function SetGameplayHintAnimOffsety(yOffset) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x83E87508A2CA2AC6)
+---@param p0 any
+---@param p1 number
+---@param p2 number
+---@param p3 number
+---@param p4 boolean
+---@param p5 any
+---@param p6 any
+---@param p7 any
+function SetGameplayObjectHint(p0, p1, p2, p3, p4, p5, p6, p7) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xD1F8363DFAD03848)
@@ -1720,26 +1732,13 @@ function SetGameplayPedHint(p0, x1, y1, z1, p4, duration, blendOutDuration, blen
 function SetGameplayVehicleHint(vehicle, offsetX, offsetY, offsetZ, p4, time, easeInTime, easeOutTime) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xA13B0222F3D94A94)
+function SetUseHiDof() end
+
+---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xE3433EADAAF7EE40)
 ---@param toggle boolean
 function SetGameplayHintAnimCloseup(toggle) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x83E87508A2CA2AC6)
----@param p0 any
----@param p1 number
----@param p2 number
----@param p3 number
----@param p4 boolean
----@param p5 any
----@param p6 any
----@param p7 any
-function SetGameplayObjectHint(p0, p1, p2, p3, p4, p5, p6, p7) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x42156508606DE65E)
----@param distance number
-function SetThirdPersonAimCamNearClipThisUpdate(distance) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xE9EA16D6E54CDCA4)
@@ -1773,15 +1772,18 @@ function ShakeCam(cam, type, amplitude) end
 ---@param p1 number
 function SetWidescreenBorders(p0, p1) end
 
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x42156508606DE65E)
+---@param distance number
+function SetThirdPersonAimCamNearClipThisUpdate(distance) end
+
 ---```
----Only used in R* Script fm_mission_controller_2020
+---p0 argument found in the b617d scripts: "DRUNK_SHAKE"  
 ---```
----
----```
----NativeDB Introduced: v2699
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x731A880555DA3647)
-function SetUseHiDofInCutscene() end
+---[Native Documentation](https://docs.fivem.net/natives/?_0xDCE214D9ED58F3CF)
+---@param p0 string
+---@param p1 number
+function ShakeCinematicCam(p0, p1) end
 
 ---```
 ---Possible shake types (updated b617d):  
@@ -1802,17 +1804,25 @@ function SetUseHiDofInCutscene() end
 ---@param intensity number
 function ShakeGameplayCam(shakeName, intensity) end
 
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x2238E588E588A6D7)
+---@param p0 boolean
+function StopCinematicCamShaking(p0) end
+
 ---```
----p0 argument found in the b617d scripts: "DRUNK_SHAKE"  
+---Only used in R* Script fm_mission_controller_2020
 ---```
----[Native Documentation](https://docs.fivem.net/natives/?_0xDCE214D9ED58F3CF)
----@param p0 string
----@param p1 number
-function ShakeCinematicCam(p0, p1) end
+---
+---```
+---NativeDB Introduced: v2699
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x731A880555DA3647)
+function SetUseHiDofInCutscene() end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xA13B0222F3D94A94)
-function SetUseHiDof() end
+---[Native Documentation](https://docs.fivem.net/natives/?_0xF33AB75780BA57DE)
+---@param cam number
+function StopCamPointing(cam) end
 
 ---```
 ---CAM::SHAKE_SCRIPT_GLOBAL("HAND_SHAKE", 0.2);
@@ -1821,6 +1831,10 @@ function SetUseHiDof() end
 ---@param p0 string
 ---@param p1 number
 function ShakeScriptGlobal(p0, p1) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xDB629FFD9285FA06)
+function StopCutsceneCamShaking() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xBDECF64367884AC3)
@@ -1832,15 +1846,6 @@ function StopCamShaking(cam, p1) end
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x7660C6E75D3A078E)
 ---@param p0 number | string
 function StopCinematicShot(p0) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xDB629FFD9285FA06)
-function StopCutsceneCamShaking() end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x2238E588E588A6D7)
----@param p0 boolean
-function StopCinematicCamShaking(p0) end
 
 ---```
 ---This native makes the gameplay camera zoom into first person/third person with a special effect.
@@ -1856,9 +1861,9 @@ function StopCinematicCamShaking(p0) end
 function StopRenderingScriptCamsUsingCatchUp(render, p1, p2) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x0EF93E9F3D08C178)
+---[Native Documentation](https://docs.fivem.net/natives/?_0xF46C581C61718916)
 ---@param p0 boolean
-function StopGameplayCamShaking(p0) end
+function StopGameplayHint(p0) end
 
 ---```
 ---In drunk_controller.c4, sub_309
@@ -1871,16 +1876,11 @@ function StopGameplayCamShaking(p0) end
 function StopScriptGlobalShaking(p0) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xF46C581C61718916)
----@param p0 boolean
-function StopGameplayHint(p0) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xF33AB75780BA57DE)
----@param cam number
-function StopCamPointing(cam) end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x6493CF69859B116A)
 function UseStuntCameraThisFrame() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x0EF93E9F3D08C178)
+---@param p0 boolean
+function StopGameplayCamShaking(p0) end
 

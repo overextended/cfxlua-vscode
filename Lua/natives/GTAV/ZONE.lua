@@ -16,14 +16,6 @@
 ---@return number
 function GetHashOfMapAreaAtCoords(x, y, z) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x27040C25DE6CB2F4)
----@param x number
----@param y number
----@param z number
----@return number
-function GetZoneAtCoords(x, y, z) end
-
 ---```
 ---Only used once in the decompiled scripts. Seems to be related to scripted vehicle generators.  
 ---Modified example from "am_imp_exp.c4", line 6418:  
@@ -38,10 +30,12 @@ function GetZoneAtCoords(x, y, z) end
 function ClearPopscheduleOverrideVehicleModel(scheduleId) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x4334BC40AA0CB4BB)
----@param zoneId number
+---[Native Documentation](https://docs.fivem.net/natives/?_0x27040C25DE6CB2F4)
+---@param x number
+---@param y number
+---@param z number
 ---@return number
-function GetZonePopschedule(zoneId) end
+function GetZoneAtCoords(x, y, z) end
 
 ---```
 ---AIRP = Los Santos International Airport  
@@ -143,23 +137,11 @@ function GetZonePopschedule(zoneId) end
 ---@return string
 function GetNameOfZone(x, y, z) end
 
----Gets the zone scumminess level, used to calculate the cellphone signal strength.
----
----```cpp
----enum eZoneScumminess
----{
----    SCUMMINESS_POSH = 0,
----    SCUMMINESS_NICE = 1,
----    SCUMMINESS_ABOVE_AVERAGE = 2,
----    SCUMMINESS_BELOW_AVERAGE = 3,
----    SCUMMINESS_CRAP = 4,
----    SCUMMINESS_SCUM = 5
----}
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x5F7B268D15BA0739)
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xBA5ECEEA120E5611)
 ---@param zoneId number
----@return number
-function GetZoneScumminess(zoneId) end
+---@param toggle boolean
+function SetZoneEnabled(zoneId, toggle) end
 
 ---```
 ---'zoneName' corresponds to an entry in 'popzone.ipl'.  
@@ -259,10 +241,10 @@ function GetZoneScumminess(zoneId) end
 function GetZoneFromNameId(zoneName) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xBA5ECEEA120E5611)
+---[Native Documentation](https://docs.fivem.net/natives/?_0x4334BC40AA0CB4BB)
 ---@param zoneId number
----@param toggle boolean
-function SetZoneEnabled(zoneId, toggle) end
+---@return number
+function GetZonePopschedule(zoneId) end
 
 ---```
 ---Only used once in the decompiled scripts. Seems to be related to scripted vehicle generators.  
@@ -277,4 +259,22 @@ function SetZoneEnabled(zoneId, toggle) end
 ---@param scheduleId number
 ---@param vehicleHash number | string
 function OverridePopscheduleVehicleModel(scheduleId, vehicleHash) end
+
+---Gets the zone scumminess level, used to calculate the cellphone signal strength.
+---
+---```cpp
+---enum eZoneScumminess
+---{
+---    SCUMMINESS_POSH = 0,
+---    SCUMMINESS_NICE = 1,
+---    SCUMMINESS_ABOVE_AVERAGE = 2,
+---    SCUMMINESS_BELOW_AVERAGE = 3,
+---    SCUMMINESS_CRAP = 4,
+---    SCUMMINESS_SCUM = 5
+---}
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x5F7B268D15BA0739)
+---@param zoneId number
+---@return number
+function GetZoneScumminess(zoneId) end
 

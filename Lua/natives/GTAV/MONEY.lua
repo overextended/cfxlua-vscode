@@ -19,6 +19,14 @@ function CanPayGoon() end
 function DepositVc(amount) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x0D30EB83668E63C5)
+---@param p0 any
+---@param p1 any
+---@param p2 any
+---@param p3 any
+function N_0x0d30eb83668e63c5(p0, p1, p2, p3) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x112209CE0290C03A)
 ---@param p0 any
 ---@param p1 any
@@ -35,14 +43,6 @@ function N_0x112209ce0290c03a(p0, p1, p2, p3) end
 ---@param amount number
 ---@return boolean
 function N_0x08e8eeadfd0dc4a0(amount) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x0D30EB83668E63C5)
----@param p0 any
----@param p1 any
----@param p2 any
----@param p3 any
-function N_0x0d30eb83668e63c5(p0, p1, p2, p3) end
 
 ---```
 ---NativeDB Introduced: v1290
@@ -65,12 +65,12 @@ function N_0x0dd362f14f18942a(amount, p1, p2) end
 ---```
 ---NativeDB Introduced: v1493
 ---```
----[Native Documentation](https://docs.fivem.net/natives/?_0x226C284C830D0CA8)
+---[Native Documentation](https://docs.fivem.net/natives/?_0x2A93C46AAB1EACC9)
 ---@param p0 any
 ---@param p1 any
 ---@param p2 any
 ---@param p3 any
-function N_0x226c284c830d0ca8(p0, p1, p2, p3) end
+function N_0x2a93c46aab1eacc9(p0, p1, p2, p3) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x2FAB6614CE22E196)
@@ -90,6 +90,16 @@ function N_0x2fab6614ce22e196(p0, p1, p2, p3) end
 ---@param p3 any
 function N_0x1dc9b749e7ae282b(p0, p1, p2, p3) end
 
+---```
+---NativeDB Introduced: v1493
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x226C284C830D0CA8)
+---@param p0 any
+---@param p1 any
+---@param p2 any
+---@param p3 any
+function N_0x226c284c830d0ca8(p0, p1, p2, p3) end
+
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x2AFC2D19B50797F2)
 ---@param p0 any
@@ -98,6 +108,15 @@ function N_0x1dc9b749e7ae282b(p0, p1, p2, p3) end
 ---@param p3 any
 function N_0x2afc2d19b50797f2(p0, p1, p2, p3) end
 
+---```
+---NativeDB Introduced: v1868
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x4C3B75694F7E0D9C)
+---@param p0 any
+---@param p1 any
+---@param p2 any
+function N_0x4c3b75694f7e0d9c(p0, p1, p2) end
+
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x4128464231E3CA0B)
 ---@param p0 any
@@ -105,40 +124,6 @@ function N_0x2afc2d19b50797f2(p0, p1, p2, p3) end
 ---@param p2 any
 ---@param p3 any
 function N_0x4128464231e3ca0b(p0, p1, p2, p3) end
-
----```
----NativeDB Introduced: v1180
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x31BA138F6304FB9F)
----@param p0 any
----@param p1 any
-function N_0x31ba138f6304fb9f(p0, p1) end
-
----```
----NativeDB Introduced: v1493
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x2A93C46AAB1EACC9)
----@param p0 any
----@param p1 any
----@param p2 any
----@param p3 any
-function N_0x2a93c46aab1eacc9(p0, p1, p2, p3) end
-
----```
----NativeDB Introduced: v1868
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x5574637681911FDA)
----@param p0 any
----@param p1 any
----@param p2 any
----@param p3 any
-function N_0x5574637681911fda(p0, p1, p2, p3) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x55A1E095DB052FA5)
----@param p0 any
----@param p1 any
-function N_0x55a1e095db052fa5(p0, p1) end
 
 ---```
 ---NativeDB Introduced: v1493
@@ -152,21 +137,36 @@ function N_0x55a1e095db052fa5(p0, p1) end
 ---@param p5 any
 function N_0x65482bfd0923c8a1(p0, p1, p2, p3, p4, p5) end
 
----```
----NativeDB Introduced: v1868
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x4C3B75694F7E0D9C)
----@param p0 any
----@param p1 any
----@param p2 any
-function N_0x4c3b75694f7e0d9c(p0, p1, p2) end
-
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x5F456788B05FAEAC)
 ---@param p0 any
 ---@param p1 any
 ---@param p2 any
 function N_0x5f456788b05faeac(p0, p1, p2) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x675D19C6067CAE08)
+---@param p0 any
+---@param p1 any
+---@param p2 any
+---@param p3 any
+function N_0x675d19c6067cae08(p0, p1, p2, p3) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x55A1E095DB052FA5)
+---@param p0 any
+---@param p1 any
+function N_0x55a1e095db052fa5(p0, p1) end
+
+---```
+---NativeDB Introduced: v1868
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x5574637681911FDA)
+---@param p0 any
+---@param p1 any
+---@param p2 any
+---@param p3 any
+function N_0x5574637681911fda(p0, p1, p2, p3) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x69EF772B192614C1)
@@ -187,6 +187,14 @@ function N_0x69ef772b192614c1(p0, p1, p2, p3) end
 ---@param p4 any
 function N_0x6b7e4fb50d5f3d65(p0, p1, p2, p3, p4) end
 
+---```
+---This function is hard-coded to always return 1.
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x6FCF8DDEA146C45B)
+---@param p0 any
+---@return boolean
+function N_0x6fcf8ddea146c45b(p0) end
+
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x6FD97159FE3C971A)
 ---@param p0 any
@@ -194,6 +202,41 @@ function N_0x6b7e4fb50d5f3d65(p0, p1, p2, p3, p4) end
 ---@param p2 any
 ---@param p3 any
 function N_0x6fd97159fe3c971a(p0, p1, p2, p3) end
+
+---```
+---NativeDB Introduced: v2189
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x90CD7C6871FBF1B4)
+---@param p0 any
+---@param p1 any
+---@param p2 any
+---@param p3 any
+function N_0x90cd7c6871fbf1b4(p0, p1, p2, p3) end
+
+---```
+---NativeDB Introduced: v1180
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x31BA138F6304FB9F)
+---@param p0 any
+---@param p1 any
+function N_0x31ba138f6304fb9f(p0, p1) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x8E243837643D9583)
+---@param p0 any
+---@param p1 any
+---@param p2 any
+---@param p3 any
+function N_0x8e243837643d9583(p0, p1, p2, p3) end
+
+---```
+---Hardcoded to return 0.
+---
+---NativeDB Introduced: v323
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x9B5016A6433A68C5)
+---@return any
+function N_0x9b5016a6433a68c5() end
 
 ---```
 ---NativeDB Introduced: v1868
@@ -206,60 +249,12 @@ function N_0x6fd97159fe3c971a(p0, p1, p2, p3) end
 function N_0x870289a558348378(p0, p1, p2, p3) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x675D19C6067CAE08)
----@param p0 any
----@param p1 any
----@param p2 any
----@param p3 any
-function N_0x675d19c6067cae08(p0, p1, p2, p3) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x7C4FCCD2E4DEB394)
----@return boolean
-function N_0x7c4fccd2e4deb394() end
-
----```
----NativeDB Introduced: v2189
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x90CD7C6871FBF1B4)
----@param p0 any
----@param p1 any
----@param p2 any
----@param p3 any
-function N_0x90cd7c6871fbf1b4(p0, p1, p2, p3) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x8E243837643D9583)
----@param p0 any
----@param p1 any
----@param p2 any
----@param p3 any
-function N_0x8e243837643d9583(p0, p1, p2, p3) end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x998E18CEB44487FC)
 ---@param p0 any
 ---@param p1 any
 ---@param p2 any
 ---@param p3 any
 function N_0x998e18ceb44487fc(p0, p1, p2, p3) end
-
----```
----NativeDB Introduced: v2189
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0xA51338E0DCCD4065)
----@param p0 any
----@param p1 any
----@param p2 any
-function N_0xa51338e0dccd4065(p0, p1, p2) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xA51B086B0B2C0F7A)
----@param p0 any
----@param p1 any
----@param p2 any
----@param p3 any
-function N_0xa51b086b0b2c0f7a(p0, p1, p2, p3) end
 
 ---```
 ---NativeDB Introduced: v1868
@@ -271,12 +266,29 @@ function N_0xa51b086b0b2c0f7a(p0, p1, p2, p3) end
 function N_0xa95cfb4e02390842(p0, p1, p2) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xA51B086B0B2C0F7A)
+---@param p0 any
+---@param p1 any
+---@param p2 any
+---@param p3 any
+function N_0xa51b086b0b2c0f7a(p0, p1, p2, p3) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA95F667A755725DA)
 ---@param p0 any
 ---@param p1 any
 ---@param p2 any
 ---@param p3 any
 function N_0xa95f667a755725da(p0, p1, p2, p3) end
+
+---```
+---NativeDB Introduced: v2189
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0xA51338E0DCCD4065)
+---@param p0 any
+---@param p1 any
+---@param p2 any
+function N_0xa51338e0dccd4065(p0, p1, p2) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xB4C2EC463672474E)
@@ -298,22 +310,6 @@ function N_0xb4c2ec463672474e(p0, p1, p2, p3) end
 function N_0xb5b58e24868cb09e(p0, p1, p2, p3, p4) end
 
 ---```
----This function is hard-coded to always return 1.
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x6FCF8DDEA146C45B)
----@param p0 any
----@return boolean
-function N_0x6fcf8ddea146c45b(p0) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xBD0EFB25CCA8F97A)
----@param p0 any
----@param p1 any
----@param p2 any
----@param p3 any
-function N_0xbd0efb25cca8f97a(p0, p1, p2, p3) end
-
----```
 ---NativeDB Introduced: v1493
 ---```
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC6E74CF8C884C880)
@@ -326,6 +322,11 @@ function N_0xbd0efb25cca8f97a(p0, p1, p2, p3) end
 ---@param p6 any
 function N_0xc6e74cf8c884c880(p0, p1, p2, p3, p4, p5, p6) end
 
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x7C4FCCD2E4DEB394)
+---@return boolean
+function N_0x7c4fccd2e4deb394() end
+
 ---```
 ---Does nothing (it's a nullsub).
 ---
@@ -334,21 +335,13 @@ function N_0xc6e74cf8c884c880(p0, p1, p2, p3, p4, p5, p6) end
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xCD0F5B5D932AE473)
 function N_0xcd0f5b5d932ae473() end
 
----```
----NativeDB Introduced: v1493
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0xB4DEAE67F35E2ACD)
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xBD0EFB25CCA8F97A)
 ---@param p0 any
-function N_0xb4deae67f35e2acd(p0) end
-
----```
----Hardcoded to return 0.
----
----NativeDB Introduced: v323
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x9B5016A6433A68C5)
----@return any
-function N_0x9b5016a6433a68c5() end
+---@param p1 any
+---@param p2 any
+---@param p3 any
+function N_0xbd0efb25cca8f97a(p0, p1, p2, p3) end
 
 ---```
 ---NativeDB Introduced: v1868
@@ -378,12 +371,13 @@ function N_0xde68e30d89f97132(amount, p1) end
 ---@param p2 any
 function N_0xcd4d66b43b1dd28d(p0, p1, p2) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xE23ADC6FCB1F29AE)
+---```
+---This function is hard-coded to always return 1.  
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0xE154B48B68EF72BC)
 ---@param p0 any
----@param p1 any
----@param p2 any
-function N_0xe23adc6fcb1f29ae(p0, p1, p2) end
+---@return boolean
+function N_0xe154b48b68ef72bc(p0) end
 
 ---```
 ---NativeDB Introduced: v1493
@@ -392,13 +386,12 @@ function N_0xe23adc6fcb1f29ae(p0, p1, p2) end
 ---@param p0 any
 function N_0xe0f82d68c7039158(p0) end
 
----```
----NativeDB Introduced: v2189
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0xE2BB399D90942091)
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xE23ADC6FCB1F29AE)
 ---@param p0 any
 ---@param p1 any
-function N_0xe2bb399d90942091(p0, p1) end
+---@param p2 any
+function N_0xe23adc6fcb1f29ae(p0, p1, p2) end
 
 ---```
 ---NativeDB Introduced: v2060
@@ -407,6 +400,22 @@ function N_0xe2bb399d90942091(p0, p1) end
 ---@param amount number
 ---@param p1 any
 function N_0xe2e244ab823b4483(amount, p1) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xED5FD7AF10F5E262)
+---@param p0 any
+---@param p1 any
+---@param p2 any
+---@param p3 any
+function N_0xed5fd7af10f5e262(p0, p1, p2, p3) end
+
+---```
+---NativeDB Introduced: v2189
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0xE2BB399D90942091)
+---@param p0 any
+---@param p1 any
+function N_0xe2bb399d90942091(p0, p1) end
 
 ---```
 ---NativeDB Introduced: v1493
@@ -437,6 +446,16 @@ function N_0xfa07759e6fddd7cf(p0, p1, p2, p3) end
 function NetworkBuyBackupGang(p0, p1, p2, p3) end
 
 ---```
+---p1 is just an assumption. p2 was false and p3 was true.  
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x7B718E197453F2D9)
+---@param amount number
+---@param victim number
+---@param p2 boolean
+---@param p3 boolean
+function NetworkBuyBounty(amount, victim, p2, p3) end
+
+---```
 ---p1 = 0 (always)  
 ---p2 = 1 (always)  
 ---```
@@ -447,31 +466,6 @@ function NetworkBuyBackupGang(p0, p1, p2, p3) end
 function NetworkBuyAirstrike(cost, p1, p2) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xED5FD7AF10F5E262)
----@param p0 any
----@param p1 any
----@param p2 any
----@param p3 any
-function N_0xed5fd7af10f5e262(p0, p1, p2, p3) end
-
----```
----p1 is just an assumption. p2 was false and p3 was true.  
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x7B718E197453F2D9)
----@param amount number
----@param victim number
----@param p2 boolean
----@param p3 boolean
-function NetworkBuyBounty(amount, victim, p2, p3) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xD9B067E55253E3DD)
----@param cost number
----@param p1 boolean
----@param p2 boolean
-function NetworkBuyHealthcare(cost, p1, p2) end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x30FD873ECE50E9F6)
 ---@param p0 number
 ---@param p1 number
@@ -479,24 +473,6 @@ function NetworkBuyHealthcare(cost, p1, p2) end
 ---@param p3 boolean
 ---@param p4 boolean
 function NetworkBuyContraband(p0, p1, p2, p3, p4) end
-
----```
----This function is hard-coded to always return 1.  
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0xE154B48B68EF72BC)
----@param p0 any
----@return boolean
-function N_0xe154b48b68ef72bc(p0) end
-
----```
----p1 = 0 (always)  
----p2 = 1 (always)  
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x81AA4610E3FD3A69)
----@param cost number
----@param p1 boolean
----@param p2 boolean
-function NetworkBuyHeliStrike(cost, p1, p2) end
 
 ---```
 ---The first parameter is the amount spent which is store in a global when this native is called. The global returns 10. Which is the price for both rides.  
@@ -511,13 +487,12 @@ function NetworkBuyHeliStrike(cost, p1, p2) end
 ---@param p3 boolean
 function NetworkBuyFairgroundRide(amountSpent, p1, p2, p3) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x650A08A280870AF6)
----@param propertyCost number
----@param propertyName number | string
----@param p2 boolean
----@param p3 boolean
-function NetworkBuyProperty(propertyCost, propertyName, p2, p3) end
+---```
+---NativeDB Introduced: v1493
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0xB4DEAE67F35E2ACD)
+---@param p0 any
+function N_0xb4deae67f35e2acd(p0) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xF0077C797F66A355)
@@ -534,6 +509,34 @@ function NetworkBuyProperty(propertyCost, propertyName, p2, p3) end
 function NetworkBuyItem(amount, item, p2, p3, p4, item_name, p6, p7, p8, p9) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x650A08A280870AF6)
+---@param propertyCost number
+---@param propertyName number | string
+---@param p2 boolean
+---@param p3 boolean
+function NetworkBuyProperty(propertyCost, propertyName, p2, p3) end
+
+---```
+---p1 = 0 (always)  
+---p2 = 1 (always)  
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x81AA4610E3FD3A69)
+---@param cost number
+---@param p1 boolean
+---@param p2 boolean
+function NetworkBuyHeliStrike(cost, p1, p2) end
+
+---```
+---NativeDB Introduced: v323
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0xD987F2489969668C)
+---@param p0 number
+---@param p1 number
+---@param p2 boolean
+---@param p3 boolean
+function NetworkBuyLotteryTicket(p0, p1, p2, p3) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x3A54E33660DED67F)
 ---@param amount number
 ---@return boolean
@@ -548,16 +551,6 @@ function NetworkCanBet(amount) end
 ---@param p2 boolean
 function NetworkBuySmokes(p0, p1, p2) end
 
----```
----NativeDB Introduced: v323
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0xD987F2489969668C)
----@param p0 number
----@param p1 number
----@param p2 boolean
----@param p3 boolean
-function NetworkBuyLotteryTicket(p0, p1, p2, p3) end
-
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x5D17BE59D2123284)
 ---@param p0 any
@@ -566,6 +559,21 @@ function NetworkBuyLotteryTicket(p0, p1, p2, p3) end
 ---@param p3 any
 ---@return boolean
 function NetworkCanReceivePlayerCash(p0, p1, p2, p3) end
+
+---```
+---NativeDB Introduced: v323
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0xC62DD18375C99130)
+---@param cost number
+---@return boolean
+function NetworkCanBuyLotteryTicket(cost) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xD9B067E55253E3DD)
+---@param cost number
+---@param p1 boolean
+---@param p2 boolean
+function NetworkBuyHealthcare(cost, p1, p2) end
 
 ---```
 ---NativeDB Added Parameter 6: Any p5
@@ -600,14 +608,6 @@ function NetworkCanSpendMoney_2(p0, p1, p2, p3, p5) end
 ---@return boolean
 function NetworkCanShareJobCash() end
 
----```
----NativeDB Introduced: v323
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0xC62DD18375C99130)
----@param cost number
----@return boolean
-function NetworkCanBuyLotteryTicket(cost) end
-
 ---NETWORK_C\*
 ---
 ---```
@@ -618,27 +618,15 @@ function NetworkCanBuyLotteryTicket(cost) end
 ---@return boolean
 function NetworkCasinoCanGamble(p0) end
 
+---Same as 0x8968D4D8C6C40C11.
 ---NETWORK_C\*
 ---
 ---```
 ---NativeDB Introduced: v1734
 ---```
----[Native Documentation](https://docs.fivem.net/natives/?_0x3BD101471C7F9EEC)
----@param p0 number
----@param p1 number
+---[Native Documentation](https://docs.fivem.net/natives/?_0x394DCDB9E836B7A9)
 ---@return boolean
-function NetworkCasinoPurchaseChips(p0, p1) end
-
----NETWORK_C\*
----
----```
----NativeDB Introduced: v1734
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0xED44897CB336F480)
----@param p0 number
----@param p1 number
----@return boolean
-function NetworkCasinoSellChips(p0, p1) end
+function NetworkCasinoCanPurchaseChipsWithPvc() end
 
 ---Same as 0x394DCDB9E836B7A9.
 ---NETWORK_C\*
@@ -659,6 +647,17 @@ function NetworkCasinoCanPurchaseChipsWithPvc_2() end
 ---@param p2 boolean
 function NetworkDeleteCharacter(characterSlot, p1, p2) end
 
+---NETWORK_C\*
+---
+---```
+---NativeDB Introduced: v1734
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x3BD101471C7F9EEC)
+---@param p0 number
+---@param p1 number
+---@return boolean
+function NetworkCasinoPurchaseChips(p0, p1) end
+
 ---GTAO_CASINO_HOUSE
 ---GTAO_CASINO_INSIDETRACK
 ---GTAO_CASINO_LUCKYWHEEL
@@ -676,15 +675,10 @@ function NetworkDeleteCharacter(characterSlot, p1, p2) end
 ---@return boolean
 function NetworkCasinoCanUseGamblingType(hash) end
 
----Same as 0x8968D4D8C6C40C11.
----NETWORK_C\*
----
----```
----NativeDB Introduced: v1734
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x394DCDB9E836B7A9)
----@return boolean
-function NetworkCasinoCanPurchaseChipsWithPvc() end
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xA921DED15FDF28F5)
+---@param characterSlot number
+function NetworkClearCharacterWallet(characterSlot) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x0CB1BE0633C024A8)
@@ -693,17 +687,6 @@ function NetworkCasinoCanPurchaseChipsWithPvc() end
 ---@param p2 any
 ---@param p3 any
 function NetworkEarnBossAgency(p0, p1, p2, p3) end
-
----```
----NativeDB Introduced: v1868
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x3EC7471E6909798A)
----@param p0 any
----@param p1 any
----@param p2 any
----@param p3 any
----@param p4 any
-function NetworkEarnCasinoHeistBonus(p0, p1, p2, p3, p4) end
 
 ---```
 ---NativeDB Introduced: v323
@@ -717,17 +700,34 @@ function NetworkEarnCasinoHeistBonus(p0, p1, p2, p3, p4) end
 ---@param p5 boolean
 function NetworkDeductCash(amount, p1, p2, p3, p4, p5) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xA921DED15FDF28F5)
----@param characterSlot number
-function NetworkClearCharacterWallet(characterSlot) end
+---NETWORK_C\*
+---
+---```
+---NativeDB Introduced: v1734
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0xED44897CB336F480)
+---@param p0 number
+---@param p1 number
+---@return boolean
+function NetworkCasinoSellChips(p0, p1) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x08B0CA7A6AB3AC32)
+---```
+---NativeDB Introduced: v1493
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0xF6B170F9A02E9E87)
+---@param p0 any
+function NetworkEarnBountyHunterReward(p0) end
+
+---```
+---NativeDB Introduced: v1868
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x3EC7471E6909798A)
 ---@param p0 any
 ---@param p1 any
 ---@param p2 any
-function NetworkEarnBoss(p0, p1, p2) end
+---@param p3 any
+---@param p4 any
+function NetworkEarnCasinoHeistBonus(p0, p1, p2, p3, p4) end
 
 ---```
 ---NativeDB Introduced: v2060
@@ -751,13 +751,18 @@ function NetworkEarnCollectableCompletedCollection(amount, p1) end
 function NetworkEarnCasinoHeist(p0, p1, p2, p3, p4, p5, p6) end
 
 ---```
----Example for p1: "AM_DISTRACT_COPS"  
+---NativeDB Introduced: v1493
 ---```
----[Native Documentation](https://docs.fivem.net/natives/?_0xFB6DB092FBAE29E6)
----@param p0 number
----@param p1 string
----@return any
-function NetworkEarnFromAmbientJob(p0, p1) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0xFFFBA1B1F7C0B6F4)
+---@param p0 any
+function NetworkEarnFmbbWageBonus(p0) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x08B0CA7A6AB3AC32)
+---@param p0 any
+---@param p1 any
+---@param p2 any
+function NetworkEarnBoss(p0, p1, p2) end
 
 ---```
 ---NativeDB Introduced: v1604
@@ -768,11 +773,13 @@ function NetworkEarnFromAmbientJob(p0, p1) end
 function NetworkEarnFromArenaSkillLevelProgression(amount, p1) end
 
 ---```
----NativeDB Introduced: v1493
+---Example for p1: "AM_DISTRACT_COPS"  
 ---```
----[Native Documentation](https://docs.fivem.net/natives/?_0xFFFBA1B1F7C0B6F4)
----@param p0 any
-function NetworkEarnFmbbWageBonus(p0) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0xFB6DB092FBAE29E6)
+---@param p0 number
+---@param p1 string
+---@return any
+function NetworkEarnFromAmbientJob(p0, p1) end
 
 ---```
 ---NativeDB Introduced: v1604
@@ -787,33 +794,17 @@ function NetworkEarnFromArenaWar(amount, p1, p2, p3) end
 ---```
 ---NativeDB Introduced: v1604
 ---```
----[Native Documentation](https://docs.fivem.net/natives/?_0xFA700D8A9905F78A)
----@param amount number
-function NetworkEarnFromAssassinateTargetKilled(amount) end
-
----```
----NativeDB Introduced: v1604
----```
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x0F99F70C61F14619)
 ---@param amount number
 ---@param p1 any
 function NetworkEarnFromArenaCareerProgression(amount, p1) end
 
 ---```
----NativeDB Introduced: v2372
+---NativeDB Introduced: v1604
 ---```
----[Native Documentation](https://docs.fivem.net/natives/?_0x36A7FD5A7194B03E)
----@param p0 any
----@param p1 any
-function NetworkEarnFromAutoshopBusiness(p0, p1) end
-
----```
----DSPORT  
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x515B4A22E4D3C6D7)
----@param p0 any
----@param p1 any
-function NetworkEarnFromAiTargetKill(p0, p1) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0xFA700D8A9905F78A)
+---@param amount number
+function NetworkEarnFromAssassinateTargetKilled(amount) end
 
 ---```
 ---For the money bags that drop a max of $40,000. Often called 40k bags.
@@ -824,6 +815,28 @@ function NetworkEarnFromAiTargetKill(p0, p1) end
 function NetworkEarnFromArmourTruck(amount) end
 
 ---```
+---NativeDB Introduced: v1604
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x5E7AE8AABE8B7C0D)
+---@param amount number
+function NetworkEarnFromAssassinateTargetKilled_2(amount) end
+
+---```
+---NativeDB Introduced: v2372
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x36A7FD5A7194B03E)
+---@param p0 any
+---@param p1 any
+function NetworkEarnFromAutoshopBusiness(p0, p1) end
+
+---```
+---NativeDB Introduced: v1604
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0xFDD8D2440DAF1590)
+---@param amount number
+function NetworkEarnFromBbEventBonus(amount) end
+
+---```
 ---NativeDB Introduced: v2372
 ---```
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC66D1CF99ED7FE25)
@@ -831,18 +844,19 @@ function NetworkEarnFromArmourTruck(amount) end
 function NetworkEarnFromAutoshopIncome(p0) end
 
 ---```
----NativeDB Introduced: v1493
+---DSPORT  
 ---```
----[Native Documentation](https://docs.fivem.net/natives/?_0xF6B170F9A02E9E87)
+---[Native Documentation](https://docs.fivem.net/natives/?_0x515B4A22E4D3C6D7)
 ---@param p0 any
-function NetworkEarnBountyHunterReward(p0) end
+---@param p1 any
+function NetworkEarnFromAiTargetKill(p0, p1) end
 
 ---```
 ---NativeDB Introduced: v1604
 ---```
----[Native Documentation](https://docs.fivem.net/natives/?_0x5E7AE8AABE8B7C0D)
+---[Native Documentation](https://docs.fivem.net/natives/?_0xA82959062361B259)
 ---@param amount number
-function NetworkEarnFromAssassinateTargetKilled_2(amount) end
+function NetworkEarnFromBbEventCargo(amount) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x827A5BA1A44ACA6D)
@@ -856,20 +870,12 @@ function NetworkEarnFromBetting(amount, p1) end
 ---@param heistHash string
 function NetworkEarnFromBendJob(amount, heistHash) end
 
----```
----NativeDB Introduced: v2699
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x2C5809EB9DF57257)
----@param p0 any
----@param p1 any
-function NetworkEarnFromBikeShopBusiness(p0, p1) end
-
----```
----NativeDB Introduced: v1604
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0xFDD8D2440DAF1590)
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x131BB5DA15453ACF)
 ---@param amount number
-function NetworkEarnFromBbEventBonus(amount) end
+---@param p3 any
+---@return number, any
+function NetworkEarnFromBounty(amount, p3) end
 
 ---```
 ---NativeDB Introduced: v2699
@@ -878,12 +884,13 @@ function NetworkEarnFromBbEventBonus(amount) end
 ---@param p0 any
 function NetworkEarnFromBikerIncome(p0) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x131BB5DA15453ACF)
----@param amount number
----@param p3 any
----@return number, any
-function NetworkEarnFromBounty(amount, p3) end
+---```
+---NativeDB Introduced: v2699
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x2C5809EB9DF57257)
+---@param p0 any
+---@param p1 any
+function NetworkEarnFromBikeShopBusiness(p0, p1) end
 
 ---```
 ---NativeDB Introduced: v1493
@@ -895,11 +902,14 @@ function NetworkEarnFromBounty(amount, p3) end
 function NetworkEarnFromBusinessHubSell(p0, p1, p2) end
 
 ---```
----NativeDB Introduced: v1604
+---NativeDB Introduced: v2699
 ---```
----[Native Documentation](https://docs.fivem.net/natives/?_0xA82959062361B259)
----@param amount number
-function NetworkEarnFromBbEventCargo(amount) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x59498BC8B1C8B15C)
+---@param p0 any
+---@param p1 any
+---@param p2 any
+---@param p3 any
+function NetworkEarnFromBusinessHubSource(p0, p1, p2, p3) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x8586789730B10CAF)
@@ -915,16 +925,6 @@ function NetworkEarnFromBusinessProduct(amount, p1, p2, p3) end
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xBC6227792A188E2E)
 ---@param p0 any
 function NetworkEarnFromCarclubMembership(p0) end
-
----```
----NativeDB Introduced: v2699
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x59498BC8B1C8B15C)
----@param p0 any
----@param p1 any
----@param p2 any
----@param p3 any
-function NetworkEarnFromBusinessHubSource(p0, p1, p2, p3) end
 
 ---```
 ---NativeDB Introduced: v1734
@@ -949,11 +949,18 @@ function NetworkEarnFromCasinoMissionReward(amount) end
 function NetworkEarnFromCasinoMissionParticipation(amount) end
 
 ---```
----NativeDB Introduced: v1290
+---NativeDB Introduced: v1734
 ---```
----[Native Documentation](https://docs.fivem.net/natives/?_0xEFE9C9A1651B81E6)
+---[Native Documentation](https://docs.fivem.net/natives/?_0xAC95ED552157E092)
 ---@param amount number
-function NetworkEarnFromCashingOut(amount) end
+function NetworkEarnFromCasinoStoryMissionReward(amount) end
+
+---```
+---NativeDB Introduced: v1734
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x83AD64F53F4E9483)
+---@param amount number
+function NetworkEarnFromCompleteCollection(amount) end
 
 ---```
 ---NativeDB Introduced: v1493
@@ -963,11 +970,11 @@ function NetworkEarnFromCashingOut(amount) end
 function NetworkEarnFromBusinessBattle(p0) end
 
 ---```
----NativeDB Introduced: v1734
+---NativeDB Introduced: v1493
 ---```
----[Native Documentation](https://docs.fivem.net/natives/?_0xAC95ED552157E092)
----@param amount number
-function NetworkEarnFromCasinoStoryMissionReward(amount) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0xA75EAC69F59E96E7)
+---@param p0 any
+function NetworkEarnFromClubManagementParticipation(p0) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x2B171E6B2F64D8DF)
@@ -976,19 +983,10 @@ function NetworkEarnFromCasinoStoryMissionReward(amount) end
 ---@return any
 function NetworkEarnFromChallengeWin(p0, p2) end
 
----```
----NativeDB Introduced: v1493
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0xA75EAC69F59E96E7)
----@param p0 any
-function NetworkEarnFromClubManagementParticipation(p0) end
-
----```
----NativeDB Introduced: v1734
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x5517F90043466049)
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xB1CC1B9EC3007A2A)
 ---@param amount number
-function NetworkEarnFromCollectablesActionFigures(amount) end
+function NetworkEarnFromCrateDrop(amount) end
 
 ---```
 ---NativeDB Introduced: v1734
@@ -998,18 +996,6 @@ function NetworkEarnFromCollectablesActionFigures(amount) end
 ---@param p1 any
 function NetworkEarnFromCollectionItem(amount, p1) end
 
----```
----NativeDB Introduced: v1734
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x83AD64F53F4E9483)
----@param amount number
-function NetworkEarnFromCompleteCollection(amount) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xB1CC1B9EC3007A2A)
----@param amount number
-function NetworkEarnFromCrateDrop(amount) end
-
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xECA658CE2A4E5A72)
 ---@param amount number
@@ -1017,25 +1003,11 @@ function NetworkEarnFromCrateDrop(amount) end
 function NetworkEarnFromContraband(amount, p1) end
 
 ---```
----NativeDB Introduced: v1290
+---NativeDB Introduced: v1734
 ---```
----[Native Documentation](https://docs.fivem.net/natives/?_0xFA009A62990671D4)
----@param p0 any
----@param p1 any
----@param p2 any
-function NetworkEarnFromCriminalMastermindBonus(p0, p1, p2) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x6EA318C91C1A8786)
----@param p0 number
----@param p1 string
----@param p2 number
-function NetworkEarnFromDailyObjectives(p0, p1, p2) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x84C0116D012E8FC2)
----@param p0 any
-function NetworkEarnFromDestroyingContraband(p0) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x5517F90043466049)
+---@param amount number
+function NetworkEarnFromCollectablesActionFigures(amount) end
 
 ---```
 ---NativeDB Introduced: v1290
@@ -1045,14 +1017,21 @@ function NetworkEarnFromDestroyingContraband(p0) end
 ---@param p1 any
 function NetworkEarnFromDarChallenge(amount, p1) end
 
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x6EA318C91C1A8786)
+---@param p0 number
+---@param p1 string
+---@param p2 number
+function NetworkEarnFromDailyObjectives(p0, p1, p2) end
+
 ---```
 ---NativeDB Introduced: v1290
 ---```
----[Native Documentation](https://docs.fivem.net/natives/?_0xA9A31475F530DFDA)
----@param amount number
----@param unk string
+---[Native Documentation](https://docs.fivem.net/natives/?_0xFA009A62990671D4)
+---@param p0 any
+---@param p1 any
 ---@param p2 any
-function NetworkEarnFromGangopsAwards(amount, unk, p2) end
+function NetworkEarnFromCriminalMastermindBonus(p0, p1, p2) end
 
 ---```
 ---NativeDB Introduced: v1734
@@ -1070,31 +1049,16 @@ function NetworkEarnFromDailyObjectiveEvent(amount) end
 function NetworkEarnFromDoomsdayFinaleBonus(amount, vehicleHash) end
 
 ---```
----NativeDB Introduced: v1493
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x1FDA0AA679C9919B)
----@param p0 any
-function NetworkEarnFromFmbbBossWork(p0) end
-
----```
----NativeDB Introduced: v1493
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0xC5156361F26E2212)
----@param p0 any
-function NetworkEarnFromFmbbPhonecallMission(p0) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xA03D4ACE0A3284CE)
----@param amount number
-function NetworkEarnFromGangPickup(amount) end
-
----```
 ---NativeDB Introduced: v1290
 ---```
----[Native Documentation](https://docs.fivem.net/natives/?_0xA9160796D47A2CF8)
+---[Native Documentation](https://docs.fivem.net/natives/?_0xEFE9C9A1651B81E6)
 ---@param amount number
----@param unk string
-function NetworkEarnFromGangopsJobsSetup(amount, unk) end
+function NetworkEarnFromCashingOut(amount) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x84C0116D012E8FC2)
+---@param p0 any
+function NetworkEarnFromDestroyingContraband(p0) end
 
 ---```
 ---NativeDB Introduced: v1290
@@ -1107,11 +1071,47 @@ function NetworkEarnFromGangopsJobsFinale(amount, unk) end
 ---```
 ---NativeDB Introduced: v1290
 ---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0xA9A31475F530DFDA)
+---@param amount number
+---@param unk string
+---@param p2 any
+function NetworkEarnFromGangopsAwards(amount, unk, p2) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xA03D4ACE0A3284CE)
+---@param amount number
+function NetworkEarnFromGangPickup(amount) end
+
+---```
+---NativeDB Introduced: v1493
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0xC5156361F26E2212)
+---@param p0 any
+function NetworkEarnFromFmbbPhonecallMission(p0) end
+
+---```
+---NativeDB Introduced: v1290
+---```
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x2597A0D4A4FC2C77)
 ---@param amount number
 ---@param unk string
 ---@param actIndex number
 function NetworkEarnFromGangopsElite(amount, unk, actIndex) end
+
+---```
+---NativeDB Introduced: v1290
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0xED26584F6BDCBBFD)
+---@param amount number
+function NetworkEarnFromGangopsJobsPrepParticipation(amount) end
+
+---```
+---NativeDB Introduced: v1290
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0xA9160796D47A2CF8)
+---@param amount number
+---@param unk string
+function NetworkEarnFromGangopsJobsSetup(amount, unk) end
 
 ---```
 ---NativeDB Introduced: v1493
@@ -1132,10 +1132,41 @@ function NetworkEarnFromImportExport(amount, modelHash) end
 ---```
 ---NativeDB Introduced: v1290
 ---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x2DCB19ABAB0380A8)
+---@param amount number
+---@param p1 number
+function NetworkEarnFromGangopsWages(amount, p1) end
+
+---```
+---NativeDB Introduced: v1290
+---```
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x15BB2A5C757EB91F)
 ---@param amount number
 ---@param p1 number
 function NetworkEarnFromGangopsWagesBonus(amount, p1) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x45B8154E077D9E4D)
+---@param amount number
+function NetworkEarnFromHoldups(amount) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x4337511FA8221D36)
+---@param amount number
+function NetworkEarnFromNotBadsport(amount) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xB2CC4836834E8A98)
+---@param amount number
+---@param p1 string
+function NetworkEarnFromJob(amount, p1) end
+
+---```
+---NativeDB Introduced: v1493
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x1FDA0AA679C9919B)
+---@param p0 any
+function NetworkEarnFromFmbbBossWork(p0) end
 
 ---```
 ---NativeDB Introduced: v323
@@ -1146,25 +1177,12 @@ function NetworkEarnFromGangopsWagesBonus(amount, p1) end
 function NetworkEarnFromJobBonus(p0) end
 
 ---```
----NativeDB Introduced: v1290
+---NativeDB Introduced: v1734
 ---```
----[Native Documentation](https://docs.fivem.net/natives/?_0x2DCB19ABAB0380A8)
----@param amount number
----@param p1 number
-function NetworkEarnFromGangopsWages(amount, p1) end
-
----```
----NativeDB Introduced: v1290
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0xED26584F6BDCBBFD)
----@param amount number
-function NetworkEarnFromGangopsJobsPrepParticipation(amount) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xB2CC4836834E8A98)
+---[Native Documentation](https://docs.fivem.net/natives/?_0xDEBBF584665411D0)
 ---@param amount number
 ---@param p1 string
-function NetworkEarnFromJob(amount, p1) end
+function NetworkEarnFromJobX2(amount, p1) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x3F4D00167E41E0AD)
@@ -1180,17 +1198,9 @@ function NetworkEarnFromJob(amount, p1) end
 function NetworkEarnFromPersonalVehicle(p0, p1, p2, p3, p4, p5, p6, p7, p8) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x4337511FA8221D36)
+---[Native Documentation](https://docs.fivem.net/natives/?_0xED1517D3AF17C698)
 ---@param amount number
-function NetworkEarnFromNotBadsport(amount) end
-
----```
----NativeDB Introduced: v1734
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0xDEBBF584665411D0)
----@param amount number
----@param p1 string
-function NetworkEarnFromJobX2(amount, p1) end
+function NetworkEarnFromPickup(amount) end
 
 ---```
 ---NativeDB Introduced: v1290
@@ -1201,21 +1211,10 @@ function NetworkEarnFromJobX2(amount, p1) end
 function NetworkEarnFromRdrBonus(amount, p1) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xED1517D3AF17C698)
----@param amount number
-function NetworkEarnFromPickup(amount) end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC8407624CEF2354B)
 ---@param amount number
 ---@param p1 string
 function NetworkEarnFromPremiumJob(amount, p1) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x849648349D77F5C5)
----@param amount number
----@param propertyName number | string
-function NetworkEarnFromProperty(amount, propertyName) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x9251B6ABF2D0A5B4)
@@ -1223,17 +1222,28 @@ function NetworkEarnFromProperty(amount, propertyName) end
 ---@param bunkerHash number | string
 function NetworkEarnFromSellBunker(amount, bunkerHash) end
 
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x849648349D77F5C5)
+---@param amount number
+---@param propertyName number | string
+function NetworkEarnFromProperty(amount, propertyName) end
+
+---```
+---NativeDB Introduced: v2699
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x45087AE480B233AC)
+---@param p0 any
+---@param p1 any
+---@param p2 any
+---@param p3 any
+function NetworkEarnFromSightseeing(p0, p1, p2, p3) end
+
 ---```
 ---NativeDB Introduced: v1734
 ---```
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xDFF49EE984E7AAE8)
 ---@param amount number
 function NetworkEarnFromRcTimeTrial(amount) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x45B8154E077D9E4D)
----@param amount number
-function NetworkEarnFromHoldups(amount) end
 
 ---```
 ---NativeDB Introduced: v1290
@@ -1252,20 +1262,12 @@ function NetworkEarnFromSellBase(amount, baseNameHash) end
 ---@param amount number
 function NetworkEarnFromSellingVehicle(amount) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x02CE1D6AC0FC73EA)
+---```
+---NativeDB Introduced: v1604
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x676C48776CACBB5A)
 ---@param amount number
-function NetworkEarnFromRockstar(amount) end
-
----```
----NativeDB Introduced: v2699
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x45087AE480B233AC)
----@param p0 any
----@param p1 any
----@param p2 any
----@param p3 any
-function NetworkEarnFromSightseeing(p0, p1, p2, p3) end
+function NetworkEarnFromSpinTheWheelCash(amount) end
 
 ---```
 ---NativeDB Introduced: v1180
@@ -1277,19 +1279,18 @@ function NetworkEarnFromSightseeing(p0, p1, p2, p3) end
 ---@param p3 any
 function NetworkEarnFromSmuggling(amount, p1, p2, p3) end
 
----```
----NativeDB Introduced: v1734
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x0819DB99FD2FBBD8)
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x02CE1D6AC0FC73EA)
 ---@param amount number
-function NetworkEarnFromTimeTrialWin(amount) end
+function NetworkEarnFromRockstar(amount) end
 
 ---```
----NativeDB Introduced: v1604
+---NativeDB Introduced: v1290
 ---```
----[Native Documentation](https://docs.fivem.net/natives/?_0x676C48776CACBB5A)
+---[Native Documentation](https://docs.fivem.net/natives/?_0x5B669CF2299A271F)
 ---@param amount number
-function NetworkEarnFromSpinTheWheelCash(amount) end
+---@param p1 number
+function NetworkEarnFromTargetRefund(amount, p1) end
 
 ---```
 ---NativeDB Introduced: v2372
@@ -1299,17 +1300,6 @@ function NetworkEarnFromSpinTheWheelCash(amount) end
 ---@param p1 any
 ---@param p2 any
 function NetworkEarnFromTunerAward(p0, p1, p2) end
-
----```
----NativeDB Introduced: v2372
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0xBCB266247193AC61)
----@param p0 any
----@param p1 any
----@param p2 any
----@param p3 any
----@param p4 any
-function NetworkEarnFromTunerFinale(p0, p1, p2, p3, p4) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xB539BD8A4C1EECF8)
@@ -1326,33 +1316,21 @@ function NetworkEarnFromVehicle(p0, p1, p2, p3, p4, p5, p6, p7) end
 ---```
 ---NativeDB Introduced: v2372
 ---```
----[Native Documentation](https://docs.fivem.net/natives/?_0x533073E8A596008C)
----@param p0 any
----@param p1 any
-function NetworkEarnFromVehicleAutoshop(p0, p1) end
-
----```
----NativeDB Introduced: v2372
----```
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC10322A8D3E061EE)
 ---@param p0 any
 ---@param p1 any
 function NetworkEarnFromUpgradeAutoshopLocation(p0, p1) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xEDEAD9A91EC768B3)
----@param amount number
+---```
+---NativeDB Introduced: v2372
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0xBCB266247193AC61)
+---@param p0 any
 ---@param p1 any
 ---@param p2 any
-function NetworkEarnFromVehicleExport(amount, p1, p2) end
-
----```
----NativeDB Introduced: v1290
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x5B669CF2299A271F)
----@param amount number
----@param p1 number
-function NetworkEarnFromTargetRefund(amount, p1) end
+---@param p3 any
+---@param p4 any
+function NetworkEarnFromTunerFinale(p0, p1, p2, p3, p4) end
 
 ---```
 ---NativeDB Introduced: v2372
@@ -1362,11 +1340,26 @@ function NetworkEarnFromTargetRefund(amount, p1) end
 function NetworkEarnFromVehicleAutoshopBonus(p0) end
 
 ---```
----NativeDB Introduced: v1180
+---NativeDB Introduced: v1734
 ---```
----[Native Documentation](https://docs.fivem.net/natives/?_0x35F8DA0E8A31EF1B)
+---[Native Documentation](https://docs.fivem.net/natives/?_0x0819DB99FD2FBBD8)
 ---@param amount number
-function NetworkEarnFromWagePayment(amount) end
+function NetworkEarnFromTimeTrialWin(amount) end
+
+---```
+---NativeDB Introduced: v2372
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x533073E8A596008C)
+---@param p0 any
+---@param p1 any
+function NetworkEarnFromVehicleAutoshop(p0, p1) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xEDEAD9A91EC768B3)
+---@param amount number
+---@param p1 any
+---@param p2 any
+function NetworkEarnFromVehicleExport(amount, p1, p2) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xCDA1C62BE2777802)
@@ -1374,6 +1367,13 @@ function NetworkEarnFromWagePayment(amount) end
 ---@param p1 any
 ---@param p2 any
 function NetworkEarnGoon(p0, p1, p2) end
+
+---```
+---NativeDB Introduced: v1180
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x005ACA7100BD101D)
+---@param amount number
+function NetworkEarnFromWagePaymentBonus(amount) end
 
 ---```
 ---NativeDB Introduced: v1290
@@ -1390,6 +1390,13 @@ function NetworkEarnJobBonusFirstTimeBonus(p0, p1, p2) end
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x5D1E75F91C07DEE5)
 ---@return number
 function NetworkGetEvcBalance() end
+
+---```
+---NativeDB Introduced: v1180
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x35F8DA0E8A31EF1B)
+---@param amount number
+function NetworkEarnFromWagePayment(amount) end
 
 ---```
 ---NativeDB Added Parameter 1: int amount
@@ -1411,15 +1418,6 @@ function NetworkEarnFromWarehouse() end
 function NetworkEarnIslandHeist(p0, p1, p2, p3, p4, p5) end
 
 ---```
----NativeDB Introduced: v1290
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x9D4FDBB035229669)
----@param p0 any
----@param p1 any
----@param p2 any
-function NetworkEarnJobBonusHeistAward(p0, p1, p2) end
-
----```
 ---Same as 0xEA560AC9EEB1E19B.
 ---```
 ---
@@ -1433,18 +1431,27 @@ function NetworkEarnJobBonusHeistAward(p0, p1, p2) end
 function NetworkGetPvcTransferBalance() end
 
 ---```
----NativeDB Introduced: v323
+---NativeDB Introduced: v1290
 ---```
----[Native Documentation](https://docs.fivem.net/natives/?_0xFB2456B2040A6A67)
----@return boolean
-function NetworkGetIsHighEarner() end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x9D4FDBB035229669)
+---@param p0 any
+---@param p1 any
+---@param p2 any
+function NetworkEarnJobBonusHeistAward(p0, p1, p2) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xA6FA3979BED01B81)
+---@return string
+function NetworkGetStringBankBalance() end
 
 ---```
----NativeDB Introduced: v1180
+---Same as 0x13A8DE2FD77D04F3.
+---
+---NativeDB Introduced: v323
 ---```
----[Native Documentation](https://docs.fivem.net/natives/?_0x005ACA7100BD101D)
----@param amount number
-function NetworkEarnFromWagePaymentBonus(amount) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0xEA560AC9EEB1E19B)
+---@return number
+function NetworkGetRemainingTransferBalance() end
 
 ---```
 ---NativeDB Introduced: v323
@@ -1464,34 +1471,16 @@ function NetworkGetPvcBalance() end
 ---```
 ---NativeDB Introduced: v323
 ---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0xFB2456B2040A6A67)
+---@return boolean
+function NetworkGetIsHighEarner() end
+
+---```
+---NativeDB Introduced: v323
+---```
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x700AF71AE615E6DD)
 ---@return string
 function NetworkGetStringBankWalletBalance() end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x76EF28DA05EA395A)
----@return number
-function NetworkGetVcBankBalance() end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xA6FA3979BED01B81)
----@return string
-function NetworkGetStringBankBalance() end
-
----```
----Same as 0x13A8DE2FD77D04F3.
----
----NativeDB Introduced: v323
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0xEA560AC9EEB1E19B)
----@return number
-function NetworkGetRemainingTransferBalance() end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xA40F9C2623F6A8B5)
----@param characterSlot number
----@return number
-function NetworkGetVcWalletBalance(characterSlot) end
 
 ---```
 ---Returns true if bank balance >= amount.
@@ -1513,6 +1502,28 @@ function NetworkGetVcBankBalanceIsNotLessThan(amount) end
 function NetworkGetVcBankWalletBalanceIsNotLessThan(amount, characterSlot) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xA40F9C2623F6A8B5)
+---@param characterSlot number
+---@return number
+function NetworkGetVcWalletBalance(characterSlot) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xFB18DF9CB95E0105)
+---@param amount number
+---@return number
+function NetworkGivePlayerJobshareCash(amount) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x76EF28DA05EA395A)
+---@return number
+function NetworkGetVcBankBalance() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x5CBAD97E059E1B94)
+---@return number
+function NetworkGetVcBalance() end
+
+---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x81404F3DC124FE5B)
 ---@param amount number
 ---@param p1 boolean
@@ -1527,11 +1538,6 @@ function NetworkMoneyCanBet(amount, p1, p2) end
 ---@param p2 boolean
 ---@param p3 boolean
 function NetworkPayMatchEntryFee(amount, matchId, p2, p3) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x5CBAD97E059E1B94)
----@return number
-function NetworkGetVcBalance() end
 
 ---```
 ---Returns true if wallet balance >= amount.
@@ -1548,12 +1554,6 @@ function NetworkGetVcWalletBalanceIsNotLessThan(amount, characterSlot) end
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x821418C727FCACD7)
 ---@param characterSlot number
 function NetworkManualDeleteCharacter(characterSlot) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xFB18DF9CB95E0105)
----@param amount number
----@return number
-function NetworkGivePlayerJobshareCash(amount) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xAFE08B35EC0C9EAE)
@@ -1610,11 +1610,11 @@ function NetworkRefundCash(index, context, reason, unk) end
 function NetworkInitializeCash(wallet, bank) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x5FD5ED82CBBE9989)
+---[Native Documentation](https://docs.fivem.net/natives/?_0xB162DC95C0A3317B)
 ---@param p0 any
 ---@param p1 boolean
 ---@param p2 boolean
-function NetworkPayEmployeeWage(p0, p1, p2) end
+function NetworkSpentAmmoDrop(p0, p1, p2) end
 
 ---```
 ---NativeDB Introduced: v1868
@@ -1637,11 +1637,11 @@ function NetworkSpentArcadeGeneric(p0, p1, p2, p3, p4) end
 function NetworkSpentArenaPremium(amount, p1, p2) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xB162DC95C0A3317B)
+---[Native Documentation](https://docs.fivem.net/natives/?_0x5FD5ED82CBBE9989)
 ---@param p0 any
 ---@param p1 boolean
 ---@param p2 boolean
-function NetworkSpentAmmoDrop(p0, p1, p2) end
+function NetworkPayEmployeeWage(p0, p1, p2) end
 
 ---```
 ---NativeDB Introduced: v1604
@@ -1652,36 +1652,6 @@ function NetworkSpentAmmoDrop(p0, p1, p2) end
 ---@param p2 boolean
 ---@param p3 boolean
 function NetworkSpentArenaSpectatorBox(amount, p1, p2, p3) end
-
----```
----NativeDB Introduced: v2372
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0xB40F96D6D252839B)
----@param p0 any
----@param p1 any
----@param p2 any
----@param p3 any
-function NetworkSpentAutoshopPropertyUtilityFee(p0, p1, p2, p3) end
-
----```
----NativeDB Introduced: v1868
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0xEAD3D81F2C3A1458)
----@param p0 any
----@param p1 any
----@param p2 any
----@param p3 any
----@param p4 any
-function NetworkSpentArcadeGame(p0, p1, p2, p3, p4) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xD7CCCBA28C4ECAF0)
----@param p0 any
----@param p1 any
----@param p2 any
----@param p3 any
----@param p4 any
-function NetworkSpentBaService(p0, p1, p2, p3, p4) end
 
 ---```
 ---NativeDB Introduced: v1290
@@ -1697,6 +1667,16 @@ function NetworkRivalDeliveryCompleted(earnedMoney) end
 function NetworkReceivePlayerJobshareCash(value) end
 
 ---```
+---NativeDB Introduced: v2372
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0xB40F96D6D252839B)
+---@param p0 any
+---@param p1 any
+---@param p2 any
+---@param p3 any
+function NetworkSpentAutoshopPropertyUtilityFee(p0, p1, p2, p3) end
+
+---```
 ---NativeDB Introduced: v1604
 ---```
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x14EAEA58F93B55AF)
@@ -1706,14 +1686,32 @@ function NetworkReceivePlayerJobshareCash(value) end
 ---@param p3 boolean
 function NetworkSpentArenaJoinSpectator(amount, p1, p2, p3) end
 
----```
----NativeDB Introduced: v323
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0xCA230C9682556CF1)
----@param p0 number
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xD7CCCBA28C4ECAF0)
+---@param p0 any
+---@param p1 any
+---@param p2 any
+---@param p3 any
+---@param p4 any
+function NetworkSpentBaService(p0, p1, p2, p3, p4) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x812F5488B1B2A299)
+---@param p0 any
 ---@param p1 boolean
 ---@param p2 boolean
-function NetworkSpentBankInterest(p0, p1, p2) end
+function NetworkSpentArrestBail(p0, p1, p2) end
+
+---```
+---NativeDB Introduced: v1868
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0xEAD3D81F2C3A1458)
+---@param p0 any
+---@param p1 any
+---@param p2 any
+---@param p3 any
+---@param p4 any
+function NetworkSpentArcadeGame(p0, p1, p2, p3, p4) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x5D97630A8A0EF123)
@@ -1733,12 +1731,23 @@ function NetworkSpentBallisticEquipment(amount, p1, p2) end
 ---@param p4 any
 function NetworkSpentAutoshopModifications(p0, p1, p2, p3, p4) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x812F5488B1B2A299)
----@param p0 any
+---```
+---NativeDB Added Parameter 1: int amount
+---NativeDB Added Parameter 2: BOOL p1
+---NativeDB Added Parameter 3: BOOL p2
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0xFFBE02CD385356BD)
+---@return boolean
+function NetworkSpentBoss() end
+
+---```
+---NativeDB Introduced: v1493
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x1BEA0CD93470BB1F)
+---@param amount number
 ---@param p1 boolean
 ---@param p2 boolean
-function NetworkSpentArrestBail(p0, p1, p2) end
+function NetworkSpentBountyHunterMission(amount, p1, p2) end
 
 ---```
 ---NativeDB Introduced: v2699
@@ -1758,13 +1767,13 @@ function NetworkSpentBikeShopModify(p0, p1, p2, p3) end
 function NetworkSpentBeachPartyGeneric(p0) end
 
 ---```
----NativeDB Added Parameter 1: int amount
----NativeDB Added Parameter 2: BOOL p1
----NativeDB Added Parameter 3: BOOL p2
+---NativeDB Introduced: v323
 ---```
----[Native Documentation](https://docs.fivem.net/natives/?_0xFFBE02CD385356BD)
----@return boolean
-function NetworkSpentBoss() end
+---[Native Documentation](https://docs.fivem.net/natives/?_0xCA230C9682556CF1)
+---@param p0 number
+---@param p1 boolean
+---@param p2 boolean
+function NetworkSpentBankInterest(p0, p1, p2) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x1C436FD11FFA692F)
@@ -1785,29 +1794,6 @@ function NetworkSpentBetting(amount, p1, matchId, p3, p4) end
 ---@param p3 string
 function NetworkSpentBuyArena(amount, p1, p2, p3) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x524EE43A37232C00)
----@param p0 any
----@param p1 boolean
----@param p2 boolean
-function NetworkSpentBoatPickup(p0, p1, p2) end
-
----```
----NativeDB Introduced: v1493
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x1BEA0CD93470BB1F)
----@param amount number
----@param p1 boolean
----@param p2 boolean
-function NetworkSpentBountyHunterMission(amount, p1, p2) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xA6DD8458CE24012C)
----@param p0 any
----@param p1 boolean
----@param p2 boolean
-function NetworkSpentBullShark(p0, p1, p2) end
-
 ---```
 ---NativeDB Introduced: v1290
 ---```
@@ -1819,6 +1805,13 @@ function NetworkSpentBullShark(p0, p1, p2) end
 function NetworkSpentBuyBase(p0, p1, p2, p3) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x524EE43A37232C00)
+---@param p0 any
+---@param p1 boolean
+---@param p2 boolean
+function NetworkSpentBoatPickup(p0, p1, p2) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x12D148D26538D0F9)
 ---@param p0 any
 ---@param p1 any
@@ -1827,11 +1820,26 @@ function NetworkSpentBuyBase(p0, p1, p2, p3) end
 function NetworkSpentBuyBunker(p0, p1, p2, p3) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x6E176F1B18BC0637)
+---[Native Documentation](https://docs.fivem.net/natives/?_0xA6DD8458CE24012C)
 ---@param p0 any
 ---@param p1 boolean
 ---@param p2 boolean
-function NetworkSpentBuyRevealPlayers(p0, p1, p2) end
+function NetworkSpentBullShark(p0, p1, p2) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x29B260B84947DFCC)
+---@param p0 any
+---@param p1 boolean
+---@param p2 boolean
+function NetworkSpentBounty(p0, p1, p2) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x0035BB914316F1E3)
+---@param p0 any
+---@param p1 any
+---@param p2 any
+---@param p3 any
+function NetworkSpentBusiness(p0, p1, p2, p3) end
 
 ---```
 ---NativeDB Introduced: v2372
@@ -1844,27 +1852,11 @@ function NetworkSpentBuyRevealPlayers(p0, p1, p2) end
 function NetworkSpentBuyAutoshop(p0, p1, p2, p3) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x0035BB914316F1E3)
----@param p0 any
----@param p1 any
----@param p2 any
----@param p3 any
-function NetworkSpentBusiness(p0, p1, p2, p3) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x6D3A430D1A809179)
+---[Native Documentation](https://docs.fivem.net/natives/?_0x6E176F1B18BC0637)
 ---@param p0 any
 ---@param p1 boolean
 ---@param p2 boolean
-function NetworkSpentBuyPassiveMode(p0, p1, p2) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xAC272C0AE01B4BD8)
----@param p0 any
----@param p1 any
----@param p2 any
----@param p3 any
-function NetworkSpentBuyTruck(p0, p1, p2, p3) end
+function NetworkSpentBuyRevealPlayers(p0, p1, p2) end
 
 ---```
 ---NativeDB Introduced: v1734
@@ -1876,22 +1868,28 @@ function NetworkSpentBuyTruck(p0, p1, p2, p3) end
 ---@return any
 function NetworkSpentBuyCasino(amount, p1, p2) end
 
----```
----NativeDB Introduced: v1290
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x0CCE73BC7A11E885)
----@param p0 any
----@param p1 any
----@param p2 any
----@param p3 any
-function NetworkSpentBuyTiltrotor(p0, p1, p2, p3) end
-
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA628A745E2275C5D)
 ---@param p0 any
 ---@param p1 boolean
 ---@param p2 boolean
 function NetworkSpentBuyOfftheradar(p0, p1, p2) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xAC272C0AE01B4BD8)
+---@param p0 any
+---@param p1 any
+---@param p2 any
+---@param p3 any
+function NetworkSpentBuyTruck(p0, p1, p2, p3) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xACDE7185B374177C)
+---@param p0 any
+---@param p2 boolean
+---@param p3 boolean
+---@return any
+function NetworkSpentCallPlayer(p0, p2, p3) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xE1B13771A843C4F6)
@@ -1902,6 +1900,16 @@ function NetworkSpentBuyOfftheradar(p0, p1, p2) end
 function NetworkSpentBuyWantedlevel(p0, p2, p3) end
 
 ---```
+---NativeDB Introduced: v1290
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x0CCE73BC7A11E885)
+---@param p0 any
+---@param p1 any
+---@param p2 any
+---@param p3 any
+function NetworkSpentBuyTiltrotor(p0, p1, p2, p3) end
+
+---```
 ---NativeDB Introduced: v2372
 ---```
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x925227803A0EAA1B)
@@ -1910,26 +1918,6 @@ function NetworkSpentBuyWantedlevel(p0, p2, p3) end
 ---@param p2 boolean
 ---@param p3 any
 function NetworkSpentCarclub(p0, p1, p2, p3) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xACDE7185B374177C)
----@param p0 any
----@param p2 boolean
----@param p3 boolean
----@return any
-function NetworkSpentCallPlayer(p0, p2, p3) end
-
----```
----NativeDB Introduced: v2699
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x948705F6F9C50824)
----@param p0 any
----@param p1 any
----@param p2 any
----@param p3 any
----@param p4 any
----@param p5 any
-function NetworkSpentCargoSourcing(p0, p1, p2, p3, p4, p5) end
 
 ---```
 ---NativeDB Introduced: v2372
@@ -1943,21 +1931,30 @@ function NetworkSpentCargoSourcing(p0, p1, p2, p3, p4, p5) end
 function NetworkSpentCarclubMembership(p0, p1, p2, p3, p4) end
 
 ---```
----NativeDB Introduced: v2372
+---NativeDB Introduced: v2699
 ---```
----[Native Documentation](https://docs.fivem.net/natives/?_0xD1E46824E6FB92B5)
+---[Native Documentation](https://docs.fivem.net/natives/?_0x948705F6F9C50824)
 ---@param p0 any
 ---@param p1 any
 ---@param p2 any
 ---@param p3 any
-function NetworkSpentCarclubTakeover(p0, p1, p2, p3) end
+---@param p4 any
+---@param p5 any
+function NetworkSpentCargoSourcing(p0, p1, p2, p3, p4, p5) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x29B260B84947DFCC)
+---[Native Documentation](https://docs.fivem.net/natives/?_0x6D3A430D1A809179)
 ---@param p0 any
 ---@param p1 boolean
 ---@param p2 boolean
-function NetworkSpentBounty(p0, p1, p2) end
+function NetworkSpentBuyPassiveMode(p0, p1, p2) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x289016EC778D60E0)
+---@param amount number
+---@param p1 boolean
+---@param p2 boolean
+function NetworkSpentCashDrop(amount, p1, p2) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xEC03C719DB2F4306)
@@ -1986,6 +1983,17 @@ function NetworkSpentCarwash(p0, p1, p2, p3, p4) end
 function NetworkSpentCasinoHeist(p0, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10) end
 
 ---```
+---NativeDB Introduced: v1734
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x88BF9B612B84D3C3)
+---@param amount number
+---@param p1 any
+---@param p2 any
+---@param p3 any
+---@param p4 any
+function NetworkSpentCasinoGeneric(amount, p1, p2, p3, p4) end
+
+---```
 ---NativeDB Introduced: v2189
 ---```
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC991C255AA6D90B2)
@@ -2000,34 +2008,6 @@ function NetworkSpentCasinoHeist(p0, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10) en
 ---@param p8 any
 function NetworkSpentCasinoClubGeneric(p0, p1, p2, p3, p4, p5, p6, p7, p8) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x289016EC778D60E0)
----@param amount number
----@param p1 boolean
----@param p2 boolean
-function NetworkSpentCashDrop(amount, p1, p2) end
-
----```
----NativeDB Introduced: v1734
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x88BF9B612B84D3C3)
----@param amount number
----@param p1 any
----@param p2 any
----@param p3 any
----@param p4 any
-function NetworkSpentCasinoGeneric(amount, p1, p2, p3, p4) end
-
----```
----NativeDB Introduced: v2372
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0xB9F7A469460E7A4A)
----@param p0 any
----@param p1 any
----@param p2 any
----@param p3 boolean
-function NetworkSpentFromBank(p0, p1, p2, p3) end
-
 ---```
 ---NativeDB Introduced: v1734
 ---```
@@ -2037,6 +2017,14 @@ function NetworkSpentFromBank(p0, p1, p2, p3) end
 ---@param p2 boolean
 ---@param p3 number
 function NetworkSpentCasinoMembership(amount, p1, p2, p3) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x6B38ECB05A63A685)
+---@param p0 any
+---@param p1 any
+---@param p2 boolean
+---@param p3 boolean
+function NetworkSpentCinema(p0, p1, p2, p3) end
 
 ---```
 ---NativeDB Introduced: v1290
@@ -2049,6 +2037,16 @@ function NetworkSpentCasinoMembership(amount, p1, p2, p3) end
 function NetworkSpentEmployAssassins(p0, p1, p2, p3) end
 
 ---```
+---NativeDB Introduced: v2372
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0xB9F7A469460E7A4A)
+---@param p0 any
+---@param p1 any
+---@param p2 any
+---@param p3 boolean
+function NetworkSpentFromBank(p0, p1, p2, p3) end
+
+---```
 ---NativeDB Introduced: v1868
 ---```
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x487009DD91D93429)
@@ -2058,13 +2056,15 @@ function NetworkSpentEmployAssassins(p0, p1, p2, p3) end
 ---@param p3 any
 function NetworkSpentCasinoHeistSkipMission(p0, p1, p2, p3) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x6B38ECB05A63A685)
+---```
+---NativeDB Introduced: v1290
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x771ADB0E7635B7BF)
 ---@param p0 any
 ---@param p1 any
----@param p2 boolean
----@param p3 boolean
-function NetworkSpentCinema(p0, p1, p2, p3) end
+---@param p2 any
+---@param p3 any
+function NetworkSpentGangopsCannon(p0, p1, p2, p3) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x6A445B64ED7ABEB5)
@@ -2084,14 +2084,13 @@ function NetworkSpentFromRockstar(bank, p1, p2) end
 function NetworkSpentGangopsStartMission(p0, p1, p2, p3) end
 
 ---```
----NativeDB Introduced: v1290
+---NativeDB Introduced: v1180
 ---```
----[Native Documentation](https://docs.fivem.net/natives/?_0xA19EC0786E326E06)
----@param type number
+---[Native Documentation](https://docs.fivem.net/natives/?_0xB1F1346FD57685D7)
 ---@param amount number
+---@param p1 boolean
 ---@param p2 boolean
----@param p3 boolean
-function NetworkSpentGangopsStartStrand(type, amount, p2, p3) end
+function NetworkSpentHangarStaffCharges(amount, p1, p2) end
 
 ---```
 ---NativeDB Introduced: v1290
@@ -2103,32 +2102,14 @@ function NetworkSpentGangopsStartStrand(type, amount, p2, p3) end
 function NetworkSpentGangopsTripSkip(amount, p1, p2) end
 
 ---```
----NativeDB Introduced: v1290
+---NativeDB Introduced: v2372
 ---```
----[Native Documentation](https://docs.fivem.net/natives/?_0x771ADB0E7635B7BF)
+---[Native Documentation](https://docs.fivem.net/natives/?_0xD1E46824E6FB92B5)
 ---@param p0 any
 ---@param p1 any
 ---@param p2 any
 ---@param p3 any
-function NetworkSpentGangopsCannon(p0, p1, p2, p3) end
-
----```
----NativeDB Introduced: v1180
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0xB1F1346FD57685D7)
----@param amount number
----@param p1 boolean
----@param p2 boolean
-function NetworkSpentHangarStaffCharges(amount, p1, p2) end
-
----```
----NativeDB Introduced: v1180
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0xB18AC2ECBB15CB6A)
----@param amount number
----@param p1 boolean
----@param p2 boolean
-function NetworkSpentHangarUtilityCharges(amount, p1, p2) end
+function NetworkSpentCarclubTakeover(p0, p1, p2, p3) end
 
 ---```
 ---NativeDB Introduced: v2699
@@ -2139,6 +2120,16 @@ function NetworkSpentHangarUtilityCharges(amount, p1, p2) end
 ---@param p2 any
 ---@param p3 any
 function NetworkSpentGunrunningContactService(p0, p1, p2, p3) end
+
+---```
+---NativeDB Introduced: v1290
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0xA19EC0786E326E06)
+---@param type number
+---@param amount number
+---@param p2 boolean
+---@param p3 boolean
+function NetworkSpentGangopsStartStrand(type, amount, p2, p3) end
 
 ---```
 ---Only used once in a script (am_contact_requests)  
@@ -2152,11 +2143,20 @@ function NetworkSpentGunrunningContactService(p0, p1, p2, p3) end
 function NetworkSpentHireMugger(p0, p1, p2) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xE7B80E2BF9D80BD6)
+---[Native Documentation](https://docs.fivem.net/natives/?_0x7BF1D73DB2ECA492)
 ---@param p0 any
 ---@param p1 boolean
 ---@param p2 boolean
-function NetworkSpentHireMercenary(p0, p1, p2) end
+function NetworkSpentHeliPickup(p0, p1, p2) end
+
+---```
+---NativeDB Introduced: v1180
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0xB18AC2ECBB15CB6A)
+---@param amount number
+---@param p1 boolean
+---@param p2 boolean
+function NetworkSpentHangarUtilityCharges(amount, p1, p2) end
 
 ---```
 ---NativeDB Introduced: v2372
@@ -2169,6 +2169,13 @@ function NetworkSpentHireMercenary(p0, p1, p2) end
 function NetworkSpentImAbility(p0, p1, p2, p3) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xE7B80E2BF9D80BD6)
+---@param p0 any
+---@param p1 boolean
+---@param p2 boolean
+function NetworkSpentHireMercenary(p0, p1, p2) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xEE99784E4467689C)
 ---@param p0 any
 ---@param p1 boolean
@@ -2177,11 +2184,11 @@ function NetworkSpentImAbility(p0, p1, p2, p3) end
 function NetworkSpentInStripclub(p0, p1, p2, p3) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xC1952F3773BA18FE)
+---[Native Documentation](https://docs.fivem.net/natives/?_0xD9B86B9872039763)
 ---@param p0 any
----@param p1 any
----@param p2 any
-function NetworkSpentImportExportRepair(p0, p1, p2) end
+---@param p1 boolean
+---@param p2 boolean
+function NetworkSpentHoldups(p0, p1, p2) end
 
 ---```
 ---NativeDB Introduced: v2189
@@ -2194,22 +2201,6 @@ function NetworkSpentImportExportRepair(p0, p1, p2) end
 function NetworkSpentIslandHeist(p0, p1, p2, p3) end
 
 ---```
----NativeDB Introduced: v1604
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0xE5F5A060439C2F5D)
----@param amount number
----@param p1 boolean
----@param p2 boolean
-function NetworkSpentMakeItRain(amount, p1, p2) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xD9B86B9872039763)
----@param p0 any
----@param p1 boolean
----@param p2 boolean
-function NetworkSpentHoldups(p0, p1, p2) end
-
----```
 ---NativeDB Introduced: v323
 ---```
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x28F174A67B8D0C2F)
@@ -2220,6 +2211,13 @@ function NetworkSpentHoldups(p0, p1, p2) end
 function NetworkSpentJobSkip(amount, matchId, p2, p3) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xE7DF4E0545DFB56E)
+---@param amount number
+---@param p1 boolean
+---@param p2 boolean
+function NetworkSpentMoveYacht(amount, p1, p2) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x5BCDE0F640C773D2)
 ---@param p0 any
 ---@param p1 any
@@ -2228,18 +2226,20 @@ function NetworkSpentJobSkip(amount, matchId, p2, p3) end
 function NetworkSpentJukebox(p0, p1, p2, p3) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x7BF1D73DB2ECA492)
+---[Native Documentation](https://docs.fivem.net/natives/?_0xC1952F3773BA18FE)
 ---@param p0 any
----@param p1 boolean
----@param p2 boolean
-function NetworkSpentHeliPickup(p0, p1, p2) end
+---@param p1 any
+---@param p2 any
+function NetworkSpentImportExportRepair(p0, p1, p2) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xE7DF4E0545DFB56E)
+---```
+---NativeDB Introduced: v1604
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0xE5F5A060439C2F5D)
 ---@param amount number
 ---@param p1 boolean
 ---@param p2 boolean
-function NetworkSpentMoveYacht(amount, p1, p2) end
+function NetworkSpentMakeItRain(amount, p1, p2) end
 
 ---```
 ---NativeDB Introduced: v1493
@@ -2252,14 +2252,6 @@ function NetworkSpentMoveYacht(amount, p1, p2) end
 ---@param p3 boolean
 function NetworkSpentNightclubEntryFee(player, amount, p1, p2, p3) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xE8B0B270B6E7C76E)
----@param p0 any
----@param p1 any
----@param p2 any
----@param p3 any
-function NetworkSpentOrderBodyguardVehicle(p0, p1, p2, p3) end
-
 ---```
 ---NativeDB Introduced: v1493
 ---```
@@ -2271,14 +2263,6 @@ function NetworkSpentOrderBodyguardVehicle(p0, p1, p2, p3) end
 function NetworkSpentNightclubBarDrink(amount, p1, p2, p3) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xB49ECA122467D05F)
----@param p0 any
----@param p1 any
----@param p2 any
----@param p3 any
-function NetworkSpentPaServiceDancer(p0, p1, p2, p3) end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x05F04155A226FBBF)
 ---@param p0 any
 ---@param p1 any
@@ -2287,19 +2271,27 @@ function NetworkSpentPaServiceDancer(p0, p1, p2, p3) end
 function NetworkSpentOrderWarehouseVehicle(p0, p1, p2, p3) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x0FE8E1FCD2B86B33)
+---[Native Documentation](https://docs.fivem.net/natives/?_0xB49ECA122467D05F)
 ---@param p0 any
 ---@param p1 any
 ---@param p2 any
 ---@param p3 any
-function NetworkSpentPaServiceHeliPickup(p0, p1, p2, p3) end
+function NetworkSpentPaServiceDancer(p0, p1, p2, p3) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x08A1B82B91900682)
----@param p0 number
----@param p1 number
----@param amount number
-function NetworkSpentPayGoon(p0, p1, amount) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0xD5BB406F4E04019F)
+---@param p0 any
+---@param p1 boolean
+---@param p2 boolean
+function NetworkSpentNoCops(p0, p1, p2) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xE8B0B270B6E7C76E)
+---@param p0 any
+---@param p1 any
+---@param p2 any
+---@param p3 any
+function NetworkSpentOrderBodyguardVehicle(p0, p1, p2, p3) end
 
 ---```
 ---According to how I understood this in the freemode script alone,
@@ -2319,6 +2311,21 @@ function NetworkSpentPayGoon(p0, p1, amount) end
 function NetworkSpentPayVehicleInsurancePremium(amount, vehicleModel, notBankrupt, hasTheMoney) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x08A1B82B91900682)
+---@param p0 number
+---@param p1 number
+---@param amount number
+function NetworkSpentPayGoon(p0, p1, amount) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x0FE8E1FCD2B86B33)
+---@param p0 any
+---@param p1 any
+---@param p2 any
+---@param p3 any
+function NetworkSpentPaServiceHeliPickup(p0, p1, p2, p3) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x7C99101F7FCE2EE5)
 ---@param p0 number
 ---@param p1 number
@@ -2327,11 +2334,11 @@ function NetworkSpentPayVehicleInsurancePremium(amount, vehicleModel, notBankrup
 function NetworkSpentPlayerHealthcare(p0, p1, p2, p3) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xDBC966A01C02BCA7)
+---[Native Documentation](https://docs.fivem.net/natives/?_0xB21B89501CFAC79E)
 ---@param p0 any
----@param p1 any
----@param p2 any
-function NetworkSpentPayBoss(p0, p1, p2) end
+---@param p1 boolean
+---@param p2 boolean
+function NetworkSpentProstitutes(p0, p1, p2) end
 
 ---```
 ---NativeDB Introduced: v1180
@@ -2360,13 +2367,6 @@ function NetworkSpentPurchaseWarehouse(amount, data, p2, p3) end
 ---@param p2 boolean
 function NetworkSpentRdrhatchetBonus(amount, p1, p2) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xB21B89501CFAC79E)
----@param p0 any
----@param p1 boolean
----@param p2 boolean
-function NetworkSpentProstitutes(p0, p1, p2) end
-
 ---```
 ---NativeDB Introduced: v1493
 ---```
@@ -2385,18 +2385,18 @@ function NetworkSpentRehireDj(amount, p1, p2, p3) end
 function NetworkSpentRequestHeist(p0, p1, p2) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xD5BB406F4E04019F)
----@param p0 any
----@param p1 boolean
----@param p2 boolean
-function NetworkSpentNoCops(p0, p1, p2) end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xFC4EE00A7B3BFB76)
 ---@param p0 any
 ---@param p1 any
 ---@param p2 any
 function NetworkSpentRenameOrganization(p0, p1, p2) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x995A65F15F581359)
+---@param amount number
+---@param p1 boolean
+---@param p2 boolean
+function NetworkSpentRobbedByMugger(amount, p1, p2) end
 
 ---```
 ---NativeDB Introduced: v1604
@@ -2418,11 +2418,11 @@ function NetworkSpentSpinTheWheelPayment(amount, p1, p2, p3) end
 function NetworkSpentSalesDisplay(p0) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x995A65F15F581359)
----@param amount number
+---[Native Documentation](https://docs.fivem.net/natives/?_0x8204DA7934DF3155)
+---@param p0 any
 ---@param p1 boolean
 ---@param p2 boolean
-function NetworkSpentRobbedByMugger(amount, p1, p2) end
+function NetworkSpentRequestJob(p0, p1, p2) end
 
 ---```
 ---NativeDB Introduced: v2189
@@ -2451,6 +2451,16 @@ function NetworkSpentTelescope(p0, p1, p2) end
 function NetworkSpentTaxi(amount, p1, p2) end
 
 ---```
+---NativeDB Introduced: v2372
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0xDD829AA198FDC46C)
+---@param p0 any
+---@param p1 any
+---@param p2 any
+---@param p3 any
+function NetworkSpentUpgradeAutoshop(p0, p1, p2, p3) end
+
+---```
 ---NativeDB Introduced: v1604
 ---```
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x037ABB06825D7AB1)
@@ -2459,14 +2469,6 @@ function NetworkSpentTaxi(amount, p1, p2) end
 ---@param p2 boolean
 ---@param p3 string
 function NetworkSpentUpgradeArena(amount, p1, p2, p3) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x0C82D21A77C22D49)
----@param p0 any
----@param p1 any
----@param p2 any
----@param p3 any
-function NetworkSpentUpgradeBunker(p0, p1, p2, p3) end
 
 ---```
 ---NativeDB Introduced: v1290
@@ -2479,16 +2481,6 @@ function NetworkSpentUpgradeBunker(p0, p1, p2, p3) end
 function NetworkSpentUpgradeBase(p0, p1, p2, p3) end
 
 ---```
----NativeDB Introduced: v2372
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0xDD829AA198FDC46C)
----@param p0 any
----@param p1 any
----@param p2 any
----@param p3 any
-function NetworkSpentUpgradeAutoshop(p0, p1, p2, p3) end
-
----```
 ---NativeDB Introduced: v1734
 ---```
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x4740D62BC1B4EBEA)
@@ -2497,6 +2489,14 @@ function NetworkSpentUpgradeAutoshop(p0, p1, p2, p3) end
 ---@param p2 boolean
 ---@return any
 function NetworkSpentUpgradeCasino(amount, p1, p2) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x0C82D21A77C22D49)
+---@param p0 any
+---@param p1 any
+---@param p2 any
+---@param p3 any
+function NetworkSpentUpgradeBunker(p0, p1, p2, p3) end
 
 ---```
 ---NativeDB Introduced: v2189
@@ -2518,6 +2518,16 @@ function NetworkSpentUpgradeSub(p0, p1, p2, p3) end
 ---@param p3 any
 function NetworkSpentUpgradeHangar(p0, p1, p2, p3) end
 
+---```
+---NativeDB Introduced: v1290
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x165E135D6DFA2907)
+---@param p0 any
+---@param p1 any
+---@param p2 any
+---@param p3 any
+function NetworkSpentUpgradeTiltrotor(p0, p1, p2, p3) end
+
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA75CCF58A60A5FD1)
 ---@param p0 any
@@ -2531,16 +2541,6 @@ function NetworkSpentUpgradeHangar(p0, p1, p2, p3) end
 ---@param p8 any
 ---@param p9 any
 function NetworkSpentVehicleExportMods(p0, p1, p2, p3, p4, p5, p6, p7, p8, p9) end
-
----```
----NativeDB Introduced: v1290
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x165E135D6DFA2907)
----@param p0 any
----@param p1 any
----@param p2 any
----@param p3 any
-function NetworkSpentUpgradeTiltrotor(p0, p1, p2, p3) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x365E877C61D6988B)
@@ -2562,11 +2562,24 @@ function NetworkSpentUpgradeTruck(p0, p1, p2, p3) end
 function NetworkSpentVehicleRequested(p0, p1, p2, p3, p4) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x8204DA7934DF3155)
+---[Native Documentation](https://docs.fivem.net/natives/?_0xD99DB210089617FE)
 ---@param p0 any
----@param p1 boolean
----@param p2 boolean
-function NetworkSpentRequestJob(p0, p1, p2) end
+---@param p1 any
+---@param amount number
+function NetworkSpentWager(p0, p1, amount) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x5182A339A3474510)
+---@param p0 any
+---@param p1 any
+---@param p2 any
+function NetworkSpentVipUtilityCharges(p0, p1, p2) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x20194D48EAEC9A41)
+---@param p2 string
+---@return string, number, number
+function ProcessCashGift(p2) end
 
 ---```
 ---Does nothing and always returns 0.
@@ -2577,22 +2590,9 @@ function NetworkSpentRequestJob(p0, p1, p2) end
 function WithdrawVc(amount) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x5182A339A3474510)
+---[Native Documentation](https://docs.fivem.net/natives/?_0xDBC966A01C02BCA7)
 ---@param p0 any
 ---@param p1 any
 ---@param p2 any
-function NetworkSpentVipUtilityCharges(p0, p1, p2) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xD99DB210089617FE)
----@param p0 any
----@param p1 any
----@param amount number
-function NetworkSpentWager(p0, p1, amount) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x20194D48EAEC9A41)
----@param p2 string
----@return string, number, number
-function ProcessCashGift(p2) end
+function NetworkSpentPayBoss(p0, p1, p2) end
 

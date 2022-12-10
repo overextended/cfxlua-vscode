@@ -40,23 +40,6 @@ function SetDeepOceanScaler(intensity) end
 function AddExtraCalmingQuad(xLow, yLow, xHigh, yHigh, height) end
 
 ---```
----Sets the water height for a given position and radius.  
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0xC443FD757C3BA637)
----@param x number
----@param y number
----@param height number
----@param radius number
-function ModifyWater(x, y, height, radius) end
-
----```
----p0 is the handle returned from _0xFDBF4CDBC07E1706  
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0xB1252E3E59A82AAF)
----@param p0 number
-function RemoveCurrentRise(p0) end
-
----```
 ---This function set height to the value of z-axis of the water surface.  
 ---This function works with sea and lake. However it does not work with shallow rivers (e.g. raton canyon will return -100000.0f)  
 ---note: seems to return true when you are in water  
@@ -69,19 +52,38 @@ function RemoveCurrentRise(p0) end
 function GetWaterHeight(x, y, z) end
 
 ---```
+---Sets the water height for a given position and radius.  
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0xC443FD757C3BA637)
+---@param x number
+---@param y number
+---@param height number
+---@param radius number
+function ModifyWater(x, y, height, radius) end
+
+---```
 ---Sets the waves intensity back to original (1.0 in most cases). 
 ---```
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x5E5E99285AE812DB)
 function ResetDeepOceanScaler() end
 
+---```
+---p0 is the handle returned from _0xFDBF4CDBC07E1706  
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0xB1252E3E59A82AAF)
+---@param p0 number
+function RemoveCurrentRise(p0) end
+
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x2B3451FA1E3142E2)
----@param x number
----@param y number
----@param z number
----@param flag number
----@return boolean, number
-function TestVerticalProbeAgainstAllWater(x, y, z, flag) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0xFFA5D878809819DB)
+---@param x1 number
+---@param y1 number
+---@param z1 number
+---@param x2 number
+---@param y2 number
+---@param z2 number
+---@return boolean, vector3
+function TestProbeAgainstWater(x1, y1, z1, x2, y2, z2) end
 
 ---Flags are identical to START_SHAPE_TEST\*, however, 128 is automatically set.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x8974647ED222EA5F)
@@ -96,13 +98,11 @@ function TestVerticalProbeAgainstAllWater(x, y, z, flag) end
 function TestProbeAgainstAllWater(x1, y1, z1, x2, y2, z2, flag) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xFFA5D878809819DB)
----@param x1 number
----@param y1 number
----@param z1 number
----@param x2 number
----@param y2 number
----@param z2 number
----@return boolean, vector3
-function TestProbeAgainstWater(x1, y1, z1, x2, y2, z2) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x2B3451FA1E3142E2)
+---@param x number
+---@param y number
+---@param z number
+---@param flag number
+---@return boolean, number
+function TestVerticalProbeAgainstAllWater(x, y, z, flag) end
 

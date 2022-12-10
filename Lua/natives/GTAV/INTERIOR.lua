@@ -1,20 +1,20 @@
 ---@meta
 
 ---```
----More info: http://gtaforums.com/topic/836367-adding-props-to-interiors/  
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x55E86AF2712B36A1)
----@param interior number
----@param entitySetName string
-function ActivateInteriorEntitySet(interior, entitySetName) end
-
----```
 ---Does something similar to INTERIOR::DISABLE_INTERIOR  
 ---```
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xD9175F941610DB54)
 ---@param interiorID number
 ---@param toggle boolean
 function CapInterior(interiorID, toggle) end
+
+---```
+---More info: http://gtaforums.com/topic/836367-adding-props-to-interiors/  
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x55E86AF2712B36A1)
+---@param interior number
+---@param entitySetName string
+function ActivateInteriorEntitySet(interior, entitySetName) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x3F6167F351168730)
@@ -60,6 +60,11 @@ function ClearRoomForEntity(entity) end
 function ForceRoomForEntity(entity, interior, roomHashKey) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x50C375537449F369)
+---@param mapObjectHash number | string
+function EnableScriptCullModelThisFrame(mapObjectHash) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x420BD37289EEE162)
 ---@param interior number
 ---@param entitySetName string
@@ -71,12 +76,6 @@ function DeactivateInteriorEntitySet(interior, entitySetName) end
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA97F257D0151A6AB)
 ---@param mapObjectHash number | string
 function EnableExteriorCullModelThisFrame(mapObjectHash) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x920D853F3E17F1DA)
----@param interiorID number
----@param roomHashKey number | string
-function ForceRoomForGameViewport(interiorID, roomHashKey) end
 
 ---```
 ---Returns interior ID from specified coordinates. If coordinates are outside, then it returns 0.  
@@ -124,9 +123,18 @@ function GetInteriorAtCoordsWithTypehash(x, y, z, typeHash) end
 function GetInteriorFromEntity(entity) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x50C375537449F369)
----@param mapObjectHash number | string
-function EnableScriptCullModelThisFrame(mapObjectHash) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0xEC4CF9FCB29A4424)
+---@param x number
+---@param y number
+---@param z number
+---@return number
+function GetInteriorFromCollision(x, y, z) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x920D853F3E17F1DA)
+---@param interiorID number
+---@param roomHashKey number | string
+function ForceRoomForGameViewport(interiorID, roomHashKey) end
 
 ---```
 ---Returns the group ID of the specified interior. For example, regular interiors have group 0, subway interiors have group 1. There are a few other groups too.  
@@ -136,39 +144,6 @@ function EnableScriptCullModelThisFrame(mapObjectHash) end
 ---@return number
 function GetInteriorGroupId(interior) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xEC4CF9FCB29A4424)
----@param x number
----@param y number
----@param z number
----@return number
-function GetInteriorFromCollision(x, y, z) end
-
----```
----NativeDB Introduced: v1290
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x252BDC06B73FA6EA)
----@param interior number
----@return vector3, number
-function GetInteriorLocationAndNamehash(interior) end
-
----```
----GET_INTERIOR_*
----
----NativeDB Introduced: v1493
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0xF49B58631D9E22D9)
----@param interior number
----@return number
-function GetInteriorHeading(interior) end
-
----```
----NativeDB Introduced: v1604
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0xE7D267EC6CA966C3)
----@return number
-function GetInteriorFromPrimaryView() end
-
 ---```
 ---Seems to do the exact same as INTERIOR::GET_ROOM_KEY_FROM_ENTITY  
 ---```
@@ -176,6 +151,13 @@ function GetInteriorFromPrimaryView() end
 ---@param entity number
 ---@return number
 function GetKeyForEntityInRoom(entity) end
+
+---```
+---NativeDB Introduced: v1604
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0xE7D267EC6CA966C3)
+---@return number
+function GetInteriorFromPrimaryView() end
 
 ---Returns true if the collision at the specified coords is marked as being outside (false if there's an interior)
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xEEA5AC2EDA7C33E8)
@@ -190,6 +172,16 @@ function IsCollisionMarkedOutside(x, y, z) end
 ---@param interior number
 ---@return boolean
 function IsInteriorDisabled(interior) end
+
+---```
+---GET_INTERIOR_*
+---
+---NativeDB Introduced: v1493
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0xF49B58631D9E22D9)
+---@param interior number
+---@return number
+function GetInteriorHeading(interior) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x9E3B3E6D66F6E22F)
@@ -209,10 +201,21 @@ function GetOffsetFromInteriorInWorldCoords(interior, x, y, z) end
 function GetRoomKeyFromEntity(entity) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xBC72B5D7A1CBD54D)
+---@return boolean
+function IsInteriorScene() end
+
+---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x92BAC8ACF88CEC26)
 ---@param interiorID number
 ---@return boolean
 function IsInteriorCapped(interiorID) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x26B0E73D7EAAF4D3)
+---@param interior number
+---@return boolean
+function IsValidInterior(interior) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x35F7DD45E8C0A16D)
@@ -220,22 +223,6 @@ function IsInteriorCapped(interiorID) end
 ---@param entitySetName string
 ---@return boolean
 function IsInteriorEntitySetActive(interior, entitySetName) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xBC72B5D7A1CBD54D)
----@return boolean
-function IsInteriorScene() end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xA6575914D2A0B450)
----@return number
-function GetRoomKeyForGameViewport() end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x26B0E73D7EAAF4D3)
----@param interior number
----@return boolean
-function IsValidInterior(interior) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x6726BDCCC1932F0E)
@@ -253,6 +240,14 @@ function IsInteriorReady(interiorID) end
 function N_0x4c2330e61d3deb56(interior) end
 
 ---```
+---NativeDB Introduced: v1493
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x38C1CB1CB119A016)
+---@param p0 any
+---@param p1 any
+function N_0x38c1cb1cb119a016(p0, p1) end
+
+---```
 ---Usage: INTERIOR::_0x405DC2AEF6AF95B9(INTERIOR::GET_KEY_FOR_ENTITY_IN_ROOM(PLAYER::PLAYER_PED_ID()));  
 ---```
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x405DC2AEF6AF95B9)
@@ -260,8 +255,10 @@ function N_0x4c2330e61d3deb56(interior) end
 function N_0x405dc2aef6af95b9(roomHashKey) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x483ACA1176CA93F1)
-function N_0x483aca1176ca93f1() end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x82EBB79E258FA2B7)
+---@param entity number
+---@param interiorID number
+function N_0x82ebb79e258fa2b7(entity, interiorID) end
 
 ---```
 ---Jenkins hash _might_ be 0xFC227584.
@@ -272,25 +269,8 @@ function N_0x483aca1176ca93f1() end
 function N_0x7241ccb7d020db69(entity, toggle) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x82EBB79E258FA2B7)
----@param entity number
----@param interiorID number
-function N_0x82ebb79e258fa2b7(entity, interiorID) end
-
----```
----NativeDB Introduced: v1604
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x7ECDF98587E92DEC)
----@param p0 any
-function N_0x7ecdf98587e92dec(p0) end
-
----```
----NativeDB Introduced: v1493
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x38C1CB1CB119A016)
----@param p0 any
----@param p1 any
-function N_0x38c1cb1cb119a016(p0, p1) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x483ACA1176CA93F1)
+function N_0x483aca1176ca93f1() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x2CA429C029CCF247)
@@ -298,12 +278,24 @@ function N_0x38c1cb1cb119a016(p0, p1) end
 function PinInteriorInMemory(interior) end
 
 ---```
----Does something similar to INTERIOR::DISABLE_INTERIOR.  
----You don't fall through the floor but everything is invisible inside and looks the same as when INTERIOR::DISABLE_INTERIOR is used. Peds behaves normally inside.  
+---NativeDB Introduced: v1290
 ---```
----[Native Documentation](https://docs.fivem.net/natives/?_0x261CCE7EED010641)
+---[Native Documentation](https://docs.fivem.net/natives/?_0x252BDC06B73FA6EA)
 ---@param interior number
-function UnpinInterior(interior) end
+---@return vector3, number
+function GetInteriorLocationAndNamehash(interior) end
+
+---```
+---DISABLE_*
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x9E6542F0CE8E70A3)
+---@param toggle boolean
+function N_0x9e6542f0ce8e70a3(toggle) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x41F37C3427C75AE0)
+---@param interiorID number
+function RefreshInterior(interiorID) end
 
 ---```
 ---Exemple of use(carmod_shop.c4)  
@@ -313,6 +305,19 @@ function UnpinInterior(interior) end
 ---@param roomName string
 function N_0xaf348afcb575a441(roomName) end
 
+---```
+---Does something similar to INTERIOR::DISABLE_INTERIOR.  
+---You don't fall through the floor but everything is invisible inside and looks the same as when INTERIOR::DISABLE_INTERIOR is used. Peds behaves normally inside.  
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x261CCE7EED010641)
+---@param interior number
+function UnpinInterior(interior) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xA6575914D2A0B450)
+---@return number
+function GetRoomKeyForGameViewport() end
+
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC1F1920BAF281317)
 ---@param interior number
@@ -320,15 +325,10 @@ function N_0xaf348afcb575a441(roomName) end
 ---@param color number
 function SetInteriorEntitySetColor(interior, entitySetName, color) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x41F37C3427C75AE0)
----@param interiorID number
-function RefreshInterior(interiorID) end
-
 ---```
----DISABLE_*
+---NativeDB Introduced: v1604
 ---```
----[Native Documentation](https://docs.fivem.net/natives/?_0x9E6542F0CE8E70A3)
----@param toggle boolean
-function N_0x9e6542f0ce8e70a3(toggle) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x7ECDF98587E92DEC)
+---@param p0 any
+function N_0x7ecdf98587e92dec(p0) end
 

@@ -9,6 +9,12 @@ function AppClearBlock() end
 function AppCloseApp() end
 
 ---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x44151AEA95C8A003)
+---@param appName string
+---@return boolean
+function AppDeleteAppData(appName) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xE8E3FCF72EAC0EF8)
 function AppCloseBlock() end
 
@@ -16,12 +22,6 @@ function AppCloseBlock() end
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x846AA8E7D55EE5B6)
 ---@return boolean
 function AppDataValid() end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x44151AEA95C8A003)
----@param appName string
----@return boolean
-function AppDeleteAppData(appName) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x1514FB24C02C2322)
@@ -85,11 +85,11 @@ function AppGetInt(property) end
 function AppSetInt(property, value) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x95C5D356CDA6E85F)
+function AppSaveData() end
+
+---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x262AB456A3D21F93)
 ---@param blockName string
 function AppSetBlock(blockName) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x95C5D356CDA6E85F)
-function AppSaveData() end
 

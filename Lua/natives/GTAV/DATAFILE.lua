@@ -12,24 +12,10 @@ function DataarrayAddDict() end
 function DataarrayAddBool(value) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x57A995FD75D37F56)
----@param value number
----@return any
-function DataarrayAddFloat(value) end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xCABDB751D86FE93B)
 ---@param value number
 ---@return any
 function DataarrayAddInt(value) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x407F8D034F70F0C2)
----@param valueX number
----@param valueY number
----@param valueZ number
----@return any
-function DataarrayAddVector(valueX, valueY, valueZ) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x2F0661C155AEEEAA)
@@ -38,10 +24,10 @@ function DataarrayAddVector(valueX, valueY, valueZ) end
 function DataarrayAddString(value) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x50C1B2874E50C114)
----@param arrayIndex number
----@return boolean, any
-function DataarrayGetBool(arrayIndex) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x57A995FD75D37F56)
+---@param value number
+---@return any
+function DataarrayAddFloat(value) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x065DB281590CEA2D)
@@ -49,10 +35,18 @@ function DataarrayGetBool(arrayIndex) end
 function DataarrayGetCount() end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x3E5AE19425CD74BE)
+---[Native Documentation](https://docs.fivem.net/natives/?_0x50C1B2874E50C114)
 ---@param arrayIndex number
----@return number, any
-function DataarrayGetInt(arrayIndex) end
+---@return boolean, any
+function DataarrayGetBool(arrayIndex) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x407F8D034F70F0C2)
+---@param valueX number
+---@param valueY number
+---@param valueZ number
+---@return any
+function DataarrayAddVector(valueX, valueY, valueZ) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC0C527B525D7CFB5)
@@ -65,6 +59,24 @@ function DataarrayGetFloat(arrayIndex) end
 ---@param arrayIndex number
 ---@return string, any
 function DataarrayGetString(arrayIndex) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x3E5AE19425CD74BE)
+---@param arrayIndex number
+---@return number, any
+function DataarrayGetInt(arrayIndex) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x8D2064E5B64A628A)
+---@param arrayIndex number
+---@return vector3, any
+function DataarrayGetVector(arrayIndex) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xA358F56F10732EE1)
+---@param key string
+---@return any, any
+function DatadictCreateDict(key) end
 
 ---```
 ---Types:  
@@ -82,18 +94,6 @@ function DataarrayGetString(arrayIndex) end
 function DataarrayGetType(arrayIndex) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x8D2064E5B64A628A)
----@param arrayIndex number
----@return vector3, any
-function DataarrayGetVector(arrayIndex) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xA358F56F10732EE1)
----@param key string
----@return any, any
-function DatadictCreateDict(key) end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x1186940ED72FFEEC)
 ---@param key string
 ---@return boolean, any
@@ -106,22 +106,22 @@ function DatadictGetBool(key) end
 function DataarrayGetDict(arrayIndex) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x7A983AA9DA2659ED)
----@param key string
----@return any, any
-function DatadictGetArray(key) end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x5B11728527CA6E5F)
 ---@param key string
 ---@return any, any
 function DatadictCreateArray(key) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x3D2FD9E763B24472)
+---[Native Documentation](https://docs.fivem.net/natives/?_0xB6B9DDC412FCEEE2)
 ---@param key string
----@return string, any
-function DatadictGetString(key) end
+---@return any, any
+function DatadictGetDict(key) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x7A983AA9DA2659ED)
+---@param key string
+---@return any, any
+function DatadictGetArray(key) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x06610343E73B9727)
@@ -136,16 +136,17 @@ function DatadictGetFloat(key) end
 function DatadictGetVector(key) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xB6B9DDC412FCEEE2)
+---[Native Documentation](https://docs.fivem.net/natives/?_0x3D2FD9E763B24472)
 ---@param key string
----@return any, any
-function DatadictGetDict(key) end
+---@return string, any
+function DatadictGetString(key) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x78F06F6B1FB5A80C)
+---[Native Documentation](https://docs.fivem.net/natives/?_0x35124302A556A325)
 ---@param key string
----@return number, any
-function DatadictGetInt(key) end
+---@param value boolean
+---@return any
+function DatadictSetBool(key, value) end
 
 ---```
 ---Types:  
@@ -177,11 +178,11 @@ function DatadictSetString(key, value) end
 function DatadictSetInt(key, value) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x35124302A556A325)
+---[Native Documentation](https://docs.fivem.net/natives/?_0xC27E1CC2D795105E)
 ---@param key string
----@param value boolean
+---@param value number
 ---@return any
-function DatadictSetBool(key, value) end
+function DatadictSetFloat(key, value) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x4CD49B76338C7DEE)
@@ -192,26 +193,15 @@ function DatadictSetBool(key, value) end
 ---@return any
 function DatadictSetVector(key, valueX, valueY, valueZ) end
 
----```
----NativeDB Added Parameter 1: int p0
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x9AB9C1CFC8862DFB)
-function DatafileDelete() end
-
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x6CC86E78358D5119)
 function DatafileClearWatchList() end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xC27E1CC2D795105E)
+---[Native Documentation](https://docs.fivem.net/natives/?_0x78F06F6B1FB5A80C)
 ---@param key string
----@param value number
----@return any
-function DatadictSetFloat(key, value) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xC55854C7D7274882)
-function DatafileFlushMissionHeader() end
+---@return number, any
+function DatadictGetInt(key) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x8F5EA1C01D65A100)
@@ -219,18 +209,16 @@ function DatafileFlushMissionHeader() end
 ---@return boolean
 function DatafileDeleteRequestedFile(p0) end
 
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xC55854C7D7274882)
+function DatafileFlushMissionHeader() end
+
 ---```
 ---NativeDB Added Parameter 1: int p0
 ---```
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x906B778CA1DC72B6)
 ---@return string
 function DatafileGetFileDict() end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x15FF52B809DB2353)
----@param p0 any
----@return boolean
-function DatafileHasLoadedFileData(p0) end
 
 ---```
 ---Example:  
@@ -255,6 +243,18 @@ function DatafileHasLoadedFileData(p0) end
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xBEDB96A7584AA8CF)
 ---@return boolean
 function DatafileIsSavePending() end
+
+---```
+---NativeDB Added Parameter 1: int p0
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x9AB9C1CFC8862DFB)
+function DatafileDelete() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x15FF52B809DB2353)
+---@param p0 any
+---@return boolean
+function DatafileHasLoadedFileData(p0) end
 
 ---```
 ---Loads a User-Generated Content (UGC) file. These files can be found in "[GTA5]\data\ugc" and "[GTA5]\common\patch\ugc". They seem to follow a naming convention, most likely of "[name]_[part].ugc". See example below for usage.
@@ -308,10 +308,13 @@ function DatafileHasValidFileData(p0) end
 function DatafileSelectUgcPlayerData(p0) end
 
 ---```
----NativeDB Added Parameter 1: int p0
+---NativeDB Added Parameter 3: Any p2
 ---```
----[Native Documentation](https://docs.fivem.net/natives/?_0xD27058A1CA2B13EE)
-function DatafileCreate() end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x9CB0BFA7A9342C3D)
+---@param p0 number
+---@param p1 boolean
+---@return boolean
+function DatafileSelectUgcStats(p0, p1) end
 
 ---```
 ---NativeDB Added Parameter 2: Any p1
@@ -322,20 +325,6 @@ function DatafileCreate() end
 function DatafileSelectUgcData(p0) end
 
 ---```
----NativeDB Added Parameter 3: Any p2
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x9CB0BFA7A9342C3D)
----@param p0 number
----@param p1 boolean
----@return boolean
-function DatafileSelectUgcStats(p0, p1) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x4DFDD9EB705F8140)
----@return boolean, boolean
-function DatafileUpdateSaveToCloud() end
-
----```
 ---NativeDB Added Parameter 2: Any p1
 ---```
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x83BCCE3224735F05)
@@ -343,12 +332,22 @@ function DatafileUpdateSaveToCloud() end
 ---@return boolean
 function DatafileStartSaveToCloud(filename) end
 
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x4DFDD9EB705F8140)
+---@return boolean, boolean
+function DatafileUpdateSaveToCloud() end
+
 ---```
----NativeDB Introduced: v2189
+---NativeDB Added Parameter 1: int p0
 ---```
----[Native Documentation](https://docs.fivem.net/natives/?_0x6AD0BD5E087866CB)
----@param p0 any
-function N_0x6ad0bd5e087866cb(p0) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x2ED61456317B8178)
+function DatafileStoreMissionHeader() end
+
+---```
+---NativeDB Added Parameter 1: int p0
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0xD27058A1CA2B13EE)
+function DatafileCreate() end
 
 ---```
 ---Adds the given request ID to the watch list.
@@ -367,20 +366,6 @@ function DatafileWatchRequestId(id) end
 function N_0xa6eef01087181edd(p0, p1) end
 
 ---```
----NativeDB Introduced: v2189
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0xDBF860CF1DB8E599)
----@param p0 any
----@return any
-function N_0xdbf860cf1db8e599(p0) end
-
----```
----NativeDB Added Parameter 1: int p0
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x2ED61456317B8178)
-function DatafileStoreMissionHeader() end
-
----```
 ---NativeDB Added Parameter 8: Any p7
 ---```
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC84527E235FCA219)
@@ -395,14 +380,12 @@ function DatafileStoreMissionHeader() end
 function UgcCreateContent(data, dataCount, contentName, description, tagsCsv, contentTypeName, publish) end
 
 ---```
----NativeDB Added Parameter 4: Any p3
+---NativeDB Introduced: v2189
 ---```
----[Native Documentation](https://docs.fivem.net/natives/?_0x692D808C34A82143)
----@param contentId string
----@param rating number
----@param contentTypeName string
----@return boolean
-function UgcSetPlayerData(contentId, rating, contentTypeName) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0xDBF860CF1DB8E599)
+---@param p0 any
+---@return any
+function N_0xdbf860cf1db8e599(p0) end
 
 ---```
 ---NativeDB Added Parameter 6: Any p5
@@ -417,6 +400,29 @@ function UgcSetPlayerData(contentId, rating, contentTypeName) end
 function UgcCreateMission(contentName, description, tagsCsv, contentTypeName, publish) end
 
 ---```
+---NativeDB Added Parameter 8: Any p7
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x648E7A5434AF7969)
+---@param contentId string
+---@param dataCount number
+---@param contentName string
+---@param description string
+---@param tagsCsv string
+---@param contentTypeName string
+---@return boolean, any
+function UgcUpdateContent(contentId, dataCount, contentName, description, tagsCsv, contentTypeName) end
+
+---```
+---NativeDB Added Parameter 4: Any p3
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x692D808C34A82143)
+---@param contentId string
+---@param rating number
+---@param contentTypeName string
+---@return boolean
+function UgcSetPlayerData(contentId, rating, contentTypeName) end
+
+---```
 ---NativeDB Added Parameter 6: Any p5
 ---```
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x4645DE9980999E93)
@@ -429,15 +435,9 @@ function UgcCreateMission(contentName, description, tagsCsv, contentTypeName, pu
 function UgcUpdateMission(contentId, contentName, description, tagsCsv, contentTypeName) end
 
 ---```
----NativeDB Added Parameter 8: Any p7
+---NativeDB Introduced: v2189
 ---```
----[Native Documentation](https://docs.fivem.net/natives/?_0x648E7A5434AF7969)
----@param contentId string
----@param dataCount number
----@param contentName string
----@param description string
----@param tagsCsv string
----@param contentTypeName string
----@return boolean, any
-function UgcUpdateContent(contentId, dataCount, contentName, description, tagsCsv, contentTypeName) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x6AD0BD5E087866CB)
+---@param p0 any
+function N_0x6ad0bd5e087866cb(p0) end
 

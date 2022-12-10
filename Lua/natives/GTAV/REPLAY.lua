@@ -1,5 +1,12 @@
 ---@meta
 
+---```
+---Returns a bool if interior rendering is disabled, if yes, all "normal" rendered interiors are invisible  
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x95AB8B5C992C7B58)
+---@return boolean
+function IsInteriorRenderingDisabled() end
+
 ---Please note that you will need to call DO_SCREEN_FADE_IN after exiting the Rockstar Editor when you call this.
 ---
 ---```
@@ -7,13 +14,6 @@
 ---```
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x49DA8145672B2725)
 function ActivateRockstarEditor() end
-
----```
----Returns a bool if interior rendering is disabled, if yes, all "normal" rendered interiors are invisible  
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x95AB8B5C992C7B58)
----@return boolean
-function IsInteriorRenderingDisabled() end
 
 ---```
 ---Disables some other rendering (internal)  

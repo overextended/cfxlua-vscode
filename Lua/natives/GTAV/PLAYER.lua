@@ -7,14 +7,14 @@
 function ArePlayerFlashingStarsAboutToDrop(player) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xAEBF081FFC0A0E5E)
+function AssistedMovementCloseRoute() end
+
+---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x0A6EB355EE14A2DB)
 ---@param player number
 ---@return boolean
 function ArePlayerStarsGreyedOut(player) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x8621390F0CDCFE1F)
-function AssistedMovementFlushRoute() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xDE7465A27D403C06)
@@ -23,15 +23,13 @@ function AssistedMovementFlushRoute() end
 function CanPlayerStartMission(player) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xF297383AA91DCA29)
----@param player number
----@param ped number
----@return boolean
-function CanPedHearPlayer(player, ped) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x8621390F0CDCFE1F)
+function AssistedMovementFlushRoute() end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xAEBF081FFC0A0E5E)
-function AssistedMovementCloseRoute() end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x4AACB96203D11A31)
+---@param player number
+function ClearPlayerHasDamagedAtLeastOneNonAnimalPed(player) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x048189FAC643DEEE)
@@ -42,9 +40,11 @@ function AssistedMovementCloseRoute() end
 function ChangePlayerPed(player, ped, b2, resetDamage) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x4AACB96203D11A31)
+---[Native Documentation](https://docs.fivem.net/natives/?_0xF297383AA91DCA29)
 ---@param player number
-function ClearPlayerHasDamagedAtLeastOneNonAnimalPed(player) end
+---@param ped number
+---@return boolean
+function CanPedHearPlayer(player, ped) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x10C54E4389C12B42)
@@ -55,11 +55,6 @@ function ClearPlayerParachutePackModelOverride(player) end
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x8753997EB5F6EE3F)
 ---@param player number
 function ClearPlayerParachuteModelOverride(player) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xF0B67A4DE6AB5F98)
----@param player number
-function ClearPlayerHasDamagedAtLeastOnePed(player) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x0F4CC924CF8C7B21)
@@ -74,11 +69,6 @@ function ClearPlayerParachuteVariationOverride(player) end
 ---@param player number
 function ClearPlayerWantedLevel(player) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xC142BE3BB9CE125F)
----@param player number
-function DisablePlayerVehicleRewards(player) end
-
 ---```
 ---Inhibits the player from using any method of combat including melee and firearms.  
 ---NOTE: Only disables the firing for one frame  
@@ -87,6 +77,31 @@ function DisablePlayerVehicleRewards(player) end
 ---@param player number
 ---@param toggle boolean
 function DisablePlayerFiring(player, toggle) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xF0B67A4DE6AB5F98)
+---@param player number
+function ClearPlayerHasDamagedAtLeastOnePed(player) end
+
+---```
+---NativeDB Introduced: v2372
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x290D248E25815AE8)
+---@param player number
+function ClearPlayerReserveParachuteModelOverride(player) end
+
+---```
+---Purpose of the BOOL currently unknown.  
+---Both, true and false, work  
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x94DD7888C10A979E)
+---@param unk boolean
+function DisplaySystemSigninUi(unk) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xC142BE3BB9CE125F)
+---@param player number
+function DisablePlayerVehicleRewards(player) end
 
 ---```
 ---NativeDB Added Parameter 3: Any p2
@@ -97,12 +112,11 @@ function DisablePlayerFiring(player, toggle) end
 function EnableSpecialAbility(player, toggle) end
 
 ---```
----Purpose of the BOOL currently unknown.  
----Both, true and false, work  
+---used with 1,2,8,64,128 in the scripts  
 ---```
----[Native Documentation](https://docs.fivem.net/natives/?_0x94DD7888C10A979E)
----@param unk boolean
-function DisplaySystemSigninUi(unk) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0xBC8983F38F78ED51)
+---@param cleanupFlags number
+function ForceCleanup(cleanupFlags) end
 
 ---```
 ---Appears only 3 times in the scripts, more specifically in michael1.ysc
@@ -115,26 +129,11 @@ function DisplaySystemSigninUi(unk) end
 ---@param z number
 function ExtendWorldBoundaryForPlayer(x, y, z) end
 
----```
----used with 1,2,8,64,128 in the scripts  
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0xBC8983F38F78ED51)
----@param cleanupFlags number
-function ForceCleanup(cleanupFlags) end
-
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xF745B37630DF176B)
 ---@param id number
 ---@param cleanupFlags number
 function ForceCleanupForThreadWithThisId(id, cleanupFlags) end
-
----```
----PLAYER::FORCE_CLEANUP_FOR_ALL_THREADS_WITH_THIS_NAME("pb_prostitute", 1); // Found in decompilation  
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x4C68DDDDF0097317)
----@param name string
----@param cleanupFlags number
-function ForceCleanupForAllThreadsWithThisName(name, cleanupFlags) end
 
 ---```
 ---Returns TRUE if it found an entity in your crosshair within range of your weapon. Assigns the handle of the target to the *entity that you pass it.  
@@ -151,13 +150,12 @@ function GetEntityPlayerIsFreeAimingAt(player) end
 function GetCauseOfMostRecentForceCleanup() end
 
 ---```
----For Steam.
----Always returns 0 in retail version of the game.
+---PLAYER::FORCE_CLEANUP_FOR_ALL_THREADS_WITH_THIS_NAME("pb_prostitute", 1); // Found in decompilation  
 ---```
----[Native Documentation](https://docs.fivem.net/natives/?_0x1C186837D0619335)
----@param achievement number
----@return number
-function GetAchievementProgress(achievement) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x4C68DDDDF0097317)
+---@param name string
+---@param cleanupFlags number
+function ForceCleanupForAllThreadsWithThisName(name, cleanupFlags) end
 
 ---```
 ---Gets the maximum wanted level the player can get.  
@@ -168,11 +166,19 @@ function GetAchievementProgress(achievement) end
 function GetMaxWantedLevel() end
 
 ---```
----NativeDB Introduced: v2372
+---For Steam.
+---Always returns 0 in retail version of the game.
 ---```
----[Native Documentation](https://docs.fivem.net/natives/?_0x290D248E25815AE8)
+---[Native Documentation](https://docs.fivem.net/natives/?_0x1C186837D0619335)
+---@param achievement number
+---@return number
+function GetAchievementProgress(achievement) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x56105E599CAB0EFA)
 ---@param player number
-function ClearPlayerReserveParachuteModelOverride(player) end
+---@return number
+function GetPlayerFakeWantedLevel(player) end
 
 ---```
 ---Gets the number of players in the current session.
@@ -181,14 +187,6 @@ function ClearPlayerReserveParachuteModelOverride(player) end
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x407C7F91DDB46C16)
 ---@return number
 function GetNumberOfPlayers() end
-
----```
----NativeDB Introduced: v1180
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x1FC200409F10E6F1)
----@param team number
----@return number
-function GetNumberOfPlayersInTeam(team) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x2F395D61F3A1F877)
@@ -210,11 +208,20 @@ function GetPlayerHasReserveParachute(player) end
 ---@return number
 function GetPlayerGroup(player) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x56105E599CAB0EFA)
----@param player number
+---```
+---NativeDB Introduced: v1180
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x1FC200409F10E6F1)
+---@param team number
 ---@return number
-function GetPlayerFakeWantedLevel(player) end
+function GetNumberOfPlayersInTeam(team) end
+
+---```
+---Returns the same as PLAYER_ID and NETWORK_PLAYER_ID_TO_INT  
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0xA5EDC40EF369B48D)
+---@return number
+function GetPlayerIndex() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x92659B4CE1863CB3)
@@ -222,17 +229,13 @@ function GetPlayerFakeWantedLevel(player) end
 ---@return number
 function GetPlayerMaxArmour(player) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x8BC515BAE4AAF8FF)
+---```
+---NativeDB Introduced: v2372
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0xC219887CA3E65C41)
 ---@param player number
 ---@return number
-function GetPlayerHealthRechargeLimit(player) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x6E9C742F340CE5A2)
----@param player number
----@return number
-function GetPlayerParachutePackTintIndex(player) end
+function GetPlayerParachuteModelOverride(player) end
 
 ---```
 ---Returns the Player's Invincible status.  
@@ -255,13 +258,11 @@ function GetPlayerParachutePackTintIndex(player) end
 ---@return boolean
 function GetPlayerInvincible(player) end
 
----```
----NativeDB Introduced: v2372
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0xC219887CA3E65C41)
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x6E9C742F340CE5A2)
 ---@param player number
 ---@return number
-function GetPlayerParachuteModelOverride(player) end
+function GetPlayerParachutePackTintIndex(player) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xEF56DBABD3CD4887)
@@ -292,24 +293,17 @@ function GetPlayerParachuteSmokeTrailColor(player) end
 ---@return number
 function GetPlayerParachuteTintIndex(player) end
 
----```
----Returns the same as PLAYER_ID and NETWORK_PLAYER_ID_TO_INT  
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0xA5EDC40EF369B48D)
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x8BC515BAE4AAF8FF)
+---@param player number
 ---@return number
-function GetPlayerIndex() end
+function GetPlayerHealthRechargeLimit(player) end
 
 ---Returns the players name from a specified player index
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x6D0DE6A7B5DA71F8)
 ---@param player number
 ---@return string
 function GetPlayerName(player) end
-
----Gets the ped for a specified player index.
----[Native Documentation](https://docs.fivem.net/natives/?_0x43A66C31C68491C0)
----@param playerId number
----@return number
-function GetPlayerPed(playerId) end
 
 ---```
 ---NativeDB Introduced: v2372
@@ -318,6 +312,14 @@ function GetPlayerPed(playerId) end
 ---@param player number
 ---@return number
 function GetPlayerReserveParachuteModelOverride(player) end
+
+---```
+---Does the same like PLAYER::GET_PLAYER_PED
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x50FAC3A3E030A6E1)
+---@param player number
+---@return number
+function GetPlayerPedScriptIndex(player) end
 
 ---```
 ---Tints:  
@@ -342,34 +344,17 @@ function GetPlayerReserveParachuteModelOverride(player) end
 ---@return number
 function GetPlayerReserveParachuteTintIndex(player) end
 
+---Gets the ped for a specified player index.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x43A66C31C68491C0)
+---@param playerId number
+---@return number
+function GetPlayerPed(playerId) end
+
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xE902EF951DCE178F)
 ---@param player number
 ---@return number, number, number
 function GetPlayerRgbColour(player) end
-
----```
----Does the same like PLAYER::GET_PLAYER_PED
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x50FAC3A3E030A6E1)
----@param player number
----@return number
-function GetPlayerPedScriptIndex(player) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x3F9F16F8E65A7ED7)
----@param player number
----@return number
-function GetPlayerSprintStaminaRemaining(player) end
-
----```
----Assigns the handle of locked-on melee target to *entity that you pass it.  
----Returns false if no entity found.  
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x13EDE1A5DBF797C9)
----@param player number
----@return boolean, number
-function GetPlayerTargetEntity(player) end
 
 ---```
 ---Gets the player's team.  
@@ -380,11 +365,20 @@ function GetPlayerTargetEntity(player) end
 ---@return number
 function GetPlayerTeam(player) end
 
+---```
+---Assigns the handle of locked-on melee target to *entity that you pass it.  
+---Returns false if no entity found.  
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x13EDE1A5DBF797C9)
+---@param player number
+---@return boolean, number
+function GetPlayerTargetEntity(player) end
+
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x1885BC9B108B4C99)
+---[Native Documentation](https://docs.fivem.net/natives/?_0x3F9F16F8E65A7ED7)
 ---@param player number
 ---@return number
-function GetPlayerSprintTimeRemaining(player) end
+function GetPlayerSprintStaminaRemaining(player) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA1FCF8E6AF40B731)
@@ -410,10 +404,10 @@ function GetTimeSinceLastArrest() end
 function GetPlayerWantedLevel(player) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x0C92BA89F1AF26F8)
+---[Native Documentation](https://docs.fivem.net/natives/?_0x1885BC9B108B4C99)
 ---@param player number
----@return vector3
-function GetPlayerWantedCentrePosition(player) end
+---@return number
+function GetPlayerSprintTimeRemaining(player) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xD559D2BE9E37853B)
@@ -431,6 +425,12 @@ function GetTimeSincePlayerDroveOnPavement(player) end
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC7034807558DDFCA)
 ---@return number
 function GetTimeSinceLastDeath() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x0C92BA89F1AF26F8)
+---@param player number
+---@return vector3
+function GetPlayerWantedCentrePosition(player) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xDB89591E290D9182)
@@ -458,26 +458,12 @@ function GetWantedLevelParoleDuration() end
 function GetTimeSincePlayerHitPed(player) end
 
 ---```
----Drft  
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0xFDD179EAF45B556C)
----@param wantedLevel number
----@return number
-function GetWantedLevelThreshold(wantedLevel) end
-
----```
 ---Remnant from GTA IV. Does nothing in GTA V.
 ---```
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x085DEB493BE80812)
 ---@param player number
 ---@return number
 function GetWantedLevelRadius(player) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x867365E111A3B6EB)
----@param achievement number
----@return boolean
-function HasAchievementBeenPassed(achievement) end
 
 ---```
 ---Achievements from 0-57
@@ -489,6 +475,14 @@ function HasAchievementBeenPassed(achievement) end
 function GiveAchievementToPlayer(achievement) end
 
 ---```
+---Drft  
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0xFDD179EAF45B556C)
+---@param wantedLevel number
+---@return number
+function GetWantedLevelThreshold(wantedLevel) end
+
+---```
 ---Alternative: GET_VEHICLE_PED_IS_IN(PLAYER_PED_ID(), 1);  
 ---```
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xB6997A7EB3F5C8C0)
@@ -496,24 +490,10 @@ function GiveAchievementToPlayer(achievement) end
 function GetPlayersLastVehicle() end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x3C49C870E66F0A28)
----@param player number
----@param toggle boolean
-function GivePlayerRagdollControl(player, toggle) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xBC0753C9CA14B506)
----@param player number
----@param ms number
----@param p2 boolean
+---[Native Documentation](https://docs.fivem.net/natives/?_0x867365E111A3B6EB)
+---@param achievement number
 ---@return boolean
-function HasPlayerBeenShotByCop(player, ms, p2) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xE4B90F367BD81752)
----@param player number
----@return boolean
-function HasPlayerDamagedAtLeastOneNonAnimalPed(player) end
+function HasAchievementBeenPassed(achievement) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC968670BFACE42D9)
@@ -522,10 +502,12 @@ function HasPlayerDamagedAtLeastOneNonAnimalPed(player) end
 function HasForceCleanupOccurred(cleanupFlags) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xD55DDFB47991A294)
+---[Native Documentation](https://docs.fivem.net/natives/?_0xBC0753C9CA14B506)
 ---@param player number
+---@param ms number
+---@param p2 boolean
 ---@return boolean
-function HasPlayerLeftTheWorld(player) end
+function HasPlayerBeenShotByCop(player, ms, p2) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x20CE80B0C2BF4ACC)
@@ -539,6 +521,18 @@ function HasPlayerDamagedAtLeastOnePed(player) end
 ---@return boolean
 function HasPlayerBeenSpottedInStolenVehicle(player) end
 
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xE4B90F367BD81752)
+---@param player number
+---@return boolean
+function HasPlayerDamagedAtLeastOneNonAnimalPed(player) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x3C49C870E66F0A28)
+---@param player number
+---@param toggle boolean
+function GivePlayerRagdollControl(player, toggle) end
+
 ---```
 ---Simply returns whatever is passed to it (Regardless of whether the handle is valid or not).  
 -----------------------------------------------------------  
@@ -549,12 +543,6 @@ function HasPlayerBeenSpottedInStolenVehicle(player) end
 ---@return number
 function IntToParticipantindex(value) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x65FAEE425DE637B0)
----@param player number
----@return boolean
-function IsPlayerBluetoothEnable(player) end
-
 ---```
 ---Simply returns whatever is passed to it (Regardless of whether the handle is valid or not).  
 ---```
@@ -562,6 +550,14 @@ function IsPlayerBluetoothEnable(player) end
 ---@param value number
 ---@return number
 function IntToPlayerindex(value) end
+
+---```
+---Returns true if an unk value is greater than 0.0f  
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x38D28DA81E4E9BF9)
+---@param player number
+---@return boolean
+function IsPlayerBattleAware(player) end
 
 ---```
 ---Return true while player is being arrested / busted.  
@@ -574,21 +570,17 @@ function IntToPlayerindex(value) end
 ---@return boolean
 function IsPlayerBeingArrested(player, atArresting) end
 
----```
----Returns true when the player is not able to control the cam i.e. when running a benchmark test, switching the player or viewing a cutscene.  
----Note: I am not 100% sure if the native actually checks if the cam control is disabled but it seems promising.  
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x7C814D2FB49F40C0)
----@return boolean
-function IsPlayerCamControlDisabled() end
-
----```
----Returns true if an unk value is greater than 0.0f  
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x38D28DA81E4E9BF9)
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xD55DDFB47991A294)
 ---@param player number
 ---@return boolean
-function IsPlayerBattleAware(player) end
+function HasPlayerLeftTheWorld(player) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x65FAEE425DE637B0)
+---@param player number
+---@return boolean
+function IsPlayerBluetoothEnable(player) end
 
 ---```
 ---Returns TRUE if the player ('s ped) is climbing at the moment.  
@@ -598,13 +590,19 @@ function IsPlayerBattleAware(player) end
 ---@return boolean
 function IsPlayerClimbing(player) end
 
----```
----Gets a value indicating whether the specified player is currently aiming freely.  
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x2E397FD2ECD37C87)
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x424D4687FA1E5652)
 ---@param player number
 ---@return boolean
-function IsPlayerFreeAiming(player) end
+function IsPlayerDead(player) end
+
+---```
+---Returns true when the player is not able to control the cam i.e. when running a benchmark test, switching the player or viewing a cutscene.  
+---Note: I am not 100% sure if the native actually checks if the cam control is disabled but it seems promising.  
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x7C814D2FB49F40C0)
+---@return boolean
+function IsPlayerCamControlDisabled() end
 
 ---```
 ---Can the player control himself, used to disable controls for player for things like a cutscene.  
@@ -616,11 +614,28 @@ function IsPlayerFreeAiming(player) end
 ---@return boolean
 function IsPlayerControlOn(player) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x424D4687FA1E5652)
+---```
+---this function is hard-coded to always return 0.  
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x74556E1420867ECA)
+---@return boolean
+function IsPlayerLoggingInNp() end
+
+---```
+---Gets a value indicating whether the specified player is currently aiming freely.  
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x2E397FD2ECD37C87)
 ---@param player number
 ---@return boolean
-function IsPlayerDead(player) end
+function IsPlayerFreeAiming(player) end
+
+---```
+---Checks whether the specified player has a Ped, the Ped is not dead, is not injured and is not arrested.  
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x5E9564D8246B909A)
+---@param player number
+---@return boolean
+function IsPlayerPlaying(player) end
 
 ---```
 ---Gets a value indicating whether the specified player is currently aiming freely at the specified entity.  
@@ -631,13 +646,11 @@ function IsPlayerDead(player) end
 ---@return boolean
 function IsPlayerFreeAimingAtEntity(player, entity) end
 
----```
----Checks whether the specified player has a Ped, the Ped is not dead, is not injured and is not arrested.  
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x5E9564D8246B909A)
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x908CBECC2CAA3690)
 ---@param player number
 ---@return boolean
-function IsPlayerPlaying(player) end
+function IsPlayerReadyForCutscene(player) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xDCCFD3F106C36AB4)
@@ -646,19 +659,19 @@ function IsPlayerPlaying(player) end
 function IsPlayerFreeForAmbientTask(player) end
 
 ---```
----this function is hard-coded to always return 0.  
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x74556E1420867ECA)
----@return boolean
-function IsPlayerLoggingInNp() end
-
----```
 ---Returns TRUE if the game is in online mode and FALSE if in offline mode.  
 ---This is an alias for NETWORK_IS_SIGNED_ONLINE.  
 ---```
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xF25D331DC2627BBC)
 ---@return boolean
 function IsPlayerOnline() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x7912F7FC4F6264B6)
+---@param player number
+---@param entity number
+---@return boolean
+function IsPlayerTargettingEntity(player, entity) end
 
 ---```
 ---Returns true if the player is riding a train.  
@@ -669,23 +682,10 @@ function IsPlayerOnline() end
 function IsPlayerRidingTrain(player) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xFA1E2BF8B10598F9)
+---[Native Documentation](https://docs.fivem.net/natives/?_0x8A876A65283DD7D7)
 ---@param player number
 ---@return boolean
-function IsPlayerPressingHorn(player) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x908CBECC2CAA3690)
----@param player number
----@return boolean
-function IsPlayerReadyForCutscene(player) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x7912F7FC4F6264B6)
----@param player number
----@param entity number
----@return boolean
-function IsPlayerTargettingEntity(player, entity) end
+function IsPlayerScriptControlOn(player) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x238DB2A2C23EE9EF)
@@ -728,24 +728,6 @@ function IsSpecialAbilityEnabled(player) end
 function IsSpecialAbilityMeterFull(player) end
 
 ---```
----2 matches in 1 script - am_hold_up
----Used in multiplayer scripts?
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x0032A6DBA562C518)
-function N_0x0032a6dba562c518() end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x8A876A65283DD7D7)
----@param player number
----@return boolean
-function IsPlayerScriptControlOn(player) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x5D511E3867C87139)
----@return boolean
-function IsSystemUiBeingDisplayed() end
-
----```
 ---NativeDB Added Parameter 2: Any p1
 ---```
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x3E5F7FC85D854E15)
@@ -753,11 +735,36 @@ function IsSystemUiBeingDisplayed() end
 ---@return boolean
 function IsSpecialAbilityActive(player) end
 
+---```
+---NativeDB Introduced: v1290
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x237440E46D918649)
+---@param p0 any
+function N_0x237440e46d918649(p0) end
+
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x2382AB11450AE7BA)
+---[Native Documentation](https://docs.fivem.net/natives/?_0xFA1E2BF8B10598F9)
+---@param player number
+---@return boolean
+function IsPlayerPressingHorn(player) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x5D511E3867C87139)
+---@return boolean
+function IsSystemUiBeingDisplayed() end
+
+---```
+---2 matches in 1 script - am_hold_up
+---Used in multiplayer scripts?
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x0032A6DBA562C518)
+function N_0x0032a6dba562c518() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x2F41A3BAE005E5FA)
 ---@param p0 any
 ---@param p1 any
-function N_0x2382ab11450ae7ba(p0, p1) end
+function N_0x2f41a3bae005e5fa(p0, p1) end
 
 ---```
 ---Used with radios:
@@ -787,22 +794,10 @@ function N_0x2382ab11450ae7ba(p0, p1) end
 function N_0x2f7ceb6520288061(p0) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x36F1B38855F2A8DF)
+---[Native Documentation](https://docs.fivem.net/natives/?_0x31E90B8873A4CD3B)
 ---@param player number
-function N_0x36f1b38855f2a8df(player) end
-
----```
----NativeDB Introduced: v1290
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x237440E46D918649)
----@param p0 any
-function N_0x237440e46d918649(p0) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x2F41A3BAE005E5FA)
----@param p0 any
----@param p1 any
-function N_0x2f41a3bae005e5fa(p0, p1) end
+---@param p1 number
+function N_0x31e90b8873a4cd3b(player, p1) end
 
 ---```
 ---This has been found in use in the decompiled files.  
@@ -810,6 +805,12 @@ function N_0x2f41a3bae005e5fa(p0, p1) end
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x4669B3ED80F24B4E)
 ---@param player number
 function N_0x4669b3ed80f24b4e(player) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x2382AB11450AE7BA)
+---@param p0 any
+---@param p1 any
+function N_0x2382ab11450ae7ba(p0, p1) end
 
 ---```
 ---Name between DISABLE_ALL_CONTROL_ACTIONS and DISABLE_CONTROL_ACTION
@@ -825,6 +826,11 @@ function N_0x5501b7a5cdb79d37(player) end
 ---@param toggle boolean
 function N_0x55fcc0c390620314(player1, player2, toggle) end
 
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x36F1B38855F2A8DF)
+---@param player number
+function N_0x36f1b38855f2a8df(player) end
+
 ---```
 ---Appears once in "re_dealgonewrong"  
 ---```
@@ -832,12 +838,6 @@ function N_0x55fcc0c390620314(player1, player2, toggle) end
 ---@param player number
 ---@return boolean
 function N_0x5fc472c501ccadb3(player) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x31E90B8873A4CD3B)
----@param player number
----@param p1 number
-function N_0x31e90b8873a4cd3b(player, p1) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x6E4361FF3E8CD7CA)
@@ -881,13 +881,6 @@ function N_0x70a382adec069dd3(coordX, coordY, coordZ) end
 function N_0x7bae68775557ae0b(p0, p1, p2, p3, p4, p5) end
 
 ---```
----NativeDB Introduced: v2060
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x823EC8E82BA45986)
----@param p0 any
-function N_0x823ec8e82ba45986(p0) end
-
----```
 ---SET_PLAYER_MAX_*
 ---```
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x8D768602ADEF2245)
@@ -905,6 +898,11 @@ function N_0x8d768602adef2245(player, p1) end
 ---@param entity number
 function N_0x9097eb6d4bb9a12a(player, entity) end
 
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x9EDD76E87D5D51BA)
+---@param player number
+function N_0x9edd76e87d5d51ba(player) end
+
 ---REMOVE_\*
 ---
 ---```
@@ -916,24 +914,11 @@ function N_0x9097eb6d4bb9a12a(player, entity) end
 function N_0x9f260bfb59adbca3(player, entity) end
 
 ---```
----This has been found in use in the decompiled files.  
+---NativeDB Introduced: v2060
 ---```
----[Native Documentation](https://docs.fivem.net/natives/?_0xAD73CE5A09E42D12)
----@param player number
-function N_0xad73ce5a09e42d12(player) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x9EDD76E87D5D51BA)
----@param player number
-function N_0x9edd76e87d5d51ba(player) end
-
----```
----Returns profile setting 237.
----GET_*
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0xB9CF1F793A9F1BF1)
----@return boolean
-function N_0xb9cf1f793a9f1bf1() end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x823EC8E82BA45986)
+---@param p0 any
+function N_0x823ec8e82ba45986(p0) end
 
 ---```
 ---PLAYER::0xBF6993C7(rPtr((&l_122) + 71)); // Found in decompilation
@@ -947,11 +932,17 @@ function N_0xb9cf1f793a9f1bf1() end
 function N_0xb45eff719d8427a6(p0) end
 
 ---```
----- This is called after SET_ALL_RANDOM_PEDS_FLEE_THIS_FRAME
+---NativeDB Introduced: v1604
 ---```
----[Native Documentation](https://docs.fivem.net/natives/?_0xC3376F42B1FACCC6)
+---[Native Documentation](https://docs.fivem.net/natives/?_0x7148E0F43D11F0D9)
+function N_0x7148e0f43d11f0d9() end
+
+---```
+---This has been found in use in the decompiled files.  
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0xAD73CE5A09E42D12)
 ---@param player number
-function N_0xc3376f42b1faccc6(player) end
+function N_0xad73ce5a09e42d12(player) end
 
 ---```
 ---Disables something. Used only once in R* scripts (freemode.ysc).
@@ -959,6 +950,21 @@ function N_0xc3376f42b1faccc6(player) end
 ---```
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xB885852C39CC265D)
 function N_0xb885852c39cc265d() end
+
+---```
+---- This is called after SET_ALL_RANDOM_PEDS_FLEE_THIS_FRAME
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0xC3376F42B1FACCC6)
+---@param player number
+function N_0xc3376f42b1faccc6(player) end
+
+---```
+---Returns profile setting 237.
+---GET_*
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0xB9CF1F793A9F1BF1)
+---@return boolean
+function N_0xb9cf1f793a9f1bf1() end
 
 ---```
 ---Seems to only appear in scripts used in Singleplayer.  
@@ -970,6 +976,14 @@ function N_0xb885852c39cc265d() end
 function N_0xbc9490ca15aea8fb(player) end
 
 ---```
+---Returns profile setting 243.
+---GET_*
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0xCB645E85E97EA48B)
+---@return boolean
+function N_0xcb645e85e97ea48b() end
+
+---```
 ---Found in "director_mode", "fm_bj_race_controler", "fm_deathmatch_controler", "fm_impromptu_dm_controler", "fm_race_controler", "gb_deathmatch".  
 ---```
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xCAC57395B151135F)
@@ -977,13 +991,10 @@ function N_0xbc9490ca15aea8fb(player) end
 ---@param p1 boolean
 function N_0xcac57395b151135f(player, p1) end
 
----```
----Returns profile setting 243.
----GET_*
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0xCB645E85E97EA48B)
----@return boolean
-function N_0xcb645e85e97ea48b() end
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xFAC75988A7D078D3)
+---@param player number
+function N_0xfac75988a7d078d3(player) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xD821056B9ACF8052)
@@ -1007,11 +1018,6 @@ function N_0xde45d1a1ef45ee61(player, toggle) end
 ---@return boolean
 function N_0xdcc07526b8ec45af(player) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xFAC75988A7D078D3)
----@param player number
-function N_0xfac75988a7d078d3(player) end
-
 ---```
 ---2 occurrences in agency_heist3a. p1 was 0.7f then 0.4f.  
 ---```
@@ -1022,17 +1028,20 @@ function N_0xfac75988a7d078d3(player) end
 function N_0xdd2620b7b9d16ff1(player, p1) end
 
 ---```
----NativeDB Introduced: v1604
+---Only 1 occurrence. p1 was 2.  
 ---```
----[Native Documentation](https://docs.fivem.net/natives/?_0x7148E0F43D11F0D9)
-function N_0x7148e0f43d11f0d9() end
+---[Native Documentation](https://docs.fivem.net/natives/?_0xF10B44FD479D69F3)
+---@param player number
+---@param p1 number
+---@return boolean
+function N_0xf10b44fd479d69f3(player, p1) end
 
 ---```
----NativeDB Added Parameter 2: Any p1
+---Does exactly the same thing as PLAYER_ID()  
 ---```
----[Native Documentation](https://docs.fivem.net/natives/?_0xFFEE8FA29AB9A18E)
----@param player number
-function N_0xffee8fa29ab9a18e(player) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0xEE68096F9F37341E)
+---@return number
+function NetworkPlayerIdToInt() end
 
 ---```
 ---1.0.335.2, 1.0.350.1/2, 1.0.372.2, 1.0.393.2, 1.0.393.4, 1.0.463.1;  
@@ -1055,6 +1064,12 @@ function PlayerDetachVirtualBound() end
 ---@param p7 number
 function PlayerAttachVirtualBound(p0, p1, p2, p3, p4, p5, p6, p7) end
 
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xF3AC26D3CC576528)
+---@param player number
+---@param p2 boolean
+function RemovePlayerHelmet(player, p2) end
+
 ---```
 ---This returns YOUR 'identity' as a Player type.  
 ---Always returns 0 in story mode.  
@@ -1062,28 +1077,6 @@ function PlayerAttachVirtualBound(p0, p1, p2, p3, p4, p5, p6, p7) end
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x4F8644AF03D0E0D6)
 ---@return number
 function PlayerId() end
-
----```
----Only 1 occurrence. p1 was 2.  
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0xF10B44FD479D69F3)
----@param player number
----@param p1 number
----@return boolean
-function N_0xf10b44fd479d69f3(player, p1) end
-
----```
----Returns current player ped  
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0xD80958FC74E988A6)
----@return number
-function PlayerPedId() end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xF3AC26D3CC576528)
----@param player number
----@param p2 boolean
-function RemovePlayerHelmet(player, p2) end
 
 ---```
 ---PLAYER::REPORT_CRIME(PLAYER::PLAYER_ID(), 37, PLAYER::GET_WANTED_LEVEL_THRESHOLD(1));  
@@ -1147,21 +1140,23 @@ function RemovePlayerHelmet(player, p2) end
 function ReportCrime(player, crimeType, wantedLvlThresh) end
 
 ---```
----Does exactly the same thing as PLAYER_ID()  
+---Returns current player ped  
 ---```
----[Native Documentation](https://docs.fivem.net/natives/?_0xEE68096F9F37341E)
+---[Native Documentation](https://docs.fivem.net/natives/?_0xD80958FC74E988A6)
 ---@return number
-function NetworkPlayerIdToInt() end
+function PlayerPedId() end
+
+---```
+---NativeDB Added Parameter 2: Any p1
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0xFFEE8FA29AB9A18E)
+---@param player number
+function N_0xffee8fa29ab9a18e(player) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xDC64D2C53493ED12)
 ---@param player number
 function ReportPoliceSpottedPlayer(player) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xA6F312FCCE9C1DFE)
----@param player number
-function ResetPlayerStamina(player) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x2D03E13C460760D6)
@@ -1174,18 +1169,26 @@ function ResetPlayerArrestState(player) end
 function ResetWantedLevelDifficulty(player) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xA6F312FCCE9C1DFE)
+---@param player number
+function ResetPlayerStamina(player) end
+
+---```
+---NativeDB Introduced: v323
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0xDA1DF03D5A315F4E)
+function ResetWorldBoundaryForPlayer() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x19531C47A2ABD691)
+---@param player number
+function ResetPlayerInputGait(player) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA352C1B864CAFD33)
 ---@param player number
 ---@param p1 number
 function RestorePlayerStamina(player, p1) end
-
----For Steam.
----Does nothing and always returns false in the retail version of the game.
----[Native Documentation](https://docs.fivem.net/natives/?_0xC2AFFFDABBDC2C5C)
----@param achievement number
----@param progress number
----@return boolean
-function SetAchievementProgress(achievement, progress) end
 
 ---```
 ---This can be between 1.0f - 14.9f   
@@ -1198,26 +1201,24 @@ function SetAchievementProgress(achievement, progress) end
 function SetAirDragMultiplierForPlayersVehicle(player, multiplier) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x056E0FE8534C2949)
----@param player number
----@param toggle boolean
-function SetAllRandomPedsFlee(player, toggle) end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x9F343285A00B4BB6)
 ---@param player number
 ---@param toggle boolean
 function SetAutoGiveParachuteWhenEnterPlane(player, toggle) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x19531C47A2ABD691)
+---[Native Documentation](https://docs.fivem.net/natives/?_0x056E0FE8534C2949)
 ---@param player number
-function ResetPlayerInputGait(player) end
+---@param toggle boolean
+function SetAllRandomPedsFlee(player, toggle) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x471D2FF42A94B4F2)
----@param player number
-function SetAllRandomPedsFleeThisFrame(player) end
+---For Steam.
+---Does nothing and always returns false in the retail version of the game.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xC2AFFFDABBDC2C5C)
+---@param achievement number
+---@param progress number
+---@return boolean
+function SetAchievementProgress(achievement, progress) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x2E8AABFA40A84F8C)
@@ -1238,15 +1239,16 @@ function SetAutoGiveScubaGearWhenExitVehicle(player, toggle) end
 function SetIgnoreLowPriorityShockingEvents(player, toggle) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xAA5F02DB48D704B9)
----@param maxWantedLevel number
-function SetMaxWantedLevel(maxWantedLevel) end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xDB172424876553F4)
 ---@param player number
 ---@param toggle boolean
 function SetDispatchCopsForPlayer(player, toggle) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x8EEDA153AD141BA4)
+---@param player number
+---@param toggle boolean
+function SetEveryoneIgnorePlayer(player, toggle) end
 
 ---```
 ---Sets whether this player can be hassled by gangs.  
@@ -1257,10 +1259,10 @@ function SetDispatchCopsForPlayer(player, toggle) end
 function SetPlayerCanBeHassledByGangs(player, toggle) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x8EEDA153AD141BA4)
+---[Native Documentation](https://docs.fivem.net/natives/?_0x5DC40A8869C22141)
 ---@param player number
----@param toggle boolean
-function SetEveryoneIgnorePlayer(player, toggle) end
+---@param state boolean
+function SetPlayerBluetoothState(player, state) end
 
 ---Sets whether the player is able to do drive-bys in vehicle (shooting & aiming in vehicles), this also includes middle finger taunts.
 ---
@@ -1276,24 +1278,18 @@ function SetEveryoneIgnorePlayer(player, toggle) end
 ---@param toggle boolean
 function SetPlayerCanDoDriveBy(player, toggle) end
 
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xF401B182DBA8AF53)
+---@param player number
+---@param enabled boolean
+function SetPlayerCanLeaveParachuteSmokeTrail(player, enabled) end
+
 ---```
 ---6 matches across 4 scripts. 5 occurrences were 240. The other was 255.  
 ---```
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x14D913B777DFF5DA)
 ---@param value number
 function SetPlayerClothLockCounter(value) end
-
----```
----NativeDB Introduced: v323
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0xDA1DF03D5A315F4E)
-function ResetWorldBoundaryForPlayer() end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x5DC40A8869C22141)
----@param player number
----@param state boolean
-function SetPlayerBluetoothState(player, state) end
 
 ---```
 ---Sets whether this player can take cover.
@@ -1303,18 +1299,17 @@ function SetPlayerBluetoothState(player, state) end
 ---@param toggle boolean
 function SetPlayerCanUseCover(player, toggle) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xF401B182DBA8AF53)
----@param player number
----@param enabled boolean
-function SetPlayerCanLeaveParachuteSmokeTrail(player, enabled) end
-
 ---```
 ---Every occurrence was either 0 or 2.  
 ---```
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x9F7BBA2EA6372500)
 ---@param index number
 function SetPlayerClothPackageIndex(index) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xAA5F02DB48D704B9)
+---@param maxWantedLevel number
+function SetMaxWantedLevel(maxWantedLevel) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x749FADDF97DFE930)
@@ -1345,10 +1340,21 @@ function SetPlayerClothPinFrames(player, p1) end
 function SetPlayerControl(player, bHasControl, flags) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x7651BC64AE59E128)
+---@param player number
+---@param toggle boolean
+function SetPlayerForceSkipAimIntro(player, toggle) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x0FEE4F80AC44A726)
 ---@param player number
 ---@param toggle boolean
 function SetPlayerForcedAim(player, toggle) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x471D2FF42A94B4F2)
+---@param player number
+function SetAllRandomPedsFleeThisFrame(player) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xEFD79FA81DFBA9CB)
@@ -1357,21 +1363,16 @@ function SetPlayerForcedAim(player, toggle) end
 function SetPlayerFallDistance(player, distance) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x7651BC64AE59E128)
----@param player number
----@param toggle boolean
-function SetPlayerForceSkipAimIntro(player, toggle) end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x5DB660B38DD98A31)
 ---@param player number
 ---@param regenRate number
 function SetPlayerHealthRechargeMultiplier(player, regenRate) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x7DDAB28D31FAC363)
+---[Native Documentation](https://docs.fivem.net/natives/?_0x75E7D505F2B15902)
 ---@param player number
-function SetPlayerHasReserveParachute(player) end
+---@param toggle boolean
+function SetPlayerForcedZoom(player, toggle) end
 
 ---```
 ---Simply sets you as invincible (Health will not deplete).  
@@ -1382,6 +1383,25 @@ function SetPlayerHasReserveParachute(player) end
 ---@param player number
 ---@param toggle boolean
 function SetPlayerInvincible(player, toggle) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x7DDAB28D31FAC363)
+---@param player number
+function SetPlayerHasReserveParachute(player) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xC388A0F065F5BC34)
+---@param player number
+---@param limit number
+function SetPlayerHealthRechargeLimit(player, limit) end
+
+---```
+---Used to toggle the square up aim.
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x5C8B2F450EE4328E)
+---@param player number
+---@param toggle boolean
+function SetPlayerLockon(player, toggle) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x6BC97F4F4BB3C04B)
@@ -1397,18 +1417,6 @@ function SetPlayerInvincibleKeepRagdollEnabled(player, toggle) end
 ---@param p1 boolean
 function SetPlayerHomingRocketDisabled(player, p1) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x75E7D505F2B15902)
----@param player number
----@param toggle boolean
-function SetPlayerForcedZoom(player, toggle) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xC388A0F065F5BC34)
----@param player number
----@param limit number
-function SetPlayerHealthRechargeLimit(player, limit) end
-
 ---```
 ---Default is 100. Use player id and not ped id. For instance: PLAYER::SET_PLAYER_MAX_ARMOUR(PLAYER::PLAYER_ID(), 100); // main_persistent.ct4  
 ---```
@@ -1416,6 +1424,13 @@ function SetPlayerHealthRechargeLimit(player, limit) end
 ---@param player number
 ---@param value number
 function SetPlayerMaxArmour(player, value) end
+
+---Set the model for a specific Player. Be aware that this will destroy the current Ped for the Player and create a new one, any reference to the old ped should be reset
+---Make sure to request the model first and wait until it has loaded.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x00A1CADD00108836)
+---@param player number
+---@param model number | string
+function SetPlayerModel(player, model) end
 
 ---```
 ---Affects the range of auto aim target.  
@@ -1426,22 +1441,6 @@ function SetPlayerMaxArmour(player, value) end
 function SetPlayerLockonRangeOverride(player, range) end
 
 ---```
----Used to toggle the square up aim.
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x5C8B2F450EE4328E)
----@param player number
----@param toggle boolean
-function SetPlayerLockon(player, toggle) end
-
----```
----NativeDB Added Parameter 3: BOOL p2
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x4A3DC7ECCC321032)
----@param player number
----@param modifier number
-function SetPlayerMeleeWeaponDamageModifier(player, modifier) end
-
----```
 ---example:  
 ---PLAYER::SET_PLAYER_PARACHUTE_MODEL_OVERRIDE(PLAYER::PLAYER_ID(), 0x73268708);  
 ---```
@@ -1449,25 +1448,6 @@ function SetPlayerMeleeWeaponDamageModifier(player, modifier) end
 ---@param player number
 ---@param model number | string
 function SetPlayerParachuteModelOverride(player, model) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xFF300C7649724A0B)
----@param player number
----@param toggle boolean
-function SetPlayerLeavePedBehind(player, toggle) end
-
----Set the model for a specific Player. Be aware that this will destroy the current Ped for the Player and create a new one, any reference to the old ped should be reset
----Make sure to request the model first and wait until it has loaded.
----[Native Documentation](https://docs.fivem.net/natives/?_0x00A1CADD00108836)
----@param player number
----@param model number | string
-function SetPlayerModel(player, model) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x8026FF78F208978A)
----@param player number
----@param vehicle number
-function SetPlayerMayOnlyEnterThisVehicle(player, vehicle) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x1DE37BBF9E9CC14A)
@@ -1480,18 +1460,11 @@ function SetPlayerMayNotEnterAnyVehicle(player) end
 ---@param model number | string
 function SetPlayerParachutePackModelOverride(player, model) end
 
----```
----tints 0- 13
----0 - unkown
----1 - unkown
----2 - unkown
----3 - unkown
----4 - unkown
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x93B0FB27C9A04060)
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x8026FF78F208978A)
 ---@param player number
----@param tintIndex number
-function SetPlayerParachutePackTintIndex(player, tintIndex) end
+---@param vehicle number
+function SetPlayerMayOnlyEnterThisVehicle(player, vehicle) end
 
 ---```
 ---modifier's min value is 0.1
@@ -1508,6 +1481,19 @@ function SetPlayerMeleeWeaponDefenseModifier(player, modifier) end
 function SetPlayerNoiseMultiplier(player, multiplier) end
 
 ---```
+---tints 0- 13
+---0 - unkown
+---1 - unkown
+---2 - unkown
+---3 - unkown
+---4 - unkown
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x93B0FB27C9A04060)
+---@param player number
+---@param tintIndex number
+function SetPlayerParachutePackTintIndex(player, tintIndex) end
+
+---```
 ---p1 was always 5.  
 ---p4 was always false.  
 ---```
@@ -1518,6 +1504,14 @@ function SetPlayerNoiseMultiplier(player, multiplier) end
 ---@param p3 any
 ---@param p4 boolean
 function SetPlayerParachuteVariationOverride(player, p1, p2, p3, p4) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x8217FD371A4625CF)
+---@param player number
+---@param r number
+---@param g number
+---@param b number
+function SetPlayerParachuteSmokeTrailColor(player, r, g, b) end
 
 ---```
 ---Tints:  
@@ -1543,6 +1537,14 @@ function SetPlayerParachuteVariationOverride(player, p1, p2, p3, p4) end
 function SetPlayerParachuteTintIndex(player, tintIndex) end
 
 ---```
+---NativeDB Introduced: v2372
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x0764486AEDE748DB)
+---@param player number
+---@param model number | string
+function SetPlayerReserveParachuteModelOverride(player, model) end
+
+---```
 ---Tints:  
 ---None = -1,  
 ---Rainbow = 0,  
@@ -1566,28 +1568,6 @@ function SetPlayerParachuteTintIndex(player, tintIndex) end
 function SetPlayerReserveParachuteTintIndex(player, index) end
 
 ---```
----NativeDB Introduced: v2372
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x0764486AEDE748DB)
----@param player number
----@param model number | string
-function SetPlayerReserveParachuteModelOverride(player, model) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x8217FD371A4625CF)
----@param player number
----@param r number
----@param g number
----@param b number
-function SetPlayerParachuteSmokeTrailColor(player, r, g, b) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xA01B8075D8B92DF4)
----@param player number
----@param toggle boolean
-function SetPlayerSprint(player, toggle) end
-
----```
 ---example:  
 ---flags: 0-6  
 ---PLAYER::SET_PLAYER_RESET_FLAG_PREFER_REAR_SEATS(PLAYER::PLAYER_ID(), 6);  
@@ -1599,15 +1579,16 @@ function SetPlayerSprint(player, toggle) end
 function SetPlayerResetFlagPreferRearSeats(player, flags) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x5702B917B99DB1CD)
----@param targetLevel number
-function SetPlayerTargetLevel(targetLevel) end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC54C95DA968EC5B5)
 ---@param player number
 ---@param toggle boolean
 function SetPlayerSimulateAiming(player, toggle) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xA01B8075D8B92DF4)
+---@param player number
+---@param toggle boolean
+function SetPlayerSprint(player, toggle) end
 
 ---```
 ---Values around 1.0f to 2.0f used in game scripts.  
@@ -1616,6 +1597,25 @@ function SetPlayerSimulateAiming(player, toggle) end
 ---@param player number
 ---@param multiplier number
 function SetPlayerSneakingNoiseMultiplier(player, multiplier) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x5702B917B99DB1CD)
+---@param targetLevel number
+function SetPlayerTargetLevel(targetLevel) end
+
+---```
+---modifier's min value is 0.1
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0xA50E117CDDF82F0C)
+---@param player number
+---@param modifier number
+function SetPlayerVehicleDamageModifier(player, modifier) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x4E9021C1FCDD507A)
+---@param player number
+---@param value number
+function SetPlayerStealthPerceptionModifier(player, value) end
 
 ---```
 ---# Predominant call signatures  
@@ -1632,11 +1632,16 @@ function SetPlayerSneakingNoiseMultiplier(player, multiplier) end
 ---@param p3 boolean
 function SetPlayerWantedCentrePosition(player, position, p2, p3) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x4E9021C1FCDD507A)
----@param player number
----@param value number
-function SetPlayerStealthPerceptionModifier(player, value) end
+---```
+---Sets your targeting mode.
+---0 = Assisted Aim - Full
+---1 = Assisted Aim - Partial
+---2 = Free Aim - Assisted
+---3 = Free Aim
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0xB1906895227793F3)
+---@param targetMode number
+function SetPlayerTargetingMode(targetMode) end
 
 ---```
 ---Call SET_PLAYER_WANTED_LEVEL_NOW for immediate effect  
@@ -1656,17 +1661,6 @@ function SetPlayerWantedLevel(player, wantedLevel, disableNoMission) end
 ---@param player number
 ---@param team number
 function SetPlayerTeam(player, team) end
-
----```
----Sets your targeting mode.
----0 = Assisted Aim - Full
----1 = Assisted Aim - Partial
----2 = Free Aim - Assisted
----3 = Free Aim
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0xB1906895227793F3)
----@param targetMode number
-function SetPlayerTargetingMode(targetMode) end
 
 ---Seems to lock the underwater timer of the specified player. Set `percentage` to `50.0` will reduce the value of [GET_PLAYER_UNDERWATER_TIME_REMAINING](#\_0xA1FCF8E6AF40B731) to 5.0.
 ---
@@ -1689,6 +1683,14 @@ function SetPlayerUnderwaterTimeRemaining(player, percentage) end
 function SetPlayerWantedLevelNoDrop(player, wantedLevel, p2) end
 
 ---```
+---modifier's min value is 0.1
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x4C60E6EFDAFF2462)
+---@param player number
+---@param modifier number
+function SetPlayerVehicleDefenseModifier(player, modifier) end
+
+---```
 ---Forces any pending wanted level to be applied to the specified player immediately.  
 ---Call SET_PLAYER_WANTED_LEVEL with the desired wanted level, followed by SET_PLAYER_WANTED_LEVEL_NOW.  
 ---Second parameter is unknown (always false).  
@@ -1698,33 +1700,23 @@ function SetPlayerWantedLevelNoDrop(player, wantedLevel, p2) end
 ---@param p1 boolean
 function SetPlayerWantedLevelNow(player, p1) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x2D83BC011CA14A3C)
----@param player number
----@param modifier number
-function SetPlayerWeaponDefenseModifier(player, modifier) end
-
 ---The native ensures the 'modifier' parameter is 0.1 or greater.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xCE07B9F7817AADA3)
 ---@param player number
 ---@param modifier number
 function SetPlayerWeaponDamageModifier(player, modifier) end
 
----```
----modifier's min value is 0.1
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0xA50E117CDDF82F0C)
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x2D83BC011CA14A3C)
 ---@param player number
 ---@param modifier number
-function SetPlayerVehicleDamageModifier(player, modifier) end
+function SetPlayerWeaponDefenseModifier(player, modifier) end
 
----```
----modifier's min value is 0.1
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x4C60E6EFDAFF2462)
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xBCFDE9EDE4CF27DC)
 ---@param player number
 ---@param modifier number
-function SetPlayerVehicleDefenseModifier(player, modifier) end
+function SetPlayerWeaponDefenseModifier_2(player, modifier) end
 
 ---```
 ---If toggle is set to false:
@@ -1763,6 +1755,11 @@ function SetPoliceIgnorePlayer(player, toggle) end
 ---@param multiplier number
 function SetRunSprintMultiplierForPlayer(player, multiplier) end
 
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xA49C426ED0CA4AB7)
+---@param multiplier number
+function SetSpecialAbilityMultiplier(multiplier) end
+
 ---```
 ---Swim speed multiplier.  
 ---Multiplier goes up to 1.49  
@@ -1773,24 +1770,6 @@ function SetRunSprintMultiplierForPlayer(player, multiplier) end
 ---@param player number
 ---@param multiplier number
 function SetSwimMultiplierForPlayer(player, multiplier) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xA49C426ED0CA4AB7)
----@param multiplier number
-function SetSpecialAbilityMultiplier(multiplier) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xBCFDE9EDE4CF27DC)
----@param player number
----@param modifier number
-function SetPlayerWeaponDefenseModifier_2(player, modifier) end
-
----```
----NativeDB Added Parameter 2: Any p1
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x821FDC827D6F4090)
----@param player any
-function SpecialAbilityActivate(player) end
 
 ---```
 ---Max value is 1.0  
@@ -1806,6 +1785,13 @@ function SetWantedLevelDifficulty(player, difficulty) end
 function SetWantedLevelMultiplier(multiplier) end
 
 ---```
+---NativeDB Added Parameter 2: Any p1
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x821FDC827D6F4090)
+---@param player any
+function SpecialAbilityActivate(player) end
+
+---```
 ---p1 appears to always be 1 (only comes up twice)
 ---```
 ---
@@ -1816,6 +1802,15 @@ function SetWantedLevelMultiplier(multiplier) end
 ---@param player number
 ---@param p2 number
 function SpecialAbilityChargeContinuous(player, p2) end
+
+---```
+---NativeDB Introduced: v2060
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x49B856B1360C47C7)
+---@param player number
+---@param wantedLevel number
+---@param lossTime number
+function SetWantedLevelHiddenEvasionTime(player, wantedLevel, lossTime) end
 
 ---```
 ---2 matches. p1 was always true.
@@ -1857,13 +1852,6 @@ function SpecialAbilityChargeNormalized(player, normalizedValue, p2) end
 function SimulatePlayerInputGait(player, amount, gaitType, rotationSpeed, p4, p5) end
 
 ---```
----NativeDB Added Parameter 2: Any p1
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x9CB5CE07A3968D5A)
----@param player number
-function SpecialAbilityDeactivateFast(player) end
-
----```
 ---Every occurrence of p1 & p2 were both true.
 ---```
 ---
@@ -1877,17 +1865,11 @@ function SpecialAbilityDeactivateFast(player) end
 function SpecialAbilityChargeSmall(player, p1, p2) end
 
 ---```
----Only 1 match. Both p1 & p2 were true.
+---NativeDB Added Parameter 2: Any p1
 ---```
----
----```
----NativeDB Added Parameter 4: Any p3
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0xF113E3AA9BC54613)
+---[Native Documentation](https://docs.fivem.net/natives/?_0x9CB5CE07A3968D5A)
 ---@param player number
----@param p1 boolean
----@param p2 boolean
-function SpecialAbilityChargeMedium(player, p1, p2) end
+function SpecialAbilityDeactivateFast(player) end
 
 ---```
 ---p1 appears as 5, 10, 15, 25, or 30. p2 is always true.
@@ -1903,13 +1885,29 @@ function SpecialAbilityChargeMedium(player, p1, p2) end
 function SpecialAbilityChargeAbsolute(player, p1, p2) end
 
 ---```
----NativeDB Introduced: v2060
+---Only 1 match. Both p1 & p2 were true.
 ---```
----[Native Documentation](https://docs.fivem.net/natives/?_0x49B856B1360C47C7)
+---
+---```
+---NativeDB Added Parameter 4: Any p3
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0xF113E3AA9BC54613)
 ---@param player number
----@param wantedLevel number
----@param lossTime number
-function SetWantedLevelHiddenEvasionTime(player, wantedLevel, lossTime) end
+---@param p1 boolean
+---@param p2 boolean
+function SpecialAbilityChargeMedium(player, p1, p2) end
+
+---```
+---p1 was always true.
+---```
+---
+---```
+---NativeDB Added Parameter 3: Any p2
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x1D506DBBBC51E64B)
+---@param player number
+---@param p1 boolean
+function SpecialAbilityDepleteMeter(player, p1) end
 
 ---```
 ---NativeDB Added Parameter 2: Any p1
@@ -1928,21 +1926,28 @@ function SpecialAbilityLock(playerModel) end
 ---```
 ---NativeDB Added Parameter 2: Any p1
 ---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0xF145F3BE2EFA9A3B)
+---@param playerModel number | string
+function SpecialAbilityUnlock(playerModel) end
+
+---```
+---NativeDB Added Parameter 2: Any p1
+---```
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x17F7471EACA78290)
 ---@param p0 any
 function SpecialAbilityDeplete(p0) end
 
 ---```
----p1 was always true.
+---Also known as _RECHARGE_SPECIAL_ABILITY
 ---```
 ---
 ---```
 ---NativeDB Added Parameter 3: Any p2
 ---```
----[Native Documentation](https://docs.fivem.net/natives/?_0x1D506DBBBC51E64B)
+---[Native Documentation](https://docs.fivem.net/natives/?_0x3DACA8DDC6FD4980)
 ---@param player number
 ---@param p1 boolean
-function SpecialAbilityDepleteMeter(player, p1) end
+function SpecialAbilityFillMeter(player, p1) end
 
 ---Teleports the player to the given coordinates.
 ---
@@ -1972,21 +1977,15 @@ function SpecialAbilityDeactivate(player) end
 ---```
 ---NativeDB Added Parameter 2: Any p1
 ---```
----[Native Documentation](https://docs.fivem.net/natives/?_0xF145F3BE2EFA9A3B)
----@param playerModel number | string
-function SpecialAbilityUnlock(playerModel) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x375F0E738F861A94)
+---@param player number
+function SpecialAbilityReset(player) end
 
 ---```
----Also known as _RECHARGE_SPECIAL_ABILITY
+---Disables the player's teleportation  
 ---```
----
----```
----NativeDB Added Parameter 3: Any p2
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x3DACA8DDC6FD4980)
----@param player number
----@param p1 boolean
-function SpecialAbilityFillMeter(player, p1) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0xC449EDED9D73009C)
+function StopPlayerTeleport() end
 
 ---```
 ---This was previously named as "RESERVE_ENTITY_EXPLODES_ON_HIGH_EXPLOSION_COMBO"  
@@ -2004,13 +2003,6 @@ function SwitchCrimeType(player, p1) end
 ---@param duration number
 function StartFiringAmnesty(duration) end
 
----```
----NativeDB Added Parameter 2: Any p1
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x375F0E738F861A94)
----@param player number
-function SpecialAbilityReset(player) end
-
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xE23D5873C2394C61)
 ---@param player number
@@ -2018,8 +2010,16 @@ function SpecialAbilityReset(player) end
 function UpdatePlayerTeleport(player) end
 
 ---```
----Disables the player's teleportation  
+---NativeDB Added Parameter 3: BOOL p2
 ---```
----[Native Documentation](https://docs.fivem.net/natives/?_0xC449EDED9D73009C)
-function StopPlayerTeleport() end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x4A3DC7ECCC321032)
+---@param player number
+---@param modifier number
+function SetPlayerMeleeWeaponDamageModifier(player, modifier) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xFF300C7649724A0B)
+---@param player number
+---@param toggle boolean
+function SetPlayerLeavePedBehind(player, toggle) end
 
