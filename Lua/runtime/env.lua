@@ -12,7 +12,7 @@ function GetPlayerTokens(player) end
 
 ---Performs a HTTP request using the specified parameters and returns the HTTP response in a callback.
 ---@param url string  a string of the URL to request
----@param cb fun(errorCode?: integer, resultData?: string, resultHeaders?: table<string, string>)  the callback function to call after the request is finished
+---@param cb fun(errorCode?: integer, resultData?: string, resultHeaders?: table<string, string>, response?: string)  the callback function to call after the request is finished
 ---@param method? string  the HTTP method to use. default: `'GET'`
 ---@param data? string  a string of data to send with the request. default: `''`
 ---@param headers? table  a table of request headers. default: `{}`
