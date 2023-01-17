@@ -7,22 +7,16 @@
 function MissiondataIsValid(p0) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x57E798B56C45EE15)
----@param missionId number | string
----@return number
-function MissiondataGetTextureName(missionId) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x57E798B57C45EE16)
----@param missionId number | string
----@return number
-function MissiondataGetTextureTxd(missionId) end
-
----This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x57E798B65C45EE17)
 ---@param missionId number | string
 ---@return number
 function MissiondataGetCatagory(missionId) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x57E798B56C45EE15)
+---@param missionId number | string
+---@return number
+function MissiondataGetTextureName(missionId) end
 
 ---see: missions.meta
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xE54DC27571D5EDC4)
@@ -35,6 +29,12 @@ function MissiondataWasCompleted(missionId) end
 ---@param missionId number | string
 ---@return number
 function MissiondataGetRating(missionId) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xE824CE7D13FCB35E)
+---@param missionId number | string
+---@return boolean
+function MissiondataIsRequiredStoryMission(missionId) end
 
 ---replayState: MISSIONDATA_GET_REPLAY_STATE
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xE4E2C581F127A11C)
@@ -54,6 +54,12 @@ function MissiondataSetReplayStateLocked(missionId, replayState) end
 function MissiondataSetMissionRating(missionId, rating) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x8C32D86E9556ED86)
+---@param p0 any
+---@return number
+function MissiondataGetReplayState(p0) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x12F65317708749A5)
 ---@param missionId number | string
 ---@param bronzeScore number
@@ -62,16 +68,10 @@ function MissiondataSetMissionRating(missionId, rating) end
 function MissiondataSetRatingScores(missionId, bronzeScore, silverScore, goldScore) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x3A04F0169DA87A9D)
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x57E798B57C45EE16)
 ---@param missionId number | string
----@param score number
-function MissiondataSetHighScore(missionId, score) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x8C32D86E9556ED86)
----@param p0 any
 ---@return number
-function MissiondataGetReplayState(p0) end
+function MissiondataGetTextureTxd(missionId) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x9AABABF8313C3516)
@@ -80,10 +80,10 @@ function MissiondataGetReplayState(p0) end
 function MissiondataGetHighScore(missionId) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xE145864DECC34219)
----@param category number | string
----@return boolean
-function MissiondataIsReplayCategoryLocked(category) end
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x3A04F0169DA87A9D)
+---@param missionId number | string
+---@param score number
+function MissiondataSetHighScore(missionId, score) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x957A830C9B4B99EA)
@@ -92,10 +92,15 @@ function MissiondataIsReplayCategoryLocked(category) end
 function MissiondataSetReplayLockedForCategory(category, locked) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xE824CE7D13FCB35E)
----@param missionId number | string
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x25855B1574BF8CD5)
+---@param timecycleName string
+function MissiondataTimecycleBoxSetModifier(timecycleName) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xE145864DECC34219)
+---@param category number | string
 ---@return boolean
-function MissiondataIsRequiredStoryMission(missionId) end
+function MissiondataIsReplayCategoryLocked(category) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x7E8F86A4FA33033C)
@@ -105,9 +110,4 @@ function MissiondataTimecycleBoxExists() end
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x7F89E15A8FB8DE97)
 function MissiondataTimecycleBoxDelete() end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x25855B1574BF8CD5)
----@param timecycleName string
-function MissiondataTimecycleBoxSetModifier(timecycleName) end
 

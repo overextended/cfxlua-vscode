@@ -1,23 +1,27 @@
 ---@meta
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x8D30F648014A92B5)
----@return boolean
-function GetExtraContentPackHasBeenInstalled() end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x10D0A8F259E93EC9)
 ---@return boolean
 function GetIsLoadingScreenActive() end
 
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x8D30F648014A92B5)
+---@return boolean
+function GetExtraContentPackHasBeenInstalled() end
+
 ---```
----Sets the value of the specified variable to 0.
----Always returns true.
+---Example:
+---DLC::IS_DLC_PRESENT($\mpbusiness2\);
+---($ = gethashkey)
+---bruteforce these:
+---0xB119F6D
+---0x96F02EE6
 ---```
----[Native Documentation](https://docs.fivem.net/natives/?_0x46E2B844905BC5F0)
----@param unused any
----@return boolean, boolean
-function HasCloudRequestsFinished(unused) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x812595A0644CE1DE)
+---@param dlcHash number | string
+---@return boolean
+function IsDlcPresent(dlcHash) end
 
 ---```
 ---Only used once in scripts, in maintransition.
@@ -34,36 +38,36 @@ function HasCloudRequestsFinished(unused) end
 function N_0x241fca5b1aa14f75() end
 
 ---```
----Example:
----DLC::IS_DLC_PRESENT($\mpbusiness2\);
----($ = gethashkey)
----bruteforce these:
----0xB119F6D
----0x96F02EE6
+---Sets the value of the specified variable to 0.
+---Always returns true.
 ---```
----[Native Documentation](https://docs.fivem.net/natives/?_0x812595A0644CE1DE)
----@param dlcHash number | string
----@return boolean
-function IsDlcPresent(dlcHash) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x46E2B844905BC5F0)
+---@param unused any
+---@return boolean, boolean
+function HasCloudRequestsFinished(unused) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA213B11DFF526300)
 ---@return boolean
 function N_0xa213b11dff526300() end
 
----GET_IS_LOADING_\*
----
----```
----NativeDB Introduced: v1734
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0xC4637A6D03C24CC3)
----@return boolean
-function N_0xc4637a6d03c24cc3() end
-
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x9489659372A81585)
 ---@return boolean
 function N_0x9489659372a81585() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xF2E07819EF1A5289)
+---@return boolean
+function N_0xf2e07819ef1a5289() end
+
+---```
+---This loads the GTA:O dlc map parts (high end garages, apartments).
+---Works in singleplayer.
+---In order to use GTA:O heist IPL's you have to call this native with the following params: SET_INSTANCE_PRIORITY_MODE(1);
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x0888C3502DBBEEF5)
+function OnEnterMp() end
 
 ---```
 ---Unloads GROUP_MAP (GTAO/MP) DLC data and loads GROUP_MAP_SP DLC. Neither are loaded by default, 0888C3502DBBEEF5 is a cognate to this function and loads MP DLC (and unloads SP DLC by extension).
@@ -74,16 +78,12 @@ function N_0x9489659372a81585() end
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xD7C10C4A637992C9)
 function OnEnterSp() end
 
+---GET_IS_LOADING_\*
+---
 ---```
----This loads the GTA:O dlc map parts (high end garages, apartments).
----Works in singleplayer.
----In order to use GTA:O heist IPL's you have to call this native with the following params: SET_INSTANCE_PRIORITY_MODE(1);
+---NativeDB Introduced: v1734
 ---```
----[Native Documentation](https://docs.fivem.net/natives/?_0x0888C3502DBBEEF5)
-function OnEnterMp() end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xF2E07819EF1A5289)
+---[Native Documentation](https://docs.fivem.net/natives/?_0xC4637A6D03C24CC3)
 ---@return boolean
-function N_0xf2e07819ef1a5289() end
+function N_0xc4637a6d03c24cc3() end
 

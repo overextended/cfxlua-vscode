@@ -20,24 +20,17 @@ function UilogIsEntryRegistered(p0, p1) end
 function UilogAddEntryHash(p0, p1, x, y, z, p5, p6, p7) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x49C63FDF69744A27)
----@param p0 any
----@param p1 any
----@param p2 any
----@param p3 any
----@param p4 any
----@param p5 any
----@param p6 any
----@param p7 any
-function UilogAddItemToTaskList(p0, p1, p2, p3, p4, p5, p6, p7) end
-
----This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x6965469934958D8F)
 ---@param p0 number
 ---@param p1 number | string
 ---@param icon number | string
 ---@param iconDictionary number | string
 function UilogSetEntryIconTexture(p0, p1, icon, iconDictionary) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xDE31D66D1E54C471)
+---@param p0 number | string
+function UilogMarkMissionCompleted(p0) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x69684D9936958D8F)
@@ -68,43 +61,16 @@ function UilogUpdateEntrySubheader(p0, p1, p2) end
 function UilogMarkAllEntriesAvailability(p0, p1) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x13E8D7DD08543482)
----@param p0 number
----@param p1 number | string
----@param p2 number
----@param p3 string
-function UilogMarkEntryAvailability(p0, p1, p2, p3) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xA49D6D503E3EA847)
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x49C63FDF69744A27)
 ---@param p0 any
 ---@param p1 any
 ---@param p2 any
 ---@param p3 any
 ---@param p4 any
-function N_0xa49d6d503e3ea847(p0, p1, p2, p3, p4) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xDE31D66D1E54C471)
----@param p0 number | string
-function UilogMarkMissionCompleted(p0) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x763637F9B838B0A7)
----@param p0 any
----@param p1 any
----@param p2 any
-function N_0x763637f9b838b0a7(p0, p1, p2) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xB95B4EA6B1EDF035)
-function UilogClearAllEntries() end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xD594A19BE09A75C6)
----@param p0 number
----@param p1 number | string
-function UilogRemoveEntry(p0, p1) end
+---@param p5 any
+---@param p6 any
+---@param p7 any
+function UilogAddItemToTaskList(p0, p1, p2, p3, p4, p5, p6, p7) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xA31013798FADCADC)
@@ -114,14 +80,26 @@ function UilogRemoveEntry(p0, p1) end
 function UilogSetDisplayCompletionRating(logEntryType, p1, p2) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xA20398536B7F1134)
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xD594A19BE09A75C6)
+---@param p0 number
+---@param p1 number | string
+function UilogRemoveEntry(p0, p1) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x763637F9B838B0A7)
+---@param p0 any
+---@param p1 any
+---@param p2 any
+function N_0x763637f9b838b0a7(p0, p1, p2) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xA49D6D503E3EA847)
 ---@param p0 any
 ---@param p1 any
 ---@param p2 any
 ---@param p3 any
 ---@param p4 any
----@param p5 any
-function N_0xa20398536b7f1134(p0, p1, p2, p3, p4, p5) end
+function N_0xa49d6d503e3ea847(p0, p1, p2, p3, p4) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xB43163388484CC87)
@@ -135,13 +113,18 @@ function N_0xa20398536b7f1134(p0, p1, p2, p3, p4, p5) end
 function UilogAddOrUpdateObjective(p0, p1, p2, p3, p4, p5, p6) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xCC48FFBB45B54F71)
----@return boolean
-function UilogHasDisplayedCachedObjective() end
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xB95B4EA6B1EDF035)
+function UilogClearAllEntries() end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xA3108D6981A5CADB)
-function UilogClearHasDisplayedCachedObjective() end
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xA20398536B7F1134)
+---@param p0 any
+---@param p1 any
+---@param p2 any
+---@param p3 any
+---@param p4 any
+---@param p5 any
+function N_0xa20398536b7f1134(p0, p1, p2, p3, p4, p5) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xFA233F8FE190514C)
@@ -149,22 +132,30 @@ function UilogClearHasDisplayedCachedObjective() end
 function UilogSetCachedObjective(p0) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x15A4461BEB788096)
----@return any
-function UilogGetCachedObjective() end
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x13E8D7DD08543482)
+---@param p0 number
+---@param p1 number | string
+---@param p2 number
+---@param p3 string
+function UilogMarkEntryAvailability(p0, p1, p2, p3) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xA3108D6981A5CADC)
-function UilogSetHasDisplayedCachedObjective() end
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xCC48FFBB45B54F71)
+---@return boolean
+function UilogHasDisplayedCachedObjective() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xDFF0D417277B41F8)
 function UilogClearCachedObjective() end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x2A4765812202E671)
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xA3108D6981A5CADC)
+function UilogSetHasDisplayedCachedObjective() end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x15A4461BEB788096)
 ---@return any
-function N_0x2a4765812202e671() end
+function UilogGetCachedObjective() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x136A027CF37B0A4F)
@@ -172,6 +163,15 @@ function N_0x2a4765812202e671() end
 ---@param p1 number | string
 ---@return any
 function UilogSetPendingDetailsId(p0, p1) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x2A4765812202E671)
+---@return any
+function N_0x2a4765812202e671() end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xA3108D6981A5CADB)
+function UilogClearHasDisplayedCachedObjective() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x60C59968E8E87E6B)
@@ -194,10 +194,10 @@ function UilogPostNotification() end
 function UilogSetTotalTakeSummary(p0, p1) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xE9990552DEC71600)
-function UilogPrintCachedObjective() end
-
----This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xDA0A30153FCC0FFD)
 function N_0xda0a30153fcc0ffd() end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xE9990552DEC71600)
+function UilogPrintCachedObjective() end
 

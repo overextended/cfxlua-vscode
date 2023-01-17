@@ -10,18 +10,18 @@
 function DecorExistOn(entity, propertyName) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x6524A2F114706F43)
----@param entity number
----@param propertyName string
----@return number
-function DecorGetFloat(entity, propertyName) end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xDACE671663F2F5DB)
 ---@param entity number
 ---@param propertyName string
 ---@return boolean
 function DecorGetBool(entity, propertyName) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x6524A2F114706F43)
+---@param entity number
+---@param propertyName string
+---@return number
+function DecorGetFloat(entity, propertyName) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x4F14F9F870D6FBC8)
@@ -78,16 +78,6 @@ function DecorSetFloat(entity, propertyName, value) end
 ---@return boolean
 function DecorSetBool(entity, propertyName, value) end
 
----```
----Sets property to int.  
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x0CE3AA5E1CA19E10)
----@param entity number
----@param propertyName string
----@param value number
----@return boolean
-function DecorSetInt(entity, propertyName, value) end
-
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x95AED7B8E39ECAA4)
 ---@param entity number
@@ -102,4 +92,14 @@ function DecorSetTime(entity, propertyName, timestamp) end
 ---@param propertyName string
 ---@return boolean
 function DecorRemove(entity, propertyName) end
+
+---```
+---Sets property to int.  
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x0CE3AA5E1CA19E10)
+---@param entity number
+---@param propertyName string
+---@param value number
+---@return boolean
+function DecorSetInt(entity, propertyName, value) end
 

@@ -1,26 +1,5 @@
 ---@meta
 
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xE9C59F6809373A99)
----@param x number
----@param y number
----@param z number
----@param rotX number
----@param rotY number
----@param rotZ number
----@param length number
----@param ropeType number
----@param isNetworked boolean
----@param p9 number
----@param p10 number
----@return number
-function AddRope_2(x, y, z, rotX, rotY, rotZ, length, ropeType, isNetworked, p9, p10) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x52B4829281364649)
----@return number
-function DeleteRope() end
-
 ---There are 19 types of rope, from type = 0 to type = 18
 ---Rope definitions are stored in ropedata.xml
 ---Rope types 0, 15 and 18 have proper physics for hanging objects (taut, do not sag, small to medium diameter, good aspect for a rope)
@@ -45,14 +24,26 @@ function DeleteRope() end
 ---@return number, any
 function AddRope(x, y, z, rotX, rotY, rotZ, length, ropeType, maxLength, minLength, p10, p11, p12, rigid, p14, breakWhenShot, p17) end
 
----ropeTop returns top half of rope, ropeBottom returns bottom half of rope
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x4CFA2B7FAE115ECB)
----@param offsetX number
----@param offsetY number
----@param offsetZ number
----@param p6 number
----@return number, number, number
-function BreakRope(offsetX, offsetY, offsetZ, p6) end
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xE9C59F6809373A99)
+---@param x number
+---@param y number
+---@param z number
+---@param rotX number
+---@param rotY number
+---@param rotZ number
+---@param length number
+---@param ropeType number
+---@param isNetworked boolean
+---@param p9 number
+---@param p10 number
+---@return number
+function AddRope_2(x, y, z, rotX, rotY, rotZ, length, ropeType, isNetworked, p9, p10) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x52B4829281364649)
+---@return number
+function DeleteRope() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xAA5D6B1888E4DB20)
@@ -63,6 +54,15 @@ function DeleteChildRope(ropeId) end
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x6076213101A47B3B)
 ---@param ropeId number
 function ReleaseRope(ropeId) end
+
+---ropeTop returns top half of rope, ropeBottom returns bottom half of rope
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x4CFA2B7FAE115ECB)
+---@param offsetX number
+---@param offsetY number
+---@param offsetZ number
+---@param p6 number
+---@return number, number, number
+function BreakRope(offsetX, offsetY, offsetZ, p6) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x7A54D82227A139DB)
@@ -83,13 +83,10 @@ function DoesRopeExist(ropeId) end
 function RopeDrawShadowEnabled(toggle) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xE54BF2CE6C7D23A9)
----@param p0 any
----@param p1 any
----@param p2 any
----@param p3 any
----@param p4 any
-function N_0xe54bf2ce6c7d23a9(p0, p1, p2, p3, p4) end
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x3655F544CD30F0B5)
+---@param ropeId number
+---@return number
+function GetRopeVertexCount(ropeId) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x9C24846D0A4A2776)
@@ -97,10 +94,19 @@ function N_0xe54bf2ce6c7d23a9(p0, p1, p2, p3, p4) end
 function N_0x9c24846d0a4a2776(p0) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x3655F544CD30F0B5)
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x79C2BEC82CFD7F7F)
 ---@param ropeId number
----@return number
-function GetRopeVertexCount(ropeId) end
+---@return boolean
+function IsRopeBroken(ropeId) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xE54BF2CE6C7D23A9)
+---@param p0 any
+---@param p1 any
+---@param p2 any
+---@param p3 any
+---@param p4 any
+function N_0xe54bf2ce6c7d23a9(p0, p1, p2, p3, p4) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xF27F1A8DE4F50A1B)
@@ -112,12 +118,6 @@ function GetRopeVertexCount(ropeId) end
 ---@param p5 any
 ---@param p6 any
 function N_0xf27f1a8de4f50a1b(p0, p1, p2, p3, p4, p5, p6) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x79C2BEC82CFD7F7F)
----@param ropeId number
----@return boolean
-function IsRopeBroken(ropeId) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x21D0890D88DFB0B0)
@@ -191,11 +191,6 @@ function AttachEntitesToRope_3(ropeId, entity1, entity2, p3, p4, p5, p6, p7, p8,
 function AttachEntitiesToRope_2(ropeId, entity1, entity2, ent1X, ent1Y, ent1Z, ent2X, ent2Y, ent2Z, boneName1, boneName2) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x0CB16D05E03FB525)
----@param p0 any
-function N_0x0cb16d05e03fb525(p0) end
-
----This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x69C810B72291D831)
 ---@param p0 any
 ---@param p1 any
@@ -205,25 +200,6 @@ function N_0x0cb16d05e03fb525(p0) end
 ---@param p5 any
 ---@param p6 any
 function N_0x69c810b72291d831(p0, p1, p2, p3, p4, p5, p6) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xC64E7A62632AD2FE)
----@param p0 any
----@param p1 any
----@param p2 any
----@param p3 any
----@param p4 any
----@param p5 any
----@param p6 any
----@param p7 any
-function N_0xc64e7a62632ad2fe(p0, p1, p2, p3, p4, p5, p6, p7) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x9B4F7E3E4F9C77B3)
----@param ropeId number
----@param entity number
----@return boolean
-function IsRopeAttachedToEntity(ropeId, entity) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xB7469CB9AC3C0FD4)
@@ -238,9 +214,23 @@ function IsRopeAttachedToEntity(ropeId, entity) end
 function N_0xb7469cb9ac3c0fd4(p0, p1, p2, p3, p4, p5, p6, p7) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x0348469DAA17576C)
----@param horse number
-function UnhitchHorse(horse) end
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x9B4F7E3E4F9C77B3)
+---@param ropeId number
+---@param entity number
+---@return boolean
+function IsRopeAttachedToEntity(ropeId, entity) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xC64E7A62632AD2FE)
+---@param p0 any
+---@param p1 any
+---@param p2 any
+---@param p3 any
+---@param p4 any
+---@param p5 any
+---@param p6 any
+---@param p7 any
+function N_0xc64e7a62632ad2fe(p0, p1, p2, p3, p4, p5, p6, p7) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x06AADE17334F7A40)
@@ -251,25 +241,15 @@ function UnhitchHorse(horse) end
 function HitchHorse(horse, x, y, z) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xBDDA142759307528)
----@param p0 any
-function N_0xbdda142759307528(p0) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x6EA0E93CFFA472CC)
----@param p0 any
-function N_0x6ea0e93cffa472cc(p0) end
-
----This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xBCF3026912A8647D)
 ---@param ropeId number
 ---@param entity number
 function DetachRopeFromEntity(ropeId, entity) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xEAF529446488EB18)
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x0CB16D05E03FB525)
 ---@param p0 any
-function N_0xeaf529446488eb18(p0) end
+function N_0x0cb16d05e03fb525(p0) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x32F4DBFDFCCCC735)
@@ -279,22 +259,37 @@ function N_0xeaf529446488eb18(p0) end
 function N_0x32f4dbfdfcccc735(p0, p1, p2) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x5E981C764DF33117)
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x6EA0E93CFFA472CC)
 ---@param p0 any
----@param p1 any
-function N_0x5e981c764df33117(p0, p1) end
+function N_0x6ea0e93cffa472cc(p0) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xDC57A637A20006ED)
----@param ropeId number
----@param p1 any
-function RopeSetUpdateOrder(ropeId, p1) end
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x0348469DAA17576C)
+---@param horse number
+function UnhitchHorse(horse) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xF8CA39D5C0D1D9A1)
 ---@param p0 any
 ---@param p1 any
 function N_0xf8ca39d5c0d1d9a1(p0, p1) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x5E981C764DF33117)
+---@param p0 any
+---@param p1 any
+function N_0x5e981c764df33117(p0, p1) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xBDDA142759307528)
+---@param p0 any
+function N_0xbdda142759307528(p0) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x31160EC47E7C9549)
+---@param p0 any
+---@param p1 any
+function N_0x31160ec47e7c9549(p0, p1) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xFB9153A54AC713E8)
@@ -312,13 +307,16 @@ function N_0xfb9153a54ac713e8(ropeId, p1) end
 function N_0xd699e688b49c0fd2(ropeId, p1, p2, p3, p4) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xBB3E9B073E66C3C9)
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xEAF529446488EB18)
+---@param p0 any
+function N_0xeaf529446488eb18(p0) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x522FA3F490E2F7AC)
 ---@param ropeId number
----@param p1 boolean
----@param p2 boolean
----@param p3 boolean
----@param p4 boolean
-function N_0xbb3e9b073e66c3c9(ropeId, p1, p2, p3, p4) end
+---@param p1 any
+---@param p2 any
+function N_0x522fa3f490e2f7ac(ropeId, p1, p2) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xC89E7410A93AC19A)
@@ -327,17 +325,16 @@ function N_0xbb3e9b073e66c3c9(ropeId, p1, p2, p3, p4) end
 function N_0xc89e7410a93ac19a(ropeId, p1) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x3900491C0D61ED4B)
----@param p0 any
----@param p1 any
-function N_0x3900491c0d61ed4b(p0, p1) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x522FA3F490E2F7AC)
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xDC57A637A20006ED)
 ---@param ropeId number
 ---@param p1 any
----@param p2 any
-function N_0x522fa3f490e2f7ac(ropeId, p1, p2) end
+function RopeSetUpdateOrder(ropeId, p1) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x1D97DA8ACB5D2582)
+---@param ropeId number
+---@param p1 number
+function N_0x1d97da8acb5d2582(ropeId, p1) end
 
 ---Combining this with ADD_ROPE enables winding
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x3C6490D940FF5D0B)
@@ -349,10 +346,30 @@ function N_0x522fa3f490e2f7ac(ropeId, p1, p2) end
 function N_0x3c6490d940ff5d0b(ropeId, p1, ropeModelType, length, p4) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x1D97DA8ACB5D2582)
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xBB3E9B073E66C3C9)
 ---@param ropeId number
----@param p1 number
-function N_0x1d97da8acb5d2582(ropeId, p1) end
+---@param p1 boolean
+---@param p2 boolean
+---@param p3 boolean
+---@param p4 boolean
+function N_0xbb3e9b073e66c3c9(ropeId, p1, p2, p3, p4) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x3900491C0D61ED4B)
+---@param p0 any
+---@param p1 any
+function N_0x3900491c0d61ed4b(p0, p1) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x21BB0FBD3E217C2D)
+---@param ropeId number
+---@return vector3
+function GetRopeLastVertexCoord(ropeId) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xCB2D4AB84A19AA7C)
+---@param ropeId number
+function StopRopeWinding(ropeId) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xEA61CA8E80F09E4D)
@@ -362,21 +379,9 @@ function N_0x1d97da8acb5d2582(ropeId, p1) end
 function GetRopeVertexCoord(ropeId, vertex) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x31160EC47E7C9549)
----@param p0 any
----@param p1 any
-function N_0x31160ec47e7c9549(p0, p1) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x21BB0FBD3E217C2D)
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x538D1179EC1AA9A9)
 ---@param ropeId number
----@return vector3
-function GetRopeLastVertexCoord(ropeId) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x1461C72C889E343E)
----@param ropeId number
-function StartRopeWinding(ropeId) end
+function StartRopeUnwindingFront(ropeId) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xFFF3A50779EFBBB3)
@@ -384,9 +389,14 @@ function StartRopeWinding(ropeId) end
 function StopRopeUnwindingFront(ropeId) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x538D1179EC1AA9A9)
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x10DAA76CB8A201A1)
 ---@param ropeId number
-function StartRopeUnwindingFront(ropeId) end
+function StopRopeUnwindingBack(ropeId) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x1461C72C889E343E)
+---@param ropeId number
+function StartRopeWinding(ropeId) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x00F611A794A3C36E)
@@ -400,6 +410,12 @@ function StartRopeUnwindingBack(ropeId) end
 function N_0x461fcbdeb4d06717(ropeId, p1) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xB40EA9E0D2E2F7F3)
+---@param ropeId number
+---@param p1 number
+function N_0xb40ea9e0d2e2f7f3(ropeId, p1) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x423C6B1F3786D28B)
 ---@param p0 any
 ---@param p1 any
@@ -411,11 +427,16 @@ function N_0x423c6b1f3786d28b(p0, p1) end
 ---@param p1 number
 function N_0x76bad9d538bca1aa(ropeId, p1) end
 
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xB40EA9E0D2E2F7F3)
+---_ROPE_SET_*
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x8D59079C37C21D78)
 ---@param ropeId number
 ---@param p1 number
-function N_0xb40ea9e0d2e2f7f3(ropeId, p1) end
+function N_0x8d59079c37c21d78(ropeId, p1) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x751DF00EEFF122E3)
+---@param p0 any
+function N_0x751df00eeff122e3(p0) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x3D69537039F8D824)
@@ -424,44 +445,10 @@ function N_0xb40ea9e0d2e2f7f3(ropeId, p1) end
 function N_0x3d69537039f8d824(p0) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x751DF00EEFF122E3)
----@param p0 any
-function N_0x751df00eeff122e3(p0) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x10DAA76CB8A201A1)
----@param ropeId number
-function StopRopeUnwindingBack(ropeId) end
-
----Forces a rope to a certain length.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xD009F759A723DB1B)
----@param ropeId number
----@param length number
-function RopeForceLength(ropeId, length) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x814D453FCFDF119F)
----@param p0 any
----@param p1 any
----@param p2 any
-function N_0x814d453fcfdf119f(p0, p1, p2) end
-
----_ROPE_SET_*
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x8D59079C37C21D78)
----@param ropeId number
----@param p1 number
-function N_0x8d59079c37c21d78(ropeId, p1) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xCB2D4AB84A19AA7C)
----@param ropeId number
-function StopRopeWinding(ropeId) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xDEDE679ED29DD4E7)
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xF1EA2A881EB7F2CD)
 ---@param ropeId number
 ---@param p1 boolean
-function N_0xdede679ed29dd4e7(ropeId, p1) end
+function N_0xf1ea2a881eb7f2cd(ropeId, p1) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x1FC92BDBA1106BD2)
@@ -470,16 +457,27 @@ function N_0xdede679ed29dd4e7(ropeId, p1) end
 function N_0x1fc92bdba1106bd2(p0, p1) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xF1EA2A881EB7F2CD)
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xDEDE679ED29DD4E7)
 ---@param ropeId number
 ---@param p1 boolean
-function N_0xf1ea2a881eb7f2cd(ropeId, p1) end
+function N_0xdede679ed29dd4e7(ropeId, p1) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x483D4E917B0D35A9)
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x5A989B7EE3672A56)
 ---@param p0 any
 ---@param p1 any
-function N_0x483d4e917b0d35a9(p0, p1) end
+function N_0x5a989b7ee3672a56(p0, p1) end
+
+---Forces a rope to a certain length.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xD009F759A723DB1B)
+---@param ropeId number
+---@param length number
+function RopeForceLength(ropeId, length) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x710311ADF0E20730)
+---@param entity number
+function ActivatePhysics(entity) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xEE360CFC80C8B2BC)
@@ -493,11 +491,6 @@ function RopeGetBreakerOfRope(ropeId) end
 ---@param vertex number
 ---@param value number
 function SetDamping(entity, vertex, value) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x710311ADF0E20730)
----@param entity number
-function ActivatePhysics(entity) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x2E648D16F6E308F3)
@@ -515,10 +508,22 @@ function ActivatePhysics(entity) end
 function BreakEntityGlass(entity, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x483D4E917B0D35A9)
+---@param p0 any
+---@param p1 any
+function N_0x483d4e917b0d35a9(p0, p1) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x5CEC1A84620E7D5B)
 ---@param object number
 ---@param toggle boolean
 function SetDisableBreaking(object, toggle) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x01BA3AED21C16CFB)
+---@param object number
+---@param toggle boolean
+function SetDisableFragDamage(object, toggle) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x8EEDFD8921389928)
@@ -535,20 +540,15 @@ function SetDisableBreaking(object, toggle) end
 function N_0x8eedfd8921389928(p0, p1, p2, p3, p4, p5, p6, p7, p8, p9) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x01BA3AED21C16CFB)
----@param object number
----@param toggle boolean
-function SetDisableFragDamage(object, toggle) end
-
----This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x5BD7457221CC5FF4)
 ---@param p0 any
 ---@param p1 any
 function N_0x5bd7457221cc5ff4(p0, p1) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x5A989B7EE3672A56)
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x814D453FCFDF119F)
 ---@param p0 any
 ---@param p1 any
-function N_0x5a989b7ee3672a56(p0, p1) end
+---@param p2 any
+function N_0x814d453fcfdf119f(p0, p1, p2) end
 

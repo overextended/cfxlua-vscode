@@ -11,20 +11,15 @@ function GetNumberOfFreeStacksOfThisSize(stackSize) end
 ---@return number
 function GetNumberOfInstructions() end
 
----Hardcoded to return false.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x5FC9357C26DAEFCE)
----@return boolean
-function IsMagDemo_1Active() end
-
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xC43CD2668B204419)
 ---@return number
 function GetMaxNumInstructions() end
 
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x5CD7A49104AFCB6B)
----@param seed number
-function SetRandomSeed(seed) end
+---Hardcoded to return false.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x5FC9357C26DAEFCE)
+---@return boolean
+function IsMagDemo_1Active() end
 
 ---Maximum value is 1.0f
 ---At a value of 0.0f the game will still run at a minimum time scale.
@@ -43,9 +38,9 @@ function SetMissionFlag(toggle) end
 function GetMissionFlag() end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x924D54E5698AE3E0)
----@return boolean
-function GetRandomEventFlag() end
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x5CD7A49104AFCB6B)
+---@param seed number
+function SetRandomSeed(seed) end
 
 ---If the parameter is true, sets the random event flag to true, if the parameter is false, the function does nothing at all.
 ---Does nothing if the mission flag is set.
@@ -53,21 +48,16 @@ function GetRandomEventFlag() end
 ---@param toggle boolean
 function SetRandomEventFlag(toggle) end
 
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x9BF2C0C568C61641)
+---@param p0 any
+function N_0x9bf2c0c568c61641(p0) end
+
 ---nullsub, doesn't do anything
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xCC7FC854B956A128)
 ---@param p0 string
 ---@param p1 string
 function ActivityFeedCreate(p0, p1) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x5801BE2DF2AF07EC)
----@param p0 any
-function N_0x5801be2df2af07ec(p0) end
-
----nullsub, doesn't do anything
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xFF252E2BAFB7330F)
----@param p0 any
-function N_0xff252e2bafb7330f(p0) end
 
 ---nullsub, doesn't do anything
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x9935F76407C32539)
@@ -75,15 +65,9 @@ function N_0xff252e2bafb7330f(p0) end
 function ActivityFeedAddSubstringToCaption(p0) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x9BF2C0C568C61641)
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x5801BE2DF2AF07EC)
 ---@param p0 any
-function N_0x9bf2c0c568c61641(p0) end
-
----Hardcoded to return one/true.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xAF530E56505D1BD6)
----@param p0 any
----@return any
-function N_0xaf530e56505d1bd6(p0) end
+function N_0x5801be2df2af07ec(p0) end
 
 ---nullsub, doesn't do anything
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x91D657230BC208D2)
@@ -91,19 +75,31 @@ function N_0xaf530e56505d1bd6(p0) end
 ---@param p1 string
 function ActivityFeedActionStartWithCommandLine(p0, p1) end
 
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x924D54E5698AE3E0)
+---@return boolean
+function GetRandomEventFlag() end
+
 ---nullsub, doesn't do anything
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x1694A053DFB61A34)
 ---@param p0 string
 function ActivityFeedActionStartWithCommandLineAdd(p0) end
 
 ---nullsub, doesn't do anything
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xB16FC7B364D86585)
-function ActivityFeedPost() end
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xFF252E2BAFB7330F)
+---@param p0 any
+function N_0xff252e2bafb7330f(p0) end
+
+---Hardcoded to return one/true.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xAF530E56505D1BD6)
+---@param p0 any
+---@return any
+function N_0xaf530e56505d1bd6(p0) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x1096603B519C905F)
----@param name string
-function N_0x1096603b519c905f(name) end
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xF81C53561D15F330)
+---@return any
+function N_0xf81c53561d15f330() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x708DF841B8F27AA2)
@@ -111,9 +107,18 @@ function N_0x1096603b519c905f(name) end
 function InformCodeOfContentIdOfCurrentUgcMission(p0) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xF81C53561D15F330)
----@return any
-function N_0xf81c53561d15f330() end
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x1096603B519C905F)
+---@param name string
+function N_0x1096603b519c905f(name) end
+
+---nullsub, doesn't do anything
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xB16FC7B364D86585)
+function ActivityFeedPost() end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xDA4D8EB04E8E2928)
+---@param p0 any
+function N_0xda4d8eb04e8e2928(p0) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xCC3EDC5614B03F61)
@@ -126,14 +131,18 @@ function N_0xcc3edc5614b03f61(p0) end
 function GetPrevWeatherTypeHashName() end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x0730E518486DEEC3)
----@param p0 any
-function N_0x0730e518486deec3(p0) end
-
----This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x51021D36F62AAA83)
 ---@return number
 function GetNextWeatherTypeHashName() end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x2C6A07AF9AEDABD8)
+---@param weatherType number | string
+---@param p1 number
+---@param p2 number
+---@param p3 number
+---@param p4 boolean
+function SetWeatherType_2(weatherType, p1, p2, p3, p4) end
 
 ---https://github.com/femga/rdr3_discoveries/blob/master/weather/weather_types.lua
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x59174F1AFE095B5A)
@@ -151,13 +160,14 @@ function SetWeatherType(weatherType, p1, p2, transition, transitionTime, p5) end
 function GetRandomWeatherTypeIndex() end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x2C6A07AF9AEDABD8)
----@param weatherType number | string
----@param p1 number
----@param p2 number
----@param p3 number
----@param p4 boolean
-function SetWeatherType_2(weatherType, p1, p2, p3, p4) end
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x1359C181BC625503)
+---@return number
+function GetRandomWeatherType() end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x0730E518486DEEC3)
+---@param p0 any
+function N_0x0730e518486deec3(p0) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x6E5A7FBEECAB3C72)
@@ -166,18 +176,14 @@ function SetWeatherType_2(weatherType, p1, p2, p3, p4) end
 function SetRandomWeatherType(p0, p1) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xDA4D8EB04E8E2928)
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xB08C4FA25BC29DB9)
 ---@param p0 any
-function N_0xda4d8eb04e8e2928(p0) end
+function N_0xb08c4fa25bc29db9(p0) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xD85DFE5C131E4AE9)
-function ClearWeatherTypePersist() end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x1359C181BC625503)
----@return number
-function GetRandomWeatherType() end
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xCE7690C0A0D1C36D)
+---@param milliseconds number
+function ClearWeatherTypePersistOvertime(milliseconds) end
 
 ---Params: percentWeather2: 0f - 0.75f in R* Scripts
 ---
@@ -202,19 +208,8 @@ function SetCurrWeatherState(weatherType1, weatherType2, percentWeather2, enable
 function GetForcedWeather() end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xD74ACDF7DB8114AF)
----@param toggle boolean
-function SetWeatherTypeFrozen(toggle) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xCE7690C0A0D1C36D)
----@param milliseconds number
-function ClearWeatherTypePersistOvertime(milliseconds) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xB08C4FA25BC29DB9)
----@param p0 any
-function N_0xb08c4fa25bc29db9(p0) end
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xD85DFE5C131E4AE9)
+function ClearWeatherTypePersist() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x2916B30DC6C41179)
@@ -222,14 +217,23 @@ function N_0xb08c4fa25bc29db9(p0) end
 function N_0x2916b30dc6c41179(weatherType) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xD3F943B88F55376A)
+---@param weatherType number | string
+function N_0xd3f943b88f55376a(weatherType) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xBE83CAE8ED77A94F)
 ---@param weatherType number | string
 function SetOverrideWeather(weatherType) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xD3F943B88F55376A)
----@param weatherType number | string
-function N_0xd3f943b88f55376a(weatherType) end
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xD74ACDF7DB8114AF)
+---@param toggle boolean
+function SetWeatherTypeFrozen(toggle) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x80A398F16FFE3CC3)
+function ClearOverrideWeather() end
 
 ---https://github.com/femga/rdr3_discoveries/blob/master/weather/weather_variations.lua
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x3373779BAF7CAF48)
@@ -237,25 +241,10 @@ function N_0xd3f943b88f55376a(weatherType) end
 ---@param variation string
 function SetWeatherVariation(weatherType, variation) end
 
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x0E71C80FA4EC8147)
----@param weatherType string
----@param p1 boolean
-function ClearWeatherVariation(weatherType, p1) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x243CEDE8F916B994)
-function N_0x243cede8f916b994() end
-
 ---Only used in smuggler2 script
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x55123D5A7D9D3C42)
 ---@param amplitude number
 function WaterOverrideSetShorewaveamplitude(amplitude) end
-
----Only used in smuggler2 script
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xF06C5B66DE20B2B8)
----@param maxAmplitude number
-function WaterOverrideSetOceanwavemaxamplitude(maxAmplitude) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xB98B78C3768AF6E0)
@@ -266,24 +255,9 @@ function WaterOverrideSetOceanwavemaxamplitude(maxAmplitude) end
 function GetTemperatureAtCoords(x, y, z) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xFFB7E74E041150A4)
----@return number
-function GetWindSpeed() end
-
----This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xD00C2D82DC04A99F)
 ---@param speed number
 function SetWindSpeed(speed) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xB56C4F5F57A45600)
----@param direction number
-function SetWindDirection(direction) end
-
----Old name: _SET_RAIN_LEVEL
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x193DFC0526830FD6)
----@param intensity number
-function SetRain(intensity) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xF703E82F3FE14A5F)
@@ -291,13 +265,14 @@ function SetRain(intensity) end
 function GetWindDirection() end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x745808BB01CEC6B9)
----@param p0 number
-function N_0x745808bb01cec6b9(p0) end
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xFFB7E74E041150A4)
+---@return number
+function GetWindSpeed() end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x80A398F16FFE3CC3)
-function ClearOverrideWeather() end
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xB56C4F5F57A45600)
+---@param direction number
+function SetWindDirection(direction) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x931B5F4CC130224B)
@@ -305,9 +280,34 @@ function ClearOverrideWeather() end
 function GetRainLevel() end
 
 ---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x0E71C80FA4EC8147)
+---@param weatherType string
+---@param p1 boolean
+function ClearWeatherVariation(weatherType, p1) end
+
+---Old name: _SET_RAIN_LEVEL
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x193DFC0526830FD6)
+---@param intensity number
+function SetRain(intensity) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xF6BEE7E80EC5CA40)
 ---@param level number
 function SetSnowLevel(level) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x745808BB01CEC6B9)
+---@param p0 number
+function N_0x745808bb01cec6b9(p0) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x1E5D727041BE1709)
+---@return number
+function GetSnowLevel() end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x243CEDE8F916B994)
+function N_0x243cede8f916b994() end
 
 ---p3 is always -1.0f in the scripts
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x67943537D179597C)
@@ -317,24 +317,15 @@ function SetSnowLevel(level) end
 ---@param p3 number
 function ForceLightningFlashAtCoords(x, y, z, p3) end
 
----creates single lightning+thunder at random position
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x369DB5B2510FA080)
-function ForceLightningFlash() end
-
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x1E5D727041BE1709)
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x4F67E8ECA7D3F667)
 ---@return number
-function GetSnowLevel() end
+function GetGameTimer() end
 
 ---Returns rage::fwTimer::sm_nonScaledClippedTime
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x483B8C542103AD72)
 ---@return number
 function GetGameTimerNonScaledClipped() end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xBE7F225417E35A7C)
----@return number
-function GetSystemTime() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xB0CE5E5ED8BB3581)
@@ -347,9 +338,17 @@ function GetNumberOfMicrosecondsSinceLastCall() end
 function N_0xa9342743b634a462(p0) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x4F67E8ECA7D3F667)
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xBE7F225417E35A7C)
 ---@return number
-function GetGameTimer() end
+function GetSystemTime() end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x1411A7CBC3A6EB7B)
+function ResetScriptTimeWithinFrame() end
+
+---creates single lightning+thunder at random position
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x369DB5B2510FA080)
+function ForceLightningFlash() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x5E72022914CE3C38)
@@ -362,10 +361,6 @@ function GetFrameTime() end
 function GetScriptTimeWithinFrameInMicroseconds() end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x1411A7CBC3A6EB7B)
-function ResetScriptTimeWithinFrame() end
-
----This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x77DFA958FCF100C1)
 ---@return number
 function GetFrameCount() end
@@ -376,19 +371,22 @@ function GetFrameCount() end
 ---@return any
 function N_0x6bed40493a1afdb8(p1) end
 
+---Old name: _GET_BENCHMARK_TIME
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x3F3172FEAE3AFE1C)
+---@return number
+function GetSystemTimeStep() end
+
+---Only used in smuggler2 script
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xF06C5B66DE20B2B8)
+---@param maxAmplitude number
+function WaterOverrideSetOceanwavemaxamplitude(maxAmplitude) end
+
 ---Reads the passed value as floating point value and returns it.
 ---Example: _READ_INT_AS_FLOAT(0x3F800000) returns 1.0f because 0x3F800000 is the hexadecimal representation of 1.0f.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xD2C9126410DFA1B2)
 ---@param value number
 ---@return number
 function ReadIntAsFloat(value) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xD53343AA4FB7DD28)
----@param startRange number
----@param endRange number
----@return number
-function GetRandomIntInRange(startRange, endRange) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xE29F927A961F8AAA)
@@ -398,6 +396,13 @@ function GetRandomIntInRange(startRange, endRange) end
 function GetRandomFloatInRange(startRange, endRange) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xD53343AA4FB7DD28)
+---@param startRange number
+---@param endRange number
+---@return number
+function GetRandomIntInRange(startRange, endRange) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x24FA4267BB8D2431)
 ---@param x number
 ---@param y number
@@ -405,6 +410,14 @@ function GetRandomFloatInRange(startRange, endRange) end
 ---@param p4 boolean
 ---@return boolean, number
 function GetGroundZFor_3dCoord(x, y, z, p4) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x2A29CA9A6319E6AB)
+---@param x number
+---@param y number
+---@param z number
+---@return boolean, number, vector3
+function GetGroundZAndNormalFor_3dCoord(x, y, z) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xBBE5B63EFFB08E68)
@@ -419,35 +432,22 @@ function GetGroundZFor_3dCoord(x, y, z, p4) end
 function N_0xbbe5b63effb08e68(p0, p1, p2, p3, p4, p5, p6) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x6E3C15D296C15583)
----@param p0 number
----@return number
-function Asin(p0) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x2A29CA9A6319E6AB)
----@param x number
----@param y number
----@param z number
----@return boolean, number, vector3
-function GetGroundZAndNormalFor_3dCoord(x, y, z) end
-
----This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x586690F0176DC575)
 ---@param p0 number
 ---@return number
 function Acos(p0) end
-
----Old name: _GET_BENCHMARK_TIME
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x3F3172FEAE3AFE1C)
----@return number
-function GetSystemTimeStep() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x8C13DB96497B7ABF)
 ---@param p0 number
 ---@return number
 function Tan(p0) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x6E3C15D296C15583)
+---@param p0 number
+---@return number
+function Asin(p0) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x965B220A066E3F07)
@@ -480,6 +480,12 @@ function GetDistanceBetweenCoords(x1, y1, z1, x2, y2, z2, useZ) end
 function GetAngleBetween_2dVectors(x1, y1, x2, y2) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x503054DED0B78027)
+---@param p0 number
+---@return number
+function Atan(p0) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x83ACC65D9ACEC5EF)
 ---@param p0 number
 ---@param p1 number
@@ -494,19 +500,11 @@ function GetAngleBetween_2dVectors(x1, y1, x2, y2) end
 ---@return vector3
 function GetClosestPointOnLine(p0, p1, p2, p3, p4, p5, p6, p7, p8, p9) end
 
----dx = x1 - x2
----dy = y1 - y2
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x38D5202FF9271C62)
----@param dx number
----@param dy number
----@return number
-function GetHeadingFromVector_2d(dx, dy) end
-
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x503054DED0B78027)
----@param p0 number
----@return number
-function Atan(p0) end
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xF73FBE4845C43B5B)
+---@param address number
+---@param offset number
+function SetBit(address, offset) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xAB6A04CEC428258B)
@@ -526,22 +524,29 @@ function Atan(p0) end
 function GetLinePlaneIntersection(p0, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x8F4F050054005C27)
----@param flag number
----@return boolean, any
-function IsBitFlagSet(flag) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xF73FBE4845C43B5B)
----@param address number
----@param offset number
-function SetBit(address, offset) end
-
----This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x7D1D4A3602B6AD4E)
 ---@param address number
 ---@param offset number
 function ClearBit(address, offset) end
+
+---dx = x1 - x2
+---dy = y1 - y2
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x38D5202FF9271C62)
+---@param dx number
+---@param dy number
+---@return number
+function GetHeadingFromVector_2d(dx, dy) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x80E9C316EF84DD81)
+---@return boolean, any
+function IsAnyBitFlagSet() end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x8F4F050054005C27)
+---@param flag number
+---@return boolean, any
+function IsBitFlagSet(flag) end
 
 ---Similar to SET_BIT but specifically designed for large (>32 flags) bit flag sets.
 ---The flags are stored in an int array where each int has the ability to hold 32 flags.
@@ -552,9 +557,9 @@ function ClearBit(address, offset) end
 function SetBitFlag(flag) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x80E9C316EF84DD81)
----@return boolean, any
-function IsAnyBitFlagSet() end
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xE704838F36F93B7B)
+---@return number, any
+function CountBitFlags() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xB909149F2BB5F6DA)
@@ -609,16 +614,6 @@ function GetHashKey(string) end
 function GetEasingCurveValue(t, b, d, easingCurveType) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xD2D74F89DF844A50)
----@return any
-function ClearAllBitFlags() end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xE704838F36F93B7B)
----@return number, any
-function CountBitFlags() end
-
----This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x825CA3ED43831015)
 ---@param x number
 ---@param y number
@@ -634,6 +629,32 @@ function CountBitFlags() end
 ---@return boolean
 function IsPositionOccupied(x, y, z, range, p4, p5, p6, p7, p8, p9, p10) end
 
+---flag |= 1 | 1048576 | 524288
+---ALL_BASE, PROJECTILES, AMBIENT_POPULATION, BROADCAST
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x3B882A96EA77D5B1)
+---@param x number
+---@param y number
+---@param z number
+---@param radius number
+---@param flag number
+function ClearArea(x, y, z, radius, flag) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xD2D74F89DF844A50)
+---@return any
+function ClearAllBitFlags() end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x2FCD528A397E5C88)
+---@param volume any
+---@param flag number
+function ClearVolumeArea(volume, flag) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xD37BECF862DA726F)
+---@param toggle boolean
+function SetCreditsActive(toggle) end
+
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xA4D83115C1E02F8A)
 ---@param p0 any
@@ -647,29 +668,18 @@ function IsPositionOccupied(x, y, z, range, p4, p5, p6, p7, p8, p9, p10) end
 function ClearAngledAreaOfVehicles(p0, p1, p2, p3, p4, p5, p6, p7) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xD37BECF862DA726F)
----@param toggle boolean
-function SetCreditsActive(toggle) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x2FCD528A397E5C88)
----@param volume any
----@param flag number
-function ClearVolumeArea(volume, flag) end
-
----This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x3D0EAC6385DD6100)
 function NetworkSetScriptIsSafeForNetworkGame() end
 
----flag |= 1 | 1048576 | 524288
----ALL_BASE, PROJECTILES, AMBIENT_POPULATION, BROADCAST
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x3B882A96EA77D5B1)
----@param x number
----@param y number
----@param z number
----@param radius number
----@param flag number
-function ClearArea(x, y, z, radius, flag) end
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x66AB6B6C7E72F393)
+---@param toggle boolean
+function PauseDeathArrestRestart(toggle) end
+
+---Sets whether the game should fade in after the player dies or is arrested.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xDF3B5846DE5904AF)
+---@param toggle boolean
+function SetFadeInAfterDeathArrest(toggle) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x6C9FF40FF1B69F8F)
@@ -677,9 +687,9 @@ function ClearArea(x, y, z, radius, flag) end
 function IgnoreNextRestart(toggle) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x66AB6B6C7E72F393)
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xAC806C4CAB973517)
 ---@param toggle boolean
-function PauseDeathArrestRestart(toggle) end
+function SetFadeInAfterLoad(toggle) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xB2C69E11A37B5AF0)
@@ -694,15 +704,10 @@ function PauseDeathArrestRestart(toggle) end
 ---@return boolean
 function OverrideSaveHouse(p0, p1, p2, p3, p4, p5, p6, p7) end
 
----Sets whether the game should fade in after the player dies or is arrested.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xDF3B5846DE5904AF)
----@param toggle boolean
-function SetFadeInAfterDeathArrest(toggle) end
-
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xAC806C4CAB973517)
----@param toggle boolean
-function SetFadeInAfterLoad(toggle) end
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xCBC9A21F6A2A679C)
+---@return any
+function FireSingleBullet() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x867654CBC7606F2C)
@@ -729,46 +734,36 @@ function ShootSingleBulletBetweenCoords(x1, y1, z1, x2, y2, z2, damage, p7, weap
 function GetModelDimensions(modelHash) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xCBC9A21F6A2A679C)
----@return any
-function FireSingleBullet() end
-
----This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x4ED6CFDFE8D4131A)
 ---@param address number
 ---@param offset number
 ---@return boolean
 function IsBitSet(address, offset) end
 
----Returns whether the game's measurement system is set to metric.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x4FB556ACEFA93098)
----@return boolean
-function ShouldUseMetricMeasurements() end
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x0A487CC74A517FB5)
+---@param p0 any
+function N_0x0a487cc74a517fb5(p0) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xF4D8BCD052E7EA1B)
 ---@return boolean
 function IsMinigameInProgress() end
 
+---Returns whether the game's measurement system is set to metric.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x4FB556ACEFA93098)
+---@return boolean
+function ShouldUseMetricMeasurements() end
+
+---Same as SHOULD_USE_METRIC_MEASUREMENTS
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x58BCDC75BA52110A)
+---@return boolean
+function ShouldUseMetricMeasurements_2() end
+
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xFF4AAF3275BAAB4F)
 ---@return boolean
 function ShouldUseMetricTemperature() end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x8F24157FEDB85EA2)
----@return boolean
-function ShouldUseMetricWeight() end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x0177CF20345F44DD)
----@return boolean
-function ShouldUse_24HourClock() end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x0A487CC74A517FB5)
----@param p0 any
-function N_0x0a487cc74a517fb5(p0) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xBFBB74A15EFC149B)
@@ -780,15 +775,15 @@ function N_0x0a487cc74a517fb5(p0) end
 function CompareStrings(str1, str2, matchCase, maxLength) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x134549B388167CBF)
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x0C214D5B8A38C828)
 ---@param value number
 ---@return number
-function Absf(value) end
+function Absi(value) end
 
----Same as SHOULD_USE_METRIC_MEASUREMENTS
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x58BCDC75BA52110A)
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x8F24157FEDB85EA2)
 ---@return boolean
-function ShouldUseMetricMeasurements_2() end
+function ShouldUseMetricWeight() end
 
 ---Determines whether there is a projectile within the specified coordinates. The coordinates form a rectangle.
 ---
@@ -805,18 +800,15 @@ function ShouldUseMetricMeasurements_2() end
 function IsProjectileInArea(x1, y1, z1, x2, y2, z2, ownedByPlayer) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x928431F4133CD3D4)
----@param p0 number
----@param p1 number
----@param p2 number
----@param p3 number
----@param p4 number
----@param p5 number
----@param p6 number
----@param p7 any
----@param p8 boolean
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x0177CF20345F44DD)
 ---@return boolean
-function IsProjectileTypeInAngledArea(p0, p1, p2, p3, p4, p5, p6, p7, p8) end
+function ShouldUse_24HourClock() end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x134549B388167CBF)
+---@param value number
+---@return number
+function Absf(value) end
 
 ---Determines whether there is a projectile of a specific type within the specified coordinates. The coordinates form a rectangle.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x04965FB9E14235C7)
@@ -832,40 +824,18 @@ function IsProjectileTypeInAngledArea(p0, p1, p2, p3, p4, p5, p6, p7, p8) end
 function IsProjectileTypeInArea(x1, y1, z1, x2, y2, z2, type, p7) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xD73C960A681052DF)
----@param ped number
----@param weaponHash number | string
----@param distance number
----@param p4 boolean
----@param mustBeOwnedByThisPed boolean
----@return boolean, vector3
-function GetCoordsOfProjectileTypeWithinDistance(ped, weaponHash, distance, p4, mustBeOwnedByThisPed) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x0C214D5B8A38C828)
----@param value number
----@return number
-function Absi(value) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x9578986A6105A6AD)
----@param ped number
----@param weaponHash number | string
----@param distance number
----@param p5 boolean
----@param mustBeOwnedByThisPed boolean
----@return boolean, vector3, number
-function GetProjectileOfProjectileTypeWithinDistance(ped, weaponHash, distance, p5, mustBeOwnedByThisPed) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xC652FD308772D79E)
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x928431F4133CD3D4)
 ---@param p0 number
 ---@param p1 number
 ---@param p2 number
 ---@param p3 number
----@param p4 boolean
+---@param p4 number
+---@param p5 number
+---@param p6 number
+---@param p7 any
+---@param p8 boolean
 ---@return boolean
-function IsBulletInArea(p0, p1, p2, p3, p4) end
+function IsProjectileTypeInAngledArea(p0, p1, p2, p3, p4, p5, p6, p7, p8) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xF51C9BAAD9ED64C4)
@@ -879,16 +849,24 @@ function IsBulletInArea(p0, p1, p2, p3, p4) end
 function IsProjectileTypeWithinDistance(p0, p1, p2, p3, p4, p5) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xC128137C52152741)
----@param p0 number
----@param p1 number
----@param p2 number
----@param p3 number
----@param p4 number
----@param p5 number
----@param p6 boolean
----@return boolean
-function IsBulletInBox(p0, p1, p2, p3, p4, p5, p6) end
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xD73C960A681052DF)
+---@param ped number
+---@param weaponHash number | string
+---@param distance number
+---@param p4 boolean
+---@param mustBeOwnedByThisPed boolean
+---@return boolean, vector3
+function GetCoordsOfProjectileTypeWithinDistance(ped, weaponHash, distance, p4, mustBeOwnedByThisPed) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x9578986A6105A6AD)
+---@param ped number
+---@param weaponHash number | string
+---@param distance number
+---@param p5 boolean
+---@param mustBeOwnedByThisPed boolean
+---@return boolean, vector3, number
+function GetProjectileOfProjectileTypeWithinDistance(ped, weaponHash, distance, p5, mustBeOwnedByThisPed) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x9D09D8493747CF02)
@@ -902,6 +880,39 @@ function IsBulletInBox(p0, p1, p2, p3, p4, p5, p6) end
 ---@param p7 boolean
 ---@return boolean
 function IsBulletInAngledArea(p0, p1, p2, p3, p4, p5, p6, p7) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xC652FD308772D79E)
+---@param p0 number
+---@param p1 number
+---@param p2 number
+---@param p3 number
+---@param p4 boolean
+---@return boolean
+function IsBulletInArea(p0, p1, p2, p3, p4) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xC128137C52152741)
+---@param p0 number
+---@param p1 number
+---@param p2 number
+---@param p3 number
+---@param p4 number
+---@param p5 number
+---@param p6 boolean
+---@return boolean
+function IsBulletInBox(p0, p1, p2, p3, p4, p5, p6) end
+
+---p3 - possibly radius?
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xC153E5BCCF411814)
+---@param x number
+---@param y number
+---@param z number
+---@param p3 number
+---@param p4 boolean
+---@param p5 boolean
+---@return boolean
+function HasBulletImpactedInArea(x, y, z, p3, p4, p5) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x3B6A4C05FB2B33AC)
@@ -924,21 +935,13 @@ function HasBulletImpactedInBox(p0, p1, p2, p3, p4, p5, p6, p7) end
 ---@return any
 function N_0x7a76104cc2cc69e8(entity, p1, p2) end
 
----p3 - possibly radius?
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xC153E5BCCF411814)
----@param x number
----@param y number
----@param z number
----@param p3 number
----@param p4 boolean
----@param p5 boolean
----@return boolean
-function HasBulletImpactedInArea(x, y, z, p3, p4, p5) end
-
----Hardcoded to return false.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x88CFAE250D3E0C71)
----@return boolean
-function IsOrbisVersion() end
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x970339EFA4FDE518)
+---@param p0 any
+---@param p1 any
+---@param p2 any
+---@return any
+function N_0x970339efa4fde518(p0, p1, p2) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xDC416CA762BC4F43)
@@ -951,35 +954,37 @@ function IsOrbisVersion() end
 ---@return any
 function N_0xdc416ca762bc4f43(p0, p1, p2, p3, p4, p5) end
 
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x970339EFA4FDE518)
----@param p0 any
----@param p1 any
----@param p2 any
----@return any
-function N_0x970339efa4fde518(p0, p1, p2) end
-
 ---Hardcoded to return false.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x268AB8420A9E4ED7)
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x88CFAE250D3E0C71)
 ---@return boolean
-function IsStadiaVersion() end
+function IsOrbisVersion() end
 
 ---Hardcoded to return false.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xD1CCC2A2639D325F)
 ---@return boolean
 function IsDurangoVersion() end
 
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x602102324604D96B)
----@param string string
+---Hardcoded to return true.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xB0FB6CFAA5A1C833)
 ---@return boolean
-function IsStringNull(string) end
+function IsPcVersion() end
+
+---Hardcoded to return false.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x268AB8420A9E4ED7)
+---@return boolean
+function IsStadiaVersion() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x2CF12F9ACF18F048)
 ---@param string string
 ---@return boolean
 function IsStringNullOrEmpty(string) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x602102324604D96B)
+---@param string string
+---@return boolean
+function IsStringNull(string) end
 
 ---Returns true if the entire string consists only of space characters.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x375F5870A7B8BEC1)
@@ -988,26 +993,22 @@ function IsStringNullOrEmpty(string) end
 function IsStringNullOrEmptyOrSpaces(string) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xD3852F22AB713A1F)
+---@param string1 string
+---@param string2 string
+---@return boolean
+function AreStringsEqual(string1, string2) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x9382D5D43D2AA6FF)
 ---@param string1 string
 ---@param string2 string
 ---@return boolean
 function DoesStringExistInString(string1, string2) end
 
----Hardcoded to return true.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xB0FB6CFAA5A1C833)
----@return boolean
-function IsPcVersion() end
-
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x3C3C7B1B5EC08764)
 function N_0x3c3c7b1b5ec08764() end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x5B4A8121A47D844D)
----@param p0 any
----@return any
-function N_0x5b4a8121a47d844d(p0) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x94E8CA3DEE952789)
@@ -1017,11 +1018,16 @@ function N_0x5b4a8121a47d844d(p0) end
 function N_0x94e8ca3dee952789(p0, p1) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xD3852F22AB713A1F)
----@param string1 string
----@param string2 string
----@return boolean
-function AreStringsEqual(string1, string2) end
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x5B4A8121A47D844D)
+---@param p0 any
+---@return any
+function N_0x5b4a8121a47d844d(p0) end
+
+---Returns false if it's a null or empty string or if the string is too long. outInteger will be set to -999 in that case.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xF2DD2298B3AF23E2)
+---@param string string
+---@return boolean, number
+function StringToInt(string) end
 
 ---Note: the buffer should be exactly 32 bytes long
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xCF11C0CEB40C401B)
@@ -1030,16 +1036,20 @@ function AreStringsEqual(string1, string2) end
 ---@param buffer string
 function IntToString(value, format, buffer) end
 
----Returns false if it's a null or empty string or if the string is too long. outInteger will be set to -999 in that case.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xF2DD2298B3AF23E2)
----@param string string
----@return boolean, number
-function StringToInt(string) end
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x74ACA66484CEBAF0)
+---@param p0 any
+function N_0x74aca66484cebaf0(p0) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xF650DCF5D6F312C1)
 ---@param p0 any
 function N_0xf650dcf5d6f312c1(p0) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x49C44FE78A135A1D)
+---@param p0 any
+function N_0x49c44fe78a135a1d(p0) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x2B6846401D68E563)
@@ -1061,11 +1071,6 @@ function GetStringFromVector(x, y, z) end
 ---@param value boolean
 ---@return any
 function GetStringFromBool(value) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x49C44FE78A135A1D)
----@param p0 any
-function N_0x49c44fe78a135a1d(p0) end
 
 ---Note: The first bit in 'flags' must not be set.
 ---It is also required to pass at least one extra argument (this must be a text label string or hash).
@@ -1104,9 +1109,9 @@ function GetBitsInRange(var, rangeStart, rangeEnd) end
 function SetGamePaused(toggle) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x8ABD939C2E5D00ED)
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x3215376E79F6EA18)
 ---@param toggle boolean
-function SetThisScriptCanRemoveBlipsCreatedByAnyScript(toggle) end
+function SetThisScriptCanBePaused(toggle) end
 
 ---Cheats are GTA IV cheats:
 ---
@@ -1133,14 +1138,13 @@ function SetThisScriptCanRemoveBlipsCreatedByAnyScript(toggle) end
 function SetCheatActive(cheatId) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x3215376E79F6EA18)
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x8ABD939C2E5D00ED)
 ---@param toggle boolean
-function SetThisScriptCanBePaused(toggle) end
+function SetThisScriptCanRemoveBlipsCreatedByAnyScript(toggle) end
 
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x74ACA66484CEBAF0)
----@param p0 any
-function N_0x74aca66484cebaf0(p0) end
+---nullsub, doesn't do anything
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xB711EB4BC8D06013)
+function N_0xb711eb4bc8d06013() end
 
 ---spawns a few distant/out-of-sight peds, vehicles, animals etc each time it is called
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xEA6DC3A8ADD2005F)
@@ -1152,11 +1156,6 @@ function PopulateNow() end
 ---@return boolean
 function QueueSavegameOperation(p0) end
 
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xF9E7DBB39080640B)
----@return boolean
-function IsGameSessionStateMachineIdle() end
-
 ---Only 0 and 1 are valid for p0, higher values causes the native to return 2.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x1B065A2BF7953815)
 ---@param p0 number
@@ -1164,10 +1163,9 @@ function IsGameSessionStateMachineIdle() end
 function GetStatusOfSavegameOperation(p0) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x627B68D9CE6EE8DE)
----@param p0 any
----@return any
-function N_0x627b68d9ce6ee8de(p0) end
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xF9E7DBB39080640B)
+---@return boolean
+function IsGameSessionStateMachineIdle() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x7CF96F1250EF3221)
@@ -1175,15 +1173,11 @@ function N_0x627b68d9ce6ee8de(p0) end
 ---@return any
 function N_0x7cf96f1250ef3221(p0) end
 
----nullsub, doesn't do anything
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xB711EB4BC8D06013)
-function N_0xb711eb4bc8d06013() end
-
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xF7AC7DC0DEE7C9BE)
----@param size number
----@return any, any
-function CopyMemory(size) end
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x627B68D9CE6EE8DE)
+---@param p0 any
+---@return any
+function N_0x627b68d9ce6ee8de(p0) end
 
 ---enum DispatchType
 ---{
@@ -1211,23 +1205,10 @@ function CopyMemory(size) end
 function EnableDispatchService(dispatchService, toggle) end
 
 ---dispatchService: see ENABLE_DISPATCH_SERVICE
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x3F892CAF67444AE7)
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x66947E61A44DE2C6)
 ---@param dispatchService number
----@param x number
----@param y number
----@param z number
----@param numUnits number
----@param radius number
----@param p7 any
----@param p8 any
----@return boolean, number
-function CreateIncident(dispatchService, x, y, z, numUnits, radius, p7, p8) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x6C7B68D3CE60E8DE)
----@param p0 any
----@return any
-function N_0x6c7b68d3ce60e8de(p0) end
+---@param toggle boolean
+function BlockDispatchServiceResourceCreation(dispatchService, toggle) end
 
 ---dispatchService: see ENABLE_DISPATCH_SERVICE
 ---
@@ -1242,17 +1223,41 @@ function N_0x6c7b68d3ce60e8de(p0) end
 ---@return boolean, number
 function CreateIncidentWithEntities(dispatchService, x, y, z, itemSet, radius) end
 
+---dispatchService: see ENABLE_DISPATCH_SERVICE
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x3F892CAF67444AE7)
+---@param dispatchService number
+---@param x number
+---@param y number
+---@param z number
+---@param numUnits number
+---@param radius number
+---@param p7 any
+---@param p8 any
+---@return boolean, number
+function CreateIncident(dispatchService, x, y, z, numUnits, radius, p7, p8) end
+
+---Old name: _COPY_MEMORY
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xF7AC7DC0DEE7C9BE)
+---@param size number
+---@return any, any
+function CopyScriptStruct(size) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x6C7B68D3CE60E8DE)
+---@param p0 any
+---@return any
+function N_0x6c7b68d3ce60e8de(p0) end
+
+---Delete an incident with a given id.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x5CFD0F0D6AAE0AEE)
+---@param incidentId number
+function DeleteIncident(incidentId) end
+
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x39F2B1BAD412246A)
 ---@param incidentId number
 ---@return boolean
 function IsIncidentValid(incidentId) end
-
----dispatchService: see ENABLE_DISPATCH_SERVICE
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x66947E61A44DE2C6)
----@param dispatchService number
----@param toggle boolean
-function BlockDispatchServiceResourceCreation(dispatchService, toggle) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x9617B6E5F6537B63)
@@ -1298,34 +1303,33 @@ function RemovePopMultiplierArea(id, p1) end
 function AddPopMultiplierVolume(volume, pedDensity, vehicleDensity, p3, p4) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x39D6DACE323A20B6)
+---@param volume any
+---@return boolean
+function DoesPopMultiplierAreaExistForVolume(volume) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xBD090F5B1DB82189)
 ---@param volume any
 ---@param p1 number
 function RemovePopMultiplierAreaForVolume(volume, p1) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xF569E33FB72ED28E)
+function N_0xf569e33fb72ed28e() end
+
+---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xC7817264BC4B6377)
 function ResetDispatchIdealSpawnDistance() end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x39D6DACE323A20B6)
----@param volume any
----@return boolean
-function DoesPopMultiplierAreaExistForVolume(volume) end
-
----Delete an incident with a given id.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x5CFD0F0D6AAE0AEE)
----@param incidentId number
-function DeleteIncident(incidentId) end
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x96498D922D8D0D0A)
+function ResetDispatchMinSpawnDistance() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xEAB6823B82FBD283)
 ---@param fIdealSpawnDistance number
 function SetDispatchIdealSpawnDistance(fIdealSpawnDistance) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x96498D922D8D0D0A)
-function ResetDispatchMinSpawnDistance() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x27A1B170AA8AF84C)
@@ -1342,8 +1346,8 @@ function ResetDispatchMaxSpawnDistance() end
 function SetDispatchMaxSpawnDistance(maxSpawnDistance) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xF569E33FB72ED28E)
-function N_0xf569e33fb72ed28e() end
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x4B0501A468B749F8)
+function N_0x4b0501a468b749f8() end
 
 ---_SET_DISPATCH_*, unused
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x6BCF7B5CD338281A)
@@ -1359,8 +1363,9 @@ function N_0x6bcf7b5cd338281a(p0, p1, p2) end
 function AddDispatchSpawnBlockingArea(volume) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x4B0501A468B749F8)
-function N_0x4b0501a468b749f8() end
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x49F751F6868DDC5B)
+---@param p0 any
+function RemoveDispatchSpawnBlockingArea(p0) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xEF42F56F69877125)
@@ -1373,6 +1378,10 @@ function ResetWantedResponseNumPedsToSpawn() end
 ---@param z number
 ---@param p3 number
 function AddTacticalNavMeshPoint(x, y, z, p3) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xD93B6516C6878267)
+function ClearTacticalNavMeshPoints() end
 
 ---enum eOnscreenKeyboardTextType
 ---{
@@ -1397,11 +1406,6 @@ function AddTacticalNavMeshPoint(x, y, z, p3) end
 ---@param maxInputLength number
 function DisplayOnscreenKeyboard(textType, windowTitle, p2, defaultText, defaultConcat1, defaultConcat2, defaultConcat3, maxInputLength) end
 
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x49F751F6868DDC5B)
----@param p0 any
-function RemoveDispatchSpawnBlockingArea(p0) end
-
 ---Returns the current status of the onscreen keyboard, and updates the output.
 ---
 ---Status Codes:
@@ -1414,13 +1418,20 @@ function RemoveDispatchSpawnBlockingArea(p0) end
 ---@return number
 function UpdateOnscreenKeyboard() end
 
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x5CB71EAA1429A358)
+---@param p0 number
+function NextOnscreenKeyboardResultWillDisplayUsingTheseFonts(p0) end
+
 ---Old name: _CANCEL_ONSCREEN_KEYBOARD
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x58A39BE597CE99CD)
 function CancelOnscreenKeyboard() end
 
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xD93B6516C6878267)
-function ClearTacticalNavMeshPoints() end
+---Appears to remove stealth kill action from memory (?)
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x7ACF124C12A2B045)
+---@param hash number | string
+---@param enable boolean
+function ActionManagerEnableAction(hash, enable) end
 
 ---Returns NULL unless UPDATE_ONSCREEN_KEYBOARD() returns 1 in the same tick.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xAFB4CF58A4A292B1)
@@ -1428,21 +1439,21 @@ function ClearTacticalNavMeshPoints() end
 function GetOnscreenKeyboardResult() end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x5CB71EAA1429A358)
----@param p0 number
-function NextOnscreenKeyboardResultWillDisplayUsingTheseFonts(p0) end
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xFD0759658268FD8E)
+---@param hash number | string
+---@return boolean
+function ActionManagerIsActionEnabled(hash) end
+
+---Returns GET_GAME_TIMER() / 1000
+---Only used in rcm_pearson1.ysc
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x2E036F0480B8BF02)
+---@return number
+function GetRealWorldTime() end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xFD0759658268FD8E)
----@param p0 any
----@return any
-function N_0xfd0759658268fd8e(p0) end
-
----Appears to remove stealth kill action from memory (?)
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x7ACF124C12A2B045)
----@param hash number | string
----@param enable boolean
-function ActionManagerEnableAction(hash, enable) end
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xB3E9BE963F10C445)
+---@param player number
+function SetSuperJumpThisFrame(player) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x8AE059F47158417E)
@@ -1451,12 +1462,6 @@ function ActionManagerEnableAction(hash, enable) end
 ---@param numPlayers number
 ---@param p3 any
 function ScriptRaceInit(numCheckpoints, numLaps, numPlayers, p3) end
-
----Returns GET_GAME_TIMER() / 1000
----Only used in rcm_pearson1.ysc
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x2E036F0480B8BF02)
----@return number
-function GetRealGameTimerInSeconds() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x334CE0DA4FAF330C)
@@ -1470,28 +1475,23 @@ function ScriptRaceShutdown() end
 ---@param time number
 function ScriptRacePlayerHitCheckpoint(part, checkpoint, lap, time) end
 
----Begins with START_*. Next character in the name is either D or E.
----
----Old name: _START_BENCHMARK_RECORDING
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x29D1F6DF864A094E)
-function StartEndUserBenchmark() end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xB3E9BE963F10C445)
----@param player number
-function SetSuperJumpThisFrame(player) end
-
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x769E848C66E3C2BB)
 ---@param p0 any
 ---@return boolean, any, any
 function ScriptRaceGetPlayerSplitTime(p0) end
 
----Saves the benchmark recording to %USERPROFILE%\Documents\Rockstar Games\Red Dead Redemption 2\Benchmarks and submits some metrics.
+---Begins with START_*. Next character in the name is either D or E.
 ---
----Old name: _SAVE_BENCHMARK_RECORDING
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xF4743E2ECC02B3DA)
-function SaveEndUserBenchmark() end
+---Old name: _START_BENCHMARK_RECORDING
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x29D1F6DF864A094E)
+function StartEndUserBenchmark() end
+
+---Begins with STOP_*. Next character in the name is either D or E.
+---
+---Old name: _STOP_BENCHMARK_RECORDING
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xB89AEC71AFF2B599)
+function StopEndUserBenchmark() end
 
 ---Begins with RESET_*. Next character in the name is either D or E.
 ---
@@ -1499,12 +1499,11 @@ function SaveEndUserBenchmark() end
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xECBABD0307FB216F)
 function ResetEndUserBenchmark() end
 
----Returns value of the '-benchmarkIterations' command line option.
+---Saves the benchmark recording to %USERPROFILE%\Documents\Rockstar Games\Red Dead Redemption 2\Benchmarks and submits some metrics.
 ---
----Old name: _GET_BENCHMARK_ITERATIONS_FROM_COMMAND_LINE
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x22FC52CF470CC98D)
----@return number
-function GetBenchmarkIterations() end
+---Old name: _SAVE_BENCHMARK_RECORDING
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xF4743E2ECC02B3DA)
+function SaveEndUserBenchmark() end
 
 ---Hardcoded to return false.
 ---
@@ -1513,15 +1512,12 @@ function GetBenchmarkIterations() end
 ---@return boolean
 function UiStartedEndUserBenchmark() end
 
----Begins with STOP_*. Next character in the name is either D or E.
+---Returns value of the '-benchmarkIterations' command line option.
 ---
----Old name: _STOP_BENCHMARK_RECORDING
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xB89AEC71AFF2B599)
-function StopEndUserBenchmark() end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x9A252AA23D7098F2)
-function N_0x9a252aa23d7098f2() end
+---Old name: _GET_BENCHMARK_ITERATIONS_FROM_COMMAND_LINE
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x22FC52CF470CC98D)
+---@return number
+function GetBenchmarkIterations() end
 
 ---Returns value of the '-benchmarkPass' command line option.
 ---
@@ -1529,6 +1525,21 @@ function N_0x9a252aa23d7098f2() end
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x9297DACF3A2CDFF7)
 ---@return number
 function GetBenchmarkPass() end
+
+---Hardcoded to return one/true.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xDC057B86FC157031)
+---@return any
+function N_0xdc057b86fc157031() end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x9A252AA23D7098F2)
+function N_0x9a252aa23d7098f2() end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xBDC6E364C9C78178)
+---@param item any
+---@return boolean
+function DoesItemHaveValidBase(item) end
 
 ---0 = invalid
 ---1 = CEntity
@@ -1550,22 +1561,10 @@ function GetBenchmarkPass() end
 function GetItemType(handle) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xBDC6E364C9C78178)
----@param item any
----@return boolean
-function DoesItemHaveValidBase(item) end
-
----This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x716F17F8A0419F95)
 ---@param handle any
 ---@return boolean
 function IsBaseAPersistentCharacter(handle) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xF18AF483DF70BBDE)
----@param p0 any
----@return any
-function N_0xf18af483df70bbde(p0) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xFEC1D4B5C82C176F)
@@ -1573,10 +1572,16 @@ function N_0xf18af483df70bbde(p0) end
 ---@return boolean
 function IsBaseACoverPoint(handle) end
 
----Hardcoded to return one/true.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xDC057B86FC157031)
+---_J*, _K*, _L*
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x553D67295DDD2309)
+---@param entity number
+function N_0x553d67295ddd2309(entity) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xF18AF483DF70BBDE)
+---@param p0 any
 ---@return any
-function N_0xdc057b86fc157031() end
+function N_0xf18af483df70bbde(p0) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xEE04C0AFD4EFAF0E)
@@ -1597,6 +1602,12 @@ function GetPedFromIndexedItem(item) end
 function GetVehicleFromIndexedItem(item) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x18013392501CE5DC)
+---@param item any
+---@return number
+function GetObjectFromIndexedItem(item) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x33982467B1E349EF)
 ---@param p0 any
 ---@param p1 any
@@ -1607,16 +1618,6 @@ function GetVehicleFromIndexedItem(item) end
 ---@param p6 any
 ---@return any
 function N_0x33982467b1e349ef(p0, p1, p2, p3, p4, p5, p6) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x4D5C9CC7E7E23E09)
-function N_0x4d5c9cc7e7e23e09() end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x18013392501CE5DC)
----@param item any
----@return number
-function GetObjectFromIndexedItem(item) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x8314FC2013ECE2DA)
@@ -1643,13 +1644,8 @@ function N_0x8314fc2013ece2da(p0, p1, p2) end
 function RegisterInteractionLockonPrompt(entity, text, radius, p3, flag, p5, p6, prompt, p8, p9) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x35165C658077CD0B)
----@return any
-function N_0x35165c658077cd0b() end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xFC6ECB9170145ECE)
-function N_0xfc6ecb9170145ece() end
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x4D5C9CC7E7E23E09)
+function N_0x4d5c9cc7e7e23e09() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xE98D55C5983F2509)
@@ -1658,20 +1654,28 @@ function N_0xfc6ecb9170145ece() end
 function UnregisterInteractionLockonPrompt(entity) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xF236C84C6ADFCB2F)
----@return boolean
-function IsMissionCreatorActive() end
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xFC6ECB9170145ECE)
+function N_0xfc6ecb9170145ece() end
 
----_J*, _K*, _L*
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x553D67295DDD2309)
----@param entity number
-function N_0x553d67295ddd2309(entity) end
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x35165C658077CD0B)
+---@return any
+function N_0x35165c658077cd0b() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x4B101DBCC9482F2D)
 ---@param ped number
 ---@return boolean
 function N_0x4b101dbcc9482f2d(ped) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xF236C84C6ADFCB2F)
+---@return boolean
+function IsMissionCreatorActive() end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xA3A8926951471C82)
+function N_0xa3a8926951471c82() end
 
 ---aiMemoryType: https://github.com/Halen84/RDR3-Native-Flags-And-Enums/blob/main/_CREATE_AI_MEMORY/README.md
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x88BC5F4AEF77FC4E)
@@ -1691,6 +1695,11 @@ function N_0xeb946b9e579729ad(ped, p1) end
 ---@return boolean, any
 function GetAiPedDoesHaveEventMemory(p1) end
 
+---Used in CAIConditionAmbientAIMemoryReactionsEnabled
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x6AC4AF46A6B8DFB2)
+---@param enabled boolean
+function SetAiMemoryReactionsEnabled(enabled) end
+
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x8DB104CCEBCD58C5)
 ---@param p0 any
@@ -1699,13 +1708,16 @@ function GetAiPedDoesHaveEventMemory(p1) end
 function N_0x8db104ccebcd58c5(p0, p1) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xA3A8926951471C82)
-function N_0xa3a8926951471c82() end
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x68319452C5064ABA)
+---@param p0 any
+---@param p1 any
+function N_0x68319452c5064aba(p0, p1) end
 
----Used in CAIConditionAmbientAIMemoryReactionsEnabled
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x6AC4AF46A6B8DFB2)
----@param enabled boolean
-function SetAiMemoryReactionsEnabled(enabled) end
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xDE2C3B74D2B3705C)
+---@param p0 any
+---@param p1 any
+function N_0xde2c3b74d2b3705c(p0, p1) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x49F3241C28EBBFBC)
@@ -1713,21 +1725,9 @@ function SetAiMemoryReactionsEnabled(enabled) end
 function N_0x49f3241c28ebbfbc(p0) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x68319452C5064ABA)
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x183672FE838A661B)
 ---@param p0 any
----@param p1 any
-function N_0x68319452c5064aba(p0, p1) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x38C0C9CAE1544500)
----@param p0 any
-function N_0x38c0c9cae1544500(p0) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xDE2C3B74D2B3705C)
----@param p0 any
----@param p1 any
-function N_0xde2c3b74d2b3705c(p0, p1) end
+function N_0x183672fe838a661b(p0) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x154340E87D8CC178)
@@ -1746,10 +1746,9 @@ function N_0x94fcadcf9f0c368e(p0) end
 function N_0x0d0ae5081f88cfe1(p0) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xB1F6665AA54DCD5C)
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x38C0C9CAE1544500)
 ---@param p0 any
----@return any
-function N_0xb1f6665aa54dcd5c(p0) end
+function N_0x38c0c9cae1544500(p0) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xAF3A84C7DE6A1DC5)
@@ -1768,6 +1767,18 @@ function N_0xaf3a84c7de6a1dc5(p0, p1) end
 function N_0x48e4d50f87a96aa5(ped, p1, p2, p3, p5) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xB1F6665AA54DCD5C)
+---@param p0 any
+---@return any
+function N_0xb1f6665aa54dcd5c(p0) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x6F02B5E50511721E)
+---@param p0 any
+---@return any
+function N_0x6f02b5e50511721e(p0) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xCC1BAF72D571DB8D)
 ---@param p0 any
 ---@param p1 any
@@ -1783,6 +1794,12 @@ function N_0xcc1baf72d571db8d(p0, p1, p2) end
 function N_0x8bb99b85444544d9(p0, p1) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x5170DDA6D63ACAAA)
+---@param ped number
+---@return boolean
+function IsPedDecomposed(ped) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x674B90BE1115846D)
 ---@param ped number
 ---@param toggle boolean
@@ -1793,23 +1810,6 @@ function SetPedDecomposed(ped, toggle) end
 ---@param p0 any
 ---@param p1 any
 function N_0xab26deee120fd3fd(p0, p1) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x183672FE838A661B)
----@param p0 any
-function N_0x183672fe838a661b(p0) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x6F02B5E50511721E)
----@param p0 any
----@return any
-function N_0x6f02b5e50511721e(p0) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x5170DDA6D63ACAAA)
----@param ped number
----@return boolean
-function IsPedDecomposed(ped) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x40D72189F46D2E15)
@@ -1851,30 +1851,6 @@ function N_0x4647842fe8f31c1e(p0, p1) end
 function GetLootingEventHasFired(ped, eventName) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xBB282CF5D2333FB8)
----@param p0 any
----@param p1 any
-function N_0xbb282cf5d2333fb8(p0, p1) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x9B47971234169990)
----@param ped number
----@param item any
-function N_0x9b47971234169990(ped, item) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x8C0F6A3D7236DEEB)
----@param p0 any
----@param p1 any
-function N_0x8c0f6a3d7236deeb(p0, p1) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x7FA58CED69405F9A)
----@param p0 any
----@param p1 any
-function N_0x7fa58ced69405f9a(p0, p1) end
-
----This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x96282005C5C6801F)
 ---@param p0 any
 ---@param p1 any
@@ -1886,22 +1862,28 @@ function N_0x96282005c5c6801f(p0, p1) end
 ---@param p1 any
 function N_0xf63fa29d4a9aca86(p0, p1) end
 
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x8C0F6A3D7236DEEB)
+---@param p0 any
+---@param p1 any
+function N_0x8c0f6a3d7236deeb(p0, p1) end
+
 ---_CLEAR*
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xA08111B053D84B4D)
 ---@param p0 any
 function N_0xa08111b053d84b4d(p0) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x38C2BF94D15F464D)
----@param p0 any
----@return any
-function N_0x38c2bf94d15f464d(p0) end
-
----This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xE97240065406CB80)
 ---@param index number
 ---@param toggle boolean
 function SetGlobalBlockIsLoaded(index, toggle) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x7FA58CED69405F9A)
+---@param p0 any
+---@param p1 any
+function N_0x7fa58ced69405f9a(p0, p1) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xAFF2FD8ADD927585)
@@ -1914,29 +1896,6 @@ function GameFrameworkManagerShutdown() end
 function GameFrameworkManagerInit(transitionMode) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x0358B8A41916C613)
----@param p0 any
----@param p1 any
----@param p2 any
----@param p3 any
----@return any
-function N_0x0358b8a41916c613(p0, p1, p2, p3) end
-
----Note: this native was added in build 1232.56
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x550F05CFFBD63C8C)
-function SetGameLogicPaused() end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xACB7E1418A8B6E32)
----@param index number
----@return boolean
-function IsGlobalBlockValid(index) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xDBDA48EC456ED908)
-function N_0xdbda48ec456ed908() end
-
----This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xFAED234C7F53ABEB)
 ---@return number
 function GameFrameworkManagerGetMode() end
@@ -1946,7 +1905,48 @@ function GameFrameworkManagerGetMode() end
 ---@return boolean
 function N_0x36040772df5e59a0() end
 
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x0358B8A41916C613)
+---@param p0 any
+---@param p1 any
+---@param p2 any
+---@param p3 any
+---@return any
+function N_0x0358b8a41916c613(p0, p1, p2, p3) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xACB7E1418A8B6E32)
+---@param index number
+---@return boolean
+function IsGlobalBlockValid(index) end
+
+---Note: this native was added in build 1232.56
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x550F05CFFBD63C8C)
+function SetGameLogicPaused() end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xDBDA48EC456ED908)
+function N_0xdbda48ec456ed908() end
+
 ---nullsub, doesn't do anything
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xA565FAC215CBC77D)
 function StopCurrentLoadingProgressTimer() end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xBB282CF5D2333FB8)
+---@param p0 any
+---@param p1 any
+function N_0xbb282cf5d2333fb8(p0, p1) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x38C2BF94D15F464D)
+---@param p0 any
+---@return any
+function N_0x38c2bf94d15f464d(p0) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x9B47971234169990)
+---@param ped number
+---@param item any
+function N_0x9b47971234169990(ped, item) end
 

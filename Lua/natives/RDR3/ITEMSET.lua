@@ -7,6 +7,11 @@
 function CreateItemset(p0) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x712BC69F10549B92)
+---@param itemset any
+function DestroyItemset(itemset) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xD30765D153EF5C76)
 ---@param itemset any
 ---@return boolean
@@ -18,11 +23,6 @@ function IsItemsetValid(itemset) end
 ---@param itemset any
 ---@return boolean
 function AddToItemset(entity, itemset) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x712BC69F10549B92)
----@param itemset any
-function DestroyItemset(itemset) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x55F2E375AC6018A9)
@@ -44,18 +44,6 @@ function RemoveFromItemset(entity, itemset) end
 function GetIndexedItemInItemset(index, itemset) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x9FC3CDB5CE815901)
----@param index number
----@param itemset any
----@return any
-function GetIndexedScenarioPointIndexInItemset(index, itemset) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x85F3A86CA9021FB0)
----@param itemset any
-function CleanItemset(itemset) end
-
----This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xD1503C2EE2FE688C)
 ---@param entity number
 ---@param itemset any
@@ -63,7 +51,19 @@ function CleanItemset(itemset) end
 function IsInItemset(entity, itemset) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x85F3A86CA9021FB0)
+---@param itemset any
+function CleanItemset(itemset) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x20A4BF0E09BEE146)
 ---@param itemset any
 function ClearItemset(itemset) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x9FC3CDB5CE815901)
+---@param index number
+---@param itemset any
+---@return any
+function GetIndexedScenarioPointIndexInItemset(index, itemset) end
 

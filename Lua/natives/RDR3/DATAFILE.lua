@@ -6,23 +6,16 @@
 function DatafileWatchRequestId(id) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xE60100389E50EADE)
----@param p0 any
----@return boolean
-function DatafileHasValidFileData(p0) end
-
----This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x17279C820464CEE0)
 ---@param p0 any
 ---@return boolean
 function DatafileHasLoadedFileData(p0) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x46102A0989AD80B5)
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xE60100389E50EADE)
 ---@param p0 any
----@param p1 any
 ---@return boolean
-function DatafileSelectActiveFile(p0, p1) end
+function DatafileHasValidFileData(p0) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x604B8ED1A482F9DF)
@@ -31,13 +24,11 @@ function DatafileSelectActiveFile(p0, p1) end
 function DatafileDeleteRequestedFile(p0) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xE79C70E77E0973C7)
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x46102A0989AD80B5)
 ---@param p0 any
 ---@param p1 any
----@param p2 any
----@param p3 any
----@return any
-function Ugc2SetPlayerData(p0, p1, p2, p3) end
+---@return boolean
+function DatafileSelectActiveFile(p0, p1) end
 
 ---Reloops value returned by UGC_QUERY_GET_CONTENT_NUM
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x790EC421078F5C4E)
@@ -48,26 +39,23 @@ function Ugc2SetPlayerData(p0, p1, p2, p3) end
 function DatafileUgcSelectData(ugcRequestId, index, p2) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x56B7291FB953DD51)
----@param index number
-function DatafileCreate(index) end
-
----This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x9FB90EEDEA9F2D5C)
 ---@param index number
 function DatafileDelete(index) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xBBD8CF823CAE557C)
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x56B7291FB953DD51)
 ---@param index number
----@return any
-function DatafileGetFileDict(index) end
+function DatafileCreate(index) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x4607D57C5F7D332A)
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xE79C70E77E0973C7)
 ---@param p0 any
----@return boolean
-function DatadictIsDictValid(p0) end
+---@param p1 any
+---@param p2 any
+---@param p3 any
+---@return any
+function Ugc2SetPlayerData(p0, p1, p2, p3) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xB04B69CF277D15C0)
@@ -145,6 +133,12 @@ function DatadictGetType(key) end
 function N_0xbc0df006a4952c68(p0, p1, p2) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x4607D57C5F7D332A)
+---@param p0 any
+---@return boolean
+function DatadictIsDictValid(p0) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x277251C161B4C3F4)
 ---@param p0 any
 ---@param p1 any
@@ -157,13 +151,6 @@ function N_0x277251c161b4c3f4(p0, p1, p2) end
 ---@param p1 any
 ---@param p2 any
 function N_0x9f130129ebc31b34(p0, p1, p2) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x1C65CC931C0F946F)
----@param p0 any
----@param p1 any
----@param p2 any
-function N_0x1c65cc931c0f946f(p0, p1, p2) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x7681B677400C7071)
@@ -234,6 +221,12 @@ function DataarrayGetType(arrayIndex) end
 ---@return any
 function N_0x4f9e3ed7617123ac(p0) end
 
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xCA56DD6AB7A39F64)
+---@param p0 any
+---@return any
+function N_0xca56dd6ab7a39f64(p0) end
+
 ---LOAD_PARSEDDATA_FILE_FAILSAFE_HASH
 ---Returns parseddata script fileHandle
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xD97D8D905F1562F2)
@@ -242,21 +235,15 @@ function N_0x4f9e3ed7617123ac(p0) end
 function ParseddataLoadFileHash(p0) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x129567F0C05F81B9)
+---@param fileHandle number
+function ParseddataUnloadFile(fileHandle) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x7907969497EA92F5)
 ---@param fileHandle number
 ---@return boolean
 function ParseddataIsFileValid(fileHandle) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xCA56DD6AB7A39F64)
----@param p0 any
----@return any
-function N_0xca56dd6ab7a39f64(p0) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x129567F0C05F81B9)
----@param fileHandle number
-function ParseddataUnloadFile(fileHandle) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x603AC35FD4602C76)
@@ -301,16 +288,16 @@ function N_0xe13634bb6baf0734(p0, p1) end
 ---@return any
 function ParseddataGetNumChildren(p0, p1) end
 
+---Old name: _DATAFILE_GET_HASH
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xFBFF3FF2F5E80C0B)
+---@return boolean, number, any
+function ParseddataRqFilloutHash() end
+
 ---Old name: _DATAFILE_GET_STRING
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x08EAF8E9F2EB7B2E)
 ---@param p0 string
 ---@return boolean, any
 function ParseddataRqFilloutString_63(p0) end
-
----Old name: _DATAFILE_GET_HASH
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xFBFF3FF2F5E80C0B)
----@return boolean, number, any
-function ParseddataRqFilloutHash() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x951327435DC5164B)
@@ -318,41 +305,38 @@ function ParseddataRqFilloutHash() end
 ---@return boolean, any
 function ParseddataRqFilloutString_127(p0) end
 
----Old name: _DATAFILE_GET_VECTOR
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x06FBF89B12DA279C)
----@return boolean, vector3, any
-function ParseddataRqFilloutVector() end
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x1C65CC931C0F946F)
+---@param p0 any
+---@param p1 any
+---@param p2 any
+function N_0x1c65cc931c0f946f(p0, p1, p2) end
 
 ---Old name: _DATAFILE_GET_FLOAT
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x7F034FC3E891B57A)
 ---@return boolean, number, any
 function ParseddataRqFilloutFloat() end
 
----Old name: _DATAFILE_GET_BOOL
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x0D9138F3F8261DF7)
----@return boolean, boolean, any
-function ParseddataRqFilloutBool() end
-
----Old name: _DATAFILE_GET_INT
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xEF44ACC657352A35)
----@return boolean, number, any
-function ParseddataRqFilloutInt() end
-
----Returns false when there are no entries.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xED4413CEE1BF142C)
----@return boolean, any
-function ParseddataGetEntries() end
+---Old name: _DATAFILE_GET_VECTOR
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x06FBF89B12DA279C)
+---@return boolean, vector3, any
+function ParseddataRqFilloutVector() end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xB2B42607F7867576)
----@param p2 number | string
----@return boolean, any, any
-function N_0xb2b42607f7867576(p2) end
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xBBD8CF823CAE557C)
+---@param index number
+---@return any
+function DatafileGetFileDict(index) end
 
 ---Opens file.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x91DED5DD64BB2691)
 ---@return any
 function ParseddataGetFile() end
+
+---Old name: _DATAFILE_GET_BOOL
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x0D9138F3F8261DF7)
+---@return boolean, boolean, any
+function ParseddataRqFilloutBool() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x52FC26D2D2FC2987)
@@ -371,4 +355,20 @@ function ParseddataGetSection(section) end
 ---@param p2 number | string
 ---@return boolean, any, any
 function N_0xa63cd20f19b961ab(p2) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xB2B42607F7867576)
+---@param p2 number | string
+---@return boolean, any, any
+function N_0xb2b42607f7867576(p2) end
+
+---Returns false when there are no entries.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xED4413CEE1BF142C)
+---@return boolean, any
+function ParseddataGetEntries() end
+
+---Old name: _DATAFILE_GET_INT
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xEF44ACC657352A35)
+---@return boolean, number, any
+function ParseddataRqFilloutInt() end
 

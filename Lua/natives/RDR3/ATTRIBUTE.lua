@@ -48,11 +48,11 @@ function GetAttributeRank(ped, attributeIndex) end
 function GetAttributeBaseRank(ped, attributeIndex) end
 
 ---attributeIndex: see SET_ATTRIBUTE_BASE_RANK
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x0EFA71F4B4330E04)
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x920F9488BD115EFB)
 ---@param ped number
----@param coreIndex number
----@return number
-function GetAttributeBonusRank(ped, coreIndex) end
+---@param attributeIndex number
+---@param newValue number
+function SetAttributeBonusRank(ped, attributeIndex, newValue) end
 
 ---attributeIndex: see SET_ATTRIBUTE_BASE_RANK
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x704674A0535A471D)
@@ -62,11 +62,11 @@ function GetAttributeBonusRank(ped, coreIndex) end
 function GetMaxAttributeRank(ped, attributeIndex) end
 
 ---attributeIndex: see SET_ATTRIBUTE_BASE_RANK
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x920F9488BD115EFB)
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x958DD43D41F89A47)
 ---@param ped number
 ---@param attributeIndex number
----@param newValue number
-function SetAttributeBonusRank(ped, attributeIndex, newValue) end
+---@return number
+function GetDefaultAttributeRank(ped, attributeIndex) end
 
 ---attributeIndex: see SET_ATTRIBUTE_BASE_RANK
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x7C059C55AD940CB4)
@@ -83,26 +83,18 @@ function GetDefaultMaxAttributeRank(ped, attributeIndex) end
 function AddAttributePoints(ped, attributeIndex, p2) end
 
 ---attributeIndex: see SET_ATTRIBUTE_BASE_RANK
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x219DA04BAA9CB065)
----@param ped number
----@param attributeIndex number
----@return number
-function GetAttributePoints(ped, attributeIndex) end
-
----attributeIndex: see SET_ATTRIBUTE_BASE_RANK
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x09A59688C26D88DF)
 ---@param ped number
 ---@param attributeIndex number
 ---@param p2 number
 function SetAttributePoints(ped, attributeIndex, p2) end
 
----Gets the ped's core value on a scale of 0 to 100.
----coreIndex: see _SET_ATTRIBUTE_CORE_VALUE
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x36731AC041289BB1)
+---attributeIndex: see SET_ATTRIBUTE_BASE_RANK
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x219DA04BAA9CB065)
 ---@param ped number
----@param coreIndex number
+---@param attributeIndex number
 ---@return number
-function GetAttributeCoreValue(ped, coreIndex) end
+function GetAttributePoints(ped, attributeIndex) end
 
 ---attributeIndex: see SET_ATTRIBUTE_BASE_RANK
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x223BF310F854871C)
@@ -125,12 +117,19 @@ function GetMaxAttributePoints(ped, attributeIndex) end
 function SetAttributeCoreValue(ped, coreIndex, value) end
 
 ---attributeIndex: see SET_ATTRIBUTE_BASE_RANK
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x94A7F191DB49A44D)
----@param modelHash number | string
----@param attributeIndex number
----@param rank number
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x0EFA71F4B4330E04)
+---@param ped number
+---@param coreIndex number
 ---@return number
-function GetDefaultAttributePointsNeededForRank(modelHash, attributeIndex, rank) end
+function GetAttributeBonusRank(ped, coreIndex) end
+
+---Gets the ped's core value on a scale of 0 to 100.
+---coreIndex: see _SET_ATTRIBUTE_CORE_VALUE
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x36731AC041289BB1)
+---@param ped number
+---@param coreIndex number
+---@return number
+function GetAttributeCoreValue(ped, coreIndex) end
 
 ---attributeIndex: see SET_ATTRIBUTE_BASE_RANK
 ---
@@ -143,17 +142,12 @@ function GetDefaultAttributePointsNeededForRank(modelHash, attributeIndex, rank)
 function EnableAttributeOverpower(ped, attributeIndex, value, makeSound) end
 
 ---attributeIndex: see SET_ATTRIBUTE_BASE_RANK
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xF8DAC3D85636C241)
----@param ped number
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x94A7F191DB49A44D)
+---@param modelHash number | string
 ---@param attributeIndex number
-function DisableAttributeOverpower(ped, attributeIndex) end
-
----attributeIndex: see SET_ATTRIBUTE_BASE_RANK
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x958DD43D41F89A47)
----@param ped number
----@param attributeIndex number
+---@param rank number
 ---@return number
-function GetDefaultAttributeRank(ped, attributeIndex) end
+function GetDefaultAttributePointsNeededForRank(modelHash, attributeIndex, rank) end
 
 ---coreIndex: see _SET_ATTRIBUTE_CORE_VALUE
 ---
@@ -164,6 +158,13 @@ function GetDefaultAttributeRank(ped, attributeIndex) end
 ---@param value number
 ---@param makeSound boolean
 function EnableAttributeCoreOverpower(ped, coreIndex, value, makeSound) end
+
+---attributeIndex: see SET_ATTRIBUTE_BASE_RANK
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x103C2F885ABEB00B)
+---@param ped number
+---@param attributeIndex number
+---@return boolean
+function IsAttributeOverpowered(ped, attributeIndex) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x200373A8DF081F22)
@@ -187,17 +188,14 @@ function GetAttributeOverpowerSecondsLeft(ped, attributeIndex) end
 function GetAttributeCoreOverpowerSecondsLeft(ped, coreIndex) end
 
 ---attributeIndex: see SET_ATTRIBUTE_BASE_RANK
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x103C2F885ABEB00B)
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xF8DAC3D85636C241)
 ---@param ped number
 ---@param attributeIndex number
----@return boolean
-function IsAttributeOverpowered(ped, attributeIndex) end
+function DisableAttributeOverpower(ped, attributeIndex) end
 
----Params: p1 is related to satchel_category
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x7E2C766ADB2C5F1A)
----@param p0 any
----@param p1 number
-function StartItemPreview(p0, p1) end
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xD962F8579D702DB5)
+function StopItemPreview() end
 
 ---Displays status effects on core icons (includes warnings).
 ---
@@ -230,13 +228,15 @@ function SetStatusEffectCoreIcon(statusEffectType) end
 ---@param statusEffectType number
 function SetStatusEffectPeriodicIcon(statusEffectType) end
 
+---Params: p1 is related to satchel_category
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x7E2C766ADB2C5F1A)
+---@param p0 any
+---@param p1 number
+function StartItemPreview(p0, p1) end
+
 ---Stops periodic icon.
 ---statusEffectType: see 0xA4D3A1C008F250DF
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x3FC4C027FD0936F4)
 ---@param statusEffectType number
 function StopStatusEffectPeriodicIcon(statusEffectType) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xD962F8579D702DB5)
-function StopItemPreview() end
 

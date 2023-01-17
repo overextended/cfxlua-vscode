@@ -19,6 +19,18 @@ function MoneyDecrementCashBalance(amount) end
 function MoneyIncrementCashBalance(amount, addReason) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xAEC5F0119867E457)
+---@param cashBalance number
+---@param goldBarBalance number
+---@return boolean
+function NetworkIsMoneyBalanceNotLessThan(cashBalance, goldBarBalance) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x282D36FF103D78DF)
+---@return any
+function NetworkGetStringCashBalance() end
+
+---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xA46FD001D1BE896C)
 ---@return any
 function N_0xa46fd001d1be896c() end
@@ -31,19 +43,7 @@ function N_0xa46fd001d1be896c() end
 function N_0x07ad9e43fd478527(p0, p1) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xAEC5F0119867E457)
----@param cashBalance number
----@param goldBarBalance number
----@return boolean
-function NetworkIsMoneyBalanceNotLessThan(cashBalance, goldBarBalance) end
-
----This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x8A67120DBC299525)
 ---@return number
 function NetworkGetCashBalance() end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x282D36FF103D78DF)
----@return any
-function NetworkGetStringCashBalance() end
 

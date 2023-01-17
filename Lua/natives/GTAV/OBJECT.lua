@@ -11,11 +11,10 @@
 function AreEntitiesEntirelyInsideGarage(garageHash, p1, p2, p3, p4) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xE7E4C198B0185900)
----@param p0 number
----@param p1 any
----@param p2 boolean
-function BreakObjectFragmentChild(p0, p1, p2) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x8DC39368BDD57755)
+---@param pickupObject number
+---@param ped number
+function AttachPortablePickupToPed(pickupObject, ped) end
 
 ---p5 only set to true in single player native scripts. Door hashes normally look like `PROP_[int]_DOOR_[int]` for interior doors and `PROP_BUILDING_[int]_DOOR_[int]` exterior doors but you can just make up your own hash if you want.
 ---
@@ -34,16 +33,26 @@ function BreakObjectFragmentChild(p0, p1, p2) end
 function AddDoorToSystem(doorHash, modelHash, x, y, z, p5, scriptDoor, isLocal) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x190428512B240692)
+---@param garageHash number | string
+---@param vehicles boolean
+---@param peds boolean
+---@param objects boolean
+---@param isNetwork boolean
+function ClearObjectsInsideGarage(garageHash, vehicles, peds, objects, isNetwork) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xDA05194260CDCDF9)
 ---@param garageHash number | string
 ---@param isNetwork boolean
 function ClearGarageArea(garageHash, isNetwork) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x8DC39368BDD57755)
----@param pickupObject number
----@param ped number
-function AttachPortablePickupToPed(pickupObject, ped) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0xE7E4C198B0185900)
+---@param p0 number
+---@param p1 any
+---@param p2 boolean
+function BreakObjectFragmentChild(p0, p1, p2) end
 
 ---```
 ---Used for doing money drop  
@@ -61,42 +70,6 @@ function AttachPortablePickupToPed(pickupObject, ped) end
 ---@param p8 boolean
 ---@return number
 function CreateAmbientPickup(pickupHash, posX, posY, posZ, flags, value, modelHash, returnHandle, p8) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x190428512B240692)
----@param garageHash number | string
----@param vehicles boolean
----@param peds boolean
----@param objects boolean
----@param isNetwork boolean
-function ClearObjectsInsideGarage(garageHash, vehicles, peds, objects, isNetwork) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x125494B98A21AAF7)
----@param pickupHash number | string
----@param x number
----@param y number
----@param z number
----@param placeOnGround boolean
----@param modelHash number | string
----@return number
-function CreateNonNetworkedPortablePickup(pickupHash, x, y, z, placeOnGround, modelHash) end
-
----```
----NativeDB Introduced: v2372
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x9C93764223E29C50)
----@param pickupHash any
----@param posX number
----@param posY number
----@param posZ number
----@param flags number
----@param value number
----@param modelHash any
----@param p7 boolean
----@param p8 boolean
----@return any
-function CreateNonNetworkedAmbientPickup(pickupHash, posX, posY, posZ, flags, value, modelHash, p7, p8) end
 
 ---```
 ---Spawns one or more money pickups.  
@@ -120,6 +93,22 @@ function CreateNonNetworkedAmbientPickup(pickupHash, posX, posY, posZ, flags, va
 ---@param amount number
 ---@param model number | string
 function CreateMoneyPickups(x, y, z, value, amount, model) end
+
+---```
+---NativeDB Introduced: v2372
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x9C93764223E29C50)
+---@param pickupHash any
+---@param posX number
+---@param posY number
+---@param posZ number
+---@param flags number
+---@param value number
+---@param modelHash any
+---@param p7 boolean
+---@param p8 boolean
+---@return any
+function CreateNonNetworkedAmbientPickup(pickupHash, posX, posY, posZ, flags, value, modelHash, p7, p8) end
 
 ---Creates an object (prop) with the specified model centered at the specified position.
 ---This object will initially be owned by the creating script as a mission entity, and the model should be loaded already (e.g. using REQUEST_MODEL).
@@ -156,6 +145,32 @@ function CreateObjectNoOffset(modelHash, x, y, z, isNetwork, netMissionEntity, d
 ---@return number
 function CreatePickupRotate(pickupHash, posX, posY, posZ, rotX, rotY, rotZ, flag, amount, p9, p10, modelHash) end
 
+---Creates an object (prop) with the specified model at the specified position, offset on the Z axis by the radius of the object's model.
+---This object will initially be owned by the creating script as a mission entity, and the model should be loaded already (e.g. using REQUEST_MODEL).
+---[Native Documentation](https://docs.fivem.net/natives/?_0x509D5878EB39E842)
+---@param modelHash number | string
+---@param x number
+---@param y number
+---@param z number
+---@param isNetwork boolean
+---@param netMissionEntity boolean
+---@param doorFlag boolean
+---@return number
+function CreateObject(modelHash, x, y, z, isNetwork, netMissionEntity, doorFlag) end
+
+---```
+---Pickup hashes: pastebin.com/8EuSv2r1
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x2EAF1FDB2FB55698)
+---@param pickupHash number | string
+---@param x number
+---@param y number
+---@param z number
+---@param placeOnGround boolean
+---@param modelHash number | string
+---@return number
+function CreatePortablePickup(pickupHash, x, y, z, placeOnGround, modelHash) end
+
 ---```
 ---Pickup hashes: pastebin.com/8EuSv2r1  
 ---```
@@ -178,29 +193,8 @@ function CreatePickup(pickupHash, posX, posY, posZ, p4, value, p6, modelHash) en
 ---@param object number
 function DeleteObject(object) end
 
----Creates an object (prop) with the specified model at the specified position, offset on the Z axis by the radius of the object's model.
----This object will initially be owned by the creating script as a mission entity, and the model should be loaded already (e.g. using REQUEST_MODEL).
----[Native Documentation](https://docs.fivem.net/natives/?_0x509D5878EB39E842)
----@param modelHash number | string
----@param x number
----@param y number
----@param z number
----@param isNetwork boolean
----@param netMissionEntity boolean
----@param doorFlag boolean
----@return number
-function CreateObject(modelHash, x, y, z, isNetwork, netMissionEntity, doorFlag) end
-
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xAFC1CA75AD4074D1)
----@param pickup number
----@return boolean
-function DoesPickupExist(pickup) end
-
----```
----Pickup hashes: pastebin.com/8EuSv2r1
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x2EAF1FDB2FB55698)
+---[Native Documentation](https://docs.fivem.net/natives/?_0x125494B98A21AAF7)
 ---@param pickupHash number | string
 ---@param x number
 ---@param y number
@@ -208,33 +202,18 @@ function DoesPickupExist(pickup) end
 ---@param placeOnGround boolean
 ---@param modelHash number | string
 ---@return number
-function CreatePortablePickup(pickupHash, x, y, z, placeOnGround, modelHash) end
+function CreateNonNetworkedPortablePickup(pickupHash, x, y, z, placeOnGround, modelHash) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xAFC1CA75AD4074D1)
+---@param pickup number
+---@return boolean
+function DoesPickupExist(pickup) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xCF463D1E9A0AECB1)
 ---@param pickupObject number
 function DetachPortablePickupFromPed(pickupObject) end
-
----```
----p5 is usually 0.  
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0xBFA48E2FF417213F)
----@param x number
----@param y number
----@param z number
----@param radius number
----@param hash number | string
----@param p5 boolean
----@return boolean
-function DoesObjectOfTypeExistAtCoords(x, y, z, radius, hash, p5) end
-
----```
----Returns true if a destructible object with this handle exists, false otherwise.  
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x52AF537A0C5B8AAD)
----@param object number
----@return boolean
-function DoesRayfireMapObjectExist(object) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xD9EFB6DBF7DAAEA3)
@@ -254,6 +233,14 @@ function DoesPickupObjectExist(pickupObject) end
 ---@return boolean
 function DoesPickupOfTypeExistInArea(pickupHash, x, y, z, radius) end
 
+---```
+---Returns true if a destructible object with this handle exists, false otherwise.  
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x52AF537A0C5B8AAD)
+---@param object number
+---@return boolean
+function DoesRayfireMapObjectExist(object) end
+
 ---Hardcoded not to work in multiplayer environments.
 ---Native name between `SET_LOCAL_PLAYER_VISIBLE_LOCALLY` & `SET_MAX_WANTED_LEVEL`.
 ---
@@ -272,12 +259,6 @@ function DoesPickupOfTypeExistInArea(pickupHash, x, y, z, radius) end
 ---@param zRotMult number
 function DoorControl(modelHash, x, y, z, locked, xRotMult, yRotMult, zRotMult) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x160AA1B32F6139B8)
----@param doorHash number | string
----@return number
-function DoorSystemGetDoorState(doorHash) end
-
 ---Search radius: 0.5
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x589F80B325CC82C5)
 ---@param x number
@@ -287,17 +268,36 @@ function DoorSystemGetDoorState(doorHash) end
 ---@return boolean, number
 function DoorSystemFindExistingDoor(x, y, z, modelHash) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x65499865FCA6E5EC)
----@param doorHash number | string
----@return number
-function DoorSystemGetOpenRatio(doorHash) end
+---```
+---p5 is usually 0.  
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0xBFA48E2FF417213F)
+---@param x number
+---@param y number
+---@param z number
+---@param radius number
+---@param hash number | string
+---@param p5 boolean
+---@return boolean
+function DoesObjectOfTypeExistAtCoords(x, y, z, radius, hash, p5) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x4BC2854478F3A749)
 ---@param doorHash number | string
 ---@return number
 function DoorSystemGetDoorPendingState(doorHash) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x160AA1B32F6139B8)
+---@param doorHash number | string
+---@return number
+function DoorSystemGetDoorState(doorHash) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xDF97CDD4FC08FD34)
+---@param doorHash number | string
+---@return boolean
+function DoorSystemGetIsPhysicsLoaded(doorHash) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x9BA001CB45CBF627)
@@ -315,24 +315,6 @@ function DoorSystemSetAutomaticDistance(doorHash, distance, requestDoor, forceUp
 ---@return number
 function DoorSystemGetAutomaticDistance(doorHash) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xDF97CDD4FC08FD34)
----@param doorHash number | string
----@return boolean
-function DoorSystemGetIsPhysicsLoaded(doorHash) end
-
----Includes networking check: ownership vs. or the door itself **isn't** networked.
----[Native Documentation](https://docs.fivem.net/natives/?_0xD9B71952F78A2640)
----@param doorHash number | string
----@param toggle boolean
-function DoorSystemSetHoldOpen(doorHash, toggle) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xF2E1A7133DD356A6)
----@param garageHash number | string
----@param toggle boolean
-function EnableSavingInGarage(garageHash, toggle) end
-
 ---Includes networking check: ownership vs. or the door itself **isn't** networked.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC485E07E4F0B7958)
 ---@param doorHash number | string
@@ -340,6 +322,67 @@ function EnableSavingInGarage(garageHash, toggle) end
 ---@param requestDoor boolean
 ---@param forceUpdate boolean
 function DoorSystemSetSpringRemoved(doorHash, removed, requestDoor, forceUpdate) end
+
+---Includes networking check: ownership vs. or the door itself **isn't** networked.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x03C27E13B42A0E82)
+---@param doorHash number | string
+---@param rate number
+---@param requestDoor boolean
+---@param forceUpdate boolean
+function DoorSystemSetAutomaticRate(doorHash, rate, requestDoor, forceUpdate) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x758A5C1B3B1E1990)
+---@param p0 any
+function ForcePickupRegenerate(p0) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x65499865FCA6E5EC)
+---@param doorHash number | string
+---@return number
+function DoorSystemGetOpenRatio(doorHash) end
+
+---```
+---Sets the ajar angle of a door.
+---Ranges from -1.0 to 1.0, and 0.0 is closed / default.
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0xB6E6FBA95C7324AC)
+---@param doorHash number | string
+---@param ajar number
+---@param requestDoor boolean
+---@param forceUpdate boolean
+function DoorSystemSetOpenRatio(doorHash, ajar, requestDoor, forceUpdate) end
+
+---```
+---Has 8 params in the latest patches.  
+---isMission - if true doesn't return mission objects  
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0xE143FA2249364369)
+---@param x number
+---@param y number
+---@param z number
+---@param radius number
+---@param modelHash number | string
+---@param isMission boolean
+---@param p6 boolean
+---@param p7 boolean
+---@return number
+function GetClosestObjectOfType(x, y, z, radius, modelHash, isMission, p6, p7) end
+
+---```
+---NativeDB Introduced: v1604
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x43C677F1E1158005)
+---@param entity number
+---@param p1 any
+---@return boolean
+function GetIsArenaPropPhysicsDisabled(entity, p1) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xF2E1A7133DD356A6)
+---@param garageHash number | string
+---@param toggle boolean
+function EnableSavingInGarage(garageHash, toggle) end
 
 ---Lockstates not applied and CNetObjDoor's not created until [DOOR_SYSTEM_GET_IS_PHYSICS_LOADED](#\_0xDF97CDD4FC08FD34) returns true.
 ---
@@ -360,33 +403,11 @@ function DoorSystemSetSpringRemoved(doorHash, removed, requestDoor, forceUpdate)
 function DoorSystemSetDoorState(doorHash, state, requestDoor, forceUpdate) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x758A5C1B3B1E1990)
+---[Native Documentation](https://docs.fivem.net/natives/?_0xB6FBFD079B8D0596)
 ---@param p0 any
-function ForcePickupRegenerate(p0) end
-
----Includes networking check: ownership vs. or the door itself **isn't** networked.
----[Native Documentation](https://docs.fivem.net/natives/?_0x03C27E13B42A0E82)
----@param doorHash number | string
----@param rate number
----@param requestDoor boolean
----@param forceUpdate boolean
-function DoorSystemSetAutomaticRate(doorHash, rate, requestDoor, forceUpdate) end
-
----```
----Has 8 params in the latest patches.  
----isMission - if true doesn't return mission objects  
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0xE143FA2249364369)
----@param x number
----@param y number
----@param z number
----@param radius number
----@param modelHash number | string
----@param isMission boolean
----@param p6 boolean
----@param p7 boolean
+---@param p1 boolean
 ---@return number
-function GetClosestObjectOfType(x, y, z, radius, modelHash, isMission, p6, p7) end
+function GetObjectFragmentDamageHealth(p0, p1) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x163F8B586BC95F2A)
@@ -400,22 +421,16 @@ function GetClosestObjectOfType(x, y, z, radius, modelHash, isMission, p6, p7) e
 function GetCoordsAndRotationOfClosestObjectOfType(x, y, z, radius, modelHash, rotationOrder) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xB6FBFD079B8D0596)
----@param p0 any
----@param p1 boolean
----@return number
-function GetObjectFragmentDamageHealth(p0, p1) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x225B8B35C88029B3)
+---@param pickup number
+---@return vector3
+function GetPickupCoords(pickup) end
 
----```
----Sets the ajar angle of a door.
----Ranges from -1.0 to 1.0, and 0.0 is closed / default.
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0xB6E6FBA95C7324AC)
----@param doorHash number | string
----@param ajar number
----@param requestDoor boolean
----@param forceUpdate boolean
-function DoorSystemSetOpenRatio(doorHash, ajar, requestDoor, forceUpdate) end
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xE84EB93729C5F36A)
+---@param object number
+---@return number
+function GetObjectTextureVariation(object) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x163E252DE035A133)
@@ -430,39 +445,16 @@ function DoorSystemSetOpenRatio(doorHash, ajar, requestDoor, forceUpdate) end
 function GetObjectOffsetFromCoords(xPos, yPos, zPos, heading, xOffset, yOffset, zOffset) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x225B8B35C88029B3)
----@param pickup number
----@return vector3
-function GetPickupCoords(pickup) end
-
----```
----NativeDB Introduced: v1604
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x43C677F1E1158005)
----@param entity number
----@param p1 any
----@return boolean
-function GetIsArenaPropPhysicsDisabled(entity, p1) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xE84EB93729C5F36A)
----@param object number
----@return number
-function GetObjectTextureVariation(object) end
-
----```
----returns pickup hash.
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x5EAAD83F8CFB4575)
----@param pickupHash number | string
----@return number
-function GetPickupHash(pickupHash) end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x5099BC55630B25AE)
 ---@param pickup number
 ---@return number
 function GetPickupObject(pickup) end
+
+---Includes networking check: ownership vs. or the door itself **isn't** networked.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xD9B71952F78A2640)
+---@param doorHash number | string
+---@param toggle boolean
+function DoorSystemSetHoldOpen(doorHash, toggle) end
 
 ---```
 ---`object`: The des-object handle to get the animation progress from.
@@ -472,6 +464,22 @@ function GetPickupObject(pickup) end
 ---@param object number
 ---@return number
 function GetRayfireMapObjectAnimPhase(object) end
+
+---```
+---returns pickup hash.
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x5EAAD83F8CFB4575)
+---@param pickupHash number | string
+---@return number
+function GetPickupHash(pickupHash) end
+
+---```
+---NativeDB Introduced: v1290
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0xD6429A016084F1A5)
+---@param weapon number | string
+---@return number
+function GetPickupHashFromWeapon(weapon) end
 
 ---```
 ---Example:
@@ -485,14 +493,6 @@ function GetRayfireMapObjectAnimPhase(object) end
 ---@param name string
 ---@return number
 function GetRayfireMapObject(x, y, z, radius, name) end
-
----```
----NativeDB Introduced: v1290
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0xD6429A016084F1A5)
----@param weapon number | string
----@return number
-function GetPickupHashFromWeapon(weapon) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x6E16BC2503FF1FF0)
@@ -534,6 +534,11 @@ function GetWeaponTypeFromPickupType(pickupHash) end
 function GetStateOfRayfireMapObject(object) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xB3ECA65C7317F174)
+---@return number
+function GetPickupGenerationRangeMultiplier() end
+
+---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x761B0E69AC4D007E)
 ---@param p0 number
 ---@param p1 number
@@ -556,21 +561,16 @@ function HasClosestObjectOfTypeBeenBroken(p0, p1, p2, p3, modelHash, p5) end
 function HasClosestObjectOfTypeBeenCompletelyDestroyed(x, y, z, radius, modelHash, p5) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xB3ECA65C7317F174)
----@return number
-function GetPickupGenerationRangeMultiplier() end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x867458251D47CCB2)
+---@param pickup number
+---@param toggle boolean
+function HidePortablePickupWhenDetached(pickup, toggle) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x80EC48E6679313F9)
 ---@param pickup number
 ---@return boolean
 function HasPickupBeenCollected(pickup) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x867458251D47CCB2)
----@param pickup number
----@param toggle boolean
-function HidePortablePickupWhenDetached(pickup, toggle) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x673ED815D6E323B7)
@@ -604,16 +604,16 @@ function IsAnyObjectNearPoint(x, y, z, range, p4) end
 function IsDoorRegisteredWithSystem(doorHash) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xFC481C641EBBD27D)
----@param object number
----@return boolean
-function IsObjectAPickup(object) end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC531EE8A1145A149)
 ---@param doorHash number | string
 ---@return boolean
 function IsDoorClosed(doorHash) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xFC481C641EBBD27D)
+---@param object number
+---@return boolean
+function IsObjectAPickup(object) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x90E47239EA1980B8)
@@ -641,22 +641,6 @@ function IsObjectNearPoint(objectHash, x, y, z, range) end
 ---@return boolean
 function IsObjectAPortablePickup(object) end
 
----```
----NativeDB Added Parameter 2: Any p1
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x8ABFB70C49CC43E2)
----@param object number
----@return boolean
-function HasObjectBeenBroken(object) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xF0EED5A6BC7B237A)
----@param garageHash number | string
----@param entity number
----@param p2 number
----@return boolean
-function IsObjectPartiallyInsideGarage(garageHash, entity, p2) end
-
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x372EF6699146A1E4)
 ---@param garageHash number | string
@@ -667,16 +651,32 @@ function IsObjectPartiallyInsideGarage(garageHash, entity, p2) end
 function IsObjectEntirelyInsideGarage(garageHash, entity, p2, p3) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x8B32ACE6326A7546)
----@param object number
+---[Native Documentation](https://docs.fivem.net/natives/?_0xF0EED5A6BC7B237A)
+---@param garageHash number | string
+---@param entity number
+---@param p2 number
 ---@return boolean
-function IsObjectVisible(object) end
+function IsObjectPartiallyInsideGarage(garageHash, entity, p2) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x11D1E53A726891FE)
 ---@param object number
 ---@return boolean
 function IsPickupWeaponObjectValid(object) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x8B32ACE6326A7546)
+---@param object number
+---@return boolean
+function IsObjectVisible(object) end
+
+---```
+---NativeDB Added Parameter 2: Any p1
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x8ABFB70C49CC43E2)
+---@param object number
+---@return boolean
+function HasObjectBeenBroken(object) end
 
 ---An **angled area** is an X-Z oriented rectangle with three parameters:
 ---
@@ -705,14 +705,6 @@ function IsPickupWeaponObjectValid(object) end
 function IsPointInAngledArea(xPos, yPos, zPos, x1, y1, z1, x2, y2, z2, width, p10, includez) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x1761DC5D8471CBAA)
----@param garageHash number | string
----@param player number
----@param p2 number
----@return boolean
-function IsPlayerPartiallyInsideGarage(garageHash, player, p2) end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x024A60DEB0EA69F0)
 ---@param garageHash number | string
 ---@param player number
@@ -720,6 +712,21 @@ function IsPlayerPartiallyInsideGarage(garageHash, player, p2) end
 ---@param p3 number
 ---@return boolean
 function IsPlayerEntirelyInsideGarage(garageHash, player, p2, p3) end
+
+---```
+---is this like setting is as no longer needed?  
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0xADBE4809F19F927A)
+---@param object number
+function MarkObjectForDeletion(object) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x1761DC5D8471CBAA)
+---@param garageHash number | string
+---@param player number
+---@param p2 number
+---@return boolean
+function IsPlayerPartiallyInsideGarage(garageHash, player, p2) end
 
 ---```
 ---NativeDB Introduced: v1868
@@ -743,13 +750,6 @@ function N_0x0596843b34b95ce5(p0, p1) end
 function N_0x1c57c94a6446492a(p0, p1) end
 
 ---```
----is this like setting is as no longer needed?  
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0xADBE4809F19F927A)
----@param object number
-function MarkObjectForDeletion(object) end
-
----```
 ---NativeDB Introduced: v1604
 ---```
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x1A6CBB06E2D0D79D)
@@ -757,16 +757,13 @@ function MarkObjectForDeletion(object) end
 ---@param p1 any
 function N_0x1a6cbb06e2d0d79d(p0, p1) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x1E3F1B1B891A2AAA)
+---```
+---NativeDB Introduced: v2372
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x27F248C3FEBFAAD3)
 ---@param p0 any
 ---@param p1 any
-function N_0x1e3f1b1b891a2aaa(p0, p1) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x31F924B53EADDF65)
----@param p0 boolean
-function N_0x31f924b53eaddf65(p0) end
+function N_0x27f248c3febfaad3(p0, p1) end
 
 ---```
 ---NativeDB Introduced: v1180
@@ -775,6 +772,11 @@ function N_0x31f924b53eaddf65(p0) end
 ---@param p0 any
 ---@return any
 function N_0x2542269291c6ac84(p0) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x31F924B53EADDF65)
+---@param p0 boolean
+function N_0x31f924b53eaddf65(p0) end
 
 ---```
 ---NativeDB Introduced: v2189
@@ -791,14 +793,6 @@ function N_0x31574b1b41268673(p0, p1) end
 function N_0x39a5fb7eaf150840(p0, p1) end
 
 ---```
----NativeDB Introduced: v2372
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x27F248C3FEBFAAD3)
----@param p0 any
----@param p1 any
-function N_0x27f248c3febfaad3(p0, p1) end
-
----```
 ---NativeDB Removed Parameter 3: int R
 ---NativeDB Removed Parameter 4: int G
 ---NativeDB Removed Parameter 5: int B
@@ -812,11 +806,14 @@ function N_0x27f248c3febfaad3(p0, p1) end
 ---@param B number
 function N_0x3b2fd68db5f8331c(object, toggle, R, G, B) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x46F3ADD1E2D5BAF2)
+---```
+---NativeDB Introduced: v1604
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x3BD770D281982DB5)
 ---@param p0 any
 ---@param p1 any
-function N_0x46f3add1e2d5baf2(p0, p1) end
+---@return any
+function N_0x3bd770d281982db5(p0, p1) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x394CD08E31313C28)
@@ -830,6 +827,17 @@ function N_0x394cd08e31313c28() end
 ---@param p1 any
 function N_0x4c134b4df76025d0(p0, p1) end
 
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x62454A641B41F3C5)
+---@param p0 any
+function N_0x62454a641b41f3c5(p0) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x46F3ADD1E2D5BAF2)
+---@param p0 any
+---@param p1 any
+function N_0x46f3add1e2d5baf2(p0, p1) end
+
 ---```
 ---NativeDB Introduced: v1365
 ---```
@@ -838,20 +846,15 @@ function N_0x4c134b4df76025d0(p0, p1) end
 ---@param p1 any
 function N_0x63ecf581bc70e363(p0, p1) end
 
----```
----NativeDB Introduced: v1604
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x3BD770D281982DB5)
----@param p0 any
----@param p1 any
----@return any
-function N_0x3bd770d281982db5(p0, p1) end
-
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x641F272B52E2F0F8)
 ---@param p0 any
 ---@param p1 any
 function N_0x641f272b52e2f0f8(p0, p1) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x66A49D021870FE88)
+function N_0x66a49d021870fe88() end
 
 ---```
 ---NativeDB Introduced: v1290
@@ -861,28 +864,11 @@ function N_0x641f272b52e2f0f8(p0, p1) end
 ---@param p1 any
 function N_0x659f9d71f52843f8(p0, p1) end
 
----Clears the fields sets by [N\_0xc7f29ca00f46350e](#\_0xC7F29CA00F46350E) (1604 retail: 0x1424A7A10, 0x1424A7A11) and iterates over the global CDoor's bucket-list.
----
----Related to its "Pre-networked state"?
----[Native Documentation](https://docs.fivem.net/natives/?_0x701FDA1E82076BA4)
-function N_0x701fda1e82076ba4() end
-
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x66A49D021870FE88)
-function N_0x66a49d021870fe88() end
-
----```
----NativeDB Introduced: v1604
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x734E1714D077DA9A)
+---[Native Documentation](https://docs.fivem.net/natives/?_0x1E3F1B1B891A2AAA)
 ---@param p0 any
 ---@param p1 any
-function N_0x734e1714d077da9a(p0, p1) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x762DB2D380B48D04)
----@param p0 any
-function N_0x762db2d380b48d04(p0) end
+function N_0x1e3f1b1b891a2aaa(p0, p1) end
 
 ---SET_PICKUP_\*
 ---
@@ -893,30 +879,25 @@ function N_0x762db2d380b48d04(p0) end
 ---@param pickup number
 function N_0x7813e8b8c4ae4799(pickup) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x858EC9FD25DE04AA)
+---Clears the fields sets by [N\_0xc7f29ca00f46350e](#\_0xC7F29CA00F46350E) (1604 retail: 0x1424A7A10, 0x1424A7A11) and iterates over the global CDoor's bucket-list.
+---
+---Related to its "Pre-networked state"?
+---[Native Documentation](https://docs.fivem.net/natives/?_0x701FDA1E82076BA4)
+function N_0x701fda1e82076ba4() end
+
+---```
+---NativeDB Introduced: v1604
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x734E1714D077DA9A)
 ---@param p0 any
 ---@param p1 any
-function N_0x858ec9fd25de04aa(p0, p1) end
+function N_0x734e1714d077da9a(p0, p1) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x826D1EE4D1CAFC78)
 ---@param p0 any
 ---@param p1 any
 function N_0x826d1ee4d1cafc78(p0, p1) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x8CAAB2BD3EA58BD4)
----@param p0 any
-function N_0x8caab2bd3ea58bd4(p0) end
-
----```
----NativeDB Introduced: v2372
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x834344A414C7C85D)
----@param p0 any
----@param p1 any
-function N_0x834344a414c7c85d(p0, p1) end
 
 ---```
 ---NativeDB Added Parameter 2: Any p1
@@ -926,17 +907,16 @@ function N_0x834344a414c7c85d(p0, p1) end
 function N_0x8881c98a31117998(p0) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x62454A641B41F3C5)
+---[Native Documentation](https://docs.fivem.net/natives/?_0x8CAAB2BD3EA58BD4)
 ---@param p0 any
-function N_0x62454a641b41f3c5(p0) end
+function N_0x8caab2bd3ea58bd4(p0) end
 
 ---```
----NativeDB Introduced: v1180
+---NativeDB Introduced: v757
 ---```
----[Native Documentation](https://docs.fivem.net/natives/?_0x8DCA505A5C196F05)
+---[Native Documentation](https://docs.fivem.net/natives/?_0x8CFF648FBD7330F1)
 ---@param p0 any
----@param p1 any
-function N_0x8dca505a5c196f05(p0, p1) end
+function N_0x8cff648fbd7330f1(p0) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA08FE5E49BDC39DD)
@@ -946,11 +926,18 @@ function N_0x8dca505a5c196f05(p0, p1) end
 function N_0xa08fe5e49bdc39dd(p0, p1, p2) end
 
 ---```
----NativeDB Introduced: v757
+---NativeDB Introduced: v1180
 ---```
----[Native Documentation](https://docs.fivem.net/natives/?_0x8CFF648FBD7330F1)
+---[Native Documentation](https://docs.fivem.net/natives/?_0x8DCA505A5C196F05)
 ---@param p0 any
-function N_0x8cff648fbd7330f1(p0) end
+---@param p1 any
+function N_0x8dca505a5c196f05(p0, p1) end
+
+---```
+---CLEAR_*
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0xA2C1F5E92AFE49ED)
+function N_0xa2c1f5e92afe49ed() end
 
 ---```
 ---NativeDB Introduced: v1180
@@ -959,6 +946,12 @@ function N_0x8cff648fbd7330f1(p0) end
 ---@param p0 any
 ---@param p1 any
 function N_0xaa059c615de9dd03(p0, p1) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xB2D0BDE54F0E8E5A)
+---@param object number
+---@param toggle boolean
+function N_0xb2d0bde54f0e8e5a(object, toggle) end
 
 ---```
 ---NativeDB Introduced: v1734
@@ -978,16 +971,12 @@ function N_0xafe24e4d29249e4a(object, p1, p2, p3) end
 function N_0xa85a21582451e951(doorHash, p1) end
 
 ---```
----CLEAR_*
+---NativeDB Introduced: v1604
 ---```
----[Native Documentation](https://docs.fivem.net/natives/?_0xA2C1F5E92AFE49ED)
-function N_0xa2c1f5e92afe49ed() end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xB2D0BDE54F0E8E5A)
----@param object number
----@param toggle boolean
-function N_0xb2d0bde54f0e8e5a(object, toggle) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0xADF084FB8F075D06)
+---@param p0 number
+---@return boolean
+function N_0xadf084fb8f075d06(p0) end
 
 ---```
 ---NativeDB Introduced: v1290
@@ -998,12 +987,20 @@ function N_0xb2d0bde54f0e8e5a(object, toggle) end
 function N_0xbffe53ae7e67fcdc(p0, p1) end
 
 ---```
+---NativeDB Introduced: v1180
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0xD05A3241B9A86F19)
+---@param p0 any
+---@param p1 any
+function N_0xd05a3241b9a86f19(p0, p1) end
+
+---```
 ---NativeDB Introduced: v1604
 ---```
----[Native Documentation](https://docs.fivem.net/natives/?_0xADF084FB8F075D06)
----@param p0 number
----@return boolean
-function N_0xadf084fb8f075d06(p0) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0xB5B7742424BD4445)
+---@param p0 any
+---@param p1 any
+function N_0xb5b7742424bd4445(p0, p1) end
 
 ---```
 ---Clears all areas created by 0xD4A7A435B3710D05
@@ -1015,27 +1012,16 @@ function N_0xadf084fb8f075d06(p0) end
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xB7C6D80FB371659A)
 function N_0xb7c6d80fb371659a() end
 
----```
----NativeDB Introduced: v1604
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0xB5B7742424BD4445)
----@param p0 any
----@param p1 any
-function N_0xb5b7742424bd4445(p0, p1) end
-
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC6033D32241F6FB5)
 ---@param object number
 ---@param toggle boolean
 function N_0xc6033d32241f6fb5(object, toggle) end
 
----```
----NativeDB Introduced: v1180
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0xD05A3241B9A86F19)
----@param p0 any
----@param p1 any
-function N_0xd05a3241b9a86f19(p0, p1) end
+---See [`N_0x701fda1e82076ba4`](#\_0x701FDA1E82076BA4).
+---[Native Documentation](https://docs.fivem.net/natives/?_0xC7F29CA00F46350E)
+---@param p0 boolean
+function N_0xc7f29ca00f46350e(p0) end
 
 ---```
 ---Adds an area that seems to be related to pickup physics behavior.
@@ -1052,22 +1038,11 @@ function N_0xd05a3241b9a86f19(p0, p1) end
 ---@param radius number
 function N_0xd4a7a435b3710d05(x, y, z, radius) end
 
----See [`N_0x701fda1e82076ba4`](#\_0x701FDA1E82076BA4).
----[Native Documentation](https://docs.fivem.net/natives/?_0xC7F29CA00F46350E)
----@param p0 boolean
-function N_0xc7f29ca00f46350e(p0) end
-
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xDB41D07A45A6D4B7)
 ---@param p0 any
 ---@return any
 function N_0xdb41d07a45a6d4b7(p0) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xEB6F1A9B5510A5D2)
----@param p0 any
----@param p1 boolean
-function N_0xeb6f1a9b5510a5d2(p0, p1) end
 
 ---```
 ---NativeDB Introduced: v1180
@@ -1079,10 +1054,27 @@ function N_0xeb6f1a9b5510a5d2(p0, p1) end
 function N_0xe05f6aeefeb0bb02(p0, p1, p2) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xEB6F1A9B5510A5D2)
+---@param p0 any
+---@param p1 boolean
+function N_0xeb6f1a9b5510a5d2(p0, p1) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xF92099527DB8E2A7)
+---@param p0 any
+---@param p1 any
+function N_0xf92099527db8e2a7(p0, p1) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x58A850EAEE20FAA3)
 ---@param object number
 ---@return boolean
 function PlaceObjectOnGroundProperly(object) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xF9C1681347C8BD15)
+---@param object number
+function N_0xf9c1681347c8bd15(object) end
 
 ---A\*
 ---
@@ -1099,11 +1091,6 @@ function N_0xfdc07c58e8aab715(pickupHash) end
 ---@return boolean
 function PlaceObjectOnGroundProperly_2(object) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xF9C1681347C8BD15)
----@param object number
-function N_0xf9c1681347c8bd15(object) end
-
 ---CDoor and CDoorSystemData still internally allocated (and their associations between doorHash, modelHash, and coordinates).
 ---
 ---Only its NetObj removed and flag `*(v2 + 192) |= 8u` (1604 retail) toggled.
@@ -1112,17 +1099,16 @@ function N_0xf9c1681347c8bd15(object) end
 function RemoveDoorFromSystem(doorHash) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x3288D8ACAECD2AB2)
+---@param pickup number
+function RemovePickup(pickup) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x92AEFB5F6E294023)
 ---@param object number
 ---@param p1 boolean
 ---@param p2 boolean
 function PreventCollectionOfPortablePickup(object, p1, p2) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xF92099527DB8E2A7)
----@param p0 any
----@param p1 any
-function N_0xf92099527db8e2a7(p0, p1) end
 
 ---```
 ---Pickup hashes: pastebin.com/8EuSv2r1  
@@ -1130,6 +1116,11 @@ function N_0xf92099527db8e2a7(p0, p1) end
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x27F9D613092159CF)
 ---@param pickupHash number | string
 function RemoveAllPickupsOfType(pickupHash) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x4A39DB43E47CF3AA)
+---@param object number
+function RemoveObjectHighDetailModel(object) end
 
 ---```
 ---Activate the physics to: "xs_prop_arena_{flipper,wall,bollard,turntable,pit}"
@@ -1143,6 +1134,20 @@ function RemoveAllPickupsOfType(pickupHash) end
 ---@param toggle boolean
 ---@param p2 number
 function SetEnableArenaPropPhysics(entity, toggle, p2) end
+
+---```
+---NativeDB Introduced: v2372
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x834344A414C7C85D)
+---@param p0 any
+---@param p1 any
+function N_0x834344a414c7c85d(p0, p1) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x858EC9FD25DE04AA)
+---@param p0 any
+---@param p1 any
+function N_0x858ec9fd25de04aa(p0, p1) end
 
 ---```
 ---draws circular marker at pos
@@ -1160,21 +1165,6 @@ function SetEnableArenaPropPhysics(entity, toggle, p2) end
 ---@param z number
 ---@param colorIndex number
 function RenderFakePickupGlow(x, y, z, colorIndex) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x4A39DB43E47CF3AA)
----@param object number
-function RemoveObjectHighDetailModel(object) end
-
----```
----NativeDB Introduced: v1604
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0xB20834A7DD3D8896)
----@param entity number
----@param toggle boolean
----@param p2 number
----@param ped number
-function SetEnableArenaPropPhysicsOnPed(entity, toggle, p2, ped) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xF538081986E49E9D)
@@ -1198,11 +1188,15 @@ function SetActivateObjectPhysicsAsSoonAsItIsUnfrozen(object, toggle) end
 ---@param toggle boolean
 function SetCreateWeaponObjectLightSource(object, toggle) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x0BF3B3BD47D79C08)
----@param modelHash number | string
----@param p1 number
-function SetMaxNumPortablePickupsCarriedByPlayer(modelHash, p1) end
+---```
+---NativeDB Introduced: v1604
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0xB20834A7DD3D8896)
+---@param entity number
+---@param toggle boolean
+---@param p2 number
+---@param ped number
+function SetEnableArenaPropPhysicsOnPed(entity, toggle, p2, ped) end
 
 ---```
 ---Maximum amount of pickup models that can be disallowed is 30.
@@ -1213,17 +1207,23 @@ function SetMaxNumPortablePickupsCarriedByPlayer(modelHash, p1) end
 ---@param toggle boolean
 function SetLocalPlayerCanUsePickupsWithThisModel(modelHash, toggle) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x3288D8ACAECD2AB2)
----@param pickup number
-function RemovePickup(pickup) end
-
 ---Overrides a flag on the object which determines if the object should be avoided by a vehicle in task: CTaskVehicleGoToPointWithAvoidanceAutomobile.
 ---Tested on vehicles that were created by the vehicle generators.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x77F33F2CCF64B3AA)
 ---@param object number
 ---@param toggle boolean
 function SetObjectForceVehiclesToAvoid(object, toggle) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x762DB2D380B48D04)
+---@param p0 any
+function N_0x762db2d380b48d04(p0) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x0BF3B3BD47D79C08)
+---@param modelHash number | string
+---@param p1 number
+function SetMaxNumPortablePickupsCarriedByPlayer(modelHash, p1) end
 
 ---Sets color of embedded light source.
 ---Only appears in am_mp_nightclub.c for the nightclub dancefloor.
@@ -1267,29 +1267,10 @@ function SetLocalPlayerCanCollectPortablePickups(p0) end
 function SetObjectPhysicsParams(object, mass, gravityFactor, linearC, linearV, linearV2, angularC, angularV, angularV2, p9, maxAngSpeed, buoyancyFactor) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x8A7391690F5AFD81)
----@param object number
----@param targettable boolean
-function SetObjectTargettable(object, targettable) end
-
----```
----Overrides the climbing/blocking flags of the object, used in the native scripts mostly for "prop_dock_bouy_*"
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x4D89D607CB3DD1D2)
----@param object number
----@param toggle boolean
-function SetObjectAllowLowLodBuoyancy(object, toggle) end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xDF6CA0330F2E737B)
 ---@param object number
 ---@param duration number
 function SetObjectStuntPropDuration(object, duration) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x318516E02DE3ECE2)
----@param multiplier number
-function SetPickupGenerationRangeMultiplier(multiplier) end
 
 ---Sets the intensity of Speed Boost and Slow Down props.
 ---
@@ -1308,6 +1289,19 @@ function SetPickupGenerationRangeMultiplier(multiplier) end
 ---@param object number
 ---@param intensity number
 function SetObjectStuntPropSpeedup(object, intensity) end
+
+---```
+---Overrides the climbing/blocking flags of the object, used in the native scripts mostly for "prop_dock_bouy_*"
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x4D89D607CB3DD1D2)
+---@param object number
+---@param toggle boolean
+function SetObjectAllowLowLodBuoyancy(object, toggle) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x318516E02DE3ECE2)
+---@param multiplier number
+function SetPickupGenerationRangeMultiplier(multiplier) end
 
 ---```
 ---enum ObjectPaintVariants  
@@ -1334,6 +1328,18 @@ function SetObjectStuntPropSpeedup(object, intensity) end
 ---@param object number
 ---@param textureVariation number
 function SetObjectTextureVariation(object, textureVariation) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x3ED2B83AB2E82799)
+---@param p0 any
+---@param p1 any
+function SetPickupHiddenWhenUncollectable(p0, p1) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x8A7391690F5AFD81)
+---@param object number
+---@param targettable boolean
+function SetObjectTargettable(object, targettable) end
 
 ---```
 ---Hardcoded to not work in multiplayer.  
@@ -1362,12 +1368,6 @@ function SetStateOfClosestDoorOfType(type, x, y, z, locked, heading, p6) end
 ---@param pickup number
 ---@param duration number
 function SetPickupRegenerationTime(pickup, duration) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x3ED2B83AB2E82799)
----@param p0 any
----@param p1 any
-function SetPickupHiddenWhenUncollectable(p0, p1) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xF12E33034D887F66)
@@ -1440,15 +1440,15 @@ function SlideObject(object, toX, toY, toZ, speedX, speedY, speedZ, collision) e
 ---@param toggle boolean
 function ToggleUsePickupsForPlayer(player, pickupHash, toggle) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xB252BC036B525623)
----@param object number
-function TrackObjectVisibility(object) end
-
 ---```
 ---NativeDB Introduced: v1365
 ---```
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xABDABF4E1EDECBFA)
 ---@param value boolean
 function SetUnkGlobalBoolRelatedToDamage(value) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xB252BC036B525623)
+---@param object number
+function TrackObjectVisibility(object) end
 

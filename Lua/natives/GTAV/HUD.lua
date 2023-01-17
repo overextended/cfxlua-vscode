@@ -20,14 +20,6 @@
 ---@return number
 function AddBlipForArea(x, y, z, width, height) end
 
----Creates a blip for the specified coordinates. You can use `SET_BLIP_` natives to change the blip.
----[Native Documentation](https://docs.fivem.net/natives/?_0x5A039BB0BCA604B6)
----@param x number
----@param y number
----@param z number
----@return number
-function AddBlipForCoord(x, y, z) end
-
 ---Create a blip that by default is red (enemy), you can use [SET_BLIP_AS_FRIENDLY](#\_0xC6F43D0E) to make it blue (friend).\
 ---Can be used for objects, vehicles and peds.
 ---
@@ -40,6 +32,14 @@ function AddBlipForCoord(x, y, z) end
 ---@return number
 function AddBlipForEntity(entity) end
 
+---Creates a blip for the specified coordinates. You can use `SET_BLIP_` natives to change the blip.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x5A039BB0BCA604B6)
+---@param x number
+---@param y number
+---@param z number
+---@return number
+function AddBlipForCoord(x, y, z) end
+
 ---Create a blip with a radius for the specified coordinates (it doesnt create the blip sprite, so you need to use [AddBlipCoords](#\_0xC6F43D0E))
 ---
 ---Example image:
@@ -51,6 +51,412 @@ function AddBlipForEntity(entity) end
 ---@param radius number
 ---@return number
 function AddBlipForRadius(posX, posY, posZ, radius) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xBE339365C863BD36)
+---@param pickup number
+---@return number
+function AddBlipForPickup(pickup) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x60296AF4BA14ABC5)
+---@param p0 boolean
+function AddNextMessageToPreviousBriefs(p0) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x311438A071DD9B1A)
+---@param x number
+---@param y number
+---@param z number
+function AddPointToGpsCustomRoute(x, y, z) end
+
+---Adds a float to a text component placeholder, replacing `~1~` in the current text command's text label.
+---
+---![Example output](https://i.imgur.com/jvuQ0II.png)
+---[Native Documentation](https://docs.fivem.net/natives/?_0xE7DCB5B874BCD96E)
+---@param value number
+---@param decimalPlaces number
+function AddTextComponentFloat(value, decimalPlaces) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xA905192A6781C41B)
+---@param x number
+---@param y number
+---@param z number
+function AddPointToGpsMultiRoute(x, y, z) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x03B504CF259931BC)
+---@param value number
+function AddTextComponentInteger(value) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x0E4C749FF9DE9CC4)
+---@param value number
+---@param commaSeparated boolean
+function AddTextComponentFormattedInteger(value, commaSeparated) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x5F68520888E69014)
+---@param string string
+function AddTextComponentSubstringKeyboardDisplay(string) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x80EAD8E2E1D5D52E)
+---@param blip number
+function AddTextComponentSubstringBlipName(blip) end
+
+---```
+---p1 was always -1
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x761B77454205A61D)
+---@param p0 string
+---@param p1 number
+function AddTextComponentSubstringPhoneNumber(p0, p1) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xC63CD5D2920ACBE7)
+---@param labelName string
+function AddTextComponentSubstringTextLabel(labelName) end
+
+---```
+---This native (along with 0x5F68520888E69014 and 0x6C188BE134E074AA) do not actually filter anything. They simply add the provided text (as of 944)  
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x94CF4AC034C9C986)
+---@param website string
+function AddTextComponentSubstringWebsite(website) end
+
+---```
+---It adds the localized text of the specified GXT entry name. Eg. if the argument is GET_HASH_KEY("ES_HELP"), adds "Continue". Just uses a text labels hash key  
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x17299B63C7683A2B)
+---@param gxtEntryHash number | string
+function AddTextComponentSubstringTextLabelHashKey(gxtEntryHash) end
+
+---Allows opening the pause menu this frame, when the player is dead.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xCC3FDDED67BCFC63)
+function AllowPauseMenuWhenDeadThisFrame() end
+
+---```
+---clears a print text command with this text  
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0xE124FA80A759019C)
+---@param text string
+function BeginTextCommandClearPrint(text) end
+
+---```
+---Adds a timer (e.g. "00:00:00:000"). The appearance of the timer depends on the flags, which needs more research.  
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x1115F16B8AB9E8BF)
+---@param timestamp number
+---@param flags number
+function AddTextComponentSubstringTime(timestamp, flags) end
+
+---```
+---The following were found in the decompiled script files:  
+---STRING, TWOSTRINGS, NUMBER, PERCENTAGE, FO_TWO_NUM, ESMINDOLLA, ESDOLLA, MTPHPER_XPNO, AHD_DIST, CMOD_STAT_0, CMOD_STAT_1, CMOD_STAT_2, CMOD_STAT_3, DFLT_MNU_OPT, F3A_TRAFDEST, ES_HELP_SOC3  
+---ESDOLLA   
+---ESMINDOLLA - cash (negative)  
+---Used to be known as _SET_TEXT_ENTRY  
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x25FBB336DF1804CB)
+---@param text string
+function BeginTextCommandDisplayText(text) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x60734CC207C9833C)
+---@param toggle boolean
+function AllowSonarBlips(toggle) end
+
+---```
+---Initializes the text entry for the the text next to a loading prompt. All natives for for building UI texts can be used here  
+---BEGIN_TEXT_COMMAND_PRINT  
+---e.g  
+---void StartLoadingMessage(char *text, int spinnerType = 3)  
+---	{  
+---_SET_LOADING_PROMPT_TEXT_ENTRY("STRING");  
+---ADD_TEXT_COMPONENT_SUBSTRING_PLAYER_NAME(text);  
+---_SHOW_LOADING_PROMPT(spinnerType);  
+---	}  
+---/*OR*/  
+---	void ShowLoadingMessage(char *text, int spinnerType = 3, int timeMs = 10000)  
+---	{  
+---_SET_LOADING_PROMPT_TEXT_ENTRY("STRING");  
+---ADD_TEXT_COMPONENT_SUBSTRING_PLAYER_NAME(text);  
+---_SHOW_LOADING_PROMPT(spinnerType);  
+---WAIT(timeMs);  
+---_REMOVE_LOADING_PROMPT();  
+---	}  
+---These are some localized strings used in the loading spinner.  
+---"PM_WAIT"                   = Please Wait  
+---"CELEB_WPLYRS"              = Waiting For Players.  
+---"CELL_SPINNER2"             = Scanning storage.  
+---"ERROR_CHECKYACHTNAME" = Registering your yacht's name. Please wait.  
+---"ERROR_CHECKPROFANITY"   = Checking your text for profanity. Please wait.  
+---"FM_COR_AUTOD"                        = Just spinner no text  
+---"FM_IHELP_WAT2"                        = Waiting for other players  
+---"FM_JIP_WAITO"                            = Game options are being set  
+---"FMMC_DOWNLOAD"                    = Downloading  
+---"FMMC_PLYLOAD"                         = Loading  
+---"FMMC_STARTTRAN"                    = Launching session  
+---"HUD_QUITTING"                           =  Quiting session  
+---"KILL_STRIP_IDM"                         = Waiting for to accept  
+---"MP_SPINLOADING"                      = Loading  
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0xABA17D7CE615ADBF)
+---@param string string
+function BeginTextCommandBusyspinnerOn(string) end
+
+---```
+---BEGIN_TEXT_COMMAND_*
+---Example:
+---_BEGIN_TEXT_COMMAND_GET_WIDTH("NUMBER");
+---ADD_TEXT_COMPONENT_FLOAT(69.420f, 2);
+---float width = _END_TEXT_COMMAND_GET_WIDTH(1);
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x54CE8AC98E120CAB)
+---@param text string
+function BeginTextCommandGetWidth(text) end
+
+---```
+---nothin doin.   
+---BOOL Message(char* text)  
+---	{  
+---BEGIN_TEXT_COMMAND_IS_MESSAGE_DISPLAYED("STRING");  
+---ADD_TEXT_COMPONENT_SUBSTRING_PLAYER_NAME(text);  
+---return END_TEXT_COMMAND_IS_MESSAGE_DISPLAYED();  
+---	}  
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x853648FD1063A213)
+---@param text string
+function BeginTextCommandIsMessageDisplayed(text) end
+
+---```
+---BOOL IsContextActive(char *ctx)  
+---{  
+---	BEGIN_TEXT_COMMAND_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED(ctx);  
+---	return END_TEXT_COMMAND_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED(0);  
+---}  
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x0A24DA3A41B718F5)
+---@param labelName string
+function BeginTextCommandIsThisHelpMessageBeingDisplayed(labelName) end
+
+---```
+---get's line count  
+---int GetLineCount(char *text, float x, float y)  
+---	{  
+---_BEGIN_TEXT_COMMAND_LINE_COUNT("STRING");  
+---                ADD_TEXT_COMPONENT_SUBSTRING_PLAYER_NAME(text);  
+---return _END_TEXT_COMMAND_GET_LINE_COUNT(x, y);  
+---	}  
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x521FB041D93DD0E4)
+---@param entry string
+function BeginTextCommandLineCount(entry) end
+
+---```
+---Used to be known as _SET_TEXT_COMPONENT_FORMAT  
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x8509B634FBE7DA11)
+---@param inputType string
+function BeginTextCommandDisplayHelp(inputType) end
+
+---Adds an arbitrary string as a text component placeholder, replacing `~a~` in the current text command's text label.
+---
+---See the documentation on text formatting for more information.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x6C188BE134E074AA)
+---@param text string
+function AddTextComponentSubstringPlayerName(text) end
+
+---```
+---Used to be known as _SET_TEXT_ENTRY_2  
+---void ShowSubtitle(char *text)  
+---{  
+---	BEGIN_TEXT_COMMAND_PRINT("STRING");  
+---	ADD_TEXT_COMPONENT_SUBSTRING_PLAYER_NAME(text);  
+---	END_TEXT_COMMAND_PRINT(2000, 1);  
+---}  
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0xB87A37EEB7FAA67D)
+---@param GxtEntry string
+function BeginTextCommandPrint(GxtEntry) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x8F9EE5687F8EECCD)
+---@param gxtEntry string
+function BeginTextCommandOverrideButtonText(gxtEntry) end
+
+---Starts a text command to change the name of a blip displayed in the pause menu.
+---
+---This should be paired with [`END_TEXT_COMMAND_SET_BLIP_NAME`](#\_0xBC38B49BCB83BC9B), once adding all required text components.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xF9113A30DE5C6670)
+---@param textLabel string
+function BeginTextCommandSetBlipName(textLabel) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xB2A592B04648A9CB)
+---@return boolean
+function BusyspinnerIsDisplaying() end
+
+---```
+---Removes the loading prompt at the bottom right of the screen.
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x10D373323E5B9C0D)
+function BusyspinnerOff() end
+
+---Declares the entry type of a notification, for example "STRING".
+---int ShowNotification(char \*text)
+---{
+---BEGIN_TEXT_COMMAND_THEFEED_POST("STRING");
+---ADD_TEXT_COMPONENT_SUBSTRING_PLAYER_NAME(text);
+---return \_DRAW_NOTIFICATION(1, 1);
+---}
+---[Native Documentation](https://docs.fivem.net/natives/?_0x202709F4C58A0424)
+---@param text string
+function BeginTextCommandThefeedPost(text) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x6178F68A87A4D3A0)
+function ClearAllHelpMessages() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x2A179DF17CCF04CD)
+---@param p0 number
+---@param p1 boolean
+function ClearAdditionalText(p0, p1) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x7792424AA0EAC32E)
+function ClearDynamicPauseMenuErrorMessage() end
+
+---Clears all active blip routes that have been set with [`SetBlipRoute`](#\_0x3E160C90).
+---[Native Documentation](https://docs.fivem.net/natives/?_0xD12882D3FF82BF11)
+function ClearAllBlipRoutes() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x50085246ABD3FEFA)
+---@param hudIndex number
+---@param p1 boolean
+function ClearFloatingHelp(hudIndex, p1) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x9D292F73ADBD9313)
+function ClearBrief() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xD422FCC5F239A915)
+---@return boolean
+function BusyspinnerIsOn() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xE6DE0561D9232A64)
+function ClearGpsCustomRoute() end
+
+---```
+---Clears the GPS flags. Only the script that originally called SET_GPS_FLAGS can clear them.  
+---Doesn't seem like the flags are actually read by the game at all.  
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x21986729D6A3A830)
+function ClearGpsFlags() end
+
+---Does the same as [`SET_GPS_MULTI_ROUTE_RENDER(false)`](https://runtime.fivem.net/doc/reference.html#\_0x3DDA37128DD1ACA8)
+---[Native Documentation](https://docs.fivem.net/natives/?_0x67EEDEA1B9BAFD94)
+function ClearGpsMultiRoute() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xFF4FB7C8CDFA3DA7)
+function ClearGpsPlayerWaypoint() end
+
+---```
+---Does the same as SET_RACE_TRACK_RENDER(false);
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x7AA5B4CE533C858B)
+function ClearGpsRaceTrack() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xCC33FA791322B9D9)
+function ClearPrints() end
+
+---```
+---Displays cash change notifications on HUD.  
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x0772DF77852C2E30)
+---@param cash number
+---@param bank number
+function ChangeFakeMpCash(cash, bank) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x2708FC083123F9FF)
+function ClearRaceGalleryBlips() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x8DFCED7A656F8802)
+---@param toggle boolean
+function ClearHelp(toggle) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x2CEA2839313C09AC)
+function ClearSmallPrints() end
+
+---```
+---p0: found arguments in the b617d scripts: pastebin.com/X5akCN7z  
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0xCF708001E1E536DD)
+---@param p0 string
+function ClearThisPrint(p0) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x23D69E0465570028)
+---@param p0 string
+function BeginTextCommandObjective(p0) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x1AC8F4AD40E22127)
+function CloseMultiplayerChat() end
+
+---Creates a gamer tag for the specified local player ID, automatically attached to the player's current ped.
+---The created gamer tag will have the same ID as the player. You can use [IS_MP_GAMER_TAG_ACTIVE](#\_0x4E929E7A5796FD26) to check if a gamer tag already exists for a player.
+---After the gamer tag is created, all components will be set as invisible. Use [SET_MP_GAMER_TAG_VISIBILITY](#\_0x63BB75ABEDC1F6A0) to change the visibility of individual components or [\_SET_MP_GAMER_TAG_VISIBILITY_ALL](#\_0xEE76FF7E6A0166B0) to set all of them at once.
+---
+---To create a gamer tag for a ped that is not a player, see [CREATE_FAKE_MP_GAMER_TAG](#\_0xBFEFE3321A3F5015).
+---[Native Documentation](https://docs.fivem.net/natives/?_0x6DD05E9D83EFA4C9)
+---@param player number
+---@param username string
+---@param crewIsPrivate boolean
+---@param crewIsRockstar boolean
+---@param crewName string
+---@param crewRank number
+---@param crewR number
+---@param crewG number
+---@param crewB number
+function CreateMpGamerTagWithCrewColor(player, username, crewIsPrivate, crewIsRockstar, crewName, crewRank, crewR, crewG, crewB) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x6D3465A73092F0E6)
+function DisableFrontendThisFrame() end
+
+---**This native does absolutely nothing, just a nullsub**
+---[Native Documentation](https://docs.fivem.net/natives/?_0xB57D8DD645CFA2CF)
+function ClearReminderMessage() end
+
+---As per the name, this native creates a "fake" gamer tag that is attached to a specific ped.
+---Unlike "real" gamer tags, you cannot set the crew colour of these gamer tags.
+---
+---To create gamer tags for actual players and for more gamer tag information, see [CREATE_MP_GAMER_TAG_WITH_CREW_COLOR](#\_0x6DD05E9D83EFA4C9).
+---[Native Documentation](https://docs.fivem.net/natives/?_0xBFEFE3321A3F5015)
+---@param ped number
+---@param username string
+---@param crewIsPrivate boolean
+---@param crewIsRockstar boolean
+---@param crewName string
+---@param crewRank number
+---@return number
+function CreateFakeMpGamerTag(ped, username, crewIsPrivate, crewIsRockstar, crewName, crewRank) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xD2B32BE3FC1626C6)
+function CloseSocialClubMenu() end
 
 ---Does stuff like this:\
 ---gyazo.com/7fcb78ea3520e3dbc5b2c0c0f3712617\
@@ -97,419 +503,14 @@ function AddBlipForRadius(posX, posY, posZ, radius) end
 ---@param component number
 function ActivateFrontendMenu(menuhash, togglePause, component) end
 
----Adds a float to a text component placeholder, replacing `~1~` in the current text command's text label.
----
----![Example output](https://i.imgur.com/jvuQ0II.png)
----[Native Documentation](https://docs.fivem.net/natives/?_0xE7DCB5B874BCD96E)
----@param value number
----@param decimalPlaces number
-function AddTextComponentFloat(value, decimalPlaces) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xBE339365C863BD36)
----@param pickup number
----@return number
-function AddBlipForPickup(pickup) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x311438A071DD9B1A)
----@param x number
----@param y number
----@param z number
-function AddPointToGpsCustomRoute(x, y, z) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x03B504CF259931BC)
----@param value number
-function AddTextComponentInteger(value) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xA905192A6781C41B)
----@param x number
----@param y number
----@param z number
-function AddPointToGpsMultiRoute(x, y, z) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x0E4C749FF9DE9CC4)
----@param value number
----@param commaSeparated boolean
-function AddTextComponentFormattedInteger(value, commaSeparated) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x80EAD8E2E1D5D52E)
----@param blip number
-function AddTextComponentSubstringBlipName(blip) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x5F68520888E69014)
----@param string string
-function AddTextComponentSubstringKeyboardDisplay(string) end
-
----Adds an arbitrary string as a text component placeholder, replacing `~a~` in the current text command's text label.
----
----See the documentation on text formatting for more information.
----[Native Documentation](https://docs.fivem.net/natives/?_0x6C188BE134E074AA)
----@param text string
-function AddTextComponentSubstringPlayerName(text) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x60296AF4BA14ABC5)
----@param p0 boolean
-function AddNextMessageToPreviousBriefs(p0) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xC63CD5D2920ACBE7)
----@param labelName string
-function AddTextComponentSubstringTextLabel(labelName) end
-
----```
----This native (along with 0x5F68520888E69014 and 0x6C188BE134E074AA) do not actually filter anything. They simply add the provided text (as of 944)  
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x94CF4AC034C9C986)
----@param website string
-function AddTextComponentSubstringWebsite(website) end
-
----```
----It adds the localized text of the specified GXT entry name. Eg. if the argument is GET_HASH_KEY("ES_HELP"), adds "Continue". Just uses a text labels hash key  
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x17299B63C7683A2B)
----@param gxtEntryHash number | string
-function AddTextComponentSubstringTextLabelHashKey(gxtEntryHash) end
-
----```
----p1 was always -1
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x761B77454205A61D)
----@param p0 string
----@param p1 number
-function AddTextComponentSubstringPhoneNumber(p0, p1) end
-
----```
----Adds a timer (e.g. "00:00:00:000"). The appearance of the timer depends on the flags, which needs more research.  
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x1115F16B8AB9E8BF)
----@param timestamp number
----@param flags number
-function AddTextComponentSubstringTime(timestamp, flags) end
-
----```
----clears a print text command with this text  
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0xE124FA80A759019C)
----@param text string
-function BeginTextCommandClearPrint(text) end
-
----```
----The following were found in the decompiled script files:  
----STRING, TWOSTRINGS, NUMBER, PERCENTAGE, FO_TWO_NUM, ESMINDOLLA, ESDOLLA, MTPHPER_XPNO, AHD_DIST, CMOD_STAT_0, CMOD_STAT_1, CMOD_STAT_2, CMOD_STAT_3, DFLT_MNU_OPT, F3A_TRAFDEST, ES_HELP_SOC3  
----ESDOLLA   
----ESMINDOLLA - cash (negative)  
----Used to be known as _SET_TEXT_ENTRY  
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x25FBB336DF1804CB)
----@param text string
-function BeginTextCommandDisplayText(text) end
-
----```
----Initializes the text entry for the the text next to a loading prompt. All natives for for building UI texts can be used here  
----BEGIN_TEXT_COMMAND_PRINT  
----e.g  
----void StartLoadingMessage(char *text, int spinnerType = 3)  
----	{  
----_SET_LOADING_PROMPT_TEXT_ENTRY("STRING");  
----ADD_TEXT_COMPONENT_SUBSTRING_PLAYER_NAME(text);  
----_SHOW_LOADING_PROMPT(spinnerType);  
----	}  
----/*OR*/  
----	void ShowLoadingMessage(char *text, int spinnerType = 3, int timeMs = 10000)  
----	{  
----_SET_LOADING_PROMPT_TEXT_ENTRY("STRING");  
----ADD_TEXT_COMPONENT_SUBSTRING_PLAYER_NAME(text);  
----_SHOW_LOADING_PROMPT(spinnerType);  
----WAIT(timeMs);  
----_REMOVE_LOADING_PROMPT();  
----	}  
----These are some localized strings used in the loading spinner.  
----"PM_WAIT"                   = Please Wait  
----"CELEB_WPLYRS"              = Waiting For Players.  
----"CELL_SPINNER2"             = Scanning storage.  
----"ERROR_CHECKYACHTNAME" = Registering your yacht's name. Please wait.  
----"ERROR_CHECKPROFANITY"   = Checking your text for profanity. Please wait.  
----"FM_COR_AUTOD"                        = Just spinner no text  
----"FM_IHELP_WAT2"                        = Waiting for other players  
----"FM_JIP_WAITO"                            = Game options are being set  
----"FMMC_DOWNLOAD"                    = Downloading  
----"FMMC_PLYLOAD"                         = Loading  
----"FMMC_STARTTRAN"                    = Launching session  
----"HUD_QUITTING"                           =  Quiting session  
----"KILL_STRIP_IDM"                         = Waiting for to accept  
----"MP_SPINLOADING"                      = Loading  
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0xABA17D7CE615ADBF)
----@param string string
-function BeginTextCommandBusyspinnerOn(string) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x60734CC207C9833C)
----@param toggle boolean
-function AllowSonarBlips(toggle) end
-
----```
----Used to be known as _SET_TEXT_COMPONENT_FORMAT  
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x8509B634FBE7DA11)
----@param inputType string
-function BeginTextCommandDisplayHelp(inputType) end
-
----```
----BEGIN_TEXT_COMMAND_*
----Example:
----_BEGIN_TEXT_COMMAND_GET_WIDTH("NUMBER");
----ADD_TEXT_COMPONENT_FLOAT(69.420f, 2);
----float width = _END_TEXT_COMMAND_GET_WIDTH(1);
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x54CE8AC98E120CAB)
----@param text string
-function BeginTextCommandGetWidth(text) end
-
----```
----nothin doin.   
----BOOL Message(char* text)  
----	{  
----BEGIN_TEXT_COMMAND_IS_MESSAGE_DISPLAYED("STRING");  
----ADD_TEXT_COMPONENT_SUBSTRING_PLAYER_NAME(text);  
----return END_TEXT_COMMAND_IS_MESSAGE_DISPLAYED();  
----	}  
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x853648FD1063A213)
----@param text string
-function BeginTextCommandIsMessageDisplayed(text) end
-
----```
----get's line count  
----int GetLineCount(char *text, float x, float y)  
----	{  
----_BEGIN_TEXT_COMMAND_LINE_COUNT("STRING");  
----                ADD_TEXT_COMPONENT_SUBSTRING_PLAYER_NAME(text);  
----return _END_TEXT_COMMAND_GET_LINE_COUNT(x, y);  
----	}  
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x521FB041D93DD0E4)
----@param entry string
-function BeginTextCommandLineCount(entry) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x23D69E0465570028)
----@param p0 string
-function BeginTextCommandObjective(p0) end
-
----```
----BOOL IsContextActive(char *ctx)  
----{  
----	BEGIN_TEXT_COMMAND_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED(ctx);  
----	return END_TEXT_COMMAND_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED(0);  
----}  
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x0A24DA3A41B718F5)
----@param labelName string
-function BeginTextCommandIsThisHelpMessageBeingDisplayed(labelName) end
-
----```
----Used to be known as _SET_TEXT_ENTRY_2  
----void ShowSubtitle(char *text)  
----{  
----	BEGIN_TEXT_COMMAND_PRINT("STRING");  
----	ADD_TEXT_COMPONENT_SUBSTRING_PLAYER_NAME(text);  
----	END_TEXT_COMMAND_PRINT(2000, 1);  
----}  
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0xB87A37EEB7FAA67D)
----@param GxtEntry string
-function BeginTextCommandPrint(GxtEntry) end
-
----Starts a text command to change the name of a blip displayed in the pause menu.
----
----This should be paired with [`END_TEXT_COMMAND_SET_BLIP_NAME`](#\_0xBC38B49BCB83BC9B), once adding all required text components.
----[Native Documentation](https://docs.fivem.net/natives/?_0xF9113A30DE5C6670)
----@param textLabel string
-function BeginTextCommandSetBlipName(textLabel) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x8F9EE5687F8EECCD)
----@param gxtEntry string
-function BeginTextCommandOverrideButtonText(gxtEntry) end
-
----Declares the entry type of a notification, for example "STRING".
----int ShowNotification(char \*text)
----{
----BEGIN_TEXT_COMMAND_THEFEED_POST("STRING");
----ADD_TEXT_COMPONENT_SUBSTRING_PLAYER_NAME(text);
----return \_DRAW_NOTIFICATION(1, 1);
----}
----[Native Documentation](https://docs.fivem.net/natives/?_0x202709F4C58A0424)
----@param text string
-function BeginTextCommandThefeedPost(text) end
-
----Allows opening the pause menu this frame, when the player is dead.
----[Native Documentation](https://docs.fivem.net/natives/?_0xCC3FDDED67BCFC63)
-function AllowPauseMenuWhenDeadThisFrame() end
-
----```
----Displays cash change notifications on HUD.  
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x0772DF77852C2E30)
----@param cash number
----@param bank number
-function ChangeFakeMpCash(cash, bank) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xD422FCC5F239A915)
----@return boolean
-function BusyspinnerIsOn() end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xB2A592B04648A9CB)
----@return boolean
-function BusyspinnerIsDisplaying() end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x7792424AA0EAC32E)
-function ClearDynamicPauseMenuErrorMessage() end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x2A179DF17CCF04CD)
----@param p0 number
----@param p1 boolean
-function ClearAdditionalText(p0, p1) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x6178F68A87A4D3A0)
-function ClearAllHelpMessages() end
-
----Clears all active blip routes that have been set with [`SetBlipRoute`](#\_0x3E160C90).
----[Native Documentation](https://docs.fivem.net/natives/?_0xD12882D3FF82BF11)
-function ClearAllBlipRoutes() end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x50085246ABD3FEFA)
----@param hudIndex number
----@param p1 boolean
-function ClearFloatingHelp(hudIndex, p1) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xE6DE0561D9232A64)
-function ClearGpsCustomRoute() end
-
----```
----Removes the loading prompt at the bottom right of the screen.
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x10D373323E5B9C0D)
-function BusyspinnerOff() end
-
----Does the same as [`SET_GPS_MULTI_ROUTE_RENDER(false)`](https://runtime.fivem.net/doc/reference.html#\_0x3DDA37128DD1ACA8)
----[Native Documentation](https://docs.fivem.net/natives/?_0x67EEDEA1B9BAFD94)
-function ClearGpsMultiRoute() end
-
----```
----Clears the GPS flags. Only the script that originally called SET_GPS_FLAGS can clear them.  
----Doesn't seem like the flags are actually read by the game at all.  
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x21986729D6A3A830)
-function ClearGpsFlags() end
-
----```
----Does the same as SET_RACE_TRACK_RENDER(false);
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x7AA5B4CE533C858B)
-function ClearGpsRaceTrack() end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x2708FC083123F9FF)
-function ClearRaceGalleryBlips() end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x9D292F73ADBD9313)
-function ClearBrief() end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xFF4FB7C8CDFA3DA7)
-function ClearGpsPlayerWaypoint() end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x8DFCED7A656F8802)
----@param toggle boolean
-function ClearHelp(toggle) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x5E62BE5DC58E9E06)
-function ClearPedInPauseMenu() end
-
----**This native does absolutely nothing, just a nullsub**
----[Native Documentation](https://docs.fivem.net/natives/?_0xB57D8DD645CFA2CF)
-function ClearReminderMessage() end
-
----```
----p0: found arguments in the b617d scripts: pastebin.com/X5akCN7z  
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0xCF708001E1E536DD)
----@param p0 string
-function ClearThisPrint(p0) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xD2B32BE3FC1626C6)
-function CloseSocialClubMenu() end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xCC33FA791322B9D9)
-function ClearPrints() end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x2CEA2839313C09AC)
-function ClearSmallPrints() end
-
----Creates a gamer tag for the specified local player ID, automatically attached to the player's current ped.
----The created gamer tag will have the same ID as the player. You can use [IS_MP_GAMER_TAG_ACTIVE](#\_0x4E929E7A5796FD26) to check if a gamer tag already exists for a player.
----After the gamer tag is created, all components will be set as invisible. Use [SET_MP_GAMER_TAG_VISIBILITY](#\_0x63BB75ABEDC1F6A0) to change the visibility of individual components or [\_SET_MP_GAMER_TAG_VISIBILITY_ALL](#\_0xEE76FF7E6A0166B0) to set all of them at once.
----
----To create a gamer tag for a ped that is not a player, see [CREATE_FAKE_MP_GAMER_TAG](#\_0xBFEFE3321A3F5015).
----[Native Documentation](https://docs.fivem.net/natives/?_0x6DD05E9D83EFA4C9)
----@param player number
----@param username string
----@param crewIsPrivate boolean
----@param crewIsRockstar boolean
----@param crewName string
----@param crewRank number
----@param crewR number
----@param crewG number
----@param crewB number
-function CreateMpGamerTagWithCrewColor(player, username, crewIsPrivate, crewIsRockstar, crewName, crewRank, crewR, crewG, crewB) end
-
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xD8E694757BCEA8E9)
 function DeleteWaypoint() end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x1AC8F4AD40E22127)
-function CloseMultiplayerChat() end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x6D3465A73092F0E6)
-function DisableFrontendThisFrame() end
-
----As per the name, this native creates a "fake" gamer tag that is attached to a specific ped.
----Unlike "real" gamer tags, you cannot set the crew colour of these gamer tags.
----
----To create gamer tags for actual players and for more gamer tag information, see [CREATE_MP_GAMER_TAG_WITH_CREW_COLOR](#\_0x6DD05E9D83EFA4C9).
----[Native Documentation](https://docs.fivem.net/natives/?_0xBFEFE3321A3F5015)
----@param ped number
----@param username string
----@param crewIsPrivate boolean
----@param crewIsRockstar boolean
----@param crewName string
----@param crewRank number
----@return number
-function CreateFakeMpGamerTag(ped, username, crewIsPrivate, crewIsRockstar, crewName, crewRank) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0xA5E78BA2B1331C55)
+---@param display boolean
+function DisplayAmmoThisFrame(display) end
 
 ---If true is passed, the player won't be able to open the multiplayer chat
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x1DB21A44B09E8BA3)
@@ -543,9 +544,9 @@ function DisplayCash(display) end
 function DisplayHelpTextThisFrame(message, p1) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xA5E78BA2B1331C55)
----@param display boolean
-function DisplayAmmoThisFrame(display) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x276B6CE369C33678)
+---@param toggle boolean
+function DisplayAreaName(toggle) end
 
 ---```
 ---If Hud should be displayed  
@@ -553,11 +554,6 @@ function DisplayAmmoThisFrame(display) end
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA6294919E56FF02A)
 ---@param toggle boolean
 function DisplayHud(toggle) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x276B6CE369C33678)
----@param toggle boolean
-function DisplayAreaName(toggle) end
 
 ---Toggles whether or not name labels are shown on the expanded minimap next to player blips, like in GTA:O.
 ---Doesn't need to be called every frame.
@@ -568,18 +564,22 @@ function DisplayAreaName(toggle) end
 function DisplayPlayerNameTagsOnBlips(toggle) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xDD2238F57B977751)
----@param blip number
----@return boolean
-function DoesBlipHaveGpsRoute(blip) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x402F9ED62087E898)
+function DisplayHudWhenPausedThisFrame() end
 
 ---Enables drawing some hud components, such as help labels, this frame, when the player is dead.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x7669F9E39DC17063)
 function DisplayHudWhenDeadThisFrame() end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x402F9ED62087E898)
-function DisplayHudWhenPausedThisFrame() end
+---[Native Documentation](https://docs.fivem.net/natives/?_0xDD2238F57B977751)
+---@param blip number
+---@return boolean
+function DoesBlipHaveGpsRoute(blip) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x5E62BE5DC58E9E06)
+function ClearPedInPauseMenu() end
 
 ---```
 ---If Minimap / Radar should be displayed.
@@ -593,18 +593,6 @@ function DisplayRadar(toggle) end
 ---@param blip number
 ---@return boolean
 function DoesBlipExist(blip) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x1C7302E725259789)
----@param gxt string
----@return boolean
-function DoesTextBlockExist(gxt) end
-
----```
----When calling this, the current frame will have the players "arrow icon" be focused on the dead center of the radar.
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x6D14BFDC33B34F55)
-function DontTiltMinimapThisFrame() end
 
 ---```
 ---Returns whether the ped's blip is controlled by the game.   
@@ -624,29 +612,10 @@ function DoesPedHaveAiBlip(ped) end
 function DoesTextLabelExist(gxt) end
 
 ---```
----enum eBusySpinnerType
----{
----	BUSY_SPINNER_LEFT,
----	BUSY_SPINNER_LEFT_2,
----	BUSY_SPINNER_LEFT_3,
----	BUSY_SPINNER_SAVE,
----	BUSY_SPINNER_RIGHT,
----};
+---When calling this, the current frame will have the players "arrow icon" be focused on the dead center of the radar.
 ---```
----[Native Documentation](https://docs.fivem.net/natives/?_0xBD12F8228410D9B4)
----@param busySpinnerType number
-function EndTextCommandBusyspinnerOn(busySpinnerType) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x8A9BA1AB3E237613)
----@return boolean
-function EndTextCommandIsMessageDisplayed() end
-
----```
----Displays the crosshair for this frame.  
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x73115226F4814E62)
-function DisplaySniperScopeThisFrame() end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x6D14BFDC33B34F55)
+function DontTiltMinimapThisFrame() end
 
 ---```
 ---After applying the properties to the text (See UI::SET_TEXT_), this will draw the text in the applied position. Also 0.0f < x, y < 1.0f, percentage of the axis.  
@@ -661,10 +630,25 @@ function DisplaySniperScopeThisFrame() end
 function EndTextCommandDisplayText(x, y) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x10BDDBFC529428DD)
----@param p0 number
+---[Native Documentation](https://docs.fivem.net/natives/?_0x1C7302E725259789)
+---@param gxt string
 ---@return boolean
-function EndTextCommandIsThisHelpMessageBeingDisplayed(p0) end
+function DoesTextBlockExist(gxt) end
+
+---```
+---Displays the crosshair for this frame.  
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x73115226F4814E62)
+function DisplaySniperScopeThisFrame() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xFCC75460ABA29378)
+function EndTextCommandClearPrint() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x8A9BA1AB3E237613)
+---@return boolean
+function EndTextCommandIsMessageDisplayed() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x238FFE5C7B0498A6)
@@ -685,6 +669,12 @@ function EndTextCommandDisplayHelp(shape, loop, beep, duration) end
 ---@return number
 function EndTextCommandGetWidth(p0) end
 
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x10BDDBFC529428DD)
+---@param p0 number
+---@return boolean
+function EndTextCommandIsThisHelpMessageBeingDisplayed(p0) end
+
 ---```
 ---END_TEXT_COMMAND_*
 ---Determines how many lines the text string will use when drawn on screen.
@@ -696,14 +686,19 @@ function EndTextCommandGetWidth(p0) end
 ---@return number
 function EndTextCommandLineCount(x, y) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xFCC75460ABA29378)
-function EndTextCommandClearPrint() end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xA86911979638106F)
----@param buttonIndex number
-function EndTextCommandOverrideButtonText(buttonIndex) end
+---```
+---enum eBusySpinnerType
+---{
+---	BUSY_SPINNER_LEFT,
+---	BUSY_SPINNER_LEFT_2,
+---	BUSY_SPINNER_LEFT_3,
+---	BUSY_SPINNER_SAVE,
+---	BUSY_SPINNER_RIGHT,
+---};
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0xBD12F8228410D9B4)
+---@param busySpinnerType number
+function EndTextCommandBusyspinnerOn(busySpinnerType) end
 
 ---```
 ---Draws the subtitle at middle center of the screen.  
@@ -715,6 +710,17 @@ function EndTextCommandOverrideButtonText(buttonIndex) end
 ---@param duration number
 ---@param drawImmediately boolean
 function EndTextCommandPrint(duration, drawImmediately) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xA86911979638106F)
+---@param buttonIndex number
+function EndTextCommandOverrideButtonText(buttonIndex) end
+
+---Finalizes a text command started with [`BEGIN_TEXT_COMMAND_SET_BLIP_NAME`](#\_0xF9113A30DE5C6670), setting the name
+---of the specified blip.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xBC38B49BCB83BC9B)
+---@param blip number
+function EndTextCommandSetBlipName(blip) end
 
 ---Shows an "award" notification above the minimap, lua example result:
 ---
@@ -735,22 +741,6 @@ function EndTextCommandPrint(duration, drawImmediately) end
 ---@param titleLabel string
 ---@return number
 function EndTextCommandThefeedPostAward(textureDict, textureName, rpBonus, colorOverlay, titleLabel) end
-
----Finalizes a text command started with [`BEGIN_TEXT_COMMAND_SET_BLIP_NAME`](#\_0xF9113A30DE5C6670), setting the name
----of the specified blip.
----[Native Documentation](https://docs.fivem.net/natives/?_0xBC38B49BCB83BC9B)
----@param blip number
-function EndTextCommandSetBlipName(blip) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x8EFCCF6EC66D85E4)
----@param chTitle string
----@param clanTxd string
----@param clanTxn string
----@param isImportant boolean
----@param showSubtitle boolean
----@return number
-function EndTextCommandThefeedPostCrewRankup(chTitle, clanTxd, clanTxn, isImportant, showSubtitle) end
 
 ---```
 ---This function and the one below it are for after you receive an invite, not sending it.  
@@ -799,6 +789,47 @@ function EndTextCommandThefeedPostCrewRankup(chTitle, clanTxd, clanTxn, isImport
 ---@return number, number
 function EndTextCommandThefeedPostCrewtag(crewTypeIsPrivate, crewTagContainsRockstar, rank, hasFounderStatus, isImportant, clanHandle, r, g, b) end
 
+---Sets some extra options for a notification. It adds an image (or icon type) and sets a notification title (sender) and subtitle (subject).
+---
+---Texture dictionary and texture name parameters are usually the same exact value.
+---
+---Example result:
+---
+---![](https://i.imgur.com/LviutDl.png)
+---
+---Old description with list of possible icons and texture names:
+---
+---```
+---List of picNames: pastebin.com/XdpJVbHz  
+---flash is a bool for fading in.  
+---iconTypes:  
+---1 : Chat Box  
+---2 : Email  
+---3 : Add Friend Request  
+---4 : Nothing  
+---5 : Nothing  
+---6 : Nothing  
+---7 : Right Jumping Arrow  
+---8 : RP Icon  
+---9 : $ Icon  
+---"sender" is the very top header. This can be any old string.  
+---"subject" is the header under the sender.  
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x1CCD9A37359072CF)
+---@param textureDict string
+---@param textureName string
+---@param flash boolean
+---@param iconType number
+---@param sender string
+---@param subject string
+---@return number
+function EndTextCommandThefeedPostMessagetext(textureDict, textureName, flash, iconType, sender, subject) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xCFDBDF5AE59BA0F4)
+---@param p0 boolean
+function EndTextCommandObjective(p0) end
+
 ---NOTE: 'duration' is a multiplier, so 1.0 is normal, 2.0 is twice as long (very slow), and 0.5 is half as long.
 ---
 ---Example, only occurrence in the scripts:
@@ -820,11 +851,6 @@ function EndTextCommandThefeedPostCrewtag(crewTypeIsPrivate, crewTagContainsRock
 ---@param duration number
 ---@return number
 function EndTextCommandThefeedPostMessagetextTu(picTxd, picTxn, flash, iconType, nameStr, subtitleStr, duration) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xCFDBDF5AE59BA0F4)
----@param p0 boolean
-function EndTextCommandObjective(p0) end
 
 ---```
 ---p0 = 1 or 0  
@@ -931,49 +957,6 @@ function EndTextCommandThefeedPostMessagetextWithCrewTagAndAdditionalIcon(picTxd
 ---@return number
 function EndTextCommandThefeedPostMessagetextWithCrewTag(picTxd, picTxn, flash, iconType, nameStr, subtitleStr, duration, crewPackedStr) end
 
----Sets some extra options for a notification. It adds an image (or icon type) and sets a notification title (sender) and subtitle (subject).
----
----Texture dictionary and texture name parameters are usually the same exact value.
----
----Example result:
----
----![](https://i.imgur.com/LviutDl.png)
----
----Old description with list of possible icons and texture names:
----
----```
----List of picNames: pastebin.com/XdpJVbHz  
----flash is a bool for fading in.  
----iconTypes:  
----1 : Chat Box  
----2 : Email  
----3 : Add Friend Request  
----4 : Nothing  
----5 : Nothing  
----6 : Nothing  
----7 : Right Jumping Arrow  
----8 : RP Icon  
----9 : $ Icon  
----"sender" is the very top header. This can be any old string.  
----"subject" is the header under the sender.  
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x1CCD9A37359072CF)
----@param textureDict string
----@param textureName string
----@param flash boolean
----@param iconType number
----@param sender string
----@param subject string
----@return number
-function EndTextCommandThefeedPostMessagetext(textureDict, textureName, flash, iconType, sender, subject) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xF020C96915705B3A)
----@param blink boolean
----@param bHasTokens boolean
----@return number
-function EndTextCommandThefeedPostMpticker(blink, bHasTokens) end
-
 ---This function can show pictures of every texture that can be requested by REQUEST_STREAMED_TEXTURE_DICT.
 ---Needs more research.
 ---Only one type of usage in the scripts:
@@ -987,6 +970,37 @@ function EndTextCommandThefeedPostMpticker(blink, bHasTokens) end
 ---@param subject string
 ---@return number
 function EndTextCommandThefeedPostMessagetextGxtEntry(txdName, textureName, flash, iconType, sender, subject) end
+
+---```
+---returns a notification handle, prints out a notification like below:  
+---type range: 0   
+---if you set type to 1, image goes from 0 - 39 - Xbox you can add text to  
+---example:   
+---UI::_0xD202B92CBF1D816F(1, 20, "Who you trynna get crazy with, ese? Don't you know I'm LOCO?!");  
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0xD202B92CBF1D816F)
+---@param eType number
+---@param iIcon number
+---@param sTitle string
+---@return number
+function EndTextCommandThefeedPostReplayIcon(eType, iIcon, sTitle) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xF020C96915705B3A)
+---@param blink boolean
+---@param bHasTokens boolean
+---@return number
+function EndTextCommandThefeedPostMpticker(blink, bHasTokens) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x8EFCCF6EC66D85E4)
+---@param chTitle string
+---@param clanTxd string
+---@param clanTxn string
+---@param isImportant boolean
+---@param showSubtitle boolean
+---@return number
+function EndTextCommandThefeedPostCrewRankup(chTitle, clanTxd, clanTxn, isImportant, showSubtitle) end
 
 ---```
 ---returns a notification handle, prints out a notification like below:
@@ -1023,27 +1037,6 @@ function EndTextCommandThefeedPostReplayInput(type, button, text) end
 ---@param picTxn string
 ---@return number
 function EndTextCommandThefeedPostStats(statTitle, iconEnum, stepVal, barValue, isImportant, picTxd, picTxn) end
-
----```
----returns a notification handle, prints out a notification like below:  
----type range: 0   
----if you set type to 1, image goes from 0 - 39 - Xbox you can add text to  
----example:   
----UI::_0xD202B92CBF1D816F(1, 20, "Who you trynna get crazy with, ese? Don't you know I'm LOCO?!");  
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0xD202B92CBF1D816F)
----@param eType number
----@param iIcon number
----@param sTitle string
----@return number
-function EndTextCommandThefeedPostReplayIcon(eType, iIcon, sTitle) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x378E809BF61EC840)
----@param isImportant boolean
----@param bHasTokens boolean
----@return number
-function EndTextCommandThefeedPostTickerWithTokens(isImportant, bHasTokens) end
 
 ---Example output preview:
 ---
@@ -1087,6 +1080,13 @@ function EndTextCommandThefeedPostUnlockTuWithColor(chTitle, iconType, chSubtitl
 ---@param toggle boolean
 function FlagPlayerContextInTournament(toggle) end
 
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x44FA03975424A0EE)
+---@param blink boolean
+---@param bHasTokens boolean
+---@return number
+function EndTextCommandThefeedPostTickerForced(blink, bHasTokens) end
+
 ---```
 ---NativeDB Added Parameter 7: int hudColorIndex1
 ---NativeDB Added Parameter 8: int hudColorIndex2
@@ -1109,21 +1109,27 @@ function EndTextCommandThefeedPostVersusTu(ch1TXD, ch1TXN, val1, ch2TXD, ch2TXN,
 function FlashMinimapDisplay() end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x44FA03975424A0EE)
----@param blink boolean
+---[Native Documentation](https://docs.fivem.net/natives/?_0x378E809BF61EC840)
+---@param isImportant boolean
 ---@param bHasTokens boolean
 ---@return number
-function EndTextCommandThefeedPostTickerForced(blink, bHasTokens) end
+function EndTextCommandThefeedPostTickerWithTokens(isImportant, bHasTokens) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xEE4C0E6DBC6F2C6F)
+function ForceCloseReportugcMenu() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x6B1DE27EE78E6A19)
 ---@param hudColorIndex number
 function FlashMinimapDisplayWithColor(hudColorIndex) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xA18AFB39081B6A1F)
----@param p0 boolean
-function FlashWantedDisplay(p0) end
+---```
+---Doesn't actually return anything.
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x1121BFA1A1A522A8)
+---@return any
+function ForceSonarBlipsThisFrame() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x02CFBA0C9E9275CE)
@@ -1134,16 +1140,6 @@ function FlashAbilityBar(millisecondsToFlash) end
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x8817605C2BA76200)
 function ForceCloseTextInputBox() end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xEE4C0E6DBC6F2C6F)
-function ForceCloseReportugcMenu() end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x7CD934010E115C2C)
----@param ped number
----@return number
-function GetAiBlip_2(ped) end
-
 ---```
 ---Returns the current AI BLIP for the specified ped  
 ---```
@@ -1151,6 +1147,17 @@ function GetAiBlip_2(ped) end
 ---@param ped number
 ---@return number
 function GetAiBlip(ped) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xA18AFB39081B6A1F)
+---@param p0 boolean
+function FlashWantedDisplay(p0) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x970F608F0EE6C885)
+---@param blip number
+---@return number
+function GetBlipAlpha(blip) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xDF729E8D20CF7327)
@@ -1164,6 +1171,12 @@ function GetBlipColour(blip) end
 ---@return vector3
 function GetBlipCoords(blip) end
 
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x729B5F1EFBC0AAEE)
+---@param blip number
+---@return number
+function GetBlipHudColour(blip) end
+
 ---```
 ---Returns the Blip handle of given Entity.  
 ---```
@@ -1173,28 +1186,22 @@ function GetBlipCoords(blip) end
 function GetBlipFromEntity(entity) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x970F608F0EE6C885)
----@param blip number
+---[Native Documentation](https://docs.fivem.net/natives/?_0x7CD934010E115C2C)
+---@param ped number
 ---@return number
-function GetBlipAlpha(blip) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x729B5F1EFBC0AAEE)
----@param blip number
----@return number
-function GetBlipHudColour(blip) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xFA7C7F0AADF25D09)
----@param blip number
----@return vector3
-function GetBlipInfoIdCoord(blip) end
+function GetAiBlip_2(ped) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x1E314167F701DC3B)
 ---@param blip number
 ---@return number
 function GetBlipInfoIdDisplay(blip) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x4BA4E2553AFEDC2C)
+---@param blip number
+---@return number
+function GetBlipInfoIdEntityIndex(blip) end
 
 ---```
 ---This function is hard-coded to always return 0.  
@@ -1220,20 +1227,6 @@ function GetBlipInfoIdPickupIndex(blip) end
 function GetBlipInfoIdType(blip) end
 
 ---```
----NativeDB Introduced: v2060
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x003E92BA477F9D7F)
----@param blip number
----@return number
-function GetBlipRotation(blip) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x4BA4E2553AFEDC2C)
----@param blip number
----@return number
-function GetBlipInfoIdEntityIndex(blip) end
-
----```
 ---Blips Images + IDs:  
 ---gtaxscripting.blogspot.com/2016/05/gta-v-blips-id-and-image.html  
 ---```
@@ -1243,6 +1236,14 @@ function GetBlipInfoIdEntityIndex(blip) end
 function GetBlipSprite(blip) end
 
 ---```
+---NativeDB Introduced: v2060
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x003E92BA477F9D7F)
+---@param blip number
+---@return number
+function GetBlipRotation(blip) end
+
+---```
 ---if (HUD::GET_CURRENT_FRONTEND_MENU_VERSION() == joaat("fe_menu_version_empty_no_background"))
 ---```
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x2309595AD6145265)
@@ -1250,17 +1251,15 @@ function GetBlipSprite(blip) end
 function GetCurrentFrontendMenuVersion() end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x01A358D9128B7A86)
----@return number
-function GetCurrentWebpageId() end
+---[Native Documentation](https://docs.fivem.net/natives/?_0xFA7C7F0AADF25D09)
+---@param blip number
+---@return vector3
+function GetBlipInfoIdCoord(blip) end
 
----```
----NativeDB Introduced: v1180
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0xD484BF71050CA1EE)
----@param blipSprite number
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x97D47996FC48CBAD)
 ---@return number
-function GetClosestBlipOfType(blipSprite) end
+function GetCurrentWebsiteId() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x1BEDE233E6CD2A1F)
@@ -1269,9 +1268,9 @@ function GetClosestBlipOfType(blipSprite) end
 function GetFirstBlipInfoId(blipSprite) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x97D47996FC48CBAD)
+---[Native Documentation](https://docs.fivem.net/natives/?_0x01A358D9128B7A86)
 ---@return number
-function GetCurrentWebsiteId() end
+function GetCurrentWebpageId() end
 
 ---```
 ---This function is hard-coded to always return 1.  
@@ -1279,14 +1278,6 @@ function GetCurrentWebsiteId() end
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x52F0982D7FD156B6)
 ---@return number
 function GetDefaultScriptRendertargetRenderId() end
-
----```
----HUD colors and their values: pastebin.com/d9aHPbXN  
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x7C9C91AB74A0360F)
----@param hudColorIndex number
----@return number, number, number, number
-function GetHudColour(hudColorIndex) end
 
 ---```
 ---Returns the ActionScript flagValue.
@@ -1304,24 +1295,12 @@ function GetHudColour(hudColorIndex) end
 function GetGlobalActionscriptFlag(flagIndex) end
 
 ---```
----World to relative screen coords
----this world to screen will keep the text on screen. it will keep it in the screen pos
+---HUD colors and their values: pastebin.com/d9aHPbXN  
 ---```
----[Native Documentation](https://docs.fivem.net/natives/?_0xF9904D11F1ACBEC3)
----@param worldX number
----@param worldY number
----@param worldZ number
----@return boolean, number, number
-function GetHudScreenPositionFromWorldPosition(worldX, worldY, worldZ) end
-
----```
----Gets a string literal from a label name.
----GET_F*
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x7B5280EBA9840C72)
----@param labelName string
----@return string
-function GetLabelText(labelName) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x7C9C91AB74A0360F)
+---@param hudColorIndex number
+---@return number, number, number, number
+function GetHudColour(hudColorIndex) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x223CA69A8C4417FD)
@@ -1338,12 +1317,13 @@ function GetHudComponentPosition(id) end
 function GetLengthOfLiteralString(string) end
 
 ---```
----Returns the string length of the string from the gxt string .  
+---Gets a string literal from a label name.
+---GET_F*
 ---```
----[Native Documentation](https://docs.fivem.net/natives/?_0x801BD273D3A23F74)
----@param gxt string
----@return number
-function GetLengthOfStringWithThisTextLabel(gxt) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x7B5280EBA9840C72)
+---@param labelName string
+---@return string
+function GetLabelText(labelName) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x43E4111189E54F0E)
@@ -1352,19 +1332,12 @@ function GetLengthOfStringWithThisTextLabel(gxt) end
 function GetLengthOfLiteralStringInBytes(string) end
 
 ---```
----p0 was always 0xAE2602A3.
+---Returns the string length of the string from the gxt string .  
 ---```
----[Native Documentation](https://docs.fivem.net/natives/?_0x052991E59076E4E4)
----@param p0 number | string
----@return boolean, any
-function GetMenuPedBoolStat(p0) end
-
----```
----Doesn't actually return anything.
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x1121BFA1A1A522A8)
----@return any
-function ForceSonarBlipsThisFrame() end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x801BD273D3A23F74)
+---@param gxt string
+---@return number
+function GetLengthOfStringWithThisTextLabel(gxt) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xDCD4EC3F419D02FA)
@@ -1377,13 +1350,13 @@ function GetMainPlayerBlipId() end
 ---@return boolean, number
 function GetMenuPedFloatStat(p0) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x6E31B91145873922)
----@param x number
----@param y number
----@param z number
----@return boolean
-function GetMinimapFowCoordinateIsRevealed(x, y, z) end
+---```
+---p0 was always 0xAE2602A3.
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x052991E59076E4E4)
+---@param p0 number | string
+---@return boolean, any
+function GetMenuPedBoolStat(p0) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x90A6526CF0381030)
@@ -1392,6 +1365,20 @@ function GetMinimapFowCoordinateIsRevealed(x, y, z) end
 ---@param p3 any
 ---@return boolean, any
 function GetMenuPedMaskedIntStat(p0, p2, p3) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xEF4CED81CEBEDC6D)
+---@param p0 any
+---@return boolean, any
+function GetMenuPedIntStat(p0) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x6E31B91145873922)
+---@param x number
+---@param y number
+---@param z number
+---@return boolean
+function GetMinimapFowCoordinateIsRevealed(x, y, z) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xE0130B41D3CF4574)
@@ -1405,21 +1392,25 @@ function GetMinimapFowDiscoveryRatio() end
 function GetNamedRendertargetRenderId(name) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x5C90988E7C8E1AF4)
+---@return number
+function GetNewSelectedMissionCreatorBlip() end
+
+---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x14F96AA50D6FBEA7)
 ---@param blipSprite number
 ---@return number
 function GetNextBlipInfoId(blipSprite) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x5C90988E7C8E1AF4)
+---[Native Documentation](https://docs.fivem.net/natives/?_0x3F0CF9CB7E589B88)
 ---@return number
-function GetNewSelectedMissionCreatorBlip() end
+function GetNorthRadarBlip() end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xEF4CED81CEBEDC6D)
----@param p0 any
----@return boolean, any
-function GetMenuPedIntStat(p0) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x9A3FF3DE163034E8)
+---@return number
+function GetNumberOfActiveBlips() end
 
 ---Name between `GET_ONSCREEN_KEYBOARD_RESULT` and `GET_PAUSE_MENU_STATE`. Likely, `GET_PAUSE_MENU_*`.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x5BFF36D6ED83E0AE)
@@ -1445,11 +1436,6 @@ function GetPauseMenuSelection() end
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x272ACD84970869C5)
 ---@return number
 function GetPauseMenuState() end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x9A3FF3DE163034E8)
----@return number
-function GetNumberOfActiveBlips() end
 
 ---```
 ---lastItemMenuId: this is the menuID of the last selected item minus 1000 (lastItem.menuID - 1000)
@@ -1502,22 +1488,6 @@ function GetPauseMenuSelectionData() end
 ---@return boolean, boolean, number, number, number
 function GetScaleformMovieCursorSelection(scaleformHandle) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x4A9923385BDB9DAD)
----@return number
-function GetStandardBlipEnumId() end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x3F0CF9CB7E589B88)
----@return number
-function GetNorthRadarBlip() end
-
----Converts the hash of a street name into a readable string. To retrieve a hash for a given (street) coordinate, see [`GET_STREET_NAME_AT_COORD`](#\_0x2EB41072B4C1E4C0).
----[Native Documentation](https://docs.fivem.net/natives/?_0xD0EF8A959B8A4CB9)
----@param hash number | string
----@return string
-function GetStreetNameFromHashKey(hash) end
-
 ---```
 ---This gets the height of the FONT and not the total text. You need to get the number of lines your text uses, and get the height of a newline (I'm using a smaller value) to get the total text height.
 ---Old name: _GET_TEXT_SCALE_HEIGHT
@@ -1527,6 +1497,17 @@ function GetStreetNameFromHashKey(hash) end
 ---@param font number
 ---@return number
 function GetRenderedCharacterHeight(size, font) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x4A9923385BDB9DAD)
+---@return number
+function GetStandardBlipEnumId() end
+
+---Converts the hash of a street name into a readable string. To retrieve a hash for a given (street) coordinate, see [`GET_STREET_NAME_AT_COORD`](#\_0x2EB41072B4C1E4C0).
+---[Native Documentation](https://docs.fivem.net/natives/?_0xD0EF8A959B8A4CB9)
+---@param hash number | string
+---@return string
+function GetStreetNameFromHashKey(hash) end
 
 ---```
 ---Returns a substring of a specified length starting at a specified position. The result is guaranteed not to exceed the specified max length.
@@ -1555,11 +1536,6 @@ function GetRenderedCharacterHeight(size, font) end
 ---@return string
 function GetTextSubstringSafe(text, position, length, maxLength) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x186E5D252FA50E7D)
----@return number
-function GetWaypointBlipEnumId() end
-
 ---```
 ---Returns a substring that is between two specified positions. The length of the string will be calculated using (endPosition - startPosition).
 ---Example:
@@ -1576,17 +1552,24 @@ function GetWaypointBlipEnumId() end
 function GetTextSubstringSlice(text, startPosition, endPosition) end
 
 ---```
----Returns a substring of a specified length starting at a specified position.
----Example:
----// Get "STRING" text from "MY_STRING"
----subStr = HUD::_GET_TEXT_SUBSTRING("MY_STRING", 3, 6);
+---NativeDB Introduced: v1180
 ---```
----[Native Documentation](https://docs.fivem.net/natives/?_0x169BD9382084C8C0)
----@param text string
----@param position number
----@param length number
----@return string
-function GetTextSubstring(text, position, length) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0xD484BF71050CA1EE)
+---@param blipSprite number
+---@return number
+function GetClosestBlipOfType(blipSprite) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x186E5D252FA50E7D)
+---@return number
+function GetWaypointBlipEnumId() end
+
+---```
+---NativeDB Introduced: v1290
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x81DF9ABA6C83DFF9)
+---@return number
+function GetWarningMessageTitleHash() end
 
 ---```
 ---p1 is either 1 or 2 in the PC scripts.  
@@ -1598,18 +1581,18 @@ function GetTextSubstring(text, position, length) end
 ---@param p1 number
 function GivePedToPauseMenu(ped, p1) end
 
+---```
+---HAS_*
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0xA277800A9EAE340E)
+---@return boolean
+function HasDirectorModeBeenTriggered() end
+
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x02245FE4BED318B8)
 ---@param slot number
 ---@return boolean
 function HasAdditionalTextLoaded(slot) end
-
----```
----NativeDB Introduced: v1290
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x81DF9ABA6C83DFF9)
----@return number
-function GetWarningMessageTitleHash() end
 
 ---```
 ---HIDE_*_THIS_FRAME
@@ -1670,18 +1653,38 @@ function HideHudAndRadarThisFrame() end
 ---@param id number
 function HideHudComponentThisFrame(id) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x4B0311D3CDC4648F)
-function HideLoadingOnFadeThisFrame() end
+---```
+---World to relative screen coords
+---this world to screen will keep the text on screen. it will keep it in the screen pos
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0xF9904D11F1ACBEC3)
+---@param worldX number
+---@param worldY number
+---@param worldZ number
+---@return boolean, number, number
+function GetHudScreenPositionFromWorldPosition(worldX, worldY, worldZ) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x20FE7FDFEEAD38C0)
-function HideMinimapInteriorMapThisFrame() end
+---```
+---Returns a substring of a specified length starting at a specified position.
+---Example:
+---// Get "STRING" text from "MY_STRING"
+---subStr = HUD::_GET_TEXT_SUBSTRING("MY_STRING", 3, 6);
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x169BD9382084C8C0)
+---@param text string
+---@param position number
+---@param length number
+---@return string
+function GetTextSubstring(text, position, length) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x532CFF637EF80148)
 ---@param blip number
 function HideNumberOnBlip(blip) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x5FBAE526203990C9)
+function HideMinimapExteriorMapThisFrame() end
 
 ---```
 ---Forces the weapon wheel to show/hide.
@@ -1690,24 +1693,10 @@ function HideNumberOnBlip(blip) end
 ---@param show boolean
 function HudForceWeaponWheel(show) end
 
----```
----HAS_*
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0xA277800A9EAE340E)
----@return boolean
-function HasDirectorModeBeenTriggered() end
-
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xE374C498D8BADC14)
 ---@param id number
 function HideScriptedHudComponentThisFrame(id) end
-
----```
----Returns the weapon hash to the selected/highlighted weapon in the wheel
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0xA48931185F0536FE)
----@return number
-function HudWeaponWheelGetSelectedHash() end
 
 ---```
 ---Set the active slotIndex in the wheel weapon to the slot associated with the provided Weapon hash
@@ -1715,6 +1704,13 @@ function HudWeaponWheelGetSelectedHash() end
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x72C1056D678BB7D8)
 ---@param weaponHash number | string
 function HudSetWeaponWheelTopSlot(weaponHash) end
+
+---```
+---Returns the weapon hash to the selected/highlighted weapon in the wheel
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0xA48931185F0536FE)
+---@return number
+function HudWeaponWheelGetSelectedHash() end
 
 ---Displays loading screen tips, requires `_0x56C8B608CFD49854` to be called beforehand.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x488043841BBE156F)
@@ -1727,6 +1723,16 @@ function HudDisplayLoadingScreenTips() end
 ---@param toggle boolean
 function HudWeaponWheelIgnoreControlInput(toggle) end
 
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x4B0311D3CDC4648F)
+function HideLoadingOnFadeThisFrame() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xE41CA53051197A27)
+---@param blip number
+---@return boolean
+function IsBlipOnMinimap(blip) end
+
 ---```
 ---Returns the weapon hash active in a specific weapon wheel slotList
 ---```
@@ -1734,12 +1740,6 @@ function HudWeaponWheelIgnoreControlInput(toggle) end
 ---@param weaponTypeIndex number
 ---@return number
 function HudWeaponWheelGetSlotHash(weaponTypeIndex) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xE41CA53051197A27)
----@param blip number
----@return boolean
-function IsBlipOnMinimap(blip) end
 
 ---```
 ---Calling this each frame, stops the player from receiving a weapon via the weapon wheel.
@@ -1776,8 +1776,8 @@ function IsBlipShortRange(blip) end
 function IsFrontendReadyForControl() end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x5FBAE526203990C9)
-function HideMinimapExteriorMapThisFrame() end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x20FE7FDFEEAD38C0)
+function HideMinimapInteriorMapThisFrame() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x327EDEEEAC55C369)
@@ -1803,6 +1803,11 @@ function IsHudHidden() end
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xDAD37F45428801AE)
 ---@return boolean
 function IsHelpMessageOnScreen() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x1930DFA731813EC4)
+---@return boolean
+function IsHudPreferenceSwitchedOn() end
 
 ---```
 ---Full list of components below  
@@ -1837,20 +1842,15 @@ function IsHelpMessageOnScreen() end
 function IsHudComponentActive(id) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x9049FE339D5F6F6F)
+---@return boolean
+function IsMinimapInInterior() end
+
+---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x26F49BF3381D933D)
 ---@param blip number
 ---@return boolean
 function IsMissionCreatorBlip(blip) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xAF754F20EB5CD51A)
----@return boolean
-function IsMinimapRendering() end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x9049FE339D5F6F6F)
----@return boolean
-function IsMinimapInInterior() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x4E929E7A5796FD26)
@@ -1870,15 +1870,26 @@ function IsMouseCursorAboveInstructionalButtons() end
 function IsMpGamerTagMovieActive() end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x1930DFA731813EC4)
+---[Native Documentation](https://docs.fivem.net/natives/?_0xAF754F20EB5CD51A)
 ---@return boolean
-function IsHudPreferenceSwitchedOn() end
+function IsMinimapRendering() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x595B5178E412E199)
 ---@param gamerTagId number
 ---@return boolean
 function IsMpGamerTagFree(gamerTagId) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x113750538FA31298)
+---@param modelHash number | string
+---@return boolean
+function IsNamedRendertargetLinked(modelHash) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xB0034A223497FFCB)
+---@return boolean
+function IsPauseMenuActive() end
 
 ---```
 ---Returns whether or not the text chat (MULTIPLAYER_CHAT Scaleform component) is active.  
@@ -1887,26 +1898,15 @@ function IsMpGamerTagFree(gamerTagId) end
 ---@return boolean
 function IsMultiplayerChatActive() end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x4E3CD0EF8A489541)
----@return any
-function IsNavigatingMenuContent() end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x113750538FA31298)
----@param modelHash number | string
----@return boolean
-function IsNamedRendertargetLinked(modelHash) end
-
 ---Returns the same as `IS_SOCIAL_CLUB_ACTIVE`.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x6F72CD94F7B5B68C)
 ---@return boolean
 function IsOnlinePoliciesMenuActive() end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xB0034A223497FFCB)
----@return boolean
-function IsPauseMenuActive() end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x4E3CD0EF8A489541)
+---@return any
+function IsNavigatingMenuContent() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x78DCDC15C9F116B4)
@@ -1915,9 +1915,9 @@ function IsPauseMenuActive() end
 function IsNamedRendertargetRegistered(name) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x157F93B036700462)
+---[Native Documentation](https://docs.fivem.net/natives/?_0x9EB6522EA68F22FE)
 ---@return boolean
-function IsRadarHidden() end
+function IsRadarPreferenceSwitchedOn() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x1C491717107431C7)
@@ -1925,9 +1925,9 @@ function IsRadarHidden() end
 function IsPauseMenuRestarting() end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x9EB6522EA68F22FE)
+---[Native Documentation](https://docs.fivem.net/natives/?_0x9135584D09A3437E)
 ---@return boolean
-function IsRadarPreferenceSwitchedOn() end
+function IsReportugcMenuOpen() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xDD100EB17A94FF65)
@@ -1963,9 +1963,9 @@ function IsSocialClubActive() end
 function IsWarningMessageActive() end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x9135584D09A3437E)
+---[Native Documentation](https://docs.fivem.net/natives/?_0x157F93B036700462)
 ---@return boolean
-function IsReportugcMenuOpen() end
+function IsRadarHidden() end
 
 ---```
 ---IS_*
@@ -1989,11 +1989,12 @@ function LinkNamedRendertarget(modelHash) end
 function LockMinimapAngle(angle) end
 
 ---```
----IS_WARNING_MESSAGE_*
+---Locks the minimap to the specified world position.  
 ---```
----[Native Documentation](https://docs.fivem.net/natives/?_0xAF42195A42C63BBA)
----@return boolean
-function IsWarningMessageActive_2() end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x1279E861A329E73F)
+---@param x number
+---@param y number
+function LockMinimapPosition(x, y) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x1DD1F58F493F1DA5)
@@ -2009,19 +2010,11 @@ function IsWaypointActive() end
 function LogDebugInfo(p0) end
 
 ---```
----Locks the minimap to the specified world position.  
+---IS_WARNING_MESSAGE_*
 ---```
----[Native Documentation](https://docs.fivem.net/natives/?_0x1279E861A329E73F)
----@param x number
----@param y number
-function LockMinimapPosition(x, y) end
-
----```
----SET_*
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x04655F9D075D0AE5)
----@param toggle boolean
-function N_0x04655f9d075d0ae5(toggle) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0xAF42195A42C63BBA)
+---@return boolean
+function IsWarningMessageActive_2() end
 
 ---```
 ---NativeDB Introduced: v1180
@@ -2031,20 +2024,22 @@ function N_0x04655f9d075d0ae5(toggle) end
 function N_0x0c698d8f099174c7(p0) end
 
 ---```
----SET_TEXT_??? - Used in golf and golf_mp  
+---HAS_S*
 ---```
----[Native Documentation](https://docs.fivem.net/natives/?_0x1185A8087587322C)
----@param p0 boolean
-function N_0x1185a8087587322c(p0) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x214CD562A939246A)
+---@return boolean
+function N_0x214cd562a939246a() end
 
 ---**This native does absolutely nothing, just a nullsub**
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x211C4EF450086857)
 function N_0x211c4ef450086857() end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x0CF54F20DE43879C)
----@param p0 any
-function N_0x0cf54f20de43879c(p0) end
+---```
+---SET_TEXT_??? - Used in golf and golf_mp  
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x1185A8087587322C)
+---@param p0 boolean
+function N_0x1185a8087587322c(p0) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x24A49BEAF468DC90)
@@ -2055,22 +2050,10 @@ function N_0x0cf54f20de43879c(p0) end
 ---@return boolean, any
 function N_0x24a49beaf468dc90(p0, p2, p3, p4) end
 
----```
----NativeDB Introduced: v2060
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x243296A510B562B6)
-function N_0x243296a510b562b6() end
-
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x2916A928514C9827)
-function N_0x2916a928514c9827() end
-
----```
----HAS_S*
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x214CD562A939246A)
----@return boolean
-function N_0x214cd562a939246a() end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x0CF54F20DE43879C)
+---@param p0 any
+function N_0x0cf54f20de43879c(p0) end
 
 ---GET_BLIP_\*
 ---Seems to always return 0 from what I can tell. I've tried a lot of different blip related natives and it always seems to return 0. Decompiled scripts always pass a blip handle as p0.
@@ -2080,9 +2063,15 @@ function N_0x214cd562a939246a() end
 function N_0x2c173ae2bdb9385e(blip) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x2E22FEFA0100275E)
----@return boolean
-function N_0x2e22fefa0100275e() end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x2916A928514C9827)
+function N_0x2916a928514c9827() end
+
+---```
+---SET_*
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x04655F9D075D0AE5)
+---@param toggle boolean
+function N_0x04655f9d075d0ae5(toggle) end
 
 ---```
 ---SET_F*
@@ -2096,13 +2085,6 @@ function N_0x2790f4b17d098e26(toggle) end
 ---@param p0 any
 function N_0x2de6c5e2e996f178(p0) end
 
----```
----NativeDB Introduced: v1290
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x35A3CD97B2C0A6D2)
----@param blip number
-function N_0x35a3cd97b2c0a6d2(blip) end
-
 ---Correct native name lies between SET_BLIP_SPRITE and SET_RADIUS_BLIP_EDGE alphabetically.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x2C9F302398E13141)
 ---@param blip number
@@ -2110,9 +2092,16 @@ function N_0x35a3cd97b2c0a6d2(blip) end
 function N_0x2c9f302398e13141(blip, p1) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x41350B4FC28E3941)
----@param p0 boolean
-function N_0x41350b4fc28e3941(p0) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x2E22FEFA0100275E)
+---@return boolean
+function N_0x2e22fefa0100275e() end
+
+---```
+---NativeDB Introduced: v1290
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x35A3CD97B2C0A6D2)
+---@param blip number
+function N_0x35a3cd97b2c0a6d2(blip) end
 
 ---```
 ---Appears to return whether the player is using the pause menu store. Can't be sure though.  
@@ -2122,40 +2111,25 @@ function N_0x41350b4fc28e3941(p0) end
 function N_0x2f057596f2bd0061() end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x577599CCED639CA2)
----@param p0 any
-function N_0x577599cced639ca2(p0) end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x4B5B620C9B59ED34)
 ---@param p0 any
 ---@param p1 any
 function N_0x4b5b620c9b59ed34(p0, p1) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x593FEAE1F73392D4)
----@return any
-function N_0x593feae1f73392d4() end
-
----Enables loading screen tips to be be shown (`_0x15CFA549788D35EF` and `_0x488043841BBE156F`), blocks other kinds of notifications from being displayed (at least from current script). Call `0xADED7F5748ACAFE6` to display those again.
----[Native Documentation](https://docs.fivem.net/natives/?_0x583049884A2EEE3C)
-function ThefeedForceRenderOff() end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x62E849B7EB28E770)
----@param p0 boolean
-function N_0x62e849b7eb28e770(p0) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x66E7CB63C97B7D20)
----@return any
-function N_0x66e7cb63c97b7d20() end
 
 ---```
 ---NativeDB Introduced: v1180
 ---```
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x55F5A5F07134DE60)
 function N_0x55f5a5f07134de60() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x41350B4FC28E3941)
+---@param p0 boolean
+function N_0x41350b4fc28e3941(p0) end
+
+---Enables loading screen tips to be be shown (`_0x15CFA549788D35EF` and `_0x488043841BBE156F`), blocks other kinds of notifications from being displayed (at least from current script). Call `0xADED7F5748ACAFE6` to display those again.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x583049884A2EEE3C)
+function ThefeedForceRenderOff() end
 
 ---```
 ---FORCE_*
@@ -2165,9 +2139,37 @@ function N_0x55f5a5f07134de60() end
 function N_0x57d760d55f54e071(p0) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x7C226D5346D4D10A)
+---[Native Documentation](https://docs.fivem.net/natives/?_0x577599CCED639CA2)
 ---@param p0 any
-function N_0x7c226d5346d4d10a(p0) end
+function N_0x577599cced639ca2(p0) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x66E7CB63C97B7D20)
+---@return any
+function N_0x66e7cb63c97b7d20() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x593FEAE1F73392D4)
+---@return any
+function N_0x593feae1f73392d4() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x62E849B7EB28E770)
+---@param p0 boolean
+function N_0x62e849b7eb28e770(p0) end
+
+---```
+---IS_*
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x801879A9B4F4B2FB)
+---@return boolean
+function N_0x801879a9b4f4b2fb() end
+
+---```
+---NativeDB Introduced: v2060
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x243296A510B562B6)
+function N_0x243296a510b562b6() end
 
 ---```
 ---UI::_817B86108EB94E51(1, &g_189F36._f10CD1[0/*16*/], &g_189F36._f10CD1[1/*16*/], &g_189F36._f10CD1[2/*16*/], &g_189F36._f10CD1[3/*16*/], &g_189F36._f10CD1[4/*16*/], &g_189F36._f10CD1[5/*16*/], &g_189F36._f10CD1[6/*16*/], &g_189F36._f10CD1[7/*16*/]);  
@@ -2177,27 +2179,18 @@ function N_0x7c226d5346d4d10a(p0) end
 ---@return any, any, any, any, any, any, any, any
 function N_0x817b86108eb94e51(p0) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x8F08017F9D7C47BD)
----@param p0 any
----@param p2 any
----@return boolean, any
-function N_0x8f08017f9d7c47bd(p0, p2) end
-
 ---```
 ---NativeDB Introduced: v1290
 ---```
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x8410C5E0CD847B9D)
 function N_0x8410c5e0cd847b9d() end
 
----```
----GET_F*
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x98C3CF913D895111)
----@param string string
----@param length number
----@return string
-function N_0x98c3cf913d895111(string, length) end
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x8F08017F9D7C47BD)
+---@param p0 any
+---@param p2 any
+---@return boolean, any
+function N_0x8f08017f9d7c47bd(p0, p2) end
 
 ---SET_C\*
 ---
@@ -2208,6 +2201,15 @@ function N_0x98c3cf913d895111(string, length) end
 ---@param p0 number
 ---@param p1 number
 function N_0x9fcb3cbfb3ead69a(p0, p1) end
+
+---```
+---GET_F*
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x98C3CF913D895111)
+---@param string string
+---@param length number
+---@return string
+function N_0x98c3cf913d895111(string, length) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA17784FCA9548D15)
@@ -2222,36 +2224,10 @@ function N_0xa17784fca9548d15(p0, p1, p2) end
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xADED7F5748ACAFE6)
 function ThefeedCommentTeleportPoolOff() end
 
----```
----IS_*
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x801879A9B4F4B2FB)
----@return boolean
-function N_0x801879a9b4f4b2fb() end
-
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA238192F33110615)
 ---@return boolean, number, number, number
 function N_0xa238192f33110615() end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xBF4F34A85CA2970C)
-function N_0xbf4f34a85ca2970c() end
-
----```
----FORCE_*
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0xBA8D65C1C65702E5)
----@param toggle boolean
-function N_0xba8d65c1c65702e5(toggle) end
-
----SET_C\*
----
----```
----NativeDB Introduced: v1734
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0xB7B873520C84C118)
-function N_0xb7b873520c84c118() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xB552929B85FC27EC)
@@ -2260,22 +2236,13 @@ function N_0xb7b873520c84c118() end
 function N_0xb552929b85fc27ec(p0, p1) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xCA6B2F7CE32AB653)
----@param p0 any
----@param p2 any
----@return boolean, any
-function N_0xca6b2f7ce32ab653(p0, p2) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0xBF4F34A85CA2970C)
+function N_0xbf4f34a85ca2970c() end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xDAF87174BE7454FF)
+---[Native Documentation](https://docs.fivem.net/natives/?_0x7C226D5346D4D10A)
 ---@param p0 any
----@return boolean
-function N_0xdaf87174be7454ff(p0) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xD1942374085C8469)
----@param p0 any
-function N_0xd1942374085c8469(p0) end
+function N_0x7c226d5346d4d10a(p0) end
 
 ---```
 ---Getter for 0xCD74233600C4EA6B
@@ -2287,14 +2254,30 @@ function N_0xd1942374085c8469(p0) end
 function N_0xc2d2ad9eaae265b8() end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xF13FE2A80C05C561)
----@return boolean
-function N_0xf13fe2a80c05c561() end
+---[Native Documentation](https://docs.fivem.net/natives/?_0xCA6B2F7CE32AB653)
+---@param p0 any
+---@param p2 any
+---@return boolean, any
+function N_0xca6b2f7ce32ab653(p0, p2) end
+
+---SET_C\*
+---
+---```
+---NativeDB Introduced: v1734
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0xB7B873520C84C118)
+function N_0xb7b873520c84c118() end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xC594B315EDF2D4AF)
----@param ped number
-function N_0xc594b315edf2d4af(ped) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0xD1942374085C8469)
+---@param p0 any
+function N_0xd1942374085c8469(p0) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xDAF87174BE7454FF)
+---@param p0 any
+---@return boolean
+function N_0xdaf87174be7454ff(p0) end
 
 ---```
 ---NativeDB Introduced: v1290
@@ -2304,9 +2287,14 @@ function N_0xc594b315edf2d4af(ped) end
 function N_0xe4c3b169876d33d7(p0) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xC8E1071177A23BE5)
----@return boolean, any, any, any
-function N_0xc8e1071177a23be5() end
+---[Native Documentation](https://docs.fivem.net/natives/?_0xDE03620F8703A9DF)
+---@return any
+function N_0xde03620f8703a9df() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xF13FE2A80C05C561)
+---@return boolean
+function N_0xf13fe2a80c05c561() end
 
 ---```
 ---Setter for 0xC2D2AD9EAAE265B8
@@ -2317,14 +2305,26 @@ function N_0xc8e1071177a23be5() end
 ---@param toggle boolean
 function N_0xcd74233600c4ea6b(toggle) end
 
+---```
+---FORCE_*
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0xBA8D65C1C65702E5)
+---@param toggle boolean
+function N_0xba8d65c1c65702e5(toggle) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xC8E1071177A23BE5)
+---@return boolean, any, any, any
+function N_0xc8e1071177a23be5() end
+
 ---Uses the `SOCIAL_CLUB2` scaleform.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x75D3691713C3B05A)
 function OpenSocialClubMenu() end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xDE03620F8703A9DF)
----@return any
-function N_0xde03620f8703a9df() end
+---[Native Documentation](https://docs.fivem.net/natives/?_0xC594B315EDF2D4AF)
+---@param ped number
+function N_0xc594b315edf2d4af(ped) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xF47E567B3630DD12)
@@ -2332,13 +2332,14 @@ function N_0xde03620f8703a9df() end
 ---@param hudColor number
 function OverrideMultiplayerChatColour(p0, hudColor) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x805D7CBB36FD6C4C)
-function OpenOnlinePoliciesMenu() end
-
 ---**This native does absolutely nothing, just a nullsub**
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xD2049635DEB9C375)
 function N_0xd2049635deb9c375() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xE67C6DFD386EA5E7)
+---@param p0 boolean
+function N_0xe67c6dfd386ea5e7(p0) end
 
 ---Activates the specified frontend menu context.
 ---
@@ -2378,15 +2379,20 @@ function N_0xd2049635deb9c375() end
 ---@param hash number | string
 function PauseMenuActivateContext(hash) end
 
+---```
+---NativeDB Introduced: v1290
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0xEB81A3DADD503187)
+function N_0xeb81a3dadd503187() end
+
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xF284AC67940C6812)
 ---@return any
 function N_0xf284ac67940c6812() end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xE67C6DFD386EA5E7)
----@param p0 boolean
-function N_0xe67c6dfd386ea5e7(p0) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x805D7CBB36FD6C4C)
+function OpenOnlinePoliciesMenu() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x444D8CF241EC25C5)
@@ -2408,54 +2414,31 @@ function PauseMenuDeactivateContext(contextHash) end
 ---@param p7 any
 function N_0xf83d0febe75e62c9(p0, p1, p2, p3, p4, p5, p6, p7) end
 
----Disables the loading spinner in Pause Menu when switching from one header tab to another.
----[Native Documentation](https://docs.fivem.net/natives/?_0x9245E81072704B8A)
----@param toggle boolean
-function PauseMenuDisableBusyspinner(toggle) end
-
----```
----NativeDB Introduced: v1290
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0xEB81A3DADD503187)
-function N_0xeb81a3dadd503187() end
-
 ---```
 ---Shows a menu for reporting UGC content.
 ---```
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x523A590C1A3CC0D3)
 function OpenReportugcMenu() end
 
+---Disables the loading spinner in Pause Menu when switching from one header tab to another.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x9245E81072704B8A)
+---@param toggle boolean
+function PauseMenuDisableBusyspinner(toggle) end
+
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x6A1738B4323FE2D9)
 ---@param gxtEntryHash number | string
 function OverrideMultiplayerChatPrefix(gxtEntryHash) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x2A25ADC48F87841F)
----@return any
-function PauseMenuIsContextMenuActive() end
 
 ---If mouse is hovering on a slot, it returns the slot's index, else it returns -1.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x359AF31A4B52F5ED)
 ---@return number
 function PauseMenuGetIndexOfMouseHoveredSlot() end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xC78E239AC5B2DDB9)
----@param p0 boolean
----@param p1 any
----@param p2 any
-function PauseMenuSetBusySpinner(p0, p1, p2) end
-
 ---If mouse is hovering on a slot, it returns uniqueid of that slot, else it returns -1.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x13C4B962653A5280)
 ---@return number
 function PauseMenuGetUniqueIdOfMouseHoveredSlot() end
-
----Shows this warning message when trying to switch pause menu header tabs: https://i.imgur.com/8qmfztu.png
----[Native Documentation](https://docs.fivem.net/natives/?_0xF06EBB91A81E09E3)
----@param setWarn boolean
-function PauseMenuSetWarnOnTabChange(setWarn) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x84698AB38D0C6636)
@@ -2468,9 +2451,15 @@ function PauseMenuIsContextActive(contextHash) end
 ---@param p0 number
 function PauseMenuRedrawInstructionalButtons(p0) end
 
+---Shows this warning message when trying to switch pause menu header tabs: https://i.imgur.com/8qmfztu.png
+---[Native Documentation](https://docs.fivem.net/natives/?_0xF06EBB91A81E09E3)
+---@param setWarn boolean
+function PauseMenuSetWarnOnTabChange(setWarn) end
+
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xC65AB383CD91DF98)
-function PreloadBusyspinner() end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x2A25ADC48F87841F)
+---@return any
+function PauseMenuIsContextMenuActive() end
 
 ---Sets current pause menu page/component to the specified value.
 ---Available page IDs: https://pastebin.com/qxuhwjPT
@@ -2479,15 +2468,34 @@ function PreloadBusyspinner() end
 function PauseMenuceptionGoDeeper(pageId) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xC65AB383CD91DF98)
+function PreloadBusyspinner() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xC78E239AC5B2DDB9)
+---@param p0 boolean
+---@param p1 any
+---@param p2 any
+function PauseMenuSetBusySpinner(p0, p1, p2) end
+
+---```
+---If toggle is true, the map is shown in full screen
+---If toggle is false, the map is shown in normal mode
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x5354C5BA2EA868A4)
+---@param toggle boolean
+function RaceGalleryFullscreen(toggle) end
+
+---Forces the Pause Menu to back out of unique pages such as Awards, Unlocks, Key Bindings etc
+---[Native Documentation](https://docs.fivem.net/natives/?_0xCDCA26E80FAECB8F)
+function PauseMenuceptionTheKick() end
+
+---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x57D9C12635E25CE3)
 ---@param name string
 ---@param p1 boolean
 ---@return boolean
 function RegisterNamedRendertarget(name, p1) end
-
----Forces the Pause Menu to back out of unique pages such as Awards, Unlocks, Key Bindings etc
----[Native Documentation](https://docs.fivem.net/natives/?_0xCDCA26E80FAECB8F)
-function PauseMenuceptionTheKick() end
 
 ---```
 ---Add a BLIP_GALLERY at the specific coordinate. Used in fm_maintain_transition_players to display race track points.
@@ -2498,19 +2506,6 @@ function PauseMenuceptionTheKick() end
 ---@param z number
 ---@return any
 function RaceGalleryAddBlip(x, y, z) end
-
----Removes the blip from your map.
----[Native Documentation](https://docs.fivem.net/natives/?_0x86A652570E5F25DD)
----@param blip number
-function RemoveBlip(blip) end
-
----```
----If toggle is true, the map is shown in full screen
----If toggle is false, the map is shown in normal mode
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x5354C5BA2EA868A4)
----@param toggle boolean
-function RaceGalleryFullscreen(toggle) end
 
 ---```
 ---Sets the sprite of the next BLIP_GALLERY blip, values used in the native scripts: 143 (ObjectiveBlue), 144 (ObjectiveGreen), 145 (ObjectiveRed), 146 (ObjectiveYellow).
@@ -2524,6 +2519,15 @@ function RaceGalleryNextBlipSprite(spriteId) end
 ---@param blip number
 function PulseBlip(blip) end
 
+---Removes the blip from your map.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x86A652570E5F25DD)
+---@param blip number
+function RemoveBlip(blip) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xC7C6789AA1CFEDD0)
+function RemoveMultiplayerBankCash() end
+
 ---Enables frontend (works in custom frontends, not sure about regular pause menu) navigation keys on keyboard if they were disabled using the native below.
 ---
 ---To disable the keys, use [`0xEC9264727EEC0F28`](#\_0xEC9264727EEC0F28).
@@ -2531,24 +2535,14 @@ function PulseBlip(blip) end
 function ReleaseControlOfFrontend() end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xC7C6789AA1CFEDD0)
-function RemoveMultiplayerBankCash() end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x81FA173F170560D1)
+function RefreshWaypoint() end
 
 ---```
 ---Removes multiplayer cash hud each frame  
 ---```
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x968F270E39141ECA)
 function RemoveMultiplayerHudCash() end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xE9F6FFE837354DD4)
----@param name string
----@return boolean
-function ReleaseNamedRendertarget(name) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x95CF81BD06EE1887)
-function RemoveMultiplayerWalletCash() end
 
 ---```
 ---HUD colors and their values: pastebin.com/d9aHPbXN  
@@ -2567,14 +2561,16 @@ function ReplaceHudColourWithRgba(hudColorIndex, r, g, b, a) end
 function RemoveMpGamerTag(gamerTagId) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xE9F6FFE837354DD4)
+---@param name string
+---@return boolean
+function ReleaseNamedRendertarget(name) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x6009F9F1AE90D8A6)
 ---@param gxt string
 ---@param slot number
 function RequestAdditionalTextForDlc(gxt, slot) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x81FA173F170560D1)
-function RefreshWaypoint() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x6EF54AB721DC6242)
@@ -2586,12 +2582,14 @@ function RemoveWarningMessageListItems() end
 function ResetHudComponentValues(id) end
 
 ---```
----Request a gxt into the passed slot.  
+---HUD colors and their values: pastebin.com/d9aHPbXN  
+-----------------------------------------------------  
+---makes hudColorIndex2 color into hudColorIndex color  
 ---```
----[Native Documentation](https://docs.fivem.net/natives/?_0x71A78003C8E71424)
----@param gxt string
----@param slot number
-function RequestAdditionalText(gxt, slot) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x1CCC708F0F850613)
+---@param hudColorIndex number
+---@param hudColorIndex2 number
+function ReplaceHudColour(hudColorIndex, hudColorIndex2) end
 
 ---```
 ---Before using this native click the native above and look at the decription.  
@@ -2609,9 +2607,21 @@ function RequestAdditionalText(gxt, slot) end
 function RestartFrontendMenu(menuHash, p1) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x95CF81BD06EE1887)
+function RemoveMultiplayerWalletCash() end
+
+---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xB99C4E4D9499DF29)
 ---@param flagIndex number
 function ResetGlobalActionscriptFlag(flagIndex) end
+
+---```
+---Request a gxt into the passed slot.  
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x71A78003C8E71424)
+---@param gxt string
+---@param slot number
+function RequestAdditionalText(gxt, slot) end
 
 ---```
 ---NativeDB Introduced: v1868
@@ -2627,17 +2637,23 @@ function SetAllowAbilityBarInMultiplayer(toggle) end
 ---@param visible boolean
 function SetAbilityBarVisibilityInMultiplayer(visible) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x9969599CCFF5D85E)
----@param value number
----@param maxValue number
-function SetAbilityBarValue(value, maxValue) end
+---Toggles the big minimap state like in GTA:Online.
+---
+---To get the current state of the minimap, use [`IS_BIGMAP_ACTIVE`](#\_0xFFF65C63).
+---[Native Documentation](https://docs.fivem.net/natives/?_0x231C8F89D0539D8F)
+---@param toggleBigMap boolean
+---@param showFullMap boolean
+function SetBigmapActive(toggleBigMap, showFullMap) end
 
 ---Allows the user to set a blip as friendly or enemy based on the toggle.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x6F6F290102C02AB4)
 ---@param blip number
 ---@param toggle boolean
 function SetBlipAsFriendly(blip, toggle) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x12782CE0A636E9F0)
+function ResetReticuleValues() end
 
 ---```
 ---Sets alpha-channel for blip color.
@@ -2657,19 +2673,11 @@ function SetBlipAlpha(blip, alpha) end
 ---@param toggle boolean
 function SetBlipAsMissionCreatorBlip(blip, toggle) end
 
----Toggles the big minimap state like in GTA:Online.
----
----To get the current state of the minimap, use [`IS_BIGMAP_ACTIVE`](#\_0xFFF65C63).
----[Native Documentation](https://docs.fivem.net/natives/?_0x231C8F89D0539D8F)
----@param toggleBigMap boolean
----@param showFullMap boolean
-function SetBigmapActive(toggleBigMap, showFullMap) end
-
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xB203913733F27884)
----@param blip number
----@param toggle boolean
-function SetBlipBright(blip, toggle) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x9969599CCFF5D85E)
+---@param value number
+---@param maxValue number
+function SetAbilityBarValue(value, maxValue) end
 
 ---Sets whether or not the specified blip should only be displayed when nearby, or on the minimap.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xBE8BE4FE60E27B72)
@@ -2707,6 +2715,28 @@ function SetBlipAsShortRange(blip, toggle) end
 ---@param index number
 function SetBlipCategory(blip, index) end
 
+---See https://docs.fivem.net/docs/game-references/blips/#BlipColors
+---[Native Documentation](https://docs.fivem.net/natives/?_0x03D7FB09E75D6B7E)
+---@param blip number
+---@param color number
+function SetBlipColour(blip, color) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xAE2AF67E9D9AF65D)
+---@param blip number
+---@param posX number
+---@param posY number
+---@param posZ number
+function SetBlipCoords(blip, posX, posY, posZ) end
+
+---```
+---Must be toggled before being queued for animation
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0xC4278F70131BAA6D)
+---@param blip number
+---@param toggle boolean
+function SetBlipDisplayIndicatorOnBlip(blip, toggle) end
+
 ---**displayId Behaviour** <br>
 ---0 = Doesn't show up, ever, anywhere. <br>
 ---1 = Doesn't show up, ever, anywhere. <br>
@@ -2728,24 +2758,6 @@ function SetBlipCategory(blip, index) end
 function SetBlipDisplay(blip, displayId) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x12782CE0A636E9F0)
-function ResetReticuleValues() end
-
----See https://docs.fivem.net/docs/game-references/blips/#BlipColors
----[Native Documentation](https://docs.fivem.net/natives/?_0x03D7FB09E75D6B7E)
----@param blip number
----@param color number
-function SetBlipColour(blip, color) end
-
----```
----Must be toggled before being queued for animation
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0xC4278F70131BAA6D)
----@param blip number
----@param toggle boolean
-function SetBlipDisplayIndicatorOnBlip(blip, toggle) end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x2AEE8F8390D2298C)
 ---@param blip number
 ---@param opacity number
@@ -2753,34 +2765,10 @@ function SetBlipDisplayIndicatorOnBlip(blip, toggle) end
 function SetBlipFade(blip, opacity, duration) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xAE2AF67E9D9AF65D)
----@param blip number
----@param posX number
----@param posY number
----@param posZ number
-function SetBlipCoords(blip, posX, posY, posZ) end
-
----Flashes blip for time in milliseconds before stopping.
----[Native Documentation](https://docs.fivem.net/natives/?_0xD3CD6FD297AE87CC)
----@param blip number
----@param duration number
-function SetBlipFlashTimer(blip, duration) end
-
----```
----HUD colors and their values: pastebin.com/d9aHPbXN  
------------------------------------------------------  
----makes hudColorIndex2 color into hudColorIndex color  
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x1CCC708F0F850613)
----@param hudColorIndex number
----@param hudColorIndex2 number
-function ReplaceHudColour(hudColorIndex, hudColorIndex2) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xB14552383D39CE3E)
+---[Native Documentation](https://docs.fivem.net/natives/?_0x2E8D9498C56DD0D1)
 ---@param blip number
 ---@param toggle boolean
-function SetBlipFlashes(blip, toggle) end
+function SetBlipFlashesAlternate(blip, toggle) end
 
 ---Sets the interval in milliseconds before flashing the blip.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xAA51DB313C010A7E)
@@ -2789,22 +2777,36 @@ function SetBlipFlashes(blip, toggle) end
 function SetBlipFlashInterval(blip, interval) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x54318C915D27E4CE)
+---[Native Documentation](https://docs.fivem.net/natives/?_0xB14552383D39CE3E)
 ---@param blip number
 ---@param toggle boolean
-function SetBlipHiddenOnLegend(blip, toggle) end
+function SetBlipFlashes(blip, toggle) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x2E8D9498C56DD0D1)
+---Flashes blip for time in milliseconds before stopping.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xD3CD6FD297AE87CC)
 ---@param blip number
----@param toggle boolean
-function SetBlipFlashesAlternate(blip, toggle) end
+---@param duration number
+function SetBlipFlashTimer(blip, duration) end
+
+---```
+---Doesn't work if the label text of gxtEntry is >= 80.  
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0xEAA0FFE120D92784)
+---@param blip number
+---@param gxtEntry string
+function SetBlipNameFromTextFile(blip, gxtEntry) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xE2590BC29220CEBB)
 ---@param blip number
 ---@param toggle boolean
 function SetBlipHighDetail(blip, toggle) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x54318C915D27E4CE)
+---@param blip number
+---@param toggle boolean
+function SetBlipHiddenOnLegend(blip, toggle) end
 
 ---```
 ---See this topic for more details : gtaforums.com/topic/717612-v-scriptnative-documentation-and-research/page-35?p=1069477935  
@@ -2823,14 +2825,6 @@ function SetBlipPriority(blip, priority) end
 function SetBlipRoute(blip, enabled) end
 
 ---```
----Doesn't work if the label text of gxtEntry is >= 80.  
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0xEAA0FFE120D92784)
----@param blip number
----@param gxtEntry string
-function SetBlipNameFromTextFile(blip, gxtEntry) end
-
----```
 ---After some testing, looks like you need to use CEIL() on the rotation (vehicle/ped heading) before using it there.
 ---```
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xF87683CDF73C3F6E)
@@ -2839,16 +2833,22 @@ function SetBlipNameFromTextFile(blip, gxtEntry) end
 function SetBlipRotation(blip, rotation) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x837155CD2F63DA09)
----@param blip number
----@param colour number
-function SetBlipRouteColour(blip, colour) end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x127DE7B20C60A6A3)
 ---@param blip number
 ---@param player number
 function SetBlipNameToPlayerName(blip, player) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xB203913733F27884)
+---@param blip number
+---@param toggle boolean
+function SetBlipBright(blip, toggle) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x837155CD2F63DA09)
+---@param blip number
+---@param colour number
+function SetBlipRouteColour(blip, colour) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x14892474891E09EB)
@@ -2868,15 +2868,6 @@ function SetBlipSecondaryColour(blip, r, g, b) end
 ---@param xScale number
 ---@param yScale number
 function SetBlipScaleTransformation(blip, xScale, yScale) end
-
----```
----Makes a blip go small when off the minimap.
----SET_BLIP_AS_*
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x2B6D467DAB714E8D)
----@param blip number
----@param toggle boolean
-function SetBlipShrink(blip, toggle) end
 
 ---<!--
 ---_loc1_.map((name, idx) => `| ${idx} | ${name} | ![${name}](https://runtime.fivem.net/blips/${name}.svg) |`).join('\n')
@@ -2899,6 +2890,15 @@ function SetBlipSprite(blip, spriteId) end
 function SetBlipShowCone(blip, toggle) end
 
 ---```
+---Makes a blip go small when off the minimap.
+---SET_BLIP_AS_*
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x2B6D467DAB714E8D)
+---@param blip number
+---@param toggle boolean
+function SetBlipShrink(blip, toggle) end
+
+---```
 ---Does not require whole number/integer rotations.
 ---```
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA8B6AFDAC320AC87)
@@ -2913,11 +2913,10 @@ function SetBlipSquaredRotation(blip, heading) end
 ---@param y number
 function SetFloatingHelpTextScreenPosition(hudIndex, x, y) end
 
----```
----SET_*
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x2632482FD6B9AB87)
-function SetDirectorModeClearTriggeredFlag() end
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x39BBF623FC803EAC)
+---@param hudColor number
+function SetColourOfNextTextComponent(hudColor) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xD38744167B2FA257)
@@ -2963,16 +2962,6 @@ function SetFloatingHelpTextWorldPosition(hudIndex, x, y, z) end
 ---@param mapThickness number
 function SetGpsCustomRouteRender(toggle, radarThickness, mapThickness) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x320D0E0D936A0E9B)
----@param toggle boolean
-function SetGpsFlashes(toggle) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x39BBF623FC803EAC)
----@param hudColor number
-function SetColourOfNextTextComponent(hudColor) end
-
 ---```
 ---Only the script that originally called SET_GPS_FLAGS can set them again. Another script cannot set the flags, until the first script that called it has called CLEAR_GPS_FLAGS.
 ---Doesn't seem like the flags are actually read by the game at all.
@@ -2982,12 +2971,16 @@ function SetColourOfNextTextComponent(hudColor) end
 ---@param p1 number
 function SetGpsFlags(p0, p1) end
 
+---```
+---SET_*
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x2632482FD6B9AB87)
+function SetDirectorModeClearTriggeredFlag() end
+
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x3F5CC444DCAAA8F2)
----@param health number
----@param capacity number
----@param wasAdded boolean
-function SetHealthHudDisplayValues(health, capacity, wasAdded) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x320D0E0D936A0E9B)
+---@param toggle boolean
+function SetGpsFlashes(toggle) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xB9C362BABECDDC7A)
@@ -2999,14 +2992,16 @@ function SetHealthHudDisplayValues(health, capacity, wasAdded) end
 function SetHelpMessageTextStyle(style, hudColor, alpha, p3, p4) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x7B21E0BB01E8224A)
----@param color number
-function SetMainPlayerBlipColour(color) end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x3DDA37128DD1ACA8)
 ---@param toggle boolean
 function SetGpsMultiRouteRender(toggle) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x3F5CC444DCAAA8F2)
+---@param health number
+---@param capacity number
+---@param wasAdded boolean
+function SetHealthHudDisplayValues(health, capacity, wasAdded) end
 
 ---```
 ---NativeDB Introduced: v1493
@@ -3016,21 +3011,24 @@ function SetGpsMultiRouteRender(toggle) end
 function SetInteriorZoomLevelIncreased(toggle) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xAABB1F56E2A17CED)
----@param id number
----@param x number
----@param y number
-function SetHudComponentPosition(id, x, y) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x975D66A0BC17064C)
----@param maximumValue number
-function SetMaxHealthHudDisplay(maximumValue) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x7B21E0BB01E8224A)
+---@param color number
+function SetMainPlayerBlipColour(color) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x06A320535F5F0248)
 ---@param maximumValue number
 function SetMaxArmourHudDisplay(maximumValue) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x58FADDED207897DC)
+---@param toggle boolean
+function SetMinimapBlockWaypoint(toggle) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x975D66A0BC17064C)
+---@param maximumValue number
+function SetMaxHealthHudDisplay(maximumValue) end
 
 ---```
 ---Argument must be 0.0f or above 38.0f, or it will be ignored.  
@@ -3043,20 +3041,6 @@ function SetMaxArmourHudDisplay(maximumValue) end
 ---@param altitude number
 ---@param p1 boolean
 function SetMinimapAltitudeIndicatorLevel(altitude, p1) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x0923DBF87DFF735E)
----@param x number
----@param y number
----@param z number
-function SetMinimapFowRevealCoordinate(x, y, z) end
-
----```
----NativeDB Introduced: v2372
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x7EC8ABA5E74B3D7A)
----@param toggle boolean
-function SetInteriorZoomLevelDecreased(toggle) end
 
 ---This native is used to colorize certain map components like the army base at the top of the map.
 ---
@@ -3076,32 +3060,30 @@ function SetInteriorZoomLevelDecreased(toggle) end
 ---@return any
 function SetMinimapComponent(componentID, toggle, hudColor) end
 
----Not much is known so far on what it does *exactly*.
----All I know for sure is that it draws the specified hole ID on the pause menu map as well as on the mini-map/radar. This native also seems to change some other things related to the pause menu map's behaviour, for example: you can no longer set waypoints, the pause menu map starts up in a 'zoomed in' state. This native does not need to be executed every tick.
----
----You need to center the minimap manually as well as change/lock it's zoom and angle in order for it to appear correctly on the minimap.
----You'll also need to use the `GOLF` scaleform in order to get the correct minmap border to show up.
----
----Use [`N_0x35edd5b2e3ff01c0()`](https://runtime.fivem.net/doc/reference.html#\_0x35EDD5B2E3FF01C0) to reset the map when you no longer want to display any golf holes (you still need to unlock zoom, position and angle of the radar manually after calling this).
----[Native Documentation](https://docs.fivem.net/natives/?_0x71BDB63DBAF8DA59)
----@param hole number
-function SetMinimapGolfCourse(hole) end
-
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x35EDD5B2E3FF01C0)
 function SetMinimapGolfCourseOff() end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x58FADDED207897DC)
----@param toggle boolean
-function SetMinimapBlockWaypoint(toggle) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x0923DBF87DFF735E)
+---@param x number
+---@param y number
+---@param z number
+function SetMinimapFowRevealCoordinate(x, y, z) end
 
 ---```
----NativeDB Introduced: v2189
+---Toggles the North Yankton map
 ---```
----[Native Documentation](https://docs.fivem.net/natives/?_0x6B50FC8749632EC1)
+---[Native Documentation](https://docs.fivem.net/natives/?_0x9133955F1A2DA957)
 ---@param toggle boolean
-function SetMinimapSonarEnabled(toggle) end
+function SetMinimapInPrologue(toggle) end
+
+---```
+---NativeDB Introduced: v2372
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x7EC8ABA5E74B3D7A)
+---@param toggle boolean
+function SetInteriorZoomLevelDecreased(toggle) end
 
 ---```
 ---If true, the entire map will be revealed.
@@ -3111,17 +3093,16 @@ function SetMinimapSonarEnabled(toggle) end
 function SetMinimapHideFow(toggle) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xE45087D85F468BC2)
+---@param p0 boolean
+---@param name string
+function SetMissionName_2(p0, name) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x1A5CD7752DD28CD3)
 ---@param toggle boolean
 ---@param ped number
 function SetMinimapInSpectatorMode(toggle, ped) end
-
----```
----Toggles the North Yankton map
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x9133955F1A2DA957)
----@param toggle boolean
-function SetMinimapInPrologue(toggle) end
 
 ---```
 ---Changes the mouse cursor's sprite.   
@@ -3161,23 +3142,24 @@ function SetMpGamerTagAlpha(gamerTagId, component, alpha) end
 ---@param name string
 function SetMissionName(p0, name) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xE45087D85F468BC2)
----@param p0 boolean
----@param name string
-function SetMissionName_2(p0, name) end
+---Shows/hides the frontend cursor on the pause menu or similar menus.
+---Clicking off and then on the game window will show it again.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x98215325A695E78A)
+---@param enable boolean
+function SetMouseCursorVisibleInMenus(enable) end
+
+---Sets a gamer tag's component colour
+---[Native Documentation](https://docs.fivem.net/natives/?_0x613ED644950626AE)
+---@param gamerTagId number
+---@param component number
+---@param hudColorIndex number
+function SetMpGamerTagColour(gamerTagId, component, hudColorIndex) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x7B7723747CCB55B6)
 ---@param gamerTagId number
 ---@param string string
 function SetMpGamerTagBigText(gamerTagId, string) end
-
----Shows/hides the frontend cursor on the pause menu or similar menus.
----Clicking off and then on the game window will show it again.
----[Native Documentation](https://docs.fivem.net/natives/?_0x98215325A695E78A)
----@param enable boolean
-function SetMouseCursorVisibleInMenus(enable) end
 
 ---By default, the player health value shown by a gamer tag's health bar is synchronised with the health of the ped it is attached to.
 ---This native disables that behaviour, allowing [`_SET_MP_GAMER_TAG_OVERRIDE_PLAYER_HEALTH`](#\_0x1563FE35E9928E67) to have an effect.
@@ -3187,19 +3169,17 @@ function SetMouseCursorVisibleInMenus(enable) end
 function SetMpGamerTagDisablePlayerHealthSync(gamerTagId, toggle) end
 
 ---```
----displays wanted star above head  
+---NativeDB Introduced: v2189
 ---```
----[Native Documentation](https://docs.fivem.net/natives/?_0x9C16459B2324B2CF)
----@param gamerTagId number
----@param count number
-function SetMpGamerTagMpBagLargeCount(gamerTagId, count) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x6B50FC8749632EC1)
+---@param toggle boolean
+function SetMinimapSonarEnabled(toggle) end
 
----Sets a gamer tag's component colour
----[Native Documentation](https://docs.fivem.net/natives/?_0x613ED644950626AE)
+---Should be enabled as component (2). Has 0 alpha by default.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x3158C77A7E888AB4)
 ---@param gamerTagId number
----@param component number
 ---@param hudColorIndex number
-function SetMpGamerTagColour(gamerTagId, component, hudColorIndex) end
+function SetMpGamerTagHealthBarColour(gamerTagId, hudColorIndex) end
 
 ---Manually sets the player health value for a gamer tag, using the maximum health to calculate what percentage of the bar should be filled.
 ---Has no effect unless [\_SET_MP_GAMER_TAG_DISABLE_PLAYER_HEALTH_SYNC](#\_0xD29EC58C2F6B5014) has been called prior to disable synchronisation with the attached ped.
@@ -3209,18 +3189,42 @@ function SetMpGamerTagColour(gamerTagId, component, hudColorIndex) end
 ---@param maximumHealth number
 function SetMpGamerTagOverridePlayerHealth(gamerTagId, health, maximumHealth) end
 
+---```
+---Shows the cursor on screen for one frame.
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0xAAE7CE1D63167423)
+function SetMouseCursorActiveThisFrame() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xDEA2B8283BAA3944)
+---@param gamerTagId number
+---@param string string
+function SetMpGamerTagName(gamerTagId, string) end
+
+---Not much is known so far on what it does *exactly*.
+---All I know for sure is that it draws the specified hole ID on the pause menu map as well as on the mini-map/radar. This native also seems to change some other things related to the pause menu map's behaviour, for example: you can no longer set waypoints, the pause menu map starts up in a 'zoomed in' state. This native does not need to be executed every tick.
+---
+---You need to center the minimap manually as well as change/lock it's zoom and angle in order for it to appear correctly on the minimap.
+---You'll also need to use the `GOLF` scaleform in order to get the correct minmap border to show up.
+---
+---Use [`N_0x35edd5b2e3ff01c0()`](https://runtime.fivem.net/doc/reference.html#\_0x35EDD5B2E3FF01C0) to reset the map when you no longer want to display any golf holes (you still need to unlock zoom, position and angle of the radar manually after calling this).
+---[Native Documentation](https://docs.fivem.net/natives/?_0x71BDB63DBAF8DA59)
+---@param hole number
+function SetMinimapGolfCourse(hole) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xAABB1F56E2A17CED)
+---@param id number
+---@param x number
+---@param y number
+function SetHudComponentPosition(id, x, y) end
+
 ---Sets the health bar of a gamer tag to show the health of the last (or current) vehicle of the ped the gamer tag is attached to.
 ---The vehicle health value is stored separate from the player health and using it won't clear any player health overrides.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA67F9C46D612B6F1)
 ---@param gamerTagId number
 ---@param toggle boolean
 function SetMpGamerTagUseVehicleHealth(gamerTagId, toggle) end
-
----```
----Shows the cursor on screen for one frame.
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0xAAE7CE1D63167423)
-function SetMouseCursorActiveThisFrame() end
 
 ---```cpp
 ---enum eMpGamerTagComponent
@@ -3267,18 +3271,6 @@ function SetMouseCursorActiveThisFrame() end
 ---@param toggle boolean
 function SetMpGamerTagVisibility(gamerTagId, component, toggle) end
 
----Should be enabled as component (2). Has 0 alpha by default.
----[Native Documentation](https://docs.fivem.net/natives/?_0x3158C77A7E888AB4)
----@param gamerTagId number
----@param hudColorIndex number
-function SetMpGamerTagHealthBarColour(gamerTagId, hudColorIndex) end
-
----Sets the visibility of all components of the gamer tag to the specified value.
----[Native Documentation](https://docs.fivem.net/natives/?_0xEE76FF7E6A0166B0)
----@param gamerTagId number
----@param toggle boolean
-function SetMpGamerTagVisibilityAll(gamerTagId, toggle) end
-
 ---Preview image:
 ---
 ---![](https://i.imgur.com/1BTmdyv.png)
@@ -3287,11 +3279,25 @@ function SetMpGamerTagVisibilityAll(gamerTagId, toggle) end
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xDD21B55DF695CD0A)
 function SetMultiplayerBankCash() end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xFE43368D2AA4F2FC)
----@param x number
----@param y number
-function SetNewWaypoint(x, y) end
+---Sets the visibility of all components of the gamer tag to the specified value.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xEE76FF7E6A0166B0)
+---@param gamerTagId number
+---@param toggle boolean
+function SetMpGamerTagVisibilityAll(gamerTagId, toggle) end
+
+---**This native does absolutely nothing, just a nullsub**
+---[Native Documentation](https://docs.fivem.net/natives/?_0xFD1D220394BCB824)
+---@param p0 number
+---@param p1 number
+function SetMultiplayerHudCash(p0, p1) end
+
+---```
+---displays wanted star above head  
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x9C16459B2324B2CF)
+---@param gamerTagId number
+---@param count number
+function SetMpGamerTagMpBagLargeCount(gamerTagId, count) end
 
 ---```
 ---displays wanted star above head  
@@ -3309,12 +3315,6 @@ function SetMpGamerTagWantedLevel(gamerTagId, wantedlvl) end
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC2D15BEF167E27BC)
 function SetMultiplayerWalletCash() end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xDEA2B8283BAA3944)
----@param gamerTagId number
----@param string string
-function SetMpGamerTagName(gamerTagId, string) end
-
 ---Toggles the light state for the pause menu ped in frontend menus.
 ---
 ---This is used by R\* in combination with [`SET_PAUSE_MENU_PED_SLEEP_STATE`](#\_0xECF128344E9FF9F1) to toggle the "offline" or "online" state in the "friends" tab of the pause menu in GTA Online.
@@ -3325,6 +3325,11 @@ function SetMpGamerTagName(gamerTagId, string) end
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x3CA6050692BC61B0)
 ---@param state boolean
 function SetPauseMenuPedLighting(state) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xDF47FC56C71569CF)
+---@param toggle boolean
+function SetPauseMenuActive(toggle) end
 
 ---```
 ---if "flag" is true, the AI blip will always be displayed for the specified ped, if it has an AI blip  
@@ -3343,33 +3348,16 @@ function SetPedAiBlipForcedOn(ped, toggle) end
 function SetPauseMenuPedSleepState(state) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xDF47FC56C71569CF)
----@param toggle boolean
-function SetPauseMenuActive(toggle) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xE52B8E7F85D39A08)
+---[Native Documentation](https://docs.fivem.net/natives/?_0x3EED80DFF7325CAA)
 ---@param ped number
----@param gangId number
-function SetPedAiBlipGangId(ped, gangId) end
+---@param toggle boolean
+function SetPedAiBlipHasCone(ped, toggle) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x97C65887D4B37FA9)
 ---@param ped number
 ---@param range number
 function SetPedAiBlipNoticeRange(ped, range) end
-
----**This native does absolutely nothing, just a nullsub**
----[Native Documentation](https://docs.fivem.net/natives/?_0xFD1D220394BCB824)
----@param p0 number
----@param p1 number
-function SetMultiplayerHudCash(p0, p1) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x3EED80DFF7325CAA)
----@param ped number
----@param toggle boolean
-function SetPedAiBlipHasCone(ped, toggle) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xFCFACD0DB9D7A57D)
@@ -3386,15 +3374,6 @@ function SetPedAiBlipSprite(ped, spriteId) end
 ---@param hasCone boolean
 function SetPedHasAiBlip(ped, hasCone) end
 
----```
----Sets the position of the arrow icon representing the player on both the minimap and world map.  
----Too bad this wouldn't work over the network (obviously not). Could spoof where we would be.  
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x77E2DD177910E1CF)
----@param x number
----@param y number
-function SetPlayerBlipPositionThisFrame(x, y) end
-
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xB13DCB4C6FAAD238)
 ---@param ped number
@@ -3410,6 +3389,27 @@ function SetPedHasAiBlipWithColor(ped, hasCone, color) end
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x808519373FD336A3)
 ---@param toggle boolean
 function SetPlayerIsInDirectorMode(toggle) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xFE43368D2AA4F2FC)
+---@param x number
+---@param y number
+function SetNewWaypoint(x, y) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xE52B8E7F85D39A08)
+---@param ped number
+---@param gangId number
+function SetPedAiBlipGangId(ped, gangId) end
+
+---```
+---Sets the position of the arrow icon representing the player on both the minimap and world map.  
+---Too bad this wouldn't work over the network (obviously not). Could spoof where we would be.  
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x77E2DD177910E1CF)
+---@param x number
+---@param y number
+function SetPlayerBlipPositionThisFrame(x, y) end
 
 ---```
 ---List of interior hashes: pastebin.com/1FUyXNqY  
@@ -3428,17 +3428,6 @@ function SetRadarAsInteriorThisFrame(interior, x, y, heading, zoom) end
 ---@param zoom number
 function SetRadarZoomPrecise(zoom) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xE81B7D2A3DAB2D81)
-function SetRadarAsExteriorThisFrame() end
-
----```
----zoomLevel ranges from 0 to 200  
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x096EF57A0C999BBA)
----@param zoomLevel number
-function SetRadarZoom(zoomLevel) end
-
 ---```
 ---Enabling this on a radius blip will make it outline only. See https://cdn.discordapp.com/attachments/553235301632573459/575132227935928330/unknown.png
 ---```
@@ -3446,6 +3435,10 @@ function SetRadarZoom(zoomLevel) end
 ---@param blip number
 ---@param toggle boolean
 function SetRadiusBlipEdge(blip, toggle) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xE81B7D2A3DAB2D81)
+function SetRadarAsExteriorThisFrame() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x1EAC5F91BCBC5073)
@@ -3479,10 +3472,6 @@ function SetScriptVariableHudColour(r, g, b, a) end
 function SetScriptVariable_2HudColour(r, g, b, a) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x1CA3E9EAC9D93E5E)
-function SetTextDropShadow() end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC02F4DBFB51D988B)
 ---@param align boolean
 function SetTextCentre(align) end
@@ -3491,6 +3480,16 @@ function SetTextCentre(align) end
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xCB7CC0D58405AD41)
 ---@param zoom number
 function SetRadarZoomToDistance(zoom) end
+
+---```
+---HUD::SET_SOCIAL_CLUB_TOUR("Gallery");
+---HUD::SET_SOCIAL_CLUB_TOUR("Missions");
+---HUD::SET_SOCIAL_CLUB_TOUR("General");
+---HUD::SET_SOCIAL_CLUB_TOUR("Playlists");
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x9E778248D6685FE0)
+---@param name string
+function SetSocialClubTour(name) end
 
 ---distance - shadow distance in pixels, both horizontal and vertical
 ---r, g, b, a - color
@@ -3503,23 +3502,26 @@ function SetRadarZoomToDistance(zoom) end
 function SetTextDropshadow(distance, r, g, b, a) end
 
 ---```
----HUD::SET_SOCIAL_CLUB_TOUR("Gallery");
----HUD::SET_SOCIAL_CLUB_TOUR("Missions");
----HUD::SET_SOCIAL_CLUB_TOUR("General");
----HUD::SET_SOCIAL_CLUB_TOUR("Playlists");
+---Types -  
+---0: Center-Justify  
+---1: Left-Justify  
+---2: Right-Justify  
+---Right-Justify requires SET_TEXT_WRAP, otherwise it will draw to the far right of the screen  
 ---```
----[Native Documentation](https://docs.fivem.net/natives/?_0x9E778248D6685FE0)
----@param name string
-function SetSocialClubTour(name) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x4E096588B13FFECA)
+---@param justifyType number
+function SetTextJustification(justifyType) end
 
----**This native does absolutely nothing, just a nullsub**
----[Native Documentation](https://docs.fivem.net/natives/?_0x441603240D202FA6)
----@param p0 number
----@param r number
----@param g number
----@param b number
----@param a number
-function SetTextEdge(p0, r, g, b, a) end
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x1CA3E9EAC9D93E5E)
+function SetTextDropShadow() end
+
+---```
+---fonts that mess up your text where made for number values/misc stuff  
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x66E0276CC5F6B9DA)
+---@param fontType number
+function SetTextFont(fontType) end
 
 ---```
 ---colors you input not same as you think?
@@ -3536,28 +3538,26 @@ function SetTextColour(red, green, blue, alpha) end
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x2513DFB0FB8400FE)
 function SetTextOutline() end
 
----```
----Types -  
----0: Center-Justify  
----1: Left-Justify  
----2: Right-Justify  
----Right-Justify requires SET_TEXT_WRAP, otherwise it will draw to the far right of the screen  
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x4E096588B13FFECA)
----@param justifyType number
-function SetTextJustification(justifyType) end
-
----```
----fonts that mess up your text where made for number values/misc stuff  
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x66E0276CC5F6B9DA)
----@param fontType number
-function SetTextFont(fontType) end
+---**This native does absolutely nothing, just a nullsub**
+---[Native Documentation](https://docs.fivem.net/natives/?_0x441603240D202FA6)
+---@param p0 number
+---@param r number
+---@param g number
+---@param b number
+---@param a number
+function SetTextEdge(p0, r, g, b, a) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA50ABC31E3CDFAFF)
 ---@param p0 number
 function SetTextLeading(p0) end
+
+---```
+---zoomLevel ranges from 0 to 200  
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x096EF57A0C999BBA)
+---@param zoomLevel number
+function SetRadarZoom(zoomLevel) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x5F15302936E07111)
@@ -3689,20 +3689,6 @@ function SetToggleMinimapHeistIsland(toggle) end
 ---@return boolean
 function SetWarningMessageListRow(index, name, cash, rp, lvl, colour) end
 
----Sets a global mode which makes the pause menu map show 'Destination' instead of 'Waypoint' in the key legend on the
----bottom of the screen.
----
----<!--
----
----Name guess:
----
----  - alphabetical function order, below [SET_USER_RADIO_CONTROL_ENABLED, SET_USE_HI_DOF], above SET_VARIABLE_ON_SOUND.
----
------>
----[Native Documentation](https://docs.fivem.net/natives/?_0x6CDD58146A436083)
----@param toggle boolean
-function SetUseWaypointAsDestination(toggle) end
-
 ---```
 ---You can only use text entries. No custom text.  
 ---```
@@ -3785,6 +3771,11 @@ function SetWarningMessageWithHeaderAndSubstringFlags(entryHeader, entryLine1, i
 ---@param errorCode number
 function SetWarningMessageWithAlert(labelTitle, labelMsg, p2, p3, labelMsg2, p5, p6, p7, p8, p9, background, errorCode) end
 
+---**This native does absolutely nothing, just a nullsub**
+---[Native Documentation](https://docs.fivem.net/natives/?_0x038C1F517D7FDCF8)
+---@param p0 boolean
+function SetTextProportional(p0) end
+
 ---```
 ---This native removes the current waypoint from the map.
 ---Example:
@@ -3820,10 +3811,41 @@ function SetWaypointOff() end
 ---@return any
 function SetWarningMessageWithHeader(titleMsg, entryLine1, flags, promptMsg, p4, p5, background, showBg) end
 
----**This native does absolutely nothing, just a nullsub**
----[Native Documentation](https://docs.fivem.net/natives/?_0x038C1F517D7FDCF8)
----@param p0 boolean
-function SetTextProportional(p0) end
+---Enables or disables the blue half circle ![](https://i.imgur.com/iZes9Ec.png) around the specified blip on the left side of the blip. This is used to indicate that the player is in your crew in GTA:O. Color is changeable by using [`SET_BLIP_SECONDARY_COLOUR`](#\_0x14892474891E09EB).
+---
+---To toggle the right side of the circle use: [`SHOW_FRIEND_INDICATOR_ON_BLIP`](#\_0x23C3EB807312F01A).
+---
+---Example code result:
+---![](https://i.imgur.com/iZ9tNWl.png)
+---[Native Documentation](https://docs.fivem.net/natives/?_0xDCFB5D4DB8BF367E)
+---@param blip number
+---@param toggle boolean
+function ShowCrewIndicatorOnBlip(blip, toggle) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xC3B07BA00A83B0F1)
+---@param p0 any
+function SetWidescreenFormat(p0) end
+
+---Sets a global mode which makes the pause menu map show 'Destination' instead of 'Waypoint' in the key legend on the
+---bottom of the screen.
+---
+---<!--
+---
+---Name guess:
+---
+---  - alphabetical function order, below [SET_USER_RADIO_CONTROL_ENABLED, SET_USE_HI_DOF], above SET_VARIABLE_ON_SOUND.
+---
+----->
+---[Native Documentation](https://docs.fivem.net/natives/?_0x6CDD58146A436083)
+---@param toggle boolean
+function SetUseWaypointAsDestination(toggle) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x75A16C3DA34F1245)
+---@param blip number
+---@param toggle boolean
+function ShowHeightOnBlip(blip, toggle) end
 
 ---```
 ---NativeDB Introduced: v1493
@@ -3841,45 +3863,6 @@ function SetTextProportional(p0) end
 ---@return any, any
 function SetWarningMessageWithHeaderUnk(entryHeader, entryLine1, flags, entryLine2, p4, p5, showBg, p9, p10) end
 
----Enables or disables the blue half circle ![](https://i.imgur.com/iZes9Ec.png) around the specified blip on the left side of the blip. This is used to indicate that the player is in your crew in GTA:O. Color is changeable by using [`SET_BLIP_SECONDARY_COLOUR`](#\_0x14892474891E09EB).
----
----To toggle the right side of the circle use: [`SHOW_FRIEND_INDICATOR_ON_BLIP`](#\_0x23C3EB807312F01A).
----
----Example code result:
----![](https://i.imgur.com/iZ9tNWl.png)
----[Native Documentation](https://docs.fivem.net/natives/?_0xDCFB5D4DB8BF367E)
----@param blip number
----@param toggle boolean
-function ShowCrewIndicatorOnBlip(blip, toggle) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x75A16C3DA34F1245)
----@param blip number
----@param toggle boolean
-function ShowHeightOnBlip(blip, toggle) end
-
----Highlights a blip by a half cyan circle on the right side of the blip. ![](https://i.imgur.com/FrV9M4e.png) Indicating that that player is a friend (in GTA:O). This color can not be changed.
----
----To toggle the left side (crew member indicator) of the half circle around the blip, use: [`SHOW_CREW_INDICATOR_ON_BLIP`](#\_0xDCFB5D4DB8BF367E).
----[Native Documentation](https://docs.fivem.net/natives/?_0x23C3EB807312F01A)
----@param blip number
----@param toggle boolean
-function ShowFriendIndicatorOnBlip(blip, toggle) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xA3C0B359DCB848B6)
----@param blip number
----@param number number
-function ShowNumberOnBlip(blip, number) end
-
----Toggles a cyan outline around the blip.
----
----Color can be changed with [`SET_BLIP_SECONDARY_COLOUR`](#\_0x14892474891E09EB). Enabling this circle will override the "crew" and "friend" half-circles (see [`SHOW_CREW_INDICATOR_ON_BLIP`](#\_0xDCFB5D4DB8BF367E) and [`SHOW_FRIEND_INDICATOR_ON_BLIP`](#\_0x23C3EB807312F01A)).
----[Native Documentation](https://docs.fivem.net/natives/?_0xB81656BC81FE24D1)
----@param blip number
----@param toggle boolean
-function ShowOutlineIndicatorOnBlip(blip, toggle) end
-
 ---SHOW_\*
 ---
 ---```
@@ -3888,6 +3871,14 @@ function ShowOutlineIndicatorOnBlip(blip, toggle) end
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x4F38DCA127DAAEA2)
 ---@param id number
 function ShowScriptedHudComponentThisFrame(id) end
+
+---Highlights a blip by a half cyan circle on the right side of the blip. ![](https://i.imgur.com/FrV9M4e.png) Indicating that that player is a friend (in GTA:O). This color can not be changed.
+---
+---To toggle the left side (crew member indicator) of the half circle around the blip, use: [`SHOW_CREW_INDICATOR_ON_BLIP`](#\_0xDCFB5D4DB8BF367E).
+---[Native Documentation](https://docs.fivem.net/natives/?_0x23C3EB807312F01A)
+---@param blip number
+---@param toggle boolean
+function ShowFriendIndicatorOnBlip(blip, toggle) end
 
 ---```
 ---Adds a orange checkmark on top of a given blip handle: https://imgur.com/a/aw5OTMF
@@ -3902,39 +3893,13 @@ function ShowScriptedHudComponentThisFrame(id) end
 ---@param toggle boolean
 function ShowHasCompletedIndicatorOnBlip(blip, toggle) end
 
----```
----Adds a green checkmark on top of a blip.  
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x74513EA3E505181E)
+---Toggles a cyan outline around the blip.
+---
+---Color can be changed with [`SET_BLIP_SECONDARY_COLOUR`](#\_0x14892474891E09EB). Enabling this circle will override the "crew" and "friend" half-circles (see [`SHOW_CREW_INDICATOR_ON_BLIP`](#\_0xDCFB5D4DB8BF367E) and [`SHOW_FRIEND_INDICATOR_ON_BLIP`](#\_0x23C3EB807312F01A)).
+---[Native Documentation](https://docs.fivem.net/natives/?_0xB81656BC81FE24D1)
 ---@param blip number
 ---@param toggle boolean
-function ShowTickOnBlip(blip, toggle) end
-
----```
----Adds the GTA: Online player heading indicator to a blip.  
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x5FBCA48327B914DF)
----@param blip number
----@param toggle boolean
-function ShowHeadingIndicatorOnBlip(blip, toggle) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xC3B07BA00A83B0F1)
----@param p0 any
-function SetWidescreenFormat(p0) end
-
----Starts a new GPS custom-route, allowing you to plot lines on the map.
----Lines are drawn directly between points.
----The GPS custom route works like the GPS multi route, except it does not follow roads.
----
----**Example result:**
----
----![](https://i.imgur.com/BDm5pzt.png)
----[Native Documentation](https://docs.fivem.net/natives/?_0xDB34E8D56FC13B08)
----@param hudColor number
----@param displayOnFoot boolean
----@param followPlayer boolean
-function StartGpsCustomRoute(hudColor, displayOnFoot, followPlayer) end
+function ShowOutlineIndicatorOnBlip(blip, toggle) end
 
 ---This function shows various HUD (Heads-up Display) components.
 ---
@@ -3969,13 +3934,43 @@ function StartGpsCustomRoute(hudColor, displayOnFoot, followPlayer) end
 function ShowHudComponentThisFrame(id) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xF1A6C18B35BCADE6)
----@param p0 boolean
-function ShowStartMissionInstructionalButton(p0) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0xA3C0B359DCB848B6)
+---@param blip number
+---@param number number
+function ShowNumberOnBlip(blip, number) end
+
+---```
+---Adds the GTA: Online player heading indicator to a blip.  
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x5FBCA48327B914DF)
+---@param blip number
+---@param toggle boolean
+function ShowHeadingIndicatorOnBlip(blip, toggle) end
+
+---Starts a new GPS custom-route, allowing you to plot lines on the map.
+---Lines are drawn directly between points.
+---The GPS custom route works like the GPS multi route, except it does not follow roads.
+---
+---**Example result:**
+---
+---![](https://i.imgur.com/BDm5pzt.png)
+---[Native Documentation](https://docs.fivem.net/natives/?_0xDB34E8D56FC13B08)
+---@param hudColor number
+---@param displayOnFoot boolean
+---@param followPlayer boolean
+function StartGpsCustomRoute(hudColor, displayOnFoot, followPlayer) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xBA751764F0821256)
 function SuppressFrontendRenderingThisFrame() end
+
+---```
+---Adds a green checkmark on top of a blip.  
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x74513EA3E505181E)
+---@param blip number
+---@param toggle boolean
+function ShowTickOnBlip(blip, toggle) end
 
 ---Disables frontend (works in custom frontends, not sure about regular pause menu) navigation keys on keyboard. Not sure about controller. Does not disable mouse controls. No need to call this every tick.
 ---
@@ -4002,9 +3997,10 @@ function StartGpsMultiRoute(hudColor, routeFromPlayer, displayOnFoot) end
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x80FE4F3AB4E1B62A)
 function ThefeedClearFrozenPost() end
 
----Stops loading screen tips shown by invoking either `0x488043841BBE156F` or `0x15CFA549788D35EF`
----[Native Documentation](https://docs.fivem.net/natives/?_0x32888337579A5970)
-function ThefeedDisableLoadingScreenTips() end
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xF1A6C18B35BCADE6)
+---@param p0 boolean
+function ShowStartMissionInstructionalButton(p0) end
 
 ---```
 ---Enables loading screen tips to be be shown (`_0x15CFA549788D35EF` and `_0x488043841BBE156F`), blocks other kinds of notifications from being displayed (at least from current script). Call `0xADED7F5748ACAFE6` to display those again.
@@ -4012,21 +4008,17 @@ function ThefeedDisableLoadingScreenTips() end
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x56C8B608CFD49854)
 function ThefeedCommentTeleportPoolOn() end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x60E892BA4F5BDCA4)
-function ShowSigninUi() end
+---Stops loading screen tips shown by invoking either `0x488043841BBE156F` or `0x15CFA549788D35EF`
+---[Native Documentation](https://docs.fivem.net/natives/?_0x32888337579A5970)
+function ThefeedDisableLoadingScreenTips() end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xA8FDB297A8D25FBA)
-function ThefeedFlushQueue() end
+---[Native Documentation](https://docs.fivem.net/natives/?_0xA13C11E1B5C06BFC)
+function ThefeedForceRenderOn() end
 
 ---Displays loading screen tips, requires `0x56C8B608CFD49854` to be called beforehand.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x15CFA549788D35EF)
 function ThefeedDisplayLoadingScreenTips() end
-
----Once called each frame hides all above radar notifications.
----[Native Documentation](https://docs.fivem.net/natives/?_0x25F87B30C382FCA7)
-function ThefeedHideThisFrame() end
 
 ---```
 ---Requires manual management of game stream handles (i.e., 0xBE4390CB40B3E627).
@@ -4034,21 +4026,13 @@ function ThefeedHideThisFrame() end
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xFDEC055AB549E328)
 function ThefeedFreezeNextPost() end
 
----```
----Returns the handle for the notification currently displayed on the screen. Name may be a hash collision, but describes the function accurately.
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x82352748437638CA)
----@return number
-function ThefeedGetFirstVisibleDeleteRemaining() end
-
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xFDB423997FA30340)
-function ThefeedPause() end
+---[Native Documentation](https://docs.fivem.net/natives/?_0xA8FDB297A8D25FBA)
+function ThefeedFlushQueue() end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xA9CBFD40B3FA3010)
----@return boolean
-function ThefeedIsPaused() end
+---Once called each frame hides all above radar notifications.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x25F87B30C382FCA7)
+function ThefeedHideThisFrame() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x6F1554B0CC2089FA)
@@ -4063,35 +4047,24 @@ function ThefeedOnlyShowTooltips(toggle) end
 function ThefeedRemoveItem(notificationId) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xFDD85225B2DEA55E)
-function ThefeedResetAllParameters() end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x60E892BA4F5BDCA4)
+function ShowSigninUi() end
+
+---```
+---Returns the handle for the notification currently displayed on the screen. Name may be a hash collision, but describes the function accurately.
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x82352748437638CA)
+---@return number
+function ThefeedGetFirstVisibleDeleteRemaining() end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xE1CD1E48E025E661)
-function ThefeedResume() end
+---[Native Documentation](https://docs.fivem.net/natives/?_0xA9CBFD40B3FA3010)
+---@return boolean
+function ThefeedIsPaused() end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xA13C11E1B5C06BFC)
-function ThefeedForceRenderOn() end
-
----Related to notification color flashing, setting p0 to 0 invalidates a `_SET_NOTIFICATION_FLASH_COLOR` call for the target notification.
----[Native Documentation](https://docs.fivem.net/natives/?_0x17AD8C9706BDD88A)
----@param count number
-function ThefeedSetAnimpostfxCount(count) end
-
----```
----Requires GAME_STREAM_ENUMS.MSGTEXT. Default sounds: "DPAD_WEAPON_SCROLL" and "HUD_FRONTEND_DEFAULT_SOUNDSET"
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x4A0C7C9BB10ABB36)
----@param toggle boolean
-function ThefeedSetAnimpostfxSound(toggle) end
-
----```
----If true, remove all feed components instantly. Otherwise tween/animate close each component
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0xBAE4F9B97CD43B30)
----@param toggle boolean
-function ThefeedSetFlushAnimpostfx(toggle) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0xFDB423997FA30340)
+function ThefeedPause() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x17430B918701C342)
@@ -4101,14 +4074,25 @@ function ThefeedSetFlushAnimpostfx(toggle) end
 ---@param alpha number
 function ThefeedSetAnimpostfxColor(red, green, blue, alpha) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xB695E2CD0A2DA9EE)
-function ThefeedSpsExtendWidescreenOff() end
+---Related to notification color flashing, setting p0 to 0 invalidates a `_SET_NOTIFICATION_FLASH_COLOR` call for the target notification.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x17AD8C9706BDD88A)
+---@param count number
+function ThefeedSetAnimpostfxCount(count) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x55598D21339CB998)
----@param pos number
-function ThefeedSetScriptedMenuHeight(pos) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0xE1CD1E48E025E661)
+function ThefeedResume() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xFDD85225B2DEA55E)
+function ThefeedResetAllParameters() end
+
+---```
+---If true, remove all feed components instantly. Otherwise tween/animate close each component
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0xBAE4F9B97CD43B30)
+---@param toggle boolean
+function ThefeedSetFlushAnimpostfx(toggle) end
 
 ---```
 ---From the decompiled scripts:
@@ -4125,9 +4109,12 @@ function ThefeedSetScriptedMenuHeight(pos) end
 ---@param hudColorIndex number
 function ThefeedSetNextPostBackgroundColor(hudColorIndex) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x8183455E16C42E3A)
-function UnlockMinimapAngle() end
+---```
+---Requires GAME_STREAM_ENUMS.MSGTEXT. Default sounds: "DPAD_WEAPON_SCROLL" and "HUD_FRONTEND_DEFAULT_SOUNDSET"
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x4A0C7C9BB10ABB36)
+---@param toggle boolean
+function ThefeedSetAnimpostfxSound(toggle) end
 
 ---```
 ---Used in the native scripts to reference "GET_PEDHEADSHOT_TXD_STRING" and "CHAR_DEFAULT".
@@ -4141,22 +4128,14 @@ function UnlockMinimapAngle() end
 ---@param txnString2 string
 function ThefeedUpdateItemTexture(txdString1, txnString1, txdString2, txnString2) end
 
----```
----Related to displaying cash on the HUD
----Always called before HUD::CHANGE_FAKE_MP_CASH in decompiled scripts
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x170F541E1CADD1DE)
----@param p0 boolean
-function UseFakeMpCash(p0) end
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xB695E2CD0A2DA9EE)
+function ThefeedSpsExtendWidescreenOff() end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xD4438C0564490E63)
-function ThefeedSpsExtendWidescreenOn() end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x6AFDFB93754950C7)
----@param toggle boolean
-function ToggleStealthRadar(toggle) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x55598D21339CB998)
+---@param pos number
+function ThefeedSetScriptedMenuHeight(pos) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x72DD432F3CDFC0EE)
@@ -4168,6 +4147,27 @@ function ToggleStealthRadar(toggle) end
 function TriggerSonarBlip(posX, posY, posZ, radius, p4) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x8183455E16C42E3A)
+function UnlockMinimapAngle() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x6AFDFB93754950C7)
+---@param toggle boolean
+function ToggleStealthRadar(toggle) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x3E93E06DB8EF1F30)
 function UnlockMinimapPosition() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xD4438C0564490E63)
+function ThefeedSpsExtendWidescreenOn() end
+
+---```
+---Related to displaying cash on the HUD
+---Always called before HUD::CHANGE_FAKE_MP_CASH in decompiled scripts
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x170F541E1CADD1DE)
+---@param p0 boolean
+function UseFakeMpCash(p0) end
 

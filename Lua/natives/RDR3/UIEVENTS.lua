@@ -21,6 +21,11 @@ function EventsUiIsPending(hash) end
 ---@return boolean, any
 function EventsUiGetMessage(hash) end
 
+---Old name: _EVENT_MANAGER_POP_EVENT
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x8E8A2369F48EC839)
+---@param hash number | string
+function EventsUiPopMessage(hash) end
+
 ---eventData: see EVENTS_UI_GET_MESSAGE
 ---
 ---Old name: _EVENT_MANAGER_PEEK_EVENT
@@ -28,9 +33,4 @@ function EventsUiGetMessage(hash) end
 ---@param hash number | string
 ---@return boolean, any
 function EventsUiPeekMessage(hash) end
-
----Old name: _EVENT_MANAGER_POP_EVENT
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x8E8A2369F48EC839)
----@param hash number | string
-function EventsUiPopMessage(hash) end
 

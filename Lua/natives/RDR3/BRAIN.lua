@@ -30,14 +30,14 @@ function StartPreloadedScriptBrain(entity, scriptName, scriptStackSize, p3) end
 function StartScriptBrain(entity, scriptName, p2, p4, p5) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x6818D1A194E29983)
----@return number
-function GetScriptBrainEntity() end
-
----This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x38F1E09224EECA09)
 ---@param entity number
 function RemoveScriptBrainEntity(entity) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x6818D1A194E29983)
+---@return number
+function GetScriptBrainEntity() end
 
 ---Called with flag 0 before 0xA6AC35DB4A7957A8 in net_entity_brain
 ---_SET_SCRIPT_BRAIN*
@@ -51,17 +51,10 @@ function N_0x4aa5ea1edfb25786(flag) end
 ---@param flag number
 function N_0xa6ac35db4a7957a8(flag) end
 
----Called before starting a new thread_monitor script thread in startup_mp/startup_tlg
----Alternative name _REGISTER_SCRIPT_BRAIN
----
----Old name: _PREPARE_SCRIPT_BRAIN
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xA32B0B05EFF75730)
-function ReactivateAllObjectBrainsThatAreWaitingTillOutOfRange() end
-
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x3F44EA613A5B2676)
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x1CF6E5C6750EADBD)
 ---@param brainSet number
-function DisableScriptBrainSet(brainSet) end
+function EnableScriptBrainSet(brainSet) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x74C333E34DF74E8A)
@@ -69,7 +62,14 @@ function DisableScriptBrainSet(brainSet) end
 function ReactivateNamedObjectBrainsWaitingTillOutOfRange(scriptName) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x1CF6E5C6750EADBD)
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x3F44EA613A5B2676)
 ---@param brainSet number
-function EnableScriptBrainSet(brainSet) end
+function DisableScriptBrainSet(brainSet) end
+
+---Called before starting a new thread_monitor script thread in startup_mp/startup_tlg
+---Alternative name _REGISTER_SCRIPT_BRAIN
+---
+---Old name: _PREPARE_SCRIPT_BRAIN
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xA32B0B05EFF75730)
+function ReactivateAllObjectBrainsThatAreWaitingTillOutOfRange() end
 

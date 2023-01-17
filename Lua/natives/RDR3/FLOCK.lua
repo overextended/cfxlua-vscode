@@ -9,14 +9,6 @@
 function GetSpeciesTuningFloatParam(p0, p1, p2) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x6D1D94C2459B42EE)
----@param p0 number | string
----@param p1 number
----@param p2 number
----@param p3 boolean
-function SetSpeciesTuningBoolParam(p0, p1, p2, p3) end
-
----This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x963240B6C252BA49)
 ---@param p0 number | string
 ---@param p1 number
@@ -25,17 +17,32 @@ function SetSpeciesTuningBoolParam(p0, p1, p2, p3) end
 function SetSpeciesTuningFloatParam(p0, p1, p2, p3) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x6D1D94C2459B42EE)
+---@param p0 number | string
+---@param p1 number
+---@param p2 number
+---@param p3 boolean
+function SetSpeciesTuningBoolParam(p0, p1, p2, p3) end
+
+---https://github.com/femga/rdr3_discoveries/tree/master/AI/ANIMAL_TUNING_FLOAT_PARAMS
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x4BC3ECFDA0297E27)
+---@param animal number
+---@param index number
+---@return number
+function GetAnimalTuningFloatParam(animal, index) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xCBDA22C87977244F)
+---@param animal number
+---@param index number
+---@param value number
+function SetAnimalTuningFloatParam(animal, index, value) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xE776A195488FC520)
 ---@param animal number
 ---@param index number
 function ResetAnimalTuningFloatParam(animal, index) end
-
----https://github.com/femga/rdr3_discoveries/tree/master/AI/ANIMAL_TUNING_BOOL_PARAMS
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x1C1993824A396603)
----@param animal number
----@param index number
----@return boolean
-function GetAnimalTuningBoolParam(animal, index) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x9FF1E042FA597187)
@@ -44,11 +51,12 @@ function GetAnimalTuningBoolParam(animal, index) end
 ---@param value boolean
 function SetAnimalTuningBoolParam(animal, index, value) end
 
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x96AA1304D30E6BC3)
+---https://github.com/femga/rdr3_discoveries/tree/master/AI/ANIMAL_TUNING_BOOL_PARAMS
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x1C1993824A396603)
 ---@param animal number
 ---@param index number
-function ResetAnimalTuningBoolParam(animal, index) end
+---@return boolean
+function GetAnimalTuningBoolParam(animal, index) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x8049B17BEC937662)
@@ -75,13 +83,6 @@ function N_0x8049b17bec937662(p0, p1, p2, p3, p4, p5, p6) end
 ---@param p8 any
 ---@return any
 function N_0xe93415b3307208e5(p0, p1, p2, p3, p4, p5, p6, p7, p8) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x19870C40C7EE15BE)
----@param p0 any
----@param p1 any
----@return any
-function N_0x19870c40c7ee15be(p0, p1) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x0816C31480764AB0)
@@ -158,10 +159,11 @@ function SetAnimalRarity(ped, rarityLevel) end
 function N_0xff1e339ce40eaaaf(p0, p1) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x8D913E493BAFE0A3)
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x19870C40C7EE15BE)
 ---@param p0 any
+---@param p1 any
 ---@return any
-function N_0x8d913e493bafe0a3(p0) end
+function N_0x19870c40c7ee15be(p0, p1) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xCB4EF7EDAE2E16F1)
@@ -169,15 +171,21 @@ function N_0x8d913e493bafe0a3(p0) end
 function CreateHerd() end
 
 ---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x96AA1304D30E6BC3)
+---@param animal number
+---@param index number
+function ResetAnimalTuningBoolParam(animal, index) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x8D913E493BAFE0A3)
+---@param p0 any
+---@return any
+function N_0x8d913e493bafe0a3(p0) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xE0961AED72642B80)
 ---@param p0 any
 function N_0xe0961aed72642b80(p0) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x933E5D31A7D13069)
----@param p0 any
----@param ped number
-function AddPedToFlock(p0, ped) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x408D1149C5E39C1E)
@@ -213,6 +221,12 @@ function N_0x1da6cb02071055d5(p0) end
 function N_0xc95611869e14f8af(p0, p1, p2, p3) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x933E5D31A7D13069)
+---@param p0 any
+---@param ped number
+function AddPedToFlock(p0, ped) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x09EE00B8F858E0BE)
 ---@param p0 any
 ---@param p1 any
@@ -223,13 +237,6 @@ function N_0xc95611869e14f8af(p0, p1, p2, p3) end
 ---@param p6 any
 ---@return any
 function N_0x09ee00b8f858e0be(p0, p1, p2, p3, p4, p5, p6) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xD95F04A4E73BE85E)
----@param p0 any
----@param p1 any
----@return any
-function N_0xd95f04a4e73be85e(p0, p1) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xE36D2CB540597EF7)
@@ -244,11 +251,11 @@ function N_0xd95f04a4e73be85e(p0, p1) end
 function N_0xe36d2cb540597ef7(p0, p1, p2, p3, p4, p5, p6, p7) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x17E3E5C46ECCD308)
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xD95F04A4E73BE85E)
 ---@param p0 any
 ---@param p1 any
----@param p2 any
-function N_0x17e3e5c46eccd308(p0, p1, p2) end
+---@return any
+function N_0xd95f04a4e73be85e(p0, p1) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xC72CE37081DAE625)
@@ -262,6 +269,13 @@ function N_0xc72ce37081dae625(p0, p1, p2, p3) end
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x67A43EA3F6FE0076)
 ---@param p0 any
 function N_0x67a43ea3f6fe0076(p0) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x17E3E5C46ECCD308)
+---@param p0 any
+---@param p1 any
+---@param p2 any
+function N_0x17e3e5c46eccd308(p0, p1, p2) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x36486AF7DA93A464)
@@ -282,18 +296,18 @@ function N_0x6c57bea886a20c6b(p0, p1) end
 function N_0x1520626ffafffa8f(p0, p1) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xCC6B5AAFC87BFC7B)
----@param p0 any
----@param p1 any
----@param p2 any
-function N_0xcc6b5aafc87bfc7b(p0, p1, p2) end
-
----This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xFA821997794F48E7)
 ---@param p0 any
 ---@param p1 any
 ---@param p2 any
 function N_0xfa821997794f48e7(p0, p1, p2) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xCC6B5AAFC87BFC7B)
+---@param p0 any
+---@param p1 any
+---@param p2 any
+function N_0xcc6b5aafc87bfc7b(p0, p1, p2) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xFDB008B3BCF5992F)
@@ -323,18 +337,4 @@ function N_0xa881f5c77a560906(p0) end
 ---@param p0 any
 ---@return any
 function N_0x53187e563f938e76(p0) end
-
----https://github.com/femga/rdr3_discoveries/tree/master/AI/ANIMAL_TUNING_FLOAT_PARAMS
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x4BC3ECFDA0297E27)
----@param animal number
----@param index number
----@return number
-function GetAnimalTuningFloatParam(animal, index) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xCBDA22C87977244F)
----@param animal number
----@param index number
----@param value number
-function SetAnimalTuningFloatParam(animal, index, value) end
 

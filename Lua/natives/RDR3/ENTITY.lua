@@ -7,13 +7,6 @@
 function DoesEntityExist(entity) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x622B1980CBE13332)
----@param entity number
----@param p1 boolean
----@return boolean
-function DoesEntityBelongToThisScript(entity, p1) end
-
----This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x20487F0DA9AF164A)
 ---@param entity number
 ---@return boolean
@@ -26,10 +19,22 @@ function DoesEntityHaveDrawable(entity) end
 function DoesEntityHavePhysics(entity) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x73BB763880CD23A6)
+---@param entity number
+---@return boolean
+function HasEntityBeenDamagedByAnyObject(entity) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x695D7C26DE65C423)
 ---@param entity number
 ---@return boolean
 function HasEntityBeenDamagedByAnyVehicle(entity) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x9934E9C42D52D87E)
+---@param entity number
+---@return boolean
+function HasEntityBeenDamagedByAnyPed(entity) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x7B6E7BEC1143AC86)
@@ -40,14 +45,12 @@ function HasEntityBeenDamagedByAnyVehicle(entity) end
 ---@return boolean
 function HasEntityBeenDamagedByEntity(entity1, entity2, p2, p3) end
 
----Used in Script Function DUELING_DID_PLAYER_DISARM_OPPONENT
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x3EC28DA1FFAC9DDD)
----@param entity1 number
----@param entity2 number
----@param p2 any
----@param p3 any
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x622B1980CBE13332)
+---@param entity number
+---@param p1 boolean
 ---@return boolean
-function N_0x3ec28da1ffac9ddd(entity1, entity2, p2, p3) end
+function DoesEntityBelongToThisScript(entity, p1) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xAF72EC7E1B54539B)
@@ -62,12 +65,6 @@ function N_0xaf72ec7e1b54539b(entity) end
 ---@param traceType number
 ---@return boolean
 function HasEntityClearLosToEntity(entity1, entity2, traceType) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x9934E9C42D52D87E)
----@param entity number
----@return boolean
-function HasEntityBeenDamagedByAnyPed(entity) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x0C9DBF48C6BA6E4C)
@@ -88,23 +85,25 @@ function HasEntityClearLosToCoord(entity, x, y, z, flags) end
 function HasEntityClearLosToEntityInFront(entity1, entity2, traceType) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xDF18751EC74F90FF)
----@param entity number
----@return boolean
-function HasEntityCollidedWithAnything(entity) end
-
----This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x6D58167F62238284)
 ---@param vehicle number
 ---@return number
 function N_0x6d58167f62238284(vehicle) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xDFC2B226D56D85F6)
----@param p0 any
----@param p1 any
----@return number
-function N_0xdfc2b226d56d85f6(p0, p1) end
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xDF18751EC74F90FF)
+---@param entity number
+---@return boolean
+function HasEntityCollidedWithAnything(entity) end
+
+---Used in Script Function DUELING_DID_PLAYER_DISARM_OPPONENT
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x3EC28DA1FFAC9DDD)
+---@param entity1 number
+---@param entity2 number
+---@param p2 any
+---@param p3 any
+---@return boolean
+function N_0x3ec28da1ffac9ddd(entity1, entity2, p2, p3) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x56D713888A566481)
@@ -131,6 +130,19 @@ function GetAnimDuration(animDict, animName) end
 ---@return vector3
 function GetEntityCoords(entity, alive, realCoords) end
 
+---Gets the X-component of the entity's forward vector.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xDB0954E9960F6457)
+---@param entity number
+---@return number
+function GetEntityForwardX(entity) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xDFC2B226D56D85F6)
+---@param p0 any
+---@param p1 any
+---@return number
+function N_0xdfc2b226d56d85f6(p0, p1) end
+
 ---Gets the entity's forward vector.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x2412D9C05BB09B97)
 ---@param entity number
@@ -142,6 +154,12 @@ function GetEntityForwardVector(entity) end
 ---@param p0 any
 ---@return vector3
 function N_0x935a30aa88fb1014(p0) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x82368787EA73C0F7)
+---@param entity number
+---@return number
+function GetEntityHealth(entity) end
 
 ---Gets the Y-component of the entity's forward vector.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x9A5C073ECBDA7EE7)
@@ -156,16 +174,11 @@ function GetEntityForwardY(entity) end
 function GetEntityHeading(entity) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x82368787EA73C0F7)
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x15D757606D170C3C)
 ---@param entity number
+---@param p1 boolean
 ---@return number
-function GetEntityHealth(entity) end
-
----Returns (CUR_HEALTH / MAX_HEALTH)
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x96C638784DB4C815)
----@param entity number
----@return number
-function GetEntityHealthFloat(entity) end
+function GetEntityMaxHealth(entity, p1) end
 
 ---Alters entity's health by 'amount'. Can be negative (to drain health).
 ---In the scripts entity2 and weaponHash are unused (zero).
@@ -176,19 +189,6 @@ function GetEntityHealthFloat(entity) end
 ---@param weaponHash number | string
 ---@return boolean
 function ChangeEntityHealth(entity, amount, entity2, weaponHash) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x15D757606D170C3C)
----@param entity number
----@param p1 boolean
----@return number
-function GetEntityMaxHealth(entity, p1) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x166E7CF68597D8B5)
----@param entity number
----@param value number
-function SetEntityMaxHealth(entity, value) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x296DEBC84474B375)
@@ -202,16 +202,22 @@ function SetEntityMaxHealth(entity, value) end
 function GetEntityHeight(entity, X, Y, Z, atTop, inWorldCoords) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xF3FDA9A617A15145)
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x166E7CF68597D8B5)
 ---@param entity number
----@return vector3, vector3
-function GetEntityWorldPositionOfDimensions(entity) end
+---@param value number
+function SetEntityMaxHealth(entity, value) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x0D3B5BAEA08F63E9)
 ---@param entity number
 ---@return number
 function GetEntityHeightAboveGround(entity) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xF3FDA9A617A15145)
+---@param entity number
+---@return vector3, vector3
+function GetEntityWorldPositionOfDimensions(entity) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x3A9B1120AF13FBF2)
@@ -225,12 +231,11 @@ function GetEntityMatrix(entity) end
 ---@return number
 function GetEntityModel(entity) end
 
----Returns the ped's animal type hash: https://alloc8or.re/rdr3/doc/enums/eAnimalType.txt
----Combine this with GET_STRING_FROM_HASH_KEY to display localized entity names
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x964000D355219FC0)
----@param ped number
+---Returns (CUR_HEALTH / MAX_HEALTH)
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x96C638784DB4C815)
+---@param entity number
 ---@return number
-function GetPedAnimalType(ped) end
+function GetEntityHealthFloat(entity) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x9A100F1CF4546629)
@@ -238,17 +243,12 @@ function GetPedAnimalType(ped) end
 ---@return boolean
 function GetIsAnimal(entity) end
 
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xC346A546612C49A9)
----@param entity number
----@return boolean
-function GetIsBird(entity) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x73BB763880CD23A6)
----@param entity number
----@return boolean
-function HasEntityBeenDamagedByAnyObject(entity) end
+---Returns the ped's animal type hash: https://alloc8or.re/rdr3/doc/enums/eAnimalType.txt
+---Combine this with GET_STRING_FROM_HASH_KEY to display localized entity names
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x964000D355219FC0)
+---@param ped number
+---@return number
+function GetPedAnimalType(ped) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x497C6B1A2C9AE69C)
@@ -286,23 +286,17 @@ function GetEntityPitch(entity) end
 function GetEntityRoll(entity) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xE09CAF86C32CB48F)
----@param entity number
----@param rotationOrder number
----@return vector3
-function GetEntityRotation(entity, rotationOrder) end
-
----This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x5594AFE9DE0C01B7)
 ---@param entity number
 ---@return boolean
 function GetIsPredator(entity) end
 
----Result is in meters per second (m/s)
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xFB6BA510A533DF81)
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xE09CAF86C32CB48F)
 ---@param entity number
----@return number
-function GetEntitySpeed(entity) end
+---@param rotationOrder number
+---@return vector3
+function GetEntityRotation(entity, rotationOrder) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xF2DB09816A419DC5)
@@ -312,10 +306,22 @@ function GetEntitySpeed(entity) end
 function GetEntitySpeedVector(entity, relative) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x2A08A32B6D49906F)
+---@param entity number
+---@return number, any
+function GetEntityScript(entity) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x56398BE65160C3BE)
 ---@param entity number
 ---@return number
 function GetEntityUprightValue(entity) end
+
+---Result is in meters per second (m/s)
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xFB6BA510A533DF81)
+---@param entity number
+---@return number
+function GetEntitySpeed(entity) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x4805D2B1D8CF94A9)
@@ -350,12 +356,6 @@ function GetPedIndexFromEntityIndex(entity) end
 ---@return vector3
 function GetWorldPositionOfEntityBone(entity, boneIndex) end
 
----Gets the X-component of the entity's forward vector.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xDB0954E9960F6457)
----@param entity number
----@return number
-function GetEntityForwardX(entity) end
-
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x3AB3A77672F6473F)
 ---@param p0 any
@@ -364,6 +364,14 @@ function GetEntityForwardX(entity) end
 ---@param p3 any
 ---@return vector3
 function N_0x3ab3a77672f6473f(p0, p1, p2, p3) end
+
+---Attaches scenario to bone with an offset
+---_GET_I* - _GET_M*
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x5E214112806591EA)
+---@param entity number
+---@param boneIndex number
+---@return vector3
+function N_0x5e214112806591ea(entity, boneIndex) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x990E294FC387FB88)
@@ -389,11 +397,23 @@ function GetNearestPlayerToEntityOnTeam(entity, team, playerPedToIgnore, flags) 
 function GetNearestParticipantToEntity(entity) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xC346A546612C49A9)
+---@param entity number
+---@return boolean
+function GetIsBird(entity) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x9587913B9E772D29)
 ---@param entity number
 ---@param p1 boolean
 ---@return boolean
 function PlaceEntityOnGroundProperly(entity, p1) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xCF8176912DDA4EA5)
+---@param entity number
+---@return boolean
+function IsEntityAPed(entity) end
 
 ---Returns:
 ---0 = no entity
@@ -406,40 +426,22 @@ function PlaceEntityOnGroundProperly(entity, p1) end
 function GetEntityType(entity) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xADE28862B6D7B85B)
----@param entity number
----@return number
-function GetEntityPopulationType(entity) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x27CFF3E5A286D3DF)
----@param handle any
----@return boolean
-function IsAnEntity(handle) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xCF8176912DDA4EA5)
----@param entity number
----@return boolean
-function IsEntityAPed(entity) end
-
----This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x138190F64DB4BBD1)
 ---@param entity number
 ---@return boolean
 function IsEntityAMissionEntity(entity) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xADE28862B6D7B85B)
+---@param entity number
+---@return number
+function GetEntityPopulationType(entity) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xC3D96AF45FCCEC4C)
 ---@param entity number
 ---@return boolean
 function IsEntityAVehicle(entity) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x0A27A546A375FDEF)
----@param entity number
----@return boolean
-function IsEntityAnObject(entity) end
 
 ---Checks if entity is within x/y/zSize distance of x/y/z. 
 ---
@@ -458,13 +460,11 @@ function IsEntityAnObject(entity) end
 ---@return boolean
 function IsEntityAtCoord(entity, xPos, yPos, zPos, xSize, ySize, zSize, p7, p8, p9) end
 
----Attaches scenario to bone with an offset
----_GET_I* - _GET_M*
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x5E214112806591EA)
----@param entity number
----@param boneIndex number
----@return vector3
-function N_0x5e214112806591ea(entity, boneIndex) end
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x27CFF3E5A286D3DF)
+---@param handle any
+---@return boolean
+function IsAnEntity(handle) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xEE6AD63ABF59C0B7)
@@ -478,17 +478,26 @@ function IsEntityAttached(entity) end
 ---@return boolean
 function IsEntityAttachedToAnyObject(entity) end
 
+---Checks if entity1 is within the box defined by x/y/zSize of entity2.
+---
+---Last three parameters are almost always p5 = 0, p6 = 1, p7 = 0
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xC057F02B837A27F6)
+---@param entity1 number
+---@param entity2 number
+---@param xSize number
+---@param ySize number
+---@param zSize number
+---@param p5 boolean
+---@param p6 boolean
+---@param p7 number
+---@return boolean
+function IsEntityAtEntity(entity1, entity2, xSize, ySize, zSize, p5, p6, p7) end
+
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xC841153DED2CA89A)
 ---@param entity number
 ---@return boolean
 function IsEntityAttachedToAnyPed(entity) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x12DF6E0D2E736749)
----@param entity number
----@return boolean
-function IsEntityAttachedToAnyVehicle(entity) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x154A3C529497053E)
@@ -504,10 +513,10 @@ function IsEntityAttachedToEntity(from, to) end
 function IsEntityOwnedByPersistenceSystem(entity) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x7D5B1F88E7504BBA)
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x12DF6E0D2E736749)
 ---@param entity number
 ---@return boolean
-function IsEntityDead(entity) end
+function IsEntityAttachedToAnyVehicle(entity) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x886E37EC497200B6)
@@ -571,20 +580,23 @@ function IsEntityInWater(entity) end
 ---@return boolean
 function IsEntityUnderwater(entity, p1) end
 
----Checks if entity1 is within the box defined by x/y/zSize of entity2.
----
----Last three parameters are almost always p5 = 0, p6 = 1, p7 = 0
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xC057F02B837A27F6)
----@param entity1 number
----@param entity2 number
----@param xSize number
----@param ySize number
----@param zSize number
----@param p5 boolean
----@param p6 boolean
----@param p7 number
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x7A49D40DE437BC8D)
+---@param p0 any
+---@param p1 any
+function N_0x7a49d40de437bc8d(p0, p1) end
+
+---Get how much of the entity is submerged.  1.0f is whole entity.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x4A77C3F73FD9E831)
+---@param entity number
+---@return number
+function GetEntitySubmergedLevel(entity) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x0A27A546A375FDEF)
+---@param entity number
 ---@return boolean
-function IsEntityAtEntity(entity1, entity2, xSize, ySize, zSize, p5, p6, p7) end
+function IsEntityAnObject(entity) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x850C940EE3E7B8B5)
@@ -593,22 +605,22 @@ function IsEntityAtEntity(entity1, entity2, xSize, ySize, zSize, p5, p6, p7) end
 function SetEntityRequiresMoreExpensiveRiverCheck(entity, toggle) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x7A49D40DE437BC8D)
----@param p0 any
----@param p1 any
-function N_0x7a49d40de437bc8d(p0, p1) end
-
----This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x978AA2323ED32209)
 ---@param p0 any
 ---@param p1 any
 function N_0x978aa2323ed32209(p0, p1) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x002AAC783ED323ED)
----@param p0 any
----@param p1 any
-function N_0x002aac783ed323ed(p0, p1) end
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x7D5B1F88E7504BBA)
+---@param entity number
+---@return boolean
+function IsEntityDead(entity) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x613C15D5D8DB781F)
+---@param entity number
+---@return boolean
+function IsEntityOnScreen(entity) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x007AAC783ED323ED)
@@ -618,17 +630,30 @@ function N_0x002aac783ed323ed(p0, p1) end
 function N_0x007aac783ed323ed(p0, p1, p2) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x613C15D5D8DB781F)
----@param entity number
----@return boolean
-function IsEntityOnScreen(entity) end
-
----This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x0B7CB1300CBFE19C)
 ---@param p0 any
 ---@param p1 any
 ---@return any
 function N_0x0b7cb1300cbfe19c(p0, p1) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x9A2304A64C3C8423)
+---@param entity number
+---@param targetEntity number
+---@return boolean
+function IsEntityTouchingEntity(entity, targetEntity) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x86468ADFA0F6B861)
+---@param entity number
+---@return boolean
+function IsEntityStatic(entity) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x002AAC783ED323ED)
+---@param p0 any
+---@param p1 any
+function N_0x002aac783ed323ed(p0, p1) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xDEE49D5CA6C49148)
@@ -640,17 +665,11 @@ function N_0x0b7cb1300cbfe19c(p0, p1) end
 function IsEntityPlayingAnim(entity, animDict, animName, taskFlag) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x86468ADFA0F6B861)
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xF6F6AFD8D4FB2658)
 ---@param entity number
+---@param angle number
 ---@return boolean
-function IsEntityStatic(entity) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x9A2304A64C3C8423)
----@param entity number
----@param targetEntity number
----@return boolean
-function IsEntityTouchingEntity(entity, targetEntity) end
+function IsEntityUpright(entity, angle) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x2AE3EBC8DEB9768B)
@@ -658,25 +677,6 @@ function IsEntityTouchingEntity(entity, targetEntity) end
 ---@param modelHash number | string
 ---@return boolean
 function IsEntityTouchingModel(entity, modelHash) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xF6F6AFD8D4FB2658)
----@param entity number
----@param angle number
----@return boolean
-function IsEntityUpright(entity, angle) end
-
----Get how much of the entity is submerged.  1.0f is whole entity.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x4A77C3F73FD9E831)
----@param entity number
----@return number
-function GetEntitySubmergedLevel(entity) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xFFC96ECB7FA404CA)
----@param entity number
----@return boolean
-function IsEntityVisible(entity) end
 
 ---SET_ENTITY_LO*
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xFF9965C47FA404DA)
@@ -691,26 +691,32 @@ function N_0xff9965c47fa404da(entity, toggle) end
 function IsEntityVisibleToScript(entity) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x3F08C6163A4AB1D6)
----@param p0 any
-function N_0x3f08c6163a4ab1d6(p0) end
-
----This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x0DB41D59E0F1502B)
 ---@param p0 any
 function N_0x0db41d59e0f1502b(p0) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xC8CCDB712FBCBA92)
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x3F08C6163A4AB1D6)
+---@param p0 any
+function N_0x3f08c6163a4ab1d6(p0) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xFFC96ECB7FA404CA)
 ---@param entity number
 ---@return boolean
-function IsTrackedEntityVisible(entity) end
+function IsEntityVisible(entity) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x140188E884645624)
 ---@param entity number
 ---@return boolean
 function IsEntityOccluded(entity) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x5E1CC2E8DC3111DD)
+---@param entity number
+---@return boolean
+function IsEntityWaitingForWorldCollision(entity) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x3546FAB293FF2981)
@@ -721,12 +727,6 @@ function IsEntityOccluded(entity) end
 ---@param p4 boolean
 ---@return boolean
 function WouldEntityBeOccluded(entityModelHash, x, y, z, p4) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x5E1CC2E8DC3111DD)
----@param entity number
----@return boolean
-function IsEntityWaitingForWorldCollision(entity) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x857ACB0AB4BD0D55)
@@ -754,18 +754,10 @@ function N_0xe19035eb65ab2932(p0, p1) end
 function N_0x8c03cd6b5e0e85e8(entity, lootTable) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x1E804EA9B12030A4)
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xC8CCDB712FBCBA92)
 ---@param entity number
----@return boolean, number
-function N_0x1e804ea9b12030a4(entity) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xE31FC20319874CB3)
----@param p0 any
----@param p1 any
----@param p2 any
----@return any
-function N_0xe31fc20319874cb3(p0, p1, p2) end
+---@return boolean
+function IsTrackedEntityVisible(entity) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xA88E215CEB0435C0)
@@ -776,6 +768,20 @@ function N_0xe31fc20319874cb3(p0, p1, p2) end
 ---@param p5 boolean
 ---@return boolean, any
 function N_0xa88e215ceb0435c0(mount, p2, p3, p4, p5) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xE31FC20319874CB3)
+---@param p0 any
+---@param p1 any
+---@param p2 any
+---@return any
+function N_0xe31fc20319874cb3(p0, p1, p2) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x1E804EA9B12030A4)
+---@param entity number
+---@return boolean, number
+function N_0x1e804ea9b12030a4(entity) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x582F73ACFE969571)
@@ -834,6 +840,12 @@ function N_0xd46bf94c4c66fab0(p0, p1, p2, p3) end
 ---@return number
 function GetOptimalCarryConfig(entity, index) end
 
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x109DE3DA41AAD94A)
+---@param entity number
+---@return boolean
+function IsEntityUpsidedown(entity) end
+
 ---Returns zero if the entity is not a carriable
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x0FD25587BB306C86)
 ---@param entity number
@@ -841,16 +853,16 @@ function GetOptimalCarryConfig(entity, index) end
 function GetEntityCarryConfig(entity) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x5AFFA9DDC87846F8)
----@param model number | string
----@return boolean
-function IsCarriableModel(model) end
-
----This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xD21C7418C590BB40)
 ---@param p0 any
 ---@return any
 function N_0xd21c7418c590bb40(p0) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x5AFFA9DDC87846F8)
+---@param model number | string
+---@return boolean
+function IsCarriableModel(model) end
 
 ---Returns a hash of an entity's name. (Alternative Name: _GET_ENTITY_PROMPT_NAME_HASH)
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x31FEF6A20F00B963)
@@ -888,12 +900,6 @@ function IsEntityFullyLooted(entity) end
 function N_0x6bcf5f3d8ffe988d(entity, p1) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xEF2D9ED7CE684F08)
----@param p0 any
----@return any
-function N_0xef2d9ed7ce684f08(p0) end
-
----This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x0CCEFC6C2C95DA2A)
 ---@param p0 any
 ---@param p1 any
@@ -901,6 +907,12 @@ function N_0xef2d9ed7ce684f08(p0) end
 ---@param p3 any
 ---@return any
 function N_0x0ccefc6c2c95da2a(p0, p1, p2, p3) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xEF2D9ED7CE684F08)
+---@param p0 any
+---@return any
+function N_0xef2d9ed7ce684f08(p0) end
 
 ---Used when checking if ped is in water
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x383F64263F946E45)
@@ -912,13 +924,6 @@ function N_0x0ccefc6c2c95da2a(p0, p1, p2, p3) end
 ---@return boolean, number
 function N_0x383f64263f946e45(entity, p2, ped, p4, p5) end
 
----flagId: see _SET_ENTITY_CARRYING_FLAG
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x808077647856DE62)
----@param entity number
----@param flagId number
----@return boolean
-function GetEntityCarryingFlag(entity, flagId) end
-
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x8E10DF0FFA63FB65)
 ---@param p0 any
@@ -928,6 +933,13 @@ function GetEntityCarryingFlag(entity, flagId) end
 ---@param p4 any
 ---@return any
 function N_0x8e10df0ffa63fb65(p0, p1, p2, p3, p4) end
+
+---flagId: see _SET_ENTITY_CARRYING_FLAG
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x808077647856DE62)
+---@param entity number
+---@param flagId number
+---@return boolean
+function GetEntityCarryingFlag(entity, flagId) end
 
 ---https://github.com/femga/rdr3_discoveries/tree/master/AI/CARRYING_FLAGS
 ---flagId:
@@ -1015,6 +1027,12 @@ function N_0xdd03fc2089ad093c(p0, p1, p2, p3) end
 function N_0xb16c780c51e51e2b(p0) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xEF259AA1E097E0AD)
+---@param entity number
+---@param p1 any
+function N_0xef259aa1e097e0ad(entity, p1) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xBD94CECFB2D65119)
 ---@param p0 any
 ---@param p1 any
@@ -1023,12 +1041,6 @@ function N_0xb16c780c51e51e2b(p0) end
 ---@param p4 any
 ---@param p5 any
 function N_0xbd94cecfb2d65119(p0, p1, p2, p3, p4, p5) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x2A08A32B6D49906F)
----@param entity number
----@return number, any
-function GetEntityScript(entity) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x482D17E45665DA44)
@@ -1047,17 +1059,17 @@ function SetEntityCustomPickupRadius(entity, radius) end
 function N_0xe75eea8db59a9f39(p0, p1, p2, p3, p4, p5) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xC6A1A3D63F122DE7)
+---@param p0 any
+---@param p1 any
+function N_0xc6a1a3d63f122de7(p0, p1) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x188736456D1DEDE6)
 ---@param p0 any
 ---@param p1 any
 ---@return any
 function N_0x188736456d1dede6(p0, p1) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xC6A1A3D63F122DE7)
----@param p0 any
----@param p1 any
-function N_0xc6a1a3d63f122de7(p0, p1) end
 
 ---p6/relative - makes the xyz force not relative to world coords, but to something else
 ---p7/highForce - setting false will make the force really low
@@ -1072,24 +1084,6 @@ function N_0xc6a1a3d63f122de7(p0, p1) end
 ---@param isForceRel boolean
 ---@param p8 boolean
 function ApplyForceToEntityCenterOfMass(entity, forceType, x, y, z, p5, isDirectionRel, isForceRel, p8) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xF15E8F5D333F09C4)
----@param entity number
----@param forceFlags number
----@param x number
----@param y number
----@param z number
----@param offX number
----@param offY number
----@param offZ number
----@param boneIndex number
----@param isDirectionRel boolean
----@param ignoreUpVec boolean
----@param isForceRel boolean
----@param p12 boolean
----@param p13 boolean
-function ApplyForceToEntity(entity, forceFlags, x, y, z, offX, offY, offZ, boneIndex, isDirectionRel, ignoreUpVec, isForceRel, p12, p13) end
 
 ---Attaches entity1 to bone (boneIndex) of entity2.
 ---
@@ -1122,6 +1116,24 @@ function ApplyForceToEntity(entity, forceFlags, x, y, z, offX, offY, offZ, boneI
 function AttachEntityToEntity(entity1, entity2, boneIndex, xPos, yPos, zPos, xRot, yRot, zRot, p9, useSoftPinning, collision, isPed, vertexIndex, fixedRot, p15, p16) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xF15E8F5D333F09C4)
+---@param entity number
+---@param forceFlags number
+---@param x number
+---@param y number
+---@param z number
+---@param offX number
+---@param offY number
+---@param offZ number
+---@param boneIndex number
+---@param isDirectionRel boolean
+---@param ignoreUpVec boolean
+---@param isForceRel boolean
+---@param p12 boolean
+---@param p13 boolean
+function ApplyForceToEntity(entity, forceFlags, x, y, z, offX, offY, offZ, boneIndex, isDirectionRel, ignoreUpVec, isForceRel, p12, p13) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xB629A43CA1643481)
 ---@param entity1 number
 ---@param entity2 number
@@ -1148,6 +1160,13 @@ function AttachEntityToEntity(entity1, entity2, boneIndex, xPos, yPos, zPos, xRo
 function AttachEntityToEntityPhysically(entity1, entity2, p2, boneIndex, offsetX, offsetY, offsetZ, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17, p18, p19, p20, p21) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xBACA8FE9C76C124E)
+---@param entity number
+---@param boneName string
+---@return number
+function GetEntityBoneIndexByName(entity, boneName) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x445D7D8EA66E373E)
 ---@param p0 any
 ---@param p1 any
@@ -1167,27 +1186,6 @@ function AttachEntityToEntityPhysically(entity1, entity2, p2, boneIndex, offsetX
 ---@param p15 any
 function N_0x445d7d8ea66e373e(p0, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15) end
 
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x16908E859C3AB698)
----@param p0 any
----@param p1 any
----@param p2 any
----@param p3 any
----@param p4 any
-function N_0x16908e859c3ab698(p0, p1, p2, p3, p4) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xBACA8FE9C76C124E)
----@param entity number
----@param boneName string
----@return number
-function GetEntityBoneIndexByName(entity, boneName) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xBB19AC7D4DCEFD0F)
----@param entity number
-function ClearEntityLastDamageEntity(entity) end
-
 ---Deletes the specified entity, then sets the handle pointed to by the pointer to NULL.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x4CD38C78BD19A497)
 ---@param entity number
@@ -1205,6 +1203,15 @@ function DeleteEntity_2() end
 ---@param collision boolean
 function DetachEntity(entity, p1, collision) end
 
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x16908E859C3AB698)
+---@param p0 any
+---@param p1 any
+---@param p2 any
+---@param p3 any
+---@param p4 any
+function N_0x16908e859c3ab698(p0, p1, p2, p3, p4) end
+
 ---Getter for FREEZE_ENTITY_POSITION
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x083D497D57B7400F)
 ---@param entity number
@@ -1216,6 +1223,11 @@ function IsEntityFrozen(entity) end
 ---@param entity number
 ---@param toggle boolean
 function FreezeEntityPosition(entity, toggle) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xBB19AC7D4DCEFD0F)
+---@param entity number
+function ClearEntityLastDamageEntity(entity) end
 
 ---Old name: _SET_ENTITY_CLEANUP_BY_ENGINE
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x740CB4F3F602C9F4)
@@ -1252,10 +1264,8 @@ function SetVehicleAsNoLongerNeeded(vehicle) end
 function SetObjectAsNoLongerNeeded(object) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xEF259AA1E097E0AD)
----@param entity number
----@param p1 any
-function N_0xef259aa1e097e0ad(entity, p1) end
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x20FAEE47427A4497)
+function N_0x20faee47427a4497() end
 
 ---Returns true if calling script owns specified entity
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x88AD6CC10D8D35B2)
@@ -1460,10 +1470,10 @@ function SetEntityLightsEnabled(entity, enabled) end
 function SetEntityLoadCollisionFlag(entity, toggle) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x109DE3DA41AAD94A)
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xBEB1600952B9CF5C)
 ---@param entity number
 ---@return boolean
-function IsEntityUpsidedown(entity) end
+function HasCollisionLoadedAroundEntity(entity) end
 
 ---Old name: _HAS_COLLISION_LOADED_AT_COORDS
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x6BFBDC46139C45AB)
@@ -1474,8 +1484,10 @@ function IsEntityUpsidedown(entity) end
 function HasCollisionLoadedAroundPosition(xPos, yPos, zPos) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x20FAEE47427A4497)
-function N_0x20faee47427a4497() end
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x473598683095D430)
+---@param entity number
+---@param toggle boolean
+function SetEntityOnlyDamagedByPlayer(entity, toggle) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x6C1F6AA2F0ADD104)
@@ -1491,6 +1503,12 @@ function SetEntityOnlyDamagedByRelationshipGroup(entity, p1, relationshipGroup) 
 ---@param proofsBitset number
 ---@param specialFlag boolean
 function SetEntityProofs(entity, proofsBitset, specialFlag) end
+
+---Note: this native was removed in 1232 but added back in 1311
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x6CF0DAD7FA1088EA)
+---@param entity number
+---@return number
+function GetEntityProofs(entity) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x100E7007D13E3687)
@@ -1554,17 +1572,17 @@ function SetEntityVelocity(entity, x, y, z) end
 ---@param toggle boolean
 function SetEntityHasGravity(entity, toggle) end
 
----Returns the LOD distance of an entity.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xDF240D0C2A948683)
----@param entity number
----@return number
-function GetEntityLodDist(entity) end
-
 ---LOD distance can be 0 to 0xFFFF (higher values will result in 0xFFFF) as it is actually stored as a 16-bit value (aka uint16_t).
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x5FB407F0A7C877BF)
 ---@param entity number
 ---@param value number
 function SetEntityLodDist(entity, value) end
+
+---Returns the LOD distance of an entity.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xDF240D0C2A948683)
+---@param entity number
+---@return number
+function GetEntityLodDist(entity) end
 
 ---skin - everything alpha except skin
 ---Set entity alpha level. Ranging from 0 to 255 but changes occur after every 20 percent (after every 51).
@@ -1590,13 +1608,6 @@ function ResetEntityAlpha(entity) end
 ---@param entity number
 function SetEntityFadeIn(entity) end
 
----Seems to return true if entity is burned / scorched
----_GET_ENTITY_*
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x37B01666BAE8F7EF)
----@param entity number
----@return any
-function N_0x37b01666bae8f7ef(entity) end
-
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xACAD101E1FB66689)
 ---@param entity number
@@ -1608,6 +1619,13 @@ function SetEntityAlwaysPrerender(entity, toggle) end
 ---@param entity number
 ---@param toggle boolean
 function SetEntityRenderScorched(entity, toggle) end
+
+---Seems to return true if entity is burned / scorched
+---_GET_ENTITY_*
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x37B01666BAE8F7EF)
+---@param entity number
+---@return any
+function N_0x37b01666bae8f7ef(entity) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xA9E6D8F2DDFC4DB9)
@@ -1658,16 +1676,6 @@ function CreateModelHide(x, y, z, radius, model, p5) end
 function CreateModelHideExcludingScriptObjects(x, y, z, radius, model, p5) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x3F38A98576F6213A)
----@param p0 any
----@param p1 any
----@param p2 any
----@param p3 any
----@param p4 any
----@param p5 any
-function RemoveModelHide(p0, p1, p2, p3, p4, p5) end
-
----This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xD4636C2EDB0DEA8A)
 ---@param p0 any
 ---@return any
@@ -1684,15 +1692,6 @@ function N_0xd4636c2edb0dea8a(p0) end
 function CreateForcedObject(x, y, z, p3, modelHash, p5) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x553FA683F2BCD814)
----@param p0 any
----@param p1 any
----@param p2 any
----@param p3 any
----@param p4 any
-function RemoveForcedObject(p0, p1, p2, p3, p4) end
-
----This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xE037BF068223C38D)
 ---@param entity1 number
 ---@param entity2 number
@@ -1706,6 +1705,15 @@ function SetEntityNoCollisionEntity(entity1, entity2, thisFrameOnly) end
 function SetEntityMotionBlur(entity, toggle) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x553FA683F2BCD814)
+---@param p0 any
+---@param p1 any
+---@param p2 any
+---@param p3 any
+---@param p4 any
+function RemoveForcedObject(p0, p1, p2, p3, p4) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x80646744FA88F9D7)
 ---@param entity number
 ---@param toggle boolean
@@ -1716,6 +1724,16 @@ function SetCanAutoVaultOnEntity(entity, toggle) end
 ---@param entity number
 ---@param toggle boolean
 function SetCanClimbOnEntity(entity, toggle) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x3F38A98576F6213A)
+---@param p0 any
+---@param p1 any
+---@param p2 any
+---@param p3 any
+---@param p4 any
+---@param p5 any
+function RemoveModelHide(p0, p1, p2, p3, p4, p5) end
 
 ---Old name: _SET_ENTITY_DECALS_DISABLED
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xC64E597783BE9A1D)
@@ -1760,12 +1778,6 @@ function GetEntitiesInVolume(volume, itemSet, entityType) end
 function SearchBuildingPoolForEntityWithThisModel(modelHash) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x6C31B06E91518269)
----@param p0 any
----@param p1 any
-function N_0x6c31b06e91518269(p0, p1) end
-
----This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xC2E71D7E0A7B4C89)
 ---@param p0 any
 ---@return any
@@ -1776,6 +1788,12 @@ function N_0xc2e71d7e0a7b4c89(p0) end
 ---@param p0 any
 ---@param p1 any
 function N_0x119a5714578f4e05(p0, p1) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x6C31B06E91518269)
+---@param p0 any
+---@param p1 any
+function N_0x6c31b06e91518269(p0, p1) end
 
 ---Params: p1 = 0 in R* Scripts (GET_DOOR_ENTITY_FROM_ID)
 ---https://github.com/femga/rdr3_discoveries/blob/master/doorHashes/doorhashes.lua
@@ -1944,11 +1962,6 @@ function N_0xf41e2979d5bc5370(p0) end
 function N_0xaaacb74442c1bed3(p0) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xD2B9C78537ED5759)
----@param entity number
-function UnpinMapEntity(entity) end
-
----This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x6F3068258A499E52)
 ---@param modelHash number | string
 ---@param x number
@@ -1957,6 +1970,11 @@ function UnpinMapEntity(entity) end
 ---@param flags number
 ---@return any
 function PinClosestMapEntity(modelHash, x, y, z, flags) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xD2B9C78537ED5759)
+---@param entity number
+function UnpinMapEntity(entity) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x1FF441D7954F8709)
@@ -1976,16 +1994,16 @@ function GetPinnedMapEntity(p0) end
 function N_0xeab3d91d30a344f1(p0) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x37CEB637BA3B1A47)
+---@param p0 any
+function N_0x37ceb637ba3b1a47(p0) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x350E9211074955AF)
 ---@param p0 any
 ---@param p1 any
 ---@return any
 function N_0x350e9211074955af(p0, p1) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x37CEB637BA3B1A47)
----@param p0 any
-function N_0x37ceb637ba3b1a47(p0) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x898586729DB5221D)
@@ -1997,22 +2015,4 @@ function N_0x898586729db5221d(ped) end
 ---@param p0 any
 ---@param p1 any
 function N_0xe9e7a0bac7f57746(p0, p1) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xBEB1600952B9CF5C)
----@param entity number
----@return boolean
-function HasCollisionLoadedAroundEntity(entity) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x473598683095D430)
----@param entity number
----@param toggle boolean
-function SetEntityOnlyDamagedByPlayer(entity, toggle) end
-
----Note: this native was removed in 1232 but added back in 1311
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x6CF0DAD7FA1088EA)
----@param entity number
----@return number
-function GetEntityProofs(entity) end
 

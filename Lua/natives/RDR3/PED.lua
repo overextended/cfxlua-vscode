@@ -1,5 +1,10 @@
 ---@meta
 
+---Deletes the specified ped, then sets the handle pointed to by the pointer to NULL.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xCC0EF140F99365C5)
+---@param ped number
+function DeletePed(ped) end
+
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xD49F9B0955C367DE)
 ---@param modelHash number | string
@@ -13,11 +18,6 @@
 ---@param p8 boolean
 ---@return number
 function CreatePed(modelHash, x, y, z, heading, isNetwork, bScriptHostPed, p7, p8) end
-
----Deletes the specified ped, then sets the handle pointed to by the pointer to NULL.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xCC0EF140F99365C5)
----@param ped number
-function DeletePed(ped) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x39A2FC5AF55A52B1)
@@ -34,20 +34,6 @@ function SetRemovePedNetworked(ped, p1) end
 ---@param p4 any
 function SetPedToBeRemoved(ped, p1, p2, p3, p4) end
 
----Only used in SP
----_SET_REMOVE_PED*
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x7C08E7CB8D951B70)
----@param ped number
----@param p1 number
-function N_0x7c08e7cb8d951b70(ped, p1) end
-
----Copies ped's components and props to targetPed.
----Can be used to clear anything from a ped by cloning it, including bullet holes.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xE952D6431689AD9A)
----@param ped number
----@param targetPed number
-function ClonePedToTarget(ped, targetPed) end
-
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xEF29A16337FACADB)
 ---@param ped number
@@ -56,6 +42,20 @@ function ClonePedToTarget(ped, targetPed) end
 ---@param copyHeadBlendFlag boolean
 ---@return number
 function ClonePed(ped, isNetwork, bScriptHostPed, copyHeadBlendFlag) end
+
+---Copies ped's components and props to targetPed.
+---Can be used to clear anything from a ped by cloning it, including bullet holes.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xE952D6431689AD9A)
+---@param ped number
+---@param targetPed number
+function ClonePedToTarget(ped, targetPed) end
+
+---Only used in SP
+---_SET_REMOVE_PED*
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x7C08E7CB8D951B70)
+---@param ped number
+---@param p1 number
+function N_0x7c08e7cb8d951b70(ped, p1) end
 
 ---Gets a value indicating whether the specified ped is in any vehicle.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x997ABD671D25CA0B)
@@ -72,14 +72,6 @@ function IsPedInAnyVehicle(ped, atGetIn) end
 ---@return boolean
 function IsPedInVehicle(ped, vehicle, atGetIn) end
 
----Gets a value indicating whether this ped's health is below its injured threshold.
----
----The default threshold is 100.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x84A2DD9AC37C35C1)
----@param ped number
----@return boolean
-function IsPedInjured(ped) end
-
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x9851DE7AEC10B4E1)
 ---@param x number
@@ -90,19 +82,19 @@ function IsPedInjured(ped) end
 ---@param p5 any
 function N_0x9851de7aec10b4e1(x, y, z, p3, p4, p5) end
 
----Gets a value indicating whether this ped's health is below its fatally injured threshold. The default threshold is 100.
----If the handle is invalid, the function returns true.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xD839450756ED5A80)
----@param ped number
----@return boolean
-function IsPedFatallyInjured(ped) end
-
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x796D90EFB19AA332)
 ---@param ped number
 ---@param modelHash number | string
 ---@return boolean
 function IsPedInModel(ped, modelHash) end
+
+---Gets a value indicating whether this ped's health is below its fatally injured threshold. The default threshold is 100.
+---If the handle is invalid, the function returns true.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xD839450756ED5A80)
+---@param ped number
+---@return boolean
+function IsPedFatallyInjured(ped) end
 
 ---Bleedout profiles:
 ---Animal_FastBleedout
@@ -118,17 +110,31 @@ function IsPedInModel(ped, modelHash) end
 function SetPedBleedoutProfile(ped, bleedoutProfile) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x3998B1276A3300E5)
----@param ped number
----@return boolean
-function IsPedAimingFromCover(ped) end
-
----This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x3317DEDB88C95038)
 ---@param ped number
 ---@param p1 boolean
 ---@return boolean
 function IsPedDeadOrDying(ped, p1) end
+
+---Gets a value indicating whether this ped's health is below its injured threshold.
+---
+---The default threshold is 100.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x84A2DD9AC37C35C1)
+---@param ped number
+---@return boolean
+function IsPedInjured(ped) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x12534C348C6CB68B)
+---@param ped number
+---@return boolean
+function IsPedAPlayer(ped) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x3998B1276A3300E5)
+---@param ped number
+---@return boolean
+function IsPedAimingFromCover(ped) end
 
 ---Returns true only if it's a player ped and an animal as well.
 ---_IS_ANY_* - _IS_CONTROL_*
@@ -163,25 +169,16 @@ function IsAnimalControlledByAPlayer(ped) end
 ---@return number
 function CreatePedInsideVehicle(vehicle, modelHash, seatIndex, p3, p4, p5) end
 
----Returns whether the specified ped is reloading.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x24B100C68C645951)
+---Old name: _FREEZE_PED_CAMERA_ROTATION
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xFF287323B0E2C69A)
 ---@param ped number
----@return boolean
-function IsPedReloading(ped) end
+function ForceAllHeadingValuesToAlign(ped) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xAA5A7ECE2AA8FE70)
 ---@param ped number
 ---@param heading number
 function SetPedDesiredHeading(ped, heading) end
-
----angle is ped's view cone
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xD71649DB0A545AA3)
----@param ped number
----@param otherPed number
----@param angle number
----@return boolean
-function IsPedFacingPed(ped, otherPed, angle) end
 
 ---Notes: The function only returns true while the ped is: 
 ---A.) Swinging a random melee attack (including pistol-whipping)
@@ -204,10 +201,19 @@ function IsPedInMeleeCombat(ped) end
 ---@return any
 function N_0x6db875afc584fa32(ped, p1) end
 
----Old name: _FREEZE_PED_CAMERA_ROTATION
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xFF287323B0E2C69A)
+---angle is ped's view cone
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xD71649DB0A545AA3)
 ---@param ped number
-function ForceAllHeadingValuesToAlign(ped) end
+---@param otherPed number
+---@param angle number
+---@return boolean
+function IsPedFacingPed(ped, otherPed, angle) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x84D0BF2B21862059)
+---@param ped number
+---@return boolean
+function IsPedSitting(ped) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x530944F6F4B8A214)
@@ -232,17 +238,18 @@ function N_0x09d7afd3716da8e1(ped, p1) end
 function N_0x9c81338b2e62ce0a(player, ped, shotNearRecentlyTime) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x12534C348C6CB68B)
----@param ped number
----@return boolean
-function IsPedAPlayer(ped) end
-
----This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xB7DBB2986B87E230)
 ---@param ped number
 ---@param p1 number
 ---@return boolean
 function N_0xb7dbb2986b87e230(ped, p1) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xD355E2F1BB41087E)
+---@param ped number
+---@param p1 number
+---@return boolean
+function N_0xd355e2f1bb41087e(ped, p1) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xA0D3D71EA1086C55)
@@ -262,13 +269,6 @@ function IsAnyPedShootingInArea(x1, y1, z1, x2, y2, z2, p6, p7) end
 ---@param ped number
 ---@return boolean
 function IsPedShooting(ped) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xD355E2F1BB41087E)
----@param ped number
----@param p1 number
----@return boolean
-function N_0xd355e2f1bb41087e(ped, p1) end
 
 ---Returns time since the specified ped last shot, in seconds. (fPlayerJustShotTime)
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x285D36C5C72B0569)
@@ -303,6 +303,18 @@ function IsPedModel(ped, modelHash) end
 ---@param weaponHash number | string
 function ExplodePedHead(ped, weaponHash) end
 
+---Returns whether the specified ped is reloading.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x24B100C68C645951)
+---@param ped number
+---@return boolean
+function IsPedReloading(ped) end
+
+---Used in Script Function MP_MAIN_OFFLINE__INITIALIZE_FLOW & PROCESS_GENERIC_PLAYER_INITIALIZATION
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x5CA20FBE49891BBD)
+---@param ped number
+---@param p1 number
+function N_0x5ca20fbe49891bbd(ped, p1) end
+
 ---Ped: The ped to warp.
 ---vehicle: The vehicle to warp the ped into.
 ---seatIndex: see CREATE_PED_INSIDE_VEHICLE
@@ -312,22 +324,22 @@ function ExplodePedHead(ped, weaponHash) end
 ---@param seatIndex number
 function SetPedIntoVehicle(ped, vehicle, seatIndex) end
 
+---Not implemented.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x606D529DADA3C940)
+---@param ped number
+---@param p1 any
+function N_0x606d529dada3c940(ped, p1) end
+
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x9E8C908F41584ECD)
 ---@param ped number
 function SetPedMoveAnimsBlendOut(ped) end
 
----Same as SET_PED_ARMOUR, but ADDS 'amount' to the armor the Ped already has.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x5BA652A0CD14DF2F)
+---Returns true/false if the ped is/isn't humanoid.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xB980061DA992779D)
 ---@param ped number
----@param amount number
-function AddArmourToPed(ped, amount) end
-
----Used in Script Function MP_MAIN_OFFLINE__INITIALIZE_FLOW & PROCESS_GENERIC_PLAYER_INITIALIZATION
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x5CA20FBE49891BBD)
----@param ped number
----@param p1 number
-function N_0x5ca20fbe49891bbd(ped, p1) end
+---@return boolean
+function IsPedHuman(ped) end
 
 ---Returns true/false if the ped is/isn't male.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x6D9F5FAA7488BA46)
@@ -335,11 +347,11 @@ function N_0x5ca20fbe49891bbd(ped, p1) end
 ---@return boolean
 function IsPedMale(ped) end
 
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x84D0BF2B21862059)
+---Same as SET_PED_ARMOUR, but ADDS 'amount' to the armor the Ped already has.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x5BA652A0CD14DF2F)
 ---@param ped number
----@return boolean
-function IsPedSitting(ped) end
+---@param amount number
+function AddArmourToPed(ped, amount) end
 
 ---Gets the vehicle the specified Ped is in.
 ---
@@ -350,16 +362,10 @@ function IsPedSitting(ped) end
 ---@return number
 function GetVehiclePedIsIn(ped, lastVehicle) end
 
----Resets the value for the last vehicle driven by the Ped.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xBB8DE8CF6A8DD8BB)
----@param ped number
-function ResetPedLastVehicle(ped) end
-
----Returns true/false if the ped is/isn't humanoid.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xB980061DA992779D)
----@param ped number
----@return boolean
-function IsPedHuman(ped) end
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xC6136B40FFFB778B)
+---@param p0 boolean
+function N_0xc6136b40fffb778b(p0) end
 
 ---Only used in SP R* Script train_robbery3: p1 = CLIPSET@VEH_TRAIN@HANDCART@BASE_PANIC & CLIPSET@VEH_TRAIN@HANDCART@BASE_PANIC_JOHN
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x6E8B87139854022D)
@@ -368,25 +374,14 @@ function IsPedHuman(ped) end
 function N_0x6e8b87139854022d(ped, clipset) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xC6136B40FFFB778B)
----@param p0 boolean
-function N_0xc6136b40fffb778b(p0) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x313778EDCA9158E2)
----@return number
-function GetNumFreeSlotsInPedPool() end
-
----This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xED9582B3DA8F02B4)
 ---@param numPeds number
 function ReserveAmbientPeds(numPeds) end
 
----Not implemented.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x606D529DADA3C940)
+---Resets the value for the last vehicle driven by the Ped.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xBB8DE8CF6A8DD8BB)
 ---@param ped number
----@param p1 any
-function N_0x606d529dada3c940(ped, p1) end
+function ResetPedLastVehicle(ped) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xF008E0BA1FE1D644)
@@ -394,14 +389,14 @@ function N_0x606d529dada3c940(ped, p1) end
 function ReserveAmbientPedsTotal(numPeds) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x5C16855277819BBF)
----@return number
-function GetNumReservedAmbientPedsReady() end
-
----This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x62DE46F061CAA468)
 ---@return number
 function GetNumReservedAmbientPedsDesired() end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x7D4E70A67A651C71)
+---@param numPeds number
+function UnreserveAmbientPeds(numPeds) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x5E420FF293EE5472)
@@ -409,19 +404,24 @@ function GetNumReservedAmbientPedsDesired() end
 function AreAllAmbientPedReservationsReady() end
 
 ---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x5C16855277819BBF)
+---@return number
+function GetNumReservedAmbientPedsReady() end
+
+---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xA77FA7BE9312F8C0)
 ---@param multiplier number
 function SetScenarioPedRangeMultiplierThisFrame(multiplier) end
-
----Only used in SP R* Script loanshark_hunter
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x9E3842E5DAD69F80)
----@param volume any
-function N_0x9e3842e5dad69f80(volume) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xAB0D553FE20A6E25)
 ---@param multiplier number
 function SetAmbientPedDensityMultiplierThisFrame(multiplier) end
+
+---Only used in SP R* Script loanshark_hunter
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x9E3842E5DAD69F80)
+---@param volume any
+function N_0x9e3842e5dad69f80(volume) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x7A556143A1C03898)
@@ -439,18 +439,14 @@ function SetAmbientAnimalDensityMultiplierThisFrame(multiplier) end
 function SetScenarioAnimalDensityMultiplierThisFrame(multiplier) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xBA0980B5C0A11924)
----@param multiplier number
-function SetAmbientHumanDensityMultiplierThisFrame(multiplier) end
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x313778EDCA9158E2)
+---@return number
+function GetNumFreeSlotsInPedPool() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x28CB6391ACEDD9DB)
 ---@param multiplier number
 function SetScenarioHumanDensityMultiplierThisFrame(multiplier) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x4759CC730F947C81)
-function InstantlyFillPedPopulation() end
 
 ---Sets the scenario ped density to the given config.
 ---
@@ -474,13 +470,10 @@ function SetScenarioPedDensityThisFrame(configHash) end
 ---@return boolean
 function IsInstantlyFillPedPopulationFinished() end
 
----Only used in R* Script tg_p (CLIENT__AMBIENT_POPULATION - Player starts the populate in region)
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xBFA6B7731C3BAF02)
-function N_0xbfa6b7731c3baf02() end
-
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x2E05208086BA0651)
-function ClearPedNonCreationArea() end
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xBA0980B5C0A11924)
+---@param multiplier number
+function SetAmbientHumanDensityMultiplierThisFrame(multiplier) end
 
 ---The distance between these points, is the diagonal of a box (remember it's 3D).
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xEE01041D559983EA)
@@ -491,6 +484,14 @@ function ClearPedNonCreationArea() end
 ---@param y2 number
 ---@param z2 number
 function SetPedNonCreationArea(x1, y1, z1, x2, y2, z2) end
+
+---Only used in R* Script tg_p (CLIENT__AMBIENT_POPULATION - Player starts the populate in region)
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xBFA6B7731C3BAF02)
+function N_0xbfa6b7731c3baf02() end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x4759CC730F947C81)
+function InstantlyFillPedPopulation() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x7C00CFC48A782DC0)
@@ -507,24 +508,14 @@ function SetPedNonCreationArea(x1, y1, z1, x2, y2, z2) end
 function AttachVolumeToEntity(volume, entity, offsetX, offsetY, offsetZ, rotX, rotY, rotZ, p8, p9) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x028F76B6E78246EB)
----@param ped number
----@param mount number
----@param seatIndex number
----@param p3 boolean
-function SetPedOntoMount(ped, mount, seatIndex, p3) end
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x2E05208086BA0651)
+function ClearPedNonCreationArea() end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x7D4E70A67A651C71)
----@param numPeds number
-function UnreserveAmbientPeds(numPeds) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x5337B721C51883A9)
----@param ped number
----@param p1 boolean
----@param p2 boolean
-function RemovePedFromMount(ped, p1, p2) end
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x19C975B81BE53C28)
+---@param volume any
+---@param entity number
+function DetachVolumeFromEntity(volume, entity) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xF89AA2BD01FC06B7)
@@ -539,17 +530,26 @@ function RemovePedFromMount(ped, p1, p2) end
 function CreatePedOnMount(mount, modelHash, index, p3, p4, p5, p6) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x460BC76A0E10655E)
----@param ped number
----@return boolean
-function IsPedOnMount(ped) end
-
----This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xAAB0FE202E9FC9F0)
 ---@param mount number
 ---@param seat number
 ---@return boolean
 function IsMountSeatFree(mount, seat) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x028F76B6E78246EB)
+---@param ped number
+---@param mount number
+---@param seatIndex number
+---@param p3 boolean
+function SetPedOntoMount(ped, mount, seatIndex, p3) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x95CBC65780DE7EB1)
+---@param ped number
+---@param p1 boolean
+---@return boolean
+function IsPedFullyOnMount(ped, p1) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xE7E11B8DCBED1058)
@@ -558,10 +558,10 @@ function IsMountSeatFree(mount, seat) end
 function GetMount(ped) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x19C975B81BE53C28)
----@param volume any
----@param entity number
-function DetachVolumeFromEntity(volume, entity) end
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x460BC76A0E10655E)
+---@param ped number
+---@return boolean
+function IsPedOnMount(ped) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x4C8B59171957BCF7)
@@ -570,11 +570,11 @@ function DetachVolumeFromEntity(volume, entity) end
 function GetLastMount(ped) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x95CBC65780DE7EB1)
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x5337B721C51883A9)
 ---@param ped number
 ---@param p1 boolean
----@return boolean
-function IsPedFullyOnMount(ped, p1) end
+---@param p2 boolean
+function RemovePedFromMount(ped, p1, p2) end
 
 ---_SET_HO*
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xB8AB265426CFE6DD)
@@ -595,24 +595,6 @@ function N_0xed1c764997a86d5a(ped1, ped2) end
 ---@param dismountedTimestamp number
 function N_0xa691c10054275290(mount, player, dismountedTimestamp) end
 
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x6734F0A6A52C371C)
----@param player number
----@param horseSlot number
-function N_0x6734f0a6a52c371c(player, horseSlot) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x024EC9B649111915)
----@param ped number
----@param p1 boolean
-function N_0x024ec9b649111915(ped, p1) end
-
----Returns last horse the ped was leading
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x693126B5D0457D0D)
----@param ped number
----@return number
-function GetLastLedMount(ped) end
-
 ---Returns dismounted timestamp
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xE8D1CCB9375C101B)
 ---@param mount number
@@ -621,10 +603,10 @@ function GetLastLedMount(ped) end
 function N_0xe8d1ccb9375c101b(mount, player) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xBCC76708E5677E1D)
----@param ped number
----@param p1 boolean
-function N_0xbcc76708e5677e1d(ped, p1) end
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x6734F0A6A52C371C)
+---@param player number
+---@param horseSlot number
+function N_0x6734f0a6a52c371c(player, horseSlot) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x931B241409216C1F)
@@ -632,6 +614,18 @@ function N_0xbcc76708e5677e1d(ped, p1) end
 ---@param animal number
 ---@param p2 boolean
 function SetPedOwnsAnimal(ped, animal, p2) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xF103823FFE72BB49)
+---@param animal number
+---@return number
+function GetActiveAnimalOwner(animal) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x024EC9B649111915)
+---@param ped number
+---@param p1 boolean
+function N_0x024ec9b649111915(ped, p1) end
 
 ---Returns an int based on enum eTamingState
 ---
@@ -653,6 +647,18 @@ function SetPedOwnsAnimal(ped, animal, p2) end
 ---@return number
 function GetHorseTamingState(horse) end
 
+---Returns last horse the ped was leading
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x693126B5D0457D0D)
+---@param ped number
+---@return number
+function GetLastLedMount(ped) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xBCC76708E5677E1D)
+---@param ped number
+---@param p1 boolean
+function N_0xbcc76708e5677e1d(ped, p1) end
+
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x5CB2EBB467BE3ED6)
 ---@param animal number
@@ -660,28 +666,10 @@ function GetHorseTamingState(horse) end
 function N_0x5cb2ebb467be3ed6(animal, p2) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x9F0F28B42C4EE80A)
----@param animal number
----@param p2 number
-function N_0x9f0f28b42c4ee80a(animal, p2) end
-
----This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xA69899995997A63B)
 ---@param ped number
 ---@param bondingLevel number
 function SetMountBondingLevel(ped, bondingLevel) end
-
----Note: this native was added in build 1232.40
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x11E6B9629C46D6EC)
----@param ped number
----@param toggle boolean
-function SetMountSecurityEnabled(ped, toggle) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xF103823FFE72BB49)
----@param animal number
----@return number
-function GetActiveAnimalOwner(animal) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x54D3CD482742C482)
@@ -690,17 +678,23 @@ function GetActiveAnimalOwner(animal) end
 function N_0x54d3cd482742c482(animal, p2) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x9F0F28B42C4EE80A)
+---@param animal number
+---@param p2 number
+function N_0x9f0f28b42c4ee80a(animal, p2) end
+
+---Note: this native was added in build 1232.40
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x11E6B9629C46D6EC)
+---@param ped number
+---@param toggle boolean
+function SetMountSecurityEnabled(ped, toggle) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xD543D3A8FDE4F185)
 ---@param ped number
 ---@param animal number
 ---@return boolean
 function IsAnimalInteractionPossible(ped, animal) end
-
----Used in Script Function NET_CAMP_DOG_CLIENT_HANDLE_ANIMAL_INTERACTION
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x8BE24D74D74C6E9B)
----@param ped number
----@return number
-function N_0x8be24d74d74c6e9b(ped) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x7FC84E85D98F063D)
@@ -714,13 +708,6 @@ function IsAnimalInteractionRunning(ped) end
 ---@param p1 string
 function N_0x9b65444c07b782bf(ped, p1) end
 
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xEC5F66E459AF3BB2)
----@param ped number
----@param vehicle number
----@return boolean
-function IsPedOnSpecificVehicle(ped, vehicle) end
-
 ---Gets a value indicating whether the specified ped is on top of any vehicle.
 ---
 ---Return 1 when ped is on vehicle.
@@ -731,11 +718,35 @@ function IsPedOnSpecificVehicle(ped, vehicle) end
 ---@return boolean
 function IsPedOnVehicle(ped, p1) end
 
+---Used in Script Function NET_CAMP_DOG_CLIENT_HANDLE_ANIMAL_INTERACTION
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x8BE24D74D74C6E9B)
+---@param ped number
+---@return number
+function N_0x8be24d74d74c6e9b(ped) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xEC5F66E459AF3BB2)
+---@param ped number
+---@param vehicle number
+---@return boolean
+function IsPedOnSpecificVehicle(ped, vehicle) end
+
+---_IS_I* - _IS_L*
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x77243ED4F7CAAA55)
+---@param ped number
+---@return boolean
+function N_0x77243ed4f7caaa55(ped) end
+
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xA9C8960E8684C1B5)
 ---@param ped number
 ---@param amount number
 function SetPedMoney(ped, amount) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x9911F4A24485F653)
+---@param p0 boolean
+function SetBlockingOfNonTemporaryEventsForAmbientPedsThisFrame(p0) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xE0B61ED8BB37712F)
@@ -754,29 +765,6 @@ function GetPedMoney(ped) end
 ---@return any
 function N_0x34eddd59364ad74a(ped) end
 
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x9911F4A24485F653)
----@param p0 boolean
-function SetBlockingOfNonTemporaryEventsForAmbientPedsThisFrame(p0) end
-
----_IS_I* - _IS_L*
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x77243ED4F7CAAA55)
----@param ped number
----@return boolean
-function N_0x77243ed4f7caaa55(ped) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x2D976DBDC731DF80)
----@param ped number
-function N_0x2d976dbdc731df80(ped) end
-
----Detect if ped is in any vehicle
----[True/False]
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x826AA586EDB9FEF8)
----@param ped number
----@return boolean
-function IsPedSittingInAnyVehicle(ped) end
-
 ---Detect if ped is sitting in the specified vehicle
 ---[True/False]
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xA808AA1D79230FC2)
@@ -784,6 +772,30 @@ function IsPedSittingInAnyVehicle(ped) end
 ---@param vehicle number
 ---@return boolean
 function IsPedSittingInVehicle(ped, vehicle) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xC70B5FAE151982D8)
+---@param ped number
+---@return boolean
+function IsPedPlantingBomb(ped) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x2D976DBDC731DF80)
+---@param ped number
+function N_0x2d976dbdc731df80(ped) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x01FEE67DB37F59B2)
+---@param ped number
+---@return boolean
+function IsPedOnFoot(ped) end
+
+---Detect if ped is in any vehicle
+---[True/False]
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x826AA586EDB9FEF8)
+---@param ped number
+---@return boolean
+function IsPedSittingInAnyVehicle(ped) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xCD5003B097200F36)
@@ -794,40 +806,22 @@ function IsPedSittingInVehicle(ped, vehicle) end
 function GetDeadPedPickupCoords(ped, p1, p2) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xC70B5FAE151982D8)
----@param ped number
----@return boolean
-function IsPedPlantingBomb(ped) end
-
----This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x298B91AE825E5705)
 ---@param ped number
 ---@return boolean
 function IsPedInAnyHeli(ped) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x01FEE67DB37F59B2)
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x9134873537FA419C)
 ---@param ped number
 ---@return boolean
-function IsPedOnFoot(ped) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x2E0E1C2B4F6CB339)
----@param ped number
----@return boolean
-function IsPedInAnyBoat(ped) end
+function IsPedInFlyingVehicle(ped) end
 
 ---_IS_PED_FL* - _IS_PED_FU*
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x256EDD55C6BE1482)
 ---@param ped number
 ---@return boolean
 function N_0x256edd55c6be1482(ped) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x5FFF4CFC74D8FB80)
----@param ped number
----@return boolean
-function IsPedInAnyPlane(ped) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xD75960F6BD9EA49C)
@@ -853,21 +847,22 @@ function GetPedDamageCleanliness(ped) end
 function SetPedDamageCleanliness(ped, damageCleanliness) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x8EF6B7AC68E2F01B)
----@param ped number
-function ClearPedLastDamageBone(ped) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x9134873537FA419C)
----@param ped number
----@return boolean
-function IsPedInFlyingVehicle(ped) end
-
----This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xDACE03C65C6666DB)
 ---@param ped number
 ---@param damaged boolean
 function SetPedDamaged(ped, damaged) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x2E0E1C2B4F6CB339)
+---@param ped number
+---@return boolean
+function IsPedInAnyBoat(ped) end
+
+---Returns true if _GET_PED_DAMAGE_CLEANLINESS was ever lower than 2
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x6CFC373008A1EDAF)
+---@param ped number
+---@return boolean
+function GetPedDamaged(ped) end
 
 ---Animal Skin Quality Modifier
 ---Params: p2 = 2, p3 = 3 in R* Scripts
@@ -879,17 +874,16 @@ function SetPedDamaged(ped, damaged) end
 ---@return any
 function SetPlayerCurrentAnimalDamageModifier(player, modifier, p2, p3) end
 
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x0F9E754EBE8FDBFA)
+---@param player number
+function UpdateAnimalDamageModifier(player) end
+
 ---Returns animal skin quality modifier
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xEE2D5C819A65BF26)
 ---@param player number
 ---@return number
 function GetPlayerCurrentAnimalDamageModifier(player) end
-
----Returns true if _GET_PED_DAMAGE_CLEANLINESS was ever lower than 2
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x6CFC373008A1EDAF)
----@param ped number
----@return boolean
-function GetPedDamaged(ped) end
 
 ---Used in Script Function SATCHEL_COUNT_BREAKDOWN_COMPONENTS
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xB29C553BA582D09E)
@@ -900,12 +894,28 @@ function GetPedDamaged(ped) end
 function N_0xb29c553ba582d09e(model, damageCleanliness, p3) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x8EF6B7AC68E2F01B)
+---@param ped number
+function ClearPedLastDamageBone(ped) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x5FFF4CFC74D8FB80)
+---@param ped number
+---@return boolean
+function IsPedInAnyPlane(ped) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x101B45C5F56D970F)
 ---@param ped number
 ---@param damageCleanliness number
 ---@param p3 number
 ---@return boolean, any
 function N_0x101b45c5f56d970f(ped, damageCleanliness, p3) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x1B1E2A40A65B8521)
+---@param value number
+function SetAiWeaponDamageModifier(value) end
 
 ---Related to dead animals items/loots
 ---Notice: skinningQuality is partially calculated using pedQuality
@@ -917,28 +927,12 @@ function N_0x101b45c5f56d970f(ped, damageCleanliness, p3) end
 function ComputeSatchelItemForPedCarcass(ped, damageCleanliness, skinningQuality) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x1B1E2A40A65B8521)
----@param value number
-function SetAiWeaponDamageModifier(value) end
-
----This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x9E7738B291706746)
 ---@param p0 any
 ---@param pedAttached number
 ---@param damageCleanliness number
 ---@return boolean
 function ComputeSatchelItemForPedDamage(p0, pedAttached, damageCleanliness) end
-
----_SET_W(EAPON?)*
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x73B6F907B913C860)
----@param ped number
----@param totalDamage number
-function SetTotalPedDamageFromAi(ped, totalDamage) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x0F9E754EBE8FDBFA)
----@param player number
-function UpdateAnimalDamageModifier(player) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xEA16670E7BA4743C)
@@ -949,6 +943,12 @@ function ResetAiWeaponDamageModifier() end
 ---@param ped number
 ---@return number
 function GetTotalPedDamageFromAi(ped) end
+
+---_SET_W(EAPON?)*
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x73B6F907B913C860)
+---@param ped number
+---@param totalDamage number
+function SetTotalPedDamageFromAi(ped, totalDamage) end
 
 ---Old name: _SET_PED_DAMAGE_MODIFIER
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xD77AE48611B7B10A)
@@ -962,22 +962,11 @@ function SetPedToPlayerWeaponDamageModifier(ped, damageModifier) end
 ---@param modifier number
 function SetCurrentDefenseAgainstPlayersModifier(horse, modifier) end
 
----_DELETE_*
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xA6D6F03095C88F59)
----@param ped number
-function N_0xa6d6f03095c88f59(ped) end
-
 ---Used in Script Function NB_EVENT_OVERRIDE__HANDLE__EVENT_DAMAGE_ENTITY
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x763FA8A9D76EE3A7)
 ---@param ped number
 ---@return number
 function N_0x763fa8a9d76ee3a7(ped) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xC2266AA617668AD3)
----@param ped number
----@param modifier number
-function SetAccuracyAgainstLocalPlayerModifier(ped, modifier) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x936E7CAD0AE2EE14)
@@ -986,10 +975,21 @@ function SetAccuracyAgainstLocalPlayerModifier(ped, modifier) end
 function GetPedToPlayerWeaponDamageModifier(ped) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xC2266AA617668AD3)
+---@param ped number
+---@param modifier number
+function SetAccuracyAgainstLocalPlayerModifier(ped, modifier) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xDC9273D95976BA22)
 ---@param ped number
 ---@return number
 function N_0xdc9273d95976ba22(ped) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x66460DEDDD417254)
+---@param modifier number
+function SetAiMeleeWeaponDamageModifier(modifier) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x2BA918C823B8BA56)
@@ -1004,6 +1004,11 @@ function SetPedHeadshotDamageMultiplier(ped, multiplier) end
 ---@param p2 boolean
 function N_0xdee8d30aa5c2e28d(ped, p1, p2) end
 
+---_DELETE_*
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xA6D6F03095C88F59)
+---@param ped number
+function N_0xa6d6f03095c88f59(ped) end
+
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x32CEDA9A0AB4CEF7)
 ---@param ped number
@@ -1012,11 +1017,11 @@ function N_0xdee8d30aa5c2e28d(ped, p1, p2) end
 function N_0x32ceda9a0ab4cef7(ped, p1, p2) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xE1B3BE07D3AADDED)
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x52A24D8A1DA89658)
 ---@param ped number
 ---@param p1 number
 ---@param p2 boolean
-function N_0xe1b3be07d3aadded(ped, p1, p2) end
+function N_0x52a24d8a1da89658(ped, p1, p2) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x34B5CEAC180A5D6E)
@@ -1024,13 +1029,6 @@ function N_0xe1b3be07d3aadded(ped, p1, p2) end
 ---@param p1 number | string
 ---@param p2 boolean
 function N_0x34b5ceac180a5d6e(ped, p1, p2) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x52A24D8A1DA89658)
----@param ped number
----@param p1 number
----@param p2 boolean
-function N_0x52a24d8a1da89658(ped, p1, p2) end
 
 ---Changes health bar around heart core icon
 ---INITIALISE_NEW_ROLE - Applying Super Jump buffs: p1 = 10, p2 = 0.0f
@@ -1042,6 +1040,26 @@ function N_0x52a24d8a1da89658(ped, p1, p2) end
 ---@param p2 number
 function N_0x3fdcc1f8c17e303e(ped, p1, p2) end
 
+---_SET_M*
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x7883AA809DF43D98)
+---@param ped number
+---@param healthLimit number
+function N_0x7883aa809df43d98(ped, healthLimit) end
+
+---_SET_D*
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xE50C9816B3F22D8B)
+---@param ped number
+---@param p1 number | string
+---@param p2 number
+function N_0xe50c9816b3f22d8b(ped, p1, p2) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xE1B3BE07D3AADDED)
+---@param ped number
+---@param p1 number
+---@param p2 boolean
+function N_0xe1b3be07d3aadded(ped, p1, p2) end
+
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x4F27603E44A8E4C0)
 ---@param ped number
@@ -1049,28 +1067,17 @@ function N_0x3fdcc1f8c17e303e(ped, p1, p2) end
 ---@param p2 boolean
 function N_0x4f27603e44a8e4c0(ped, p1, p2) end
 
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x66460DEDDD417254)
----@param modifier number
-function SetAiMeleeWeaponDamageModifier(modifier) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x9B6808EC46BE849B)
----@param ped number
----@param modifier number
-function SetDefenseModifierForPed(ped, modifier) end
-
 ---_SET_H* - _SET_I*
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xC5B78E41DCF8227C)
 ---@param ped number
 ---@param p1 boolean
 function N_0xc5b78e41dcf8227c(ped, p1) end
 
----_SET_M*
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x7883AA809DF43D98)
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x63F58F7C80513AAD)
 ---@param ped number
----@param healthLimit number
-function N_0x7883aa809df43d98(ped, healthLimit) end
+---@param toggle boolean
+function SetPedCanBeTargetted(ped, toggle) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xBF1CA77833E58F2C)
@@ -1095,53 +1102,10 @@ function SetPedCanBeTargettedByPlayer(ped, player, toggle) end
 function SetInteractionLockonFlag(ped, player, flag, enable) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x63F58F7C80513AAD)
----@param ped number
----@param toggle boolean
-function SetPedCanBeTargetted(ped, toggle) end
-
----This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xD6740E14E4CEFC0B)
 ---@param ped number
 ---@return boolean
 function IsPedSliding(ped) end
-
----_SET_D*
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xE50C9816B3F22D8B)
----@param ped number
----@param p1 number | string
----@param p2 number
-function N_0xe50c9816b3f22d8b(ped, p1, p2) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xCEDABC5900A0BF97)
----@param ped number
----@return boolean
-function IsPedJumping(ped) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x53E8CB4F48BFE623)
----@param ped number
----@return boolean
-function IsPedClimbing(ped) end
-
----_IS_PED_C* - _IS_PED_D*
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x577C60BA06D0EA64)
----@param ped number
----@return boolean
-function N_0x577c60ba06d0ea64(ped) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x59643424B68D52B5)
----@param ped number
----@return boolean
-function IsPedClimbingLadder(ped) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x5527B8246FEF9B11)
----@param ped number
----@return boolean
-function IsPedDiving(ped) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xFB92A102F1C4DFA3)
@@ -1150,10 +1114,34 @@ function IsPedDiving(ped) end
 function IsPedFalling(ped) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x117C70D1F5730B5E)
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x9B6808EC46BE849B)
+---@param ped number
+---@param modifier number
+function SetDefenseModifierForPed(ped, modifier) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x53E8CB4F48BFE623)
 ---@param ped number
 ---@return boolean
-function IsPedVaulting(ped) end
+function IsPedClimbing(ped) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x59643424B68D52B5)
+---@param ped number
+---@return boolean
+function IsPedClimbingLadder(ped) end
+
+---_IS_PED_C* - _IS_PED_D*
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x577C60BA06D0EA64)
+---@param ped number
+---@return boolean
+function N_0x577c60ba06d0ea64(ped) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xCEDABC5900A0BF97)
+---@param ped number
+---@return boolean
+function IsPedJumping(ped) end
 
 ---Returns true if the ped is currently opening a door (CTaskOpenDoor).
 ---
@@ -1162,6 +1150,24 @@ function IsPedVaulting(ped) end
 ---@param ped number
 ---@return boolean
 function IsPedOpeningDoor(ped) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x5527B8246FEF9B11)
+---@param ped number
+---@return boolean
+function IsPedDiving(ped) end
+
+---_IS_PED_J* - _IS_PED_L*
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xB91AB3BE7F655D49)
+---@param ped number
+---@return boolean
+function N_0xb91ab3be7f655d49(ped) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x117C70D1F5730B5E)
+---@param ped number
+---@return boolean
+function IsPedVaulting(ped) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x6E575D6A898AB852)
@@ -1175,40 +1181,17 @@ function IsPedInAnyTaxi(ped) end
 ---@param value number
 function SetPedIdRange(ped, value) end
 
----_IS_PED_J* - _IS_PED_L*
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xB91AB3BE7F655D49)
----@param ped number
----@return boolean
-function N_0xb91ab3be7f655d49(ped) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x31167ED4324B758D)
----@param ped number
----@return number
-function GetPedIdRange(ped) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xEC4B4B3B9908052A)
----@param ped number
----@param unk number
-function SetPedInjuredOnGroundBehaviour(ped, unk) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x733C87D4CE22BEA2)
----@param ped number
-function DisablePedInjuredOnGroundBehaviour(ped) end
-
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x52D59AB61DDC05DD)
 ---@param ped number
 ---@param toggle boolean
 function SetPedHighlyPerceptive(ped, toggle) end
 
----_HAS_PED_*
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xFA8C10DCE0706D43)
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xEC4B4B3B9908052A)
 ---@param ped number
----@return boolean
-function N_0xfa8c10dce0706d43(ped) end
+---@param unk number
+function SetPedInjuredOnGroundBehaviour(ped, unk) end
 
 ---_IS_PED_IN*
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x5C6C7C70CA302801)
@@ -1217,23 +1200,38 @@ function N_0xfa8c10dce0706d43(ped) end
 function N_0x5c6c7c70ca302801(ped) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x733C87D4CE22BEA2)
+---@param ped number
+function DisablePedInjuredOnGroundBehaviour(ped) end
+
+---_HAS_PED_*
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xFA8C10DCE0706D43)
+---@param ped number
+---@return boolean
+function N_0xfa8c10dce0706d43(ped) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x31167ED4324B758D)
+---@param ped number
+---@return number
+function GetPedIdRange(ped) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x43CA928E892CFDB8)
 ---@param ped number
 ---@param modifier number
 function SetPedAnimalDetectionModifier(ped, modifier) end
-
----Used in Script Function CHECK_IS_PLAYER_SEEN
----_GET_PED_*
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x2BA9D7BF629F920C)
----@param ped number
----@return number
-function N_0x2ba9d7bf629f920c(ped) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xF29CF591C4BF6CEE)
 ---@param ped number
 ---@param value number
 function SetPedSeeingRange(ped, value) end
+
+---_SET_ST* - _SET_SW*
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x028E7B3BBA0BD2FC)
+---@param ped number
+function N_0x028e7b3bba0bd2fc(ped) end
 
 ---Used in Script Function AGGRO_SHOULD_PED_HEAR_DEATH
 ---_GET_PED_*
@@ -1260,22 +1258,12 @@ function SetPedVisualFieldMaxAngle(ped, value) end
 ---@param range number
 function SetPedVisualFieldPeripheralRange(ped, range) end
 
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x3B6405E8AB34A907)
+---Used in Script Function CHECK_IS_PLAYER_SEEN
+---_GET_PED_*
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x2BA9D7BF629F920C)
 ---@param ped number
----@param angle number
-function SetPedVisualFieldCenterAngle(ped, angle) end
-
----_SET_ST* - _SET_SW*
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x028E7B3BBA0BD2FC)
----@param ped number
-function N_0x028e7b3bba0bd2fc(ped) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x33A8F7F7D5F7F33C)
----@param ped number
----@param value number
-function SetPedHearingRange(ped, value) end
+---@return number
+function N_0x2ba9d7bf629f920c(ped) end
 
 ---_SET_PED_M*
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x9AB33CB5834885B3)
@@ -1295,12 +1283,6 @@ function N_0x9ab33cb5834885b3(ped, p1, p2, p3, p4) end
 ---@param p4 number
 function N_0x3a5697b80fed5ebe(ped, p1, p2, p3, p4) end
 
----Returns whether the entity is in stealth mode
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x7C2AC9CA66575FBF)
----@param ped number
----@return boolean
-function GetPedStealthMovement(ped) end
-
 ---Not implemented.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x88CBB5CEB96B7BD2)
 ---@param ped number
@@ -1308,6 +1290,12 @@ function GetPedStealthMovement(ped) end
 ---@param p2 any
 ---@param p3 any
 function SetPedStealthMovement(ped, p1, p2, p3) end
+
+---Returns whether the entity is in stealth mode
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x7C2AC9CA66575FBF)
+---@param ped number
+---@return boolean
+function GetPedStealthMovement(ped) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x7DE9692C6F64CFE8)
@@ -1318,10 +1306,34 @@ function SetPedStealthMovement(ped, p1, p2, p3) end
 function SetPedCrouchMovement(ped, state, p2, immediately) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xD5FE956C70FF370B)
+---@param ped number
+---@return boolean
+function GetPedCrouchMovement(ped) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x3B6405E8AB34A907)
+---@param ped number
+---@param angle number
+function SetPedVisualFieldCenterAngle(ped, angle) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xC48A9EB0D499B3E5)
 ---@param ped number
 ---@return boolean
 function GetPedIsDoingCombatRoll(ped) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x2A7819605465FBCE)
+---@param ped number
+---@param groupId number
+---@param p2 boolean
+function SetPedAsGroupLeader(ped, groupId, p2) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xED74007FFB146BC2)
+---@param ped number
+function RemovePedFromGroup(ped) end
 
 ---Creates a new ped group.
 ---Groups can contain up to 8 peds.
@@ -1335,37 +1347,9 @@ function GetPedIsDoingCombatRoll(ped) end
 function CreateGroup(taskAllocator) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x2A7819605465FBCE)
----@param ped number
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x8EB2F69076AF7053)
 ---@param groupId number
----@param p2 boolean
-function SetPedAsGroupLeader(ped, groupId, p2) end
-
----This only will teleport the ped to the group leader if the group leader teleports (sets coords).
----
----Only works in singleplayer
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x2E2F4240B3F24647)
----@param pedHandle number
----@param groupId number
----@param toggle boolean
-function SetPedCanTeleportToGroupLeader(pedHandle, groupId, toggle) end
-
----_SET_PED_O*
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x899DFA0009AC93DE)
----@param ped number
----@param p1 number
-function N_0x899dfa0009ac93de(ped, p1) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xD5FE956C70FF370B)
----@param ped number
----@return boolean
-function GetPedCrouchMovement(ped) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xED74007FFB146BC2)
----@param ped number
-function RemovePedFromGroup(ped) end
+function RemoveGroup(groupId) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x9F3480FE65DB31B5)
@@ -1374,11 +1358,10 @@ function RemovePedFromGroup(ped) end
 function SetPedAsGroupMember(ped, groupId) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x878B68960C1C2A35)
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x33A8F7F7D5F7F33C)
 ---@param ped number
----@param groupId number
----@return boolean
-function IsPedGroupLeader(ped, groupId) end
+---@param value number
+function SetPedHearingRange(ped, value) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x9BB01E3834671191)
@@ -1389,9 +1372,20 @@ function IsPedGroupLeader(ped, groupId) end
 function IsPedGroupMember(ped, groupId, p2) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x8EB2F69076AF7053)
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x878B68960C1C2A35)
+---@param ped number
 ---@param groupId number
-function RemoveGroup(groupId) end
+---@return boolean
+function IsPedGroupLeader(ped, groupId) end
+
+---This only will teleport the ped to the group leader if the group leader teleports (sets coords).
+---
+---Only works in singleplayer
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x2E2F4240B3F24647)
+---@param pedHandle number
+---@param groupId number
+---@param toggle boolean
+function SetPedCanTeleportToGroupLeader(pedHandle, groupId, toggle) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x1C86D8AEF8254B78)
@@ -1399,30 +1393,11 @@ function RemoveGroup(groupId) end
 ---@return boolean
 function IsPedHangingOnToVehicle(ped) end
 
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xD6A86331A537A7B9)
----@param ped number
----@return boolean
-function IsPedProne(ped) end
-
 ---Sets the range at which members will automatically leave the group.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x4102C7858CFEE4E4)
 ---@param groupId number
 ---@param separationRange number
 function SetGroupSeparationRange(groupId, separationRange) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x4859F1FC66A6278E)
----@param ped number
----@param target number
----@return boolean
-function IsPedInCombat(ped, target) end
-
----_IS_PED_IN*
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x7583A9D35248B83F)
----@param ped number
----@return boolean
-function N_0x7583a9d35248b83f(ped) end
 
 ---_SET_C*
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x89E59DBD15E21177)
@@ -1431,11 +1406,36 @@ function N_0x7583a9d35248b83f(ped) end
 function N_0x89e59dbd15e21177(groupId, p1) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xD6A86331A537A7B9)
+---@param ped number
+---@return boolean
+function IsPedProne(ped) end
+
+---_IS_PED_IN*
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x7583A9D35248B83F)
+---@param ped number
+---@return boolean
+function N_0x7583a9d35248b83f(ped) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x4859F1FC66A6278E)
+---@param ped number
+---@param target number
+---@return boolean
+function IsPedInCombat(ped, target) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xEAD42DE3610D0721)
 ---@param ped number
 ---@param target number
 ---@return boolean
 function CanPedInCombatSeeTarget(ped, target) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x4AE4FF911DFB61DA)
+---@param ped number
+---@return boolean
+function IsPedJacking(ped) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x9A497FE2DF198913)
@@ -1451,16 +1451,16 @@ function IsPedBeingJacked(ped) end
 function IsPedBeingStunned(ped, p1) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x5486A79D9FBD342D)
----@param ped number
----@return number
-function GetJackTarget(ped) end
-
----This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x9B128DC36C1E04CF)
 ---@param ped number
 ---@return number
 function GetPedsJacker(ped) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x5486A79D9FBD342D)
+---@param ped number
+---@return number
+function GetJackTarget(ped) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xBBCCE00B381F8482)
@@ -1477,10 +1477,10 @@ function IsPedFleeing(ped) end
 function IsPedInCover(ped, p1, p2) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x4AE4FF911DFB61DA)
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x06FA94C835787C64)
 ---@param ped number
 ---@return boolean
-function IsPedJacking(ped) end
+function N_0x06fa94c835787c64(ped) end
 
 ---_IS_PED_M* - _IS_PED_O*
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x2DD4E0E26DFAD97D)
@@ -1491,16 +1491,16 @@ function IsPedJacking(ped) end
 function N_0x2dd4e0e26dfad97d(ped1, ped2, p2) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x845333B3150583AB)
----@param ped number
----@return boolean
-function IsPedInCoverFacingLeft(ped) end
-
----This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xBD6B242B8BD5543A)
 ---@param ped number
 ---@return boolean
 function PedDuelingDidPlayerHeadshotOpponent(ped) end
+
+---_SET_PED_O*
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x899DFA0009AC93DE)
+---@param ped number
+---@param p1 number
+function N_0x899dfa0009ac93de(ped, p1) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x9F65DBC537E59AD5)
@@ -1531,6 +1531,12 @@ function GetActiveDynamicScenario_2(ped) end
 ---@return boolean
 function GivePedScenarioProp(ped, object, conditionalAnim, p3, p4, p5) end
 
+---Returns kneeling, sitting, squating, and sleeping scenario hashes
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x569F1E1237508DEB)
+---@param ped number
+---@return number
+function GetActiveDynamicScenario(ped) end
+
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x2B02DB082258625F)
 ---@param ped number
@@ -1541,12 +1547,6 @@ function GivePedScenarioProp(ped, object, conditionalAnim, p3, p4, p5) end
 ---@param p5 boolean
 ---@return boolean
 function GivePedHashScenarioProp(ped, object, conditionalAnim, scenarioType, p4, p5) end
-
----Returns kneeling, sitting, squating, and sleeping scenario hashes
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x569F1E1237508DEB)
----@param ped number
----@return number
-function GetActiveDynamicScenario(ped) end
 
 ---Only used in SP R* Script rcm_jack2
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xA0774E388CE4A679)
@@ -1580,20 +1580,6 @@ function RequestPropScenarioPed(ped, object, p2, p3, p4, p5) end
 ---@return any
 function RequestPedForScenarioType(ped, object, p2, scenarioType, p4, p5) end
 
----Params: p1 = p_banjo01x_XH_R_HAND00, mp006_p_dblcello01x_XH_R_HAND00, p_fiddle01x_PH_L_HAND, p_guitar01x_XH_R_HAND00, mp006_p_mnshn_washboard01x_XH_R_HAND00, p_bottleBeer01x_PH_R_HAND
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x4D0D2E3D8BC000EB)
----@param ped number
----@param p1 string
----@param p2 boolean
----@return number
-function GetPedRegisterProp(ped, p1, p2) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x6F4C85ACD641BCD2)
----@param ped number
----@return number
-function GetSeatPedIsTryingToEnter(ped) end
-
 ---Returns the entity that killed the ped
 ---
 ---It is best to check if the Ped is dead before asking for its killer.
@@ -1603,31 +1589,36 @@ function GetSeatPedIsTryingToEnter(ped) end
 function GetPedSourceOfDeath(ped) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x845333B3150583AB)
+---@param ped number
+---@return boolean
+function IsPedInCoverFacingLeft(ped) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x1E98817B311AE98A)
 ---@param ped number
 ---@return number
 function GetPedTimeOfDeath(ped) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x6F4C85ACD641BCD2)
+---@param ped number
+---@return number
+function GetSeatPedIsTryingToEnter(ped) end
+
+---Params: p1 = p_banjo01x_XH_R_HAND00, mp006_p_dblcello01x_XH_R_HAND00, p_fiddle01x_PH_L_HAND, p_guitar01x_XH_R_HAND00, mp006_p_mnshn_washboard01x_XH_R_HAND00, p_bottleBeer01x_PH_R_HAND
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x4D0D2E3D8BC000EB)
+---@param ped number
+---@param p1 string
+---@param p2 boolean
+---@return number
+function GetPedRegisterProp(ped, p1, p2) end
 
 ---Returns the hash of the weapon/model/object that killed the ped.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x16FFE42AB2D2DC59)
 ---@param ped number
 ---@return number
 function GetPedCauseOfDeath(ped) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x5407B7288D0478B7)
----@param ped number
----@param flag number
----@return number
-function CountPedsInCombatWithTarget(ped, flag) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x7BE607DAFF382FD2)
----@param ped number
----@param itemset any
----@param flag number
----@return number
-function GetPedsInCombatWithTarget(ped, itemset, flag) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x336B3D200AB007CB)
@@ -1641,28 +1632,23 @@ function GetPedsInCombatWithTarget(ped, itemset, flag) end
 function CountPedsInCombatWithTargetWithinRadius(ped, x, y, z, radius, flag) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xCD66FEA29400A0B5)
+---@param ped number
+---@return number
+function GetCurrentTargetForPed(ped) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xADB3F206518799E8)
 ---@param ped number
 ---@param hash number | string
 function SetPedRelationshipGroupDefaultHash(ped, hash) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x3CC4A718C258BDD0)
----@param modelHash number | string
----@return number
-function GetDefaultRelationshipGroupHash(modelHash) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xC80A74AC829DDD92)
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x5407B7288D0478B7)
 ---@param ped number
----@param relationshipGroup number | string
-function SetPedRelationshipGroupHash(ped, relationshipGroup) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xCD66FEA29400A0B5)
----@param ped number
+---@param flag number
 ---@return number
-function GetCurrentTargetForPed(ped) end
+function CountPedsInCombatWithTarget(ped, flag) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xBF25EB89375A37AD)
@@ -1670,17 +1656,6 @@ function GetCurrentTargetForPed(ped) end
 ---@param group1 number | string
 ---@param group2 number | string
 function SetRelationshipBetweenGroups(relationship, group1, group2) end
-
----The hash of the created relationship group is output in the second parameter.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xF372BC22FCB88606)
----@param name string
----@return boolean, number
-function AddRelationshipGroup(name) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xB6BA2444AB393DA2)
----@param groupHash number | string
-function RemoveRelationshipGroup(groupHash) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x5E29243FB56FC6D4)
@@ -1690,10 +1665,15 @@ function RemoveRelationshipGroup(groupHash) end
 function ClearRelationshipBetweenGroups(relationship, group1, group2) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x42FDD0F017B1E38E)
----@param ped number
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x3CC4A718C258BDD0)
+---@param modelHash number | string
 ---@return number
-function GetPedRelationshipGroupDefaultHash(ped) end
+function GetDefaultRelationshipGroupHash(modelHash) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xB6BA2444AB393DA2)
+---@param groupHash number | string
+function RemoveRelationshipGroup(groupHash) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xEBA5AD3A0EAF7121)
@@ -1703,17 +1683,10 @@ function GetPedRelationshipGroupDefaultHash(ped) end
 function GetRelationshipBetweenPeds(ped1, ped2) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x9E6B70061662AE5C)
----@param group1 number | string
----@param group2 number | string
----@return number
-function GetRelationshipBetweenGroups(group1, group2) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x06FA94C835787C64)
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x42FDD0F017B1E38E)
 ---@param ped number
----@return boolean
-function N_0x06fa94c835787c64(ped) end
+---@return number
+function GetPedRelationshipGroupDefaultHash(ped) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x7DBDD04862D95F04)
@@ -1722,10 +1695,43 @@ function N_0x06fa94c835787c64(ped) end
 function GetPedRelationshipGroupHash(ped) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x9E6B70061662AE5C)
+---@param group1 number | string
+---@param group2 number | string
+---@return number
+function GetRelationshipBetweenGroups(group1, group2) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xC80A74AC829DDD92)
+---@param ped number
+---@param relationshipGroup number | string
+function SetPedRelationshipGroupHash(ped, relationshipGroup) end
+
+---Used in Script Function MP_MAIN_OFFLINE__INITIALIZE_GAME
+---_SET_RELATIONSHIP_*
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xDC91F22F09BC6C2F)
+---@param group number | string
+---@param p1 boolean
+function N_0xdc91f22f09bc6c2f(group, p1) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x9629FAF6460D35CB)
 ---@param group number | string
 ---@param p1 boolean
 function N_0x9629faf6460d35cb(group, p1) end
+
+---_IS_PED_RE*
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x40C9155AF8BC13F3)
+---@param ped number
+---@return boolean
+function N_0x40c9155af8bc13f3(ped) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x112942C6E708F70B)
+---@param ped number
+---@param radius number
+---@param maxFriends number
+function SetPedToInformRespectedFriends(ped, radius, maxFriends) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x4E68C7EF706DF35D)
@@ -1736,6 +1742,25 @@ function N_0x9629faf6460d35cb(group, p1) end
 ---@param p4 number
 ---@param relationshipGroup number | string
 function N_0x4e68c7ef706df35d(ped, x, y, z, p4, relationshipGroup) end
+
+---Only used in SP Scripts
+---Returns count / index
+---_C*
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xF4860514AD354226)
+---@param shockingEvent any
+---@param x number
+---@param y number
+---@param z number
+---@param p4 number
+---@return number, number
+function N_0xf4860514ad354226(shockingEvent, x, y, z, p4) end
+
+---eventType: https://alloc8or.re/rdr3/doc/enums/eEventType.txt
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x625B774D75C87068)
+---@param ped number
+---@param eventType number | string
+---@return boolean
+function IsPedRespondingToEvent(ped, eventType) end
 
 ---Used in R* Script net_fetch (NET_FETCH_UPDATE_RECIPIENT_PROP_ILO_IN_COMBAT) and various SP Scripts
 ---Params: p1 = 4/5/6, p5 = 40.f/100.f, coords = Player ped
@@ -1752,31 +1777,6 @@ function N_0x4e68c7ef706df35d(ped, x, y, z, p4, relationshipGroup) end
 ---@return number
 function N_0x3acce14dfa6ba8c2(ped, p1, x, y, z, p5, itemset) end
 
----_IS_PED_RE*
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x40C9155AF8BC13F3)
----@param ped number
----@return boolean
-function N_0x40c9155af8bc13f3(ped) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x112942C6E708F70B)
----@param ped number
----@param radius number
----@param maxFriends number
-function SetPedToInformRespectedFriends(ped, radius, maxFriends) end
-
----Only used in SP Scripts
----Returns count / index
----_C*
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xF4860514AD354226)
----@param shockingEvent any
----@param x number
----@param y number
----@param z number
----@param p4 number
----@return number, number
-function N_0xf4860514ad354226(shockingEvent, x, y, z, p4) end
-
 ---Only used in R* SP Scripts
 ---_GET_PED_IN*
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x5E9FAF6C513347B4)
@@ -1784,13 +1784,6 @@ function N_0xf4860514ad354226(shockingEvent, x, y, z, p4) end
 ---@param eventType number | string
 ---@return number
 function N_0x5e9faf6c513347b4(ped, eventType) end
-
----eventType: https://alloc8or.re/rdr3/doc/enums/eEventType.txt
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x625B774D75C87068)
----@param ped number
----@param eventType number | string
----@return boolean
-function IsPedRespondingToEvent(ped, eventType) end
 
 ---Only used in R* SP Script short_update
 ---_GET_TARGET_* - _GET_TRACKED*
@@ -1817,24 +1810,29 @@ function N_0xe76687023d8c8505(perscharModel, p1) end
 ---@return boolean, vector3
 function N_0xcb8f4c9343ebe240(ped, eventType) end
 
+---Used in R* MP Script fm_mission_controller and various R* SP Scripts for ambush*
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x20E54854DEF6A54A)
+---@param ped number
+---@param patternHash number | string
+function SetPedFiringPattern_2(ped, patternHash) end
+
 ---Only used in R* MP Script fm_mission_controller
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x244E8C282188E40F)
 ---@param ped number
 ---@param patternHash number | string
 function SetPedFiringPattern_3(ped, patternHash) end
 
----Used in Script Function MP_MAIN_OFFLINE__INITIALIZE_GAME
----_SET_RELATIONSHIP_*
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xDC91F22F09BC6C2F)
----@param group number | string
----@param p1 boolean
-function N_0xdc91f22f09bc6c2f(group, p1) end
-
----Used in R* MP Script fm_mission_controller and various R* SP Scripts for ambush*
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x20E54854DEF6A54A)
+---Used in various R* MP & SP Scripts
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x9AC577F5A12AD8A9)
 ---@param ped number
 ---@param patternHash number | string
-function SetPedFiringPattern_2(ped, patternHash) end
+function SetPedFiringPattern(ped, patternHash) end
+
+---Params: shootRate = 0 - 1000
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x614DA022990752DC)
+---@param ped number
+---@param shootRate number
+function SetPedShootRate(ped, shootRate) end
 
 ---_SET_PED_TA* - _SET_PED_TO_*
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x3C529A827998F9B3)
@@ -1843,11 +1841,13 @@ function SetPedFiringPattern_2(ped, patternHash) end
 ---@param p2 number
 function N_0x3c529a827998f9b3(ped, p1, p2) end
 
----Used in various R* MP & SP Scripts
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x9AC577F5A12AD8A9)
+---combatType can be between 0-14. See GET_COMBAT_FLOAT below for a list of possible parameters.
+---https://github.com/femga/rdr3_discoveries/tree/master/AI/COMBAT_FLOATS
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xFF41B4B141ED981C)
 ---@param ped number
----@param patternHash number | string
-function SetPedFiringPattern(ped, patternHash) end
+---@param combatType number
+---@param newValue number
+function SetCombatFloat(ped, combatType, newValue) end
 
 ---Only used in SP R* Scripts
 ---Params: p2 = same as p2 of 0x3C529A827998F9B3
@@ -1857,14 +1857,6 @@ function SetPedFiringPattern(ped, patternHash) end
 ---@param p1 number
 ---@param p2 number
 function N_0x1f44b7e283c09ede(ped, p1, p2) end
-
----combatType can be between 0-14. See GET_COMBAT_FLOAT below for a list of possible parameters.
----https://github.com/femga/rdr3_discoveries/tree/master/AI/COMBAT_FLOATS
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xFF41B4B141ED981C)
----@param ped number
----@param combatType number
----@param newValue number
-function SetCombatFloat(ped, combatType, newValue) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x8DE69FE35CA09A45)
@@ -1879,29 +1871,17 @@ function GetGroupSize(groupId) end
 ---@return number
 function GetCombatFloat(ped, combatType) end
 
----Params: shootRate = 0 - 1000
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x614DA022990752DC)
----@param ped number
----@param shootRate number
-function SetPedShootRate(ped, shootRate) end
-
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x7C6B0C22F9F40BBE)
 ---@param groupId number
 ---@return boolean
 function DoesGroupExist(groupId) end
 
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x909AD9E9A92A10DF)
+---_DOES_GROUP_* - _DOES_N*
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x0455546F23FF08E4)
 ---@param groupId number
 ---@return boolean
-function IsGroupLocallyControlled(groupId) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x5891CAC5D4ACFF74)
----@param ped number
----@return boolean
-function IsPedInGroup(ped) end
+function N_0x0455546f23ff08e4(groupId) end
 
 ---Returns the groupId of which the specified ped is a member of.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xF162E133B4E7A675)
@@ -1910,27 +1890,22 @@ function IsPedInGroup(ped) end
 function GetPedGroupIndex(ped) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x6A3975DEA89F9A17)
----@param ped number
----@return number
-function GetPlayerPedIsFollowing(ped) end
-
----eFormationType
----
----0: Default
----1: Circle Around Leader
----2: Alternative Circle Around Leader
----3: Line, with Leader at center
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xCE2F5FC3AF7E8C1E)
----@param groupId number
----@param formationType number
-function SetGroupFormation(groupId, formationType) end
-
----_DOES_GROUP_* - _DOES_N*
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x0455546F23FF08E4)
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x909AD9E9A92A10DF)
 ---@param groupId number
 ---@return boolean
-function N_0x0455546f23ff08e4(groupId) end
+function IsGroupLocallyControlled(groupId) end
+
+---_IS_PED_L* - _IS_PED_M*
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x917760CFE7A0E0F1)
+---@param ped number
+---@return boolean
+function N_0x917760cfe7a0e0f1(ped) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x5891CAC5D4ACFF74)
+---@param ped number
+---@return boolean
+function IsPedInGroup(ped) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x13A1B061007C906B)
@@ -1945,6 +1920,11 @@ function GetGroupFormation(groupId) end
 ---@param p2 number
 ---@param p3 number
 function SetGroupFormationSpacing(groupId, p1, p2, p3) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x63DAB4CCB3273205)
+---@param groupId number
+function ResetGroupFormationDefaultSpacing(groupId) end
 
 ---Used to set up bad guy groups in nb_kidnapped R* Script (MP_RE_KIDNAPPED): p1 = 4.f
 ---_SET_FORMATION_*
@@ -1972,6 +1952,23 @@ function AddCustomFormationLocation(groupId, x, y, z, position) end
 ---@return boolean
 function AddFormationLocation(groupId, p1, p2, p3) end
 
+---eFormationType
+---
+---0: Default
+---1: Circle Around Leader
+---2: Alternative Circle Around Leader
+---3: Line, with Leader at center
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xCE2F5FC3AF7E8C1E)
+---@param groupId number
+---@param formationType number
+function SetGroupFormation(groupId, formationType) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x6A3975DEA89F9A17)
+---@param ped number
+---@return number
+function GetPlayerPedIsFollowing(ped) end
+
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x7CC7D3B7AF7FB71F)
 ---@param groupId number
@@ -1980,15 +1977,22 @@ function AddFormationLocation(groupId, p1, p2, p3) end
 function SetFormationPositionsTargetRadius(groupId, radius) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x63DAB4CCB3273205)
----@param groupId number
-function ResetGroupFormationDefaultSpacing(groupId) end
-
----This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x478F6B9920446CE2)
 ---@param groupId number
 ---@param toggle boolean
 function SetFormationAutoAssignPosition(groupId, toggle) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x0E9E95FDEDCC9D35)
+---@param ped number
+---@param position number
+---@param toggle boolean
+function SetPedFormationPosition(ped, position, toggle) end
+
+---_CLEAR_PED_E* - _CLEAR_PED_L*
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x87C2724A56F66020)
+---@param ped number
+function N_0x87c2724a56f66020(ped) end
 
 ---Returns offset (0 < 32) to be used with MISC::SET_BIT
 ---_GET_PED_CR*
@@ -1998,29 +2002,23 @@ function SetFormationAutoAssignPosition(groupId, toggle) end
 ---@return number
 function N_0x8af8e647d6b2a649(groupId, ped) end
 
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x0E9E95FDEDCC9D35)
----@param ped number
----@param position number
----@param toggle boolean
-function SetPedFormationPosition(ped, position, toggle) end
-
 ---_SET_FORMATION_*
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xD5BD1B5318A81994)
 ---@param groupId number
 ---@param p1 boolean
 function N_0xd5bd1b5318a81994(groupId, p1) end
 
----_CLEAR_PED_E* - _CLEAR_PED_L*
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x87C2724A56F66020)
----@param ped number
-function N_0x87c2724a56f66020(ped) end
-
 ---_SET_PLAYER_CAN_B* - _SET_PLAYER_CAN_U*
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x9BBEAF8B0C007F1E)
 ---@param ped number
 ---@param p1 boolean
 function N_0x9bbeaf8b0c007f1e(ped, p1) end
+
+---_SET_PLAYER_N* - _SET_PLAYER_S*
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xC99F104BDF8C7F5A)
+---@param ped number
+---@param p1 boolean
+function N_0xc99f104bdf8c7f5a(ped, p1) end
 
 ---_SET_PLAYER_SN* - _SET_PLAYER_STAMINA*
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x02E741E19E39628C)
@@ -2034,23 +2032,25 @@ function N_0x02e741e19e39628c(ped, p1) end
 ---@param p1 boolean
 function N_0x97c475212b327666(groupId, p1) end
 
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x7BE607DAFF382FD2)
+---@param ped number
+---@param itemset any
+---@param flag number
+---@return number
+function GetPedsInCombatWithTarget(ped, itemset, flag) end
+
 ---_SET_SCENARIO_PED_* - _SET_SPAWNER_*
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x154B7E841AC7412F)
 ---@param groupId number
 ---@param p1 boolean
 function N_0x154b7e841ac7412f(groupId, p1) end
 
----_SET_FORMATION_*
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x8AFCCC0F18D70018)
+---_SET_ENABLE_B* - _SET_ENABLE_H*
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xA8A95CECB1906EA2)
 ---@param groupId number
 ---@param p1 boolean
-function N_0x8afccc0f18d70018(groupId, p1) end
-
----_SET_PLAYER_N* - _SET_PLAYER_S*
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xC99F104BDF8C7F5A)
----@param ped number
----@param p1 boolean
-function N_0xc99f104bdf8c7f5a(ped, p1) end
+function N_0xa8a95cecb1906ea2(groupId, p1) end
 
 ---_SET_FORMATION_P*
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xE1103300F3456DE7)
@@ -2068,24 +2068,6 @@ function N_0xe1103300f3456de7(groupId, p1, p2) end
 ---@param p4 number
 function N_0xddfad4deaa7fa362(groupId, p1, p2, p3, p4) end
 
----_IS_PED_L* - _IS_PED_M*
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x917760CFE7A0E0F1)
----@param ped number
----@return boolean
-function N_0x917760cfe7a0e0f1(ped) end
-
----_SET_ENABLE_B* - _SET_ENABLE_H*
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xA8A95CECB1906EA2)
----@param groupId number
----@param p1 boolean
-function N_0xa8a95cecb1906ea2(groupId, p1) end
-
----_SET_SCENARIO_PED_* - _SET_SPAWNER_*
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x40C3524D4ED83554)
----@param groupId number
----@param p1 boolean
-function N_0x40c3524d4ed83554(groupId, p1) end
-
 ---_SET_FORMATION_P*
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x966DE09688A1DE39)
 ---@param groupId number
@@ -2095,17 +2077,41 @@ function N_0x40c3524d4ed83554(groupId, p1) end
 ---@param p4 number
 function N_0x966de09688a1de39(groupId, p1, p2, p3, p4) end
 
+---_SET_FORMATION_P*
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x7E5185B979706210)
+---@param groupId number
+---@param p1 number
+function N_0x7e5185b979706210(groupId, p1) end
+
+---_SET_SCENARIO_PED_* - _SET_SPAWNER_*
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x40C3524D4ED83554)
+---@param groupId number
+---@param p1 boolean
+function N_0x40c3524d4ed83554(groupId, p1) end
+
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x07EA5B053FA60AC7)
 ---@param groupId number
 ---@param p1 boolean
 function N_0x07ea5b053fa60ac7(groupId, p1) end
 
----_SET_FORMATION_P*
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x7E5185B979706210)
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x86FAFC18E3D4380C)
 ---@param groupId number
----@param p1 number
-function N_0x7e5185b979706210(groupId, p1) end
+---@param p1 boolean
+function N_0x86fafc18e3d4380c(groupId, p1) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x6094AD011A2EA87D)
+---@param ped number
+---@return number
+function GetVehiclePedIsUsing(ped) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xF92691AED837A5FC)
+---@param ped number
+---@return number
+function GetVehiclePedIsEntering(ped) end
 
 ---Used in Script Function PLAYER_HEAD_TRACKING_MAINTAIN
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xF9CBD46433E36713)
@@ -2122,16 +2128,10 @@ function N_0x7e5185b979706210(groupId, p1) end
 function N_0xf9cbd46433e36713(ped, targetEntity, p2, p3, p4, p5, p6, p7, p8, p9) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xF92691AED837A5FC)
----@param ped number
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xE4770DA1B8FF4FD1)
+---@param horse number
 ---@return number
-function GetVehiclePedIsEntering(ped) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x86FAFC18E3D4380C)
----@param groupId number
----@param p1 boolean
-function N_0x86fafc18e3d4380c(groupId, p1) end
+function GetVehicleDraftHorseIsAttachedTo(horse) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x5064DB5083C29921)
@@ -2140,28 +2140,34 @@ function N_0x86fafc18e3d4380c(groupId, p1) end
 function GetLastVehicleDraftHorseWasAttachedTo(horse) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xE4770DA1B8FF4FD1)
----@param horse number
----@return number
-function GetVehicleDraftHorseIsAttachedTo(horse) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x6094AD011A2EA87D)
----@param ped number
----@return number
-function GetVehiclePedIsUsing(ped) end
-
----This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x849BD6C6314793D0)
 ---@param ped number
 ---@return number
 function GetTransportPedIsSeatedOn(ped) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x4E76CB57222A00E5)
+---@param ped number
+---@return number
+function GetSeatPedIsUsing(ped) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x1D46B417F926D34D)
+---@param ped number
+---@return boolean
+function IsPedEnteringAnyTransport(ped) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x9FF447B6B6AD960A)
 ---@param ped number
 ---@param toggle boolean
 function SetPedGravity(ped, toggle) end
+
+---The hash of the created relationship group is output in the second parameter.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xF372BC22FCB88606)
+---@param name string
+---@return boolean, number
+function AddRelationshipGroup(name) end
 
 ---Only used in R* Script mob4 combined with SET_ANIMAL_TUNING_BOOL_PARAM
 ---_SET_PED_S* - _SET_PED_TARGET_*
@@ -2177,6 +2183,12 @@ function N_0x96595b36d6a2279b(animal, toggle) end
 ---@param toggle boolean
 function SetPedImmersionFlag(ped, toggle) end
 
+---_SET_FORMATION_*
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x8AFCCC0F18D70018)
+---@param groupId number
+---@param p1 boolean
+function N_0x8afccc0f18d70018(groupId, p1) end
+
 ---Only used in R* Script mob4 and rcm_mason4
 ---_SET_PED_DEFENSIVE_* - _SET_PED_DESIRED_*
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xA90684ED185CCB4B)
@@ -2187,16 +2199,17 @@ function SetPedImmersionFlag(ped, toggle) end
 function N_0xa90684ed185ccb4b(animal, p1, p2, p3) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x1D46B417F926D34D)
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x1CE875505D45338A)
 ---@param ped number
----@return boolean
-function IsPedEnteringAnyTransport(ped) end
+---@param pedKiller number
+---@param weapon number | string
+function ForcePedDeath(ped, pedKiller, weapon) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x8B3CB08158E98481)
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xFF059E1E4C01E63C)
 ---@param ped number
----@param enabled boolean
-function FakeSetPedLocoInjured(ped, enabled) end
+---@return number
+function GetPedType(ped) end
 
 ---damages a ped with the given amount
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x697157CED63F18D4)
@@ -2207,19 +2220,6 @@ function FakeSetPedLocoInjured(ped, enabled) end
 ---@param pedKiller number
 function ApplyDamageToPed(ped, damageAmount, p2, boneId, pedKiller) end
 
----_SET_PED_D*
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xBAD2A311667A50D7)
----@param ped number
----@param p1 boolean
-function N_0xbad2a311667a50d7(ped, p1) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x1CE875505D45338A)
----@param ped number
----@param pedKiller number
----@param weapon number | string
-function ForcePedDeath(ped, pedKiller, weapon) end
-
 ---Turns the desired ped into a cop. If you use this on the player ped, you will become almost invisible to cops dispatched for you. You will also report your own crimes, get a generic cop voice, get a cop-vision-cone on the radar, and you will be unable to shoot at other cops. Toggling ped as "false" has no effect; you must change p0's ped model to disable the effect.
 ---toggle = bSetRelGroup
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xBB03C38DD3FB7FFD)
@@ -2227,24 +2227,18 @@ function ForcePedDeath(ped, pedKiller, weapon) end
 ---@param toggle boolean
 function SetPedAsCop(ped, toggle) end
 
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x4E76CB57222A00E5)
----@param ped number
----@return number
-function GetSeatPedIsUsing(ped) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xFF059E1E4C01E63C)
----@param ped number
----@return number
-function GetPedType(ped) end
-
 ---personality (script_mp_rel): NONE, AGGRESSIVE, TIMID (non-aggressive), CRIPPS, SCRIPTEDINTIMIDATION, MAGGIE, MARCEL, SCRIPTEDSALOON
 ---personality (script_rel): AVOID, SCRIPTEDOUTLAW, TIMIDGUARDDOG, SCRIPTEDTIMIDROB, AGGRESSIVECAMPER, LAZYDOG, KIERANTIEDUP, SCRIPTEDGALA
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x24C82EF607105FAA)
 ---@param ped number
 ---@param personality number | string
 function SetPedInteractionPersonality(ped, personality) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x8B3CB08158E98481)
+---@param ped number
+---@param enabled boolean
+function FakeSetPedLocoInjured(ped, enabled) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xD7AD3C7EBAF88C92)
@@ -2259,6 +2253,12 @@ function GetPedInteractionPersonality(ped) end
 ---@param p1 number | string
 function N_0xb8b6430ead2d2437(ped, p1) end
 
+---_SET_PED_D*
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xBAD2A311667A50D7)
+---@param ped number
+---@param p1 boolean
+function N_0xbad2a311667a50d7(ped, p1) end
+
 ---Returns true if ped is in a dispute another ped (pedInDisputeWith can also be 0)
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x331550B212014B92)
 ---@param ped number
@@ -2271,12 +2271,6 @@ function GetIsPedInDisputeWithPed(ped, pedInDisputeWith) end
 ---@param ped number
 ---@return boolean
 function N_0x94132d7c8d3575c4(ped) end
-
----_SET_PED_A*
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x405180B14DA5A935)
----@param ped number
----@param p1 boolean
-function N_0x405180b14da5a935(ped, p1) end
 
 ---_SET_PED_IN*
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x8AF46E5159A5B620)
@@ -2297,15 +2291,22 @@ function N_0x20c5459379d75c1c(ped, p1) end
 function N_0xe37acee15ac50c7e(ped, p1) end
 
 ---_SET_PED_IN*
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x41C23A8E6B344867)
+---@param ped number
+---@param p1 string
+function N_0x41c23a8e6b344867(ped, p1) end
+
+---_SET_PED_IN*
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x45FEA6D5539BD474)
+---@param ped number
+---@param p1 string
+function N_0x45fea6d5539bd474(ped, p1) end
+
+---_SET_PED_IN*
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xA3C53CDE922BC78B)
 ---@param ped number
 ---@param p1 string
 function N_0xa3c53cde922bc78b(ped, p1) end
-
----_SET_PED_P* - _SET_PED_R*
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x329772C47DBB2FBC)
----@param ped number
-function N_0x329772c47dbb2fbc(ped) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x9337183FDA2E9035)
@@ -2321,28 +2322,17 @@ function GetIsPedRespondingToPositiveInteraction(ped, player) end
 ---@return boolean
 function GetIsPedRespondingToNegativeInteraction(ped, player) end
 
----_SET_PED_IN*
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x41C23A8E6B344867)
----@param ped number
----@param p1 string
-function N_0x41c23a8e6b344867(ped, p1) end
-
 ---_GET_PED_B* - _GET_PED_C*
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x89816B58C3466262)
 ---@param ped number
 ---@return any
 function N_0x89816b58c3466262(ped) end
 
----_CLEAR_PED_B* - _CLEAR_PED_C*
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xA7DC9266ED6A4E51)
----@param ped number
-function N_0xa7dc9266ed6a4e51(ped) end
-
----_SET_PED_IN*
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x45FEA6D5539BD474)
----@param ped number
----@param p1 string
-function N_0x45fea6d5539bd474(ped, p1) end
+---_CLEAR*
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x97B06669AC569003)
+---@param ped1 number
+---@param ped2 number
+function N_0x97b06669ac569003(ped1, ped2) end
 
 ---Used in Script Function SKCS_PLAYER_ROBBING
 ---_SET_PED_A*
@@ -2370,6 +2360,10 @@ function N_0xec60d1d225bc50aa(ped, p1) end
 ---@param p1 number
 function N_0x12f2d161bf4031fc(ped, p1) end
 
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x0ADA3EC589E1736E)
+function N_0x0ada3ec589e1736e() end
+
 ---If p2 is false, then this native will return true until the interaction is complete. If true, the native will return true until player pockets robbery item.
 ---_GET_IS_PED_[M-R]*
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xE33F98BD76490ABC)
@@ -2392,17 +2386,10 @@ function N_0xd55db4466d00a258(legendaryAnimal) end
 ---@param value number
 function SetPedMaxHealth(ped, value) end
 
----_CLEAR*
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x97B06669AC569003)
----@param ped1 number
----@param ped2 number
-function N_0x97b06669ac569003(ped1, ped2) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x4700A416E8324EF3)
+---_CLEAR_PED_B* - _CLEAR_PED_C*
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xA7DC9266ED6A4E51)
 ---@param ped number
----@return number
-function GetPedMaxHealth(ped) end
+function N_0xa7dc9266ed6a4e51(ped) end
 
 ---configHash: see pedhealth.meta
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xF6B82FCE03B43A37)
@@ -2411,20 +2398,27 @@ function GetPedMaxHealth(ped) end
 function SetPedHealthConfig(ped, configHash) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x4700A416E8324EF3)
+---@param ped number
+---@return number
+function GetPedMaxHealth(ped) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x43C851690662113D)
 ---@param ped number
 ---@param value number
 function SetPedMaxTimeInWater(ped, value) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x7DD7FB3480D8083E)
+---@param ped number
+function InitPedDefaultHealth(ped) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x6BA428C528D9E522)
 ---@param ped number
 ---@param value number
 function SetPedMaxTimeUnderwater(ped, value) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x0ADA3EC589E1736E)
-function N_0x0ada3ec589e1736e() end
 
 ---_CLEAR_PED_D*
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xAF041C10756C30FB)
@@ -2433,6 +2427,11 @@ function N_0x0ada3ec589e1736e() end
 ---@param p2 boolean
 ---@param p3 boolean
 function N_0xaf041c10756c30fb(ped, p1, p2, p3) end
+
+---_SET_PED_P* - _SET_PED_R*
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x329772C47DBB2FBC)
+---@param ped number
+function N_0x329772c47dbb2fbc(ped) end
 
 ---state:
 ---enum eKnockOffVehicle
@@ -2448,32 +2447,9 @@ function N_0xaf041c10756c30fb(ped, p1, p2, p3) end
 function SetPedCanBeKnockedOffVehicle(ped, state) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x7DD7FB3480D8083E)
----@param ped number
-function InitPedDefaultHealth(ped) end
-
----_SET_C*
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x5AF24CA9C974E51A)
----@param ped1 number
----@param ped2 number
-function N_0x5af24ca9c974e51a(ped1, ped2) end
-
----This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x45BBCBA77C29A841)
 ---@param ped number
 function KnockPedOffVehicle(ped) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x51AC07A44D4F5B8A)
----@param ped number
----@return boolean
-function CanKnockPedOffVehicle(ped) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x5CCE68DBD5FE93EC)
----@param groupID number
----@return number
-function GetPedAsGroupLeader(groupID) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x51455483CF23ED97)
@@ -2481,6 +2457,18 @@ function GetPedAsGroupLeader(groupID) end
 ---@param memberNumber number
 ---@return number
 function GetPedAsGroupMember(groupID, memberNumber) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x5CCE68DBD5FE93EC)
+---@param groupID number
+---@return number
+function GetPedAsGroupLeader(groupID) end
+
+---_SET_PED_A*
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x405180B14DA5A935)
+---@param ped number
+---@param p1 boolean
+function N_0x405180b14da5a935(ped, p1) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x9DE327631295B4C2)
@@ -2495,21 +2483,27 @@ function IsPedSwimming(ped) end
 function SetPedKeepTask(ped, toggle) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x102E68B2024D536D)
----@param toggle boolean
-function SetCreateRandomCops(toggle) end
-
----This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xC024869A53992F34)
 ---@param ped number
 ---@return boolean
 function IsPedSwimmingUnderWater(ped) end
 
----_IS_PED_IN_* (near water?)
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xDC88D06719070C39)
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x51AC07A44D4F5B8A)
 ---@param ped number
 ---@return boolean
-function N_0xdc88d06719070c39(ped) end
+function CanKnockPedOffVehicle(ped) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x102E68B2024D536D)
+---@param toggle boolean
+function SetCreateRandomCops(toggle) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x6F972C1AB75A1ED0)
+---@param ped number
+---@return boolean
+function IsPedInAnyTrain(ped) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xBB062B2B5722478E)
@@ -2517,18 +2511,19 @@ function N_0xdc88d06719070c39(ped) end
 ---@return boolean
 function IsPedGettingIntoAVehicle(ped) end
 
+---_HAS_PED_*
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x550CB89DD7F4FA3D)
+---@param ped1 number
+---@param ped2 number
+---@return boolean
+function N_0x550cb89dd7f4fa3d(ped1, ped2) end
+
 ---Ped can not pull out a weapon when true
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xDF1AF8B5D56542FA)
 ---@param ped number
 ---@param p1 boolean
 ---@param p2 boolean
 function SetEnableHandcuffs(ped, p1, p2) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x6F972C1AB75A1ED0)
----@param ped number
----@return boolean
-function IsPedInAnyTrain(ped) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xC52E0F855C58FC2E)
@@ -2543,17 +2538,19 @@ function SetEnableBoundAnkles(ped, toggle) end
 ---@return boolean
 function N_0x8822f139408b8d0a(ped) end
 
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x97B0DB5B4AA74E77)
----@param ped number
-function ResetPedWeaponMovementClipset(ped) end
-
 ---Only used in R* Script train_robbery4
 ---_SET_PED_D*
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x8822F124788B8D0A)
 ---@param ped number
 ---@param p1 boolean
 function N_0x8822f124788b8d0a(ped, p1) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x3AE3552E7C207CC5)
+---@param ped number
+---@param animName string
+---@param p2 boolean
+function SetPedGetupAnimation(ped, animName, p2) end
 
 ---Used in R* Script generic_weight_control_item
 ---_CLEAR_PED_E* - CLEAR_PED_(G?)L*
@@ -2567,11 +2564,15 @@ function N_0x88a95bb640fc186f(ped) end
 function ResetPedInVehicleContext(ped) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x3AE3552E7C207CC5)
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x878E8104FA27CDAE)
+---@param vehicle number
+---@param p1 number | string
+function N_0x878e8104fa27cdae(vehicle, p1) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x97B0DB5B4AA74E77)
 ---@param ped number
----@param animName string
----@param p2 boolean
-function SetPedGetupAnimation(ped, animName, p2) end
+function ResetPedWeaponMovementClipset(ped) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xDDF803377F94AAA8)
@@ -2611,23 +2612,20 @@ function SetPedGestureGroup(ped, gesture, p2) end
 ---@param locomotionArchetype string
 function SetPedDesiredLocoForModel(ped, locomotionArchetype) end
 
----_HAS_PED_*
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x550CB89DD7F4FA3D)
----@param ped1 number
----@param ped2 number
----@return boolean
-function N_0x550cb89dd7f4fa3d(ped1, ped2) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x878E8104FA27CDAE)
----@param vehicle number
----@param p1 number | string
-function N_0x878e8104fa27cdae(vehicle, p1) end
+---Clears locomotion archetype
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x4FD80C3DD84B817B)
+---@param ped number
+function ClearPedDesiredLocoForModel(ped) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x58F7DB5BD8FA2288)
 ---@param ped number
 function ClearPedDesiredLocoMotionType(ped) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x2371C39D4F91C288)
+---@param ped number
+function N_0x2371c39d4f91c288(ped) end
 
 ---Sets peds motion type
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x89F5E7ADECCCB49C)
@@ -2642,17 +2640,6 @@ function SetPedDesiredLocoMotionType(ped, locoMotionType) end
 function RequestPedGetupAnimation(ped, getUpType) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x2371C39D4F91C288)
----@param ped number
-function N_0x2371c39d4f91c288(ped) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xF6E1E9F47A7686F8)
----@param ped number
----@param ped2 number
-function PedCowerInPlace(ped, ped2) end
-
----This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x1E4C940233FC0C6F)
 ---@param ped number
 ---@param p1 number
@@ -2661,6 +2648,11 @@ function PedCowerInPlace(ped, ped2) end
 ---@param ped2 number
 ---@param p5 number
 function PedCowerMoveToPoint(ped, p1, p2, p3, ped2, p5) end
+
+---_PED_COWER_M*
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x16F798A05BB9E3B5)
+---@param ped number
+function N_0x16f798a05bb9e3b5(ped) end
 
 ---target: 0 affects everyone
 ---duration: -1 indefinite
@@ -2673,20 +2665,15 @@ function PedCowerMoveToPoint(ped, p1, p2, p3, ped2, p5) end
 ---@param flag number
 function PedEmotionalPresetLocoMotion(ped, presetName, targetPed, duration, flag) end
 
----Clears locomotion archetype
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x4FD80C3DD84B817B)
----@param ped number
-function ClearPedDesiredLocoForModel(ped) end
-
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x935CF6E42BAF7F4D)
 ---@param ped number
 function PedClearLocoMotion(ped) end
 
----_PED_COWER_M*
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x16F798A05BB9E3B5)
+---_STOP_(?)*
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x32CCAD8A981B53D3)
 ---@param ped number
-function N_0x16f798a05bb9e3b5(ped) end
+function N_0x32ccad8a981b53d3(ped) end
 
 ---SOBER = 0.0f, SLIGHTLY_DRUNK = 0.25f, MODERATELY_DRUNK = 0.5f, VERY_DRUNK = 1.0f
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x406CCF555B04FAD3)
@@ -2694,11 +2681,6 @@ function N_0x16f798a05bb9e3b5(ped) end
 ---@param enabled boolean
 ---@param drunknessLevel number
 function SetPedDrunkness(ped, enabled, drunknessLevel) end
-
----_STOP_(?)*
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x32CCAD8A981B53D3)
----@param ped number
-function N_0x32ccad8a981b53d3(ped) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x50F124E6EF188B22)
@@ -2712,6 +2694,21 @@ function IsPedDrunk(ped) end
 ---@param ped number
 ---@return number
 function GetPedDrunkness(ped) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xBE22B26DD764C040)
+---@param animDict string
+---@param animName string
+---@param x number
+---@param y number
+---@param z number
+---@param xRot number
+---@param yRot number
+---@param zRot number
+---@param p8 number
+---@param p9 number
+---@return vector3
+function GetAnimInitialOffsetPosition(animDict, animName, x, y, z, xRot, yRot, zRot, p8, p9) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x4B805E6046EE9E47)
@@ -2750,27 +2747,6 @@ function KnockOffPedProp(ped, p1, p2, p3, p4) end
 function GetBlockingOfNonTemporaryEvents(ped) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xBE22B26DD764C040)
----@param animDict string
----@param animName string
----@param x number
----@param y number
----@param z number
----@param xRot number
----@param yRot number
----@param zRot number
----@param p8 number
----@param p9 number
----@return vector3
-function GetAnimInitialOffsetPosition(animDict, animName, x, y, z, xRot, yRot, zRot, p8, p9) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x25ACFC650B65C538)
----@param ped number
----@param scale number
-function SetPedScale(ped, scale) end
-
----This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x9F8AA94D6D97DBF4)
 ---@param ped number
 ---@param toggle boolean
@@ -2786,11 +2762,16 @@ function SetBlockingOfNonTemporaryEvents(ped, toggle) end
 function N_0xc17a94cc8fc3c61a(entity, flag, p2, p3, p4) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x2F25D9AEFA34FBA2)
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x25ACFC650B65C538)
 ---@param ped number
----@param targetPed number
----@param p2 boolean
-function RegisterTarget(ped, targetPed, p2) end
+---@param scale number
+function SetPedScale(ped, scale) end
+
+---_GET_PED_M*
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x134775B093AD5C38)
+---@param ped number
+---@return number
+function N_0x134775b093ad5c38(ped) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x1D491CCF7211FB74)
@@ -2798,33 +2779,11 @@ function RegisterTarget(ped, targetPed, p2) end
 ---@return number
 function GetPedHeight(ped) end
 
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xD8736EFDA38EDC5C)
+---_IS_PED_IN_* (near water?)
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xDC88D06719070C39)
 ---@param ped number
----@param x number
----@param y number
----@param z number
----@param radius number
-function RegisterHatedTargetsInArea(ped, x, y, z, radius) end
-
----Based on TASK_COMBAT_HATED_TARGETS_AROUND_PED, the parameters are likely similar (PedHandle, and area to attack in).
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x9222F300BF8354FE)
----@param ped number
----@param radius number
-function RegisterHatedTargetsAroundPed(ped, radius) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x6E5CBCB3941D7D08)
----@param ped number
----@param targetPed number
 ---@return boolean
-function IsTarget(ped, targetPed) end
-
----_GET_PED_M*
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x134775B093AD5C38)
----@param ped number
----@return number
-function N_0x134775b093ad5c38(ped) end
+function N_0xdc88d06719070c39(ped) end
 
 ---PS_SMALL = 0,
 ---PS_MEDIUM,
@@ -2837,16 +2796,72 @@ function N_0x134775b093ad5c38(ped) end
 function GetPedModelSizeFromHash(modelHash) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x128F79EDCECE4FD5)
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x2F25D9AEFA34FBA2)
 ---@param ped number
+---@param targetPed number
+---@param p2 boolean
+function RegisterTarget(ped, targetPed, p2) end
+
+---Based on TASK_COMBAT_HATED_TARGETS_AROUND_PED, the parameters are likely similar (PedHandle, and area to attack in).
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x9222F300BF8354FE)
+---@param ped number
+---@param radius number
+function RegisterHatedTargetsAroundPed(ped, radius) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xD8736EFDA38EDC5C)
+---@param ped number
+---@param x number
+---@param y number
+---@param z number
+---@param radius number
+function RegisterHatedTargetsInArea(ped, x, y, z, radius) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x6E5CBCB3941D7D08)
+---@param ped number
+---@param targetPed number
 ---@return boolean
-function CanPedRagdoll(ped) end
+function IsTarget(ped, targetPed) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x4707E9C23D8CA3FE)
 ---@param ped number
 ---@param targetPed number
 function RemoveTarget(ped, targetPed) end
+
+---Gets the closest ped in a radius.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xC33AB876A77F8164)
+---@param x number
+---@param y number
+---@param z number
+---@param radius number
+---@param p4 boolean
+---@param p5 boolean
+---@param p7 boolean
+---@param p8 boolean
+---@param p9 boolean
+---@param pedType number
+---@return boolean, number
+function GetClosestPed(x, y, z, radius, p4, p5, p7, p8, p9, pedType) end
+
+---_SET_C*
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x5AF24CA9C974E51A)
+---@param ped1 number
+---@param ped2 number
+function N_0x5af24ca9c974e51a(ped1, ped2) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xAE99FB955581844A)
+---@param ped number
+---@param timeMin number
+---@param timeMax number
+---@param ragdollType number
+---@param p4 boolean
+---@param p5 boolean
+---@param p6 string
+---@return boolean
+function SetPedToRagdoll(ped, timeMin, timeMax, ragdollType, p4, p5, p6) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xD76632D99E4966C8)
@@ -2867,27 +2882,6 @@ function RemoveTarget(ped, targetPed) end
 ---@return boolean
 function SetPedToRagdollWithFall(ped, timeMin, timeMax, ragdollType, falldirX, falldirY, falldirZ, p7, p8, p9, p10, p11, p12, p13) end
 
----Gets the closest ped in a radius.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xC33AB876A77F8164)
----@param x number
----@param y number
----@param z number
----@param radius number
----@param p4 boolean
----@param p5 boolean
----@param p7 boolean
----@param p8 boolean
----@param p9 boolean
----@param pedType number
----@return boolean, number
-function GetClosestPed(x, y, z, radius, p4, p5, p7, p8, p9, pedType) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x221F4D9912B7FE86)
----@param ped number
----@param toggle boolean
-function SetPedToDisableRagdoll(ped, toggle) end
-
 ---Causes Ped to ragdoll on collision with any object (e.g Running into trashcan). If applied to player you will sometimes trip on the sidewalk.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xF0A4F1BBF4FA7497)
 ---@param ped number
@@ -2896,34 +2890,16 @@ function SetPedToDisableRagdoll(ped, toggle) end
 function SetPedRagdollOnCollision(ped, toggle, p2) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xAE99FB955581844A)
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x128F79EDCECE4FD5)
 ---@param ped number
----@param timeMin number
----@param timeMax number
----@param ragdollType number
----@param p4 boolean
----@param p5 boolean
----@param p6 string
 ---@return boolean
-function SetPedToRagdoll(ped, timeMin, timeMax, ragdollType, p4, p5, p6) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x01F6594B923B9251)
----@param ped number
-function SetPedRagdollForceFall(ped) end
+function CanPedRagdoll(ped) end
 
 ---If the ped handle passed through the parenthesis is in a ragdoll state this will return true.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x47E4E977581C5B55)
 ---@param ped number
 ---@return boolean
 function IsPedRagdoll(ped) end
-
----_SET_PED_T* - SET_PED_U*
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x8CB2553C559102C1)
----@param ped number
----@param p1 number
----@param p2 boolean
-function N_0x8cb2553c559102c1(ped, p1, p2) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xE3B6097CC25AA69E)
@@ -2932,10 +2908,22 @@ function N_0x8cb2553c559102c1(ped, p1, p2) end
 function IsPedRunningRagdollTask(ped) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xB128377056A54E2A)
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x221F4D9912B7FE86)
 ---@param ped number
 ---@param toggle boolean
-function SetPedCanRagdoll(ped, toggle) end
+function SetPedToDisableRagdoll(ped, toggle) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xF6E1E9F47A7686F8)
+---@param ped number
+---@param ped2 number
+function PedCowerInPlace(ped, ped2) end
+
+---_DISABLE_A* - _DISABLE_C*
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xFD3C31A2E45671E7)
+---@param ped number
+---@param p1 number
+function N_0xfd3c31a2e45671e7(ped, p1) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x9FA4664CF62E47E8)
@@ -2943,16 +2931,27 @@ function SetPedCanRagdoll(ped, toggle) end
 function ResetPedRagdollTimer(ped) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xB128377056A54E2A)
+---@param ped number
+---@param toggle boolean
+function SetPedCanRagdoll(ped, toggle) end
+
+---_IS_PED_R*
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x3AEC4A410ECAF30D)
+---@param ped number
+---@return boolean
+function N_0x3aec4a410ecaf30d(ped) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x01F6594B923B9251)
+---@param ped number
+function SetPedRagdollForceFall(ped) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x2AFE52F782F25775)
 ---@param ped number
 ---@return boolean
 function IsPedRunningMobilePhoneTask(ped) end
-
----_DISABLE_A* - _DISABLE_C*
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xFD3C31A2E45671E7)
----@param ped number
----@param p1 number
-function N_0xfd3c31a2e45671e7(ped, p1) end
 
 ---https://github.com/femga/rdr3_discoveries/tree/master/AI/RAGDOLL_BLOCKING_FLAGS
 ---
@@ -2985,12 +2984,6 @@ function N_0xfd3c31a2e45671e7(ped, p1) end
 ---@param flags number
 function SetRagdollBlockingFlags(ped, flags) end
 
----flags: see SET_RAGDOLL_BLOCKING_FLAGS
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xD86D101FCFD00A4B)
----@param ped number
----@param flags number
-function ClearRagdollBlockingFlags(ped, flags) end
-
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x9F933E0985E12C51)
 ---@param ped number
@@ -3000,6 +2993,12 @@ function ClearRagdollBlockingFlags(ped, flags) end
 function N_0x9f933e0985e12c51(ped, p1, p2, p3) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x88B2026A3B0BE33D)
+---@param ped number
+---@param p1 number
+function N_0x88b2026a3b0be33d(ped, p1) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xFC3DB99C8144CD81)
 ---@param ped number
 ---@param volume any
@@ -3007,18 +3006,6 @@ function N_0x9f933e0985e12c51(ped, p1, p2, p3) end
 ---@param p3 boolean
 ---@param p4 boolean
 function SetPedDefensiveAreaVolume(ped, volume, p2, p3, p4) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x88B2026A3B0BE33D)
----@param ped number
----@param p1 number
-function N_0x88b2026a3b0be33d(ped, p1) end
-
----_IS_PED_R*
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x3AEC4A410ECAF30D)
----@param ped number
----@return boolean
-function N_0x3aec4a410ecaf30d(ped) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x9D3151A373974804)
@@ -3031,6 +3018,18 @@ function N_0x3aec4a410ecaf30d(ped) end
 ---@param p6 boolean
 ---@param p7 boolean
 function SetPedSphereDefensiveArea(ped, x, y, z, radius, p5, p6, p7) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x1854217C640B39EC)
+---@param ped number
+---@param entity number
+---@param x number
+---@param y number
+---@param z number
+---@param radius number
+---@param p6 number
+---@param p7 boolean
+function SetPedDefensiveSphereAttachedToEntity(ped, entity, x, y, z, radius, p6, p7) end
 
 ---_SET_PED_(A?)*
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xEB2BFE5D009F0331)
@@ -3048,12 +3047,6 @@ function SetPedSphereDefensiveArea(ped, x, y, z, radius, p5, p6, p7) end
 ---@param p11 boolean
 function SetPedDefensiveAreaToAngledArea(ped, x1, y1, z1, x2, y2, z2, p7, p8, p9, entity, p11) end
 
----Ped will no longer get angry when you stay near him.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x74D4E028107450A9)
----@param ped number
----@param toggle boolean
-function RemovePedDefensiveArea(ped, toggle) end
-
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x413C6C763A4AFFAD)
 ---@param ped number
@@ -3063,17 +3056,25 @@ function RemovePedDefensiveArea(ped, toggle) end
 ---@param p4 boolean
 function SetPedDefensiveAreaDirection(ped, p1, p2, p3, p4) end
 
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x1854217C640B39EC)
+---Ped will no longer get angry when you stay near him.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x74D4E028107450A9)
 ---@param ped number
----@param entity number
----@param x number
----@param y number
----@param z number
----@param radius number
----@param p6 number
----@param p7 boolean
-function SetPedDefensiveSphereAttachedToEntity(ped, entity, x, y, z, radius, p6, p7) end
+---@param toggle boolean
+function RemovePedDefensiveArea(ped, toggle) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x3C06B8786DD94CD1)
+---@param ped number
+---@param p1 boolean
+---@return vector3
+function GetPedDefensiveAreaPosition(ped, p1) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xBA63D9FE45412247)
+---@param ped number
+---@param p1 boolean
+---@return boolean
+function IsPedDefensiveAreaActive(ped, p1) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xEF2E6F870783369B)
@@ -3082,12 +3083,11 @@ function SetPedDefensiveSphereAttachedToEntity(ped, entity, x, y, z, radius, p6,
 ---@return any
 function GetPedDefensiveVolume(ped, p1) end
 
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xBA63D9FE45412247)
+---_SET_PED_A*
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x4EC4EA2F72B36358)
 ---@param ped number
 ---@param p1 boolean
----@return boolean
-function IsPedDefensiveAreaActive(ped, p1) end
+function N_0x4ec4ea2f72b36358(ped, p1) end
 
 ---_SET_PED_COMBAT_*
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xCF0B19806473D324)
@@ -3097,23 +3097,10 @@ function IsPedDefensiveAreaActive(ped, p1) end
 ---@param z number
 function N_0xcf0b19806473d324(ped, x, y, z) end
 
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x3C06B8786DD94CD1)
----@param ped number
----@param p1 boolean
----@return vector3
-function GetPedDefensiveAreaPosition(ped, p1) end
-
 ---_RESET_PED_C*
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xB4B7C92FCE7347B7)
 ---@param ped number
 function N_0xb4b7c92fce7347b7(ped) end
-
----_SET_PED_A*
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x4EC4EA2F72B36358)
----@param ped number
----@param p1 boolean
-function N_0x4ec4ea2f72b36358(ped, p1) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x8D8ACD8388CD99CE)
@@ -3128,6 +3115,24 @@ function ReviveInjuredPed(ped) end
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x71BC8E838B9C6035)
 ---@param ped number
 function ResurrectPed(ped) end
+
+---nullsub, doesn't do anything
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x98EFA132A4117BE1)
+---@param ped number
+---@param name string
+function SetPedNameDebug(ped, name) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xF9ACF4A08098EA25)
+---@param ped number
+---@param p1 boolean
+function SpecialFunctionDoNotUse(ped, p1) end
+
+---_HAS_*
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x7020839C7302D8AC)
+---@param ped number
+---@return boolean
+function N_0x7020839c7302d8ac(ped) end
 
 ---_C*
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xE1AADD0055D76603)
@@ -3144,28 +3149,16 @@ function ResurrectPed(ped) end
 ---@param p10 number
 function N_0xe1aadd0055d76603(ped, entity, boneIndex1, boneIndex2, x, y, z, p7, p8, p9, p10) end
 
----nullsub, doesn't do anything
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x98EFA132A4117BE1)
+---_C*
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x5A1A929C8B729B4A)
 ---@param ped number
----@param name string
-function SetPedNameDebug(ped, name) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xF9ACF4A08098EA25)
----@param ped number
----@param p1 boolean
-function SpecialFunctionDoNotUse(ped, p1) end
+function N_0x5a1a929c8b729b4a(ped) end
 
 ---_SET_PED_D*
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x97A38B65EBDA3D50)
 ---@param ped number
 ---@param p1 boolean
 function N_0x97a38b65ebda3d50(ped, p1) end
-
----_C*
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x5A1A929C8B729B4A)
----@param ped number
-function N_0x5a1a929c8b729b4a(ped) end
 
 ---_GET_PED_D*
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x06A10B4D7F50B0C3)
@@ -3179,18 +3172,18 @@ function N_0x06a10b4d7f50b0c3(ped) end
 ---@return boolean
 function N_0x88a5564b19c15391(ped) end
 
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x354CA4DDDEEC397A)
+---@param ped number
+---@return number
+function N_0x354ca4dddeec397a(ped) end
+
 ---METAPED_PLAYER_COMPONENTS_SET_META_TYPE_TO_BE_BYPASSED: Setting visibility
 ---_SET_M* - _SET_P*
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xFEA6126C34DF2532)
 ---@param ped number
 ---@param p1 boolean
 function N_0xfea6126c34df2532(ped, p1) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x354CA4DDDEEC397A)
----@param ped number
----@return number
-function N_0x354ca4dddeec397a(ped) end
 
 ---_SET_PED_P* - _SET_PED_R*
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xA967D6A8ED2D713B)
@@ -3211,12 +3204,6 @@ function N_0xa967d6a8ed2d713b(ped, p1) end
 ---@return any
 function ApplyPedBloodSpecific(ped, p1, p2, p3, p4, p5, p6, p7) end
 
----_SET_PED_F*
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x735662994E60A710)
----@param ped number
----@param p1 boolean
-function N_0x735662994e60a710(ped, p1) end
-
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x58D32261AE0F0843)
 ---@param ped number
@@ -3230,6 +3217,12 @@ function N_0x735662994e60a710(ped, p1) end
 ---@param p8 string
 function N_0x58d32261ae0f0843(ped, boneId, p2, p3, p4, p5, p6, p7, p8) end
 
+---_SET_PED_F*
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x735662994E60A710)
+---@param ped number
+---@param p1 boolean
+function N_0x735662994e60a710(ped, p1) end
+
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x897934E868EDDD6C)
 ---@param ped number
@@ -3238,6 +3231,12 @@ function N_0x58d32261ae0f0843(ped, boneId, p2, p3, p4, p5, p6, p7, p8) end
 ---@param p3 number
 ---@param p4 number
 function N_0x897934e868eddd6c(ped, p1, p2, p3, p4) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x91BAB9E064F036CD)
+---@param p0 any
+---@param p1 any
+function N_0x91bab9e064f036cd(p0, p1) end
 
 ---bloodFountainPressure: visible effect from 0.0 till 20.0
 ---yaw: visible effect from -3.0 till 3.0
@@ -3257,17 +3256,11 @@ function N_0x897934e868eddd6c(ped, p1, p2, p3, p4) end
 ---@param p9 number
 function SetPedActivateWoundEffect(ped, p1, boneId, moveWoundLeftRight, bloodFountainPressure, yaw, bloodFountainDirection, bloodFountainPulse, p8, p9) end
 
----_HAS_*
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x7020839C7302D8AC)
+---Params: 0.0f to remove wound effects
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x66B1CB778D911F49)
 ---@param ped number
----@return boolean
-function N_0x7020839c7302d8ac(ped) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x91BAB9E064F036CD)
----@param p0 any
----@param p1 any
-function N_0x91bab9e064f036cd(p0, p1) end
+---@param value number
+function UpdatePedWoundEffect(ped, value) end
 
 ---https://github.com/femga/rdr3_discoveries/blob/master/peds_customization/ped_decals.lua
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x46DF918788CB093F)
@@ -3282,11 +3275,17 @@ function ApplyPedDamagePack(ped, damagePack, damage, mult) end
 ---@param ped number
 function ClearPedBloodDamage(ped) end
 
----Params: 0.0f to remove wound effects
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x66B1CB778D911F49)
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x56E3B78C5408D9F4)
 ---@param ped number
----@param value number
-function UpdatePedWoundEffect(ped, value) end
+---@param p1 number
+function ClearPedBloodDamageByZone(ped, p1) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x7F5D88333EE8A86F)
+---@param ped number
+---@param p1 number
+function ClearPedBloodDamageFacial(ped, p1) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x523C79AEEFCC4A2A)
@@ -3301,12 +3300,6 @@ function ClearPedDamageDecalByZone(ped, p1, p2) end
 ---@param p1 any
 function N_0x34c11114887150fd(p0, p1) end
 
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x7F5D88333EE8A86F)
----@param ped number
----@param p1 number
-function ClearPedBloodDamageFacial(ped, p1) end
-
 ---METAPED_PLAYER_COMPONENTS_SET_META_TYPE_TO_BE_BYPASSED: Setting visibility
 ---p1 is mostly 10
 ---_CLEAR_PED_N* - _CLEAR_PED_W*
@@ -3314,6 +3307,12 @@ function ClearPedBloodDamageFacial(ped, p1) end
 ---@param ped number
 ---@param p1 number
 function N_0xd8544f6260f5f01e(ped, p1) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x8D9BFCE3352DE47F)
+---@param ped number
+---@return boolean
+function IsPedQueuedForDeletion(ped) end
 
 ---Washing player's face/hands now
 ---_FA* - _FI*
@@ -3324,44 +3323,40 @@ function N_0xd8544f6260f5f01e(ped, p1) end
 ---@param p3 number
 function N_0xeb8886e1065654cd(ped, p1, p2, p3) end
 
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x8D9BFCE3352DE47F)
----@param ped number
----@return boolean
-function IsPedQueuedForDeletion(ped) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x7043D0681285BA2D)
----@return number
-function FadeAndDestroyPed() end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x56E3B78C5408D9F4)
----@param ped number
----@param p1 number
-function ClearPedBloodDamageByZone(ped, p1) end
-
 ---It adds the wetness level to the player clothing/outfit. As if player just got out from water surface.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x44CB6447D2571AA0)
 ---@param ped number
 ---@param height number
 function SetPedWetnessHeight(ped, height) end
 
----combined with PED::SET_PED_WETNESS_HEIGHT(), this native makes the ped drenched in water up to the height specified in the other function
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xB5485E4907B53019)
+---flags: see SET_RAGDOLL_BLOCKING_FLAGS
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xD86D101FCFD00A4B)
 ---@param ped number
-function SetPedWetnessEnabledThisFrame(ped) end
+---@param flags number
+function ClearRagdollBlockingFlags(ped, flags) end
 
----It clears the wetness of the selected Ped/Player. Clothes have to be wet to notice the difference.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x9C720776DAA43E7E)
+---_SET_PED_T* - SET_PED_U*
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x8CB2553C559102C1)
 ---@param ped number
-function ClearPedWetness(ped) end
+---@param p1 number
+---@param p2 boolean
+function N_0x8cb2553c559102c1(ped, p1, p2) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x7043D0681285BA2D)
+---@return number
+function FadeAndDestroyPed() end
 
 ---_SET_PED_WETNESS*
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xF9CFF5BB70E8A2CB)
 ---@param ped number
 ---@param p1 number
 function N_0xf9cff5bb70e8a2cb(ped, p1) end
+
+---combined with PED::SET_PED_WETNESS_HEIGHT(), this native makes the ped drenched in water up to the height specified in the other function
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xB5485E4907B53019)
+---@param ped number
+function SetPedWetnessEnabledThisFrame(ped) end
 
 ---Washing player's face/hands now
 ---_CLEAR_PED_E* - _CLEAR_PED_L*
@@ -3370,15 +3365,15 @@ function N_0xf9cff5bb70e8a2cb(ped, p1) end
 function N_0xa7a806677f8de138(ped) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xA064BBABB064446F)
+---@param p0 any
+function N_0xa064bbabb064446f(p0) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x27B0405F59637D1F)
 ---@param ped number
 ---@param sweat number
 function SetPedSweat(ped, sweat) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xA064BBABB064446F)
----@param p0 any
-function N_0xa064bbabb064446f(p0) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x0E5173C163976E38)
@@ -3407,10 +3402,6 @@ function WasPedSkeletonUpdated(ped) end
 ---@return vector3
 function GetPedBoneCoords(ped, boneId, offsetX, offsetY, offsetZ) end
 
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xD37401D78A929A49)
-function RemoveScenarioBlockingAreas() end
-
 ---blockingFlags: https://github.com/Halen84/RDR3-Native-Flags-And-Enums/blob/main/ADD_SCENARIO_BLOCKING_AREA/README.md
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x1B5C85C612E5256E)
 ---@param x1 number
@@ -3425,15 +3416,8 @@ function RemoveScenarioBlockingAreas() end
 function AddScenarioBlockingArea(x1, y1, z1, x2, y2, z2, p6, blockingFlags) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x6F46F8ACB44C4FC1)
----@param p0 any
----@return any
-function N_0x6f46f8acb44c4fc1(p0) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x6585D955A68452A5)
----@param ped number
-function ClearPedEnvDirt(ped) end
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xD37401D78A929A49)
+function RemoveScenarioBlockingAreas() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x31D16B74C6E29D66)
@@ -3448,6 +3432,18 @@ function RemoveScenarioBlockingArea(p0, p1) end
 ---@param flag number
 ---@return any
 function AddScenarioBlockingVolume(volume, p1, flag) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x6F46F8ACB44C4FC1)
+---@param p0 any
+---@return any
+function N_0x6f46f8acb44c4fc1(p0) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x91A5F9CBEBB9D936)
+---@param p0 any
+---@return boolean
+function IsScenarioBlockingAreaValid(p0) end
 
 ---Equivalent to IS_PED_USING_SCENARIO from V but takes a hash instead of a string.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x34D6AC1157C8226C)
@@ -3464,27 +3460,20 @@ function IsPedUsingScenarioHash(ped, scenarioHash) end
 function IsPedUsingThisScenario(ped, scenario) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x91A5F9CBEBB9D936)
----@param p0 any
----@return boolean
-function IsScenarioBlockingAreaValid(p0) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xFE07FF6495D52E2A)
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x57AB4A3080F85143)
 ---@param ped number
----@param x number
----@param y number
----@param z number
 ---@return boolean
-function SetPedPanicExitScenario(ped, x, y, z) end
+function IsPedUsingAnyScenario(ped) end
 
----_CAN_PED_SEE* - _CAN_PED_USE_(SCENARIO_HASH?)*
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x1148F706CF4EBDDA)
+---p2 is always 0, p3 is always 0, p4 is always 1
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xAB643407D0B26F07)
 ---@param ped number
----@param p1 number | string
----@param p2 number
+---@param scenario number
+---@param p2 any
+---@param p3 any
+---@param p4 any
 ---@return boolean
-function N_0x1148f706cf4ebdda(ped, p1, p2) end
+function CanPedUseScenarioPoint(ped, scenario, p2, p3, p4) end
 
 ---If toggle is true, when the ped is using a scenario he will stop it and become scared
 ---If toggle is false, the ped will not be scared anymore and continue his scenario
@@ -3515,42 +3504,24 @@ function N_0xd8ceeed54c672b5d(p0, p1, p2, p3, p4, p5, p6) end
 ---@return boolean
 function SetPedShouldPlayDirectedNormalScenarioExit(ped, x, y, z) end
 
----p2 is always 0, p3 is always 0, p4 is always 1
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xAB643407D0B26F07)
----@param ped number
----@param scenario number
----@param p2 any
----@param p3 any
----@param p4 any
----@return boolean
-function CanPedUseScenarioPoint(ped, scenario, p2, p3, p4) end
-
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xF1C03A5352243A30)
----@param ped number
-function SetPedShouldPlayImmediateScenarioExit(ped) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x57AB4A3080F85143)
----@param ped number
----@return boolean
-function IsPedUsingAnyScenario(ped) end
-
----lookIntensity: see SET_PED_SHOULD_PLAY_FLEE_SCENARIO_EXIT
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x62FDAD5E01D2DD47)
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xFE07FF6495D52E2A)
 ---@param ped number
 ---@param x number
 ---@param y number
 ---@param z number
----@param lookIntensity number
----@param p5 boolean
 ---@return boolean
-function SetPedShouldPlayEmotionalScenarioExit(ped, x, y, z, lookIntensity, p5) end
+function SetPedPanicExitScenario(ped, x, y, z) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xA3A9299C4F2ADB98)
 ---@param ped number
 function SetPedShouldPlayNormalScenarioExit(ped) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xF1C03A5352243A30)
+---@param ped number
+function SetPedShouldPlayImmediateScenarioExit(ped) end
 
 ---lookIntensity:
 ---0 - REACT_LOOK_NONE
@@ -3566,12 +3537,6 @@ function SetPedShouldPlayNormalScenarioExit(ped) end
 ---@return boolean
 function SetPedShouldPlayFleeScenarioExit(ped, x, y, z, lookIntensity) end
 
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xF9331B3A314EB49D)
----@param ped number
----@return boolean
-function N_0xf9331b3a314eb49d(ped) end
-
 ---lookIntensity: see SET_PED_SHOULD_PLAY_FLEE_SCENARIO_EXIT
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x802092B07E3B1EEA)
 ---@param ped number
@@ -3582,16 +3547,16 @@ function N_0xf9331b3a314eb49d(ped) end
 ---@return boolean
 function SetPedShouldPlayCombatScenarioExit(ped, x, y, z, lookIntensity) end
 
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xCA95C156C14B2054)
----@param p0 any
----@param p1 any
-function N_0xca95c156c14b2054(p0, p1) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xE735A7DA22E88359)
----@param p0 any
-function N_0xe735a7da22e88359(p0) end
+---lookIntensity: see SET_PED_SHOULD_PLAY_FLEE_SCENARIO_EXIT
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x62FDAD5E01D2DD47)
+---@param ped number
+---@param x number
+---@param y number
+---@param z number
+---@param lookIntensity number
+---@param p5 boolean
+---@return boolean
+function SetPedShouldPlayEmotionalScenarioExit(ped, x, y, z, lookIntensity, p5) end
 
 ---lookIntensity: see SET_PED_SHOULD_PLAY_FLEE_SCENARIO_EXIT
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x463803429297117C)
@@ -3605,15 +3570,39 @@ function N_0xe735a7da22e88359(p0) end
 function SetPedShouldPlayQuickScenarioExit(ped, x, y, z, lookIntensity, p5) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x726256CC1EEB182F)
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xF9331B3A314EB49D)
 ---@param ped number
-function ClearFacialIdleAnimOverride(ped) end
+---@return boolean
+function N_0xf9331b3a314eb49d(ped) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xE735A7DA22E88359)
+---@param p0 any
+function N_0xe735a7da22e88359(p0) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x82CB0F3F0C7785E5)
 ---@param p0 any
 ---@return any
 function N_0x82cb0f3f0c7785e5(p0) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xCA95C156C14B2054)
+---@param p0 any
+---@param p1 any
+function N_0xca95c156c14b2054(p0, p1) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xFFC24B988B938B38)
+---@param ped number
+---@param animName string
+---@param animDict string
+function SetFacialIdleAnimOverride(ped, animName, animDict) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x726256CC1EEB182F)
+---@param ped number
+function ClearFacialIdleAnimOverride(ped) end
 
 ---Hashes: MOODAGITATED, MOODAIMING, MOODANGRY, MOODBITCHY, MOODCONCENTRATION, MOODCONCENTRATIONEXTREME, MOODCURIOUS, MOODDEAD, MOODDEFUSE, MOODEXERTIONEXTREME, MOODEXERTIONMEDIUM, MOODEXERTIONMILD, MOODHAPPY, MOODINJUREDMILD, MOODINTIMIDATED, MOODKNOCKEDOUT, MOODNERVOUS, MOODNORMAL, MOODNORMALNEUTRAL, MOODPANIC, MOODSCARED, MOODSHOCKED, MOODSLEEPING, MOODSMUG, MOODTIRED
 ---Params: p2 = 6 in R* Scripts
@@ -3624,18 +3613,17 @@ function N_0x82cb0f3f0c7785e5(p0) end
 function RequestPedFacialMoodThisFrame(ped, mood, p2) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xD2F0FE8805D91647)
+---@param p0 any
+---@param p1 any
+function N_0xd2f0fe8805d91647(p0, p1) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xBAF20C5432058024)
 ---@param ped number
 ---@param p1 any
 ---@param p2 any
 function SetPedCanPlayGestureAnims(ped, p1, p2) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xFFC24B988B938B38)
----@param ped number
----@param animName string
----@param animDict string
-function SetFacialIdleAnimOverride(ped, animName, animDict) end
 
 ---Only used in R* Script net_moonshine_property
 ---_A* - _B*
@@ -3644,40 +3632,21 @@ function SetFacialIdleAnimOverride(ped, animName, animDict) end
 function N_0x7edb3c766b0d073f(ped) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xD2F0FE8805D91647)
----@param p0 any
----@param p1 any
-function N_0xd2f0fe8805d91647(p0, p1) end
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x6373D1349925A70E)
+---@param ped number
+---@param toggle boolean
+function SetPedCanPlayAmbientAnims(ped, toggle) end
+
+---It clears the wetness of the selected Ped/Player. Clothes have to be wet to notice the difference.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x9C720776DAA43E7E)
+---@param ped number
+function ClearPedWetness(ped) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x0EB0585D15254740)
 ---@param ped number
 ---@param toggle boolean
 function SetPedCanPlayAmbientBaseAnims(ped, toggle) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x6C3B4D6D13B4C841)
----@param ped number
----@param toggle boolean
-function SetPedCanArmIk(ped, toggle) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x6373D1349925A70E)
----@param ped number
----@param toggle boolean
-function SetPedCanPlayAmbientAnims(ped, toggle) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xC11C18092C5530DC)
----@param ped number
----@param toggle boolean
-function SetPedCanHeadIk(ped, toggle) end
-
----_SET_PED_CAN_(?)_IK*
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xEE9DF765990E8D1D)
----@param ped number
----@param toggle boolean
-function SetPedCanUnkBodypartIk(ped, toggle) end
 
 ---Only used in R* Script shop_harriet
 ---_SET_PED_F*
@@ -3687,10 +3656,30 @@ function SetPedCanUnkBodypartIk(ped, toggle) end
 function N_0x4f63433ce3c08230(ped, p1) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x6C3B4D6D13B4C841)
+---@param ped number
+---@param toggle boolean
+function SetPedCanArmIk(ped, toggle) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x73518ECE2485412B)
 ---@param ped number
 ---@param toggle boolean
 function SetPedCanLegIk(ped, toggle) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xC11C18092C5530DC)
+---@param ped number
+---@param toggle boolean
+function SetPedCanHeadIk(ped, toggle) end
+
+---_CAN_PED_SEE* - _CAN_PED_USE_(SCENARIO_HASH?)*
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x1148F706CF4EBDDA)
+---@param ped number
+---@param p1 number | string
+---@param p2 number
+---@return boolean
+function N_0x1148f706cf4ebdda(ped, p1, p2) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xF2B7106D37947CE0)
@@ -3699,16 +3688,34 @@ function SetPedCanLegIk(ped, toggle) end
 function SetPedCanTorsoIk(ped, toggle) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xF5846EDB26A98A24)
+---@param ped number
+---@param toggle boolean
+function SetPedCanTorsoReactIk(ped, toggle) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x6647C5F6F5792496)
 ---@param ped number
 ---@param toggle boolean
 function SetPedCanTorsoVehicleIk(ped, toggle) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xEC4686EC06434678)
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x6585D955A68452A5)
+---@param ped number
+function ClearPedEnvDirt(ped) end
+
+---_SET_PED_CAN_(?)_IK*
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xEE9DF765990E8D1D)
 ---@param ped number
 ---@param toggle boolean
-function SetPedCanUseAutoConversationLookat(ped, toggle) end
+function SetPedCanUnkBodypartIk(ped, toggle) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x5CD3CB88A7F8850D)
+---@param ped1 number
+---@param ped2 number
+---@return boolean
+function IsPedHeadtrackingPed(ped1, ped2) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x813A0A7C9D2E831F)
@@ -3718,17 +3725,10 @@ function SetPedCanUseAutoConversationLookat(ped, toggle) end
 function IsPedHeadtrackingEntity(ped, entity) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x80038740C96AD17F)
----@param p0 any
----@param p1 any
-function DisableAmbientLookAtRequests(p0, p1) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x5CD3CB88A7F8850D)
----@param ped1 number
----@param ped2 number
----@return boolean
-function IsPedHeadtrackingPed(ped1, ped2) end
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xE1965A380342BE1F)
+---@param ped number
+---@param p1 number
+function DisableAllLookAtRequests(ped, p1) end
 
 ---_SET_PED_R* - _SET_PED_S*
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xCD9E5F94A2F38683)
@@ -3737,27 +3737,16 @@ function IsPedHeadtrackingPed(ped1, ped2) end
 function N_0xcd9e5f94a2f38683(ped, p1) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xF5846EDB26A98A24)
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xEC4686EC06434678)
 ---@param ped number
 ---@param toggle boolean
-function SetPedCanTorsoReactIk(ped, toggle) end
-
----Old name: SET_PED_CLOTH_PACKAGE_INDEX
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x78C4E9961DB3EB5B)
----@param ped number
----@param p1 boolean
-function SetPedClothPinFrames(ped, p1) end
+function SetPedCanUseAutoConversationLookat(ped, toggle) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xE1965A380342BE1F)
----@param ped number
----@param p1 number
-function DisableAllLookAtRequests(ped, p1) end
-
----_ADD_*
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xEF371232BC6053E1)
----@param ped number
-function N_0xef371232bc6053e1(ped) end
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x80038740C96AD17F)
+---@param p0 any
+---@param p1 any
+function DisableAmbientLookAtRequests(p0, p1) end
 
 ---_SET_PED_*
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x86F0B6730C32AC14)
@@ -3765,11 +3754,22 @@ function N_0xef371232bc6053e1(ped) end
 ---@param p1 boolean
 function N_0x86f0b6730c32ac14(ped, p1) end
 
+---_ADD_*
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xEF371232BC6053E1)
+---@param ped number
+function N_0xef371232bc6053e1(ped) end
+
 ---_SET_PED_CA* - _SET_PED_CO*
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x1D4636C90BBEFACB)
 ---@param ped number
 ---@param p1 number
 function N_0x1d4636c90bbefacb(ped, p1) end
+
+---_ATTACH_*
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x8101BA1C0B462412)
+---@param ped number
+---@param ropeId number
+function N_0x8101ba1c0b462412(ped, ropeId) end
 
 ---flagId: https://alloc8or.re/rdr3/doc/enums/ePedScriptConfigFlags.txt
 ---https://github.com/femga/rdr3_discoveries/tree/master/AI/CPED_CONFIG_FLAGS
@@ -3787,6 +3787,13 @@ function SetPedConfigFlag(ped, flagId, value) end
 ---@param doReset boolean
 function SetPedResetFlag(ped, flagId, doReset) end
 
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xAF9E59B1B1FBF2A0)
+---@param ped number
+---@param flagId number
+---@return boolean
+function GetPedResetFlag(ped, flagId) end
+
 ---flagId: see SET_PED_CONFIG_FLAG
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x7EE53118C892B513)
 ---@param ped number
@@ -3796,23 +3803,15 @@ function SetPedResetFlag(ped, flagId, doReset) end
 function GetPedConfigFlag(ped, flagId, p2) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xAF9E59B1B1FBF2A0)
----@param ped number
----@param flagId number
----@return boolean
-function GetPedResetFlag(ped, flagId) end
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xC6981AFF6D2A71C2)
+---@param p0 any
+function N_0xc6981aff6d2a71c2(p0) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xE0FE107AB174D64A)
 ---@param p0 any
 ---@param p1 any
 function N_0xe0fe107ab174d64a(p0, p1) end
-
----_ATTACH_*
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x8101BA1C0B462412)
----@param ped number
----@param ropeId number
-function N_0x8101ba1c0b462412(ped, ropeId) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x0BDDB8D9EC6BCF3C)
@@ -3841,21 +3840,28 @@ function IsPedEvasiveDiving(ped) end
 function ShootTriggerAtCoords(ped, x, y, z, p4, p5, p6, p7) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xE163A4BCE4DE6F11)
----@param ped number
----@param toggle boolean
-function SetPedModelIsSuppressed(ped, toggle) end
-
----This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x772A1969F649E902)
 ---@param model number | string
 ---@return boolean
 function IsThisModelAHorse(model) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xC6981AFF6D2A71C2)
----@param p0 any
-function N_0xc6981aff6d2a71c2(p0) end
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xE163A4BCE4DE6F11)
+---@param ped number
+---@param toggle boolean
+function SetPedModelIsSuppressed(ped, toggle) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xAA9F048DCF69B6DC)
+---@param model number | string
+---@return boolean
+function IsPedModelSuppressed(model) end
+
+---Old name: SET_PED_CLOTH_PACKAGE_INDEX
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x78C4E9961DB3EB5B)
+---@param ped number
+---@param p1 boolean
+function SetPedClothPinFrames(ped, p1) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x7ABBD9E449E0DB00)
@@ -3870,10 +3876,10 @@ function N_0x7abbd9e449e0db00(p0, p1) end
 function SetPedDisableKickMove(ped, disable) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xAA9F048DCF69B6DC)
----@param model number | string
----@return boolean
-function IsPedModelSuppressed(model) end
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xC396F5B86FF9FEBD)
+---@param ped number
+---@param mode number
+function SetPedLegIkMode(ped, mode) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xDF993EE5E90ABA25)
@@ -3881,16 +3887,11 @@ function IsPedModelSuppressed(model) end
 ---@param toggle boolean
 function SetPedCanRagdollFromPlayerImpact(ped, toggle) end
 
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xE6CB36F43A95D75F)
----@param p0 any
-function N_0xe6cb36f43a95d75f(p0) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xC396F5B86FF9FEBD)
+---SET_PED_CAN_*
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xFD6943B6DF77E449)
 ---@param ped number
----@param mode number
-function SetPedLegIkMode(ped, mode) end
+---@param toggle boolean
+function SetPedCanBeLassoed(ped, toggle) end
 
 ---If returned true: There are enemy peds near friendly turn in ped. Going to aggro.
 ---If returned false: Moving back to idle as there aren't any remaining enemy peds near ped
@@ -3906,10 +3907,15 @@ function SetPedLegIkMode(ped, mode) end
 function N_0x078076ab50fb117f(ped, x, y, z, p4, p5) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xDEA92412FCAEB3F5)
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xE6CB36F43A95D75F)
+---@param p0 any
+function N_0xe6cb36f43a95d75f(p0) end
+
+---_SET_PED_COMBAT_R - _SET_PED_C*
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x815C0074A1BC0D93)
 ---@param ped number
----@return number
-function GetPedCombatMovement(ped) end
+---@param p1 number
+function N_0x815c0074a1bc0d93(ped, p1) end
 
 ---0 - Stationary (Will just stand in place)
 ---1 - Defensive (Will try to find cover and very likely to blind fire)
@@ -3920,17 +3926,11 @@ function GetPedCombatMovement(ped) end
 ---@param combatMovement number
 function SetPedCombatMovement(ped, combatMovement) end
 
----_GET_PED_COMBAT_M* - _GET_PED_C*
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xFFDE295662405B25)
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xDEA92412FCAEB3F5)
 ---@param ped number
 ---@return number
-function N_0xffde295662405b25(ped) end
-
----_SET_PED_COMBAT_R - _SET_PED_C*
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x815C0074A1BC0D93)
----@param ped number
----@param p1 number
-function N_0x815c0074a1bc0d93(ped, p1) end
+function GetPedCombatMovement(ped) end
 
 ---abilityLevel:
 ---enum eCombatAbilityLevel
@@ -3952,25 +3952,12 @@ function SetPedCombatAbility(ped, abilityLevel) end
 ---@param enabled boolean
 function SetPedCombatAttributes(ped, attributeIndex, enabled) end
 
----SET_PED_CAN_*
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xFD6943B6DF77E449)
----@param ped number
----@param toggle boolean
-function SetPedCanBeLassoed(ped, toggle) end
-
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xCC2B20596E29E4E3)
 ---@param ped number
 ---@param attributeIndex number
 ---@return boolean
 function GetPedCombatAttribute(ped, attributeIndex) end
-
----Hashes: GUARD, COMBAT_ANIMAL, LAW, LAW_SHERIFF
----_SET_PED_COMBAT_A* - _SET_PED_COMBAT_M*
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xBD75500141E4725C)
----@param ped number
----@param p1 number | string
-function SetPedCombatAttributeHash(ped, p1) end
 
 ---range:
 ---enum eCombatRange
@@ -3985,6 +3972,21 @@ function SetPedCombatAttributeHash(ped, p1) end
 ---@param range number
 function SetPedCombatRange(ped, range) end
 
+---Hashes: GUARD, COMBAT_ANIMAL, LAW, LAW_SHERIFF
+---_SET_PED_COMBAT_A* - _SET_PED_COMBAT_M*
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xBD75500141E4725C)
+---@param ped number
+---@param p1 number | string
+function SetPedCombatAttributeHash(ped, p1) end
+
+---TLR_ExitTask = 0,
+---TLR_NeverLoseTarget,
+---TLR_SearchForTarget
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x0703B9079823DA4A)
+---@param ped number
+---@param responseType number
+function SetPedTargetLossResponse(ped, responseType) end
+
 ---_SET_PED_MO*
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x712B2C2B2471B493)
 ---@param ped number
@@ -3997,13 +3999,11 @@ function N_0x712b2c2b2471b493(ped, p1) end
 ---@param p1 any
 function N_0x0a4618ffd517e24d(p0, p1) end
 
----TLR_ExitTask = 0,
----TLR_NeverLoseTarget,
----TLR_SearchForTarget
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x0703B9079823DA4A)
----@param ped number
----@param responseType number
-function SetPedTargetLossResponse(ped, responseType) end
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x00B380FF2DF6AB7A)
+---@param p0 any
+---@param p1 any
+function N_0x00b380ff2df6ab7a(p0, p1) end
 
 ---https://github.com/femga/rdr3_discoveries/tree/master/AI/COMBAT_STYLES
 ---Params: p2 is usually 1, sometimes 0 or 2
@@ -4015,17 +4015,11 @@ function SetPedTargetLossResponse(ped, responseType) end
 ---@param duration number
 function SetPedCombatStyle(ped, combatStyleHash, p2, duration) end
 
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x00B380FF2DF6AB7A)
----@param p0 any
----@param p1 any
-function N_0x00b380ff2df6ab7a(p0, p1) end
-
----_CLEAR_PED_COMBAT_*
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x1FA132CBCD7CB239)
+---Params: p1 = 1 in R* Scripts
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x78815FC52832B690)
 ---@param ped number
----@param p1 number | string
-function N_0x1fa132cbcd7cb239(ped, p1) end
+---@param p1 number
+function ClearPedCombatStyle(ped, p1) end
 
 ---duration in seconds, -1.0 = forever
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x8B1E8E35A6E814EA)
@@ -4034,11 +4028,11 @@ function N_0x1fa132cbcd7cb239(ped, p1) end
 ---@param duration number
 function SetPedCombatStyleMod(ped, combatStyleModHash, duration) end
 
----_IS_PED_B* - _IS_PED_C*
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x5BF0B9D9A8E227A0)
+---_CLEAR_PED_COMBAT_*
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x1FA132CBCD7CB239)
 ---@param ped number
----@return boolean
-function N_0x5bf0b9d9a8e227a0(ped) end
+---@param p1 number | string
+function N_0x1fa132cbcd7cb239(ped, p1) end
 
 ---_SET_PED_M*
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x642720D8D69328B6)
@@ -4046,17 +4040,17 @@ function N_0x5bf0b9d9a8e227a0(ped) end
 ---@param p1 number | string
 function N_0x642720d8d69328b6(ped, p1) end
 
----Params: p1 = 1 in R* Scripts
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x78815FC52832B690)
+---_IS_PED_B* - _IS_PED_C*
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x5BF0B9D9A8E227A0)
 ---@param ped number
----@param p1 number
-function ClearPedCombatStyle(ped, p1) end
+---@return boolean
+function N_0x5bf0b9d9a8e227a0(ped) end
 
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x6127F25ED21C533C)
+---_GET_PED_COMBAT_M* - _GET_PED_C*
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xFFDE295662405B25)
 ---@param ped number
 ---@return number
-function GetPedMeleeActionPhase(ped) end
+function N_0xffde295662405b25(ped) end
 
 ---_CAN_PED_*
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x99DF2639DA76C1DC)
@@ -4067,12 +4061,6 @@ function GetPedMeleeActionPhase(ped) end
 function N_0x99df2639da76c1dc(ped1, ped2, p2) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x18A3E9EE1297FD39)
----@param ped number
----@return number
-function GetMeleeTargetForPed(ped) end
-
----This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xDCCA191DF9980FD7)
 ---@param ped number
 ---@param p1 number
@@ -4081,9 +4069,10 @@ function GetMeleeTargetForPed(ped) end
 function IsPedPerformingMeleeAction(ped, p1, p2) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xA405BF9F01960C16)
----@param p0 any
-function N_0xa405bf9f01960c16(p0) end
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x18A3E9EE1297FD39)
+---@param ped number
+---@return number
+function GetMeleeTargetForPed(ped) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x863B23EFDE9C5DF2)
@@ -4092,9 +4081,21 @@ function N_0xa405bf9f01960c16(p0) end
 function IsPedBeingStealthKilled(ped) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xDEDBED3020DA49DC)
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x6127F25ED21C533C)
+---@param ped number
+---@return number
+function GetPedMeleeActionPhase(ped) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xA405BF9F01960C16)
 ---@param p0 any
-function N_0xdedbed3020da49dc(p0) end
+function N_0xa405bf9f01960c16(p0) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xEC6B59BE445FEC51)
+---@param ped number
+---@return number
+function GetPedBrawlingStyle(ped) end
 
 ---brawlingStyle:
 ---enum eBrawlingStyle : Hash
@@ -4146,18 +4147,6 @@ function N_0xdedbed3020da49dc(p0) end
 ---@param brawlingStyle number | string
 function SetPedBrawlingStyle(ped, brawlingStyle) end
 
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x5EFA8A3D8A60D662)
----@param p0 any
----@param p1 any
----@return any
-function N_0x5efa8a3d8a60d662(p0, p1) end
-
----_RESET_PED_*
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x9D8DFE2DE9CB4DFC)
----@param ped number
-function N_0x9d8dfe2de9cb4dfc(ped) end
-
 ---_SET_PED_M*
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xC48AF420371C7407)
 ---@param ped number
@@ -4165,16 +4154,10 @@ function N_0x9d8dfe2de9cb4dfc(ped) end
 ---@return any
 function N_0xc48af420371c7407(ped, grapple) end
 
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x9238A3D970BBB0A9)
+---_RESET_PED_*
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x9D8DFE2DE9CB4DFC)
 ---@param ped number
----@param behaviour number | string
-function SetPedCombatBehaviour(ped, behaviour) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x9A4AC116CC1EEE14)
----@param p0 any
-function N_0x9a4ac116cc1eee14(p0) end
+function N_0x9d8dfe2de9cb4dfc(ped) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x242EDF85D4E87B65)
@@ -4183,10 +4166,28 @@ function N_0x9a4ac116cc1eee14(p0) end
 function N_0x242edf85d4e87b65(p0) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xEC6B59BE445FEC51)
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x5EFA8A3D8A60D662)
+---@param p0 any
+---@param p1 any
+---@return any
+function N_0x5efa8a3d8a60d662(p0, p1) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x9238A3D970BBB0A9)
 ---@param ped number
----@return number
-function GetPedBrawlingStyle(ped) end
+---@param behaviour number | string
+function SetPedCombatBehaviour(ped, behaviour) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xE20027B414BFE6C7)
+---@param p0 any
+---@param p1 any
+function N_0xe20027b414bfe6c7(p0, p1) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xDEDBED3020DA49DC)
+---@param p0 any
+function N_0xdedbed3020da49dc(p0) end
 
 ---NET_FETCH_CLIENT_UPDATE_PED_FIGHT_PROFICIENCY: Changing parry multiplier for ped
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x6DBF2D78709AD70B)
@@ -4201,10 +4202,15 @@ function SetPedBeatMultiplier(ped, p1) end
 function SetPedActionDisableFlag(ped, actionDisableFlag) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xE20027B414BFE6C7)
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x9A4AC116CC1EEE14)
 ---@param p0 any
----@param p1 any
-function N_0xe20027b414bfe6c7(p0, p1) end
+function N_0x9a4ac116cc1eee14(p0) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xC163DAC52AC975D3)
+---@param ped number
+---@param actionDisableFlag number
+function SetPedTargetActionDisableFlag(ped, actionDisableFlag) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xB346C85D49CC998E)
@@ -4214,35 +4220,23 @@ function N_0xe20027b414bfe6c7(p0, p1) end
 function IsPedActionDisableFlagEnabled(ped, actionDisableFlag) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x949B2F9ED2917F5D)
----@param ped number
----@param actionDisableFlag number
-function ClearPedActionDisableFlag(ped, actionDisableFlag) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xC163DAC52AC975D3)
----@param ped number
----@param actionDisableFlag number
-function SetPedTargetActionDisableFlag(ped, actionDisableFlag) end
-
----This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x02AA2096FE00F3E1)
 ---@param ped number
 ---@param actionDisableFlag number
 ---@return boolean
 function IsPedTargetActionDisableFlagEnabled(ped, actionDisableFlag) end
 
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x949B2F9ED2917F5D)
+---@param ped number
+---@param actionDisableFlag number
+function ClearPedActionDisableFlag(ped, actionDisableFlag) end
+
 ---_CLEAR_PED_M*
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x7C10221CE718AA72)
 ---@param ped number
 ---@param p1 number
 function N_0x7c10221ce718aa72(ped, p1) end
-
----_SET_PED_M*
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x57F35552E771BE9D)
----@param ped number
----@param p1 number
-function N_0x57f35552e771be9d(ped, p1) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xBBF6D1D07C02D00A)
@@ -4271,6 +4265,12 @@ function N_0x29f3539189d3e277(p0, p1) end
 ---@param p3 number
 function SetPedWrithingDuration(ped, writhingDuration1, writhingDuration2, p3) end
 
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xE9E06EA514A69061)
+---@param p0 any
+---@param p1 any
+function N_0xe9e06ea514a69061(p0, p1) end
+
 ---normalized / non normalized
 ---0.0        / 1000.0         STARTED IN WRITHE STAGE
 ---1.0        / 0.0            END OF WRITHE, DEAD
@@ -4283,12 +4283,6 @@ function SetPedWrithingDuration(ped, writhingDuration1, writhingDuration2, p3) e
 ---@return number
 function GetPedRemainingRevivalTime(ped, normalized) end
 
----_GET_IS_PED_(BLEEDING_OUT?)*
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x12EB4E31F092C9B3)
----@param ped number
----@return boolean
-function N_0x12eb4e31f092c9b3(ped) end
-
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x925A160133003AC6)
 ---@param ped number
@@ -4296,22 +4290,22 @@ function N_0x12eb4e31f092c9b3(ped) end
 function SetPausePedWritheBleedout(ped, toggle) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x3BDFCF25B58B0415)
----@param ped number
----@return boolean
-function GetPedIsBeingGrappled(ped) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xE9E06EA514A69061)
----@param p0 any
----@param p1 any
-function N_0xe9e06ea514a69061(p0, p1) end
-
----This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x0E99E3BF11BB6367)
 ---@param ped number
 ---@return boolean
 function GetPedIsGrappling(ped) end
+
+---_SET_PED_M*
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x57F35552E771BE9D)
+---@param ped number
+---@param p1 number
+function N_0x57f35552e771be9d(ped, p1) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x3BDFCF25B58B0415)
+---@param ped number
+---@return boolean
+function GetPedIsBeingGrappled(ped) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xD0B7AEB56229D317)
@@ -4333,6 +4327,12 @@ function GetPedGrappleState(ped) end
 function SetPedGrappleStyle(ped, style) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x753B15AD0FD6F3E3)
+---@param ped number
+---@return number
+function GetPedGrappleStyle(ped) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x789DABD18E9024DB)
 ---@param ped number
 ---@param flag number
@@ -4346,28 +4346,17 @@ function SetPedGrappleFlag(ped, flag, enable) end
 function ClearPedGrappleFlag(ped, flag) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x604190F0CF0DF158)
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x99A6E246C315BF60)
 ---@param ped number
----@param grappleSequence string
-function SetPedGrappleSequence(ped, grappleSequence) end
+---@param multiplier number
+---@return any
+function SetPedGrappleEffectMultiplier(ped, multiplier) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x8301D87B1B89E219)
 ---@param ped number
 ---@param grappleAction number | string
 function SetPedGrappleAction(ped, grappleAction) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xF3C873ED0C595109)
----@param ped number
----@return number
-function GetPedGrappleFlag(ped) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x753B15AD0FD6F3E3)
----@param ped number
----@return number
-function GetPedGrappleStyle(ped) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x56E9C26CD29D1ED6)
@@ -4406,29 +4395,11 @@ function IsPedCowering(ped) end
 function IsAnyPedNearPoint(x, y, z, radius) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x99A6E246C315BF60)
----@param ped number
----@param multiplier number
----@return any
-function SetPedGrappleEffectMultiplier(ped, multiplier) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xC488B8C0E52560D8)
----@param ped number
----@return boolean
-function IsPedDoingScenarioTransition(ped) end
-
----This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x2208438012482A1A)
 ---@param ped number
 ---@param p1 boolean
 ---@param p2 boolean
 function ForcePedAiAndAnimationUpdate(ped, p1, p2) end
-
----Forces transition now, called together with 0xD65FDC686A031C83
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x6D07B371E9439019)
----@param ped number
-function AddScenarioTransition(ped) end
 
 ---_FORCE_PED_*
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xC2722B252C79E641)
@@ -4438,6 +4409,23 @@ function AddScenarioTransition(ped) end
 ---@param p3 boolean
 function N_0xc2722b252c79e641(ped, p1, p2, p3) end
 
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xC488B8C0E52560D8)
+---@param ped number
+---@return boolean
+function IsPedDoingScenarioTransition(ped) end
+
+---_IS_PED_D*
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x2DC0E8DCBD3546E9)
+---@param ped number
+---@return boolean
+function N_0x2dc0e8dcbd3546e9(ped) end
+
+---Forces transition now, called together with 0xD65FDC686A031C83
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x6D07B371E9439019)
+---@param ped number
+function AddScenarioTransition(ped) end
+
 ---Ped Command Hash are special commands, that can be activated to change conditional anim variations or trigger transitions between conditional anims.
 ---https://github.com/femga/rdr3_discoveries/blob/master/animations/scenarios
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xD65FDC686A031C83)
@@ -4445,6 +4433,13 @@ function N_0xc2722b252c79e641(ped, p1, p2, p3) end
 ---@param commandHash number | string
 ---@param activationDuration number
 function GivePedHashCommand(ped, commandHash, activationDuration) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x68821369A2CEADD5)
+---@param ped number
+---@param commandHash number | string
+---@return boolean
+function GetIsPedCommandHashPresent(ped, commandHash) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xFCF37A457CB96DC0)
@@ -4456,28 +4451,20 @@ function GivePedHashCommand(ped, commandHash, activationDuration) end
 ---@return boolean
 function IsPedHeadingTowardsPosition(ped, x, y, z, p4) end
 
----_IS_PED_D*
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x2DC0E8DCBD3546E9)
+---Not implemented.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x600BBDD29820370C)
 ---@param ped number
----@return boolean
-function N_0x2dc0e8dcbd3546e9(ped) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x68821369A2CEADD5)
----@param ped number
----@param commandHash number | string
----@return boolean
-function GetIsPedCommandHashPresent(ped, commandHash) end
+function N_0x600bbdd29820370c(ped) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x7D7A2E43E74E2EB8)
 ---@param ped number
 function RequestPedVisibilityTracking(ped) end
 
----Not implemented.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x600BBDD29820370C)
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x3088634CF8C819CF)
 ---@param ped number
-function N_0x600bbdd29820370c(ped) end
+function ReleasePedVisibilityTracking(ped) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x2BC338A7B21F4608)
@@ -4491,18 +4478,18 @@ function RequestPedVehicleVisibilityTracking(ped, p1) end
 ---@param p1 boolean
 function RequestPedUseSmallBboxVisibilityTracking(ped, p1) end
 
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x511F1A683387C7E2)
+---@param ped number
+---@return number
+function GetTrackedPedPixelcount(ped) end
+
 ---Returns whether or not a ped is visible within your FOV, not this check auto's to false after a certain distance.
 ---Target needs to be tracked first, won't work otherwise.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x91C8E617F64188AC)
 ---@param ped number
 ---@return boolean
 function IsTrackedPedVisible(ped) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x511F1A683387C7E2)
----@param ped number
----@return number
-function GetTrackedPedPixelcount(ped) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x164CECC59E70DF86)
@@ -4512,23 +4499,16 @@ function GetTrackedPedPixelcount(ped) end
 function IsTrackedPedVisibilityPercentageNotLessThan(ped, percent) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x2D64376CF437363E)
----@param ped number
----@return boolean
-function CanPedBeMounted(ped) end
-
----This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x5102307CE88798EB)
 ---@param ped number
 ---@return boolean
 function IsPedVisibilityTracked(ped) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xC8D523BF5BBD3808)
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x2D64376CF437363E)
 ---@param ped number
----@param eventType number | string
 ---@return boolean
-function IsEventInQueue(ped, eventType) end
+function CanPedBeMounted(ped) end
 
 ---Returns true if given ped is a fish.
 ---_IS_ME* - _IS_MO*
@@ -4536,6 +4516,13 @@ function IsEventInQueue(ped, eventType) end
 ---@param ped number
 ---@return boolean
 function IsMetapedFish(ped) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xC8D523BF5BBD3808)
+---@param ped number
+---@param eventType number | string
+---@return boolean
+function IsEventInQueue(ped, eventType) end
 
 ---Returns:
 ---0 - CTR_CANNOT_TARGET
@@ -4557,18 +4544,6 @@ function CanPedSeeEntity(ped, targetEntity, p2, p3) end
 ---@return number
 function CanPedSeePedCached(ped, targetPed, p2) end
 
----no bone = -1
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x3F428D08BE5AAE31)
----@param ped number
----@param boneId number
----@return number
-function GetPedBoneIndex(ped, boneId) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x3088634CF8C819CF)
----@param ped number
-function ReleasePedVisibilityTracking(ped) end
-
 ---_CAN_PED_B* - _CAN_PED_I*
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x0EA9EACBA3B01601)
 ---@param ped1 number
@@ -4577,13 +4552,12 @@ function ReleasePedVisibilityTracking(ped) end
 ---@return number
 function N_0x0ea9eacba3b01601(ped1, ped2, p2) end
 
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xB06F5F1DEF417216)
----@param p0 any
----@param p1 any
----@param p2 any
----@param p3 any
-function N_0xb06f5f1def417216(p0, p1, p2, p3) end
+---no bone = -1
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x3F428D08BE5AAE31)
+---@param ped number
+---@param boneId number
+---@return number
+function GetPedBoneIndex(ped, boneId) end
 
 ---Returns boneIndex
 ---_GET_PED_N* - _GET_PED_R*
@@ -4592,6 +4566,19 @@ function N_0xb06f5f1def417216(p0, p1, p2, p3) end
 ---@param p1 number
 ---@return number
 function N_0xc5303f460a40d21d(ped, p1) end
+
+---_SET_PED_R* -_SET_PED_S*
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xE29D8CD66553DBAA)
+---@param horse number
+function N_0xe29d8cd66553dbaa(horse) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xB06F5F1DEF417216)
+---@param p0 any
+---@param p1 any
+---@param p2 any
+---@param p3 any
+function N_0xb06f5f1def417216(p0, p1, p2, p3) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xFC23348F0F4E245F)
@@ -4618,6 +4605,13 @@ function N_0x9184788bff1edad7(p0, p1) end
 function SetPedDirtCleaned(ped, p1, p2, p3, p4) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x0105FEE8F9091255)
+---@param p0 any
+---@param p1 any
+---@return any
+function N_0x0105fee8f9091255(p0, p1) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xD049920CD29F6CC8)
 ---@param p0 any
 ---@param p1 any
@@ -4627,25 +4621,11 @@ function SetPedDirtCleaned(ped, p1, p2, p3, p4) end
 function N_0xd049920cd29f6cc8(p0, p1, p2, p3, p4) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x0105FEE8F9091255)
----@param p0 any
----@param p1 any
----@return any
-function N_0x0105fee8f9091255(p0, p1) end
-
----This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xBB3E5370EBB6BE28)
 ---@param p0 any
 ---@param p1 any
 ---@return any
 function N_0xbb3e5370ebb6be28(p0, p1) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x56E4BAD93D33453C)
----@param p0 any
----@param p1 any
----@return any
-function N_0x56e4bad93d33453c(p0, p1) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x2FA568BFA725F8D6)
@@ -4655,10 +4635,28 @@ function N_0x56e4bad93d33453c(p0, p1) end
 ---@param p3 any
 function N_0x2fa568bfa725f8d6(p0, p1, p2, p3) end
 
----_SET_PED_R* -_SET_PED_S*
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xE29D8CD66553DBAA)
----@param horse number
-function N_0xe29d8cd66553dbaa(horse) end
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x56E4BAD93D33453C)
+---@param p0 any
+---@param p1 any
+---@return any
+function N_0x56e4bad93d33453c(p0, p1) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x16802C32B2FCA06B)
+---@param p0 any
+---@param p1 any
+---@param p2 any
+---@param p3 any
+function N_0x16802c32b2fca06b(p0, p1, p2, p3) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x8BA0C65AC15A7D33)
+---@param p0 any
+---@param p1 any
+---@param p2 any
+---@param p3 any
+function N_0x8ba0c65ac15a7d33(p0, p1, p2, p3) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x75A082563B4452E5)
@@ -4667,6 +4665,20 @@ function N_0xe29d8cd66553dbaa(horse) end
 ---@param p2 any
 ---@param p3 any
 function N_0x75a082563b4452e5(p0, p1, p2, p3) end
+
+---_SET_PED_*
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xA2116C1E4ED85C24)
+---@param ped number
+---@param inverted boolean
+function N_0xa2116c1e4ed85c24(ped, inverted) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x5FCF25D584065BFD)
+---@param p0 any
+---@param p1 any
+---@param p2 any
+---@param p3 any
+function N_0x5fcf25d584065bfd(p0, p1, p2, p3) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x0FFDF937E5C11382)
@@ -4677,28 +4689,6 @@ function N_0x75a082563b4452e5(p0, p1, p2, p3) end
 ---@param p4 any
 ---@param p5 any
 function N_0x0ffdf937e5c11382(p0, p1, p2, p3, p4, p5) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x16802C32B2FCA06B)
----@param p0 any
----@param p1 any
----@param p2 any
----@param p3 any
-function N_0x16802c32b2fca06b(p0, p1, p2, p3) end
-
----_SET_PED_*
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xA2116C1E4ED85C24)
----@param ped number
----@param inverted boolean
-function N_0xa2116c1e4ed85c24(ped, inverted) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x8BA0C65AC15A7D33)
----@param p0 any
----@param p1 any
----@param p2 any
----@param p3 any
-function N_0x8ba0c65ac15a7d33(p0, p1, p2, p3) end
 
 ---motionStateHash: https://github.com/Halen84/RDR3-Native-Flags-And-Enums/tree/main/FORCE_PED_MOTION_STATE#readme
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xF28965D04F570DCA)
@@ -4711,20 +4701,6 @@ function N_0x8ba0c65ac15a7d33(p0, p1, p2, p3) end
 function ForcePedMotionState(ped, motionStateHash, p2, p3, p4) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x5FCF25D584065BFD)
----@param p0 any
----@param p1 any
----@param p2 any
----@param p3 any
-function N_0x5fcf25d584065bfd(p0, p1, p2, p3) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x433083750C5E064A)
----@param ped number
----@param value number
-function SetPedMaxMoveBlendRatio(ped, value) end
-
----This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x75D3333409CD33CE)
 ---@param p0 any
 ---@param p1 any
@@ -4732,15 +4708,27 @@ function SetPedMaxMoveBlendRatio(ped, value) end
 function N_0x75d3333409cd33ce(p0, p1, p2) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xBC1DC48270468444)
----@param p0 any
-function N_0xbc1dc48270468444(p0) end
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x433083750C5E064A)
+---@param ped number
+---@param value number
+function SetPedMaxMoveBlendRatio(ped, value) end
+
+---Old name: _GET_PED_CURRENT_MOVEMENT_SPEED
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xF60165E1D2C5370B)
+---@param ped number
+---@return boolean, number, number
+function GetPedCurrentMoveBlendRatio(ped) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x01A898D26E2333DD)
 ---@param ped number
 ---@param value number
 function SetPedMinMoveBlendRatio(ped, value) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xBC1DC48270468444)
+---@param p0 any
+function N_0xbc1dc48270468444(p0) end
 
 ---Returns vehicle (desired) speed
 ---_COMPUTE_(VEHICLE_SPEED_USING_BLEND_RATIO?)*
@@ -4750,12 +4738,6 @@ function SetPedMinMoveBlendRatio(ped, value) end
 ---@return number
 function N_0x46bf2a810679d6e6(ped, maxMoveBlendRatio) end
 
----_H* - _I*
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xBAE08F00021BFFB2)
----@param mount number
----@param kickOffRider boolean
-function HorseAgitate(mount, kickOffRider) end
-
 ---Returns vehicle speed
 ---_COMPUTE_*
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xCA95924C893A0C91)
@@ -4763,6 +4745,12 @@ function HorseAgitate(mount, kickOffRider) end
 ---@param p1 number
 ---@return number
 function N_0xca95924c893a0c91(ped, p1) end
+
+---_H* - _I*
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xBAE08F00021BFFB2)
+---@param mount number
+---@param kickOffRider boolean
+function HorseAgitate(mount, kickOffRider) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x413697EC260AABBF)
@@ -4772,26 +4760,14 @@ function N_0xca95924c893a0c91(ped, p1) end
 function N_0x413697ec260aabbf(p0, p1, p2) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xC9151483CC06A414)
----@param ped number
-function N_0xc9151483cc06a414(ped) end
-
----Old name: _GET_PED_CURRENT_MOVEMENT_SPEED
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xF60165E1D2C5370B)
----@param ped number
----@return boolean, number, number
-function GetPedCurrentMoveBlendRatio(ped) end
-
----This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xCAC43D060099EA72)
 ---@param ped number
 function N_0xcac43d060099ea72(ped) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xB8E2D655E1D5BD39)
----@param p0 any
----@return any
-function N_0xb8e2d655e1d5bd39(p0) end
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xC9151483CC06A414)
+---@param ped number
+function N_0xc9151483cc06a414(ped) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xAD3330E3C3E98007)
@@ -4800,18 +4776,10 @@ function N_0xb8e2d655e1d5bd39(p0) end
 function N_0xad3330e3c3e98007(p0, p1) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xCFF869CBFA210D82)
----@param ped number
----@return number, any
-function GetPedNearbyVehicles(ped) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x23F8F5FC7E8C4A6B)
----@param ped number
----@param ignoredPedType number
----@param p3 number
----@return number, any
-function GetPedNearbyPeds(ped, ignoredPedType, p3) end
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xB8E2D655E1D5BD39)
+---@param p0 any
+---@return any
+function N_0xb8e2d655e1d5bd39(p0) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x7BB810E8B343AC7B)
@@ -4827,6 +4795,20 @@ function N_0x7bb810e8b343ac7b(p0) end
 function SetPedMoveRateOverride(ped, value) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x23F8F5FC7E8C4A6B)
+---@param ped number
+---@param ignoredPedType number
+---@param p3 number
+---@return number, any
+function GetPedNearbyPeds(ped, ignoredPedType, p3) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xCFF869CBFA210D82)
+---@param ped number
+---@return number, any
+function GetPedNearbyVehicles(ped) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xA0BC8FAED8CFEB3C)
 ---@param ped number
 ---@return boolean
@@ -4839,17 +4821,29 @@ function IsPedReadyToRender(ped) end
 function IsPedUsingActionMode(ped) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x6A489892E813951A)
+---@param p0 any
+function N_0x6a489892e813951a(p0) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xEBB208D6AE712C03)
+---@param ped number
+---@return boolean
+function IsPedUsingActionMode_2(ped) end
+
+---_GET_IS_PED_(BLEEDING_OUT?)*
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x12EB4E31F092C9B3)
+---@param ped number
+---@return boolean
+function N_0x12eb4e31f092c9b3(ped) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xD75ACCF5E0FB5367)
 ---@param ped number
 ---@param bActionModeEnabled boolean
 ---@param p2 number
 ---@param action string
 function SetPedUsingActionMode(ped, bActionModeEnabled, p2, action) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x6A489892E813951A)
----@param p0 any
-function N_0x6a489892e813951a(p0) end
 
 ---Overrides the ped's collision capsule radius for the current tick.
 ---Must be called every tick to be effective.
@@ -4859,6 +4853,13 @@ function N_0x6a489892e813951a(p0) end
 ---@param ped number
 ---@param value number
 function SetPedCapsule(ped, value) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xB676EFDA03DADA52)
+---@param mount number
+---@param p1 boolean
+---@return number
+function GetRiderOfMount(mount, p1) end
 
 ---Params: p4 = 35.f, duration = 5000 in R* Scripts
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x2DF9038C90AD5264)
@@ -4902,19 +4903,6 @@ function SpawnpointsStartSearchWithVolume(volume, spawnpointsFlag, p2, duration,
 function SpawnpointsCancelSearch() end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xEBB208D6AE712C03)
----@param ped number
----@return boolean
-function IsPedUsingActionMode_2(ped) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xB676EFDA03DADA52)
----@param mount number
----@param p1 boolean
----@return number
-function GetRiderOfMount(mount, p1) end
-
----This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x3C67506996001F5E)
 ---@return boolean
 function SpawnpointsIsSearchActive() end
@@ -4925,15 +4913,39 @@ function SpawnpointsIsSearchActive() end
 function SpawnpointsIsSearchComplete() end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xA635C11B8C44AFC2)
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x604190F0CF0DF158)
+---@param ped number
+---@param grappleSequence string
+function SetPedGrappleSequence(ped, grappleSequence) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xF3C873ED0C595109)
+---@param ped number
 ---@return number
-function SpawnpointsGetNumSearchResults() end
+function GetPedGrappleFlag(ped) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x280C7E3AC7F56E90)
 ---@param randomInt number
 ---@return number, any, number
 function SpawnpointsGetSearchResult(randomInt) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xA635C11B8C44AFC2)
+---@return number
+function SpawnpointsGetNumSearchResults() end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xF445DE8DA80A1792)
+---@return boolean
+function SpawnpointsIsSearchFailed() end
+
+---See _REQUEST_PED_EMOTIONAL_PRESET
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xDE3904B22695D9F9)
+---@param ped number
+---@param name string
+---@return boolean
+function HasPedEmotionalPresetLoaded(ped, name) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xC32779C16FCEECD9)
@@ -4950,29 +4962,6 @@ function SpawnpointsGetSearchResult(randomInt) end
 function SetIkTarget(ped, ikIndex, entityLookAt, boneLookAt, offsetX, offsetY, offsetZ, p7, blendInDuration, blendOutDuration) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xF445DE8DA80A1792)
----@return boolean
-function SpawnpointsIsSearchFailed() end
-
----For more information, see common:/data/emotional_presets.meta
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x5C3C55EAAD19915F)
----@param ped number
----@param name string
-function RequestPedEmotionalPreset(ped, name) end
-
----See _REQUEST_PED_EMOTIONAL_PRESET
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xFC3BAB1801A8255A)
----@param ped number
----@param name string
-function RemovePedEmotionalPreset(ped, name) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xB782F8238512BAD5)
----@param p0 any
----@return any
-function SpawnpointsGetSearchResultFlags(p0) end
-
----This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xF7EA250B9A919E03)
 ---@param nameHash number | string
 ---@param ped number
@@ -4986,17 +4975,16 @@ function RequestMotionTypeAsset(nameHash, ped) end
 function HasMotionTypeAssetLoaded(nameHash, ped) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xDE7B2B4144906CDF)
----@param nameHash number | string
----@param ped number
-function RemoveMotionTypeAsset(nameHash, ped) end
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xB782F8238512BAD5)
+---@param p0 any
+---@return any
+function SpawnpointsGetSearchResultFlags(p0) end
 
----See _REQUEST_PED_EMOTIONAL_PRESET
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xDE3904B22695D9F9)
+---_IS_PED_L* - _IS_PED_M*
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x290B2E6CCDE532E1)
 ---@param ped number
----@param name string
 ---@return boolean
-function HasPedEmotionalPresetLoaded(ped, name) end
+function N_0x290b2e6ccde532e1(ped) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xDC2C5C242AAC342B)
@@ -5005,29 +4993,22 @@ function HasPedEmotionalPresetLoaded(ped, name) end
 function SetPedLodMultiplier(ped, multiplier) end
 
 ---_IS_PED_L* - _IS_PED_M*
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x290B2E6CCDE532E1)
----@param ped number
----@return boolean
-function N_0x290b2e6ccde532e1(ped) end
-
----_IS_PED_L* - _IS_PED_M*
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x0EEF7A81C17679DB)
 ---@param ped number
 ---@return boolean
 function N_0x0eef7a81c17679db(ped) end
+
+---For more information, see common:/data/emotional_presets.meta
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x5C3C55EAAD19915F)
+---@param ped number
+---@param name string
+function RequestPedEmotionalPreset(ped, name) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x1B710E6F4AB69341)
 ---@param ped number
 ---@return number
 function GetPedLodMultiplier(ped) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xCBDE59C48F2B06F5)
----@param p0 any
----@param p1 any
----@param p2 any
-function N_0xcbde59c48f2b06f5(p0, p1, p2) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x68772DB2B2526F9F)
@@ -5038,6 +5019,27 @@ function N_0xcbde59c48f2b06f5(p0, p1, p2) end
 ---@param radius number
 ---@return boolean
 function IsAnyHostilePedNearPoint(ped, x, y, z, radius) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xCBDE59C48F2B06F5)
+---@param p0 any
+---@param p1 any
+---@param p2 any
+function N_0xcbde59c48f2b06f5(p0, p1, p2) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x6A190B94C2541A99)
+---@param p0 any
+function N_0x6a190b94c2541a99(p0) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xD8C3BE3EE94CAF2D)
+---@param p0 any
+---@param p1 any
+---@param p2 any
+---@param p3 any
+---@param p4 any
+function SetPopControlSphereThisFrame(p0, p1, p2, p3, p4) end
 
 ---Returns true if ped is in perception (focused and looking at target ped)
 ---Most float params are -1.f in R* Scripts
@@ -5052,20 +5054,10 @@ function IsAnyHostilePedNearPoint(ped, x, y, z, radius) end
 function IsTargetPedInPerceptionArea(ped, targetPed, p2, customDistance, p4, p5) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xD8C3BE3EE94CAF2D)
----@param p0 any
----@param p1 any
----@param p2 any
----@param p3 any
----@param p4 any
-function SetPopControlSphereThisFrame(p0, p1, p2, p3, p4) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xA218D2BBCAA7388C)
----@param p0 any
----@param p1 any
----@return any
-function N_0xa218d2bbcaa7388c(p0, p1) end
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x3AA24CCC0D451379)
+---@param ped number
+---@return boolean
+function IsPedHogtied(ped) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xD453BB601D4A606E)
@@ -5085,16 +5077,18 @@ function N_0x3d9f958834ab9c30(ped) end
 ---@return boolean
 function N_0x913d04a5176f84c9(ped) end
 
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x6A190B94C2541A99)
----@param p0 any
-function N_0x6a190b94c2541a99(p0) end
+---See _REQUEST_PED_EMOTIONAL_PRESET
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xFC3BAB1801A8255A)
+---@param ped number
+---@param name string
+function RemovePedEmotionalPreset(ped, name) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x3AA24CCC0D451379)
----@param ped number
----@return boolean
-function IsPedHogtied(ped) end
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xA218D2BBCAA7388C)
+---@param p0 any
+---@param p1 any
+---@return any
+function N_0xa218d2bbcaa7388c(p0, p1) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x42429C674B61238B)
@@ -5118,18 +5112,24 @@ function SetPedLassoHogtieFlag(ped, flagId, value) end
 ---@return any, any
 function N_0x4642182a298187d0(ped, p1, p3, p4) end
 
----https://github.com/femga/rdr3_discoveries/tree/master/AI/LASSO_HOGTIE_FLAG
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x2C76FA0E01681F8D)
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xD806CD2A4F2C2996)
 ---@param ped number
----@param flagId number
----@return boolean
-function GetPedLassoHogtieFlag(ped, flagId) end
+---@return number
+function GetFirstEntityPedIsCarrying(ped) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xAA6C49AE90A32299)
 ---@param ped number
 ---@param p1 number | string
 function N_0xaa6c49ae90a32299(ped, p1) end
+
+---https://github.com/femga/rdr3_discoveries/tree/master/AI/LASSO_HOGTIE_FLAG
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x2C76FA0E01681F8D)
+---@param ped number
+---@param flagId number
+---@return boolean
+function GetPedLassoHogtieFlag(ped, flagId) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x6B67320E0D57856A)
@@ -5140,22 +5140,10 @@ function N_0xaa6c49ae90a32299(ped, p1) end
 function N_0x6b67320e0d57856a(ped, p2, p3) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xD806CD2A4F2C2996)
----@param ped number
----@return number
-function GetFirstEntityPedIsCarrying(ped) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x09B83E68DE004CD4)
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x79443D56C8DF45EE)
 ---@param entity number
 ---@return number
-function GetCarrierAsPed(entity) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xA033D7E4BBF9844D)
----@param entity number
----@return number
-function GetCarrierAsMount(entity) end
+function GetCarrierAsHuman(entity) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x608BC6A6AACD5036)
@@ -5167,17 +5155,29 @@ function GetCarrierAsMount(entity) end
 function GetCarriedAttachedInfoForSlot(p0, p1, p2, p3) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xED00D72F81CF7278)
+---@param entity number
+---@param p1 boolean
+---@param p2 boolean
+function DetachCarriableEntity(entity, p1, p2) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xDE7B2B4144906CDF)
+---@param nameHash number | string
+---@param ped number
+function RemoveMotionTypeAsset(nameHash, ped) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xB5ACE8B23A438EC0)
 ---@param ped number
 ---@param itemset any
 function FindAllAttachedCarriableEntities(ped, itemset) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xED00D72F81CF7278)
----@param entity number
----@param p1 boolean
----@param p2 boolean
-function DetachCarriableEntity(entity, p1, p2) end
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xA911EE21EDF69DAF)
+---@param ped number
+---@return boolean
+function IsPedCarryingSomething(ped) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xB65927F861E7AE39)
@@ -5199,34 +5199,28 @@ function N_0xa1fbac56d38563e2(volume) end
 function N_0x6f43c351a5d51e2f(ped) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xA911EE21EDF69DAF)
----@param ped number
----@return boolean
-function IsPedCarryingSomething(ped) end
-
----This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x9682F850056C9ADE)
 ---@param ped number
 ---@return boolean
 function IsPedLassoed(ped) end
 
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x79443D56C8DF45EE)
----@param entity number
----@return number
-function GetCarrierAsHuman(entity) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x0C31C51168E80365)
+---_IS_PED_S* - _IS_PED_U*
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x833F0053340EF413)
 ---@param ped number
 ---@return number
-function GetLassoedLassoer(ped) end
+function GetLassoerOfPed(ped) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xB65A4DAB460A19BD)
 ---@param ped number
 ---@return number
 function GetLassoTarget(ped) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x0C31C51168E80365)
+---@param ped number
+---@return number
+function GetLassoedLassoer(ped) end
 
 ---https://github.com/femga/rdr3_discoveries/tree/master/AI/LOOTING_FLAGS
 ---
@@ -5242,6 +5236,13 @@ function GetLassoTarget(ped) end
 ---@param lootFlag number
 ---@param enabled boolean
 function SetLootingFlag(ped, lootFlag, enabled) end
+
+---lootFlag: see SET_LOOTING_FLAG
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xE4C11F104620DDCE)
+---@param ped number
+---@param lootFlag number
+---@return boolean
+function GetLootingFlag(ped, lootFlag) end
 
 ---Returns loot state
 ---LAP_NONE = 0,
@@ -5261,13 +5262,6 @@ function SetLootingFlag(ped, lootFlag, enabled) end
 ---@return number, number
 function N_0x5463c962bc7777c3(ped, p1, p3, p4) end
 
----lootFlag: see SET_LOOTING_FLAG
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xE4C11F104620DDCE)
----@param ped number
----@param lootFlag number
----@return boolean
-function GetLootingFlag(ped, lootFlag) end
-
 ---enum ePedLootStatus
 ---{
 ---	PLS_NONE,
@@ -5279,18 +5273,6 @@ function GetLootingFlag(ped, lootFlag) end
 ---@param ped number
 ---@return number
 function GetPedLootStatusMp(ped) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x758F081DB204DDDE)
----@param ped number
----@return boolean
-function N_0x758f081db204ddde(ped) end
-
----_IS_PED_S* - _IS_PED_U*
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x833F0053340EF413)
----@param ped number
----@return number
-function GetLassoerOfPed(ped) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x4B19F171450E0D4F)
@@ -5305,9 +5287,28 @@ function N_0x4b19f171450e0d4f(ped) end
 function GetLootingPickupTargetEntity(ped) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xAE6B68A83ABBE7C0)
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x758F081DB204DDDE)
+---@param ped number
+---@return boolean
+function N_0x758f081db204ddde(ped) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xA033D7E4BBF9844D)
+---@param entity number
+---@return number
+function GetCarrierAsMount(entity) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x09B83E68DE004CD4)
+---@param entity number
+---@return number
+function GetCarrierAsPed(entity) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x7B5C293238EE4F20)
 ---@param p0 any
-function N_0xae6b68a83abbe7c0(p0) end
+---@return any
+function N_0x7b5c293238ee4f20(p0) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xA4B6432E3880F2F9)
@@ -5337,6 +5338,11 @@ function RemovePedSubscribeToLegendaryBlips(ped) end
 function SetPedIncapacitationModifiers(ped, canBeIncapacitated, threshold, bleedoutTime, p4) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xAE6B68A83ABBE7C0)
+---@param p0 any
+function N_0xae6b68a83abbe7c0(p0) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x7A4E00364B5D727B)
 ---@param ped number
 ---@return boolean
@@ -5349,39 +5355,27 @@ function GetPedCanBeIncapacitatedThisFrame(ped) end
 function SetPedCanBeIncapacitated(ped, toggle) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x89BFDF6D53145545)
----@param ped number
----@return number
-function GetPedIncapacitationHealth(ped) end
-
----This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x2890418B39BC8FFF)
 ---@param ped number
 ---@param duration number
 function SetPedIncapacitationTotalBleedOutDuration(ped, duration) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xB655DB7582AEC805)
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x89BFDF6D53145545)
 ---@param ped number
----@return boolean
-function IsPedIncapacitated(ped) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x7B5C293238EE4F20)
----@param p0 any
----@return any
-function N_0x7b5c293238ee4f20(p0) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x4B9668DB91DC39B8)
----@param ped number
-function ResetPedIncapacitationBleedOutDuration(ped) end
+---@return number
+function GetPedIncapacitationHealth(ped) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xD67B6F3BCF81BA47)
 ---@param ped number
 ---@param flags number
 function SetPedIncapacitationFlags(ped, flags) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x4B9668DB91DC39B8)
+---@param ped number
+function ResetPedIncapacitationBleedOutDuration(ped) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xF6262491C7704A63)
@@ -5396,10 +5390,10 @@ function IncapacitatedRevive(ped, ped2) end
 function GetIncapacitationTimeRemaining(ped) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x92A1B55A59720395)
----@param p0 any
----@param p1 any
-function N_0x92a1b55a59720395(p0, p1) end
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xB655DB7582AEC805)
+---@param ped number
+---@return boolean
+function IsPedIncapacitated(ped) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x5BCF0B79D4F5DBA3)
@@ -5408,22 +5402,16 @@ function N_0x92a1b55a59720395(p0, p1) end
 function SetPedKnockedByOneHit(ped, p1) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xB285AD0EC870B2DF)
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x92A1B55A59720395)
 ---@param p0 any
 ---@param p1 any
-function N_0xb285ad0ec870b2df(p0, p1) end
+function N_0x92a1b55a59720395(p0, p1) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x2E5B5D1F1453E08E)
 ---@param ped number
 ---@param p1 number
 function N_0x2e5b5d1f1453e08e(ped, p1) end
-
----_SET_PED_K* or _SET_PED_L*
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x29924EB8EE9DB926)
----@param ped number
----@param p1 number
-function N_0x29924eb8ee9db926(ped, p1) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xCB86D3E3E3708901)
@@ -5434,13 +5422,6 @@ function N_0x29924eb8ee9db926(ped, p1) end
 ---@param p4 any
 ---@return any
 function N_0xcb86d3e3e3708901(p0, p1, p2, p3, p4) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x7F090958AE95B61B)
----@param ped number
----@param p1 number
----@return boolean
-function N_0x7f090958ae95b61b(ped, p1) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x633F83B301C87994)
@@ -5455,6 +5436,13 @@ function N_0x633f83b301c87994(p0, p1) end
 ---@param p2 number
 ---@return boolean
 function N_0x5203038ff8bae577(ped, p1, p2) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x7F090958AE95B61B)
+---@param ped number
+---@param p1 number
+---@return boolean
+function N_0x7f090958ae95b61b(ped, p1) end
 
 ---[WARDROBE] Player took off their disguise: p1 = 13
 ---[WARDROBE] Player put on a disguise: p1 = 0
@@ -5481,6 +5469,20 @@ function N_0x947e43f544b6ab34(ped, player, flag, ms) end
 ---@return boolean
 function N_0xc3995d396f1d97b6(ped, p1, p2) end
 
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x32417CB860A3BDC4)
+---@param p0 any
+---@param p1 any
+---@return any
+function N_0x32417cb860a3bdc4(p0, p1) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x15F4732C357B1D6D)
+---@param p0 any
+---@param p1 any
+---@param p2 any
+function N_0x15f4732c357b1d6d(p0, p1, p2) end
+
 ---Only used in R* Script nb_animal_attack: p2 = 120000
 ---_SET_PED_SH* - _SET_PED_SP*
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xE737D5F14304A2EC)
@@ -5489,12 +5491,11 @@ function N_0xc3995d396f1d97b6(ped, p1, p2) end
 ---@param p2 number
 function N_0xe737d5f14304a2ec(ped, player, p2) end
 
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x15F4732C357B1D6D)
----@param p0 any
----@param p1 any
----@param p2 any
-function N_0x15f4732c357b1d6d(p0, p1, p2) end
+---_SET_PED_K* or _SET_PED_L*
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x29924EB8EE9DB926)
+---@param ped number
+---@param p1 number
+function N_0x29924eb8ee9db926(ped, p1) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x19173C3F15367B54)
@@ -5504,18 +5505,18 @@ function N_0x15f4732c357b1d6d(p0, p1, p2) end
 function SetPlayerGreetDisabledForPed(ped, player, duration) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x32417CB860A3BDC4)
----@param p0 any
----@param p1 any
----@return any
-function N_0x32417cb860a3bdc4(p0, p1) end
-
----This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x5708EDD71B50C008)
 ---@param ped number
 ---@param player number
 ---@param duration number
 function SetPlayerAntagonizeDisabledForPed(ped, player, duration) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xB9BDFAE609DFB7C5)
+---@param p0 any
+---@param p1 any
+---@param p2 any
+function N_0xb9bdfae609dfb7c5(p0, p1, p2) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xF7327ACC7A89AEF1)
@@ -5537,13 +5538,6 @@ function N_0xf7327acc7a89aef1(p0, p1, p2) end
 function GetPedAttitude(ped, player) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xB9BDFAE609DFB7C5)
----@param p0 any
----@param p1 any
----@param p2 any
-function N_0xb9bdfae609dfb7c5(p0, p1, p2) end
-
----This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x1E017404784AA6A3)
 ---@param ped number
 ---@param p1 number | string
@@ -5551,17 +5545,10 @@ function N_0xb9bdfae609dfb7c5(p0, p1, p2) end
 function N_0x1e017404784aa6a3(ped, p1) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xEBD49472BCCF7642)
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x2B4CE170DE09F346)
 ---@param p0 any
 ---@param p1 any
-function N_0xebd49472bccf7642(p0, p1) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x7C8AA850617651D9)
----@param p0 any
----@param p1 any
----@return any
-function N_0x7c8aa850617651d9(p0, p1) end
+function N_0x2b4ce170de09f346(p0, p1) end
 
 ---If targetPed is set to 0 the ped motivationState affects everyone
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x42688E94E96FD9B4)
@@ -5595,6 +5582,21 @@ function GetPedMotivation(ped, motivationState, targetPed) end
 function SetPedMotivation(ped, motivationState, threshold, targetPed) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x23BDE06596A22CEC)
+---@param ped number
+---@param p1 number
+---@param p2 number
+---@param p3 any
+function N_0x23bde06596a22cec(ped, p1, p2, p3) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x7C8AA850617651D9)
+---@param p0 any
+---@param p1 any
+---@return any
+function N_0x7c8aa850617651d9(p0, p1) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xCDFB8C04D4C95D9B)
 ---@param p0 any
 ---@param p1 any
@@ -5602,13 +5604,12 @@ function SetPedMotivation(ped, motivationState, threshold, targetPed) end
 ---@param p3 any
 function N_0xcdfb8c04d4c95d9b(p0, p1, p2, p3) end
 
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x23BDE06596A22CEC)
+---motivationState: see _SET_PED_MOTIVATION
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x33FA048675821DA7)
 ---@param ped number
----@param p1 number
----@param p2 number
----@param p3 any
-function N_0x23bde06596a22cec(ped, p1, p2, p3) end
+---@param motivationState number
+---@return boolean
+function GetIsPedMotivationStateEnabled(ped, motivationState) end
 
 ---motivationState: see _SET_PED_MOTIVATION
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x2EB75FB86C41F026)
@@ -5625,17 +5626,10 @@ function SetPedMotivationStateOverride(ped, motivationState, enabled) end
 function SetPedMotivationModifier(ped, motivationState, modifier) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x2B4CE170DE09F346)
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xFD8E853F0BC2E942)
 ---@param p0 any
 ---@param p1 any
-function N_0x2b4ce170de09f346(p0, p1) end
-
----motivationState: see _SET_PED_MOTIVATION
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x33FA048675821DA7)
----@param ped number
----@param motivationState number
----@return boolean
-function GetIsPedMotivationStateEnabled(ped, motivationState) end
+function N_0xfd8e853f0bc2e942(p0, p1) end
 
 ---0.0 - 1.0
 ---Modifies the "scent line" on the ped's body when using Eagle Eye.
@@ -5645,21 +5639,21 @@ function GetIsPedMotivationStateEnabled(ped, motivationState) end
 function SetPedScent(ped, scent) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x05CE6AF4DF071D23)
+---@param ped number
+---@param p1 number
+function SetPedLadderMovementSpeedModifier(ped, p1) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x801917E7D7BCE418)
 ---@param ped number
 function ResetPedLadderMovementSpeedModifier(ped) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xFD8E853F0BC2E942)
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xC6C4E15CF7D52FEA)
 ---@param p0 any
 ---@param p1 any
-function N_0xfd8e853f0bc2e942(p0, p1) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x05CE6AF4DF071D23)
----@param ped number
----@param p1 number
-function SetPedLadderMovementSpeedModifier(ped, p1) end
+function N_0xc6c4e15cf7d52fea(p0, p1) end
 
 ---_SET_PED_S* - _SET_PED_T*
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xD05AD61F242C626B)
@@ -5674,18 +5668,6 @@ function SetPedVoiceVolume(ped, volume) end
 function N_0x0f967019cc853bcc(p0, p1) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xEF3A8772F085B4AA)
----@param ped number
----@return boolean
-function IsPedBeingDragged(ped) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xC6C4E15CF7D52FEA)
----@param p0 any
----@param p1 any
-function N_0xc6c4e15cf7d52fea(p0, p1) end
-
----This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x226CF9B159E38F42)
 ---@param ped number
 ---@return boolean
@@ -5698,10 +5680,10 @@ function IsPedDragging(ped) end
 function N_0x070a3841406c43d5(p0, p1) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x9E66708B2B41F14A)
----@param p0 any
----@param p1 any
-function N_0x9e66708b2b41f14a(p0, p1) end
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xEF3A8772F085B4AA)
+---@param ped number
+---@return boolean
+function IsPedBeingDragged(ped) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xE9B168527B337BF0)
@@ -5718,10 +5700,16 @@ function AddPedStayOutVolume(ped, volume) end
 function RemovePedStayOutVolume(ped, volume) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x243E1B4607040057)
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x9E66708B2B41F14A)
+---@param p0 any
+---@param p1 any
+function N_0x9e66708b2b41f14a(p0, p1) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xF634E2892220EF34)
 ---@param ped number
----@return number
-function GetPedMotionFocusEntity(ped) end
+---@param p1 any
+function N_0xf634e2892220ef34(ped, p1) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xAAC0EE3B4999ABB5)
@@ -5743,10 +5731,10 @@ function N_0xaac0ee3b4999abb5(ped, targetPed) end
 function SetPedFaceFeature(ped, index, value) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x5BB04BC74A474B47)
----@param p0 any
----@param p1 any
-function N_0x5bb04bc74a474b47(p0, p1) end
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x243E1B4607040057)
+---@param ped number
+---@return number
+function GetPedMotionFocusEntity(ped) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xFD1BA1EEF7985BB8)
@@ -5756,21 +5744,21 @@ function N_0x5bb04bc74a474b47(p0, p1) end
 function GetPedFaceFeature(ped, index) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x3E592D0486DEC0F6)
----@param ped number
----@return boolean
-function IsPedFallingOver(ped) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xF634E2892220EF34)
----@param ped number
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x5BB04BC74A474B47)
+---@param p0 any
 ---@param p1 any
-function N_0xf634e2892220ef34(ped, p1) end
+function N_0x5bb04bc74a474b47(p0, p1) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x9078FB0557364099)
 ---@param p0 any
 function N_0x9078fb0557364099(p0) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x3E592D0486DEC0F6)
+---@param ped number
+---@return boolean
+function IsPedFallingOver(ped) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x29FCE825613FEFCA)
@@ -5780,23 +5768,16 @@ function N_0x9078fb0557364099(p0) end
 function HasPedBeenShovedRecently(ped, ms) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xD7D2F45C56A4F4DF)
----@param p0 any
----@param p1 any
----@param p2 any
-function N_0xd7d2f45c56a4f4df(p0, p1, p2) end
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x65C75FDCCAC86464)
+---@param ped number
+---@return number
+function GetPedTranquilizer(ped) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x0D497AA69059FE40)
 ---@param p0 any
 ---@param p1 any
 function N_0x0d497aa69059fe40(p0, p1) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x65C75FDCCAC86464)
----@param ped number
----@return number
-function GetPedTranquilizer(ped) end
 
 ---The higher the multiplier the less the engine renders culls (https://docs.unity3d.com/Manual/OcclusionCulling.html)
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x8AC1D721B2097B6E)
@@ -5806,11 +5787,17 @@ function GetPedTranquilizer(ped) end
 function SetPedCullRange(ped, p1, p2) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xFB4891BD7578CDC1)
----@param ped number
----@param component number | string
----@return boolean
-function IsMetapedUsingComponent(ped, component) end
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xD7D2F45C56A4F4DF)
+---@param p0 any
+---@param p1 any
+---@param p2 any
+function N_0xd7d2f45c56a4f4df(p0, p1, p2) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x1D23D3F70606D788)
+---@param p0 any
+---@param p1 any
+function N_0x1d23d3f70606d788(p0, p1) end
 
 ---enum eMetaPedType
 ---{
@@ -5825,6 +5812,13 @@ function IsMetapedUsingComponent(ped, component) end
 ---@return number
 function GetMetaPedType(ped) end
 
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xFB4891BD7578CDC1)
+---@param ped number
+---@param component number | string
+---@return boolean
+function IsMetapedUsingComponent(ped, component) end
+
 ---_IS_PED_M* - _IS_PED_O*
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xBD0E4F52F6D95242)
 ---@param ped number
@@ -5832,10 +5826,10 @@ function GetMetaPedType(ped) end
 function N_0xbd0e4f52f6d95242(ped) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x1D23D3F70606D788)
----@param p0 any
----@param p1 any
-function N_0x1d23d3f70606d788(p0, p1) end
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x137772000DAF42C5)
+---@param ped number
+---@return boolean
+function IsPedChild(ped) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xFFA1594703ED27CA)
@@ -5857,23 +5851,24 @@ function N_0xffa1594703ed27ca(ped, p1) end
 ---@param tint2 number
 function SetMetaPedTag(ped, drawable, albedo, normal, material, palette, tint0, tint1, tint2) end
 
----Works similar to 0x90403E8107B60E81 (_GET_NUM_COMPONENTS_IN_PED) but is used to get category hashes instead
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xA622E66EEE92A08D)
----@param ped number
----@return number
-function GetNumComponentCategoriesInPed(ped) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x137772000DAF42C5)
----@param ped number
----@return boolean
-function IsPedChild(ped) end
-
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xA2B8E47442C76CEC)
 ---@param p0 any
 ---@param p1 any
 function N_0xa2b8e47442c76cec(p0, p1) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xD710A5007C2AC539)
+---@param ped number
+---@param component number | string
+---@param p2 number
+function RemoveTagFromMetaPed(ped, component, p2) end
+
+---Works similar to 0x90403E8107B60E81 (_GET_NUM_COMPONENTS_IN_PED) but is used to get category hashes instead
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xA622E66EEE92A08D)
+---@param ped number
+---@return number
+function GetNumComponentCategoriesInPed(ped) end
 
 ---Returns category hash that each ped component has. Hash examples: MASKS, HATS, HEADS, HORSE_MANES
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xCCB97B51893C662F)
@@ -5883,19 +5878,18 @@ function N_0xa2b8e47442c76cec(p0, p1) end
 function GetPedComponentCategoryByIndex(ped, index) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x90403E8107B60E81)
+---@param ped number
+---@return number
+function GetNumComponentsInPed(ped) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x9B90842304C938A7)
 ---@param p0 any
 ---@param p1 any
 ---@param p2 any
 ---@return any
 function N_0x9b90842304c938a7(p0, p1, p2) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xD710A5007C2AC539)
----@param ped number
----@param component number | string
----@param p2 number
-function RemoveTagFromMetaPed(ped, component, p2) end
 
 ---Update variation on ped, needed after first creation, or when component or texture/overlay is changed
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xCC8CA3E88256E58F)
@@ -5923,15 +5917,30 @@ function N_0xcb1a3864c524f784(p0, p1) end
 function N_0xfa0d206b489a6846(p0, p1, p2, p3, p4) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xA4AC05B1A364EBC5)
+---@param p0 any
+---@param p1 any
+---@param p2 any
+---@return any
+function N_0xa4ac05b1a364ebc5(p0, p1, p2) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x1298B3D8E4C2409F)
 ---@param p0 any
 function N_0x1298b3d8e4c2409f(p0) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x90403E8107B60E81)
----@param ped number
----@return number
-function GetNumComponentsInPed(ped) end
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xA274F51EF7E34B95)
+---@param p0 any
+---@param p1 any
+---@return any
+function N_0xa274f51ef7e34b95(p0, p1) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xC2EF407645BEECDC)
+---@param p0 any
+---@return any
+function N_0xc2ef407645beecdc(p0) end
 
 ---Note: you have to update your ped's variation after calling (using 0xCC8CA3E88256E58F)
 ---
@@ -5974,14 +5983,6 @@ function GetNumComponentsInPed(ped) end
 function EquipMetaPedOutfit(ped, hash) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xA4AC05B1A364EBC5)
----@param p0 any
----@param p1 any
----@param p2 any
----@return any
-function N_0xa4ac05b1a364ebc5(p0, p1, p2) end
-
----This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xFA742B82D093D848)
 ---@param p0 any
 ---@param p1 any
@@ -5995,11 +5996,10 @@ function N_0xfa742b82d093d848(p0, p1, p2) end
 function GetPedMetaOutfitHash(ped) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xA274F51EF7E34B95)
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xA2F8B3B5FEDFC100)
 ---@param p0 any
 ---@param p1 any
----@return any
-function N_0xa274f51ef7e34b95(p0, p1) end
+function N_0xa2f8b3b5fedfc100(p0, p1) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x66FF395445A88A6E)
@@ -6009,28 +6009,11 @@ function N_0xa274f51ef7e34b95(p0, p1) end
 function EquipMetaPedSuboutfit(ped, suboutfit, p2) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xA2F8B3B5FEDFC100)
----@param p0 any
----@param p1 any
-function N_0xa2f8b3b5fedfc100(p0, p1) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xC2EF407645BEECDC)
----@param p0 any
----@return any
-function N_0xc2ef407645beecdc(p0) end
-
----This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xC0E880B7A441164D)
 ---@param outfit number | string
 ---@param model number | string
 ---@return boolean
 function DoesMetapedOutfitExistForPedModel(outfit, model) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x0BFA1BD465CDFEFD)
----@param ped number
-function ResetPedComponents(ped) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x4FF3C2B4E6A196C1)
@@ -6040,18 +6023,29 @@ function ResetPedComponents(ped) end
 ---@return boolean
 function DoesMetapedSuboutfitExistForPedModel(outfit, suboutfit, model) end
 
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x283978A15512B2FE)
----@param ped number
----@param p1 boolean
-function SetRandomOutfitVariation(ped, p1) end
-
 ---Returns p1 value for 0x8E84119A23C16623
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x62FDF4E678E40CC6)
 ---@param entity number
 ---@param p1 any
 ---@return any
 function N_0x62fdf4e678e40cc6(entity, p1) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x0BFA1BD465CDFEFD)
+---@param ped number
+function ResetPedComponents(ped) end
+
+---_RESET_PED_*
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x370A973252741AC4)
+---@param ped number
+---@param p1 boolean
+function N_0x370a973252741ac4(ped, p1) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x283978A15512B2FE)
+---@param ped number
+---@param p1 boolean
+function SetRandomOutfitVariation(ped, p1) end
 
 ---Sets the outfit preset for the ped. The presetId is an index which determines its preset outfit. p2 is always false in the scripts.
 ---If p2 is true as player, then certain components like facial hair and hair will not be removed
@@ -6060,6 +6054,12 @@ function N_0x62fdf4e678e40cc6(entity, p1) end
 ---@param presetId number
 ---@param p2 boolean
 function EquipMetaPedOutfitPreset(ped, presetId, p2) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x10C70A515BC03707)
+---@param ped number
+---@return number
+function GetNumMetaPedOutfits(ped) end
 
 ---Changes Multiplayer ped face and body type components, they can be stacked
 ---Params: p3 = 1
@@ -6074,17 +6074,10 @@ function EquipMetaPedOutfitPreset(ped, presetId, p2) end
 function EquipMetaPedOutfitExtra(ped, component, p2, p3) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x10C70A515BC03707)
----@param ped number
----@return number
-function GetNumMetaPedOutfits(ped) end
-
----Used in script function HORSE_IS_META_PED_OUTFIT_SADDLE_EQUIPPED
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x98082246107A6ACF)
----@param ped number
----@param outfit number | string
----@return boolean
-function IsMetaPedOutfitEquipped(ped, outfit) end
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x851966E1E35AF491)
+---@param p0 any
+---@param p1 any
+function N_0x851966e1e35af491(p0, p1) end
 
 ---Used in script function METAPED_CLOTHING__XML__APPLY_OUTFIT_TINTS_TO_PED
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x4EFC1F8FF1AD94DE)
@@ -6096,6 +6089,13 @@ function IsMetaPedOutfitEquipped(ped, outfit) end
 ---@param p5 any
 function N_0x4efc1f8ff1ad94de(p0, p1, p2, p3, p4, p5) end
 
+---Used in script function HORSE_IS_META_PED_OUTFIT_SADDLE_EQUIPPED
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x98082246107A6ACF)
+---@param ped number
+---@param outfit number | string
+---@return boolean
+function IsMetaPedOutfitEquipped(ped, outfit) end
+
 ---Returns requestId
 ---Params: p1 = 1 in R* Scripts (Used in SP only)
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xF97C34C33487D569)
@@ -6104,17 +6104,11 @@ function N_0x4efc1f8ff1ad94de(p0, p1, p2, p3, p4, p5) end
 ---@return number
 function RequestMetapedPed(model, p1) end
 
----_RESET_PED_*
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x370A973252741AC4)
----@param ped number
----@param p1 boolean
-function N_0x370a973252741ac4(ped, p1) end
-
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x851966E1E35AF491)
----@param p0 any
----@param p1 any
-function N_0x851966e1e35af491(p0, p1) end
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xC0940AC858C1E126)
+---@param requestId number
+---@return boolean
+function HasMetapedPedRequestLoaded(requestId) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x43E4DA469541A9C9)
@@ -6138,10 +6132,17 @@ function IsMetapedPedRequestValid(requestId) end
 function CreateMetapedPed(requestId, x, y, z, heading, p5, p6, p7, p8, p9) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xC0940AC858C1E126)
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x3972F78A78B5D9DF)
 ---@param requestId number
----@return boolean
-function HasMetapedPedRequestLoaded(requestId) end
+function ReleaseMetapedPedRequest(requestId) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x27E8A84C12B0B7D1)
+---@param p0 any
+---@param p1 any
+---@param p2 any
+---@return any
+function N_0x27e8a84c12b0b7d1(p0, p1, p2) end
 
 ---https://github.com/femga/rdr3_discoveries/blob/master/clothes/metaped_outfits.lua
 ---Returns requestId, to be used with 0x74F512E29CB717E2
@@ -6152,19 +6153,15 @@ function HasMetapedPedRequestLoaded(requestId) end
 function RequestMetapedOutfit(model, outfit) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x273915CE30780986)
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xB285AD0EC870B2DF)
 ---@param p0 any
 ---@param p1 any
----@return any
-function N_0x273915ce30780986(p0, p1) end
+function N_0xb285ad0ec870b2df(p0, p1) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x27E8A84C12B0B7D1)
----@param p0 any
----@param p1 any
----@param p2 any
----@return any
-function N_0x27e8a84c12b0b7d1(p0, p1, p2) end
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x4592B8B9B0EF5F48)
+---@param requestId number
+function ReleaseMetapedOutfitRequest(requestId) end
 
 ---Used for script function PROCESS_PLAYER_HAT_EVENT
 ---Returns requestId to be used with 0x13E7320C762F0477
@@ -6176,21 +6173,6 @@ function N_0x27e8a84c12b0b7d1(p0, p1, p2) end
 ---@param p4 any
 ---@return number
 function N_0x3fcbb5fcfd968698(drawable, albedo, normal, material, p4) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x3972F78A78B5D9DF)
----@param requestId number
-function ReleaseMetapedPedRequest(requestId) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x4592B8B9B0EF5F48)
----@param requestId number
-function ReleaseMetapedOutfitRequest(requestId) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x13E7320C762F0477)
----@param requestId number
-function ReleaseMetapedAssetRequest(requestId) end
 
 ---Returns requestId
 ---Params: p1 = 1 in R* Scripts
@@ -6211,10 +6193,22 @@ function RequestMetapedAssetBundle(asset, p1) end
 function RequestMetapedComponent(metaPedType, p1, p2, p3, p4) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x93FFD92F05EC32FD)
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xB0B2C6D170B0E8E5)
 ---@param requestId number
 ---@return boolean
-function IsMetapedAssetValid(requestId) end
+function HasMetapedAssetLoaded(requestId) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x13E7320C762F0477)
+---@param requestId number
+function ReleaseMetapedAssetRequest(requestId) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x273915CE30780986)
+---@param p0 any
+---@param p1 any
+---@return any
+function N_0x273915ce30780986(p0, p1) end
 
 ---Creates prop from metaped asset bundle
 ---https://github.com/femga/rdr3_discoveries/blob/master/objects/metaped_asset_bundles_list.lua
@@ -6234,31 +6228,10 @@ function IsMetapedAssetValid(requestId) end
 function CreateMetapedAsset(asset, posX, posY, posZ, rotX, rotY, rotZ, p7, p8, p9) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xB25E57FC8E37114D)
----@param requestId number
----@return boolean
-function IsMetapedOutfitRequestValid(requestId) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xB0B2C6D170B0E8E5)
----@param requestId number
----@return boolean
-function HasMetapedAssetLoaded(requestId) end
-
----This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x610438375E5D1801)
 ---@param requestId number
 ---@return boolean
 function HasMetapedOutfitLoaded(requestId) end
-
----https://github.com/femga/rdr3_discoveries/blob/master/clothes/metaped_outfits.lua
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x74F512E29CB717E2)
----@param requestId number
----@param ped number
----@param p2 boolean
----@param p3 boolean
----@return boolean
-function ApplyPedMetapedOutfit(requestId, ped, p2, p3) end
 
 ---Creates metaped from ped outfit requestId. See _REQUEST_METAPED_OUTFIT
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xEAF682A14F8E5F53)
@@ -6274,11 +6247,32 @@ function ApplyPedMetapedOutfit(requestId, ped, p2, p3) end
 ---@return number
 function CreateMetapedOutfitPed(requestId, x, y, z, heading, p5, p6, p7, p8) end
 
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xB25E57FC8E37114D)
+---@param requestId number
+---@return boolean
+function IsMetapedOutfitRequestValid(requestId) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xEBD49472BCCF7642)
+---@param p0 any
+---@param p1 any
+function N_0xebd49472bccf7642(p0, p1) end
+
 ---Sets ped eye redness, weariness: 0.f to 1.f
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x314C5465195F3B30)
 ---@param ped number
 ---@param weariness number
 function SetMetapedWeariness(ped, weariness) end
+
+---https://github.com/femga/rdr3_discoveries/blob/master/clothes/metaped_outfits.lua
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x74F512E29CB717E2)
+---@param requestId number
+---@param ped number
+---@param p2 boolean
+---@param p3 boolean
+---@return boolean
+function ApplyPedMetapedOutfit(requestId, ped, p2, p3) end
 
 ---Used in Script Function MOONSHINE_BAND_CLIENT_PATRON_UPDATE
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xF47D54B986F0A346)
@@ -6287,29 +6281,34 @@ function SetMetapedWeariness(ped, weariness) end
 function N_0xf47d54b986f0a346(ped, danceIntensity) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x3EFED081B4834BA1)
----@param p0 any
-function N_0x3efed081b4834ba1(p0) end
-
----This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x0FB1BA7FF73B41E1)
 ---@param p0 any
 ---@param p1 any
 ---@param p2 any
 function N_0x0fb1ba7ff73b41e1(p0, p1, p2) end
 
----Returns peltId
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x0CEEB6F4780B1F2F)
----@param horse number
----@param index number
----@return number
-function GetPeltFromHorse(horse, index) end
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xB292203008EBBAAC)
+---@param p0 any
+---@return any
+function N_0xb292203008ebbaac(p0) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x3EFED081B4834BA1)
+---@param p0 any
+function N_0x3efed081b4834ba1(p0) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xD4D403EA031F351C)
 ---@param ped number
 ---@return boolean
 function N_0xd4d403ea031f351c(ped) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x93FFD92F05EC32FD)
+---@param requestId number
+---@return boolean
+function IsMetapedAssetValid(requestId) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xA73F50E8796150D5)
@@ -6333,10 +6332,10 @@ function N_0xc412aa1c73111fe0(p0, p1, p2, p3, p4) end
 function ClearPeltFromHorse(horse, peltId) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xB292203008EBBAAC)
----@param p0 any
----@return any
-function N_0xb292203008ebbaac(p0) end
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x13A210949FCBD92B)
+---@param ped number
+---@param toggle boolean
+function SetPedLights(ped, toggle) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xD049FDAF089FDDB0)
@@ -6344,12 +6343,6 @@ function N_0xb292203008ebbaac(p0) end
 ---@param p1 any
 ---@param p2 any
 function N_0xd049fdaf089fddb0(p0, p1, p2) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x13A210949FCBD92B)
----@param ped number
----@param toggle boolean
-function SetPedLights(ped, toggle) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xDD9540E7B1C9714F)
@@ -6361,28 +6354,10 @@ function SetPedLights(ped, toggle) end
 function N_0xdd9540e7b1c9714f(p0, p1, p2, p3, p4) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xEF5A3D2285D8924B)
----@param ped number
----@param multiplier number
-function SetStaminaDepletionMultiplier(ped, multiplier) end
-
----This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x55546004A244302A)
 ---@param p0 any
 ---@param p1 any
 function N_0x55546004a244302a(p0, p1) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x825F6DD559A0895B)
----@param ped number
----@return number
-function GetStaminaDepletionMultiplier(ped) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x345C9F993A8AB4A4)
----@param ped number
----@param multiplier number
-function SetStaminaRechargeMultiplier(ped, multiplier) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xDE1B1907A83A1550)
@@ -6390,12 +6365,11 @@ function SetStaminaRechargeMultiplier(ped, multiplier) end
 ---@param multiplier number
 function SetHealthRechargeMultiplier(ped, multiplier) end
 
----Alters entity's stamina by 'amount'. Can be negative (to drain stamina). float amount: -1000.0 - 1000.0
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xC3D4B754C0E86B9E)
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xEF5A3D2285D8924B)
 ---@param ped number
----@param amount number
----@return boolean
-function ChangePedStamina(ped, amount) end
+---@param multiplier number
+function SetStaminaDepletionMultiplier(ped, multiplier) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x95B8E397B8F4360F)
@@ -6404,10 +6378,22 @@ function ChangePedStamina(ped, amount) end
 function GetHealthRechargeMultiplier(ped) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x345C9F993A8AB4A4)
+---@param ped number
+---@param multiplier number
+function SetStaminaRechargeMultiplier(ped, multiplier) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xE7687EB2F634ABF0)
 ---@param ped number
 ---@return number
 function GetStaminaRechargeMultiplier(ped) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x825F6DD559A0895B)
+---@param ped number
+---@return number
+function GetStaminaDepletionMultiplier(ped) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x775A1CA7893AA8B5)
@@ -6421,17 +6407,22 @@ function GetPedStamina(ped) end
 ---@return number
 function GetPedStaminaNormalized(ped) end
 
----0.0 <= stamina <= 100.0
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x675680D089BFA21F)
----@param ped number
----@param stamina number
-function RestorePedStamina(ped, stamina) end
-
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xCB42AFE2B613EE55)
 ---@param ped number
 ---@return number
 function GetPedMaxStamina(ped) end
+
+---_RESET_PED_*
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x36513AFFC703C60D)
+---@param p0 any
+function N_0x36513affc703c60d(p0) end
+
+---0.0 <= stamina <= 100.0
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x675680D089BFA21F)
+---@param ped number
+---@param stamina number
+function RestorePedStamina(ped, stamina) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xEA8763E505AFD49A)
@@ -6440,16 +6431,16 @@ function GetPedMaxStamina(ped) end
 ---@param p2 any
 function N_0xea8763e505afd49a(p0, p1, p2) end
 
----_RESET_PED_*
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x36513AFFC703C60D)
----@param p0 any
-function N_0x36513affc703c60d(p0) end
-
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xFC3B580C4380B5B7)
 ---@param p0 any
 ---@return any
 function N_0xfc3b580c4380b5b7(p0) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xE4EF4382E22C780C)
+---@param p0 any
+function N_0xe4ef4382e22c780c(p0) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xD61FCF9FCFD515B7)
@@ -6459,9 +6450,9 @@ function N_0xfc3b580c4380b5b7(p0) end
 function N_0xd61fcf9fcfd515b7(p0, p1, p2) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xE4EF4382E22C780C)
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x8D9DB115FBA8E23D)
 ---@param p0 any
-function N_0xe4ef4382e22c780c(p0) end
+function N_0x8d9db115fba8e23d(p0) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x16F2C8C084AB2092)
@@ -6495,10 +6486,19 @@ function N_0xf6a8c4b4a11ae89c(p0, p1, p2, p3, p4, p5) end
 ---@param p1 any
 function N_0xe4c95e0ae31c6512(ped, p1) end
 
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x8D9DB115FBA8E23D)
----@param p0 any
-function N_0x8d9db115fba8e23d(p0) end
+---Alters entity's stamina by 'amount'. Can be negative (to drain stamina). float amount: -1000.0 - 1000.0
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xC3D4B754C0E86B9E)
+---@param ped number
+---@param amount number
+---@return boolean
+function ChangePedStamina(ped, amount) end
+
+---Returns peltId
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x0CEEB6F4780B1F2F)
+---@param horse number
+---@param index number
+---@return number
+function GetPeltFromHorse(horse, index) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x1F714E7A9DADFC42)
@@ -6512,6 +6512,12 @@ function GetPedLastDroppedHat(ped) end
 ---@param ped number
 ---@param p1 boolean
 function N_0x5d4cd22a8c82a81a(ped, p1) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x57779B55B83E2BEA)
+---@param ped number
+---@return boolean
+function IsPedIntimidated(ped) end
 
 ---Creates a handle to an instance of "CScriptResource_GravityWell", this system forces local ped to target specified position when moving, however player still can interrupt this.
 ---Can be useful to "point" player at some specific position.
@@ -6536,17 +6542,13 @@ function CreateGravityWell(xPos, yPos, zPos, heading, radius, p5, p6, p7, stopAt
 ---@param handle number
 function RemoveGravityWell(handle) end
 
----_IS_PED_H* - _IS_PED_I*
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x7EE3A8660F38797E)
----@param ped number
----@return boolean
-function N_0x7ee3a8660f38797e(ped) end
-
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xBF567DF2BEF211A6)
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xA180FBD502A03125)
 ---@param p0 any
 ---@param p1 any
-function N_0xbf567df2bef211a6(p0, p1) end
+---@param p2 any
+---@return any
+function N_0xa180fbd502a03125(p0, p1, p2) end
 
 ---Creates a texture override data for ped and returns it's index.
 ---So you can replace any texture of any ped's component.
@@ -6563,12 +6565,11 @@ function N_0xbf567df2bef211a6(p0, p1) end
 ---@return number
 function RequestTexture(albedoHash, normalHash, materialHash) end
 
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x0B46E25761519058)
+---_IS_PED_H* - _IS_PED_I*
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x7EE3A8660F38797E)
 ---@param ped number
----@param componentHash number | string
----@param textureId number
-function ApplyTextureOnPed(ped, componentHash, textureId) end
+---@return boolean
+function N_0x7ee3a8660f38797e(ped) end
 
 ---Removes a texture created by 0xC5E7204F322E49EB.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x6BEFAA907B076859)
@@ -6576,10 +6577,10 @@ function ApplyTextureOnPed(ped, componentHash, textureId) end
 function ReleaseTexture(textureId) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x57779B55B83E2BEA)
----@param ped number
----@return boolean
-function IsPedIntimidated(ped) end
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xBF567DF2BEF211A6)
+---@param p0 any
+---@param p1 any
+function N_0xbf567df2bef211a6(p0, p1) end
 
 ---Should be called at least once for any new texture override.
 ---Otherwise component textures will be just black.
@@ -6589,16 +6590,17 @@ function IsPedIntimidated(ped) end
 function UpdatePedTexture(textureId) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x31DC8D3F216D8509)
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x0B46E25761519058)
+---@param ped number
+---@param componentHash number | string
 ---@param textureId number
----@return boolean
-function IsTextureValid(textureId) end
+function ApplyTextureOnPed(ped, componentHash, textureId) end
 
----Removes every texture layer but the base layer
----Clearing texture's data: setting params to default values, but keep overlays.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x8472A1789478F82F)
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x96C349DE04C49011)
 ---@param textureId number
-function ResetPedTexture(textureId) end
+---@param overlayId number
+function RemovePedOverlay(textureId, overlayId) end
 
 ---Creates ped overlay in texture override data and returns it's index.
 ---This index are used for further overlay editing.
@@ -6617,19 +6619,18 @@ function ResetPedTexture(textureId) end
 function AddTextureLayer(textureId, albedoHash, normalHash, materialHash, blendType, texAlpha, sheetGridIndex) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xA180FBD502A03125)
----@param p0 any
----@param p1 any
----@param p2 any
----@return any
-function N_0xa180fbd502a03125(p0, p1, p2) end
-
----This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x3329AAE2882FC8E4)
 ---@param textureId number
 ---@param layerId number
 ---@param sheetGridIndex number
 function SetTextureLayerSheetGridIndex(textureId, layerId, sheetGridIndex) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x6C76BC24F8BB709A)
+---@param textureId number
+---@param layerId number
+---@param texAlpha number
+function SetTextureLayerAlpha(textureId, layerId, texAlpha) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x057C4F092E2298BE)
@@ -6638,18 +6639,12 @@ function SetTextureLayerSheetGridIndex(textureId, layerId, sheetGridIndex) end
 ---@param texRough number
 function SetTextureLayerRoughness(textureId, layerId, texRough) end
 
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x96C349DE04C49011)
----@param textureId number
----@param overlayId number
-function RemovePedOverlay(textureId, overlayId) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x6C76BC24F8BB709A)
+---paletteHash: https://raw.githubusercontent.com/femga/rdr3_discoveries/master/clothes/cloth_color_palletes.lua
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x1ED8588524AC9BE1)
 ---@param textureId number
 ---@param layerId number
----@param texAlpha number
-function SetTextureLayerAlpha(textureId, layerId, texAlpha) end
+---@param paletteHash number | string
+function SetTextureLayerPallete(textureId, layerId, paletteHash) end
 
 ---Seem color is not RGB or HSV
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x2DF59FFE6FFD6044)
@@ -6678,12 +6673,6 @@ function SetTextureLayerMod(textureId, layerId, modTextureHash, modAlpha, modCha
 ---@param materialHash number | string
 function SetTextureLayerTextureMap(textureId, layerId, albedoHash, normalHash, materialHash) end
 
----Not implemented.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xC991EF46FE323867)
----@param ped number
----@param p1 any
-function N_0xc991ef46fe323867(ped, p1) end
-
 ---Removes every texture layer
 ---Old Name: _RESET_PED_TEXTURE_2
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xB63B9178D0F58D82)
@@ -6696,6 +6685,18 @@ function ClearPedTexture(textureId) end
 ---@param p1 any
 ---@param p2 any
 function N_0x1f8215d0e446f593(p0, p1, p2) end
+
+---Not implemented.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xC991EF46FE323867)
+---@param ped number
+---@param p1 any
+function N_0xc991ef46fe323867(ped, p1) end
+
+---Removes every texture layer but the base layer
+---Clearing texture's data: setting params to default values, but keep overlays.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x8472A1789478F82F)
+---@param textureId number
+function ResetPedTexture(textureId) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xFB1E7998B8595825)
@@ -6710,24 +6711,6 @@ function IsLocationSpawnSafe(ped, p1) end
 ---@param p1 any
 function N_0x96c7b659854de629(p0, p1) end
 
----paletteHash: https://raw.githubusercontent.com/femga/rdr3_discoveries/master/clothes/cloth_color_palletes.lua
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x1ED8588524AC9BE1)
----@param textureId number
----@param layerId number
----@param paletteHash number | string
-function SetTextureLayerPallete(textureId, layerId, paletteHash) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x2A5AFD2B8381A6E1)
----@param horse number
-function ResetHorseAvoidanceLevelToDefault(horse) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x53BA7D96B9A421D9)
----@param p0 any
----@param p1 any
-function N_0x53ba7d96b9a421d9(p0, p1) end
-
 ----1 - HORSE_ASSIST__NO_CHANGE
 --- 0 - HORSE_ASSIST__MANUAL
 --- 1 - HORSE_ASSIST__SEMIASSIST
@@ -6737,15 +6720,6 @@ function N_0x53ba7d96b9a421d9(p0, p1) end
 ---@param avoidanceLevel number
 function SetHorseAvoidanceLevel(horse, avoidanceLevel) end
 
----This is a way to get what drawables a ped has equipped
----Example: you are able to tell if the ped has the drawable PLAYER_ZERO_HAT_017 attached
----Note: this works with non shop components, direct .ydd files.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xA9C28516A6DC9D56)
----@param ped number
----@param index number
----@return boolean, number, number, number, number
-function GetMetaPedAssetGuids(ped, index) end
-
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x5B73975B4F12F7F3)
 ---@param p0 any
@@ -6754,6 +6728,22 @@ function GetMetaPedAssetGuids(ped, index) end
 ---@param p3 any
 ---@param p4 any
 function N_0x5b73975b4f12f7f3(p0, p1, p2, p3, p4) end
+
+---Doesn't actually return anything.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xEB72453B6F5B45B0)
+---@param ped number
+---@param toggle boolean
+---@return any
+function SetPedUseHorseMapCollision(ped, toggle) end
+
+---This is a way to get what drawables a ped has equipped
+---Example: you are able to tell if the ped has the drawable PLAYER_ZERO_HAT_017 attached
+---Note: this works with non shop components, direct .ydd files.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xA9C28516A6DC9D56)
+---@param ped number
+---@param index number
+---@return boolean, number, number, number, number
+function GetMetaPedAssetGuids(ped, index) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xE7998FEC53A33BBE)
@@ -6775,19 +6765,20 @@ function GetMetaPedAssetTint(ped, index) end
 function SetPedBlackboardInt(ped, variableName, value, removeTimer) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xCB9401F918CB0F75)
+---@param ped number
+---@param variableName string
+---@param value boolean
+---@param removeTimer number
+function SetPedBlackboardBool(ped, variableName, value, removeTimer) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x437C08DB4FEBE2BD)
 ---@param ped number
 ---@param variableName string
 ---@param value number
 ---@param removeTimer number
 function SetPedBlackboardFloat(ped, variableName, value, removeTimer) end
-
----Doesn't actually return anything.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xEB72453B6F5B45B0)
----@param ped number
----@param toggle boolean
----@return any
-function SetPedUseHorseMapCollision(ped, toggle) end
 
 ---p1:
 ---BodyPartChained
@@ -6805,14 +6796,6 @@ function SetPedUseHorseMapCollision(ped, toggle) end
 function SetPedBlackboardHash(ped, variableName, value, removeTimer) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xCB9401F918CB0F75)
----@param ped number
----@param variableName string
----@param value boolean
----@param removeTimer number
-function SetPedBlackboardBool(ped, variableName, value, removeTimer) end
-
----This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x81B75428A7813E67)
 ---@param ped number
 ---@param variableName string
@@ -6825,11 +6808,22 @@ function RemovePedBlackboardInt(ped, variableName) end
 function RemovePedBlackboardBool(ped, variableName) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xBF5E791BBBF90A3C)
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x411189E51B8020BA)
 ---@param ped number
 ---@param variableName string
----@return number
-function GetPedBlackboardHash(ped, variableName) end
+function RemovePedBlackboardFloat(ped, variableName) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x0E17378642156790)
+---@param ped number
+---@param variableName string
+function RemovePedBlackboardHash(ped, variableName) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x31DC8D3F216D8509)
+---@param textureId number
+---@return boolean
+function IsTextureValid(textureId) end
 
 ---Can be used to get a peds foliage active status: variableName = FoliageActive
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x498F2E77982D6945)
@@ -6837,12 +6831,6 @@ function GetPedBlackboardHash(ped, variableName) end
 ---@param variableName string
 ---@return boolean
 function GetPedBlackboardBool(ped, variableName) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x411189E51B8020BA)
----@param ped number
----@param variableName string
-function RemovePedBlackboardFloat(ped, variableName) end
 
 ---Can be used to get a peds foliage raw height: variableName = FoliageHeight
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x56E58D4D118FB45E)
@@ -6852,17 +6840,25 @@ function RemovePedBlackboardFloat(ped, variableName) end
 function GetPedBlackboardFloat(ped, variableName) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xBF5E791BBBF90A3C)
+---@param ped number
+---@param variableName string
+---@return number
+function GetPedBlackboardHash(ped, variableName) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xB71B91B398F8F067)
+---@param ped number
+---@param variableName string
+---@return number
+function GetPedBlackboardScriptInt(ped, variableName) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x4912DFE492DB98CD)
 ---@param ped number
 ---@param variableName string
 ---@return boolean
 function GetPedBlackboardScriptBool(ped, variableName) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x0E17378642156790)
----@param ped number
----@param variableName string
-function RemovePedBlackboardHash(ped, variableName) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xA29FD00D45311EB7)
@@ -6871,18 +6867,18 @@ function RemovePedBlackboardHash(ped, variableName) end
 ---@return number
 function GetPedBlackboardScriptFloat(ped, variableName) end
 
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xA31D350D66FA1855)
----@param p0 any
----@return any
-function N_0xa31d350d66fa1855(p0) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xB71B91B398F8F067)
+---Size will be permanent
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x7FF72DE061DF55E2)
 ---@param ped number
----@param variableName string
----@return number
-function GetPedBlackboardScriptInt(ped, variableName) end
+---@param attributeIndex number
+---@param size number
+function SetTankAttributeSize(ped, attributeIndex, size) end
+
+---_IS_TRACKED_* - IS_V*
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xAF61B3CD8C3B82C3)
+---@param ped number
+---@return boolean
+function IsUsingSlipstream(ped) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xEEDC9B29314B2733)
@@ -6898,12 +6894,16 @@ function GetPedBlackboardScriptInt(ped, variableName) end
 ---@param p9 any
 function N_0xeedc9b29314b2733(p0, p1, p2, p3, p4, p5, p6, p7, p8, p9) end
 
----Size will be permanent
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x7FF72DE061DF55E2)
----@param ped number
----@param attributeIndex number
----@param size number
-function SetTankAttributeSize(ped, attributeIndex, size) end
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xA31D350D66FA1855)
+---@param p0 any
+---@return any
+function N_0xa31d350d66fa1855(p0) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x5C90E20C25E6D83C)
+---@param p0 any
+function N_0x5c90e20c25e6d83c(p0) end
 
 ---NB_CUSTOM_CLIENT_ON_CREATE_COMPLETE - set legendary to not avoid prey
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x10F96086123B939F)
@@ -6913,22 +6913,11 @@ function SetTankAttributeSize(ped, attributeIndex, size) end
 function N_0x10f96086123b939f(legendaryPed, preyPed, p2) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x5C90E20C25E6D83C)
----@param p0 any
-function N_0x5c90e20c25e6d83c(p0) end
-
----This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x3FDBB99EFD8CE4AF)
 ---@param p0 any
 ---@param p1 any
 ---@param p2 any
 function N_0x3fdbb99efd8ce4af(p0, p1, p2) end
-
----_IS_TRACKED_* - IS_V*
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xAF61B3CD8C3B82C3)
----@param ped number
----@return boolean
-function IsUsingSlipstream(ped) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x7E8F9949B7AABBF0)
@@ -6946,6 +6935,12 @@ function N_0x7e8f9949b7aabbf0(p0, p1, p2) end
 function N_0x5da36cccb63c0895(p0, p1, p2) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x56076667E7C2DCD6)
+---@param p0 any
+---@param p1 any
+function N_0x56076667e7c2dcd6(p0, p1) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xD3A7B003ED343FD9)
 ---@param ped number
 ---@param componentHash number | string
@@ -6953,14 +6948,6 @@ function N_0x5da36cccb63c0895(p0, p1, p2) end
 ---@param isMp boolean
 ---@param p4 boolean
 function ApplyShopItemToPed(ped, componentHash, immediately, isMp, p4) end
-
----Params: p2, p3 usually 0 in R* Scripts
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xDF631E4BCE1B1FC4)
----@param ped number
----@param componentCategory number | string
----@param p2 number
----@param p3 boolean
-function RemoveShopItemFromPedByCategory(ped, componentCategory, p2, p3) end
 
 ---Directly removes a shop item component from a ped
 ---Params: p2 and p3 are always 0
@@ -6970,6 +6957,14 @@ function RemoveShopItemFromPedByCategory(ped, componentCategory, p2, p3) end
 ---@param p2 number
 ---@param p3 boolean
 function RemoveShopItemFromPed(ped, componentHash, p2, p3) end
+
+---Params: p2, p3 usually 0 in R* Scripts
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xDF631E4BCE1B1FC4)
+---@param ped number
+---@param componentCategory number | string
+---@param p2 number
+---@param p3 boolean
+function RemoveShopItemFromPedByCategory(ped, componentCategory, p2, p3) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x66B957AAC2EAAEAB)
@@ -6982,14 +6977,6 @@ function RemoveShopItemFromPed(ped, componentHash, p2, p3) end
 function UpdateShopItemWearableState(ped, componentHash, wearableState, p3, p4, p5) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xFFCC2DB2D9953401)
----@param p0 any
----@param p1 any
----@param p2 any
----@return any
-function N_0xffcc2db2d9953401(p0, p1, p2) end
-
----This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x77BA37622E22023B)
 ---@param ped number
 ---@param index number
@@ -6998,12 +6985,26 @@ function N_0xffcc2db2d9953401(p0, p1, p2) end
 function GetShopPedComponentAtIndex(ped, index, p2) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xFFCC2DB2D9953401)
+---@param p0 any
+---@param p1 any
+---@param p2 any
+---@return any
+function N_0xffcc2db2d9953401(p0, p1, p2) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x5FF9A878C3D115B8)
 ---@param componentHash number | string
 ---@param metapedType number
 ---@param isMP boolean
 ---@return number
 function GetShopPedComponentCategory(componentHash, metapedType, isMP) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x53BA7D96B9A421D9)
+---@param p0 any
+---@param p1 any
+function N_0x53ba7d96b9a421d9(p0, p1) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x63342C50EC115CE8)
@@ -7025,10 +7026,44 @@ function GetShopPedBaseLayers(shopItem, p1, ped, metapedType, p4) end
 function N_0x31b2e7f2e3c58b89(p0, p1, p2, p3) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x56076667E7C2DCD6)
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x7E02E4218D916B94)
+---@param ped number
+---@param metapedType number
+---@param p2 boolean
+---@return any
+function GetShopPedHatComponent(ped, metapedType, p2) end
+
+---p1 is always 1
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x59BD177A1A48600A)
+---@param ped number
+---@param p1 number
+function RefreshMetaPedShopItems(ped, p1) end
+
+---Related to _0x704C908E9C405136 for component loading
+---_S*
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xAAB86462966168CE)
+---@param ped number
+---@param isMP boolean
+---@return any
+function N_0xaab86462966168ce(ped, isMP) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xD103F6DBB5442BE8)
 ---@param p0 any
 ---@param p1 any
-function N_0x56076667e7c2dcd6(p0, p1) end
+function N_0xd103f6dbb5442be8(p0, p1) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x4A48B6E03BABB4AC)
+---@param ped number
+---@param name string
+function SetPedPromptName(ped, name) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xFCA8FB9E15FA80D3)
+---@param ped number
+---@param gxtEntryHash number | string
+function SetPedPromptNameFromGxtEntry(ped, gxtEntryHash) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x6243635AF2F1B826)
@@ -7040,55 +7075,22 @@ function N_0x56076667e7c2dcd6(p0, p1) end
 function N_0x6243635af2f1b826(p0, p1, p2, p3) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x7E02E4218D916B94)
----@param ped number
----@param metapedType number
----@param p2 boolean
----@return any
-function GetShopPedHatComponent(ped, metapedType, p2) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xD103F6DBB5442BE8)
----@param p0 any
----@param p1 any
-function N_0xd103f6dbb5442be8(p0, p1) end
-
----Related to _0x704C908E9C405136 for component loading
----_S*
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xAAB86462966168CE)
----@param ped number
----@param isMP boolean
----@return any
-function N_0xaab86462966168ce(ped, isMP) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xFCA8FB9E15FA80D3)
----@param ped number
----@param gxtEntryHash number | string
-function SetPedPromptNameFromGxtEntry(ped, gxtEntryHash) end
-
----This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x19B14E04B009E28B)
 ---@param p0 any
 ---@param p1 any
 function N_0x19b14e04b009e28b(p0, p1) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x4A48B6E03BABB4AC)
----@param ped number
----@param name string
-function SetPedPromptName(ped, name) end
-
----p1 is always 1
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x59BD177A1A48600A)
----@param ped number
----@param p1 number
-function RefreshMetaPedShopItems(ped, p1) end
-
----This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xF917F92BF22ECBAB)
 ---@param p0 any
 function N_0xf917f92bf22ecbab(p0) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x49DADFC4CD808B0A)
+---@param p0 any
+---@param p1 any
+---@param p2 any
+function N_0x49dadfc4cd808b0a(p0, p1, p2) end
 
 ---limb: 3 = Left Hand, 4 = Left Arm, 6 = Right Hand, 7 = Right Arm, 9 = Left Foot, 10 = Left Leg, 12 = Right Foot, 13 = Right Leg, 37 = Head
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xBA208A8D6399A3AC)
@@ -7098,11 +7100,9 @@ function N_0xf917f92bf22ecbab(p0) end
 function HasPedTakenGoreDamage(ped, limb) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x49DADFC4CD808B0A)
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x7406C71F4AC2FFCC)
 ---@param p0 any
----@param p1 any
----@param p2 any
-function N_0x49dadfc4cd808b0a(p0, p1, p2) end
+function N_0x7406c71f4ac2ffcc(p0) end
 
 ---_CLEAR*
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x704C908E9C405136)
@@ -7110,15 +7110,15 @@ function N_0x49dadfc4cd808b0a(p0, p1, p2) end
 function N_0x704c908e9c405136(ped) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x7406C71F4AC2FFCC)
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x28508173C6A7CC18)
 ---@param p0 any
-function N_0x7406c71f4ac2ffcc(p0) end
+function N_0x28508173c6a7cc18(p0) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xC2745D9261664901)
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x52250B92EA70BE3D)
 ---@param p0 any
----@param p1 any
-function N_0xc2745d9261664901(p0, p1) end
+---@return any
+function N_0x52250b92ea70be3d(p0) end
 
 ---quality: see _GET_PED_QUALITY
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xCE6B874286D640BB)
@@ -7127,10 +7127,11 @@ function N_0xc2745d9261664901(p0, p1) end
 function SetPedQuality(ped, quality) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x52250B92EA70BE3D)
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x604E1010E3162E86)
 ---@param p0 any
----@return any
-function N_0x52250b92ea70be3d(p0) end
+---@param p1 any
+---@param p2 any
+function N_0x604e1010e3162e86(p0, p1, p2) end
 
 ---Returns Ped Quality to be used to calculate Skinning Quality
 ---
@@ -7148,11 +7149,12 @@ function N_0x52250b92ea70be3d(p0) end
 function GetPedQuality(ped) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x604E1010E3162E86)
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xE8ABE3B73FC7FE17)
 ---@param p0 any
 ---@param p1 any
 ---@param p2 any
-function N_0x604e1010e3162e86(p0, p1, p2) end
+---@param p3 any
+function N_0xe8abe3b73fc7fe17(p0, p1, p2, p3) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xCE7A6C1D5CDE1F9D)
@@ -7161,19 +7163,6 @@ function N_0x604e1010e3162e86(p0, p1, p2) end
 ---@param propName string
 ---@param animName string
 function N_0xce7a6c1d5cde1f9d(ped, object, propName, animName) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x28508173C6A7CC18)
----@param p0 any
-function N_0x28508173c6a7cc18(p0) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xE8ABE3B73FC7FE17)
----@param p0 any
----@param p1 any
----@param p2 any
----@param p3 any
-function N_0xe8abe3b73fc7fe17(p0, p1, p2, p3) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x3A50753042B6891B)
@@ -7190,11 +7179,26 @@ function RemovePedProp(ped, propName) end
 ---@param p4 any
 function N_0x09171a6f8fde5dc1(p0, p1, p2, p3, p4) end
 
----_SET_W(EAPON?)*
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x932786CE3C76477C)
----@param ped number
----@param bonus number
-function SetTotalPedDamageFalloffBonus(ped, bonus) end
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xC2745D9261664901)
+---@param p0 any
+---@param p1 any
+function N_0xc2745d9261664901(p0, p1) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x095C2277FED731DB)
+---@param p0 any
+---@return any
+function N_0x095c2277fed731db(p0) end
+
+---_IS_N* - _IS_P*
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x6507AC3BD7C99009)
+---@param x number
+---@param y number
+---@param z number
+---@param p3 number
+---@return boolean
+function N_0x6507ac3bd7c99009(x, y, z, p3) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x09E378C52B1433B5)
@@ -7213,22 +7217,6 @@ function N_0x09e378c52b1433b5(p0, p1, p2, p3, p4) end
 ---@return number
 function GetPlayerPedWaterDepth(ped) end
 
----_IS_N* - _IS_P*
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x6507AC3BD7C99009)
----@param x number
----@param y number
----@param z number
----@param p3 number
----@return boolean
-function N_0x6507ac3bd7c99009(x, y, z, p3) end
-
----duration in seconds
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xA5950E16B8F31052)
----@param ped number
----@param p1 boolean
----@param duration number
-function SetPedTrailEffect(ped, p1, duration) end
-
 ---If returned true: PROCESS_RESIZING_TRACKING_BOUNDS_VOLUME - Scaling UP the bounds due to tracking
 ---If returned false: PROCESS_RESIZING_TRACKING_BOUNDS_VOLUME - Scaling DOWN the bounds due to tracking
 ---_IS_PED_T* - _IS_PED_U*
@@ -7238,20 +7226,32 @@ function SetPedTrailEffect(ped, p1, duration) end
 function N_0xebaac9a750e7563b(ped) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x992187D975635DF5)
+---@param p0 any
+---@param p1 any
+function N_0x992187d975635df5(p0, p1) end
+
+---duration in seconds
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xA5950E16B8F31052)
+---@param ped number
+---@param p1 boolean
+---@param duration number
+function SetPedTrailEffect(ped, p1, duration) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x0B787A37EEDD226F)
 ---@param p0 any
 ---@param p1 any
 function N_0x0b787a37eedd226f(p0, p1) end
 
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x095C2277FED731DB)
----@param p0 any
----@return any
-function N_0x095c2277fed731db(p0) end
+---_SET_W(EAPON?)*
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x932786CE3C76477C)
+---@param ped number
+---@param bonus number
+function SetTotalPedDamageFalloffBonus(ped, bonus) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x992187D975635DF5)
----@param p0 any
----@param p1 any
-function N_0x992187d975635df5(p0, p1) end
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x2A5AFD2B8381A6E1)
+---@param horse number
+function ResetHorseAvoidanceLevelToDefault(horse) end
 

@@ -6,6 +6,24 @@
 ---@param outputSubmixId number
 function AddAudioSubmixOutput(submixId, outputSubmixId) end
 
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x32CA01C3)
+---@param entryKey string
+---@param entryText string
+function AddTextEntry(entryKey, entryText) end
+
+---Loads a minimap overlay from a GFx file in the current resource.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x4AFD2499)
+---@param name string
+---@return number
+function AddMinimapOverlay(name) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x289DA860)
+---@param entryKey number | string
+---@param entryText string
+function AddTextEntryByHash(entryKey, entryText) end
+
 ---Experimental natives, please do not use in a live environment.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA66F8F75)
 ---@param origTxd string
@@ -14,37 +32,32 @@ function AddAudioSubmixOutput(submixId, outputSubmixId) end
 ---@param newTxn string
 function AddReplaceTexture(origTxd, origTxn, newTxd, newTxn) end
 
----Cancels the currently executing event.
----[Native Documentation](https://docs.fivem.net/natives/?_0xFA29D35D)
-function CancelEvent() end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x32CA01C3)
----@param entryKey string
----@param entryText string
-function AddTextEntry(entryKey, entryText) end
-
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xDEDA4E50)
 ---@param findHandle number
 function EndFindObject(findHandle) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x289DA860)
----@param entryKey number | string
----@param entryText string
-function AddTextEntryByHash(entryKey, entryText) end
+---Cancels the currently executing event.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xFA29D35D)
+function CancelEvent() end
+
+---Returns whether or not the specified player has enough information to start a commerce session for.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x429461C3)
+---@param playerSrc string
+---@return boolean
+function CanPlayerStartCommerceSession(playerSrc) end
+
+---This is similar to the PushScaleformMovieFunction natives, except it calls in the `TIMELINE` of a minimap overlay.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x4C89C0ED)
+---@param miniMap number
+---@param fnName string
+---@return boolean
+function CallMinimapScaleformFunction(miniMap, fnName) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xB3210203)
 ---@param handle number
 function EndFindKvp(handle) end
-
----Loads a minimap overlay from a GFx file in the current resource.
----[Native Documentation](https://docs.fivem.net/natives/?_0x4AFD2499)
----@param name string
----@return number
-function AddMinimapOverlay(name) end
 
 ---Adds a handler for changes to a state bag.
 ---
@@ -72,38 +85,25 @@ function AddMinimapOverlay(name) end
 ---@return number
 function AddStateBagChangeHandler(keyFilter, bagFilter, handler) end
 
----This is similar to the PushScaleformMovieFunction natives, except it calls in the `TIMELINE` of a minimap overlay.
----[Native Documentation](https://docs.fivem.net/natives/?_0x4C89C0ED)
----@param miniMap number
----@param fnName string
----@return boolean
-function CallMinimapScaleformFunction(miniMap, fnName) end
-
----Returns whether or not the specified player has enough information to start a commerce session for.
----[Native Documentation](https://docs.fivem.net/natives/?_0x429461C3)
----@param playerSrc string
----@return boolean
-function CanPlayerStartCommerceSession(playerSrc) end
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x9227415A)
+---@param findHandle number
+function EndFindVehicle(findHandle) end
 
 ---Removes vehicle xenon lights custom RGB color.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x2867ED8C)
 ---@param vehicle number
 function ClearVehicleXenonLightsCustomColor(vehicle) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x9227415A)
----@param findHandle number
-function EndFindVehicle(findHandle) end
+---Internal function for ensuring an entity has a state bag.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x3BB78F05)
+---@param entity number
+function EnsureEntityStateBag(entity) end
 
 ---Commits the backing pixels to the specified runtime texture.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x19D81F4E)
 ---@param tex number
 function CommitRuntimeTexture(tex) end
-
----Internal function for ensuring an entity has a state bag.
----[Native Documentation](https://docs.fivem.net/natives/?_0x3BB78F05)
----@param entity number
-function EnsureEntityStateBag(entity) end
 
 ---Creates a volume where water effects do not apply.---
 ---Useful for preventing water collisions from flooding areas underneath them.---
@@ -119,6 +119,17 @@ function EnsureEntityStateBag(entity) end
 ---@return number
 function CreateDryVolume(xMin, yMin, zMin, xMax, yMax, zMax) end
 
+---Creates an audio submix with the specified name, or gets the existing audio submix by that name.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x658D2BC8)
+---@param name string
+---@return number
+function CreateAudioSubmix(name) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x9615C2AD)
+---@param findHandle number
+function EndFindPed(findHandle) end
+
 ---Creates a DUI browser. This can be used to draw on a runtime texture using CREATE_RUNTIME_TEXTURE_FROM_DUI_HANDLE.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x23EAF899)
 ---@param url string
@@ -126,12 +137,6 @@ function CreateDryVolume(xMin, yMin, zMin, xMax, yMax, zMax) end
 ---@param height number
 ---@return number
 function CreateDui(url, width, height) end
-
----Creates an audio submix with the specified name, or gets the existing audio submix by that name.
----[Native Documentation](https://docs.fivem.net/natives/?_0x658D2BC8)
----@param name string
----@return number
-function CreateAudioSubmix(name) end
 
 ---Creates a runtime texture dictionary with the specified name.---
 ---Example:
@@ -144,11 +149,6 @@ function CreateAudioSubmix(name) end
 ---@return number
 function CreateRuntimeTxd(name) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x561C060B)
----@param commandString string
-function ExecuteCommand(commandString) end
-
 ---Creates a runtime texture from a DUI handle.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xB135472B)
 ---@param txd number
@@ -157,6 +157,21 @@ function ExecuteCommand(commandString) end
 ---@return number
 function CreateRuntimeTextureFromDuiHandle(txd, txn, duiHandle) end
 
+---Returns the current console output buffer.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xE57429FA)
+---@return string
+function GetConsoleBuffer() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x561C060B)
+---@param commandString string
+function ExecuteCommand(commandString) end
+
+---Deletes the specified entity.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xFAA3D236)
+---@param entity number
+function DeleteEntity(entity) end
+
 ---This native is not implemented.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xD2CB95A3)
 ---@param data string
@@ -164,21 +179,6 @@ function CreateRuntimeTextureFromDuiHandle(txd, txn, duiHandle) end
 ---@param tree string
 ---@return number
 function ExperimentalLoadCloneCreate(data, objectId, tree) end
-
----Deletes the specified entity.
----[Native Documentation](https://docs.fivem.net/natives/?_0xFAA3D236)
----@param entity number
-function DeleteEntity(entity) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x9615C2AD)
----@param findHandle number
-function EndFindPed(findHandle) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x3C407D53)
----@param findHandle number
-function EndFindPickup(findHandle) end
 
 ---Creates a runtime texture from the specified file in the current resource or a base64 data URL.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x786D8BC3)
@@ -203,10 +203,16 @@ function CreateRuntimeTexture(txd, txn, width, height) end
 ---@return vector3, vector3, vector3, vector3
 function GetCamMatrix(camera) end
 
----Returns the current console output buffer.
----[Native Documentation](https://docs.fivem.net/natives/?_0xE57429FA)
----@return string
-function GetConsoleBuffer() end
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x3C407D53)
+---@param findHandle number
+function EndFindPickup(findHandle) end
+
+---This native is not implemented.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x6BC189AC)
+---@param entity number
+---@param data string
+function ExperimentalLoadCloneSync(entity, data) end
 
 ---Can be used to get a console variable of type `char*`, for example a string.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x6CCD2564)
@@ -215,11 +221,16 @@ function GetConsoleBuffer() end
 ---@return string
 function GetConvar(varName, default_) end
 
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x7389B5DF)
+---@param key string
+function DeleteResourceKvp(key) end
+
 ---This native is not implemented.
----[Native Documentation](https://docs.fivem.net/natives/?_0x6BC189AC)
+---[Native Documentation](https://docs.fivem.net/natives/?_0x9D65CAD2)
 ---@param entity number
----@param data string
-function ExperimentalLoadCloneSync(entity, data) end
+---@return string
+function ExperimentalSaveCloneCreate(entity) end
 
 ---Nonsynchronous [DELETE_RESOURCE_KVP](#\_0x7389B5DF) operation; see [FLUSH_RESOURCE_KVP](#\_0x5240DA5A).
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x4152C90)
@@ -227,9 +238,9 @@ function ExperimentalLoadCloneSync(entity, data) end
 function DeleteResourceKvpNoSync(key) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x7389B5DF)
----@param key string
-function DeleteResourceKvp(key) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0xFAA6CB5D)
+---@return number, number
+function FindFirstObject() end
 
 ---This native returns the currently used game's name.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xACA18ECD)
@@ -237,26 +248,20 @@ function DeleteResourceKvp(key) end
 function GetCurrentGameName() end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xFAA6CB5D)
----@return number, number
-function FindFirstObject() end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x1E86F206)
 ---@param referenceIdentity string
 function DeleteFunctionReference(referenceIdentity) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xFB012961)
+---@return number, number
+function FindFirstPed() end
 
 ---This native is not implemented.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x38D19210)
 ---@param entity number
 ---@return string
 function ExperimentalSaveCloneSync(entity) end
-
----This native is not implemented.
----[Native Documentation](https://docs.fivem.net/natives/?_0x9D65CAD2)
----@param entity number
----@return string
-function ExperimentalSaveCloneCreate(entity) end
 
 ---Disables the game's afk camera that starts panning around after 30 seconds of inactivity.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x3D5AB7F0)
@@ -274,20 +279,20 @@ function FindFirstPickup() end
 function DestroyDui(duiObject) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x4107EF0F)
----@param findHandle number
----@return boolean, number
-function FindNextPickup(findHandle) end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x237613B3)
 ---@return number
 function DoorSystemGetSize() end
 
+---Returns the name of the currently executing resource.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xE5E9EBBB)
+---@return string
+function GetCurrentResourceName() end
+
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xFB012961)
----@return number, number
-function FindFirstPed() end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x4107EF0F)
+---@param findHandle number
+---@return boolean, number
+function FindNextPickup(findHandle) end
 
 ---Requests whether or not the player owns the specified SKU.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x167ABA27)
@@ -314,6 +319,12 @@ function GetInstanceId() end
 function FindNextObject(findHandle) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xBD7BEBC5)
+---@param handle number
+---@return string
+function FindKvp(handle) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xAB09B548)
 ---@param findHandle number
 ---@return boolean, number
@@ -331,16 +342,10 @@ function GetConvarInt(varName, default_) end
 ---@return number, number
 function FindFirstVehicle() end
 
----Returns the name of the currently executing resource.
----[Native Documentation](https://docs.fivem.net/natives/?_0xE5E9EBBB)
----@return string
-function GetCurrentResourceName() end
-
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xBD7BEBC5)
----@param handle number
----@return string
-function FindKvp(handle) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0xF97B1C93)
+---@param enabled boolean
+function EnableEnhancedHostSupport(enabled) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x3AC90869)
@@ -365,17 +370,17 @@ function DoorSystemGetActive() end
 ---@return string
 function DuplicateFunctionReference(referenceIdentity) end
 
----Returns entity's archetype name, if available.
----[Native Documentation](https://docs.fivem.net/natives/?_0x47B870F5)
----@param entity number
----@return string
-function GetEntityArchetypeName(entity) end
-
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xBA0613E1)
 ---@param playerSrc string
 ---@param reason string
 function DropPlayer(playerSrc, reason) end
+
+---Returns entity's archetype name, if available.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x47B870F5)
+---@param entity number
+---@return string
+function GetEntityArchetypeName(entity) end
 
 ---Returns the NUI window handle for a specified DUI browser object.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x1655D41D)
@@ -406,11 +411,6 @@ function GetCurrentServerEndpoint() end
 ---@return number
 function GetEntityAttachedTo(entity) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x863F27B)
----@return number
-function GetNumResources() end
-
 ---Returns all player indices for 'active' physical players known to the client.---
 ---The data returned adheres to the following layout:
 ---
@@ -422,37 +422,17 @@ function GetNumResources() end
 function GetActivePlayers() end
 
 ---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x863F27B)
+---@return number
+function GetNumResources() end
+
+---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xF772BB2C)
 ---@param interiorId number
 ---@param portalIndex number
 ---@param cornerIndex number
 ---@return number, number, number
 function GetInteriorPortalCornerPosition(interiorId, portalIndex, cornerIndex) end
-
----Gets the current coordinates for a specified entity. This native is used server side when using OneSync.
----
----See [GET_ENTITY_COORDS](#\_0x3FEF770D40960D5A) for client side.
----[Native Documentation](https://docs.fivem.net/natives/?_0x1647F1CB)
----@param entity number
----@return vector3
-function GetEntityCoords(entity) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xF97B1C93)
----@param enabled boolean
-function EnableEnhancedHostSupport(enabled) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x9BF8A73F)
----@param entity number
----@return vector3
-function GetEntityRotationVelocity(entity) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x972CC383)
----@param entity number
----@return number
-function GetEntityHeading(entity) end
 
 ---Returns all object handles known to the server.---
 ---The data returned adheres to the following layout:
@@ -464,17 +444,39 @@ function GetEntityHeading(entity) end
 ---@return table
 function GetAllObjects() end
 
+---Gets the current coordinates for a specified entity. This native is used server side when using OneSync.
+---
+---See [GET_ENTITY_COORDS](#\_0x3FEF770D40960D5A) for client side.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x1647F1CB)
+---@param entity number
+---@return vector3
+function GetEntityCoords(entity) end
+
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x62FC38D0)
----@param playerSrc string
----@return number
-function GetAirDragMultiplierForPlayersVehicle(playerSrc) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x9BF8A73F)
+---@param entity number
+---@return vector3
+function GetEntityRotationVelocity(entity) end
 
 ---Currently it only works with peds.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x8E3222B7)
 ---@param entity number
 ---@return number
 function GetEntityHealth(entity) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x972CC383)
+---@param entity number
+---@return number
+function GetEntityHeading(entity) end
+
+---Gets the amount of metadata values with the specified key existing in the specified resource's manifest.---
+---See also: [Resource manifest](https://docs.fivem.net/resources/manifest/)
+---[Native Documentation](https://docs.fivem.net/natives/?_0x776E864)
+---@param resourceName string
+---@param metadataKey string
+---@return number
+function GetNumResourceMetadata(resourceName, metadataKey) end
 
 ---Returns all rope handles. The data returned adheres to the following layout:
 ---
@@ -485,19 +487,23 @@ function GetEntityHealth(entity) end
 ---@return table
 function GetAllRopes() end
 
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x8FF45B04)
+---@param entity number
+---@return vector3
+function GetEntityRotation(entity) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x62FC38D0)
+---@param playerSrc string
+---@return number
+function GetAirDragMultiplierForPlayersVehicle(playerSrc) end
+
 ---Currently it only works with peds.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC7AE6AA1)
 ---@param entity number
 ---@return number
 function GetEntityMaxHealth(entity) end
-
----Gets the amount of metadata values with the specified key existing in the specified resource's manifest.---
----See also: [Resource manifest](https://docs.fivem.net/resources/manifest/)
----[Native Documentation](https://docs.fivem.net/natives/?_0x776E864)
----@param resourceName string
----@param metadataKey string
----@return number
-function GetNumResourceMetadata(resourceName, metadataKey) end
 
 ---Returns all vehicle handles known to the server.---
 ---The data returned adheres to the following layout:
@@ -508,12 +514,6 @@ function GetNumResourceMetadata(resourceName, metadataKey) end
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x332169F5)
 ---@return table
 function GetAllVehicles() end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x8FF45B04)
----@param entity number
----@return vector3
-function GetEntityRotation(entity) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xDAFCB3EC)
@@ -528,15 +528,15 @@ function GetEntityModel(entity) end
 ---@return number
 function GetInteriorPortalEntityCount(interiorId, portalIndex) end
 
----A getter for [SET_AMBIENT_PED_RANGE_MULTIPLIER_THIS_FRAME](#\_0x0B919E1FB47CC4E0).
----[Native Documentation](https://docs.fivem.net/natives/?_0xB550232D)
----@return number
-function GetAmbientPedRangeMultiplier() end
-
 ---A getter for [SET_AMBIENT_VEHICLE_RANGE_MULTIPLIER_THIS_FRAME](#\_0x90B6DA738A9A25DA).
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x667EC929)
 ---@return number
 function GetAmbientVehicleRangeMultiplier() end
+
+---A getter for [SET_AMBIENT_PED_RANGE_MULTIPLIER_THIS_FRAME](#\_0x0B919E1FB47CC4E0).
+---[Native Documentation](https://docs.fivem.net/natives/?_0xB550232D)
+---@return number
+function GetAmbientPedRangeMultiplier() end
 
 ---This native gets an entity's population type.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xFC30DDFF)
@@ -561,12 +561,6 @@ function GetEntityFromStateBagName(bagName) end
 function GetAllPeds() end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xD05BB8B1)
----@param interiorId number
----@return number
-function GetInteriorPortalCount(interiorId) end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x9B7AB83C)
 ---@param interiorId number
 ---@param portalIndex number
@@ -579,19 +573,6 @@ function GetInteriorPortalEntityPosition(interiorId, portalIndex, entityIndex) e
 ---This native ensures all `_NO_SYNC` operations are synchronized with the disk/filesystem.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xE27C97A0)
 function FlushResourceKvp() end
-
----Returns all registered vehicle model names, including non-dlc vehicles and custom vehicles in no particular order.
----
----**Example output**
----
----```
----	["dubsta", "dubsta2", "dubsta3", "myverycoolcar", "sultan", "sultanrs", ...]
----```
----
----This native will not return vehicles that are unregistered (i.e from a resource being stopped) during runtime.
----[Native Documentation](https://docs.fivem.net/natives/?_0xD7531645)
----@return table
-function GetAllVehicleModels() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x9A0E1700)
@@ -609,17 +590,24 @@ function GetInteriorPortalEntityArchetype(interiorId, portalIndex, entityIndex) 
 ---@return number, number, number, number
 function GetInteriorPortalEntityRotation(interiorId, portalIndex, entityIndex) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xC14C9B6B)
----@param entity number
----@return vector3
-function GetEntityVelocity(entity) end
+---Returns all registered vehicle model names, including non-dlc vehicles and custom vehicles in no particular order.
+---
+---**Example output**
+---
+---```
+---	["dubsta", "dubsta2", "dubsta3", "myverycoolcar", "sultan", "sultanrs", ...]
+---```
+---
+---This native will not return vehicles that are unregistered (i.e from a resource being stopped) during runtime.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xD7531645)
+---@return table
+function GetAllVehicleModels() end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x2A50657)
----@param playerSrc string
+---[Native Documentation](https://docs.fivem.net/natives/?_0xD05BB8B1)
+---@param interiorId number
 ---@return number
-function GetPlayerMaxArmour(playerSrc) end
+function GetInteriorPortalCount(interiorId) end
 
 ---Forces the game snow pass to render.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xE6E16170)
@@ -627,10 +615,28 @@ function GetPlayerMaxArmour(playerSrc) end
 function ForceSnowPass(enabled) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x2A50657)
+---@param playerSrc string
+---@return number
+function GetPlayerMaxArmour(playerSrc) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xC14C9B6B)
+---@param entity number
+---@return vector3
+function GetEntityVelocity(entity) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xB7F70784)
 ---@param entity number
 ---@return string
 function GetEntityScript(entity) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x63458C27)
+---@param ped number
+---@return number
+function GetPedCauseOfDeath(ped) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x427E8E6A)
@@ -658,6 +664,12 @@ function GetParkedVehicleDensityMultiplier() end
 function GetGameName() end
 
 ---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x8839120D)
+---@param findHandle number
+---@return boolean, number
+function FindNextVehicle(findHandle) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x9DA2E811)
 ---@param interiorId number
 ---@param portalIndex number
@@ -666,16 +678,11 @@ function GetGameName() end
 function GetInteriorPortalEntityFlag(interiorId, portalIndex, entityIndex) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x8839120D)
----@param findHandle number
----@return boolean, number
-function FindNextVehicle(findHandle) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x63458C27)
----@param ped number
+---[Native Documentation](https://docs.fivem.net/natives/?_0xAA9C141D)
+---@param interiorId number
+---@param portalIndex number
 ---@return number
-function GetPedCauseOfDeath(ped) end
+function GetInteriorPortalRoomFrom(interiorId, portalIndex) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x23473EA4)
@@ -690,6 +697,18 @@ function GetPasswordHash(password) end
 function GetInteriorPosition(interiorId) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xF9E795DD)
+---@param interiorId number
+---@param roomIndex number
+---@return number, number, number, number, number, number
+function GetInteriorRoomExtents(interiorId, roomIndex) end
+
+---Gets the current game timer in milliseconds.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xA4EA0691)
+---@return number
+function GetGameTimer() end
+
+---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x11755DF2)
 ---@param interiorId number
 ---@param roomIndex number
@@ -697,25 +716,11 @@ function GetInteriorPosition(interiorId) end
 function GetInteriorRoomName(interiorId, roomIndex) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xF9E795DD)
----@param interiorId number
----@param roomIndex number
----@return number, number, number, number, number, number
-function GetInteriorRoomExtents(interiorId, roomIndex) end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xE0EE05F8)
 ---@param interiorId number
 ---@param roomHash number
 ---@return number
 function GetInteriorRoomIndexByHash(interiorId, roomHash) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xAA9C141D)
----@param interiorId number
----@param portalIndex number
----@return number
-function GetInteriorPortalRoomFrom(interiorId, portalIndex) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x6B7AF743)
@@ -732,21 +737,28 @@ function GetInteriorRoomFlag(interiorId, roomIndex) end
 function GetInteriorPortalRoomTo(interiorId, portalIndex) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xA41BC13D)
+---@param vehicle number
+---@return number
+function GetHeliTailRotorHealth(vehicle) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xF01E2AAB)
 ---@param vehicle number
 ---@return number
 function GetHeliMainRotorHealth(vehicle) end
 
----Gets the current game timer in milliseconds.
----[Native Documentation](https://docs.fivem.net/natives/?_0xA4EA0691)
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x82BA3F88)
+---@param interiorId number
+---@param roomIndex number
 ---@return number
-function GetGameTimer() end
+function GetInteriorRoomTimecycle(interiorId, roomIndex) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xA41BC13D)
----@param vehicle number
----@return number
-function GetHeliTailRotorHealth(vehicle) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x5F70F5A3)
+---@return string
+function GetHostId() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC74DA47C)
@@ -756,16 +768,10 @@ function GetHeliTailRotorHealth(vehicle) end
 function GetInteriorPortalFlag(interiorId, portalIndex) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x5F70F5A3)
----@return string
-function GetHostId() end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x82BA3F88)
----@param interiorId number
----@param roomIndex number
+---[Native Documentation](https://docs.fivem.net/natives/?_0x66D70EA3)
+---@param rope number
 ---@return number
-function GetInteriorRoomTimecycle(interiorId, roomIndex) end
+function GetRopeLengthChangeRate(rope) end
 
 ---Returns a list of entity handles (script GUID) for all entities in the specified pool - the data returned is an array as---
 ---follows:
@@ -784,6 +790,12 @@ function GetInteriorRoomTimecycle(interiorId, roomIndex) end
 ---@param poolName string
 ---@return table
 function GetGamePool(poolName) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xC182F76E)
+---@param ped number
+---@return number
+function GetPedDesiredHeading(ped) end
 
 ---Gets the entity type (as an integer), which can be one of the following defined down below:
 ---
@@ -819,16 +831,16 @@ function GetGamePool(poolName) end
 function GetEntityType(entity) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xC182F76E)
----@param ped number
+---[Native Documentation](https://docs.fivem.net/natives/?_0x8154E470)
+---@param playerSrc string
 ---@return number
-function GetPedDesiredHeading(ped) end
+function GetPlayerMaxHealth(playerSrc) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x66D70EA3)
----@param rope number
+---This native converts the passed string to a hash.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x98EFF6F1)
+---@param model string
 ---@return number
-function GetRopeLengthChangeRate(rope) end
+function GetHashKey(model) end
 
 ---Returns the internal build number of the current game being executed.
 ---
@@ -855,17 +867,10 @@ function GetRopeLengthChangeRate(rope) end
 ---@return number
 function GetGameBuildNumber() end
 
----This native converts the passed string to a hash.
----[Native Documentation](https://docs.fivem.net/natives/?_0x98EFF6F1)
----@param model string
----@return number
-function GetHashKey(model) end
-
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x8154E470)
----@param playerSrc string
----@return number
-function GetPlayerMaxHealth(playerSrc) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x4D52FE5B)
+---@return string
+function GetInvokingResource() end
 
 ---Returns a list of decorations applied to a ped.
 ---
@@ -880,6 +885,12 @@ function GetPlayerMaxHealth(playerSrc) end
 ---@param ped number
 ---@return table
 function GetPedDecorations(ped) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x69E81E3D)
+---@param ped number
+---@return number
+function GetPedMovementClipset(ped) end
 
 ---A getter for [\_SET_PED_HAIR_COLOR](#\_0x4CFFC65454C93A49). Returns -1 if fails to get.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x4B087305)
@@ -899,12 +910,6 @@ function GetPedHairHighlightColor(ped) end
 function GetEntitySpeed(entity) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x69E81E3D)
----@param ped number
----@return number
-function GetPedMovementClipset(ped) end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA2737C2C)
 ---@param interiorId number
 ---@return number
@@ -916,11 +921,10 @@ function GetInteriorRoomCount(interiorId) end
 ---@return number
 function GetRopeTimeMultiplier(rope) end
 
----A getter for [SET_PLAYER_MELEE_WEAPON_DEFENSE_MODIFIER](#\_0xAE540335B4ABC4E2).
----[Native Documentation](https://docs.fivem.net/natives/?_0x27E94EF8)
----@param playerId number
+---A getter for [SET_PED_DENSITY_MULTIPLIER_THIS_FRAME](#\_0x95E3D6257B166CF2).
+---[Native Documentation](https://docs.fivem.net/natives/?_0xF5A904F9)
 ---@return number
-function GetPlayerMeleeWeaponDefenseModifier(playerId) end
+function GetPedDensityMultiplier() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xD014AB79)
@@ -948,44 +952,33 @@ function GetPedScriptTaskCommand(ped) end
 function GetPedFaceFeature(ped, index) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x4D52FE5B)
----@return string
-function GetInvokingResource() end
-
----A getter for [\_SET_PED_HAIR_COLOR](#\_0x4CFFC65454C93A49). Returns -1 if fails to get.
----[Native Documentation](https://docs.fivem.net/natives/?_0xA3EA2893)
----@param ped number
----@return number
-function GetPedHairColor(ped) end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA45B6C8D)
 ---@param ped number
 ---@return number
 function GetPedMaxHealth(ped) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x388FDE9A)
----@param vehicle number
----@param seatIndex number
----@return number
-function GetPedInVehicleSeat(vehicle, seatIndex) end
-
----A getter for [SET_PED_DENSITY_MULTIPLIER_THIS_FRAME](#\_0x95E3D6257B166CF2).
----[Native Documentation](https://docs.fivem.net/natives/?_0xF5A904F9)
----@return number
-function GetPedDensityMultiplier() end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x63D13184)
 ---@return number
 function GetNumPlayerIndices() end
+
+---A getter for [SET_PLAYER_MELEE_WEAPON_DEFENSE_MODIFIER](#\_0xAE540335B4ABC4E2).
+---[Native Documentation](https://docs.fivem.net/natives/?_0x27E94EF8)
+---@param playerId number
+---@return number
+function GetPlayerMeleeWeaponDefenseModifier(playerId) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x2CE311A7)
 ---@param ped number
 ---@return number
 function GetPedArmour(ped) end
+
+---A getter for [\_SET_PED_HAIR_COLOR](#\_0x4CFFC65454C93A49). Returns -1 if fails to get.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xA3EA2893)
+---@param ped number
+---@return number
+function GetPedHairColor(ped) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xFF1290D4)
@@ -1001,6 +994,19 @@ function GetPlayerPing(playerSrc) end
 function GetLastPedInVehicleSeat(vehicle, seatIndex) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x388FDE9A)
+---@param vehicle number
+---@param seatIndex number
+---@return number
+function GetPedInVehicleSeat(vehicle, seatIndex) end
+
+---Gets the stage of the peds scripted task.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x44B0E5E2)
+---@param ped number
+---@return number
+function GetPedScriptTaskStage(ped) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x2CAFD5E9)
 ---@return boolean
 function GetNetworkWalkMode() end
@@ -1013,17 +1019,17 @@ function GetNetworkWalkMode() end
 ---@return number
 function GetEntityRoutingBucket(entity) end
 
----Gets the stage of the peds scripted task.
----[Native Documentation](https://docs.fivem.net/natives/?_0x44B0E5E2)
----@param ped number
----@return number
-function GetPedScriptTaskStage(ped) end
-
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xFF7F66AB)
 ---@param playerSrc string
 ---@return number
 function GetNumPlayerIdentifiers(playerSrc) end
+
+---A getter for [\_SET_PED_EYE_COLOR](#\_0x50B56988B170AFDF). Returns -1 if fails to get.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xA47B860F)
+---@param ped number
+---@return number
+function GetPedEyeColor(ped) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x8E3B3E42)
@@ -1036,11 +1042,11 @@ function GetVehicleDashboardWaterTemp() end
 ---@return number
 function GetRopeUpdateOrder(rope) end
 
----A getter for [\_SET_PED_EYE_COLOR](#\_0x50B56988B170AFDF). Returns -1 if fails to get.
----[Native Documentation](https://docs.fivem.net/natives/?_0xA47B860F)
----@param ped number
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x6E31E993)
+---@param playerSrc string
 ---@return number
-function GetPedEyeColor(ped) end
+function GetPlayerPed(playerSrc) end
 
 ---Get the entity that killed the ped. This native is used server side when using OneSync.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x84ADF9EB)
@@ -1055,16 +1061,15 @@ function GetPedSourceOfDeath(ped) end
 function GetPlayerName(playerSrc) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x6E31E993)
----@param playerSrc string
----@return number
-function GetPlayerPed(playerSrc) end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x9873E404)
 ---@param playerSrc string
 ---@return number
 function GetPlayerTeam(playerSrc) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xFABE67A9)
+---@return number
+function GetVehicleDashboardVacuum() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x619E4A3D)
@@ -1078,6 +1083,11 @@ function GetNumPlayerTokens(playerSrc) end
 ---@return boolean
 function GetIsVehiclePrimaryColourCustom(vehicle) end
 
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xBDBA226F)
+---@return number, number
+function GetNuiCursorPosition() end
+
 ---Returns the zoom level data by index from mapzoomdata.meta file.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x1363A998)
 ---@param index number
@@ -1085,15 +1095,16 @@ function GetIsVehiclePrimaryColourCustom(vehicle) end
 function GetMapZoomDataLevel(index) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xBDBA226F)
----@return number, number
-function GetNuiCursorPosition() end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x4D97BCC7)
 ---@param player number
 ---@return number
 function GetPlayerServerId(player) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xE415EC5C)
+---@param playerId number
+---@return number
+function GetPlayerStamina(playerId) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x7DC6D022)
@@ -1107,24 +1118,17 @@ function GetIsVehicleEngineRunning(vehicle) end
 ---@return number
 function GetRuntimeTextureWidth(tex) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xE415EC5C)
----@param playerId number
----@return number
-function GetPlayerStamina(playerId) end
-
 ---See the client-side [GET_LANDING_GEAR_STATE](#\_0x9B0F3DCA3DB0F4CD) native for a description of landing gear states.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA6F02670)
 ---@param vehicle number
 ---@return number
 function GetLandingGearState(vehicle) end
 
----Gets a player's token. Tokens can be used to enhance banning logic, however are specific to a server.
----[Native Documentation](https://docs.fivem.net/natives/?_0x54C06897)
----@param playerSrc string
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xC8A9CE08)
 ---@param index number
 ---@return string
-function GetPlayerToken(playerSrc, index) end
+function GetPlayerFromIndex(index) end
 
 ---Gets the current known coordinates for the specified player from cops perspective. This native is used server side when using OneSync.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x821F2D2C)
@@ -1138,16 +1142,17 @@ function GetPlayerWantedCentrePosition(playerSrc) end
 ---@return boolean
 function GetPlayerInvincible(playerSrc) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xFABE67A9)
----@return number
-function GetVehicleDashboardVacuum() end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xC8A9CE08)
+---Gets a player's token. Tokens can be used to enhance banning logic, however are specific to a server.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x54C06897)
+---@param playerSrc string
 ---@param index number
 ---@return string
-function GetPlayerFromIndex(index) end
+function GetPlayerToken(playerSrc, index) end
+
+---A getter for [SET_VEHICLE_DENSITY_MULTIPLIER_THIS_FRAME](#\_0x245A6883D966D537).
+---[Native Documentation](https://docs.fivem.net/natives/?_0xEF7C6538)
+---@return number
+function GetVehicleDensityMultiplier() end
 
 ---A getter for [SET_PLAYER_VEHICLE_DEFENSE_MODIFIER](#\_0x4C60E6EFDAFF2462).
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x8326E7CD)
@@ -1168,11 +1173,6 @@ function GetPlayerMeleeWeaponDamageModifier(playerId) end
 ---@return string
 function GetPlayerIdentifier(playerSrc, identifier) end
 
----A getter for [SET_VEHICLE_DENSITY_MULTIPLIER_THIS_FRAME](#\_0x245A6883D966D537).
----[Native Documentation](https://docs.fivem.net/natives/?_0xEF7C6538)
----@return number
-function GetVehicleDensityMultiplier() end
-
 ---Returns the value of a state bag key.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x637F4C75)
 ---@param bagName string
@@ -1180,23 +1180,23 @@ function GetVehicleDensityMultiplier() end
 ---@return table
 function GetStateBagValue(bagName, key) end
 
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xFEE404F9)
+---@param playerSrc string
+---@return string
+function GetPlayerEndpoint(playerSrc) end
+
 ---A getter for [SET_PLAYER_VEHICLE_DAMAGE_MODIFIER](#\_0xA50E117CDDF82F0C).
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x78F27B1F)
 ---@param playerId number
 ---@return number
 function GetPlayerVehicleDamageModifier(playerId) end
 
----Gets the door count for the specified train.
----[Native Documentation](https://docs.fivem.net/natives/?_0x99974721)
----@param train number
+---Returns a hash of selected ped weapon.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xD240123E)
+---@param ped number
 ---@return number
-function GetTrainDoorCount(train) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xFEE404F9)
----@param playerSrc string
----@return string
-function GetPlayerEndpoint(playerSrc) end
+function GetSelectedPedWeapon(ped) end
 
 ---```
 ---Returns given players wanted level server-side.
@@ -1206,13 +1206,17 @@ function GetPlayerEndpoint(playerSrc) end
 ---@return number
 function GetPlayerWantedLevel(playerSrc) end
 
----Gets the routing bucket for the specified player.
----
----Routing buckets are also known as 'dimensions' or 'virtual worlds' in past echoes, however they are population-aware.
----[Native Documentation](https://docs.fivem.net/natives/?_0x52441C34)
----@param playerSrc string
+---Gets the door count for the specified train.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x99974721)
+---@param train number
 ---@return number
-function GetPlayerRoutingBucket(playerSrc) end
+function GetTrainDoorCount(train) end
+
+---Gets the height of the specified runtime texture.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x3574AACE)
+---@param tex number
+---@return number
+function GetRuntimeTextureHeight(tex) end
 
 ---A getter for [SET_PED_HEAD_OVERLAY](#\_0x48F44967FA05CC1E) and [\_SET_PED_HEAD_OVERLAY_COLOR](#\_0x497BF74A7B9CB952) natives.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC46EE605)
@@ -1221,11 +1225,13 @@ function GetPlayerRoutingBucket(playerSrc) end
 ---@return boolean, number, number, number, number, number
 function GetPedHeadOverlayData(ped, index) end
 
----Gets the height of the specified runtime texture.
----[Native Documentation](https://docs.fivem.net/natives/?_0x3574AACE)
----@param tex number
+---Gets the routing bucket for the specified player.
+---
+---Routing buckets are also known as 'dimensions' or 'virtual worlds' in past echoes, however they are population-aware.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x52441C34)
+---@param playerSrc string
 ---@return number
-function GetRuntimeTextureHeight(tex) end
+function GetPlayerRoutingBucket(playerSrc) end
 
 ---A getter for [SET_PLAYER_WEAPON_DEFENSE_MODIFIER](#\_0x2D83BC011CA14A3C).
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xF1543251)
@@ -1245,18 +1251,6 @@ function GetPlayerCameraRotation(playerSrc) end
 ---@return boolean
 function GetPlayerInvincible_2(player) end
 
----Returns a hash of selected ped weapon.
----[Native Documentation](https://docs.fivem.net/natives/?_0xD240123E)
----@param ped number
----@return number
-function GetSelectedPedWeapon(ped) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xE52D9680)
----@param playerSrc string
----@return string
-function GetPlayerGuid(playerSrc) end
-
 ---A getter for [SET_SCENARIO_PED_DENSITY_MULTIPLIER_THIS_FRAME](#\_0x7A556143A1C03898).
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x77C598B2)
 ---@return number
@@ -1274,6 +1268,18 @@ function GetInteriorRotation(interiorId) end
 ---@return number
 function GetPlayerFromStateBagName(bagName) end
 
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xE41595CE)
+---@param vehicle number
+---@return number
+function GetVehiclePetrolTankHealth(vehicle) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x344EA166)
+---@param serverId number
+---@return number
+function GetPlayerFromServerId(serverId) end
+
 ---Gets the vehicle the specified Ped is/was in depending on bool value. This native is used server side when using OneSync.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xAFE92319)
 ---@param ped number
@@ -1282,16 +1288,16 @@ function GetPlayerFromStateBagName(bagName) end
 function GetVehiclePedIsIn(ped, lastVehicle) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x344EA166)
----@param serverId number
----@return number
-function GetPlayerFromServerId(serverId) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xE41595CE)
+---[Native Documentation](https://docs.fivem.net/natives/?_0x1DAD4583)
 ---@param vehicle number
 ---@return number
-function GetVehiclePetrolTankHealth(vehicle) end
+function GetVehicleClutch(vehicle) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x4B8285CF)
+---@param train number
+---@return number
+function GetTrainCarriageIndex(train) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xE015E854)
@@ -1299,17 +1305,11 @@ function GetVehiclePetrolTankHealth(vehicle) end
 ---@return number
 function GetTrainCurrentTrackNode(train) end
 
----Currently it only works when set to "all players".
----[Native Documentation](https://docs.fivem.net/natives/?_0x1DC50247)
----@param vehicle number
----@return number
-function GetVehicleDoorsLockedForPlayer(vehicle) end
-
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x1DAD4583)
----@param vehicle number
----@return number
-function GetVehicleClutch(vehicle) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0xE52D9680)
+---@param playerSrc string
+---@return string
+function GetPlayerGuid(playerSrc) end
 
 ---Gets the type of a ped's specific task given an index of the CPedTaskSpecificDataNode nodes.---
 ---A ped will typically have a task at index 0, if a ped has multiple tasks at once they will be in the order 0, 1, 2, etc.
@@ -1319,11 +1319,11 @@ function GetVehicleClutch(vehicle) end
 ---@return number
 function GetPedSpecificTaskType(ped, index) end
 
----Gets the row pitch of the specified runtime texture, for use when creating data for `SET_RUNTIME_TEXTURE_ARGB_DATA`.
----[Native Documentation](https://docs.fivem.net/natives/?_0xCA0A085F)
----@param tex number
+---Currently it only works when set to "all players".
+---[Native Documentation](https://docs.fivem.net/natives/?_0x1DC50247)
+---@param vehicle number
 ---@return number
-function GetRuntimeTexturePitch(tex) end
+function GetVehicleDoorsLockedForPlayer(vehicle) end
 
 ---Gets the current fake wanted level for a specified player. This native is used server side when using OneSync.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x98D244)
@@ -1331,11 +1331,17 @@ function GetRuntimeTexturePitch(tex) end
 ---@return number
 function GetPlayerFakeWantedLevel(playerSrc) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x4B8285CF)
----@param train number
+---Gets the row pitch of the specified runtime texture, for use when creating data for `SET_RUNTIME_TEXTURE_ARGB_DATA`.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xCA0A085F)
+---@param tex number
 ---@return number
-function GetTrainCarriageIndex(train) end
+function GetRuntimeTexturePitch(tex) end
+
+---A getter for [SET_RESOURCE_KVP_FLOAT](#\_0x9ADD2938).
+---[Native Documentation](https://docs.fivem.net/natives/?_0x35BDCEEA)
+---@param key string
+---@return number
+function GetResourceKvpFloat(key) end
 
 ---Returns the current state of the specified resource.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x4039B485)
@@ -1348,6 +1354,12 @@ function GetResourceState(resourceName) end
 ---@param vehicle number
 ---@return number
 function GetVehicleCheatPowerIncrease(vehicle) end
+
+---Returns the physical on-disk path of the specified resource.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x61DCF017)
+---@param resourceName string
+---@return string
+function GetResourcePath(resourceName) end
 
 ---Returns all commands that are registered in the command system.---
 ---The data returned adheres to the following layout:
@@ -1366,23 +1378,23 @@ function GetVehicleCheatPowerIncrease(vehicle) end
 ---@return table
 function GetRegisteredCommands() end
 
----Returns the physical on-disk path of the specified resource.
----[Native Documentation](https://docs.fivem.net/natives/?_0x61DCF017)
----@param resourceName string
----@return string
-function GetResourcePath(resourceName) end
-
----A getter for [SET_RESOURCE_KVP_FLOAT](#\_0x9ADD2938).
----[Native Documentation](https://docs.fivem.net/natives/?_0x35BDCEEA)
----@param key string
----@return number
-function GetResourceKvpFloat(key) end
-
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x8880038A)
 ---@param vehicle number
 ---@return number
 function GetVehicleEngineHealth(vehicle) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x5F739BB8)
+---@param vehicle number
+---@return number
+function GetVehicleFuelLevel(vehicle) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xC62AAC98)
+---@param vehicle number
+---@return number
+function GetVehicleAlarmTimeLeft(vehicle) end
 
 ---Gets a vehicle's multiplier used with a wheel's GET_VEHICLE_WHEEL_STEERING_ANGLE to determine the angle the wheel is rendered.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x21C1DA8E)
@@ -1408,22 +1420,10 @@ function GetPlayerTimeInPursuit(playerSrc, lastPursuit) end
 function GetVehicleBodyHealth(vehicle) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xC62AAC98)
----@param vehicle number
----@return number
-function GetVehicleAlarmTimeLeft(vehicle) end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x95070FA)
 ---@param train number
 ---@return number
 function GetTrainCarriageEngine(train) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x5F739BB8)
----@param vehicle number
----@return number
-function GetVehicleFuelLevel(vehicle) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x40D82D88)
@@ -1432,16 +1432,16 @@ function GetVehicleFuelLevel(vehicle) end
 function GetVehicleColours(vehicle) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xE7B12B54)
+---@param vehicle number
+---@return number
+function GetVehicleCurrentRpm(vehicle) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x57037960)
 ---@param vehicle number
 ---@return number
 function GetVehicleRadioStationIndex(vehicle) end
-
----A getter for [SET_RESOURCE_KVP](#\_0x21C7A35B).
----[Native Documentation](https://docs.fivem.net/natives/?_0x5240DA5A)
----@param key string
----@return string
-function GetResourceKvpString(key) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xFD15C065)
@@ -1463,32 +1463,11 @@ function GetVehicleDirtLevel(vehicle) end
 ---@return number
 function GetRopeFlags(rope) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xE7B12B54)
----@param vehicle number
----@return number
-function GetVehicleCurrentRpm(vehicle) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x6E35C49C)
----@param vehicle number
----@return number
-function GetVehicleDoorStatus(vehicle) end
-
 ---A getter for [SET_RANDOM_VEHICLE_DENSITY_MULTIPLIER_THIS_FRAME](#\_0xB3B3359379FE77D3).---
 ---Same as vehicle density multiplier.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x7B0D00C5)
 ---@return number
 function GetRandomVehicleDensityMultiplier() end
-
----Gets the metadata value at a specified key/index from a resource's manifest.---
----See also: [Resource manifest](https://docs.fivem.net/resources/manifest/)
----[Native Documentation](https://docs.fivem.net/natives/?_0x964BAB1D)
----@param resourceName string
----@param metadataKey string
----@param index number
----@return string
-function GetResourceMetadata(resourceName, metadataKey, index) end
 
 ---A getter for [SET_WEAPON_ANIMATION_OVERRIDE](\_0x1055AC3A667F09D9).
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x63ED2E7)
@@ -1502,6 +1481,21 @@ function GetWeaponAnimationOverride(ped) end
 ---@return number
 function GetPedSourceOfDamage(ped) end
 
+---Gets the metadata value at a specified key/index from a resource's manifest.---
+---See also: [Resource manifest](https://docs.fivem.net/resources/manifest/)
+---[Native Documentation](https://docs.fivem.net/natives/?_0x964BAB1D)
+---@param resourceName string
+---@param metadataKey string
+---@param index number
+---@return string
+function GetResourceMetadata(resourceName, metadataKey, index) end
+
+---Returns vehicle xenon lights custom RGB color values. Do note this native doesn't return non-RGB colors that was set with [\_SET_VEHICLE_XENON_LIGHTS_COLOR](#\_0xE41033B25D003A07).
+---[Native Documentation](https://docs.fivem.net/natives/?_0xC715F730)
+---@param vehicle number
+---@return boolean, number, number, number
+function GetVehicleXenonLightsCustomColor(vehicle) end
+
 ---Returns the effective handling data of a vehicle as a vector value.---
 ---Example: `local inertiaMultiplier = GetVehicleHandlingVector(vehicle, 'CHandlingData', 'vecInertiaMultiplier')`
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xFB341304)
@@ -1511,17 +1505,17 @@ function GetPedSourceOfDamage(ped) end
 ---@return vector3
 function GetVehicleHandlingVector(vehicle, class_, fieldName) end
 
----A getter for [SET_RESOURCE_KVP_INT](#\_0x6A2B1E8).
----[Native Documentation](https://docs.fivem.net/natives/?_0x557B586A)
----@param key string
----@return number
-function GetResourceKvpInt(key) end
-
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x80E4659B)
 ---@param vehicle number
 ---@return number, number
 function GetVehicleExtraColours(vehicle) end
+
+---A getter for [SET_RESOURCE_KVP_INT](#\_0x6A2B1E8).
+---[Native Documentation](https://docs.fivem.net/natives/?_0x557B586A)
+---@param key string
+---@return number
+function GetResourceKvpInt(key) end
 
 ---Gets the flight nozzel position for the specified vehicle. See the client-side [\_GET_VEHICLE_FLIGHT_NOZZLE_POSITION](#\_0xDA62027C8BDB326E) native for usage examples.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xAD40AD55)
@@ -1529,22 +1523,22 @@ function GetVehicleExtraColours(vehicle) end
 ---@return number
 function GetVehicleFlightNozzlePosition(vehicle) end
 
----Returns vehicle xenon lights custom RGB color values. Do note this native doesn't return non-RGB colors that was set with [\_SET_VEHICLE_XENON_LIGHTS_COLOR](#\_0xE41033B25D003A07).
----[Native Documentation](https://docs.fivem.net/natives/?_0xC715F730)
----@param vehicle number
----@return boolean, number, number, number
-function GetVehicleXenonLightsCustomColor(vehicle) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x19B0B2CE)
----@return number
-function GetVehicleDashboardFuel() end
-
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x387246B7)
 ---@param findIndex number
 ---@return string
 function GetResourceByFindIndex(findIndex) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x9AAD420E)
+---@param vehicle number
+---@return number
+function GetVehicleDashboardSpeed(vehicle) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x19B0B2CE)
+---@return number
+function GetVehicleDashboardFuel() end
 
 ---```lua
 ---enum_VehicleLockStatus = {---
@@ -1566,6 +1560,12 @@ function GetResourceByFindIndex(findIndex) end
 ---@return number
 function GetVehicleDoorLockStatus(vehicle) end
 
+---A getter for [\_SET_PLAYER_WEAPON_DEFENSE_MODIFIER\_2](#\_0xBCFDE9EDE4CF27DC).
+---[Native Documentation](https://docs.fivem.net/natives/?_0x986B65FF)
+---@param playerId number
+---@return number
+function GetPlayerWeaponDefenseModifier_2(playerId) end
+
 ---Returns the effective handling data of a vehicle as an integer value.---
 ---Example: `local modelFlags = GetVehicleHandlingInt(vehicle, 'CHandlingData', 'strModelFlags')`
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x27396C75)
@@ -1575,11 +1575,11 @@ function GetVehicleDoorLockStatus(vehicle) end
 ---@return number
 function GetVehicleHandlingInt(vehicle, class_, fieldName) end
 
----A getter for [\_SET_PLAYER_WEAPON_DEFENSE_MODIFIER\_2](#\_0xBCFDE9EDE4CF27DC).
----[Native Documentation](https://docs.fivem.net/natives/?_0x986B65FF)
----@param playerId number
----@return number
-function GetPlayerWeaponDefenseModifier_2(playerId) end
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x483B013C)
+---@param vehicle number
+---@return boolean
+function GetVehicleHandbrake(vehicle) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x954465DE)
@@ -1588,10 +1588,16 @@ function GetPlayerWeaponDefenseModifier_2(playerId) end
 function GetVehicleSteeringScale(vehicle) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x9AAD420E)
----@param vehicle number
+---[Native Documentation](https://docs.fivem.net/natives/?_0xF9716A11)
 ---@return number
-function GetVehicleDashboardSpeed(vehicle) end
+function GetVehicleDashboardRpm() end
+
+---Gets the ratio that a door is open for on a train.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x40B16551)
+---@param train number
+---@param doorIndex number
+---@return number
+function GetTrainDoorOpenRatio(train, doorIndex) end
 
 ---Returns the effective handling data of a vehicle as a floating-point value.---
 ---Example: `local fSteeringLock = GetVehicleHandlingFloat(vehicle, 'CHandlingData', 'fSteeringLock')`
@@ -1601,19 +1607,6 @@ function GetVehicleDashboardSpeed(vehicle) end
 ---@param fieldName string
 ---@return number
 function GetVehicleHandlingFloat(vehicle, class_, fieldName) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x483B013C)
----@param vehicle number
----@return boolean
-function GetVehicleHandbrake(vehicle) end
-
----Gets the ratio that a door is open for on a train.
----[Native Documentation](https://docs.fivem.net/natives/?_0x40B16551)
----@param train number
----@param doorIndex number
----@return number
-function GetTrainDoorOpenRatio(train, doorIndex) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xE02B51D7)
@@ -1643,16 +1636,16 @@ function GetVehicleDashboardTemp() end
 ---@return number
 function GetVehicleDashboardOilPressure() end
 
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x1F5996AA)
+---@return number
+function GetVehicleDashboardOilTemp() end
+
 ---A getter for [MODIFY_VEHICLE_TOP_SPEED](#\_0x93A3996368C94158). Returns -1.0 if a modifier is not set.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x998B7FEE)
 ---@param vehicle number
 ---@return number
 function GetVehicleTopSpeedModifier(vehicle) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x1F5996AA)
----@return number
-function GetVehicleDashboardOilTemp() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xD7147656)
@@ -1667,15 +1660,15 @@ function GetVehicleHeadlightsColour(vehicle) end
 function GetVehicleHomingLockonState(vehicle) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xDFFABA2A)
----@return number
-function GetVehicleDashboardBoost() end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x3FF247A2)
 ---@param vehicle number
 ---@return number, number, number
 function GetVehicleCustomSecondaryColour(vehicle) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xDFFABA2A)
+---@return number
+function GetVehicleDashboardBoost() end
 
 ---Gets the state of the player vehicle's dashboard lights as a bit set---
 ---indicator_left = 1---
@@ -1692,6 +1685,12 @@ function GetVehicleCustomSecondaryColour(vehicle) end
 ---@return number
 function GetVehicleDashboardLights() end
 
+---A getter for [SET_RESOURCE_KVP](#\_0x21C7A35B).
+---[Native Documentation](https://docs.fivem.net/natives/?_0x5240DA5A)
+---@param key string
+---@return string
+function GetResourceKvpString(key) end
+
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA0DBD08D)
 ---@param vehicle number
@@ -1707,16 +1706,16 @@ function GetVehicleDashboardColour(vehicle) end
 function GetVehicleWheelFlags(vehicle, wheelIndex) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x872CF42)
+---@param vehicle number
+---@return number
+function GetVehicleRoofLivery(vehicle) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xD1D07351)
 ---@param vehicle number
 ---@return number
 function GetVehicleThrottleOffset(vehicle) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x1382FCEA)
----@param vehicle number
----@return number
-function GetVehicleSteeringAngle(vehicle) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x1C2B9FEF)
@@ -1725,21 +1724,10 @@ function GetVehicleSteeringAngle(vehicle) end
 function GetVehicleCustomPrimaryColour(vehicle) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x872CF42)
+---[Native Documentation](https://docs.fivem.net/natives/?_0x1382FCEA)
 ---@param vehicle number
 ---@return number
-function GetVehicleRoofLivery(vehicle) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xDC921211)
----@param vehicle number
----@return boolean
-function IsVehicleAlarmSet(vehicle) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xF9716A11)
----@return number
-function GetVehicleDashboardRpm() end
+function GetVehicleSteeringAngle(vehicle) end
 
 ---A getter for [SET_PLAYER_WEAPON_DAMAGE_MODIFIER](#\_0xCE07B9F7817AADA3).
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x2A3D7CDA)
@@ -1754,6 +1742,18 @@ function GetPlayerWeaponDamageModifier(playerId) end
 ---@param registerAs string
 ---@return boolean
 function IsStreamingFileReady(registerAs) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x6E35C49C)
+---@param vehicle number
+---@return number
+function GetVehicleDoorStatus(vehicle) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x499747B6)
+---@param vehicle number
+---@return number
+function GetVehicleNumberPlateTextIndex(vehicle) end
 
 ---Gets brake pressure of a wheel.---
 ---Max number of wheels can be retrieved with the native GET_VEHICLE_NUMBER_OF_WHEELS.---
@@ -1771,17 +1771,17 @@ function GetVehicleWheelBrakePressure(vehicle, wheelIndex) end
 function GetVehicleLivery(vehicle) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x499747B6)
----@param vehicle number
----@return number
-function GetVehicleNumberPlateTextIndex(vehicle) end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xCEE21AB2)
 ---@param vehicle number
 ---@param wheelIndex number
 ---@return number
 function GetVehicleWheelRimColliderSize(vehicle, wheelIndex) end
+
+---A getter for `ReticuleHash` in a weapon scope component.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xF9AB9297)
+---@param componentHash number | string
+---@return number
+function GetWeaponComponentReticuleHash(componentHash) end
 
 ---List of known states:
 ---
@@ -1803,12 +1803,6 @@ function GetVehicleWheelieState(vehicle) end
 ---@return number
 function GetVehicleWheelPower(vehicle, wheelIndex) end
 
----A getter for `ReticuleHash` in a weapon scope component.
----[Native Documentation](https://docs.fivem.net/natives/?_0xF9AB9297)
----@param componentHash number | string
----@return number
-function GetWeaponComponentReticuleHash(componentHash) end
-
 ---A getter for `CWeaponFallOffModifier` range modifier value in a weapon component.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x2FD0BC1B)
 ---@param componentHash number | string
@@ -1823,17 +1817,17 @@ function GetWeaponComponentRangeModifier(componentHash) end
 ---@return number
 function GetVehicleWheelSpeed(vehicle, wheelIndex) end
 
----A getter for `CWeaponFallOffModifier` damage modifier value in a weapon component.
----[Native Documentation](https://docs.fivem.net/natives/?_0xE134FB8D)
----@param componentHash number | string
----@return number
-function GetWeaponComponentRangeDamageModifier(componentHash) end
-
 ---A getter for `CWeaponDamageModifier` in a weapon component.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x4A0E3855)
 ---@param componentHash number | string
 ---@return number
 function GetWeaponComponentDamageModifier(componentHash) end
+
+---A getter for `CWeaponFallOffModifier` damage modifier value in a weapon component.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xE134FB8D)
+---@param componentHash number | string
+---@return number
+function GetWeaponComponentRangeDamageModifier(componentHash) end
 
 ---Gets the rotation speed of a wheel.---
 ---This is used internally to calcuate GET_VEHICLE_WHEEL_SPEED.---
@@ -1844,6 +1838,12 @@ function GetWeaponComponentDamageModifier(componentHash) end
 ---@return number
 function GetVehicleWheelRotationSpeed(vehicle, wheelIndex) end
 
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x9C9A3BE0)
+---@param vehicle number
+---@return boolean
+function HasEntityBeenMarkedAsNoLongerNeeded(vehicle) end
+
 ---A getter for `CameraHash` in a weapon scope component.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xACB7E68F)
 ---@param componentHash number | string
@@ -1851,40 +1851,22 @@ function GetVehicleWheelRotationSpeed(vehicle, wheelIndex) end
 function GetWeaponComponentCameraHash(componentHash) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x75280015)
----@param vehicle number
----@return number, number, number
-function GetVehicleTyreSmokeColor(vehicle) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x9C9A3BE0)
----@param vehicle number
----@return boolean
-function HasEntityBeenMarkedAsNoLongerNeeded(vehicle) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xB48A1292)
----@param vehicle number
----@return number
-function GetVehicleGravityAmount(vehicle) end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xEDF4B0FC)
 ---@param vehicle number
 ---@return number
 function GetVehicleNumberOfWheels(vehicle) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xCCFF3B6E)
----@param vehicle number
----@return number
-function GetVehicleInteriorColour(vehicle) end
 
 ---Gets the vehicle that is locked on to for the specified vehicle.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x4A557117)
 ---@param vehicle number
 ---@return number
 function GetVehicleLockOnTarget(vehicle) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xDC921211)
+---@param vehicle number
+---@return boolean
+function IsVehicleAlarmSet(vehicle) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xDDB298AE)
@@ -1899,16 +1881,22 @@ function GetVehicleNextGear(vehicle) end
 function GetVehicleNumberPlateText(vehicle) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xFC7F8EF4)
----@param vehicle number
----@return number
-function GetVehicleOilLevel(vehicle) end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xB4F4E566)
 ---@param vehicle number
 ---@return number
 function GetVehicleCurrentGear(vehicle) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x7E6E219C)
+---@param vehicle number
+---@return number
+function GetVehicleLightMultiplier(vehicle) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xCCFF3B6E)
+---@param vehicle number
+---@return number
+function GetVehicleInteriorColour(vehicle) end
 
 ---Gets whether the wheel is powered.---
 ---Max number of wheels can be retrieved with the native GET_VEHICLE_NUMBER_OF_WHEELS.---
@@ -1918,6 +1906,12 @@ function GetVehicleCurrentGear(vehicle) end
 ---@param wheelIndex number
 ---@return boolean
 function GetVehicleWheelIsPowered(vehicle, wheelIndex) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xBB340D04)
+---@param vehicle number
+---@return boolean
+function IsVehicleEngineStarting(vehicle) end
 
 ---Returns the type of the passed vehicle.
 ---
@@ -1936,11 +1930,29 @@ function GetVehicleWheelIsPowered(vehicle, wheelIndex) end
 ---@return string
 function GetVehicleType(vehicle) end
 
+---A getter for `ClipSize` in a weapon component.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xE14CF665)
+---@param componentHash number | string
+---@return number
+function GetWeaponComponentClipSize(componentHash) end
+
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x7E6E219C)
+---[Native Documentation](https://docs.fivem.net/natives/?_0x75280015)
+---@param vehicle number
+---@return number, number, number
+function GetVehicleTyreSmokeColor(vehicle) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xFC7F8EF4)
 ---@param vehicle number
 ---@return number
-function GetVehicleLightMultiplier(vehicle) end
+function GetVehicleOilLevel(vehicle) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xB48A1292)
+---@param vehicle number
+---@return number
+function GetVehicleGravityAmount(vehicle) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xE4E83A5B)
@@ -1948,23 +1960,11 @@ function GetVehicleLightMultiplier(vehicle) end
 ---@return boolean
 function HasVehicleBeenOwnedByPlayer(vehicle) end
 
----A getter for `ClipSize` in a weapon component.
----[Native Documentation](https://docs.fivem.net/natives/?_0xE14CF665)
----@param componentHash number | string
----@return number
-function GetWeaponComponentClipSize(componentHash) end
-
 ---A getter for the recoil shake amplitude of a weapon.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x5E1AF5F)
 ---@param weaponHash number | string
 ---@return number
 function GetWeaponRecoilShakeAmplitude(weaponHash) end
-
----Gets the vehicle indicator light state. 0 = off, 1 = left, 2 = right, 3 = both
----[Native Documentation](https://docs.fivem.net/natives/?_0x83070354)
----@param vehicle number
----@return number
-function GetVehicleIndicatorLights(vehicle) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x7EBB9929)
@@ -1972,11 +1972,11 @@ function GetVehicleIndicatorLights(vehicle) end
 ---@return boolean
 function IsAceAllowed(object) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xBB340D04)
+---Gets the vehicle indicator light state. 0 = off, 1 = left, 2 = right, 3 = both
+---[Native Documentation](https://docs.fivem.net/natives/?_0x83070354)
 ---@param vehicle number
----@return boolean
-function IsVehicleEngineStarting(vehicle) end
+---@return number
+function GetVehicleIndicatorLights(vehicle) end
 
 ---Converts a screen coordinate into its relative world coordinate.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC81D0659)
@@ -1985,12 +1985,6 @@ function IsVehicleEngineStarting(vehicle) end
 ---@return vector3, vector3
 function GetWorldCoordFromScreenCoord(screenX, screenY) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x7C278621)
----@param vehicle number
----@return boolean, boolean, boolean
-function GetVehicleLightsState(vehicle) end
-
 ---<!-- Native implemented by Disquse. 0xFFF65C63 -->
 ---
 ---Returns true if the minimap is currently expanded. False if it's the normal minimap state.---
@@ -1998,6 +1992,19 @@ function GetVehicleLightsState(vehicle) end
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xFFF65C63)
 ---@return boolean
 function IsBigmapActive() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x2EA4AFFE)
+---@param vehicle number
+---@param wheelIndex number
+---@return number
+function GetVehicleWheelYRotation(vehicle, wheelIndex) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x7C278621)
+---@param vehicle number
+---@return boolean, boolean, boolean
+function GetVehicleLightsState(vehicle) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xEF65929C)
@@ -2014,11 +2021,10 @@ function GetVehicleWheelTireColliderWidth(vehicle, wheelIndex) end
 function GetVehicleWheelWidth(vehicle) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x2EA4AFFE)
+---[Native Documentation](https://docs.fivem.net/natives/?_0xF849ED67)
 ---@param vehicle number
----@param wheelIndex number
----@return number
-function GetVehicleWheelYRotation(vehicle, wheelIndex) end
+---@return boolean
+function IsVehiclePreviouslyOwnedByPlayer(vehicle) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA7F04022)
@@ -2028,10 +2034,22 @@ function GetVehicleWheelYRotation(vehicle, wheelIndex) end
 function GetVehicleWheelSurfaceMaterial(vehicle, wheelIndex) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xF849ED67)
+---[Native Documentation](https://docs.fivem.net/natives/?_0xF9933BF4)
 ---@param vehicle number
 ---@return boolean
-function IsVehiclePreviouslyOwnedByPlayer(vehicle) end
+function IsVehicleNeedsToBeHotwired(vehicle) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xDA58D7AE)
+---@param vehicle number
+---@return number
+function GetVehicleWheelType(vehicle) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x25EB5873)
+---@param vehicle number
+---@return boolean
+function IsVehicleSirenOn(vehicle) end
 
 ---Gets the traction vector length of a wheel.---
 ---Max number of wheels can be retrieved with the native GET_VEHICLE_NUMBER_OF_WHEELS.
@@ -2042,33 +2060,15 @@ function IsVehiclePreviouslyOwnedByPlayer(vehicle) end
 function GetVehicleWheelTractionVectorLength(vehicle, wheelIndex) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xDA58D7AE)
----@param vehicle number
----@return number
-function GetVehicleWheelType(vehicle) end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA411F72C)
 ---@param vehicle number
 ---@return boolean
 function IsVehicleInteriorLightOn(vehicle) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xF9933BF4)
----@param vehicle number
----@return boolean
-function IsVehicleNeedsToBeHotwired(vehicle) end
-
 ---Requests the commerce data for the specified player, including the owned SKUs. Use `IS_PLAYER_COMMERCE_INFO_LOADED` to check if it has loaded.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA8F63EAB)
 ---@param playerSrc string
 function LoadPlayerCommerceData(playerSrc) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x25EB5873)
----@param vehicle number
----@return boolean
-function IsVehicleSirenOn(vehicle) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA7DAF7C)
@@ -2081,6 +2081,13 @@ function IsVehicleWanted(vehicle) end
 ---@param targetId number
 ---@param serverId number
 function MumbleAddVoiceTargetPlayerByServerId(targetId, serverId) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x54A677F5)
+---@param vehicle number
+---@param wheelIndex number
+---@return number
+function GetVehicleWheelHealth(vehicle, wheelIndex) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x48C80210)
@@ -2096,17 +2103,16 @@ function IsVehicleTyreBurst(vehicle, wheelID, completely) end
 function IsBigmapFull() end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x54A677F5)
----@param vehicle number
----@param wheelIndex number
----@return number
-function GetVehicleWheelHealth(vehicle, wheelIndex) end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xF1D1D689)
 ---@param vehicle number
 ---@return number
 function GetVehicleHighGear(vehicle) end
+
+---A getter for [\_SET_WEAPON_DAMAGE_MODIFIER](#\_0x4757F00BC6323CFE).
+---[Native Documentation](https://docs.fivem.net/natives/?_0xD979143)
+---@param weaponHash number | string
+---@return number
+function GetWeaponDamageModifier(weaponHash) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xE0BA9FE6)
@@ -2115,39 +2121,17 @@ function GetVehicleHighGear(vehicle) end
 ---@return number
 function GetVehicleWheelTireColliderSize(vehicle, wheelIndex) end
 
----A getter for [\_SET_WEAPON_DAMAGE_MODIFIER](#\_0x4757F00BC6323CFE).
----[Native Documentation](https://docs.fivem.net/natives/?_0xD979143)
----@param weaponHash number | string
----@return number
-function GetWeaponDamageModifier(weaponHash) end
-
 ---Adds the specified channel to the target list for the specified Mumble voice target ID.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x4D386C9E)
 ---@param targetId number
 ---@param channel number
 function MumbleAddVoiceTargetChannel(targetId, channel) end
 
----Gets whether or not this is the CitizenFX server.
----[Native Documentation](https://docs.fivem.net/natives/?_0xCF24C52E)
----@return boolean
-function IsDuplicityVersion() end
-
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x13D53892)
 ---@param vehicle number
 ---@return number
 function GetVehicleWindowTint(vehicle) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xC7D2C20C)
----@param playerSrc string
----@return boolean
-function IsPlayerUsingSuperJump(playerSrc) end
-
----Clears channels from the target list for the specified Mumble voice target ID.
----[Native Documentation](https://docs.fivem.net/natives/?_0x5EA72E76)
----@param targetId number
-function MumbleClearVoiceTargetChannels(targetId) end
 
 ---Returns the offset of the specified wheel relative to the wheel's axle center.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xCC90CBCA)
@@ -2157,6 +2141,26 @@ function MumbleClearVoiceTargetChannels(targetId) end
 function GetVehicleWheelXOffset(vehicle, wheelIndex) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xBF847807)
+function MumbleClearVoiceChannel() end
+
+---Gets whether or not this is the CitizenFX server.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xCF24C52E)
+---@return boolean
+function IsDuplicityVersion() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xC7D2C20C)
+---@param playerSrc string
+---@return boolean
+function IsPlayerUsingSuperJump(playerSrc) end
+
+---Clears players from the target list for the specified Mumble voice target ID.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x912E21DA)
+---@param targetId number
+function MumbleClearVoiceTargetPlayers(targetId) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xE3551879)
 ---@param referenceIdentity string
 ---@param argsSerialized string
@@ -2164,22 +2168,10 @@ function GetVehicleWheelXOffset(vehicle, wheelIndex) end
 ---@return string, number
 function InvokeFunctionReference(referenceIdentity, argsSerialized, argsLength) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xBF847807)
-function MumbleClearVoiceChannel() end
-
----Clears players from the target list for the specified Mumble voice target ID.
----[Native Documentation](https://docs.fivem.net/natives/?_0x912E21DA)
+---Clears channels from the target list for the specified Mumble voice target ID.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x5EA72E76)
 ---@param targetId number
-function MumbleClearVoiceTargetPlayers(targetId) end
-
----Removes the specified player from the user's voice targets.
----
----Performs the opposite operation of [MUMBLE_ADD_VOICE_TARGET_PLAYER_BY_SERVER_ID](#\_0x25F2B65F)
----[Native Documentation](https://docs.fivem.net/natives/?_0x930BD34B)
----@param targetId number
----@param serverId number
-function MumbleRemoveVoiceTargetPlayerByServerId(targetId, serverId) end
+function MumbleClearVoiceTargetChannels(targetId) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x33EEF97F)
@@ -2187,21 +2179,22 @@ function MumbleRemoveVoiceTargetPlayerByServerId(targetId, serverId) end
 ---@return boolean
 function MumbleIsPlayerTalking(player) end
 
----Requests the commerce data from Tebex for the specified player, including the owned SKUs. Use `IS_PLAYER_COMMERCE_INFO_LOADED` to check if it has loaded.
----[Native Documentation](https://docs.fivem.net/natives/?_0x7995539E)
----@param playerSrc string
-function LoadPlayerCommerceDataExt(playerSrc) end
-
 ---Checks if the player is currently muted
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x1D5D50C2)
 ---@param playerSrc number
 ---@return boolean
 function MumbleIsPlayerMuted(playerSrc) end
 
----Stops listening to the specified channel.
----[Native Documentation](https://docs.fivem.net/natives/?_0x231523B7)
----@param channel number
-function MumbleRemoveVoiceChannelListen(channel) end
+---This native checks if the given ped is a player.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x404794CA)
+---@param ped number
+---@return boolean
+function IsPedAPlayer(ped) end
+
+---Requests the commerce data from Tebex for the specified player, including the owned SKUs. Use `IS_PLAYER_COMMERCE_INFO_LOADED` to check if it has loaded.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x7995539E)
+---@param playerSrc string
+function LoadPlayerCommerceDataExt(playerSrc) end
 
 ---Gets steering angle of a wheel.---
 ---Max number of wheels can be retrieved with the native GET_VEHICLE_NUMBER_OF_WHEELS.
@@ -2211,6 +2204,17 @@ function MumbleRemoveVoiceChannelListen(channel) end
 ---@return number
 function GetVehicleWheelSteeringAngle(vehicle, wheelIndex) end
 
+---Stops listening to the specified channel.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x231523B7)
+---@param channel number
+function MumbleRemoveVoiceChannelListen(channel) end
+
+---Requests whether or not the commerce data for the specified player has loaded.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xBEFE93F4)
+---@param playerSrc string
+---@return boolean
+function IsPlayerCommerceInfoLoaded(playerSrc) end
+
 ---Gets the current suspension compression of a wheel.---
 ---Returns a positive value. 0 means the suspension is fully extended, the wheel is off the ground.---
 ---Max number of wheels can be retrieved with the native GET_VEHICLE_NUMBER_OF_WHEELS.
@@ -2219,12 +2223,6 @@ function GetVehicleWheelSteeringAngle(vehicle, wheelIndex) end
 ---@param wheelIndex number
 ---@return number
 function GetVehicleWheelSuspensionCompression(vehicle, wheelIndex) end
-
----Requests whether or not the commerce data for the specified player has loaded.
----[Native Documentation](https://docs.fivem.net/natives/?_0xBEFE93F4)
----@param playerSrc string
----@return boolean
-function IsPlayerCommerceInfoLoaded(playerSrc) end
 
 ---Requests whether or not the commerce data for the specified player has loaded from Tebex.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x1D14F4FE)
@@ -2245,16 +2243,24 @@ function IsEntityVisible(entity) end
 function MumbleGetVoiceChannelFromServerId(serverId) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xE820BC10)
----@return boolean
-function MumbleIsActive() end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xDEDAE23D)
 ---@param playerSrc string
 ---@param object string
 ---@return boolean
 function IsPlayerAceAllowed(playerSrc, object) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xE820BC10)
+---@return boolean
+function MumbleIsActive() end
+
+---Removes the specified player from the user's voice targets.
+---
+---Performs the opposite operation of [MUMBLE_ADD_VOICE_TARGET_PLAYER_BY_SERVER_ID](#\_0x25F2B65F)
+---[Native Documentation](https://docs.fivem.net/natives/?_0x930BD34B)
+---@param targetId number
+---@param serverId number
+function MumbleRemoveVoiceTargetPlayerByServerId(targetId, serverId) end
 
 ---Adds the specified player to the target list for the specified Mumble voice target ID.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x32C5355A)
@@ -2262,16 +2268,16 @@ function IsPlayerAceAllowed(playerSrc, object) end
 ---@param player number
 function MumbleAddVoiceTargetPlayer(targetId, player) end
 
+---Checks if keyboard input is enabled during NUI focus using `SET_NUI_FOCUS_KEEP_INPUT`.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x39C9DC92)
+---@return boolean
+function IsNuiFocusKeepingInput() end
+
 ---Changes the Mumble server address to connect to, and reconnects to the new address.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xE6EB2CD8)
 ---@param address string
 ---@param port number
 function MumbleSetServerAddress(address, port) end
-
----Checks if keyboard input is enabled during NUI focus using `SET_NUI_FOCUS_KEEP_INPUT`.
----[Native Documentation](https://docs.fivem.net/natives/?_0x39C9DC92)
----@return boolean
-function IsNuiFocusKeepingInput() end
 
 ---This native will return true if the user succesfully connected to the voice server.---
 ---If the user disabled the voice-chat setting it will return false.
@@ -2287,11 +2293,10 @@ function MumbleIsConnected() end
 ---@param channel number
 function MumbleRemoveVoiceTargetChannel(targetId, channel) end
 
----This native checks if the given ped is a player.
----[Native Documentation](https://docs.fivem.net/natives/?_0x404794CA)
----@param ped number
+---Returns true if the profiler is active.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xF8B7D7BB)
 ---@return boolean
-function IsPedAPlayer(ped) end
+function ProfilerIsRecording() end
 
 ---Returns whether or not the specific minimap overlay has loaded.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xF7535F32)
@@ -2305,6 +2310,13 @@ function HasMinimapOverlayLoaded(id) end
 ---@return number
 function RegisterFontId(fontName) end
 
+---Returns vehicle's wheels' size (size is the same for all the wheels, cannot get/set specific wheel of vehicle).---
+---Only works on non-default wheels (returns 0 in case of default wheels).
+---[Native Documentation](https://docs.fivem.net/natives/?_0x4046B66)
+---@param vehicle number
+---@return number
+function GetVehicleWheelSize(vehicle) end
+
 ---Removes the specified player from the user's voice targets.
 ---
 ---Performs the opposite operation of [MUMBLE_ADD_VOICE_TARGET_PLAYER](#\_0x32C5355A)
@@ -2313,12 +2325,11 @@ function RegisterFontId(fontName) end
 ---@param player number
 function MumbleRemoveVoiceTargetPlayer(targetId, player) end
 
----Returns vehicle's wheels' size (size is the same for all the wheels, cannot get/set specific wheel of vehicle).---
----Only works on non-default wheels (returns 0 in case of default wheels).
----[Native Documentation](https://docs.fivem.net/natives/?_0x4046B66)
----@param vehicle number
+---Returns the first owner ID of the specified entity.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x1E546224)
+---@param entity number
 ---@return number
-function GetVehicleWheelSize(vehicle) end
+function NetworkGetFirstEntityOwner(entity) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x42098B5)
@@ -2327,23 +2338,17 @@ function GetVehicleWheelSize(vehicle) end
 ---@return boolean
 function IsVehicleExtraTurnedOn(vehicle, extraId) end
 
----Returns the first owner ID of the specified entity.
----[Native Documentation](https://docs.fivem.net/natives/?_0x1E546224)
----@param entity number
----@return number
-function NetworkGetFirstEntityOwner(entity) end
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x7A6462F4)
+---@param playerSrc string
+---@return vector3
+function NetworkGetVoiceProximityOverride(playerSrc) end
 
 ---Returns the owner ID of the specified entity.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x526FEE31)
 ---@param entity number
 ---@return number
 function NetworkGetEntityOwner(entity) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x7A6462F4)
----@param playerSrc string
----@return vector3
-function NetworkGetVoiceProximityOverride(playerSrc) end
 
 ---Reads the contents of a text file in a specified resource.---
 ---If executed on the client, this file has to be included in `files` in the resource manifest.---
@@ -2353,6 +2358,12 @@ function NetworkGetVoiceProximityOverride(playerSrc) end
 ---@param fileName string
 ---@return string
 function LoadResourceFile(resourceName, fileName) end
+
+---Sets the audio submix ID for a specified player using Mumble 'Native Audio' functionality.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xFE3A3054)
+---@param serverId number
+---@param submixId number
+function MumbleSetSubmixForServerId(serverId, submixId) end
 
 ---Use this native to disable noise suppression and high pass filters.
 ---
@@ -2366,31 +2377,10 @@ function LoadResourceFile(resourceName, fileName) end
 ---@param intentHash number | string
 function MumbleSetAudioInputIntent(intentHash) end
 
----Sets the audio submix ID for a specified player using Mumble 'Native Audio' functionality.
----[Native Documentation](https://docs.fivem.net/natives/?_0xFE3A3054)
----@param serverId number
----@param submixId number
-function MumbleSetSubmixForServerId(serverId, submixId) end
-
----Scope exit for profiler.
----[Native Documentation](https://docs.fivem.net/natives/?_0xB39CA35C)
-function ProfilerExitScope() end
-
----Returns true if the profiler is active.
----[Native Documentation](https://docs.fivem.net/natives/?_0xF8B7D7BB)
----@return boolean
-function ProfilerIsRecording() end
-
 ---Replaces the `popgroups` (CPopGroupList) meta file with the file in the specified path.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xD3BC438F)
 ---@param path string
 function OverridePopGroups(path) end
-
----Overrides the output volume for a particular player with the specified server id and player name on Mumble. This will also bypass 3D audio and distance calculations. -1.0 to reset the override.
----[Native Documentation](https://docs.fivem.net/natives/?_0xCE8E25B4)
----@param serverId number
----@param volume number
-function MumbleSetVolumeOverrideByServerId(serverId, volume) end
 
 ---Overrides the output volume for a particular player on Mumble. This will also bypass 3D audio and distance calculations. -1.0 to reset the override.
 ---
@@ -2399,6 +2389,28 @@ function MumbleSetVolumeOverrideByServerId(serverId, volume) end
 ---@param player number
 ---@param volume number
 function MumbleSetVolumeOverride(player, volume) end
+
+---Scope exit for profiler.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xB39CA35C)
+function ProfilerExitScope() end
+
+---Create a permanent voice channel.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x262663C5)
+---@param id number
+function MumbleCreateChannel(id) end
+
+---Overrides the output volume for a particular player with the specified server id and player name on Mumble. This will also bypass 3D audio and distance calculations. -1.0 to reset the override.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xCE8E25B4)
+---@param serverId number
+---@param volume number
+function MumbleSetVolumeOverrideByServerId(serverId, volume) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x37CF52CE)
+---@param principal string
+---@param object string
+---@return boolean
+function IsPrincipalAceAllowed(principal, object) end
 
 ---**Experimental**: This native may be altered or removed in future versions of CitizenFX without warning.
 ---
@@ -2414,12 +2426,13 @@ function RegisterEntities(factory) end
 ---@return number
 function NetworkGetEntityFromNetworkId(netId) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x37CF52CE)
----@param principal string
----@param object string
----@return boolean
-function IsPrincipalAceAllowed(principal, object) end
+---Overrides whether or not peds can stand on top of the specified vehicle.
+---
+---Note this flag is not replicated automatically, you will have to manually do so.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x7FA03E76)
+---@param vehicle number
+---@param can boolean
+function OverrideVehiclePedsCanStandOnTopFlag(vehicle, can) end
 
 ---**Experimental**: This native may be altered or removed in future versions of CitizenFX without warning.
 ---
@@ -2431,29 +2444,21 @@ function IsPrincipalAceAllowed(principal, object) end
 ---@param url string
 function RegisterStreamingFileFromUrl(registerAs, url) end
 
----Create a permanent voice channel.
----[Native Documentation](https://docs.fivem.net/natives/?_0x262663C5)
----@param id number
-function MumbleCreateChannel(id) end
-
----Overrides whether or not peds can stand on top of the specified vehicle.
----
----Note this flag is not replicated automatically, you will have to manually do so.
----[Native Documentation](https://docs.fivem.net/natives/?_0x7FA03E76)
----@param vehicle number
----@param can boolean
-function OverrideVehiclePedsCanStandOnTopFlag(vehicle, can) end
-
----An internal function which allows the current resource's HLL script runtimes to receive state for the specified event.
----[Native Documentation](https://docs.fivem.net/natives/?_0xD233A168)
----@param eventName string
-function RegisterResourceAsEventHandler(eventName) end
+---Registers a listener for console output messages.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x281B5448)
+---@param listener function
+function RegisterConsoleListener(listener) end
 
 ---Sends a message to the specific DUI root page. This is similar to SEND_NUI_MESSAGE.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xCD380DA9)
 ---@param duiObject number
 ---@param jsonString string
 function SendDuiMessage(duiObject, jsonString) end
+
+---An internal function which allows the current resource's HLL script runtimes to receive state for the specified event.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xD233A168)
+---@param eventName string
+function RegisterResourceAsEventHandler(eventName) end
 
 ---Sets the current Mumble voice target ID to broadcast voice to.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x960A4A95)
@@ -2471,11 +2476,6 @@ function MumbleSetVoiceTarget(targetId) end
 ---@return boolean
 function IsPlayerEvadingWantedLevel(playerSrc) end
 
----Registers a listener for console output messages.
----[Native Documentation](https://docs.fivem.net/natives/?_0x281B5448)
----@param listener function
-function RegisterConsoleListener(listener) end
-
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x6B171E87)
 ---@param requestData table
@@ -2488,6 +2488,11 @@ function PerformHttpRequestInternalEx(requestData) end
 ---@return boolean
 function IsEntityPositionFrozen(entity) end
 
+---Returns the current NUI focus state previously set with `SET_NUI_FOCUS`.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x98545E6D)
+---@return boolean
+function IsNuiFocused() end
+
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x8E8CC653)
 ---@param requestData string
@@ -2495,10 +2500,10 @@ function IsEntityPositionFrozen(entity) end
 ---@return number
 function PerformHttpRequestInternal(requestData, requestDataLength) end
 
----Returns the current NUI focus state previously set with `SET_NUI_FOCUS`.
----[Native Documentation](https://docs.fivem.net/natives/?_0x98545E6D)
----@return boolean
-function IsNuiFocused() end
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x84E02A32)
+---@return number
+function MumbleGetTalkerProximity() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x9E35DAB6)
@@ -2521,22 +2526,16 @@ function NetworkGetNetworkIdFromEntity(entity) end
 ---@param restricted boolean
 function RegisterCommand(commandName, handler, restricted) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xA8AE9C2F)
----@param callbackType string
----@param callback function
-function RegisterRawNuiCallback(callbackType, callback) end
-
 ---Clears the target list for the specified Mumble voice target ID.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x8555DCBA)
 ---@param targetId number
 function MumbleClearVoiceTarget(targetId) end
 
----Used to replicate a server variable onto clients.
----[Native Documentation](https://docs.fivem.net/natives/?_0xF292858C)
----@param varName string
----@param value string
-function SetConvarReplicated(varName, value) end
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xA8AE9C2F)
+---@param callbackType string
+---@param callback function
+function RegisterRawNuiCallback(callbackType, callback) end
 
 ---Requests the specified player to buy the passed SKU. This'll pop up a prompt on the client, which upon acceptance---
 ---will open the browser prompting further purchase details.
@@ -2545,10 +2544,11 @@ function SetConvarReplicated(varName, value) end
 ---@param skuId number
 function RequestPlayerCommerceSession(playerSrc, skuId) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x84E02A32)
----@return number
-function MumbleGetTalkerProximity() end
+---Used to replicate a server variable onto clients.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xF292858C)
+---@param varName string
+---@param value string
+function SetConvarReplicated(varName, value) end
 
 ---**Experimental**: This native may be altered or removed in future versions of CitizenFX without warning.
 ---
@@ -2557,18 +2557,18 @@ function MumbleGetTalkerProximity() end
 ---@param cookie number
 function RemoveStateBagChangeHandler(cookie) end
 
+---Experimental natives, please do not use in a live environment.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xA896B20A)
+---@param origTxd string
+---@param origTxn string
+function RemoveReplaceTexture(origTxd, origTxn) end
+
 ---Injects a 'mouse move' event for a DUI object. Coordinates are in browser space.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xD9D7A0AA)
 ---@param duiObject number
 ---@param x number
 ---@param y number
 function SendDuiMouseMove(duiObject, x, y) end
-
----Injects a 'mouse up' event for a DUI object. Coordinates are expected to be set using SEND_DUI_MOUSE_MOVE.
----[Native Documentation](https://docs.fivem.net/natives/?_0x1D735B93)
----@param duiObject number
----@param button string
-function SendDuiMouseUp(duiObject, button) end
 
 ---Sets an integer parameter for a submix effect.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x77FAE2B8)
@@ -2578,22 +2578,22 @@ function SendDuiMouseUp(duiObject, button) end
 ---@param paramValue number
 function SetAudioSubmixEffectParamInt(submixId, effectSlot, paramIndex, paramValue) end
 
----Registers a specified .gfx file as GFx font library.---
----The .gfx file has to be registered with the streamer already.
----[Native Documentation](https://docs.fivem.net/natives/?_0x1B3A363)
----@param fileName string
-function RegisterFontFile(fileName) end
+---Injects a 'mouse up' event for a DUI object. Coordinates are expected to be set using SEND_DUI_MOUSE_MOVE.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x1D735B93)
+---@param duiObject number
+---@param button string
+function SendDuiMouseUp(duiObject, button) end
 
 ---Starts listening to the specified channel, when available.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC79F44BF)
 ---@param channel number
 function MumbleAddVoiceChannelListen(channel) end
 
----Experimental natives, please do not use in a live environment.
----[Native Documentation](https://docs.fivem.net/natives/?_0xA896B20A)
----@param origTxd string
----@param origTxn string
-function RemoveReplaceTexture(origTxd, origTxn) end
+---Registers a specified .gfx file as GFx font library.---
+---The .gfx file has to be registered with the streamer already.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x1B3A363)
+---@param fileName string
+function RegisterFontFile(fileName) end
 
 ---Registers a build task factory for resources.---
 ---The function should return an object (msgpack map) with the following fields:
@@ -2613,11 +2613,6 @@ function RemoveReplaceTexture(origTxd, origTxn) end
 ---@param factoryFn function
 function RegisterResourceBuildTaskFactory(factoryId, factoryFn) end
 
----Scope entry for profiler.
----[Native Documentation](https://docs.fivem.net/natives/?_0xC795A4A9)
----@param scopeName string
-function ProfilerEnterScope(scopeName) end
-
 ---Writes the specified data to a file in the specified resource.---
 ---Using a length of `-1` will automatically detect the length assuming the data is a C string.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA09E7E7B)
@@ -2628,6 +2623,16 @@ function ProfilerEnterScope(scopeName) end
 ---@return boolean
 function SaveResourceFile(resourceName, fileName, data, dataLength) end
 
+---This native sets the hover text of the image asset for the discord rich presence implementation.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xB029D2FA)
+---@param text string
+function SetDiscordRichPresenceAssetText(text) end
+
+---Scope entry for profiler.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xC795A4A9)
+---@param scopeName string
+function ProfilerEnterScope(scopeName) end
+
 ---**Experimental**: This native may be altered or removed in future versions of CitizenFX without warning.
 ---
 ---Registers a cached resource asset with the resource system, similar to the automatic scanning of the `stream/` folder.
@@ -2637,15 +2642,15 @@ function SaveResourceFile(resourceName, fileName, data, dataLength) end
 ---@return string
 function RegisterResourceAsset(resourceName, fileName) end
 
+---Resets parameters which is used by the game for checking is ped needs to fly through windscreen after a crash to default values.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x6D712937)
+function ResetFlyThroughWindscreenParams() end
+
 ---Returns whether or not a browser is created for a specified DUI browser object.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x7AAC3B4C)
 ---@param duiObject number
 ---@return boolean
 function IsDuiAvailable(duiObject) end
-
----Resets parameters which is used by the game for checking is ped needs to fly through windscreen after a crash to default values.
----[Native Documentation](https://docs.fivem.net/natives/?_0x6D712937)
-function ResetFlyThroughWindscreenParams() end
 
 ---Injects a 'mouse wheel' event for a DUI object.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x2D62133A)
@@ -2654,25 +2659,11 @@ function ResetFlyThroughWindscreenParams() end
 ---@param deltaX number
 function SendDuiMouseWheel(duiObject, deltaY, deltaX) end
 
----Sends a message to the `loadingScreen` NUI frame, which contains the HTML page referenced in `loadscreen` resources.
----[Native Documentation](https://docs.fivem.net/natives/?_0x8BBE6CC0)
----@param jsonString string
----@return boolean
-function SendLoadingScreenMessage(jsonString) end
-
----Sets a global handling override for a specific vehicle class. The name is supposed to match the `handlingName` field from handling.meta.---
----Example: `SetHandlingField('AIRTUG', 'CHandlingData', 'fSteeringLock', 360.0)`
----[Native Documentation](https://docs.fivem.net/natives/?_0xFE8064E3)
----@param vehicle string
----@param class_ string
----@param fieldName string
----@param value any
-function SetHandlingField(vehicle, class_, fieldName, value) end
-
----This native sets the hover text of the image asset for the discord rich presence implementation.
----[Native Documentation](https://docs.fivem.net/natives/?_0xB029D2FA)
----@param text string
-function SetDiscordRichPresenceAssetText(text) end
+---Removes a dry volume from the game session.---
+---See CREATE_DRY_VOLUME for more info
+---[Native Documentation](https://docs.fivem.net/natives/?_0x7BCAA6E7)
+---@param handle number
+function RemoveDryVolume(handle) end
 
 ---**Experimental**: This native may be altered or removed in future versions of CitizenFX without warning.
 ---
@@ -2682,6 +2673,15 @@ function SetDiscordRichPresenceAssetText(text) end
 ---@param fileName string
 ---@param cacheString string
 function RegisterStreamingFileFromCache(resourceName, fileName, cacheString) end
+
+---Sets a global handling override for a specific vehicle class. The name is supposed to match the `handlingName` field from handling.meta.---
+---Example: `SetHandlingField('AIRTUG', 'CHandlingData', 'fSteeringLock', 360.0)`
+---[Native Documentation](https://docs.fivem.net/natives/?_0xFE8064E3)
+---@param vehicle string
+---@param class_ string
+---@param fieldName string
+---@param value any
+function SetHandlingField(vehicle, class_, fieldName, value) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xD932A3F3)
@@ -2702,6 +2702,12 @@ function OverridePedsCanStandOnTopFlag(flag) end
 ---@param factory function
 function RegisterArchetypes(factory) end
 
+---Navigates the specified DUI browser to a different URL.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xF761D9F3)
+---@param duiObject number
+---@param url string
+function SetDuiUrl(duiObject, url) end
+
 ---Adds a cooldown between instances of moving and then aiming.---
 ---Can be optionally used to hinder 'speedboosting'---
 ---To turn off, set value to 0
@@ -2709,17 +2715,11 @@ function RegisterArchetypes(factory) end
 ---@param value number
 function SetAimCooldown(value) end
 
----Navigates the specified DUI browser to a different URL.
----[Native Documentation](https://docs.fivem.net/natives/?_0xF761D9F3)
----@param duiObject number
----@param url string
-function SetDuiUrl(duiObject, url) end
-
----Removes a dry volume from the game session.---
----See CREATE_DRY_VOLUME for more info
----[Native Documentation](https://docs.fivem.net/natives/?_0x7BCAA6E7)
----@param handle number
-function RemoveDryVolume(handle) end
+---Sends a message to the `loadingScreen` NUI frame, which contains the HTML page referenced in `loadscreen` resources.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x8BBE6CC0)
+---@param jsonString string
+---@return boolean
+function SendLoadingScreenMessage(jsonString) end
 
 ---Sets the volumes for the sound channels in a submix effect.---
 ---Values can be between 0.0 and 1.0.---
@@ -2735,6 +2735,16 @@ function RemoveDryVolume(handle) end
 ---@param channel5Volume number
 ---@param channel6Volume number
 function SetAudioSubmixOutputVolumes(submixId, outputSlot, frontLeftVolume, frontRightVolume, rearLeftVolume, rearRightVolume, channel5Volume, channel6Volume) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x74E927B0)
+---@param value number
+function MumbleSetTalkerProximity(value) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xF90B7469)
+---@param gametypeName string
+function SetGameType(gametypeName) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x9338D547)
@@ -2768,16 +2778,6 @@ function SendDuiMouseDown(duiObject, button) end
 ---@param effectSlot number
 function SetAudioSubmixEffectRadioFx(submixId, effectSlot) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xF90B7469)
----@param gametypeName string
-function SetGameType(gametypeName) end
-
----This native sets the image asset for the discord rich presence implementation.
----[Native Documentation](https://docs.fivem.net/natives/?_0x53DFD530)
----@param assetName string
-function SetDiscordRichPresenceAsset(assetName) end
-
 ---Sets the current input distance. The player will be able to talk to other players within this distance.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x1B1052E2)
 ---@param distance number
@@ -2803,30 +2803,38 @@ function MumbleSetAudioInputDistance(distance) end
 ---@param pattern string
 function SetDefaultVehicleNumberPlateTextPattern(plateIndex, pattern) end
 
+---This native sets the image asset for the discord rich presence implementation.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x53DFD530)
+---@param assetName string
+function SetDiscordRichPresenceAsset(assetName) end
+
 ---Sets the current output distance. The player will be able to hear other players talking within this distance.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x74C597D9)
 ---@param distance number
 function MumbleSetAudioOutputDistance(distance) end
+
+---Schedules the specified resource to run a tick as soon as possible, bypassing the server's fixed tick rate.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xB88A73AD)
+---@param resourceName string
+function ScheduleResourceTick(resourceName) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xB7BA82DC)
 ---@param mapName string
 function SetMapName(mapName) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x74E927B0)
----@param value number
-function MumbleSetTalkerProximity(value) end
-
 ---This native sets the hover text of the small image asset for the discord rich presence implementation.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x35E62B6A)
 ---@param text string
 function SetDiscordRichPresenceAssetSmallText(text) end
 
----Schedules the specified resource to run a tick as soon as possible, bypassing the server's fixed tick rate.
----[Native Documentation](https://docs.fivem.net/natives/?_0xB88A73AD)
----@param resourceName string
-function ScheduleResourceTick(resourceName) end
+---Sets the routing bucket for the specified entity.
+---
+---Routing buckets are also known as 'dimensions' or 'virtual worlds' in past echoes, however they are population-aware.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x635E5289)
+---@param entity number
+---@param bucket number
+function SetEntityRoutingBucket(entity, bucket) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x4FDCF51E)
@@ -2846,19 +2854,6 @@ function SetInteriorRoomExtents(interiorId, roomIndex, bbMinX, bbMinY, bbMinZ, b
 ---@param toggle boolean
 function MumbleSetPlayerMuted(playerSrc, toggle) end
 
----Sets the routing bucket for the specified entity.
----
----Routing buckets are also known as 'dimensions' or 'virtual worlds' in past echoes, however they are population-aware.
----[Native Documentation](https://docs.fivem.net/natives/?_0x635E5289)
----@param entity number
----@param bucket number
-function SetEntityRoutingBucket(entity, bucket) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x8737EEE8)
----@param channel number
-function MumbleSetVoiceChannel(channel) end
-
 ---Possible Types:
 ---
 ---```
@@ -2871,11 +2866,10 @@ function MumbleSetVoiceChannel(channel) end
 ---@param type number
 function SetMinimapType(type) end
 
----Overrides how many real ms are equal to one game minute.---
----A setter for [`GetMillisecondsPerGameMinute`](#\_0x2F8B4D1C595B11DB).
----[Native Documentation](https://docs.fivem.net/natives/?_0x36CA2554)
----@param value number
-function SetMillisecondsPerGameMinute(value) end
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x8737EEE8)
+---@param channel number
+function MumbleSetVoiceChannel(channel) end
 
 ---Resets whether or not peds can stand on top of the specified vehicle.
 ---
@@ -2884,12 +2878,31 @@ function SetMillisecondsPerGameMinute(value) end
 ---@param vehicle number
 function ResetVehiclePedsCanStandOnTopFlag(vehicle) end
 
+---Resets values from the zoom level data by index to defaults from mapzoomdata.meta.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x11A5B7ED)
+---@param index number
+function ResetMapZoomDataLevel(index) end
+
+---Overrides how many real ms are equal to one game minute.---
+---A setter for [`GetMillisecondsPerGameMinute`](#\_0x2F8B4D1C595B11DB).
+---[Native Documentation](https://docs.fivem.net/natives/?_0x36CA2554)
+---@param value number
+function SetMillisecondsPerGameMinute(value) end
+
 ---It overrides the default distance culling radius of an entity. Set to `0.0` to reset.---
 ---If you want to interact with an entity outside of your players' scopes set the radius to a huge number.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xD3A183A3)
 ---@param entity number
 ---@param radius number
 function SetEntityDistanceCullingRadius(entity, radius) end
+
+---Sets a global handling override for a specific vehicle class. The name is supposed to match the `handlingName` field from handling.meta.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x8AB3F46C)
+---@param vehicle string
+---@param class_ string
+---@param fieldName string
+---@param value number
+function SetHandlingInt(vehicle, class_, fieldName, value) end
 
 ---Registers a key mapping for the current resource.
 ---
@@ -2900,24 +2913,6 @@ function SetEntityDistanceCullingRadius(entity, radius) end
 ---@param defaultMapper string
 ---@param defaultParameter string
 function RegisterKeyMapping(commandString, description, defaultMapper, defaultParameter) end
-
----Resets values from the zoom level data by index to defaults from mapzoomdata.meta.
----[Native Documentation](https://docs.fivem.net/natives/?_0x11A5B7ED)
----@param index number
-function ResetMapZoomDataLevel(index) end
-
----Sets a global handling override for a specific vehicle class. The name is supposed to match the `handlingName` field from handling.meta.
----[Native Documentation](https://docs.fivem.net/natives/?_0x8AB3F46C)
----@param vehicle string
----@param class_ string
----@param fieldName string
----@param value number
-function SetHandlingInt(vehicle, class_, fieldName, value) end
-
----Allows Weapon-Flashlight beams to stay visible while moving. Normally it only stays on while aiming.
----[Native Documentation](https://docs.fivem.net/natives/?_0x7635B349)
----@param state boolean
-function SetFlashLightKeepOnWhileMoving(state) end
 
 ---Sets the maximum distance at which all tags will be visible and which beyond will not be displayed. Distance is measured from the camera position.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xD61676B3)
@@ -2931,16 +2926,26 @@ function SetMpGamerTagsVisibleDistance(distance) end
 ---@param radius number
 function SetPlayerCullingRadius(playerSrc, radius) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x3FF5E5F8)
----@param keepInput boolean
-function SetNuiFocusKeepInput(keepInput) end
+---Allows Weapon-Flashlight beams to stay visible while moving. Normally it only stays on while aiming.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x7635B349)
+---@param state boolean
+function SetFlashLightKeepOnWhileMoving(state) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x78608ACB)
 ---@param jsonString string
 ---@return boolean
 function SendNuiMessage(jsonString) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x3FF5E5F8)
+---@param keepInput boolean
+function SetNuiFocusKeepInput(keepInput) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xCD03CDA9)
+---@param callbackType string
+function RegisterNuiCallbackType(callbackType) end
 
 ---Sets a floating-point parameter for a submix effect.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x9A209B3C)
@@ -2964,12 +2969,6 @@ function SetCursorLocation(x, y) end
 ---@param url string
 function SetDiscordRichPresenceAction(index, label, url) end
 
----Set's the ropes length change rate, which is the speed that rope should wind if started.
----[Native Documentation](https://docs.fivem.net/natives/?_0x69B680A7)
----@param rope number
----@param lengthChangeRate number
-function SetRopeLengthChangeRate(rope, lengthChangeRate) end
-
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x5518D60B)
 ---@param interiorId number
@@ -2977,10 +2976,11 @@ function SetRopeLengthChangeRate(rope, lengthChangeRate) end
 ---@param flag number
 function SetInteriorRoomFlag(interiorId, roomIndex, flag) end
 
----This native sets the app id for the discord rich presence implementation.
----[Native Documentation](https://docs.fivem.net/natives/?_0x6A02254D)
----@param appId string
-function SetDiscordAppId(appId) end
+---Set's the ropes length change rate, which is the speed that rope should wind if started.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x69B680A7)
+---@param rope number
+---@param lengthChangeRate number
+function SetRopeLengthChangeRate(rope, lengthChangeRate) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x8349CD76)
@@ -2989,6 +2989,18 @@ function SetDiscordAppId(appId) end
 ---@param entityIndex number
 ---@param flag number
 function SetInteriorPortalEntityFlag(interiorId, portalIndex, entityIndex, flag) end
+
+---This native sets the app id for the discord rich presence implementation.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x6A02254D)
+---@param appId string
+function SetDiscordAppId(appId) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x58982680)
+---@param interiorId number
+---@param portalIndex number
+---@param roomTo number
+function SetInteriorPortalRoomTo(interiorId, portalIndex, roomTo) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x7F6B8D75)
@@ -2999,18 +3011,6 @@ function SetInteriorPortalEntityFlag(interiorId, portalIndex, entityIndex, flag)
 function SetModelHeadlightConfiguration(modelHash, ratePerSecond, headlightRotation, invertRotation) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xCD03CDA9)
----@param callbackType string
-function RegisterNuiCallbackType(callbackType) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x58982680)
----@param interiorId number
----@param portalIndex number
----@param roomTo number
-function SetInteriorPortalRoomTo(interiorId, portalIndex, roomTo) end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x87F43553)
 ---@param interiorId number
 ---@param portalIndex number
@@ -3019,13 +3019,6 @@ function SetInteriorPortalRoomTo(interiorId, portalIndex, roomTo) end
 ---@param posY number
 ---@param posZ number
 function SetInteriorPortalCornerPosition(interiorId, portalIndex, cornerIndex, posX, posY, posZ) end
-
----**Experimental**: This native may be altered or removed in future versions of CitizenFX without warning.
----
----Registers a KVP value as an asset with the GTA streaming module system. This function currently won't work.
----[Native Documentation](https://docs.fivem.net/natives/?_0x1493DCC1)
----@param kvsKey string
-function RegisterStreamingFileFromKvs(kvsKey) end
 
 ---A setter for [GET_RESOURCE_KVP_STRING](#\_0x5240DA5A).
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x21C7A35B)
@@ -3040,17 +3033,29 @@ function SetResourceKvp(key, value) end
 ---@param data string
 function SetSnakeoilForEntry(name, path, data) end
 
+---**Experimental**: This native may be altered or removed in future versions of CitizenFX without warning.
+---
+---Registers a KVP value as an asset with the GTA streaming module system. This function currently won't work.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x1493DCC1)
+---@param kvsKey string
+function RegisterStreamingFileFromKvs(kvsKey) end
+
+---This native sets the small image asset for the discord rich presence implementation.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xF61D04C4)
+---@param assetName string
+function SetDiscordRichPresenceAssetSmall(assetName) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x55188D2D)
+---@param enabled boolean
+function SetNetworkWalkMode(enabled) end
+
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x298FC783)
 ---@param interiorId number
 ---@param portalIndex number
 ---@param roomFrom number
 function SetInteriorPortalRoomFrom(interiorId, portalIndex, roomFrom) end
-
----This native sets the small image asset for the discord rich presence implementation.
----[Native Documentation](https://docs.fivem.net/natives/?_0xF61D04C4)
----@param assetName string
-function SetDiscordRichPresenceAssetSmall(assetName) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xF5C6330C)
@@ -3078,6 +3083,18 @@ function SetMapZoomDataLevel(index, zoomScale, zoomSpeed, scrollSpeed, tilesX, t
 ---@param sizeY number
 function SetMinimapComponentPosition(name, alignX, alignY, posX, posY, sizeX, sizeY) end
 
+---Overrides a ped model personality type.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x46F6B38B)
+---@param modelHash number | string
+---@param personalityHash number | string
+function SetPedModelPersonality(modelHash, personalityHash) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x6C93C4A9)
+---@param vehicle number
+---@param temperature number
+function SetVehicleEngineTemperature(vehicle, temperature) end
+
 ---Sets some in-game parameters which is used for checks is ped needs to fly through windscreen after a crash.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x4D3118ED)
 ---@param vehMinSpeed number
@@ -3086,18 +3103,6 @@ function SetMinimapComponentPosition(name, alignX, alignY, posX, posY, sizeX, si
 ---@param minDamage number
 ---@return boolean
 function SetFlyThroughWindscreenParams(vehMinSpeed, unkMinSpeed, unkModifier, minDamage) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x6C93C4A9)
----@param vehicle number
----@param temperature number
-function SetVehicleEngineTemperature(vehicle, temperature) end
-
----Overrides a ped model personality type.
----[Native Documentation](https://docs.fivem.net/natives/?_0x46F6B38B)
----@param modelHash number | string
----@param personalityHash number | string
-function SetPedModelPersonality(modelHash, personalityHash) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x88B2355E)
@@ -3115,6 +3120,13 @@ function SetInteriorPortalFlag(interiorId, portalIndex, flag) end
 ---@param value vector3
 function SetHandlingVector(vehicle, class_, fieldName, value) end
 
+---the status of default voip system. It affects on `NETWORK_IS_PLAYER_TALKING` and `mp_facial` animation.---
+---This function doesn't need to be called every frame, it works like a switcher.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xFC02CAF6)
+---@param player number
+---@param state boolean
+function SetPlayerTalkingOverride(player, state) end
+
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x35594F67)
 ---@param playerId number
@@ -3122,12 +3134,14 @@ function SetHandlingVector(vehicle, class_, fieldName, value) end
 ---@return boolean
 function SetPlayerMaxStamina(playerId, maxStamina) end
 
----the status of default voip system. It affects on `NETWORK_IS_PLAYER_TALKING` and `mp_facial` animation.---
----This function doesn't need to be called every frame, it works like a switcher.
----[Native Documentation](https://docs.fivem.net/natives/?_0xFC02CAF6)
----@param player number
----@param state boolean
-function SetPlayerTalkingOverride(player, state) end
+---Sets a global handling override for a specific vehicle class. The name is supposed to match the `handlingName` field from handling.meta.---
+---Example: `SetHandlingFloat('AIRTUG', 'CHandlingData', 'fSteeringLock', 360.0)`
+---[Native Documentation](https://docs.fivem.net/natives/?_0x90DD01C)
+---@param vehicle string
+---@param class_ string
+---@param fieldName string
+---@param value number
+function SetHandlingFloat(vehicle, class_, fieldName, value) end
 
 ---Sets whether or not `SHUTDOWN_LOADING_SCREEN` automatically shuts down the NUI frame for the loading screen. If this is enabled,---
 ---you will have to manually invoke `SHUTDOWN_LOADING_SCREEN_NUI` whenever you want to hide the NUI loading screen.
@@ -3145,14 +3159,14 @@ function SetManualShutdownLoadingScreenNui(manualShutdown) end
 ---@param alpha number
 function SetMinimapOverlayDisplay(miniMap, x, y, xScale, yScale, alpha) end
 
----Sets a global handling override for a specific vehicle class. The name is supposed to match the `handlingName` field from handling.meta.---
----Example: `SetHandlingFloat('AIRTUG', 'CHandlingData', 'fSteeringLock', 360.0)`
----[Native Documentation](https://docs.fivem.net/natives/?_0x90DD01C)
----@param vehicle string
----@param class_ string
----@param fieldName string
----@param value number
-function SetHandlingFloat(vehicle, class_, fieldName, value) end
+---Internal function for setting a state bag value.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x8D50E33A)
+---@param bagName string
+---@param keyName string
+---@param valueData string
+---@param valueLength number
+---@param replicated boolean
+function SetStateBagValue(bagName, keyName, valueData, valueLength, replicated) end
 
 ---Sets the entity lockdown mode for a specific routing bucket.
 ---
@@ -3174,15 +3188,6 @@ function SetRoutingBucketEntityLockdownMode(bucketId, mode) end
 ---@param pressure number
 function SetVehicleTurboPressure(vehicle, pressure) end
 
----Internal function for setting a state bag value.
----[Native Documentation](https://docs.fivem.net/natives/?_0x8D50E33A)
----@param bagName string
----@param keyName string
----@param valueData string
----@param valueLength number
----@param replicated boolean
-function SetStateBagValue(bagName, keyName, valueData, valueLength, replicated) end
-
 ---Sets the type for the minimap blip clipping object to be either rectangular or rounded.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xB8B4490C)
 ---@param type number
@@ -3195,6 +3200,12 @@ function SetMinimapClipType(type) end
 ---@param wheelIndex number
 ---@param speed number
 function SetVehicleWheelRotationSpeed(vehicle, wheelIndex, speed) end
+
+---Nonsynchronous [SET_RESOURCE_KVP_INT](#\_0x6A2B1E8) operation; see [FLUSH_RESOURCE_KVP](#\_0x5240DA5A).
+---[Native Documentation](https://docs.fivem.net/natives/?_0x26AEB707)
+---@param key string
+---@param value number
+function SetResourceKvpIntNoSync(key, value) end
 
 ---Sets the routing bucket for the specified player.
 ---
@@ -3216,24 +3227,18 @@ function SetRoutingBucketPopulationEnabled(bucketId, mode) end
 ---@param value string
 function SetConvar(varName, value) end
 
----Nonsynchronous [SET_RESOURCE_KVP_INT](#\_0x6A2B1E8) operation; see [FLUSH_RESOURCE_KVP](#\_0x5240DA5A).
----[Native Documentation](https://docs.fivem.net/natives/?_0x26AEB707)
----@param key string
----@param value number
-function SetResourceKvpIntNoSync(key, value) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x31C9A848)
----@param interiorId number
----@param roomIndex number
----@param timecycleHash number
-function SetInteriorRoomTimecycle(interiorId, roomIndex, timecycleHash) end
-
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x5B98AE30)
 ---@param hasFocus boolean
 ---@param hasCursor boolean
 function SetNuiFocus(hasFocus, hasCursor) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xB22ECEFD)
+---@param vehicle number
+---@param wheelIndex number
+---@param health number
+function SetVehicleWheelHealth(vehicle, wheelIndex, health) end
 
 ---Disables the vehicle from being repaired when a vehicle extra is enabled.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x5F3A3574)
@@ -3242,11 +3247,11 @@ function SetNuiFocus(hasFocus, hasCursor) end
 function SetVehicleAutoRepairDisabled(vehicle, value) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xB22ECEFD)
----@param vehicle number
----@param wheelIndex number
----@param health number
-function SetVehicleWheelHealth(vehicle, wheelIndex, health) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x31C9A848)
+---@param interiorId number
+---@param roomIndex number
+---@param timecycleHash number
+function SetInteriorRoomTimecycle(interiorId, roomIndex, timecycleHash) end
 
 ---Sets a pixel in the specified runtime texture. This will have to be committed using `COMMIT_RUNTIME_TEXTURE` to have any effect.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xAB65ACEE)
@@ -3259,31 +3264,18 @@ function SetVehicleWheelHealth(vehicle, wheelIndex, health) end
 ---@param a number
 function SetRuntimeTexturePixel(tex, x, y, r, g, b, a) end
 
----Sets the ratio that a door is open for on a train.
----[Native Documentation](https://docs.fivem.net/natives/?_0x2468DBE8)
----@param train number
----@param doorIndex number
----@param ratio number
-function SetTrainDoorOpenRatio(train, doorIndex, ratio) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x55188D2D)
----@param enabled boolean
-function SetNetworkWalkMode(enabled) end
-
 ---Nonsynchronous [SET_RESOURCE_KVP](#\_0x21C7A35B) operation; see [FLUSH_RESOURCE_KVP](#\_0x5240DA5A).
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xCF9A2FF)
 ---@param key string
 ---@param value string
 function SetResourceKvpNoSync(key, value) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x3963D527)
----@param tex number
----@param buffer string
----@param length number
----@return boolean
-function SetRuntimeTextureArgbData(tex, buffer, length) end
+---Sets the ratio that a door is open for on a train.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x2468DBE8)
+---@param train number
+---@param doorIndex number
+---@param ratio number
+function SetTrainDoorOpenRatio(train, doorIndex, ratio) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x2A01A8FC)
@@ -3296,6 +3288,14 @@ function SetVehicleCurrentRpm(vehicle, rpm) end
 ---@param presenceState string
 function SetRichPresence(presenceState) end
 
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x3963D527)
+---@param tex number
+---@param buffer string
+---@param length number
+---@return boolean
+function SetRuntimeTextureArgbData(tex, buffer, length) end
+
 ---Sets whether the wheel is powered.---
 ---On all wheel drive cars this works to change which wheels receive power, but if a car's fDriveBiasFront doesn't send power to that wheel, it won't get power anyway. This can be fixed by changing the fDriveBiasFront with SET_VEHICLE_HANDLING_FLOAT.---
 ---Max number of wheels can be retrieved with the native GET_VEHICLE_NUMBER_OF_WHEELS.---
@@ -3306,6 +3306,18 @@ function SetRichPresence(presenceState) end
 ---@param powered boolean
 function SetVehicleWheelIsPowered(vehicle, wheelIndex, powered) end
 
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xEB46596F)
+---@param vehicle number
+---@param scale number
+function SetVehicleSteeringScale(vehicle, scale) end
+
+---A setter for [GET_RESOURCE_KVP_FLOAT](#\_0x35BDCEEA).
+---[Native Documentation](https://docs.fivem.net/natives/?_0x9ADD2938)
+---@param key string
+---@param value number
+function SetResourceKvpFloat(key, value) end
+
 ---Nonsynchronous [SET_RESOURCE_KVP_FLOAT](#\_0x9ADD2938) operation; see [FLUSH_RESOURCE_KVP](#\_0x5240DA5A).
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x3517BFBE)
 ---@param key string
@@ -3313,10 +3325,10 @@ function SetVehicleWheelIsPowered(vehicle, wheelIndex, powered) end
 function SetResourceKvpFloatNoSync(key, value) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xEB46596F)
+---[Native Documentation](https://docs.fivem.net/natives/?_0xBA970511)
 ---@param vehicle number
----@param scale number
-function SetVehicleSteeringScale(vehicle, scale) end
+---@param level number
+function SetVehicleFuelLevel(vehicle, level) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA9EC16C7)
@@ -3337,12 +3349,6 @@ function SetTrainsForceDoorsOpen(forceOpen) end
 function SetTextChatEnabled(enabled) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xBA970511)
----@param vehicle number
----@param level number
-function SetVehicleFuelLevel(vehicle, level) end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x2E310ACD)
 ---@param password string
 ---@param hash string
@@ -3358,11 +3364,6 @@ function VerifyPasswordHash(password, hash) end
 ---@param value any
 function SetVehicleHandlingField(vehicle, class_, fieldName, value) end
 
----Sets whether all tags should group (normal game behavior) or should remain independent and above each ped's respective head when in a vehicle.
----[Native Documentation](https://docs.fivem.net/natives/?_0x7A27BC93)
----@param enabled boolean
-function SetMpGamerTagsUseVehicleBehavior(enabled) end
-
 ---Sets the flags of a wheel.---
 ---Max number of wheels can be retrieved with the native GET_VEHICLE_NUMBER_OF_WHEELS.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xD2B9E90D)
@@ -3370,6 +3371,17 @@ function SetMpGamerTagsUseVehicleBehavior(enabled) end
 ---@param wheelIndex number
 ---@param flags number
 function SetVehicleWheelFlags(vehicle, wheelIndex, flags) end
+
+---Sets whether all tags should group (normal game behavior) or should remain independent and above each ped's respective head when in a vehicle.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x7A27BC93)
+---@param enabled boolean
+function SetMpGamerTagsUseVehicleBehavior(enabled) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xC108EE6F)
+---@param vehicle number
+---@param time number
+function SetVehicleAlarmTimeLeft(vehicle, time) end
 
 ---Sets the height of the vehicle's suspension.---
 ---This changes the same value set by Suspension in the mod shop.---
@@ -3386,12 +3398,6 @@ function SetVehicleSuspensionHeight(vehicle, newHeight) end
 ---@param key string
 ---@param value number
 function SetResourceKvpInt(key, value) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xC108EE6F)
----@param vehicle number
----@param time number
-function SetVehicleAlarmTimeLeft(vehicle, time) end
 
 ---Disables the editor runtime mode, changing game behavior to not track entity metadata.---
 ---This function supports SDK infrastructure and is not intended to be used directly from your code.
@@ -3432,36 +3438,23 @@ function SetVehicleWheelXOffset(vehicle, wheelIndex, offset) end
 function DrawGizmo(matrixPtr, id) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xFFCCC2EA)
+---@param vehicle number
+---@param angle number
+function SetVehicleSteeringAngle(vehicle, angle) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC6C2171F)
 ---@param vehicle number
 ---@param wheelIndex number
 ---@param value number
 function SetVehicleWheelYRotation(vehicle, wheelIndex, value) end
 
----A setter for [GET_RESOURCE_KVP_FLOAT](#\_0x35BDCEEA).
----[Native Documentation](https://docs.fivem.net/natives/?_0x9ADD2938)
----@param key string
----@param value number
-function SetResourceKvpFloat(key, value) end
-
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x2F70ACED)
 ---@param vehicle number
 ---@param clutch number
 function SetVehicleClutch(vehicle, clutch) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xFFCCC2EA)
----@param vehicle number
----@param angle number
-function SetVehicleSteeringAngle(vehicle, angle) end
-
----Sets whether or not the weather should be owned by the network subsystem.
----
----To be able to use [\_SET_WEATHER_TYPE_TRANSITION](#\_0x578C752848ECFA0C), this has to be set to false.
----[Native Documentation](https://docs.fivem.net/natives/?_0x2703D582)
----@param network boolean
-function SetWeatherOwnedByNetwork(network) end
 
 ---Use along with SetVehicleWheelWidth to resize the wheels (this native sets the collider width affecting physics while SetVehicleWheelWidth will change visual width).
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x47BD0270)
@@ -3488,13 +3481,6 @@ function SetVehicleWheelTireColliderWidth(vehicle, wheelIndex, value) end
 ---@return boolean
 function GetMapdataEntityMatrix(mapDataHash, entityInternalIdx, matrixPtr) end
 
----The backing function for TriggerEvent.
----[Native Documentation](https://docs.fivem.net/natives/?_0x91310870)
----@param eventName string
----@param eventPayload string
----@param payloadLength number
-function TriggerEventInternal(eventName, eventPayload, payloadLength) end
-
 ---Sets a handling override for a specific vehicle. Certain handling flags can only be set globally using `SET_HANDLING_FLOAT`, this might require some experimentation.---
 ---Example: `SetVehicleHandlingFloat(vehicle, 'CHandlingData', 'fSteeringLock', 360.0)`
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x488C86D2)
@@ -3504,6 +3490,13 @@ function TriggerEventInternal(eventName, eventPayload, payloadLength) end
 ---@param value number
 function SetVehicleHandlingFloat(vehicle, class_, fieldName, value) end
 
+---The backing function for TriggerEvent.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x91310870)
+---@param eventName string
+---@param eventPayload string
+---@param payloadLength number
+function TriggerEventInternal(eventName, eventPayload, payloadLength) end
+
 ---Sets power being sent to a wheel.---
 ---Max number of wheels can be retrieved with the native GET_VEHICLE_NUMBER_OF_WHEELS.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC6146043)
@@ -3511,6 +3504,12 @@ function SetVehicleHandlingFloat(vehicle, class_, fieldName, value) end
 ---@param wheelIndex number
 ---@param power number
 function SetVehicleWheelPower(vehicle, wheelIndex, power) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x90D1CAD1)
+---@param vehicle number
+---@param level number
+function SetVehicleOilLevel(vehicle, level) end
 
 ---Sets vehicle's wheels' width (width is the same for all the wheels, cannot get/set specific wheel of vehicle).---
 ---Only works on non-default wheels.---
@@ -3520,12 +3519,6 @@ function SetVehicleWheelPower(vehicle, wheelIndex, power) end
 ---@param width number
 ---@return boolean
 function SetVehicleWheelWidth(vehicle, width) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x1A963E58)
----@param vehicle number
----@param gravity number
-function SetVehicleGravityAmount(vehicle, gravity) end
 
 ---The backing function for TriggerClientEvent.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x2F7A49E6)
@@ -3560,21 +3553,15 @@ function SetWeaponRecoilShakeAmplitude(weaponHash, amplitude) end
 ---@param shouldCreate boolean
 function SetRopesCreateNetworkWorldState(shouldCreate) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x20B1B3E6)
----@param vehicle number
----@param gear number
-function SetVehicleHighGear(vehicle, gear) end
-
 ---Shuts down the `loadingScreen` NUI frame, similarly to `SHUTDOWN_LOADING_SCREEN`.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xB9234AFB)
 function ShutdownLoadingScreenNui() end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x90D1CAD1)
+---[Native Documentation](https://docs.fivem.net/natives/?_0x20B1B3E6)
 ---@param vehicle number
----@param level number
-function SetVehicleOilLevel(vehicle, level) end
+---@param gear number
+function SetVehicleHighGear(vehicle, gear) end
 
 ---Sets vehicle's wheels' size (size is the same for all the wheels, cannot get/set specific wheel of vehicle).---
 ---Only works on non-default wheels.---
@@ -3599,6 +3586,13 @@ function SetVehicleWheelSize(vehicle, size) end
 ---@param state number
 function SetVehicleWheelieState(vehicle, state) end
 
+---Clear a ped's tasks. Stop animations and other tasks created by scripts.
+---
+---**This is the server-side RPC native equivalent of the client native [CLEAR_PED_TASKS](?\_0xE1EF3C1216AFF2CD).**
+---[Native Documentation](https://docs.fivem.net/natives/?_0xDE3316AB)
+---@param ped number
+function ClearPedTasks(ped) end
+
 ---Sets a handling override for a specific vehicle. Certain handling flags can only be set globally using `SET_HANDLING_VECTOR`, this might require some experimentation.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x12497890)
 ---@param vehicle number
@@ -3606,14 +3600,6 @@ function SetVehicleWheelieState(vehicle, state) end
 ---@param fieldName string
 ---@param value vector3
 function SetVehicleHandlingVector(vehicle, class_, fieldName, value) end
-
----Sets a handling override for a specific vehicle. Certain handling flags can only be set globally using `SET_HANDLING_INT`, this might require some experimentation.
----[Native Documentation](https://docs.fivem.net/natives/?_0xC37F4CF9)
----@param vehicle number
----@param class_ string
----@param fieldName string
----@param value number
-function SetVehicleHandlingInt(vehicle, class_, fieldName, value) end
 
 ---Sets brake pressure of a wheel.---
 ---Max number of wheels can be retrieved with the native GET_VEHICLE_NUMBER_OF_WHEELS.---
@@ -3624,6 +3610,14 @@ function SetVehicleHandlingInt(vehicle, class_, fieldName, value) end
 ---@param pressure number
 function SetVehicleWheelBrakePressure(vehicle, wheelIndex, pressure) end
 
+---Sets a handling override for a specific vehicle. Certain handling flags can only be set globally using `SET_HANDLING_INT`, this might require some experimentation.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xC37F4CF9)
+---@param vehicle number
+---@param class_ string
+---@param fieldName string
+---@param value number
+function SetVehicleHandlingInt(vehicle, class_, fieldName, value) end
+
 ---Gets the selected entity at the current mouse cursor position, and changes the current selection depth. This function supports SDK infrastructure and is not intended to be used directly from your code.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x3DD8130F)
 ---@param hitFlags number
@@ -3631,19 +3625,28 @@ function SetVehicleWheelBrakePressure(vehicle, wheelIndex, pressure) end
 ---@return number
 function SelectEntityAtCursor(hitFlags, precise) end
 
----Clear a ped's tasks. Stop animations and other tasks created by scripts.
----
----**This is the server-side RPC native equivalent of the client native [CLEAR_PED_TASKS](?\_0xE1EF3C1216AFF2CD).**
----[Native Documentation](https://docs.fivem.net/natives/?_0xDE3316AB)
----@param ped number
-function ClearPedTasks(ped) end
-
 ---The backing function for TriggerServerEvent.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x7FDD1128)
 ---@param eventName string
 ---@param eventPayload string
 ---@param payloadLength number
 function TriggerServerEventInternal(eventName, eventPayload, payloadLength) end
+
+---Disables the game's built-in auto-reloading.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x311150E5)
+---@param state boolean
+function SetWeaponsNoAutoreload(state) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x1E35DBBA)
+---@param playerSrc string
+---@param reason string
+function TempBanPlayer(playerSrc, reason) end
+
+---Returns whether or not the currently executing event was canceled.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x58382A19)
+---@return boolean
+function WasEventCanceled() end
 
 ---Sets color for entity outline. `255, 0, 255, 255` by default.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xB41A56C2)
@@ -3653,21 +3656,11 @@ function TriggerServerEventInternal(eventName, eventPayload, payloadLength) end
 ---@param alpha number
 function SetEntityDrawOutlineColor(red, green, blue, alpha) end
 
----Returns whether or not the currently executing event was canceled.
----[Native Documentation](https://docs.fivem.net/natives/?_0x58382A19)
----@return boolean
-function WasEventCanceled() end
-
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x1E35DBBA)
----@param playerSrc string
----@param reason string
-function TempBanPlayer(playerSrc, reason) end
-
----Disables the game's built-in auto-reloading.
----[Native Documentation](https://docs.fivem.net/natives/?_0x311150E5)
----@param state boolean
-function SetWeaponsNoAutoreload(state) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x1A963E58)
+---@param vehicle number
+---@param gravity number
+function SetVehicleGravityAmount(vehicle, gravity) end
 
 ---Applies an Item from a PedDecorationCollection to a ped. These include tattoos and shirt decals.---
 ---collection - PedDecorationCollection filename hash---
@@ -3699,6 +3692,10 @@ function SetWeaponsNoAutoreload(state) end
 ---@param overlay number | string
 function AddPedDecorationFromHashes(ped, collection, overlay) end
 
+---Leaves cursor mode. This function supports SDK infrastructure and is not intended to be used directly from your code.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xADECF19E)
+function LeaveCursorMode() end
+
 ---Gets the selected entity at the specified mouse cursor position, and changes the current selection depth. This function supports SDK infrastructure and is not intended to be used directly from your code.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xAFE8D405)
 ---@param fracX number
@@ -3708,10 +3705,12 @@ function AddPedDecorationFromHashes(ped, collection, overlay) end
 ---@return number
 function SelectEntityAtPos(fracX, fracY, hitFlags, precise) end
 
----Disables autoswapping to another weapon when the current weapon runs out of ammo.
----[Native Documentation](https://docs.fivem.net/natives/?_0x2A7B50E)
----@param state boolean
-function SetWeaponsNoAutoswap(state) end
+---A getter for [SET_RESOURCE_KVP_FLOAT](#\_0x9ADD2938), but for a specified resource.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x3CC98B25)
+---@param resource string
+---@param key string
+---@return number
+function GetExternalKvpFloat(resource, key) end
 
 ---The backing function for TriggerLatentClientEvent.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x70B35890)
@@ -3722,20 +3721,17 @@ function SetWeaponsNoAutoswap(state) end
 ---@param bps number
 function TriggerLatentClientEventInternal(eventName, eventTarget, eventPayload, payloadLength, bps) end
 
----A getter for [SET_RESOURCE_KVP_FLOAT](#\_0x9ADD2938), but for a specified resource.
----[Native Documentation](https://docs.fivem.net/natives/?_0x3CC98B25)
----@param resource string
----@param key string
----@return number
-function GetExternalKvpFloat(resource, key) end
+---Sets whether or not the weather should be owned by the network subsystem.
+---
+---To be able to use [\_SET_WEATHER_TYPE_TRANSITION](#\_0x578C752848ECFA0C), this has to be set to false.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x2703D582)
+---@param network boolean
+function SetWeatherOwnedByNetwork(network) end
 
----Sets the traction vector length of a wheel.---
----Max number of wheels can be retrieved with the native GET_VEHICLE_NUMBER_OF_WHEELS.
----[Native Documentation](https://docs.fivem.net/natives/?_0x85C85A3A)
----@param vehicle number
----@param wheelIndex number
----@param length number
-function SetVehicleWheelTractionVectorLength(vehicle, wheelIndex, length) end
+---Disables autoswapping to another weapon when the current weapon runs out of ammo.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x2A7B50E)
+---@param state boolean
+function SetWeaponsNoAutoswap(state) end
 
 ---Transiently updates the entity with the specified mapdata index and entity index.---
 ---This function supports SDK infrastructure and is not intended to be used directly from your code.
@@ -3745,17 +3741,15 @@ function SetVehicleWheelTractionVectorLength(vehicle, wheelIndex, length) end
 ---@param entityDef table
 function UpdateMapdataEntity(mapdata, entity, entityDef) end
 
----The backing function for TriggerLatentServerEvent.
----[Native Documentation](https://docs.fivem.net/natives/?_0x128737EA)
----@param eventName string
----@param eventPayload string
----@param payloadLength number
----@param bps number
-function TriggerLatentServerEventInternal(eventName, eventPayload, payloadLength, bps) end
+---**This is the server-side RPC native equivalent of the client native [CLEAR_PED_SECONDARY_TASK](?\_0x176CECF6F920D707).**
+---[Native Documentation](https://docs.fivem.net/natives/?_0xA635F451)
+---@param ped number
+function ClearPedSecondaryTask(ped) end
 
----Leaves cursor mode. This function supports SDK infrastructure and is not intended to be used directly from your code.
----[Native Documentation](https://docs.fivem.net/natives/?_0xADECF19E)
-function LeaveCursorMode() end
+---Enters cursor mode, suppressing mouse movement to the game and displaying a mouse cursor instead. This function supports---
+---SDK infrastructure and is not intended to be used directly from your code.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x780DA86)
+function EnterCursorMode() end
 
 ---Creates an object (prop) with the specified model centered at the specified position.---
 ---This object will initially be owned by the creating script as a mission entity, and the model should be loaded already (e.g. using REQUEST_MODEL).
@@ -3772,18 +3766,27 @@ function LeaveCursorMode() end
 ---@return number
 function CreateObjectNoOffset(modelHash, x, y, z, isNetwork, netMissionEntity, doorFlag) end
 
+---The backing function for TriggerLatentServerEvent.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x128737EA)
+---@param eventName string
+---@param eventPayload string
+---@param payloadLength number
+---@param bps number
+function TriggerLatentServerEventInternal(eventName, eventPayload, payloadLength, bps) end
+
+---Sets the traction vector length of a wheel.---
+---Max number of wheels can be retrieved with the native GET_VEHICLE_NUMBER_OF_WHEELS.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x85C85A3A)
+---@param vehicle number
+---@param wheelIndex number
+---@param length number
+function SetVehicleWheelTractionVectorLength(vehicle, wheelIndex, length) end
+
 ---Draws an outline around a given entity. This function supports SDK infrastructure and is not intended to be used directly from your code.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x76180407)
 ---@param entity number
 ---@param enabled boolean
 function SetEntityDrawOutline(entity, enabled) end
-
----Not sure what this changes, probably determines physical rim size in case the tire is blown.
----[Native Documentation](https://docs.fivem.net/natives/?_0xF380E184)
----@param vehicle number
----@param wheelIndex number
----@param value number
-function SetVehicleWheelRimColliderSize(vehicle, wheelIndex, value) end
 
 ---Resets mapdata entity transform matrix to its original state.---
 ---This function supports SDK infrastructure and is not intended to be used directly from your code.
@@ -3792,16 +3795,6 @@ function SetVehicleWheelRimColliderSize(vehicle, wheelIndex, value) end
 ---@param entityInternalIdx number
 ---@return boolean
 function ResetMapdataEntityMatrix(mapDataHash, entityInternalIdx) end
-
----**This is the server-side RPC native equivalent of the client native [CLEAR_PED_SECONDARY_TASK](?\_0x176CECF6F920D707).**
----[Native Documentation](https://docs.fivem.net/natives/?_0xA635F451)
----@param ped number
-function ClearPedSecondaryTask(ped) end
-
----Enters cursor mode, suppressing mouse movement to the game and displaying a mouse cursor instead. This function supports---
----SDK infrastructure and is not intended to be used directly from your code.
----[Native Documentation](https://docs.fivem.net/natives/?_0x780DA86)
-function EnterCursorMode() end
 
 ---Sets the armor of the specified ped.---
 ---ped: The Ped to set the armor of.---
@@ -3813,11 +3806,12 @@ function EnterCursorMode() end
 ---@param amount number
 function SetPedArmour(ped, amount) end
 
----Prints 'structured trace' data to the server `file descriptor 3` channel. This is not generally useful outside of---
----server monitoring utilities.
----[Native Documentation](https://docs.fivem.net/natives/?_0x90892DED)
----@param jsonString string
-function PrintStructuredTrace(jsonString) end
+---Not sure what this changes, probably determines physical rim size in case the tire is blown.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xF380E184)
+---@param vehicle number
+---@param wheelIndex number
+---@param value number
+function SetVehicleWheelRimColliderSize(vehicle, wheelIndex, value) end
 
 ---Use along with SetVehicleWheelSize to resize the wheels (this native sets the collider size affecting physics while SetVehicleWheelSize will change visual size).
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xB962D05C)
@@ -3826,11 +3820,11 @@ function PrintStructuredTrace(jsonString) end
 ---@param value number
 function SetVehicleWheelTireColliderSize(vehicle, wheelIndex, value) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x29B440DC)
----@param resourceName string
----@return boolean
-function StartResource(resourceName) end
+---Prints 'structured trace' data to the server `file descriptor 3` channel. This is not generally useful outside of---
+---server monitoring utilities.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x90892DED)
+---@param jsonString string
+function PrintStructuredTrace(jsonString) end
 
 ---Returns the transient entity index for a specified mapdata/entity pair.---
 ---This function supports SDK infrastructure and is not intended to be used directly from your code.
@@ -3839,6 +3833,33 @@ function StartResource(resourceName) end
 ---@param entity number
 ---@return number
 function GetEntityIndexFromMapdata(mapdata, entity) end
+
+---Equivalent to CREATE_VEHICLE, but it uses 'server setter' logic (like the former CREATE_AUTOMOBILE) as a workaround for---
+---reliability concerns regarding entity creation RPC.
+---
+---Unlike CREATE_AUTOMOBILE, this supports other vehicle types as well.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x6AE51D4B)
+---@param modelHash number | string
+---@param type string
+---@param x number
+---@param y number
+---@param z number
+---@param heading number
+---@return number
+function CreateVehicleServerSetter(modelHash, type, x, y, z, heading) end
+
+---**This is the server-side RPC native equivalent of the client native [GIVE_WEAPON_COMPONENT_TO_PED](?\_0xD966D51AA5B28BB9).**
+---[Native Documentation](https://docs.fivem.net/natives/?_0x3E1E286D)
+---@param ped number
+---@param weaponHash number | string
+---@param componentHash number | string
+function GiveWeaponComponentToPed(ped, weaponHash, componentHash) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x29B440DC)
+---@param resourceName string
+---@return boolean
+function StartResource(resourceName) end
 
 ---This native removes a specified weapon from your selected ped.---
 ---Weapon Hashes: pastebin.com/0wwDZgkF---
@@ -3855,19 +3876,12 @@ function GetEntityIndexFromMapdata(mapdata, entity) end
 ---@param weaponHash number | string
 function RemoveWeaponFromPed(ped, weaponHash) end
 
----Equivalent to CREATE_VEHICLE, but it uses 'server setter' logic (like the former CREATE_AUTOMOBILE) as a workaround for---
----reliability concerns regarding entity creation RPC.
+---Will unregister and cleanup a registered NUI callback handler.
 ---
----Unlike CREATE_AUTOMOBILE, this supports other vehicle types as well.
----[Native Documentation](https://docs.fivem.net/natives/?_0x6AE51D4B)
----@param modelHash number | string
----@param type string
----@param x number
----@param y number
----@param z number
----@param heading number
----@return number
-function CreateVehicleServerSetter(modelHash, type, x, y, z, heading) end
+---Use along side the REGISTER_RAW_NUI_CALLBACK native.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x7FB46432)
+---@param callbackType string
+function UnregisterRawNuiCallback(callbackType) end
 
 ---<!-----
 ---_loc1_.map((name, idx) => `| ${idx} | ${name} | ![${name}](https://runtime.fivem.net/blips/${name}.svg) |`).join('\n')---
@@ -3881,51 +3895,6 @@ function CreateVehicleServerSetter(modelHash, type, x, y, z, heading) end
 ---@param blip number
 ---@param spriteId number
 function SetBlipSprite(blip, spriteId) end
-
----**This is the server-side RPC native equivalent of the client native [GIVE_WEAPON_COMPONENT_TO_PED](?\_0xD966D51AA5B28BB9).**
----[Native Documentation](https://docs.fivem.net/natives/?_0x3E1E286D)
----@param ped number
----@param weaponHash number | string
----@param componentHash number | string
-function GiveWeaponComponentToPed(ped, weaponHash, componentHash) end
-
----Will unregister and cleanup a registered NUI callback handler.
----
----Use along side the REGISTER_RAW_NUI_CALLBACK native.
----[Native Documentation](https://docs.fivem.net/natives/?_0x7FB46432)
----@param callbackType string
-function UnregisterRawNuiCallback(callbackType) end
-
----Equivalent of [START_FIND_KVP](#\_0xDD379006), but for another resource than the current one.
----[Native Documentation](https://docs.fivem.net/natives/?_0x8F2EECC3)
----@param resourceName string
----@param prefix string
----@return number
-function StartFindExternalKvp(resourceName, prefix) end
-
----**This is the server-side RPC native equivalent of the client native [CREATE_PED_INSIDE_VEHICLE](?\_0x7DD959874C1FD534).**
----[Native Documentation](https://docs.fivem.net/natives/?_0x3000F092)
----@param vehicle number
----@param pedType number
----@param modelHash number | string
----@param seat number
----@param isNetwork boolean
----@param bScriptHostPed boolean
----@return number
-function CreatePedInsideVehicle(vehicle, pedType, modelHash, seat, isNetwork, bScriptHostPed) end
-
----Create a blip with a radius for the specified coordinates (it doesnt create the blip sprite, so you need to use [AddBlipCoords](#\_0xC6F43D0E))---
----Example image:---
----![example](https://i.imgur.com/9hQl3DB.png)
----
----**This is the server-side RPC native equivalent of the client native [ADD_BLIP_FOR_RADIUS](?\_0x46818D79B1F7499A).**
----[Native Documentation](https://docs.fivem.net/natives/?_0x4626756C)
----@param posX number
----@param posY number
----@param posZ number
----@param radius number
----@return number
-function AddBlipForRadius(posX, posY, posZ, radius) end
 
 ---Creates an object (prop) with the specified model at the specified position, offset on the Z axis by the radius of the object's model.---
 ---This object will initially be owned by the creating script as a mission entity, and the model should be loaded already (e.g. using REQUEST_MODEL).
@@ -3941,6 +3910,33 @@ function AddBlipForRadius(posX, posY, posZ, radius) end
 ---@param doorFlag boolean
 ---@return number
 function CreateObject(modelHash, x, y, z, isNetwork, netMissionEntity, doorFlag) end
+
+---Equivalent of [START_FIND_KVP](#\_0xDD379006), but for another resource than the current one.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x8F2EECC3)
+---@param resourceName string
+---@param prefix string
+---@return number
+function StartFindExternalKvp(resourceName, prefix) end
+
+---**This is the server-side RPC native equivalent of the client native [REMOVE_WEAPON_COMPONENT_FROM_PED](?\_0x1E8BE90C74FB4C09).**
+---[Native Documentation](https://docs.fivem.net/natives/?_0x412AA00D)
+---@param ped number
+---@param weaponHash number | string
+---@param componentHash number | string
+function RemoveWeaponComponentFromPed(ped, weaponHash, componentHash) end
+
+---Create a blip that by default is red (enemy), you can use [SET_BLIP_AS_FRIENDLY](#\_0xC6F43D0E) to make it blue (friend).\
+---Can be used for objects, vehicles and peds.---
+---Example of enemy:---
+---![enemy](https://i.imgur.com/fl78svv.png)---
+---Example of friend:---
+---![friend](https://i.imgur.com/Q16ho5d.png)
+---
+---**This is the server-side RPC native equivalent of the client native [ADD_BLIP_FOR_ENTITY](?\_0x5CDE92C702A8FCE7).**
+---[Native Documentation](https://docs.fivem.net/natives/?_0x30822554)
+---@param entity number
+---@return number
+function AddBlipForEntity(entity) end
 
 ---Applies a force to the specified entity.---
 ---**List of force types (p1)**:
@@ -3977,49 +3973,6 @@ function CreateObject(modelHash, x, y, z, isNetwork, netMissionEntity, doorFlag)
 ---@param p13 boolean
 function ApplyForceToEntity(entity, forceType, x, y, z, offX, offY, offZ, boneIndex, isDirectionRel, ignoreUpVec, isForceRel, p12, p13) end
 
----**This is the server-side RPC native equivalent of the client native [REMOVE_WEAPON_COMPONENT_FROM_PED](?\_0x1E8BE90C74FB4C09).**
----[Native Documentation](https://docs.fivem.net/natives/?_0x412AA00D)
----@param ped number
----@param weaponHash number | string
----@param componentHash number | string
-function RemoveWeaponComponentFromPed(ped, weaponHash, componentHash) end
-
----Create a blip that by default is red (enemy), you can use [SET_BLIP_AS_FRIENDLY](#\_0xC6F43D0E) to make it blue (friend).\
----Can be used for objects, vehicles and peds.---
----Example of enemy:---
----![enemy](https://i.imgur.com/fl78svv.png)---
----Example of friend:---
----![friend](https://i.imgur.com/Q16ho5d.png)
----
----**This is the server-side RPC native equivalent of the client native [ADD_BLIP_FOR_ENTITY](?\_0x5CDE92C702A8FCE7).**
----[Native Documentation](https://docs.fivem.net/natives/?_0x30822554)
----@param entity number
----@return number
-function AddBlipForEntity(entity) end
-
----Sets variant of shader that will be used to draw entity outline.
----
----Variants are:
----
----*   **0**: Default value, gauss shader.
----*   **1**: 2px wide solid color outline.
----*   **2**: Fullscreen solid color except for entity.
----[Native Documentation](https://docs.fivem.net/natives/?_0x5261A01A)
----@param shader number
-function SetEntityDrawOutlineShader(shader) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xDD379006)
----@param prefix string
----@return number
-function StartFindKvp(prefix) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x21783161)
----@param resourceName string
----@return boolean
-function StopResource(resourceName) end
-
 ---List of component/props ID---
 ---gtaxscripting.blogspot.com/2016/04/gta-v-peds-component-and-props.html
 ---
@@ -4028,6 +3981,37 @@ function StopResource(resourceName) end
 ---@param ped number
 ---@param propId number
 function ClearPedProp(ped, propId) end
+
+---**This is the server-side RPC native equivalent of the client native [CREATE_PED_INSIDE_VEHICLE](?\_0x7DD959874C1FD534).**
+---[Native Documentation](https://docs.fivem.net/natives/?_0x3000F092)
+---@param vehicle number
+---@param pedType number
+---@param modelHash number | string
+---@param seat number
+---@param isNetwork boolean
+---@param bScriptHostPed boolean
+---@return number
+function CreatePedInsideVehicle(vehicle, pedType, modelHash, seat, isNetwork, bScriptHostPed) end
+
+---Retrieves the map data entity handle.---
+---This function supports SDK infrastructure and is not intended to be used directly from your code.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x30AA6911)
+---@param mapDataHash number
+---@param entityInternalIdx number
+---@return boolean, number
+function GetMapdataEntityHandle(mapDataHash, entityInternalIdx) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x21783161)
+---@param resourceName string
+---@return boolean
+function StopResource(resourceName) end
+
+---**This is the server-side RPC native equivalent of the client native [SET_PED_CAN_RAGDOLL](?\_0xB128377056A54E2A).**
+---[Native Documentation](https://docs.fivem.net/natives/?_0xCF1384C4)
+---@param ped number
+---@param toggle boolean
+function SetPedCanRagdoll(ped, toggle) end
 
 ---This native is used to set prop variation on a ped. Components, drawables and textures IDs are related to the ped model.
 ---
@@ -4054,13 +4038,19 @@ function ClearPedProp(ped, propId) end
 ---@param attach boolean
 function SetPedPropIndex(ped, componentId, drawableId, textureId, attach) end
 
----Retrieves the map data entity handle.---
+---A getter for [SET_RESOURCE_KVP](#\_0x21C7A35B), but for a specified resource.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x9080363A)
+---@param resource string
+---@param key string
+---@return string
+function GetExternalKvpString(resource, key) end
+
+---Returns the transient map data index for a specified hash.---
 ---This function supports SDK infrastructure and is not intended to be used directly from your code.
----[Native Documentation](https://docs.fivem.net/natives/?_0x30AA6911)
----@param mapDataHash number
----@param entityInternalIdx number
----@return boolean, number
-function GetMapdataEntityHandle(mapDataHash, entityInternalIdx) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0xD29D8EDD)
+---@param mapdataHandle number | string
+---@return number
+function GetMapdataFromHashKey(mapdataHandle) end
 
 ---Sets the coordinates (world position) for a specified entity, offset by the radius of the entity on the Z axis.
 ---
@@ -4075,20 +4065,6 @@ function GetMapdataEntityHandle(mapDataHash, entityInternalIdx) end
 ---@param ragdollFlag boolean
 ---@param clearArea boolean
 function SetEntityCoords(entity, xPos, yPos, zPos, alive, deadFlag, ragdollFlag, clearArea) end
-
----Returns the transient map data index for a specified hash.---
----This function supports SDK infrastructure and is not intended to be used directly from your code.
----[Native Documentation](https://docs.fivem.net/natives/?_0xD29D8EDD)
----@param mapdataHandle number | string
----@return number
-function GetMapdataFromHashKey(mapdataHandle) end
-
----A getter for [SET_RESOURCE_KVP](#\_0x21C7A35B), but for a specified resource.
----[Native Documentation](https://docs.fivem.net/natives/?_0x9080363A)
----@param resource string
----@param key string
----@return string
-function GetExternalKvpString(resource, key) end
 
 ---Enables the editor runtime mode, changing game behavior to track entity metadata.---
 ---This function supports SDK infrastructure and is not intended to be used directly from your code.
@@ -4112,12 +4088,6 @@ function EnableEditorRuntime() end
 ---@param atZ number
 function SetEntityMatrix(entity, forwardX, forwardY, forwardZ, rightX, rightY, rightZ, upX, upY, upZ, atX, atY, atZ) end
 
----**This is the server-side RPC native equivalent of the client native [SET_PED_CAN_RAGDOLL](?\_0xB128377056A54E2A).**
----[Native Documentation](https://docs.fivem.net/natives/?_0xCF1384C4)
----@param ped number
----@param toggle boolean
-function SetPedCanRagdoll(ped, toggle) end
-
 ---Sets the selected vehicle's colors to their default value (specific variant specified using the colorCombination parameter).---
 ---Range of possible values for colorCombination is currently unknown, I couldn't find where these values are stored either (Disquse's guess was vehicles.meta but I haven't seen it in there.)
 ---
@@ -4126,6 +4096,13 @@ function SetPedCanRagdoll(ped, toggle) end
 ---@param vehicle number
 ---@param colorCombination number
 function SetVehicleColourCombination(vehicle, colorCombination) end
+
+---Sets Ped Default Clothes
+---
+---**This is the server-side RPC native equivalent of the client native [SET_PED_DEFAULT_COMPONENT_VARIATION](?\_0x45EEE61580806D63).**
+---[Native Documentation](https://docs.fivem.net/natives/?_0xC866A984)
+---@param ped number
+function SetPedDefaultComponentVariation(ped) end
 
 ---Retrieves the map data and entity handles from a specific entity.---
 ---This function supports SDK infrastructure and is not intended to be used directly from your code.
@@ -4162,6 +4139,27 @@ function ClearPlayerWantedLevel(player) end
 ---@return number
 function AddBlipForCoord(x, y, z) end
 
+---Sets variant of shader that will be used to draw entity outline.
+---
+---Variants are:
+---
+---*   **0**: Default value, gauss shader.
+---*   **1**: 2px wide solid color outline.
+---*   **2**: Fullscreen solid color except for entity.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x5261A01A)
+---@param shader number
+function SetEntityDrawOutlineShader(shader) end
+
+---**This is the server-side RPC native equivalent of the client native [SET_ENTITY_ROTATION](?\_0x8524A8B0171D5E07).**
+---[Native Documentation](https://docs.fivem.net/natives/?_0xA345EFE)
+---@param entity number
+---@param pitch number
+---@param roll number
+---@param yaw number
+---@param rotationOrder number
+---@param p5 boolean
+function SetEntityRotation(entity, pitch, roll, yaw, rotationOrder, p5) end
+
 ---Adds a rectangular blip for the specified coordinates/area.---
 ---It is recommended to use [SET_BLIP_ROTATION](#\_0xF87683CDF73C3F6E) and [SET_BLIP_COLOUR](#\_0x03D7FB09E75D6B7E) to make the blip not rotate along with the camera.---
 ---By default, the blip will show as a *regular* blip with the specified color/sprite if it is outside of the minimap view.---
@@ -4180,28 +4178,24 @@ function AddBlipForCoord(x, y, z) end
 ---@return number
 function AddBlipForArea(x, y, z, width, height) end
 
----**This is the server-side RPC native equivalent of the client native [SET_ENTITY_ROTATION](?\_0x8524A8B0171D5E07).**
----[Native Documentation](https://docs.fivem.net/natives/?_0xA345EFE)
----@param entity number
----@param pitch number
----@param roll number
----@param yaw number
----@param rotationOrder number
----@param p5 boolean
-function SetEntityRotation(entity, pitch, roll, yaw, rotationOrder, p5) end
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xDD379006)
+---@param prefix string
+---@return number
+function StartFindKvp(prefix) end
 
----In the scripts, p3 was always -1.---
----p3 seems to be duration or timeout of turn animation.---
----Also facingPed can be 0 or -1 so ped will just raise hands up.
+---Create a blip with a radius for the specified coordinates (it doesnt create the blip sprite, so you need to use [AddBlipCoords](#\_0xC6F43D0E))---
+---Example image:---
+---![example](https://i.imgur.com/9hQl3DB.png)
 ---
----**This is the server-side RPC native equivalent of the client native [TASK_HANDS_UP](?\_0xF2EAB31979A7F910).**
----[Native Documentation](https://docs.fivem.net/natives/?_0x8DCC19C5)
----@param ped number
----@param duration number
----@param facingPed number
----@param p3 number
----@param p4 boolean
-function TaskHandsUp(ped, duration, facingPed, p3, p4) end
+---**This is the server-side RPC native equivalent of the client native [ADD_BLIP_FOR_RADIUS](?\_0x46818D79B1F7499A).**
+---[Native Documentation](https://docs.fivem.net/natives/?_0x4626756C)
+---@param posX number
+---@param posY number
+---@param posZ number
+---@param radius number
+---@return number
+function AddBlipForRadius(posX, posY, posZ, radius) end
 
 ---Used for freemode (online) characters.---
 ---Indices:
@@ -4253,35 +4247,37 @@ function SetPedEyeColor(ped, index) end
 ---@param colorSecondary number
 function SetVehicleColours(vehicle, colorPrimary, colorSecondary) end
 
----Sets Ped Default Clothes
+---In the scripts, p3 was always -1.---
+---p3 seems to be duration or timeout of turn animation.---
+---Also facingPed can be 0 or -1 so ped will just raise hands up.
 ---
----**This is the server-side RPC native equivalent of the client native [SET_PED_DEFAULT_COMPONENT_VARIATION](?\_0x45EEE61580806D63).**
----[Native Documentation](https://docs.fivem.net/natives/?_0xC866A984)
+---**This is the server-side RPC native equivalent of the client native [TASK_HANDS_UP](?\_0xF2EAB31979A7F910).**
+---[Native Documentation](https://docs.fivem.net/natives/?_0x8DCC19C5)
 ---@param ped number
-function SetPedDefaultComponentVariation(ped) end
+---@param duration number
+---@param facingPed number
+---@param p3 number
+---@param p4 boolean
+function TaskHandsUp(ped, duration, facingPed, p3, p4) end
 
----Immediately stops the pedestrian from whatever it's doing. The difference between this and [CLEAR_PED_TASKS](#\_0xE1EF3C1216AFF2CD) is that this one teleports the ped but does not change the position of the ped.
+---p2 often set to 1000.0 in the decompiled scripts.
 ---
----**This is the server-side RPC native equivalent of the client native [CLEAR_PED_TASKS_IMMEDIATELY](?\_0xAAA34F8A7CB32098).**
----[Native Documentation](https://docs.fivem.net/natives/?_0xBC045625)
----@param ped number
-function ClearPedTasksImmediately(ped) end
+---**This is the server-side RPC native equivalent of the client native [SET_VEHICLE_BODY_HEALTH](?\_0xB77D05AC8C78AADB).**
+---[Native Documentation](https://docs.fivem.net/natives/?_0x920C2517)
+---@param vehicle number
+---@param value number
+function SetVehicleBodyHealth(vehicle, value) end
+
+---**This is the server-side RPC native equivalent of the client native [TASK_EVERYONE_LEAVE_VEHICLE](?\_0x7F93691AB4B92272).**
+---[Native Documentation](https://docs.fivem.net/natives/?_0xC1971F30)
+---@param vehicle number
+function TaskEveryoneLeaveVehicle(vehicle) end
 
 ---**This is the server-side RPC native equivalent of the client native [SET_VEHICLE_ALARM](?\_0xCDE5E70C1DDB954C).**
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x24877D84)
 ---@param vehicle number
 ---@param state boolean
 function SetVehicleAlarm(vehicle, state) end
-
----PED::SET_PED_RESET_FLAG(PLAYER::PLAYER_PED_ID(), 240, 1);---
----Known values:
----
----**This is the server-side RPC native equivalent of the client native [SET_PED_RESET_FLAG](?\_0xC1E8A365BF3B29F2).**
----[Native Documentation](https://docs.fivem.net/natives/?_0xCFF6FF66)
----@param ped number
----@param flagId number
----@param doReset boolean
-function SetPedResetFlag(ped, flagId, doReset) end
 
 ---Parameter `p1` does not seem to be used or referenced in game binaries.\
 ---**Note:** When called for networked entities, a `CRemoveAllWeaponsEvent` will be created per request.
@@ -4291,14 +4287,6 @@ function SetPedResetFlag(ped, flagId, doReset) end
 ---@param ped number
 ---@param p1 boolean
 function RemoveAllPedWeapons(ped, p1) end
-
----p2 often set to 1000.0 in the decompiled scripts.
----
----**This is the server-side RPC native equivalent of the client native [SET_VEHICLE_BODY_HEALTH](?\_0xB77D05AC8C78AADB).**
----[Native Documentation](https://docs.fivem.net/natives/?_0x920C2517)
----@param vehicle number
----@param value number
-function SetVehicleBodyHealth(vehicle, value) end
 
 ---p4/p5: Unusued in TU27
 ---
@@ -4318,11 +4306,6 @@ function SetVehicleBodyHealth(vehicle, value) end
 ---@param p5 boolean
 ---@param p6 boolean
 function SetPedToRagdoll(ped, time1, time2, ragdollType, p4, p5, p6) end
-
----**This is the server-side RPC native equivalent of the client native [TASK_EVERYONE_LEAVE_VEHICLE](?\_0x7F93691AB4B92272).**
----[Native Documentation](https://docs.fivem.net/natives/?_0xC1971F30)
----@param vehicle number
-function TaskEveryoneLeaveVehicle(vehicle) end
 
 ---Creates a ped (biped character, pedestrian, actor) with the specified model at the specified position and heading.---
 ---This ped will initially be owned by the creating script as a mission entity, and the model should be loaded already---
@@ -4370,6 +4353,15 @@ function CreatePed(pedType, modelHash, x, y, z, heading, isNetwork, bScriptHostP
 ---@param opacity number
 function SetPedHeadOverlay(ped, overlayID, index, opacity) end
 
+---NativeDB Added Parameter 4: BOOL p3
+---
+---**This is the server-side RPC native equivalent of the client native [SET_PED_AMMO](?\_0x14E56BC5B5DB6A19).**
+---[Native Documentation](https://docs.fivem.net/natives/?_0xBF90DF1A)
+---@param ped number
+---@param weaponHash number | string
+---@param ammo number
+function SetPedAmmo(ped, weaponHash, ammo) end
+
 ---Sets the various freemode face features, e.g. nose length, chin shape.---
 ---**Indexes (From 0 to 19):**---
 ---Parentheses indicate morph scale/direction as in (-1.0 to 1.0)
@@ -4404,47 +4396,12 @@ function SetPedHeadOverlay(ped, overlayID, index, opacity) end
 ---@param scale number
 function SetPedFaceFeature(ped, index, scale) end
 
----NativeDB Added Parameter 4: BOOL p3
----
----**This is the server-side RPC native equivalent of the client native [SET_PED_AMMO](?\_0x14E56BC5B5DB6A19).**
----[Native Documentation](https://docs.fivem.net/natives/?_0xBF90DF1A)
----@param ped number
----@param weaponHash number | string
----@param ammo number
-function SetPedAmmo(ped, weaponHash, ammo) end
-
----A getter for [SET_RESOURCE_KVP_INT](#\_0x6A2B1E8), but for a specified resource.
----[Native Documentation](https://docs.fivem.net/natives/?_0x12B8D689)
----@param resource string
----@param key string
----@return number
-function GetExternalKvpInt(resource, key) end
-
 ---**This is the server-side RPC native equivalent of the client native [SET_CURRENT_PED_WEAPON](?\_0xADF692B254977C0C).**
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xB8278882)
 ---@param ped number
 ---@param weaponHash number | string
 ---@param bForceInHand boolean
 function SetCurrentPedWeapon(ped, weaponHash, bForceInHand) end
-
----Creates a vehicle with the specified model at the specified position. This vehicle will initially be owned by the creating---
----script as a mission entity, and the model should be loaded already (e.g. using REQUEST_MODEL).
----
----```
----NativeDB Added Parameter 8: BOOL p7
----```
----
----**This is the server-side RPC native equivalent of the client native [CREATE_VEHICLE](?\_0xAF35D0D2583051B0).**
----[Native Documentation](https://docs.fivem.net/natives/?_0xDD75460A)
----@param modelHash number | string
----@param x number
----@param y number
----@param z number
----@param heading number
----@param isNetwork boolean
----@param netMissionEntity boolean
----@return number
-function CreateVehicle(modelHash, x, y, z, heading, isNetwork, netMissionEntity) end
 
 ---Example:---
 ---TASK::TASK_DRIVE_BY(l\_467\[1/*22*/], PLAYER::PLAYER_PED_ID(), 0, 0.0, 0.0, 2.0, 300.0, 100, 0, ${firing_pattern_burst_fire_driveby});---
@@ -4467,13 +4424,24 @@ function CreateVehicle(modelHash, x, y, z, heading, isNetwork, netMissionEntity)
 ---@param firingPattern number | string
 function TaskDriveBy(driverPed, targetPed, targetVehicle, targetX, targetY, targetZ, distanceToShoot, pedAccuracy, p8, firingPattern) end
 
----Freezes or unfreezes an entity preventing its coordinates to change by the player if set to `true`. You can still change the entity position using SET_ENTITY_COORDS.
+---Creates a vehicle with the specified model at the specified position. This vehicle will initially be owned by the creating---
+---script as a mission entity, and the model should be loaded already (e.g. using REQUEST_MODEL).
 ---
----**This is the server-side RPC native equivalent of the client native [FREEZE_ENTITY_POSITION](?\_0x428CA6DBD1094446).**
----[Native Documentation](https://docs.fivem.net/natives/?_0x65C16D57)
----@param entity number
----@param toggle boolean
-function FreezeEntityPosition(entity, toggle) end
+---```
+---NativeDB Added Parameter 8: BOOL p7
+---```
+---
+---**This is the server-side RPC native equivalent of the client native [CREATE_VEHICLE](?\_0xAF35D0D2583051B0).**
+---[Native Documentation](https://docs.fivem.net/natives/?_0xDD75460A)
+---@param modelHash number | string
+---@param x number
+---@param y number
+---@param z number
+---@param heading number
+---@param isNetwork boolean
+---@param netMissionEntity boolean
+---@return number
+function CreateVehicle(modelHash, x, y, z, heading, isNetwork, netMissionEntity) end
 
 ---Return variable is never used in R\*'s scripts.---
 ---Not sure what p2 does. It seems like it would be a time judging by it's usage in R\*'s scripts, but didn't seem to affect anything in my testings.---
@@ -4501,13 +4469,6 @@ function FreezeEntityPosition(entity, toggle) end
 ---@param p13 number
 function SetPedToRagdollWithFall(ped, time, p2, ragdollType, x, y, z, p7, p8, p9, p10, p11, p12, p13) end
 
----Removes the blip from your map.
----
----**This is the server-side RPC native equivalent of the client native [REMOVE_BLIP](?\_0x86A652570E5F25DD).**
----[Native Documentation](https://docs.fivem.net/natives/?_0xD8C3C1CD)
----@param blip number
-function RemoveBlip(blip) end
-
 ---List of component/props ID---
 ---gtaxscripting.blogspot.com/2016/04/gta-v-peds-component-and-props.html
 ---
@@ -4515,6 +4476,31 @@ function RemoveBlip(blip) end
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xE3318E0E)
 ---@param ped number
 function SetPedRandomProps(ped) end
+
+---Freezes or unfreezes an entity preventing its coordinates to change by the player if set to `true`. You can still change the entity position using SET_ENTITY_COORDS.
+---
+---**This is the server-side RPC native equivalent of the client native [FREEZE_ENTITY_POSITION](?\_0x428CA6DBD1094446).**
+---[Native Documentation](https://docs.fivem.net/natives/?_0x65C16D57)
+---@param entity number
+---@param toggle boolean
+function FreezeEntityPosition(entity, toggle) end
+
+---p1 is always 0 in R\* scripts; and a quick disassembly seems to indicate that p1 is unused.---
+---List of component/props ID:---
+---gtaxscripting.blogspot.com/2016/04/gta-v-peds-component-and-props.html
+---
+---**This is the server-side RPC native equivalent of the client native [SET_PED_RANDOM_COMPONENT_VARIATION](?\_0xC8A9481A01E63C28).**
+---[Native Documentation](https://docs.fivem.net/natives/?_0x4111BA46)
+---@param ped number
+---@param p1 number
+function SetPedRandomComponentVariation(ped, p1) end
+
+---Removes the blip from your map.
+---
+---**This is the server-side RPC native equivalent of the client native [REMOVE_BLIP](?\_0x86A652570E5F25DD).**
+---[Native Documentation](https://docs.fivem.net/natives/?_0xD8C3C1CD)
+---@param blip number
+function RemoveBlip(blip) end
 
 ---For more info please refer to [this](https://gtaforums.com/topic/858970-all-gtao-face-ids-pedset-ped-head-blend-data-explained) topic.---
 ---**Other information:**---
@@ -4541,15 +4527,6 @@ function SetPedRandomProps(ped) end
 ---@param isParent boolean
 function SetPedHeadBlendData(ped, shapeFirstID, shapeSecondID, shapeThirdID, skinFirstID, skinSecondID, skinThirdID, shapeMix, skinMix, thirdMix, isParent) end
 
----Used for freemode (online) characters.
----
----**This is the server-side RPC native equivalent of the client native [\_SET_PED_HAIR_COLOR](?\_0x4CFFC65454C93A49).**
----[Native Documentation](https://docs.fivem.net/natives/?_0xBB43F090)
----@param ped number
----@param colorID number
----@param highlightColorID number
-function SetPedHairColor(ped, colorID, highlightColorID) end
-
 ---The entity will move towards the target until time is over (duration) or get in target's range (distance). p5 and p6 are unknown, but you could leave p5 = 1073741824 or 100 or even 0 (didn't see any difference but on the decompiled scripts, they use 1073741824 mostly) and p6 = 0---
 ---Note: I've only tested it on entity -> ped and target -> vehicle. It could work differently on other entities, didn't try it yet.---
 ---Example: TASK::TASK_GO_TO_ENTITY(pedHandle, vehicleHandle, 5000, 4.0, 100, 1073741824, 0)---
@@ -4566,6 +4543,15 @@ function SetPedHairColor(ped, colorID, highlightColorID) end
 ---@param p6 number
 function TaskGoToEntity(entity, target, duration, distance, speed, p5, p6) end
 
+---Used for freemode (online) characters.
+---
+---**This is the server-side RPC native equivalent of the client native [\_SET_PED_HAIR_COLOR](?\_0x4CFFC65454C93A49).**
+---[Native Documentation](https://docs.fivem.net/natives/?_0xBB43F090)
+---@param ped number
+---@param colorID number
+---@param highlightColorID number
+function SetPedHairColor(ped, colorID, highlightColorID) end
+
 ---Set the model for a specific Player. Be aware that this will destroy the current Ped for the Player and create a new one, any reference to the old ped should be reset---
 ---Make sure to request the model first and wait until it has loaded.
 ---
@@ -4574,13 +4560,6 @@ function TaskGoToEntity(entity, target, duration, distance, speed, p5, p6) end
 ---@param player number
 ---@param model number | string
 function SetPlayerModel(player, model) end
-
----**This is the server-side RPC native equivalent of the client native [SET_PED_INTO_VEHICLE](?\_0xF75B0D629E1C063D).**
----[Native Documentation](https://docs.fivem.net/natives/?_0x7500C79)
----@param ped number
----@param vehicle number
----@param seatIndex number
-function SetPedIntoVehicle(ped, vehicle, seatIndex) end
 
 ---Simply sets you as invincible (Health will not deplete).---
 ---Use 0x733A643B5B0C53C1 instead if you want Ragdoll enabled, which is equal to:---
@@ -4592,15 +4571,23 @@ function SetPedIntoVehicle(ped, vehicle, seatIndex) end
 ---@param toggle boolean
 function SetPlayerInvincible(player, toggle) end
 
----p1 is always 0 in R\* scripts; and a quick disassembly seems to indicate that p1 is unused.---
----List of component/props ID:---
----gtaxscripting.blogspot.com/2016/04/gta-v-peds-component-and-props.html
----
----**This is the server-side RPC native equivalent of the client native [SET_PED_RANDOM_COMPONENT_VARIATION](?\_0xC8A9481A01E63C28).**
----[Native Documentation](https://docs.fivem.net/natives/?_0x4111BA46)
+---**This is the server-side RPC native equivalent of the client native [SET_PED_INTO_VEHICLE](?\_0xF75B0D629E1C063D).**
+---[Native Documentation](https://docs.fivem.net/natives/?_0x7500C79)
 ---@param ped number
----@param p1 number
-function SetPedRandomComponentVariation(ped, p1) end
+---@param vehicle number
+---@param seatIndex number
+function SetPedIntoVehicle(ped, vehicle, seatIndex) end
+
+---Call SET_PLAYER_WANTED_LEVEL_NOW for immediate effect---
+---wantedLevel is an integer value representing 0 to 5 stars even though the game supports the 6th wanted level but no police will appear since no definitions are present for it in the game files---
+---disableNoMission-  Disables When Off Mission- appears to always be false
+---
+---**This is the server-side RPC native equivalent of the client native [SET_PLAYER_WANTED_LEVEL](?\_0x39FF19C64EF7DA5B).**
+---[Native Documentation](https://docs.fivem.net/natives/?_0xB7A0914B)
+---@param player number
+---@param wantedLevel number
+---@param disableNoMission boolean
+function SetPlayerWantedLevel(player, wantedLevel, disableNoMission) end
 
 ---//this part of the code is to determine at which entity the player is aiming, for example if you want to create a mod where you give orders to peds---
 ---Entity aimedentity;---
@@ -4619,6 +4606,14 @@ function SetPedRandomComponentVariation(ped, p1) end
 ---@param firingPattern number | string
 function TaskShootAtEntity(entity, target, duration, firingPattern) end
 
+---Set the heading of an entity in degrees also known as "Yaw".
+---
+---**This is the server-side RPC native equivalent of the client native [SET_ENTITY_HEADING](?\_0x8E2530AA8ADA980E).**
+---[Native Documentation](https://docs.fivem.net/natives/?_0xE0FF064D)
+---@param entity number
+---@param heading number
+function SetEntityHeading(entity, heading) end
+
 ---**This is the server-side RPC native equivalent of the client native [TASK_GO_STRAIGHT_TO_COORD](?\_0xD76B57B44F1E6F8B).**
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x80A9E7A7)
 ---@param ped number
@@ -4631,34 +4626,6 @@ function TaskShootAtEntity(entity, target, duration, firingPattern) end
 ---@param distanceToSlide number
 function TaskGoStraightToCoord(ped, x, y, z, speed, timeout, targetHeading, distanceToSlide) end
 
----Set the heading of an entity in degrees also known as "Yaw".
----
----**This is the server-side RPC native equivalent of the client native [SET_ENTITY_HEADING](?\_0x8E2530AA8ADA980E).**
----[Native Documentation](https://docs.fivem.net/natives/?_0xE0FF064D)
----@param entity number
----@param heading number
-function SetEntityHeading(entity, heading) end
-
----Call SET_PLAYER_WANTED_LEVEL_NOW for immediate effect---
----wantedLevel is an integer value representing 0 to 5 stars even though the game supports the 6th wanted level but no police will appear since no definitions are present for it in the game files---
----disableNoMission-  Disables When Off Mission- appears to always be false
----
----**This is the server-side RPC native equivalent of the client native [SET_PLAYER_WANTED_LEVEL](?\_0x39FF19C64EF7DA5B).**
----[Native Documentation](https://docs.fivem.net/natives/?_0xB7A0914B)
----@param player number
----@param wantedLevel number
----@param disableNoMission boolean
-function SetPlayerWantedLevel(player, wantedLevel, disableNoMission) end
-
----**This is the server-side RPC native equivalent of the client native [GIVE_WEAPON_TO_PED](?\_0xBF0FD6E56C964FCB).**
----[Native Documentation](https://docs.fivem.net/natives/?_0xC4D88A85)
----@param ped number
----@param weaponHash number | string
----@param ammoCount number
----@param isHidden boolean
----@param bForceInHand boolean
-function GiveWeaponToPed(ped, weaponHash, ammoCount, isHidden, bForceInHand) end
-
 ---Makes the specified ped attack the target ped.---
 ---p2 should be 0---
 ---p3 should be 16
@@ -4670,6 +4637,34 @@ function GiveWeaponToPed(ped, weaponHash, ammoCount, isHidden, bForceInHand) end
 ---@param p2 number
 ---@param p3 number
 function TaskCombatPed(ped, targetPed, p2, p3) end
+
+---See eDoorId declared in [`SET_VEHICLE_DOOR_SHUT`](#\_0x93D9BD300D7789E5)
+---
+---**This is the server-side RPC native equivalent of the client native [SET_VEHICLE_DOOR_BROKEN](?\_0xD4D4F6A4AB575A33).**
+---[Native Documentation](https://docs.fivem.net/natives/?_0x8147FEA7)
+---@param vehicle number
+---@param doorIndex number
+---@param deleteDoor boolean
+function SetVehicleDoorBroken(vehicle, doorIndex, deleteDoor) end
+
+---p1, p2, p3 are RGB values for color (255,0,0 for Red, ect)
+---
+---**This is the server-side RPC native equivalent of the client native [SET_VEHICLE_CUSTOM_SECONDARY_COLOUR](?\_0x36CED73BFED89754).**
+---[Native Documentation](https://docs.fivem.net/natives/?_0x9D77259E)
+---@param vehicle number
+---@param r number
+---@param g number
+---@param b number
+function SetVehicleCustomSecondaryColour(vehicle, r, g, b) end
+
+---**This is the server-side RPC native equivalent of the client native [GIVE_WEAPON_TO_PED](?\_0xBF0FD6E56C964FCB).**
+---[Native Documentation](https://docs.fivem.net/natives/?_0xC4D88A85)
+---@param ped number
+---@param weaponHash number | string
+---@param ammoCount number
+---@param isHidden boolean
+---@param bForceInHand boolean
+function GiveWeaponToPed(ped, weaponHash, ammoCount, isHidden, bForceInHand) end
 
 ---```
 ---Used for freemode (online) characters.---
@@ -4697,15 +4692,6 @@ function SetPedHeadOverlayColor(ped, overlayID, colorType, colorID, secondColorI
 ---@param g number
 ---@param b number
 function SetVehicleCustomPrimaryColour(vehicle, r, g, b) end
-
----See eDoorId declared in [`SET_VEHICLE_DOOR_SHUT`](#\_0x93D9BD300D7789E5)
----
----**This is the server-side RPC native equivalent of the client native [SET_VEHICLE_DOOR_BROKEN](?\_0xD4D4F6A4AB575A33).**
----[Native Documentation](https://docs.fivem.net/natives/?_0x8147FEA7)
----@param vehicle number
----@param doorIndex number
----@param deleteDoor boolean
-function SetVehicleDoorBroken(vehicle, doorIndex, deleteDoor) end
 
 ---cpp---
 ---// Potential names and hash collisions included as comments---
@@ -5217,6 +5203,35 @@ function TaskShootAtCoord(ped, x, y, z, duration, firingPattern) end
 ---@param flags number
 function TaskLeaveAnyVehicle(ped, p1, flags) end
 
+---Immediately stops the pedestrian from whatever it's doing. The difference between this and [CLEAR_PED_TASKS](#\_0xE1EF3C1216AFF2CD) is that this one teleports the ped but does not change the position of the ped.
+---
+---**This is the server-side RPC native equivalent of the client native [CLEAR_PED_TASKS_IMMEDIATELY](?\_0xAAA34F8A7CB32098).**
+---[Native Documentation](https://docs.fivem.net/natives/?_0xBC045625)
+---@param ped number
+function ClearPedTasksImmediately(ped) end
+
+---Flags:---
+---SPC_AMBIENT_SCRIPT = (1 << 1),---
+---SPC_CLEAR_TASKS = (1 << 2),---
+---SPC_REMOVE_FIRES = (1 << 3),---
+---SPC_REMOVE_EXPLOSIONS = (1 << 4),---
+---SPC_REMOVE_PROJECTILES = (1 << 5),---
+---SPC_DEACTIVATE_GADGETS = (1 << 6),---
+---SPC_REENABLE_CONTROL_ON_DEATH = (1 << 7),---
+---SPC_LEAVE_CAMERA_CONTROL_ON = (1 << 8),---
+---SPC_ALLOW_PLAYER_DAMAGE = (1 << 9),---
+---SPC_DONT_STOP_OTHER_CARS_AROUND_PLAYER = (1 << 10),---
+---SPC_PREVENT_EVERYBODY_BACKOFF = (1 << 11),---
+---SPC_ALLOW_PAD_SHAKE = (1 << 12)---
+---See: https://alloc8or.re/gta5/doc/enums/eSetPlayerControlFlag.txt
+---
+---**This is the server-side RPC native equivalent of the client native [SET_PLAYER_CONTROL](?\_0x8D32347D6D4C40A2).**
+---[Native Documentation](https://docs.fivem.net/natives/?_0xD17AFCD8)
+---@param player number
+---@param bHasControl boolean
+---@param flags number
+function SetPlayerControl(player, bHasControl, flags) end
+
 ---This native is used to set component variation on a ped. Components, drawables and textures IDs are related to the ped model.
 ---
 ---### MP Freemode list of components
@@ -5249,37 +5264,19 @@ function TaskLeaveAnyVehicle(ped, p1, flags) end
 ---@param paletteId number
 function SetPedComponentVariation(ped, componentId, drawableId, textureId, paletteId) end
 
----Flags:---
----SPC_AMBIENT_SCRIPT = (1 << 1),---
----SPC_CLEAR_TASKS = (1 << 2),---
----SPC_REMOVE_FIRES = (1 << 3),---
----SPC_REMOVE_EXPLOSIONS = (1 << 4),---
----SPC_REMOVE_PROJECTILES = (1 << 5),---
----SPC_DEACTIVATE_GADGETS = (1 << 6),---
----SPC_REENABLE_CONTROL_ON_DEATH = (1 << 7),---
----SPC_LEAVE_CAMERA_CONTROL_ON = (1 << 8),---
----SPC_ALLOW_PLAYER_DAMAGE = (1 << 9),---
----SPC_DONT_STOP_OTHER_CARS_AROUND_PLAYER = (1 << 10),---
----SPC_PREVENT_EVERYBODY_BACKOFF = (1 << 11),---
----SPC_ALLOW_PAD_SHAKE = (1 << 12)---
----See: https://alloc8or.re/gta5/doc/enums/eSetPlayerControlFlag.txt
----
----**This is the server-side RPC native equivalent of the client native [SET_PLAYER_CONTROL](?\_0x8D32347D6D4C40A2).**
----[Native Documentation](https://docs.fivem.net/natives/?_0xD17AFCD8)
----@param player number
----@param bHasControl boolean
----@param flags number
-function SetPlayerControl(player, bHasControl, flags) end
+---A getter for [SET_RESOURCE_KVP_INT](#\_0x6A2B1E8), but for a specified resource.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x12B8D689)
+---@param resource string
+---@param key string
+---@return number
+function GetExternalKvpInt(resource, key) end
 
----p1, p2, p3 are RGB values for color (255,0,0 for Red, ect)
----
----**This is the server-side RPC native equivalent of the client native [SET_VEHICLE_CUSTOM_SECONDARY_COLOUR](?\_0x36CED73BFED89754).**
----[Native Documentation](https://docs.fivem.net/natives/?_0x9D77259E)
+---**This is the server-side RPC native equivalent of the client native [TASK_WARP_PED_INTO_VEHICLE](?\_0x9A7D091411C5F684).**
+---[Native Documentation](https://docs.fivem.net/natives/?_0x65D4A35D)
+---@param ped number
 ---@param vehicle number
----@param r number
----@param g number
----@param b number
-function SetVehicleCustomSecondaryColour(vehicle, r, g, b) end
+---@param seatIndex number
+function TaskWarpPedIntoVehicle(ped, vehicle, seatIndex) end
 
 ---speed 1.0 = walk, 2.0 = run---
 ---p5 1 = normal, 3 = teleport to vehicle, 8 = normal/carjack ped from seat, 16 = teleport directly into vehicle---
@@ -5319,6 +5316,20 @@ function TaskEnterVehicle(ped, vehicle, timeout, seatIndex, speed, flag, p6) end
 ---@param p15 any
 function TaskPlayAnimAdvanced(ped, animDict, animName, posX, posY, posZ, rotX, rotY, rotZ, animEnterSpeed, animExitSpeed, duration, flag, animTime, p14, p15) end
 
+---Sets the dirt level of the passed vehicle.
+---
+---**This is the server-side RPC native equivalent of the client native [SET_VEHICLE_DIRT_LEVEL](?\_0x79D3B596FE44EE8B).**
+---[Native Documentation](https://docs.fivem.net/natives/?_0x2B39128B)
+---@param vehicle number
+---@param dirtLevel number
+function SetVehicleDirtLevel(vehicle, dirtLevel) end
+
+---**This is the server-side RPC native equivalent of the client native [SET_VEHICLE_NUMBER_PLATE_TEXT](?\_0x95A88F0B409CDA47).**
+---[Native Documentation](https://docs.fivem.net/natives/?_0x400F9556)
+---@param vehicle number
+---@param plateText string
+function SetVehicleNumberPlateText(vehicle, plateText) end
+
 ---Flags from decompiled scripts:---
 ---0 = normal exit and closes door.---
 ---1 = normal exit and closes door.---
@@ -5336,36 +5347,21 @@ function TaskPlayAnimAdvanced(ped, animDict, animName, posX, posY, posZ, rotX, r
 ---@param flags number
 function TaskLeaveVehicle(ped, vehicle, flags) end
 
----Sets the dirt level of the passed vehicle.
----
----**This is the server-side RPC native equivalent of the client native [SET_VEHICLE_DIRT_LEVEL](?\_0x79D3B596FE44EE8B).**
----[Native Documentation](https://docs.fivem.net/natives/?_0x2B39128B)
----@param vehicle number
----@param dirtLevel number
-function SetVehicleDirtLevel(vehicle, dirtLevel) end
-
----**This is the server-side RPC native equivalent of the client native [TASK_WARP_PED_INTO_VEHICLE](?\_0x9A7D091411C5F684).**
----[Native Documentation](https://docs.fivem.net/natives/?_0x65D4A35D)
+---**This is the server-side RPC native equivalent of the client native [TASK_REACT_AND_FLEE_PED](?\_0x72C896464915D1B1).**
+---[Native Documentation](https://docs.fivem.net/natives/?_0x8A632BD8)
 ---@param ped number
----@param vehicle number
----@param seatIndex number
-function TaskWarpPedIntoVehicle(ped, vehicle, seatIndex) end
+---@param fleeTarget number
+function TaskReactAndFleePed(ped, fleeTarget) end
 
----example from fm_mission_controller---
----TASK::TASK_GO_TO_COORD_ANY_MEANS(l\_649, sub_f7e86(-1, 0), 1.0, 0, 0, 786603, 0xbf800000);
+---PED::SET_PED_RESET_FLAG(PLAYER::PLAYER_PED_ID(), 240, 1);---
+---Known values:
 ---
----**This is the server-side RPC native equivalent of the client native [TASK_GO_TO_COORD_ANY_MEANS](?\_0x5BC448CB78FA3E88).**
----[Native Documentation](https://docs.fivem.net/natives/?_0xF91DF93B)
+---**This is the server-side RPC native equivalent of the client native [SET_PED_RESET_FLAG](?\_0xC1E8A365BF3B29F2).**
+---[Native Documentation](https://docs.fivem.net/natives/?_0xCFF6FF66)
 ---@param ped number
----@param x number
----@param y number
----@param z number
----@param speed number
----@param p5 any
----@param p6 boolean
----@param walkingStyle number
----@param p8 number
-function TaskGoToCoordAnyMeans(ped, x, y, z, speed, p5, p6, walkingStyle, p8) end
+---@param flagId number
+---@param doReset boolean
+function SetPedResetFlag(ped, flagId, doReset) end
 
 ---[Animations list](https://alexguirre.github.io/animations-list/)
 ---
@@ -5432,15 +5428,19 @@ function TaskGoToCoordAnyMeans(ped, x, y, z, speed, p5, p6, walkingStyle, p8) en
 ---@param lockZ boolean
 function TaskPlayAnim(ped, animDictionary, animationName, blendInSpeed, blendOutSpeed, duration, flag, playbackRate, lockX, lockY, lockZ) end
 
----**This is the server-side RPC native equivalent of the client native [TASK_REACT_AND_FLEE_PED](?\_0x72C896464915D1B1).**
----[Native Documentation](https://docs.fivem.net/natives/?_0x8A632BD8)
+---example from fm_mission_controller---
+---TASK::TASK_GO_TO_COORD_ANY_MEANS(l\_649, sub_f7e86(-1, 0), 1.0, 0, 0, 786603, 0xbf800000);
+---
+---**This is the server-side RPC native equivalent of the client native [TASK_GO_TO_COORD_ANY_MEANS](?\_0x5BC448CB78FA3E88).**
+---[Native Documentation](https://docs.fivem.net/natives/?_0xF91DF93B)
 ---@param ped number
----@param fleeTarget number
-function TaskReactAndFleePed(ped, fleeTarget) end
-
----**This is the server-side RPC native equivalent of the client native [SET_VEHICLE_NUMBER_PLATE_TEXT](?\_0x95A88F0B409CDA47).**
----[Native Documentation](https://docs.fivem.net/natives/?_0x400F9556)
----@param vehicle number
----@param plateText string
-function SetVehicleNumberPlateText(vehicle, plateText) end
+---@param x number
+---@param y number
+---@param z number
+---@param speed number
+---@param p5 any
+---@param p6 boolean
+---@param walkingStyle number
+---@param p8 number
+function TaskGoToCoordAnyMeans(ped, x, y, z, speed, p5, p6, walkingStyle, p8) end
 

@@ -38,6 +38,31 @@ function GetNgstatIntHash(index, spStat, charStat, character, section) end
 ---@return number
 function GetPackedIntStatKey(index, spStat, charStat, character) end
 
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xC4BB08EE7907471E)
+---@param index number
+---@param spStat boolean
+---@param charStat boolean
+---@param character number
+---@return number
+function GetPackedTuBoolStatKey(index, spStat, charStat, character) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x80C75307B1C42837)
+---@param index number
+---@param spStat boolean
+---@param charStat boolean
+---@param character number
+---@return number
+function GetPackedBoolStatKey(index, spStat, charStat, character) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xF1AE5DCDBFCA2721)
+---@param gamerHandleCsv string
+---@param platformName string
+---@return boolean, any
+function Leaderboards2ReadByPlatform(gamerHandleCsv, platformName) end
+
 ---```
 ---Needs more research. Gets the stat name of a masked bool?
 ---section - values used in the decompiled scripts:
@@ -65,24 +90,6 @@ function GetPackedIntStatKey(index, spStat, charStat, character) end
 function GetNgstatBoolHash(index, spStat, charStat, character, section) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x80C75307B1C42837)
----@param index number
----@param spStat boolean
----@param charStat boolean
----@param character number
----@return number
-function GetPackedBoolStatKey(index, spStat, charStat, character) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xC4BB08EE7907471E)
----@param index number
----@param spStat boolean
----@param charStat boolean
----@param character number
----@return number
-function GetPackedTuBoolStatKey(index, spStat, charStat, character) end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xD16C2AD6B8E32854)
 ---@param index number
 ---@param spStat boolean
@@ -92,23 +99,15 @@ function GetPackedTuBoolStatKey(index, spStat, charStat, character) end
 function GetPackedTuIntStatKey(index, spStat, charStat, character) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xF1AE5DCDBFCA2721)
----@param gamerHandleCsv string
----@param platformName string
----@return boolean, any
-function Leaderboards2ReadByPlatform(gamerHandleCsv, platformName) end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x792271AB35C356A4)
 ---@param p0 any
 ---@param p1 any
 function HiredLimo(p0, p1) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x5CE587FB5A42C8C4)
----@param p1 any
+---[Native Documentation](https://docs.fivem.net/natives/?_0xC30713A383BFBF0E)
 ---@return boolean, any, any
-function Leaderboards2ReadByRadius(p1) end
+function Leaderboards2ReadByHandle() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xBA2C7DB0C129449A)
@@ -134,11 +133,6 @@ function Leaderboards2ReadByScoreFloat(p1, p2) end
 function Leaderboards2ReadFriendsByRow(p2, p3, p4, p5) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xC30713A383BFBF0E)
----@return boolean, any, any
-function Leaderboards2ReadByHandle() end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA9CDB1E3F0A49883)
 ---@param p2 any
 ---@param p4 any
@@ -147,16 +141,15 @@ function Leaderboards2ReadByHandle() end
 function Leaderboards2ReadByRow(p2, p4, p6) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x5CE587FB5A42C8C4)
+---@param p1 any
+---@return boolean, any, any
+function Leaderboards2ReadByRadius(p1) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC980E62E33DF1D5C)
 ---@return boolean, any, any
 function Leaderboards2WriteDataForEventType() end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x7EEC7E4F6984A16A)
----@param p1 any
----@param p2 any
----@return boolean, any
-function Leaderboards2ReadByScoreInt(p1, p2) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xAE2206545888AE49)
@@ -164,15 +157,8 @@ function Leaderboards2ReadByScoreInt(p1, p2) end
 function Leaderboards2WriteData() end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xC38DC1E90D22547C)
----@return boolean, any, any, any
-function Leaderboards2ReadRankPrediction() end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x58A651CD201D89AD)
----@param p0 any
----@return number
-function LeaderboardsGetCacheNumberOfRows(p0) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0xD4B02A6B476E1FDC)
+function LeaderboardsClearCacheData() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x9C51349BE6CDFE2C)
@@ -187,13 +173,21 @@ function LeaderboardsGetCacheExists(p0) end
 function LeaderboardsDeaths(statName, value) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xD4B02A6B476E1FDC)
-function LeaderboardsClearCacheData() end
+---[Native Documentation](https://docs.fivem.net/natives/?_0xF04C1C27DA35F6C8)
+---@param p0 any
+---@return any
+function LeaderboardsGetCacheTime(p0) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xB9BB18E2C40142ED)
 ---@return boolean, any
 function LeaderboardsCacheDataRow() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x58A651CD201D89AD)
+---@param p0 any
+---@return number
+function LeaderboardsGetCacheNumberOfRows(p0) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x9120E8DBA3D69273)
@@ -219,13 +213,6 @@ function LeaderboardsGetColumnType(p0, p1, p2) end
 function LeaderboardsGetColumnId(p0, p1, p2) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x117B45156D7EFF2E)
----@param p0 any
----@param p1 any
----@return any
-function LeaderboardsGetNumberOfColumns(p0, p1) end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x7CCE5C737A665701)
 ---@param p0 any
 ---@param p1 any
@@ -234,15 +221,23 @@ function LeaderboardsGetNumberOfColumns(p0, p1) end
 function LeaderboardsReadClear(p0, p1, p2) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xA31FD15197B192BD)
----@return boolean
-function LeaderboardsReadAnyPending() end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x117B45156D7EFF2E)
+---@param p0 any
+---@param p1 any
+---@return any
+function LeaderboardsGetNumberOfColumns(p0, p1) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xF04C1C27DA35F6C8)
----@param p0 any
+---[Native Documentation](https://docs.fivem.net/natives/?_0x7EEC7E4F6984A16A)
+---@param p1 any
+---@param p2 any
+---@return boolean, any
+function Leaderboards2ReadByScoreInt(p1, p2) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xA34CB6E6F0DF4A0B)
 ---@return any
-function LeaderboardsGetCacheTime(p0) end
+function LeaderboardsReadClearAll() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xAC392C8483342AC2)
@@ -251,11 +246,6 @@ function LeaderboardsGetCacheTime(p0) end
 ---@param p2 any
 ---@return boolean
 function LeaderboardsReadPending(p0, p1, p2) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xA34CB6E6F0DF4A0B)
----@return any
-function LeaderboardsReadClearAll() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x2FB19228983E832C)
@@ -272,18 +262,6 @@ function LeaderboardsReadSuccessful(p0, p1, p2) end
 ---@param p2 number
 function LeaderboardsWriteAddColumn(p0, p1, p2) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x015B03EE1C43E6EC)
----@param p0 any
-function N_0x015b03ee1c43e6ec(p0) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x2E65248609523599)
----@param p0 any
----@param p1 any
----@param p2 any
-function LeaderboardsWriteAddColumnLong(p0, p1, p2) end
-
 ---```
 ---NativeDB Introduced: v1868
 ---```
@@ -293,6 +271,13 @@ function LeaderboardsWriteAddColumnLong(p0, p1, p2) end
 ---@param p2 any
 ---@param p3 any
 function N_0x0077f15613d36993(p0, p1, p2, p3) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x2E65248609523599)
+---@param p0 any
+---@param p1 any
+---@param p2 any
+function LeaderboardsWriteAddColumnLong(p0, p1, p2) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x03C2EEBB04B3FB72)
@@ -306,20 +291,24 @@ function N_0x0077f15613d36993(p0, p1, p2, p3) end
 function N_0x03c2eebb04b3fb72(p0, p1, p2, p3, p4, p5, p6) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xA31FD15197B192BD)
+---@return boolean
+function LeaderboardsReadAnyPending() end
+
+---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x0B8B7F74BF061C6D)
 ---@return any
 function N_0x0b8b7f74bf061c6d() end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x06EAF70AE066441E)
+---[Native Documentation](https://docs.fivem.net/natives/?_0x015B03EE1C43E6EC)
 ---@param p0 any
-function N_0x06eaf70ae066441e(p0) end
+function N_0x015b03ee1c43e6ec(p0) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x0D01D20616FC73FB)
+---[Native Documentation](https://docs.fivem.net/natives/?_0x0A9C7F36E5D7B683)
 ---@param p0 any
----@param p1 any
-function N_0x0d01d20616fc73fb(p0, p1) end
+function N_0x0a9c7f36e5d7b683(p0) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x0B565B0AAE56A0E8)
@@ -338,14 +327,30 @@ function N_0x0b565b0aae56a0e8(p0, p1, p2, p3, p4, p5, p6) end
 function N_0x14eda9ee27bd1626(p0) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x1A7CE7CD3E653485)
+---[Native Documentation](https://docs.fivem.net/natives/?_0x0D01D20616FC73FB)
 ---@param p0 any
-function N_0x1a7ce7cd3e653485(p0) end
+---@param p1 any
+function N_0x0d01d20616fc73fb(p0, p1) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xC38DC1E90D22547C)
+---@return boolean, any, any, any
+function Leaderboards2ReadRankPrediction() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x14E0B2D1AD1044E0)
 ---@return any, any, any, any
 function N_0x14e0b2d1ad1044e0() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x164C5FF663790845)
+---@param p0 any
+function N_0x164c5ff663790845(p0) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x1A7CE7CD3E653485)
+---@param p0 any
+function N_0x1a7ce7cd3e653485(p0) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x1A8EA222F9C67DBB)
@@ -354,9 +359,18 @@ function N_0x14e0b2d1ad1044e0() end
 function N_0x1a8ea222f9c67dbb(p0) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x164C5FF663790845)
+---[Native Documentation](https://docs.fivem.net/natives/?_0x27AA1C973CACFE63)
 ---@param p0 any
-function N_0x164c5ff663790845(p0) end
+---@param p1 any
+---@param p2 any
+---@param p3 any
+---@param p4 any
+---@param p5 any
+---@param p6 any
+---@param p7 any
+---@param p8 any
+---@param p9 any
+function N_0x27aa1c973cacfe63(p0, p1, p2, p3, p4, p5, p6, p7, p8, p9) end
 
 ---```
 ---STATS::0x343B27E2(0);  
@@ -374,35 +388,21 @@ function N_0x164c5ff663790845(p0) end
 function N_0x26d7399b9587fe89(p0) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x0A9C7F36E5D7B683)
+---[Native Documentation](https://docs.fivem.net/natives/?_0x06EAF70AE066441E)
 ---@param p0 any
-function N_0x0a9c7f36e5d7b683(p0) end
+function N_0x06eaf70ae066441e(p0) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x27AA1C973CACFE63)
+---[Native Documentation](https://docs.fivem.net/natives/?_0x282B6739644F4347)
 ---@param p0 any
----@param p1 any
----@param p2 any
----@param p3 any
----@param p4 any
----@param p5 any
----@param p6 any
----@param p7 any
----@param p8 any
----@param p9 any
-function N_0x27aa1c973cacfe63(p0, p1, p2, p3, p4, p5, p6, p7, p8, p9) end
+function N_0x282b6739644f4347(p0) end
 
 ---```
----NativeDB Introduced: v1493
+---NativeDB Introduced: v2189
 ---```
----[Native Documentation](https://docs.fivem.net/natives/?_0x2D7A9B577E72385E)
+---[Native Documentation](https://docs.fivem.net/natives/?_0x2818FF6638CB09DE)
 ---@param p0 any
-function N_0x2d7a9b577e72385e(p0) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x2CD90358F67D0AA8)
----@param p0 any
-function N_0x2cd90358f67d0aa8(p0) end
+function N_0x2818ff6638cb09de(p0) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x28ECB8AC2F607DB2)
@@ -414,16 +414,11 @@ function N_0x2cd90358f67d0aa8(p0) end
 function N_0x28ecb8ac2f607db2(p0, p1, p2, p3, p4) end
 
 ---```
----NativeDB Introduced: v1868
+---NativeDB Introduced: v1493
 ---```
----[Native Documentation](https://docs.fivem.net/natives/?_0x2E0259BABC27A327)
+---[Native Documentation](https://docs.fivem.net/natives/?_0x2D7A9B577E72385E)
 ---@param p0 any
-function N_0x2e0259babc27a327(p0) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x282B6739644F4347)
----@param p0 any
-function N_0x282b6739644f4347(p0) end
+function N_0x2d7a9b577e72385e(p0) end
 
 ---```
 ---NativeDB Introduced: v2189
@@ -436,13 +431,6 @@ function N_0x282b6739644f4347(p0) end
 ---@param p4 any
 function N_0x2fa3173480008493(p0, p1, p2, p3, p4) end
 
----```
----NativeDB Introduced: v2189
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x2818FF6638CB09DE)
----@param p0 any
-function N_0x2818ff6638cb09de(p0) end
-
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x32CAC93C9DE73D32)
 ---@return any
@@ -454,17 +442,22 @@ function N_0x32cac93c9de73d32() end
 ---@return boolean, any
 function N_0x34770b9ce0e03b91(p0) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x44919CC079BB60BF)
----@param p0 any
-function N_0x44919cc079bb60bf(p0) end
-
 ---```
 ---Sets profile setting 934  
 ---```
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x38BAAA5DD4C9D19F)
 ---@param value number
 function N_0x38baaa5dd4c9d19f(value) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x3EBEAC6C3F81F6BD)
+---@param p0 any
+function N_0x3ebeac6c3f81f6bd(p0) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x44919CC079BB60BF)
+---@param p0 any
+function N_0x44919cc079bb60bf(p0) end
 
 ---```
 ---NativeDB Introduced: v1493
@@ -474,11 +467,6 @@ function N_0x38baaa5dd4c9d19f(value) end
 function N_0x316db59cd14c1774(p0) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x3EBEAC6C3F81F6BD)
----@param p0 any
-function N_0x3ebeac6c3f81f6bd(p0) end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x33D72899E24C3365)
 ---@param p0 any
 ---@param p1 any
@@ -486,26 +474,9 @@ function N_0x3ebeac6c3f81f6bd(p0) end
 function N_0x33d72899e24c3365(p0, p1) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x38491439B6BA7F7D)
+---[Native Documentation](https://docs.fivem.net/natives/?_0x2CD90358F67D0AA8)
 ---@param p0 any
----@param p1 any
----@return number
-function N_0x38491439b6ba7f7d(p0, p1) end
-
----```
----NativeDB Introduced: v1868
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x53C31853EC9531FF)
----@param p0 any
-function N_0x53c31853ec9531ff(p0) end
-
----```
----NativeDB Introduced: v1868
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x4FCDBD3F0A813C25)
----@param p0 any
----@param p1 any
-function N_0x4fcdbd3f0a813c25(p0, p1) end
+function N_0x2cd90358f67d0aa8(p0) end
 
 ---```
 ---NativeDB Introduced: v2189
@@ -521,18 +492,41 @@ function N_0x4dc416f246a41fc8(p0, p1, p2, p3, p4) end
 ---```
 ---NativeDB Introduced: v1868
 ---```
----[Native Documentation](https://docs.fivem.net/natives/?_0x4AFF7E02E485E92B)
-function N_0x4aff7e02e485e92b() end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x4FCDBD3F0A813C25)
+---@param p0 any
+---@param p1 any
+function N_0x4fcdbd3f0a813c25(p0, p1) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x38491439B6BA7F7D)
+---@param p0 any
+---@param p1 any
+---@return number
+function N_0x38491439b6ba7f7d(p0, p1) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x3DE3AA516FB126A4)
+---@param p0 any
+function N_0x3de3aa516fb126a4(p0) end
+
+---```
+---NativeDB Introduced: v1868
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x53C31853EC9531FF)
+---@param p0 any
+function N_0x53c31853ec9531ff(p0) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x419615486BBF1956)
 ---@param p0 any
 function N_0x419615486bbf1956(p0) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x3DE3AA516FB126A4)
+---```
+---NativeDB Introduced: v1868
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x2E0259BABC27A327)
 ---@param p0 any
-function N_0x3de3aa516fb126a4(p0) end
+function N_0x2e0259babc27a327(p0) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x53CAE13E9B426993)
@@ -540,22 +534,20 @@ function N_0x3de3aa516fb126a4(p0) end
 function N_0x53cae13e9b426993(p0) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x4C89FE2BDEB3F169)
----@return any
-function N_0x4c89fe2bdeb3f169() end
-
----```
----Sets profile setting 935  
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x55384438FC55AD8E)
----@param value number
-function N_0x55384438fc55ad8e(value) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x5A556B229A169402)
+---@return boolean
+function N_0x5a556b229a169402() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x5BD5F255321C4AAF)
 ---@param p0 any
 ---@return any
 function N_0x5bd5f255321c4aaf(p0) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x55A8BECAF28A4EB7)
+---@return any
+function N_0x55a8becaf28a4eb7() end
 
 ---```
 ---NativeDB Introduced: v1868
@@ -569,9 +561,9 @@ function N_0x5bd5f255321c4aaf(p0) end
 function N_0x5bf29846c6527c54(p0, p1, p2, p3, p4) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x5A556B229A169402)
----@return boolean
-function N_0x5a556b229a169402() end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x4C89FE2BDEB3F169)
+---@return any
+function N_0x4c89fe2bdeb3f169() end
 
 ---```
 ---NativeDB Introduced: v1868
@@ -580,51 +572,12 @@ function N_0x5a556b229a169402() end
 ---@param p0 any
 function N_0x5cdaed54b34b0ed0(p0) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x55A8BECAF28A4EB7)
----@return any
-function N_0x55a8becaf28a4eb7() end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x60EEDC12AF66E846)
----@param p0 any
-function N_0x60eedc12af66e846(p0) end
-
 ---```
 ---STAT_SET_*
 ---```
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x5688585E6D563CD8)
 ---@param p0 number
 function N_0x5688585e6d563cd8(p0) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x629526ABA383BCAA)
-function N_0x629526aba383bcaa() end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x5FF2C33B13A02A11)
----@param p0 any
-function N_0x5ff2c33b13a02a11(p0) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x6483C25849031C4F)
----@param p0 any
----@param p1 any
----@param p2 any
----@return any
-function N_0x6483c25849031c4f(p0, p1, p2) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x6BC0ACD0673ACEBE)
----@param p0 any
----@param p1 any
----@param p2 any
-function N_0x6bc0acd0673acebe(p0, p1, p2) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x6A60E43998228229)
----@param p0 any
-function N_0x6a60e43998228229(p0) end
 
 ---```
 ---example from completionpercentage_controller.ysc.c4
@@ -636,6 +589,48 @@ function N_0x6a60e43998228229(p0) end
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x5EAD2BF6484852E4)
 ---@return boolean
 function N_0x5ead2bf6484852e4() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x629526ABA383BCAA)
+function N_0x629526aba383bcaa() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x60EEDC12AF66E846)
+---@param p0 any
+function N_0x60eedc12af66e846(p0) end
+
+---```
+---NativeDB Introduced: v1868
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x4AFF7E02E485E92B)
+function N_0x4aff7e02e485e92b() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x6483C25849031C4F)
+---@param p0 any
+---@param p1 any
+---@param p2 any
+---@return any
+function N_0x6483c25849031c4f(p0, p1, p2) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x6A60E43998228229)
+---@param p0 any
+function N_0x6a60e43998228229(p0) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x6BC0ACD0673ACEBE)
+---@param p0 any
+---@param p1 any
+---@param p2 any
+function N_0x6bc0acd0673acebe(p0, p1, p2) end
+
+---```
+---Sets profile setting 935  
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x55384438FC55AD8E)
+---@param value number
+function N_0x55384438fc55ad8e(value) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x6551B1F7F6CD46EA)
@@ -651,15 +646,12 @@ function N_0x6551b1f7f6cd46ea(p0) end
 ---@param p4 any
 function N_0x6bccf9948492fd85(p0, p1, p2, p3, p4) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x678F86D8FC040BDB)
----@param p0 any
-function N_0x678f86d8fc040bdb(p0) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x6E0A5253375C4584)
----@return any
-function N_0x6e0a5253375c4584() end
+---```
+---NativeDB Introduced: v2060
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x6A7F19756F1A9016)
+---@return boolean
+function N_0x6a7f19756f1a9016() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x6DEE77AFF8C21BD1)
@@ -672,10 +664,19 @@ function N_0x6dee77aff8c21bd1() end
 function N_0x7033eefd9b28088e(p0) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x6E0A5253375C4584)
+---@return any
+function N_0x6e0a5253375c4584() end
+
+---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x723C1CE13FBFDB67)
 ---@param p0 any
 ---@param p1 any
 function N_0x723c1ce13fbfdb67(p0, p1) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x6F361B8889A792A3)
+function N_0x6f361b8889a792a3() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x7B18DA61F6BAE9D5)
@@ -683,18 +684,8 @@ function N_0x723c1ce13fbfdb67(p0, p1) end
 function N_0x7b18da61f6bae9d5(p0) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x6F361B8889A792A3)
-function N_0x6f361b8889a792a3() end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x71B008056E5692D6)
 function N_0x71b008056e5692d6() end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x7E6946F68A38B74F)
----@param p0 any
----@return boolean
-function N_0x7e6946f68a38b74f(p0) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x7D36291161859389)
@@ -702,15 +693,15 @@ function N_0x7e6946f68a38b74f(p0) end
 function N_0x7d36291161859389(p0) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x73001E34F85137F8)
+---@param p0 any
+function N_0x73001e34f85137f8(p0) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x7F2C4CDF2E82DF4C)
 ---@param p0 any
 ---@return boolean
 function N_0x7f2c4cdf2e82df4c(p0) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x73001E34F85137F8)
----@param p0 any
-function N_0x73001e34f85137f8(p0) end
 
 ---```
 ---Sets profile setting 940 and 941
@@ -732,15 +723,6 @@ function N_0x79d310a861697cc9(profileSetting, settingValue) end
 function N_0x7d8ba05688ad64c7(p0) end
 
 ---```
----_PLAYSTATS_ROB_ARMOURD_TRUCK  
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x7EEC2A316C250073)
----@param p0 any
----@param p1 any
----@param p2 any
-function N_0x7eec2a316c250073(p0, p1, p2) end
-
----```
 ---NativeDB Introduced: v1868
 ---```
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x810B5FCC52EC7FF0)
@@ -757,10 +739,24 @@ function N_0x810b5fcc52ec7ff0(p0, p1, p2, p3) end
 ---@param p0 any
 function N_0x830c3a44eb3f2cf9(p0) end
 
+---```
+---_PLAYSTATS_ROB_ARMOURD_TRUCK  
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x7EEC2A316C250073)
+---@param p0 any
+---@param p1 any
+---@param p2 any
+function N_0x7eec2a316c250073(p0, p1, p2) end
+
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x84A810B375E69C0E)
 ---@return any
 function N_0x84a810b375e69c0e() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x84DFC579C2FC214C)
+---@param p0 any
+function N_0x84dfc579c2fc214c(p0) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x88087EE1F28024AE)
@@ -791,9 +787,9 @@ function N_0x8b9cdbd6c566c38c() end
 function N_0x8989cbd7b4e82534(p0, p1, p2, p3, p4, p5, p6) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x84DFC579C2FC214C)
+---[Native Documentation](https://docs.fivem.net/natives/?_0x8C9D11605E59D955)
 ---@param p0 any
-function N_0x84dfc579c2fc214c(p0) end
+function N_0x8c9d11605e59d955(p0) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x8EC74CEB042E7CFF)
@@ -810,12 +806,10 @@ function N_0x930f504203f561c9(p0) end
 ---@param p0 any
 function N_0x8d8adb562f09a245(p0) end
 
----```
----NativeDB Introduced: v2060
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x6A7F19756F1A9016)
----@return boolean
-function N_0x6a7f19756f1a9016() end
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x9A62EC95AE10E011)
+---@return number
+function N_0x9a62ec95ae10e011() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x9EC8858184CD253A)
@@ -856,10 +850,6 @@ function N_0xa761d4ac6115623d() end
 ---@param p2 any
 function N_0x96e6d5150dbf1c09(p0, p1, p2) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x98E2BC1CA26287C3)
-function N_0x98e2bc1ca26287c3() end
-
 ---```
 ---STATS::0xE3247582(0);  
 ---STATS::0xE3247582(1);  
@@ -874,9 +864,13 @@ function N_0x98e2bc1ca26287c3() end
 function N_0xa78b8fa58200da56(p0) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x9A62EC95AE10E011)
----@return number
-function N_0x9a62ec95ae10e011() end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x98E2BC1CA26287C3)
+function N_0x98e2bc1ca26287c3() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xA943FD1722E11EFD)
+---@return any
+function N_0xa943fd1722e11efd() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x9B4BD21D69B1E609)
@@ -890,28 +884,15 @@ function N_0x9b4bd21d69b1e609() end
 function N_0xaa525dff66bb82f5(p0, p1, p2) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xA943FD1722E11EFD)
----@return any
-function N_0xa943fd1722e11efd() end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA3C53804BDB68ED2)
 ---@param p0 any
 ---@param p1 any
 function N_0xa3c53804bdb68ed2(p0, p1) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x8C9D11605E59D955)
----@param p0 any
-function N_0x8c9d11605e59d955(p0) end
-
----```
----This function is hard-coded to always return 1.
----NETWORK_IS_*
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0xB3DA2606774A8E2D)
----@return boolean
-function N_0xb3da2606774a8e2d() end
+---[Native Documentation](https://docs.fivem.net/natives/?_0xA736CF7FB7C5BFF4)
+---@return any, any, any, any
+function N_0xa736cf7fb7c5bff4() end
 
 ---```
 ---NativeDB Added Parameter 2: Any p1
@@ -921,10 +902,13 @@ function N_0xb3da2606774a8e2d() end
 ---@param p0 any
 function N_0xb26f670685631727(p0) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xAFF47709F1D5DCCE)
----@return any
-function N_0xaff47709f1d5dcce() end
+---```
+---This function is hard-coded to always return 1.
+---NETWORK_IS_*
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0xB3DA2606774A8E2D)
+---@return boolean
+function N_0xb3da2606774a8e2d() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA8733668D1047B51)
@@ -932,9 +916,19 @@ function N_0xaff47709f1d5dcce() end
 function N_0xa8733668d1047b51(p0) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xA736CF7FB7C5BFF4)
----@return any, any, any, any
-function N_0xa736cf7fb7c5bff4() end
+---[Native Documentation](https://docs.fivem.net/natives/?_0xBAA2F0490E146BE8)
+---@param p0 any
+function N_0xbaa2f0490e146be8(p0) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xAFF47709F1D5DCCE)
+---@return any
+function N_0xaff47709f1d5dcce() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xB1D2BB1E1631F5B1)
+---@return boolean
+function N_0xb1d2bb1e1631f5b1() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xBE3DB208333D9844)
@@ -949,9 +943,9 @@ function N_0xbe3db208333d9844() end
 function N_0xbed9f5693f34ed17(statName, p1) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xB1D2BB1E1631F5B1)
----@return boolean
-function N_0xb1d2bb1e1631f5b1() end
+---[Native Documentation](https://docs.fivem.net/natives/?_0xBA9749CC94C1FD85)
+---@return any
+function N_0xba9749cc94c1fd85() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xBFAFDB5FAAA5C5AB)
@@ -959,14 +953,16 @@ function N_0xb1d2bb1e1631f5b1() end
 function N_0xbfafdb5faaa5c5ab(p0) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xBA9749CC94C1FD85)
----@return any
-function N_0xba9749cc94c1fd85() end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xBF371CD2B64212FD)
 ---@param p0 any
 function N_0xbf371cd2b64212fd(p0) end
+
+---```
+---NativeDB Introduced: v1868
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0xC03FAB2C2F92289B)
+---@param p0 any
+function N_0xc03fab2c2f92289b(p0) end
 
 ---**This native does absolutely nothing, just a nullsub**
 ---
@@ -975,6 +971,10 @@ function N_0xbf371cd2b64212fd(p0) end
 ---```
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC01D2470F22CDE5A)
 function N_0xc01d2470f22cde5a() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xC141B8917E0017EC)
+function N_0xc141b8917e0017ec() end
 
 ---```
 ---NativeDB Introduced: v2189
@@ -1009,12 +1009,9 @@ function N_0xc6e0e2616a7576bb() end
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC67E2DA1CBE759E2)
 function N_0xc67e2da1cbe759e2() end
 
----```
----NativeDB Introduced: v1868
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0xC03FAB2C2F92289B)
----@param p0 any
-function N_0xc03fab2c2f92289b(p0) end
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xC847B43F369AC0B5)
+function N_0xc847b43f369ac0b5() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xCC25A4553DFBF9EA)
@@ -1061,15 +1058,6 @@ function N_0xd4367d310f079db0(p0, p1, p2, p3) end
 ---@param p0 any
 function N_0xdaf80797fc534bec(p0) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xBAA2F0490E146BE8)
----@param p0 any
-function N_0xbaa2f0490e146be8(p0) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xC141B8917E0017EC)
-function N_0xc141b8917e0017ec() end
-
 ---```
 ---NativeDB Introduced: v2189
 ---```
@@ -1078,14 +1066,17 @@ function N_0xc141b8917e0017ec() end
 function N_0xd6ca58b3b53a0f22(p0) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xC847B43F369AC0B5)
-function N_0xc847b43f369ac0b5() end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xDEAAF77EB3687E97)
 ---@param p0 any
 ---@return any, any
 function N_0xdeaaf77eb3687e97(p0) end
+
+---```
+---NativeDB Introduced: v1868
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0xDFBD93BF2943E29B)
+---@param p0 any
+function N_0xdfbd93bf2943e29b(p0) end
 
 ---```
 ---NativeDB Introduced: v2189
@@ -1105,28 +1096,22 @@ function N_0xe3261d791eb44acb(p0) end
 ---@return any
 function N_0xe496a53ba5f50a56(p0) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xE8853FBCE7D8D0D6)
----@return any
-function N_0xe8853fbce7d8d0d6() end
+---```
+---STAT_LOAD_*
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0xECB41AC6AB754401)
+---@return boolean
+function N_0xecb41ac6ab754401() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xEDBF6C9B0D2C65C8)
 ---@param p0 any
 function N_0xedbf6c9b0d2c65c8(p0) end
 
----```
----NativeDB Introduced: v1868
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0xDFBD93BF2943E29B)
----@param p0 any
-function N_0xdfbd93bf2943e29b(p0) end
-
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xF11F01D98113536A)
----@param p0 any
+---[Native Documentation](https://docs.fivem.net/natives/?_0xE8853FBCE7D8D0D6)
 ---@return any
-function N_0xf11f01d98113536a(p0) end
+function N_0xe8853fbce7d8d0d6() end
 
 ---```
 ---Sets profile setting 933  
@@ -1134,6 +1119,24 @@ function N_0xf11f01d98113536a(p0) end
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xF1A1803D3476F215)
 ---@param value number
 function N_0xf1a1803d3476f215(value) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xF11F01D98113536A)
+---@param p0 any
+---@return any
+function N_0xf11f01d98113536a(p0) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xF06A6F41CB445443)
+---@param p0 any
+function N_0xf06a6f41cb445443(p0) end
+
+---```
+---NativeDB Introduced: v1868
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0xF9096193DF1F99D4)
+---@param p0 any
+function N_0xf9096193df1f99d4(p0) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xF534D94DFA2EAD26)
@@ -1144,29 +1147,10 @@ function N_0xf1a1803d3476f215(value) end
 ---@param p4 any
 function N_0xf534d94dfa2ead26(p0, p1, p2, p3, p4) end
 
----```
----NativeDB Introduced: v1868
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0xF9096193DF1F99D4)
----@param p0 any
-function N_0xf9096193df1f99d4(p0) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xF06A6F41CB445443)
----@param p0 any
-function N_0xf06a6f41cb445443(p0) end
-
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xF8C54A461C3E11DC)
 ---@return any, any, any, any
 function N_0xf8c54a461c3e11dc() end
-
----```
----STAT_LOAD_*
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0xECB41AC6AB754401)
----@return boolean
-function N_0xecb41ac6ab754401() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xF9F2922717B819EC)
@@ -1174,14 +1158,21 @@ function N_0xecb41ac6ab754401() end
 function N_0xf9f2922717b819ec() end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x79AB33F0FBFAC40C)
----@param p0 any
-function PlaystatsAcquiredHiddenPackage(p0) end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xFCC228E07217FCAC)
 ---@param p0 any
 function N_0xfcc228e07217fcac(p0) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xCEA553E35C2246E1)
+---@param p0 any
+---@param p1 any
+---@param vehicleHash number | string
+function OrderedBossVehicle(p0, p1, vehicleHash) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x79AB33F0FBFAC40C)
+---@param p0 any
+function PlaystatsAcquiredHiddenPackage(p0) end
 
 ---```
 ---NativeDB Introduced: v1734
@@ -1195,6 +1186,12 @@ function N_0xfcc228e07217fcac(p0) end
 ---@param p5 any
 function PlaystatsArcadegame(p0, p1, p2, p3, p4, p5) end
 
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xA071E0ED98F91286)
+---@param p0 any
+---@param p1 any
+function PlaystatsActivityDone(p0, p1) end
+
 ---```
 ---NativeDB Introduced: v1604
 ---```
@@ -1206,25 +1203,19 @@ function PlaystatsArcadegame(p0, p1, p2, p3, p4, p5) end
 ---@param p4 number
 function PlaystatsArenaWarSpectator(p0, p1, p2, p3, p4) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xA071E0ED98F91286)
----@param p0 any
----@param p1 any
-function PlaystatsActivityDone(p0, p1) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xCEA553E35C2246E1)
----@param p0 any
----@param p1 any
----@param vehicleHash number | string
-function OrderedBossVehicle(p0, p1, vehicleHash) end
-
 ---```
 ---NativeDB Introduced: v1604
 ---```
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xB479D9F0D48A1BC5)
 ---@return any
 function PlaystatsArenaWarsEnded() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x46F917F6B4128FE4)
+---@param amount number
+---@param type number | string
+---@param category number | string
+function PlaystatsAwardXp(amount, type, category) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x47B32F5611E6E483)
@@ -1239,11 +1230,17 @@ function PlaystatsAwardBadsport(id) end
 function PlaystatsCarclubPoints(p0) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x46F917F6B4128FE4)
----@param amount number
----@param type number | string
----@param category number | string
-function PlaystatsAwardXp(amount, type, category) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0xD6781E42755531F7)
+---@return any
+function PlaystatsBuyContraband() end
+
+---```
+---NativeDB Introduced: v2372
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x69C922B677621428)
+---@param p0 any
+---@param p1 any
+function PlaystatsCarclubPrize(p0, p1) end
 
 ---```
 ---NativeDB Introduced: v1734
@@ -1251,11 +1248,6 @@ function PlaystatsAwardXp(amount, type, category) end
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xD5451C7BF151EB6F)
 ---@param p0 any
 function PlaystatsCasinoBlackjackLight(p0) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xD6781E42755531F7)
----@return any
-function PlaystatsBuyContraband() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x5009DFD741329729)
@@ -1270,13 +1262,17 @@ function PlaystatsBackgroundScriptAction(action, value) end
 ---@param p0 any
 function PlaystatsCasinoChip(p0) end
 
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x516FC96EB88EEFE5)
+---@param p0 number
+function PlaystatsBanAlert(p0) end
+
 ---```
----NativeDB Introduced: v2372
+---NativeDB Introduced: v1734
 ---```
----[Native Documentation](https://docs.fivem.net/natives/?_0x69C922B677621428)
+---[Native Documentation](https://docs.fivem.net/natives/?_0x23A3CBCD50D54E47)
 ---@param p0 any
----@param p1 any
-function PlaystatsCarclubPrize(p0, p1) end
+function PlaystatsCasinoInsidetrackLight(p0) end
 
 ---```
 ---NativeDB Introduced: v1734
@@ -1284,11 +1280,6 @@ function PlaystatsCarclubPrize(p0, p1) end
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x1A0D4A6C336B7BC5)
 ---@return any
 function PlaystatsCasinoMissionEnded() end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x516FC96EB88EEFE5)
----@param p0 number
-function PlaystatsBanAlert(p0) end
 
 ---```
 ---NativeDB Introduced: v2372
@@ -1303,16 +1294,48 @@ function PlaystatsCarclubChallenge(p0, p1, p2, p3) end
 ---```
 ---NativeDB Introduced: v1734
 ---```
----[Native Documentation](https://docs.fivem.net/natives/?_0x6572ABA3DE1197FC)
+---[Native Documentation](https://docs.fivem.net/natives/?_0x3EAE97309727E7AD)
 ---@param p0 any
-function PlaystatsCasinoRouletteLight(p0) end
+function PlaystatsCasinoBlackjack(p0) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x5FF2C33B13A02A11)
+---@param p0 any
+function N_0x5ff2c33b13a02a11(p0) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x7E6946F68A38B74F)
+---@param p0 any
+---@return boolean
+function N_0x7e6946f68a38b74f(p0) end
 
 ---```
 ---NativeDB Introduced: v1734
 ---```
----[Native Documentation](https://docs.fivem.net/natives/?_0x3EAE97309727E7AD)
+---[Native Documentation](https://docs.fivem.net/natives/?_0x95101C443A84E7F1)
 ---@param p0 any
-function PlaystatsCasinoBlackjack(p0) end
+function PlaystatsCasinoRoulette(p0) end
+
+---```
+---NativeDB Introduced: v1734
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x0C432C1435F5E4FA)
+---@param p0 any
+function PlaystatsCasinoLuckyseven(p0) end
+
+---```
+---NativeDB Introduced: v1734
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0xEF5EC67D392B830A)
+---@param p0 any
+function PlaystatsCasinoSlotmachine(p0) end
+
+---```
+---NativeDB Introduced: v1734
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x049F059625058A86)
+---@param p0 any
+function PlaystatsCasinoInsidetrack(p0) end
 
 ---```
 ---NativeDB Introduced: v1734
@@ -1320,13 +1343,6 @@ function PlaystatsCasinoBlackjack(p0) end
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xE60054A0FAE8227F)
 ---@param p0 any
 function PlaystatsCasinoSlotmachineLight(p0) end
-
----```
----NativeDB Introduced: v1734
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x23A3CBCD50D54E47)
----@param p0 any
-function PlaystatsCasinoInsidetrackLight(p0) end
 
 ---```
 ---NativeDB Introduced: v1734
@@ -1339,23 +1355,21 @@ function PlaystatsCasinoStoryMissionEnded(p0, p1) end
 ---```
 ---NativeDB Introduced: v1734
 ---```
----[Native Documentation](https://docs.fivem.net/natives/?_0x0C432C1435F5E4FA)
+---[Native Documentation](https://docs.fivem.net/natives/?_0xF740FB339D471C35)
 ---@param p0 any
-function PlaystatsCasinoLuckyseven(p0) end
+function PlaystatsCasinoThreecardpoker(p0) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x6058665D72302D3F)
+---@param cheat string
+function PlaystatsCheatApplied(cheat) end
 
 ---```
 ---NativeDB Introduced: v1734
 ---```
----[Native Documentation](https://docs.fivem.net/natives/?_0x049F059625058A86)
+---[Native Documentation](https://docs.fivem.net/natives/?_0xC9001364B4388F22)
 ---@param p0 any
-function PlaystatsCasinoInsidetrack(p0) end
-
----```
----NativeDB Introduced: v1734
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0xEF5EC67D392B830A)
----@param p0 any
-function PlaystatsCasinoSlotmachine(p0) end
+function PlaystatsCasinoThreecardpokerLight(p0) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x0A50D2604E05CB94)
@@ -1367,25 +1381,6 @@ function PlaystatsCasinoSlotmachine(p0) end
 function PlaystatsChangeMcEmblem(p0, p1, p2, p3, p4) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x6058665D72302D3F)
----@param cheat string
-function PlaystatsCheatApplied(cheat) end
-
----```
----NativeDB Introduced: v1734
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0xF740FB339D471C35)
----@param p0 any
-function PlaystatsCasinoThreecardpoker(p0) end
-
----```
----NativeDB Introduced: v1734
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0xC9001364B4388F22)
----@param p0 any
-function PlaystatsCasinoThreecardpokerLight(p0) end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x34B973047A2268B9)
 ---@param p0 any
 ---@param p1 any
@@ -1393,6 +1388,17 @@ function PlaystatsCasinoThreecardpokerLight(p0) end
 ---@param p3 any
 ---@param p4 any
 function PlaystatsClothChange(p0, p1, p2, p3, p4) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xB7257BA2550EA10A)
+---@param p0 any
+---@param p1 any
+---@param p2 any
+---@param p3 any
+---@param p4 any
+---@param p5 any
+---@param p6 any
+function PlaystatsCopyRankIntoNewSlot(p0, p1, p2, p3, p4, p5, p6) end
 
 ---```
 ---NativeDB Added Parameter 7: Any p6
@@ -1423,23 +1429,17 @@ function PlaystatsCrateDropMissionDone(p0, p1, p2, p3, p4, p5) end
 ---@param p9 any
 function PlaystatsCollectible(p0, p1, p2, p3, p4, p5, p6, p7, p8, p9) end
 
----```
----NativeDB Introduced: v1734
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x95101C443A84E7F1)
----@param p0 any
-function PlaystatsCasinoRoulette(p0) end
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x46326E13DA4E0546)
+---@return any
+function PlaystatsDirectorMode() end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xB7257BA2550EA10A)
----@param p0 any
----@param p1 any
----@param p2 any
----@param p3 any
----@param p4 any
----@param p5 any
----@param p6 any
-function PlaystatsCopyRankIntoNewSlot(p0, p1, p2, p3, p4, p5, p6) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0xAFC7E5E075A96F46)
+---@param p0 number
+---@param p1 number
+---@param p2 number
+function PlaystatsCrateCreated(p0, p1, p2) end
 
 ---```
 ---NativeDB Introduced: v1493
@@ -1450,13 +1450,6 @@ function PlaystatsCopyRankIntoNewSlot(p0, p1, p2, p3, p4, p5, p6) end
 ---@param p2 number
 function PlaystatsDroneUsage(p0, p1, p2) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xAFC7E5E075A96F46)
----@param p0 number
----@param p1 number
----@param p2 number
-function PlaystatsCrateCreated(p0, p1, p2) end
-
 ---```
 ---NativeDB Introduced: v1290
 ---```
@@ -1464,17 +1457,10 @@ function PlaystatsCrateCreated(p0, p1, p2) end
 ---@return any
 function PlaystatsDarMissionEnd() end
 
----```
----NativeDB Introduced: v1290
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x878FF156D36E9956)
----@return any
-function PlaystatsEnterSessionPack() end
-
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x46326E13DA4E0546)
----@return any
-function PlaystatsDirectorMode() end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x678F86D8FC040BDB)
+---@param p0 any
+function N_0x678f86d8fc040bdb(p0) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x0F71DE29AB2258F1)
@@ -1483,9 +1469,19 @@ function PlaystatsDirectorMode() end
 function PlaystatsFriendActivity(p0, p1) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x848B66100EE33B05)
+---@return any
+function PlaystatsDupeDetection() end
+
+---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x0EACDF8487D5155A)
 ---@return any
 function PlaystatsGunrunMissionEnded() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x2605663BD4F23B5D)
+---@return any
+function PlaystatsDefendContraband() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x501478855A6074CE)
@@ -1496,11 +1492,6 @@ function PlaystatsGunrunMissionEnded() end
 ---@param p4 any
 ---@param p5 any
 function PlaystatsEarnedMcPoints(p0, p1, p2, p3, p4, p5) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x2605663BD4F23B5D)
----@return any
-function PlaystatsDefendContraband() end
 
 ---```
 ---NativeDB Introduced: v1290
@@ -1516,23 +1507,18 @@ function PlaystatsH2FmprepEnd() end
 ---@param p0 any
 function PlaystatsExtraEvent(p0) end
 
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xF4FF020A08BC8863)
+---@param hash number | string
+---@param p1 number
+function PlaystatsHeistSaveCheat(hash, p1) end
+
 ---```
 ---longest time being ilde?  
 ---```
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x5DA3A8DE8CB6226F)
 ---@param time number
 function PlaystatsIdleKick(time) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x848B66100EE33B05)
----@return any
-function PlaystatsDupeDetection() end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xF4FF020A08BC8863)
----@param hash number | string
----@param p1 number
-function PlaystatsHeistSaveCheat(hash, p1) end
 
 ---```
 ---NativeDB Introduced: v1290
@@ -1543,6 +1529,13 @@ function PlaystatsHeistSaveCheat(hash, p1) end
 ---@param p3 any
 ---@return any
 function PlaystatsH2InstanceEnd(p1, p2, p3) end
+
+---```
+---NativeDB Introduced: v2699
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x887DAD63CF5B7908)
+---@param p0 any
+function PlaystatsInventory(p0) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xCB00196B31C39EB1)
@@ -1561,11 +1554,6 @@ function PlaystatsHoldUpMissionDone(p0, p1, p2, p3) end
 function PlaystatsImportExportMissionDone(p0, p1, p2, p3) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xF5BB8DAC426A52C0)
----@return any, any, any, any
-function PlaystatsJobBend() end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC5BE134EC7BA96A0)
 ---@param p0 any
 ---@param p1 any
@@ -1573,6 +1561,19 @@ function PlaystatsJobBend() end
 ---@param p3 any
 ---@param p4 any
 function PlaystatsLeaveJobChain(p0, p1, p2, p3, p4) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xF5BB8DAC426A52C0)
+---@return any, any, any, any
+function PlaystatsJobBend() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xC900596A63978C1D)
+---@param p1 any
+---@param p2 any
+---@param p3 any
+---@return any
+function PlaystatsMissionCheckpoint(p1, p2, p3) end
 
 ---```
 ---NativeDB Removed Parameter 4: Any p3
@@ -1590,13 +1591,6 @@ function PlaystatsLeaveJobChain(p0, p1, p2, p3, p4) end
 ---@param p6 any
 function PlaystatsMatchStarted(p0, p1, p2, p3, p4, p5, p6) end
 
----```
----NativeDB Introduced: v2699
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x887DAD63CF5B7908)
----@param p0 any
-function PlaystatsInventory(p0) end
-
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC19A2925C34D2231)
 ---@param p1 any
@@ -1604,16 +1598,6 @@ function PlaystatsInventory(p0) end
 ---@param p3 boolean
 ---@return any
 function PlaystatsMissionStarted(p1, p2, p3) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x7C4BB33A8CED7324)
----@param p1 any
----@param p2 any
----@param p3 boolean
----@param p4 boolean
----@param p5 boolean
----@return any
-function PlaystatsMissionOver(p1, p2, p3, p4, p5) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x93054C88E6AA7C44)
@@ -1628,12 +1612,29 @@ function PlaystatsNpcInvite() end
 function PlaystatsOddjobDone(p0, p1, p2) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xC900596A63978C1D)
+---[Native Documentation](https://docs.fivem.net/natives/?_0x7C4BB33A8CED7324)
+---@param p1 any
+---@param p2 any
+---@param p3 boolean
+---@param p4 boolean
+---@param p5 boolean
+---@return any
+function PlaystatsMissionOver(p1, p2, p3, p4, p5) end
+
+---```
+---NativeDB Introduced: v1180
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x9572BD4DD6B72122)
+---@param modelHash number | string
+function PlaystatsPegasaircraft(modelHash) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xBA739D6D5A05D6E7)
+---@param p0 any
 ---@param p1 any
 ---@param p2 any
 ---@param p3 any
----@return any
-function PlaystatsMissionCheckpoint(p1, p2, p3) end
+function PlaystatsPropChange(p0, p1, p2, p3) end
 
 ---```
 ---NativeDB Introduced: v1734
@@ -1646,19 +1647,6 @@ function PlaystatsMissionCheckpoint(p1, p2, p3) end
 function PlaystatsPassiveMode(p0, p1, p2, p3) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x203B381133817079)
----@return any
-function PlaystatsPiMenuHideSettings() end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xBA739D6D5A05D6E7)
----@param p0 any
----@param p1 any
----@param p2 any
----@param p3 any
-function PlaystatsPropChange(p0, p1, p2, p3) end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x9C375C315099DDE4)
 ---@param p0 any
 ---@param p1 any
@@ -1666,6 +1654,11 @@ function PlaystatsPropChange(p0, p1, p2, p3) end
 ---@param p3 any
 ---@param p4 any
 function PlaystatsRaceCheckpoint(p0, p1, p2, p3, p4) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x203B381133817079)
+---@return any
+function PlaystatsPiMenuHideSettings() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x90D0622866E80445)
@@ -1694,17 +1687,17 @@ function PlaystatsQuickfixTool(element, item) end
 ---@param p9 any
 function PlaystatsRaceToPointMissionDone(p0, p1, p2, p3, p4, p5, p6, p7, p8, p9) end
 
----```
----NativeDB Introduced: v1180
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x9572BD4DD6B72122)
----@param modelHash number | string
-function PlaystatsPegasaircraft(modelHash) end
-
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC7F2DE41D102BFB4)
 ---@param rank number
 function PlaystatsRankUp(rank) end
+
+---```
+---NativeDB Introduced: v2372
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x1A67DFBF1F5C3835)
+---@param p0 any
+function PlaystatsRobberyPrep(p0) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x121FB4DDDC2D5291)
@@ -1713,13 +1706,6 @@ function PlaystatsRankUp(rank) end
 ---@param player number
 ---@param cm number
 function PlaystatsRosBet(amount, act, player, cm) end
-
----```
----NativeDB Introduced: v2372
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0xBBA55BE9AAAABF44)
----@param p0 any
-function PlaystatsRobberyFinale(p0) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x71862B1D855F32E1)
@@ -1745,6 +1731,13 @@ function PlaystatsSetJoinType(joinType) end
 function PlaystatsSellContraband() end
 
 ---```
+---NativeDB Introduced: v1734
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x6572ABA3DE1197FC)
+---@param p0 any
+function PlaystatsCasinoRouletteLight(p0) end
+
+---```
 ---NativeDB Introduced: v1180
 ---```
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x320C35147D5B5DDD)
@@ -1761,11 +1754,10 @@ function PlaystatsSmugMissionEnded() end
 function PlaystatsShopItem(p0, p1, p2, p3, p4) end
 
 ---```
----NativeDB Introduced: v2372
+---PLAYSTATS_START_INVITE_DESPAWNING?
 ---```
----[Native Documentation](https://docs.fivem.net/natives/?_0x1A67DFBF1F5C3835)
----@param p0 any
-function PlaystatsRobberyPrep(p0) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x098760C7461724CD)
+function PlaystatsStartOfflineMode() end
 
 ---```
 ---NativeDB Introduced: v1604
@@ -1809,30 +1801,11 @@ function PlaystatsStuntPerformedEventDisallowTrigger() end
 function PlaystatsWeaponModeChange(weaponHash, componentHashTo, componentHashFrom) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xDDF24D535060F811)
----@param scaleformHash number | string
----@param p1 number
-function PlaystatsWebsiteVisited(scaleformHash, p1) end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x30A6614C1F7799B8)
 ---@param statHash number | string
 ---@param value number
 ---@param p2 number
 function PresenceEventUpdatestatFloat(statHash, value, p2) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x11FF1C80276097ED)
----@param statHash number | string
----@param value number
----@param p2 number
-function PresenceEventUpdatestatInt(statHash, value, p2) end
-
----```
----PLAYSTATS_START_INVITE_DESPAWNING?
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x098760C7461724CD)
-function PlaystatsStartOfflineMode() end
 
 ---```
 ---Sets profile setting 866
@@ -1843,17 +1816,27 @@ function PlaystatsStartOfflineMode() end
 function SetHasContentUnlocksFlags(value) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x11B5E6D2AE73F48E)
+---[Native Documentation](https://docs.fivem.net/natives/?_0xDDF24D535060F811)
+---@param scaleformHash number | string
+---@param p1 number
+function PlaystatsWebsiteVisited(scaleformHash, p1) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x11FF1C80276097ED)
 ---@param statHash number | string
----@param p2 any
----@return boolean, boolean
-function StatGetBool(statHash, p2) end
+---@param value number
+---@param p2 number
+function PresenceEventUpdatestatInt(statHash, value, p2) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x49A49BED12794D70)
 ---@param p0 any
 ---@return any
 function StatDeleteSlot(p0) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xB475F27C6A994D65)
+function SetProfileSettingPrologueComplete() end
 
 ---```
 ---Sets profile setting 501
@@ -1863,13 +1846,30 @@ function StatDeleteSlot(p0) end
 function SetSaveMigrationTransactionId(transactionId) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xB475F27C6A994D65)
-function SetProfileSettingPrologueComplete() end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x11B5E6D2AE73F48E)
+---@param statHash number | string
+---@param p2 any
+---@return boolean, boolean
+function StatGetBool(statHash, p2) end
+
+---```
+---NativeDB Introduced: v1290
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x878FF156D36E9956)
+---@return any
+function PlaystatsEnterSessionPack() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x567384DFA67029E6)
 ---@return number
 function StatGetCancelSaveMigrationStatus() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xD7AE6C9C9C6AC54C)
+---@param statHash number | string
+---@param p2 any
+---@return boolean, number
+function StatGetFloat(statHash, p2) end
 
 ---```
 ---p2 - Default value? Seems to be -1 most of the time.  
@@ -1880,6 +1880,50 @@ function StatGetCancelSaveMigrationStatus() end
 ---@param p2 number
 ---@return boolean
 function StatGetBoolMasked(statName, mask, p2) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x8B0FACEFC36C824B)
+---@param statHash number | string
+---@param p2 any
+---@param p3 any
+---@return boolean, any
+function StatGetDate(statHash, p2, p3) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x5473D4195058B2E4)
+---@param statName number | string
+---@return string
+function StatGetLicensePlate(statName) end
+
+---```
+---p2 appears to always be -1  
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x767FBC2AC802EF3D)
+---@param statHash number | string
+---@param p2 number
+---@return boolean, number
+function StatGetInt(statHash, p2) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xE0E854F5280FB769)
+---@param statName number | string
+---@return number
+function StatGetNumberOfDays(statName) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x7583B4BE4C5A41B5)
+---@param statName number | string
+---@return number
+function StatGetNumberOfMinutes(statName) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x655185A06D9EEAAB)
+---@param p0 any
+---@param p2 any
+---@param p3 any
+---@param p4 any
+---@return boolean, any
+function StatGetMaskedInt(p0, p2, p3, p4) end
 
 ---```
 ---Example:
@@ -1892,65 +1936,6 @@ function StatGetBoolMasked(statName, mask, p2) end
 ---@return any
 function StatClearSlotForReload(statSlot) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x5473D4195058B2E4)
----@param statName number | string
----@return string
-function StatGetLicensePlate(statName) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x8B0FACEFC36C824B)
----@param statHash number | string
----@param p2 any
----@param p3 any
----@return boolean, any
-function StatGetDate(statHash, p2, p3) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xD7AE6C9C9C6AC54C)
----@param statHash number | string
----@param p2 any
----@return boolean, number
-function StatGetFloat(statHash, p2) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xE0E854F5280FB769)
----@param statName number | string
----@return number
-function StatGetNumberOfDays(statName) end
-
----```
----p2 appears to always be -1  
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x767FBC2AC802EF3D)
----@param statHash number | string
----@param p2 number
----@return boolean, number
-function StatGetInt(statHash, p2) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x655185A06D9EEAAB)
----@param p0 any
----@param p2 any
----@param p3 any
----@param p4 any
----@return boolean, any
-function StatGetMaskedInt(p0, p2, p3, p4) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xF2D4B2FE415AAFC3)
----@param statName number | string
----@return number
-function StatGetNumberOfHours(statName) end
-
----```
----Needs more research. Possibly used to calculate the "mask" when calling "STAT_SET_BOOL_MASKED"?  
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0xF4D8E7AC2A27758C)
----@param p0 number
----@return number
-function StatGetPackedBoolMask(p0) end
-
 ---```
 ---Needs more research. Possibly used to calculate the "mask" when calling "STAT_SET_MASKED_INT"?  
 ---```
@@ -1960,10 +1945,10 @@ function StatGetPackedBoolMask(p0) end
 function StatGetPackedIntMask(p0) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x7583B4BE4C5A41B5)
+---[Native Documentation](https://docs.fivem.net/natives/?_0xF2D4B2FE415AAFC3)
 ---@param statName number | string
 ---@return number
-function StatGetNumberOfMinutes(statName) end
+function StatGetNumberOfHours(statName) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x2CE056FF3723F00B)
@@ -1971,12 +1956,18 @@ function StatGetNumberOfMinutes(statName) end
 ---@return number
 function StatGetNumberOfSeconds(statName) end
 
+---```
+---Needs more research. Possibly used to calculate the "mask" when calling "STAT_SET_BOOL_MASKED"?  
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0xF4D8E7AC2A27758C)
+---@param p0 number
+---@return number
+function StatGetPackedBoolMask(p0) end
+
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x350F82CCB186AA1B)
----@param p0 any
----@param p4 any
----@return boolean, any, any, any
-function StatGetPos(p0, p4) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0xCE5AA445ABA8DEE0)
+---@return number, number
+function StatGetSaveMigrationConsumeContentUnlockStatus() end
 
 ---```
 ---p1 is always -1 in the script files  
@@ -2007,21 +1998,16 @@ function StatIncrement(statName, value) end
 function StatGetUserId(p0) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xA651443F437B1CE6)
----@param p0 number
----@return boolean
-function StatLoad(p0) end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA1750FFAFA181661)
 ---@param p0 any
 ---@return boolean
 function StatLoadPending(p0) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xCE5AA445ABA8DEE0)
----@return number, number
-function StatGetSaveMigrationConsumeContentUnlockStatus() end
+---[Native Documentation](https://docs.fivem.net/natives/?_0xA651443F437B1CE6)
+---@param p0 number
+---@return boolean
+function StatLoad(p0) end
 
 ---```
 ---platformName must be one of the following: ps3, xbox360, ps4, xboxone
@@ -2030,6 +2016,21 @@ function StatGetSaveMigrationConsumeContentUnlockStatus() end
 ---@param platformName string
 ---@return boolean
 function StatMigrateSave(platformName) end
+
+---```
+---NativeDB Added Parameter 4: Any p3
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0xE07BCA305B82D2FD)
+---@param p0 number
+---@param p1 boolean
+---@param p2 number
+---@return boolean
+function StatSave(p0, p1, p2) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x4FEF53183C3C6414)
+---@return boolean
+function StatSaveMigrationCancel() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x3270F67EED31FBC1)
@@ -2044,16 +2045,6 @@ function StatSaveMigrationConsumeContentUnlock(contentId, srcPlatform, srcGamerH
 ---@return boolean
 function StatSaveMigrationStatusStart() end
 
----```
----NativeDB Added Parameter 4: Any p3
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0xE07BCA305B82D2FD)
----@param p0 number
----@param p1 boolean
----@param p2 number
----@return boolean
-function StatSave(p0, p1, p2) end
-
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x7D3A583856F2C5AC)
 ---@return boolean
@@ -2065,18 +2056,9 @@ function StatSavePending() end
 function StatSetBlockSaves(toggle) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x4FEF53183C3C6414)
----@return boolean
-function StatSaveMigrationCancel() end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xBBB6AD006F1BBEA3)
 ---@return boolean
 function StatSavePendingOrRequested() end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x047CBED6F6F8B63C)
-function StatSetCheatIsActive() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x5BC62EC1937B9E5B)
@@ -2086,6 +2068,33 @@ function StatSetCheatIsActive() end
 ---@param save boolean
 ---@return boolean
 function StatSetBoolMasked(statName, value, mask, save) end
+
+---```
+---Example:
+--- STATS::STAT_SET_BOOL(MISC::GET_HASH_KEY("MPPLY_MELEECHLENGECOMPLETED"), trur, true);
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x4B33C4243DE0C432)
+---@param statName number | string
+---@param value boolean
+---@param save boolean
+---@return boolean
+function StatSetBool(statName, value, save) end
+
+---```
+---NativeDB Introduced: v2372
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0xBBA55BE9AAAABF44)
+---@param p0 any
+function PlaystatsRobberyFinale(p0) end
+
+---```
+---p1 always true.  
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0xC2F84B7F9C4D0C61)
+---@param statName number | string
+---@param p1 boolean
+---@return boolean
+function StatSetCurrentPosixTime(statName, p1) end
 
 ---```
 ---'value' is a structure to a structure, 'numFields' is how many fields there are in said structure (usually 7).  
@@ -2105,17 +2114,6 @@ function StatSetBoolMasked(statName, value, mask, save) end
 ---@param save boolean
 ---@return boolean, any
 function StatSetDate(statName, numFields, save) end
-
----```
----Example:
---- STATS::STAT_SET_BOOL(MISC::GET_HASH_KEY("MPPLY_MELEECHLENGECOMPLETED"), trur, true);
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x4B33C4243DE0C432)
----@param statName number | string
----@param value boolean
----@param save boolean
----@return boolean
-function StatSetBool(statName, value, save) end
 
 ---```
 ---Example:
@@ -2218,6 +2216,14 @@ function StatSetLicensePlate(statName, str) end
 function StatSetProfileSettingValue(profileSetting, value) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xB3271D7AB655B441)
+---@param statName number | string
+---@param value number
+---@param save boolean
+---@return boolean
+function StatSetInt(statName, value, save) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x8CDDF1E452BABE11)
 ---@param statName number | string
 ---@param value string
@@ -2236,12 +2242,10 @@ function StatSetUserId(statName, value, save) end
 function StatSetMaskedInt(statName, p1, p2, p3, save) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xB3271D7AB655B441)
----@param statName number | string
----@param value number
----@param save boolean
+---[Native Documentation](https://docs.fivem.net/natives/?_0x0D0A9F0E7BD91E3C)
+---@param p0 any
 ---@return boolean
-function StatSetInt(statName, value, save) end
+function StatSlotIsLoaded(p0) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xDB283FDE680FE72E)
@@ -2254,12 +2258,6 @@ function StatSetInt(statName, value, save) end
 function StatSetPos(statName, x, y, z, save) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x0D0A9F0E7BD91E3C)
----@param p0 any
----@return boolean
-function StatSlotIsLoaded(p0) end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA87B2335D12531D7)
 ---@param statName number | string
 ---@param value string
@@ -2267,12 +2265,14 @@ function StatSlotIsLoaded(p0) end
 ---@return boolean
 function StatSetString(statName, value, save) end
 
----```
----p1 always true.  
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0xC2F84B7F9C4D0C61)
----@param statName number | string
----@param p1 boolean
----@return boolean
-function StatSetCurrentPosixTime(statName, p1) end
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x350F82CCB186AA1B)
+---@param p0 any
+---@param p4 any
+---@return boolean, any, any, any
+function StatGetPos(p0, p4) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x047CBED6F6F8B63C)
+function StatSetCheatIsActive() end
 

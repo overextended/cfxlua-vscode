@@ -30,12 +30,24 @@ function GetHashOfMapAreaAtCoords(x, y, z) end
 function ClearPopscheduleOverrideVehicleModel(scheduleId) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x4334BC40AA0CB4BB)
+---@param zoneId number
+---@return number
+function GetZonePopschedule(zoneId) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x27040C25DE6CB2F4)
 ---@param x number
 ---@param y number
 ---@param z number
 ---@return number
 function GetZoneAtCoords(x, y, z) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xBA5ECEEA120E5611)
+---@param zoneId number
+---@param toggle boolean
+function SetZoneEnabled(zoneId, toggle) end
 
 ---```
 ---AIRP = Los Santos International Airport  
@@ -137,12 +149,6 @@ function GetZoneAtCoords(x, y, z) end
 ---@return string
 function GetNameOfZone(x, y, z) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xBA5ECEEA120E5611)
----@param zoneId number
----@param toggle boolean
-function SetZoneEnabled(zoneId, toggle) end
-
 ---```
 ---'zoneName' corresponds to an entry in 'popzone.ipl'.  
 ---AIRP = Los Santos International Airport  
@@ -240,26 +246,6 @@ function SetZoneEnabled(zoneId, toggle) end
 ---@return number
 function GetZoneFromNameId(zoneName) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x4334BC40AA0CB4BB)
----@param zoneId number
----@return number
-function GetZonePopschedule(zoneId) end
-
----```
----Only used once in the decompiled scripts. Seems to be related to scripted vehicle generators.  
----Modified example from "am_imp_exp.c4", line 6406:  
----/* popSchedules[0] = ZONE::GET_ZONE_POPSCHEDULE(ZONE::GET_ZONE_AT_COORDS(891.3, 807.9, 188.1));  
----etc.  
----*/  
----ZONE::OVERRIDE_POPSCHEDULE_VEHICLE_MODEL(popSchedules[index], vehicleHash);  
----STREAMING::REQUEST_MODEL(vehicleHash);  
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x5F7D596BAC2E7777)
----@param scheduleId number
----@param vehicleHash number | string
-function OverridePopscheduleVehicleModel(scheduleId, vehicleHash) end
-
 ---Gets the zone scumminess level, used to calculate the cellphone signal strength.
 ---
 ---```cpp
@@ -277,4 +263,18 @@ function OverridePopscheduleVehicleModel(scheduleId, vehicleHash) end
 ---@param zoneId number
 ---@return number
 function GetZoneScumminess(zoneId) end
+
+---```
+---Only used once in the decompiled scripts. Seems to be related to scripted vehicle generators.  
+---Modified example from "am_imp_exp.c4", line 6406:  
+---/* popSchedules[0] = ZONE::GET_ZONE_POPSCHEDULE(ZONE::GET_ZONE_AT_COORDS(891.3, 807.9, 188.1));  
+---etc.  
+---*/  
+---ZONE::OVERRIDE_POPSCHEDULE_VEHICLE_MODEL(popSchedules[index], vehicleHash);  
+---STREAMING::REQUEST_MODEL(vehicleHash);  
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x5F7D596BAC2E7777)
+---@param scheduleId number
+---@param vehicleHash number | string
+function OverridePopscheduleVehicleModel(scheduleId, vehicleHash) end
 

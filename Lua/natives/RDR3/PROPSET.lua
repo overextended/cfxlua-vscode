@@ -1,5 +1,11 @@
 ---@meta
 
+---Same as _REQUEST_PROP_SET
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xE72F591958F3ACAB)
+---@param hash number | string
+---@return boolean
+function RequestPropSet_2(hash) end
+
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xF3DE57A46D5585E9)
 ---@param hash number | string
@@ -12,11 +18,10 @@ function RequestPropSet(hash) end
 ---@return boolean
 function HasPropSetLoaded(hash) end
 
----Same as _REQUEST_PROP_SET
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xE72F591958F3ACAB)
----@param hash number | string
----@return boolean
-function RequestPropSet_2(hash) end
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x909E3C7FAE539FB1)
+---@param propSet any
+function SetPropSetAsNoLongerNeeded(propSet) end
 
 ---Same as _HAS_PROP_SET_LOADED
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xD090ABEF4D6A7D96)
@@ -25,16 +30,10 @@ function RequestPropSet_2(hash) end
 function HasPropSetLoaded_2(hash) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x909E3C7FAE539FB1)
----@param propSet any
-function SetPropSetAsNoLongerNeeded(propSet) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x58AC173A55D9D7B4)
----@param propSet any
----@param p1 boolean
----@param p2 boolean
-function DeletePropSet(propSet, p1, p2) end
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xB1964A83B345B4AB)
+---@param hash number | string
+---@return boolean
+function ReleasePropSet(hash) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xE65C5CBA95F0E510)
@@ -51,10 +50,25 @@ function DeletePropSet(propSet, p1, p2) end
 function CreatePropSet(hash, x, y, z, p4, heading, p6, p7, p8) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xB1964A83B345B4AB)
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x58AC173A55D9D7B4)
+---@param propSet any
+---@param p1 boolean
+---@param p2 boolean
+function DeletePropSet(propSet, p1, p2) end
+
+---Same as CREATE_PROP_SET_INSTANCE_ATTACHED_TO_ENTITY
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xACA7FB30269096D4)
 ---@param hash number | string
----@return boolean
-function ReleasePropSet(hash) end
+---@param x number
+---@param y number
+---@param z number
+---@param entity number
+---@param p5 number
+---@param p6 boolean
+---@param p7 number
+---@param p8 boolean
+---@return any
+function CreatePropSet_4(hash, x, y, z, entity, p5, p6, p7, p8) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x9609DBDDE18FAD8C)
@@ -69,6 +83,15 @@ function ReleasePropSet(hash) end
 ---@param p8 boolean
 ---@return any
 function CreatePropSetInstanceAttachedToEntity(hash, x, y, z, entity, p5, p6, p7, p8) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x72068021F498E6E3)
+---@param propsetHash number | string
+---@param x number
+---@param y number
+---@param z number
+---@return boolean
+function DoesPropSetOfTypeExistNearCoords(propsetHash, x, y, z) end
 
 ---Same as _CREATE_PROP_SET
 ---https://github.com/femga/rdr3_discoveries/blob/master/objects/propsets_list.lua
@@ -86,61 +109,16 @@ function CreatePropSetInstanceAttachedToEntity(hash, x, y, z, entity, p5, p6, p7
 function CreatePropSet_2(hash, x, y, z, p4, p5, p6, p7, p8) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x7DDDCF815E650FF5)
----@param propSet any
----@return boolean
-function DoesPropSetExist(propSet) end
-
----Same as CREATE_PROP_SET_INSTANCE_ATTACHED_TO_ENTITY
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xACA7FB30269096D4)
----@param hash number | string
----@param x number
----@param y number
----@param z number
----@param entity number
----@param p5 number
----@param p6 boolean
----@param p7 number
----@param p8 boolean
----@return any
-function CreatePropSet_4(hash, x, y, z, entity, p5, p6, p7, p8) end
-
----This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xF42DB680A8B2A4D9)
 ---@param propSet any
 ---@return boolean
 function IsPropSetFullyLoaded(propSet) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x72068021F498E6E3)
----@param propsetHash number | string
----@param x number
----@param y number
----@param z number
----@return boolean
-function DoesPropSetOfTypeExistNearCoords(propsetHash, x, y, z) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xA6A9712955F53D9C)
----@param propSet any
----@return number
-function GetPropSetModel(propSet) end
-
----This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x9D096A5BD02F953E)
 ---@param propSet any
 ---@param toggle boolean
 function SetPropSetVisible(propSet, toggle) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x738271B660FE0695)
----@param propSet any
----@param itemSet any
----@param model number | string
----@param p3 boolean
----@param p4 boolean
----@return number
-function GetEntitiesFromPropSet(propSet, itemSet, model, p3, p4) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x0CE8AAFE9E433A23)
@@ -153,6 +131,28 @@ function IsPropSetVisible(propSet) end
 ---@param vehicle number
 ---@return number
 function GetVehiclePropSetHash(vehicle) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x738271B660FE0695)
+---@param propSet any
+---@param itemSet any
+---@param model number | string
+---@param p3 boolean
+---@param p4 boolean
+---@return number
+function GetEntitiesFromPropSet(propSet, itemSet, model, p3, p4) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xA6A9712955F53D9C)
+---@param propSet any
+---@return number
+function GetPropSetModel(propSet) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x7DDDCF815E650FF5)
+---@param propSet any
+---@return boolean
+function DoesPropSetExist(propSet) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xC4B67EF3FD65622D)
@@ -183,9 +183,10 @@ function SetPropSetFlag(propSet, flag) end
 function DoesVehicleHaveAnyPropSet(vehicle) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x3BCF32FF37EA9F1D)
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x155B2FBE72D7D1D0)
 ---@param vehicle number
-function RemoveVehiclePropSets(vehicle) end
+---@return boolean
+function IsVehiclePropSetLoaded(vehicle) end
 
 ---List of vehicle propsets (wagons & trains): https://pastebin.com/1CsnvGLu / https://pastebin.com/v7TtqTgE
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xD80FAF919A2E56EA)
@@ -200,27 +201,21 @@ function AddPropSetForVehicle(vehicle, propset) end
 function AddAdditionalPropSetForVehicle(vehicle, propset) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x7264F9CA87A9830B)
----@param vehicle number
----@return boolean
-function IsVehiclePropSetLoadedAdditional(vehicle) end
-
----Returns PropSet handle to be used with _GET_PROP_SET_MODEL
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xA079300AF757FB1A)
----@param vehicle number
----@return any
-function GetVehicleLightPropSet(vehicle) end
-
----This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x58E0B01D45CA7357)
 ---@param p0 any
 function N_0x58e0b01d45ca7357(p0) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x155B2FBE72D7D1D0)
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x7264F9CA87A9830B)
 ---@param vehicle number
 ---@return boolean
-function IsVehiclePropSetLoaded(vehicle) end
+function IsVehiclePropSetLoadedAdditional(vehicle) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xC9B4B3A36F81FD75)
+---@param vehicle number
+---@return boolean
+function DoesVehicleHaveAnyLightPropSet(vehicle) end
 
 ---To remove propsets either parse a zero as hash or call 0xE31C0CB1C3186D40
 ---0xA6A9712955F53D9C returns lightPropset Hashes
@@ -235,17 +230,24 @@ function AddLightPropSetToVehicle(vehicle, lightPropset) end
 ---@param vehicle number
 function RemoveVehicleLightPropSets(vehicle) end
 
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xC9B4B3A36F81FD75)
+---Returns PropSet handle to be used with _GET_PROP_SET_MODEL
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xA079300AF757FB1A)
 ---@param vehicle number
----@return boolean
-function DoesVehicleHaveAnyLightPropSet(vehicle) end
+---@return any
+function GetVehicleLightPropSet(vehicle) end
 
 ---Example before/after deleting a train carriage's propset: https://imgur.com/a/qRNrIrK
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xCFC0BD09BB1B73FF)
 ---@param trainCarriage number
 ---@return any
 function GetTrainCarriagePropSet(trainCarriage) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x8F3333F0A6900B3C)
+---@param vehicle number
+---@param wagonIndex number
+---@return boolean
+function HasVehicleTrailerPropSetLoaded(vehicle, wagonIndex) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xC061E50F8D299F95)
@@ -257,11 +259,9 @@ function GetTrainCarriagePropSet(trainCarriage) end
 function GetPropSetAtCoords(propsetHash, x, y, z) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x8F3333F0A6900B3C)
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x3BCF32FF37EA9F1D)
 ---@param vehicle number
----@param wagonIndex number
----@return boolean
-function HasVehicleTrailerPropSetLoaded(vehicle, wagonIndex) end
+function RemoveVehiclePropSets(vehicle) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x0790473EEE1977D3)

@@ -63,12 +63,6 @@ function AddCoverPoint(p0, p1, p2, p3, p4, p5, p6, p7) end
 ---@return boolean
 function AssistedMovementIsRouteLoaded(route) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x85F462BADC7DA47F)
----@param ped number
----@param ped2 number
-function AddVehicleSubtaskAttackPed(ped, ped2) end
-
 ---```
 ---x, y, z: offset in world coords from some entity.  
 ---```
@@ -79,17 +73,15 @@ function AddVehicleSubtaskAttackPed(ped, ped2) end
 ---@param z number
 function AddVehicleSubtaskAttackCoord(ped, x, y, z) end
 
----```
----Routes: "1_FIBStairs", "2_FIBStairs", "3_FIBStairs", "4_FIBStairs", "5_FIBStairs", "5_TowardsFire", "6a_FIBStairs", "7_FIBStairs", "8_FIBStairs", "Aprtmnt_1", "AssAfterLift", "ATM_1", "coroner2", "coroner_stairs", "f5_jimmy1", "fame1", "family5b", "family5c", "Family5d", "family5d", "FIB_Glass1", "FIB_Glass2", "FIB_Glass3", "finaBroute1A", "finalb1st", "finalB1sta", "finalbround", "finalbroute2", "Hairdresser1", "jan_foyet_ft_door", "Jo_3", "Lemar1", "Lemar2", "mansion_1", "Mansion_1", "pols_1", "pols_2", "pols_3", "pols_4", "pols_5", "pols_6", "pols_7", "pols_8", "Pro_S1", "Pro_S1a", "Pro_S2", "Towards_case", "trev_steps", "tunrs1", "tunrs2", "tunrs3", "Wave01457s"  
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x817268968605947A)
----@param route string
-function AssistedMovementRequestRoute(route) end
-
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x3548536485DD792B)
 ---@param route string
 function AssistedMovementRemoveRoute(route) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x13945951E16EF912)
+---@param dist number
+function AssistedMovementOverrideLoadDistanceThisFrame(dist) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xD5002D78B7162E1B)
@@ -98,9 +90,16 @@ function AssistedMovementRemoveRoute(route) end
 function AssistedMovementSetRouteProperties(route, props) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x13945951E16EF912)
----@param dist number
-function AssistedMovementOverrideLoadDistanceThisFrame(dist) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x176CECF6F920D707)
+---@param ped number
+function ClearPedSecondaryTask(ped) end
+
+---```
+---Routes: "1_FIBStairs", "2_FIBStairs", "3_FIBStairs", "4_FIBStairs", "5_FIBStairs", "5_TowardsFire", "6a_FIBStairs", "7_FIBStairs", "8_FIBStairs", "Aprtmnt_1", "AssAfterLift", "ATM_1", "coroner2", "coroner_stairs", "f5_jimmy1", "fame1", "family5b", "family5c", "Family5d", "family5d", "FIB_Glass1", "FIB_Glass2", "FIB_Glass3", "finaBroute1A", "finalb1st", "finalB1sta", "finalbround", "finalbroute2", "Hairdresser1", "jan_foyet_ft_door", "Jo_3", "Lemar1", "Lemar2", "mansion_1", "Mansion_1", "pols_1", "pols_2", "pols_3", "pols_4", "pols_5", "pols_6", "pols_7", "pols_8", "Pro_S1", "Pro_S1a", "Pro_S2", "Towards_case", "trev_steps", "tunrs1", "tunrs2", "tunrs3", "Wave01457s"  
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x817268968605947A)
+---@param route string
+function AssistedMovementRequestRoute(route) end
 
 ---Clear a ped's tasks. Stop animations and other tasks created by scripts.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xE1EF3C1216AFF2CD)
@@ -108,33 +107,14 @@ function AssistedMovementOverrideLoadDistanceThisFrame(dist) end
 function ClearPedTasks(ped) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x176CECF6F920D707)
----@param ped number
-function ClearPedSecondaryTask(ped) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xC35B5CDB2824CF69)
----@param ped number
-function ClearDrivebyTaskUnderneathDrivingTask(ped) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x3841422E9C488D8C)
+---@return number
+function ClearSequenceTask() end
 
 ---Immediately stops the pedestrian from whatever it's doing. The difference between this and [CLEAR_PED_TASKS](#\_0xE1EF3C1216AFF2CD) is that this one teleports the ped but does not change the position of the ped.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xAAA34F8A7CB32098)
 ---@param ped number
 function ClearPedTasksImmediately(ped) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x3841422E9C488D8C)
----@return number
-function ClearSequenceTask() end
-
----```
----CLEAR_*
----
----NativeDB Introduced: v1290
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0xDBBC7A2432524127)
----@param vehicle number
-function ClearVehicleTasks(vehicle) end
 
 ---```
 ---Forces the ped to use the mounted weapon.  
@@ -144,6 +124,12 @@ function ClearVehicleTasks(vehicle) end
 ---@param ped number
 ---@return boolean
 function ControlMountedWeapon(ped) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x85F462BADC7DA47F)
+---@param ped number
+---@param ped2 number
+function AddVehicleSubtaskAttackPed(ped, ped2) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xB043ECA801B8CBC1)
@@ -166,14 +152,8 @@ function CloseSequenceTask(taskSequenceId) end
 function DeletePatrolRoute(patrolRoute) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x5A59271FFADD33C1)
----@param x number
----@param y number
----@param z number
----@param radius number
----@param b boolean
----@return boolean
-function DoesScenarioExistInArea(x, y, z, radius, b) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0xAF8A443CCC8018DC)
+function CreatePatrolRoute() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x0A9D0C2A3BBC86C1)
@@ -186,13 +166,15 @@ function DoesScenarioExistInArea(x, y, z, radius, b) end
 ---@return boolean
 function DoesScenarioOfTypeExistInArea(p0, p1, p2, p3, p4, p5) end
 
----```
----https://alloc8or.re/gta5/doc/enums/eVehicleMissionType.txt
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x534AEBA6E5ED4CAB)
----@param vehicle number
----@return number
-function GetActiveVehicleMissionType(vehicle) end
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x5A59271FFADD33C1)
+---@param x number
+---@param y number
+---@param z number
+---@param radius number
+---@param b boolean
+---@return boolean
+function DoesScenarioExistInArea(x, y, z, radius, b) end
 
 ---```
 ---Checks if there is a cover point at position  
@@ -205,6 +187,14 @@ function GetActiveVehicleMissionType(vehicle) end
 function DoesScriptedCoverPointExistAtCoords(x, y, z) end
 
 ---```
+---https://alloc8or.re/gta5/doc/enums/eVehicleMissionType.txt
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x534AEBA6E5ED4CAB)
+---@param vehicle number
+---@return number
+function GetActiveVehicleMissionType(vehicle) end
+
+---```
 ---Task index enum: https://alloc8or.re/gta5/doc/enums/eTaskTypeIndex.txt
 ---```
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xB0760331C7AA4155)
@@ -212,6 +202,19 @@ function DoesScriptedCoverPointExistAtCoords(x, y, z) end
 ---@param taskIndex number
 ---@return boolean
 function GetIsTaskActive(ped, taskIndex) end
+
+---```
+---Looks like the last parameter returns true if the path has been calculated, while the first returns the remaining distance to the end of the path.
+---Return value of native is the same as GET_NAVMESH_ROUTE_RESULT
+---Looks like the native returns an int for the path's state:
+---1 - ???
+---2 - ???
+---3 - Finished Generating
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0xC6F5C0BCDC74D62D)
+---@param ped number
+---@return number, number, boolean
+function GetNavmeshRouteDistanceRemaining(ped) end
 
 ---```
 ---Occurrences in the b617d scripts:
@@ -253,35 +256,16 @@ function GetIsTaskActive(ped, taskIndex) end
 function DoesScenarioGroupExist(scenarioGroup) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x3A8CADC7D37AACC5)
----@param p0 number
----@return string
-function GetClipSetForScriptedGunTask(p0) end
-
----```
----Looks like the last parameter returns true if the path has been calculated, while the first returns the remaining distance to the end of the path.
----Return value of native is the same as GET_NAVMESH_ROUTE_RESULT
----Looks like the native returns an int for the path's state:
----1 - ???
----2 - ???
----3 - Finished Generating
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0xC6F5C0BCDC74D62D)
----@param ped number
----@return number, number, boolean
-function GetNavmeshRouteDistanceRemaining(ped) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xE6A877C64CAF1BC5)
----@param p0 any
----@return number
-function GetPedWaypointDistance(p0) end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xCB4E8BE8A0063C5D)
 ---@param name string
 ---@return boolean
 function GetIsWaypointRecordingLoaded(name) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x3A8CADC7D37AACC5)
+---@param p0 number
+---@return string
+function GetClipSetForScriptedGunTask(p0) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x2720AAA75001E094)
@@ -289,11 +273,23 @@ function GetIsWaypointRecordingLoaded(name) end
 ---@return number
 function GetPedWaypointProgress(ped) end
 
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xE6A877C64CAF1BC5)
+---@param p0 any
+---@return number
+function GetPedWaypointDistance(p0) end
+
 ---See [`GET_NAVMESH_ROUTE_DISTANCE_REMAINING`](#\_0xC6F5C0BCDC74D62D) for more details.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x632E831F382A0FA8)
 ---@param ped number
 ---@return number
 function GetNavmeshRouteResult(ped) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x8517D4A6CA8513ED)
+---@param ped number
+---@return number
+function GetPedDesiredMoveBlendRatio(ped) end
 
 ---```
 ---Gets the status of a script-assigned task.
@@ -306,16 +302,16 @@ function GetNavmeshRouteResult(ped) end
 function GetScriptTaskStatus(ped, taskHash) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x8517D4A6CA8513ED)
----@param ped number
----@return number
-function GetPedDesiredMoveBlendRatio(ped) end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x594A1028FC2A3E85)
 ---@param coverpoint any
 ---@return vector3
 function GetScriptedCoverPointCoords(coverpoint) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x47619ABE8B268C60)
+---@param ped number
+---@return number
+function GetPhoneGestureAnimCurrentTime(ped) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xB4F47213DF45A64C)
@@ -330,11 +326,14 @@ function GetTaskMoveNetworkEvent(ped, eventName) end
 ---@return number
 function GetPhoneGestureAnimTotalTime(ped) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x47619ABE8B268C60)
+---```
+---NativeDB Introduced: v1493
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x44AB0B3AFECCE242)
 ---@param ped number
+---@param signalName string
 ---@return number
-function GetPhoneGestureAnimCurrentTime(ped) end
+function GetTaskMoveNetworkSignalFloat(ped, signalName) end
 
 ---```
 ---returned values:
@@ -353,18 +352,11 @@ function GetSequenceProgress(ped) end
 ---@return boolean
 function GetTaskMoveNetworkSignalBool(ped, signalName) end
 
----```
----NativeDB Introduced: v1493
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x44AB0B3AFECCE242)
----@param ped number
----@param signalName string
----@return number
-function GetTaskMoveNetworkSignalFloat(ped, signalName) end
-
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xAF8A443CCC8018DC)
-function CreatePatrolRoute() end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x717E4D1F2048376D)
+---@param ped number
+---@return string
+function GetTaskMoveNetworkState(ped) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x9824CFF8FC66E159)
@@ -379,12 +371,6 @@ function GetVehicleWaypointProgress(vehicle) end
 function GetVehicleWaypointTargetPoint(vehicle) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xA320EF046186FA3B)
----@param ped number
----@return boolean
-function IsMountedWeaponTaskUnderneathDrivingTask(ped) end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA5B769058763E497)
 ---@param p0 string
 ---@param p1 number
@@ -392,10 +378,21 @@ function IsMountedWeaponTaskUnderneathDrivingTask(ped) end
 function GetWaypointDistanceAlongRoute(p0, p1) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xD4D8636C0199A939)
+---[Native Documentation](https://docs.fivem.net/natives/?_0xA320EF046186FA3B)
 ---@param ped number
 ---@return boolean
-function IsMoveBlendRatioRunning(ped) end
+function IsMountedWeaponTaskUnderneathDrivingTask(ped) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xC35B5CDB2824CF69)
+---@param ped number
+function ClearDrivebyTaskUnderneathDrivingTask(ped) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x349CE7B56DAFD95C)
+---@param ped number
+---@return boolean
+function IsMoveBlendRatioStill(ped) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x8785E6E40C7A8818)
@@ -409,18 +406,6 @@ function IsDrivebyTaskUnderneathDrivingTask(ped) end
 ---@return boolean
 function IsMoveBlendRatioSprinting(ped) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x349CE7B56DAFD95C)
----@param ped number
----@return boolean
-function IsMoveBlendRatioStill(ped) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xF133BBBE91E1691F)
----@param ped number
----@return boolean
-function IsMoveBlendRatioWalking(ped) end
-
 ---```
 ---This function is hard-coded to always return 0.  
 ---```
@@ -429,12 +414,6 @@ function IsMoveBlendRatioWalking(ped) end
 ---@return boolean
 function IsPedBeingArrested(ped) end
 
----When passing a ped parameter, the function returns true if the ped is currently in any scenario.
----[Native Documentation](https://docs.fivem.net/natives/?_0xAA135F9482C82CC3)
----@param ped number
----@return boolean
-function IsPedActiveInScenario(ped) end
-
 ---This native checks if a ped is on the ground, in pain from a (gunshot) wound.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xDEB6D52126E7D640)
 ---@param ped number
@@ -442,22 +421,49 @@ function IsPedActiveInScenario(ped) end
 function IsPedInWrithe(ped) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x717E4D1F2048376D)
----@param ped number
----@return string
-function GetTaskMoveNetworkState(ped) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xC5286FFC176F28A2)
+---[Native Documentation](https://docs.fivem.net/natives/?_0xF133BBBE91E1691F)
 ---@param ped number
 ---@return boolean
-function IsPedRunning(ped) end
+function IsMoveBlendRatioWalking(ped) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x3DC52677769B4AE0)
 ---@param ped number
 ---@return boolean
 function IsPedRunningArrestTask(ped) end
+
+---When passing a ped parameter, the function returns true if the ped is currently in any scenario.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xAA135F9482C82CC3)
+---@param ped number
+---@return boolean
+function IsPedActiveInScenario(ped) end
+
+---```
+---CLEAR_*
+---
+---NativeDB Introduced: v1290
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0xDBBC7A2432524127)
+---@param vehicle number
+function ClearVehicleTasks(vehicle) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xD4D8636C0199A939)
+---@param ped number
+---@return boolean
+function IsMoveBlendRatioRunning(ped) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x621C6E4729388E41)
+---@param ped number
+---@return boolean
+function IsPedPlayingBaseClipInScenario(ped) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xC5286FFC176F28A2)
+---@param ped number
+---@return boolean
+function IsPedRunning(ped) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x2A74E1D5F2F00EEC)
@@ -483,23 +489,49 @@ function IsPedCuffed(ped) end
 ---@return boolean
 function IsPedSprinting(ped) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x621C6E4729388E41)
----@param ped number
+---```
+---Occurrences in the b617d scripts:
+---"PROP_HUMAN_SEAT_CHAIR",
+---"WORLD_HUMAN_DRINKING",
+---"WORLD_HUMAN_HANG_OUT_STREET",
+---"WORLD_HUMAN_SMOKING",
+---"WORLD_MOUNTAIN_LION_WANDER",
+---"WORLD_HUMAN_DRINKING"
+---Sometimes used together with MISC::IS_STRING_NULL_OR_EMPTY in the scripts.
+---scenarioType could be the same as scenarioName, used in for example TASK::TASK_START_SCENARIO_AT_POSITION.
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x3A815DB3EA088722)
+---@param scenarioType string
 ---@return boolean
-function IsPedPlayingBaseClipInScenario(ped) end
+function IsScenarioTypeEnabled(scenarioType) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xDE4C184B2B9B071A)
+---[Native Documentation](https://docs.fivem.net/natives/?_0x30ED88D5E0C56A37)
 ---@param ped number
 ---@return boolean
-function IsPedWalking(ped) end
+function IsTaskMoveNetworkReadyForTransition(ped) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x788756D73AC2E07C)
+---@param p0 number
+---@param p1 number
+---@param p2 number
+---@param p3 number
+---@param p4 boolean
+---@return boolean
+function IsScenarioOccupied(p0, p1, p2, p3, p4) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xB8EBB1E9D3588C10)
 ---@param ped number
 ---@return boolean
 function IsPlayingPhoneGestureAnim(ped) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x921CE12C489C4C41)
+---@param ped number
+---@return boolean
+function IsTaskMoveNetworkActive(ped) end
 
 ---```
 --- Occurrences in the b617d scripts:
@@ -535,12 +567,6 @@ function IsPlayingPhoneGestureAnim(ped) end
 ---@return boolean
 function IsScenarioGroupEnabled(scenarioGroup) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x30ED88D5E0C56A37)
----@param ped number
----@return boolean
-function IsTaskMoveNetworkReadyForTransition(ped) end
-
 ---```
 ---What's strafing?  
 ---```
@@ -549,49 +575,25 @@ function IsTaskMoveNetworkReadyForTransition(ped) end
 ---@return boolean
 function IsPedStrafing(ped) end
 
----```
----Occurrences in the b617d scripts:
----"PROP_HUMAN_SEAT_CHAIR",
----"WORLD_HUMAN_DRINKING",
----"WORLD_HUMAN_HANG_OUT_STREET",
----"WORLD_HUMAN_SMOKING",
----"WORLD_MOUNTAIN_LION_WANDER",
----"WORLD_HUMAN_DRINKING"
----Sometimes used together with MISC::IS_STRING_NULL_OR_EMPTY in the scripts.
----scenarioType could be the same as scenarioName, used in for example TASK::TASK_START_SCENARIO_AT_POSITION.
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x3A815DB3EA088722)
----@param scenarioType string
----@return boolean
-function IsScenarioTypeEnabled(scenarioType) end
-
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xE03B3F2D3DC59B64)
----@param p0 any
----@return boolean
-function IsWaypointPlaybackGoingOnForPed(p0) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x921CE12C489C4C41)
+---[Native Documentation](https://docs.fivem.net/natives/?_0xDE4C184B2B9B071A)
 ---@param ped number
 ---@return boolean
-function IsTaskMoveNetworkActive(ped) end
+function IsPedWalking(ped) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x788756D73AC2E07C)
----@param p0 number
----@param p1 number
----@param p2 number
----@param p3 number
----@param p4 boolean
----@return boolean
-function IsScenarioOccupied(p0, p1, p2, p3, p4) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xF5134943EA29868C)
----@param vehicle number
----@return boolean
-function IsWaypointPlaybackGoingOnForVehicle(vehicle) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x1F351CF1C6475734)
+---@param p0 any
+---@param p1 any
+---@param p2 any
+---@param p3 any
+---@param p4 any
+---@param p5 any
+---@param p6 any
+---@param p7 any
+---@param p8 any
+---@param p9 any
+function N_0x1f351cf1c6475734(p0, p1, p2, p3, p4, p5, p6, p7, p8, p9) end
 
 ---Doesn't actually return anything.
 ---
@@ -603,6 +605,12 @@ function IsWaypointPlaybackGoingOnForVehicle(vehicle) end
 ---@param p1 boolean
 ---@return any
 function N_0x0ffb3c758e8c07b9(ped, p1) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xF5134943EA29868C)
+---@param vehicle number
+---@return boolean
+function IsWaypointPlaybackGoingOnForVehicle(vehicle) end
 
 ---```
 ---NativeDB Introduced: v1868
@@ -631,20 +639,6 @@ function N_0x29682e2ccf21e9b5(p0, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, 
 ---@param p0 any
 function N_0x6100b3cefd43452e(p0) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x1F351CF1C6475734)
----@param p0 any
----@param p1 any
----@param p2 any
----@param p3 any
----@param p4 any
----@param p5 any
----@param p6 any
----@param p7 any
----@param p8 any
----@param p9 any
-function N_0x1f351cf1c6475734(p0, p1, p2, p3, p4, p5, p6, p7, p8, p9) end
-
 ---Related to [`_CLEAR_VEHICLE_TASKS`](#\_0xDBBC7A2432524127) and requires more research (e.g., \_CLEAR_VEHICLE_SECONDARY_TASKS).
 ---
 ---```
@@ -656,22 +650,11 @@ function N_0x1f351cf1c6475734(p0, p1, p2, p3, p4, p5, p6, p7, p8, p9) end
 ---@param vehicle number
 function N_0x53ddc75bc3ac0a90(vehicle) end
 
----```
----IS_*
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x3E38E28A1D80DDF6)
----@param ped number
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xE03B3F2D3DC59B64)
+---@param p0 any
 ---@return boolean
-function N_0x3e38e28a1d80ddf6(ped) end
-
----```
----NativeDB Introduced: v1493
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x8634CEF2522D987B)
----@param ped number
----@param p1 string
----@param value number
-function N_0x8634cef2522d987b(ped, p1, value) end
+function IsWaypointPlaybackGoingOnForPed(p0) end
 
 ---```
 ---The patrol route name must starts with "miss_" to be properly created. 
@@ -703,6 +686,32 @@ function N_0x8634cef2522d987b(ped, p1, value) end
 function OpenPatrolRoute(patrolRoute) end
 
 ---```
+---NativeDB Introduced: v1493
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x8423541E8B3A1589)
+---@param p0 any
+---@param p1 any
+---@param p2 any
+function N_0x8423541e8b3a1589(p0, p1, p2) end
+
+---```
+---NativeDB Introduced: v1868
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x9D252648778160DF)
+---@param p0 any
+---@return any
+function N_0x9d252648778160df(p0) end
+
+---```
+---NativeDB Introduced: v1493
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x8634CEF2522D987B)
+---@param ped number
+---@param p1 string
+---@param value number
+function N_0x8634cef2522d987b(ped, p1, value) end
+
+---```
 ---Used only once in the scripts (fm_mission_controller) like so:
 ---
 ---TASK::_0xAB13A5565480B6D9(iLocal_3160, "Cutting");
@@ -715,14 +724,11 @@ function OpenPatrolRoute(patrolRoute) end
 ---@return any
 function N_0xab13a5565480b6d9(ped, p1) end
 
----```
----NativeDB Introduced: v1493
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x8423541E8B3A1589)
----@param p0 any
----@param p1 any
----@param p2 any
-function N_0x8423541e8b3a1589(p0, p1, p2) end
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x295E3CCEC879CCD7)
+---@param ped number
+---@return boolean
+function PedHasUseScenarioTask(ped) end
 
 ---```
 ---REMOVE_*
@@ -736,23 +742,9 @@ function N_0x8423541e8b3a1589(p0, p1, p2) end
 function N_0xfa83ca6776038f64(x, y, z) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x295E3CCEC879CCD7)
----@param ped number
----@return boolean
-function PedHasUseScenarioTask(ped) end
-
----```
----NativeDB Introduced: v1868
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x9D252648778160DF)
----@param p0 any
----@return any
-function N_0x9d252648778160df(p0) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xAE287C923D891715)
----@param coverpoint any
-function RemoveCoverPoint(coverpoint) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0xE8854A4326B9E12B)
+---@return number
+function OpenSequenceTask() end
 
 ---[Animations list](https://alexguirre.github.io/animations-list/)
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x748040460F8DF5DC)
@@ -762,9 +754,9 @@ function RemoveCoverPoint(coverpoint) end
 function PlayAnimOnRunningScenario(ped, animDict, animName) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xE8854A4326B9E12B)
----@return number
-function OpenSequenceTask() end
+---[Native Documentation](https://docs.fivem.net/natives/?_0xAE287C923D891715)
+---@param coverpoint any
+function RemoveCoverPoint(coverpoint) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x77A1EEC547E7FCF1)
@@ -773,6 +765,13 @@ function OpenSequenceTask() end
 ---@param p5 number
 ---@return any, any, any
 function PlayEntityScriptedAnim(p0, p4, p5) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xD01015C7316AE176)
+---@param ped number
+---@param name string
+---@return boolean
+function RequestTaskMoveNetworkStateTransition(ped, name) end
 
 ---```
 ---For a full list of the points, see here: goo.gl/wIH0vn
@@ -783,24 +782,41 @@ function PlayEntityScriptedAnim(p0, p4, p5) end
 function RequestWaypointRecording(name) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xFF1B8B4AA1C25DC8)
----@param name string
-function RemoveWaypointRecording(name) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x4202BBCB8684563D)
+function ResetExclusiveScenarioGroup() end
+
+---```
+---IS_*
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x3E38E28A1D80DDF6)
+---@param ped number
+---@return boolean
+function N_0x3e38e28a1d80ddf6(ped) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xD01015C7316AE176)
----@param ped number
----@param name string
----@return boolean
-function RequestTaskMoveNetworkStateTransition(ped, name) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x0D40EE2A7F2B2D6D)
+function ResetScenarioTypesEnabled() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xDD902D0349AFAD3A)
 function ResetScenarioGroupsEnabled() end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x4202BBCB8684563D)
-function ResetExclusiveScenarioGroup() end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x207F1A47C0342F48)
+---@param p0 any
+---@param p1 number
+---@param p2 any
+---@param p3 any
+---@param p4 boolean
+function SetAnimWeight(p0, p1, p2, p3, p4) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x70033C3CC29A1FF4)
+---@param p0 any
+---@param p1 boolean
+---@param p2 any
+---@param p3 boolean
+function SetAnimLooped(p0, p1, p2, p3) end
 
 ---```
 ---NativeDB Introduced: v2372
@@ -811,23 +827,6 @@ function ResetExclusiveScenarioGroup() end
 ---@param p2 any
 ---@param p3 boolean
 function SetAnimPhase(entity, p1, p2, p3) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x70033C3CC29A1FF4)
----@param p0 any
----@param p1 boolean
----@param p2 any
----@param p3 boolean
-function SetAnimLooped(p0, p1, p2, p3) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x207F1A47C0342F48)
----@param p0 any
----@param p1 number
----@param p2 any
----@param p3 any
----@param p4 boolean
-function SetAnimWeight(p0, p1, p2, p3, p4) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x404A5AA9B9F0B746)
@@ -855,6 +854,12 @@ function SetAnimRate(p0, p1, p2, p3) end
 ---@param z number
 function SetDrivebyTaskTarget(shootingPed, targetPed, targetVehicle, x, y, z) end
 
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x5C9B84BD7D31D908)
+---@param driver number
+---@param cruiseSpeed number
+function SetDriveTaskCruiseSpeed(driver, cruiseSpeed) end
+
 ---```
 ---Groups found in the scripts used with this native:  
 ---"AMMUNATION",  
@@ -866,18 +871,6 @@ function SetDrivebyTaskTarget(shootingPed, targetPed, targetVehicle, x, y, z) en
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x535E97E1F7FC0C6A)
 ---@param scenarioGroup string
 function SetExclusiveScenarioGroup(scenarioGroup) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x0D40EE2A7F2B2D6D)
-function ResetScenarioTypesEnabled() end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x8C825BDC7741D37C)
----@param ped number
----@param duration any
----@param p2 any
----@param p3 any
-function SetHighFallTask(ped, duration, p2, p3) end
 
 ---```
 ---This native is used to set the driving style for specific ped.  
@@ -891,6 +884,26 @@ function SetHighFallTask(ped, duration, p2, p3) end
 ---@param ped number
 ---@param drivingStyle number
 function SetDriveTaskDrivingStyle(ped, drivingStyle) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xFF1B8B4AA1C25DC8)
+---@param name string
+function RemoveWaypointRecording(name) end
+
+---```
+---Birds will try to reach the given height.  
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x6C6B148586F934F7)
+---@param height number
+function SetGlobalMinBirdFlightHeight(height) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x8C825BDC7741D37C)
+---@param ped number
+---@param duration any
+---@param p2 any
+---@param p3 any
+function SetHighFallTask(ped, duration, p2, p3) end
 
 ---```
 ---Note: Look in decompiled scripts and the times that p1 and p2 aren't 0. They are filled with vars. If you look through out that script what other natives those vars are used in, you can tell p1 is a ped and p2 is a vehicle. Which most likely means if you want the mounted weapon to target a ped set targetVehicle to 0 or vice-versa.  
@@ -922,12 +935,17 @@ function SetParachuteTaskTarget(ped, x, y, z) end
 ---@param p0 number
 function SetNextDesiredMoveState(p0) end
 
----```
----Birds will try to reach the given height.  
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x6C6B148586F934F7)
----@param height number
-function SetGlobalMinBirdFlightHeight(height) end
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x1E982AC8716912C5)
+---@param ped number
+---@param p1 number
+function SetPedDesiredMoveBlendRatio(ped, p1) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x4455517B28441E60)
+---@param ped number
+---@param avoidFire boolean
+function SetPedPathAvoidFire(ped, avoidFire) end
 
 ---```
 ---Appears only in fm_mission_controller and used only 3 times.  
@@ -942,40 +960,16 @@ function SetGlobalMinBirdFlightHeight(height) end
 function SetPedCanPlayAmbientIdles(ped, p1, p2) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x1E982AC8716912C5)
----@param ped number
----@param p1 number
-function SetPedDesiredMoveBlendRatio(ped, p1) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x0729BAC1B8C64317)
----@param ped number
----@param thrust number
-function SetParachuteTaskThrust(ped, thrust) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x8E06A6FE76C9EFF4)
----@param ped number
----@param Toggle boolean
-function SetPedPathCanUseClimbovers(ped, Toggle) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x5C9B84BD7D31D908)
----@param driver number
----@param cruiseSpeed number
-function SetDriveTaskCruiseSpeed(driver, cruiseSpeed) end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x77A5B103C87F476E)
 ---@param ped number
 ---@param Toggle boolean
 function SetPedPathCanUseLadders(ped, Toggle) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x4455517B28441E60)
+---[Native Documentation](https://docs.fivem.net/natives/?_0xE361C5C71C431A4F)
 ---@param ped number
----@param avoidFire boolean
-function SetPedPathAvoidFire(ped, avoidFire) end
+---@param Toggle boolean
+function SetPedPathCanDropFromHeight(ped, Toggle) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xF35425A4204367EC)
@@ -992,16 +986,25 @@ function SetPedPathMayEnterWater(ped, mayEnterWater) end
 function SetPedPathClimbCostModifier(ped, modifier) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xE361C5C71C431A4F)
+---[Native Documentation](https://docs.fivem.net/natives/?_0x0729BAC1B8C64317)
 ---@param ped number
----@param Toggle boolean
-function SetPedPathCanDropFromHeight(ped, Toggle) end
+---@param thrust number
+function SetParachuteTaskThrust(ped, thrust) end
+
+---```
+---Occurrences in the b617d scripts: pastebin.com/Tvg2PRHU  
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x02C8E5B49848664E)
+---@param scenarioGroup string
+---@param p1 boolean
+function SetScenarioGroupEnabled(scenarioGroup, p1) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x38FE1EC73743793C)
+---[Native Documentation](https://docs.fivem.net/natives/?_0xB0A6CFD2C69C1088)
 ---@param ped number
----@param avoidWater boolean
-function SetPedPathPreferToAvoidWater(ped, avoidWater) end
+---@param signalName string
+---@param value boolean
+function SetTaskMoveNetworkSignalBool(ped, signalName, value) end
 
 ---```
 ---seems to enable/disable specific scenario-types from happening in the game world.
@@ -1042,20 +1045,10 @@ function SetPedPathPreferToAvoidWater(ped, avoidWater) end
 function SetScenarioTypeEnabled(scenarioType, toggle) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xB0A6CFD2C69C1088)
+---[Native Documentation](https://docs.fivem.net/natives/?_0x8E06A6FE76C9EFF4)
 ---@param ped number
----@param signalName string
----@param value boolean
-function SetTaskMoveNetworkSignalBool(ped, signalName, value) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xED98E10B0AFCE4B4)
----@param p0 any
----@param p1 any
----@param p2 any
----@param p3 any
----@return any
-function SetPedWaypointRouteOffset(p0, p1, p2, p3) end
+---@param Toggle boolean
+function SetPedPathCanUseClimbovers(ped, Toggle) end
 
 ---```
 ---* Flag 1: Aggressive ramming of suspect
@@ -1076,13 +1069,11 @@ function SetTaskVehicleChaseBehaviorFlag(ped, flag, set) end
 ---@param _repeat boolean
 function SetSequenceToRepeat(taskSequenceId, _repeat) end
 
----```
----Occurrences in the b617d scripts: pastebin.com/Tvg2PRHU  
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x02C8E5B49848664E)
----@param scenarioGroup string
----@param p1 boolean
-function SetScenarioGroupEnabled(scenarioGroup, p1) end
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x38FE1EC73743793C)
+---@param ped number
+---@param avoidWater boolean
+function SetPedPathPreferToAvoidWater(ped, avoidWater) end
 
 ---```
 ---duration: the amount of time in milliseconds to do the task.  -1 will keep the task going until either another task is applied, or CLEAR_ALL_TASKS() is called with the ped  
@@ -1102,6 +1093,24 @@ function TaskAimGunAtEntity(ped, entity, duration, p3) end
 ---@param p3 number
 function StopAnimTask(ped, animDictionary, animationName, p3) end
 
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xED98E10B0AFCE4B4)
+---@param p0 any
+---@param p1 any
+---@param p2 any
+---@param p3 any
+---@return any
+function SetPedWaypointRouteOffset(p0, p1, p2, p3) end
+
+---```
+---NativeDB Introduced: v1493
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x373EF409B82697A3)
+---@param ped number
+---@param signalName string
+---@param value number
+function SetTaskMoveNetworkSignalFloat_2(ped, signalName, value) end
+
 ---```
 ---p0 - PLAYER::PLAYER_PED_ID();
 ---p1 - "Phase", "Wobble", "x_axis","y_axis","introphase","speed".
@@ -1114,44 +1123,6 @@ function StopAnimTask(ped, animDictionary, animationName, p3) end
 ---@param signalName string
 ---@param value number
 function SetTaskMoveNetworkSignalFloat(ped, signalName, value) end
-
----```
----NativeDB Introduced: v1493
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x373EF409B82697A3)
----@param ped number
----@param signalName string
----@param value number
-function SetTaskMoveNetworkSignalFloat_2(ped, signalName, value) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x7A192BE16D373D00)
----@param ped number
----@param scriptTask number | string
----@param p2 boolean
----@param p3 boolean
-function TaskAimGunScripted(ped, scriptTask, p2, p3) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x639B642FACBE4EDD)
----@param ped number
----@param distance number
-function SetTaskVehicleChaseIdealPursuitDistance(ped, distance) end
-
----```
----p2 tend to be 16, 17 or 1  
----p3 to p7 tend to be 0.0  
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x8C338E0263E4FD19)
----@param ped number
----@param target number
----@param p2 any
----@param p3 number
----@param p4 number
----@param p5 number
----@param p6 number
----@param p7 number
-function TaskChatToPed(ped, target, p2, p3, p4, p5, p6, p7) end
 
 ---```
 ---Example from "me_amanda1.ysc.c4":
@@ -1169,6 +1140,35 @@ function TaskChatToPed(ped, target, p2, p3, p4, p5, p6, p7) end
 function TaskArrestPed(ped, target) end
 
 ---```
+---Looks like p1 may be a flag, still need to do some research, though.
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0xEE08C992D238C5D1)
+---@param ped number
+---@param p1 number
+---@param p2 boolean
+function StopAnimPlayback(ped, p1, p2) end
+
+---```
+---p2 tend to be 16, 17 or 1  
+---p3 to p7 tend to be 0.0  
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x8C338E0263E4FD19)
+---@param ped number
+---@param target number
+---@param p2 any
+---@param p3 number
+---@param p4 number
+---@param p5 number
+---@param p6 number
+---@param p7 number
+function TaskChatToPed(ped, target, p2, p3, p4, p5, p6, p7) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x95A6C46A31D1917D)
+---@param p0 any
+function TaskClearDefensiveArea(p0) end
+
+---```
 ---Makes the specified ped achieve the specified heading.  
 ---pedHandle: The handle of the ped to assign the task to.  
 ---heading: The desired heading.  
@@ -1179,20 +1179,6 @@ function TaskArrestPed(ped, target) end
 ---@param heading number
 ---@param timeout number
 function TaskAchieveHeading(ped, heading, timeout) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x95A6C46A31D1917D)
----@param p0 any
-function TaskClearDefensiveArea(p0) end
-
----```
----Looks like p1 may be a flag, still need to do some research, though.
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0xEE08C992D238C5D1)
----@param ped number
----@param p1 number
----@param p2 boolean
-function StopAnimPlayback(ped, p1, p2) end
 
 ---```
 ---Not clear what it actually does, but here's how script uses it -
@@ -1214,6 +1200,18 @@ function StopAnimPlayback(ped, p1, p2) end
 function TaskClearLookAt(ped) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x639B642FACBE4EDD)
+---@param ped number
+---@param distance number
+function SetTaskVehicleChaseIdealPursuitDistance(ped, distance) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xB6C987F9285A3814)
+---@param ped number
+---@param p1 number
+function TaskClimbLadder(ped, p1) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x6671F3EEC681BDA1)
 ---@param ped number
 ---@param x number
@@ -1225,16 +1223,12 @@ function TaskClearLookAt(ped) end
 function TaskAimGunAtCoord(ped, x, y, z, time, p5, p6) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xB6C987F9285A3814)
----@param ped number
+---[Native Documentation](https://docs.fivem.net/natives/?_0x2BBA30B854534A0C)
+---@param p0 any
 ---@param p1 number
-function TaskClimbLadder(ped, p1) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x19D1B791CB3670FE)
----@param ped number
----@param ped2 number
-function TaskAgitatedAction(ped, ped2) end
+---@param p2 any
+---@param p3 any
+function TaskCombatHatedTargetsAroundPedTimed(p0, p1, p2, p3) end
 
 ---```
 ---Despite its name, it only attacks ONE hated target. The one closest to the specified position.  
@@ -1247,6 +1241,30 @@ function TaskAgitatedAction(ped, ped2) end
 ---@param radius number
 ---@param p5 any
 function TaskCombatHatedTargetsInArea(ped, x, y, z, radius, p5) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x8605AF0DE8B3A5AC)
+---@param p0 any
+---@param p1 any
+---@param p2 number
+---@param p3 number
+---@param p4 number
+---@param p5 any
+---@param p6 boolean
+---@param p7 boolean
+function TaskAimGunScriptedWithTarget(p0, p1, p2, p3, p4, p5, p6, p7) end
+
+---```
+---Makes the specified ped attack the target ped.  
+---p2 should be 0  
+---p3 should be 16  
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0xF166E48407BAC484)
+---@param ped number
+---@param targetPed number
+---@param p2 number
+---@param p3 number
+function TaskCombatPed(ped, targetPed, p2, p3) end
 
 ---```
 ---You need to call PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS after TASK_BOAT_MISSION in order for the task to execute.
@@ -1272,28 +1290,12 @@ function TaskCombatHatedTargetsInArea(ped, x, y, z, radius, p5) end
 function TaskBoatMission(pedDriver, boat, p2, p3, x, y, z, p7, maxSpeed, drivingStyle, p10, p11) end
 
 ---```
----Makes the specified ped attack the target ped.  
----p2 should be 0  
----p3 should be 16  
+---Climbs or vaults the nearest thing.  
 ---```
----[Native Documentation](https://docs.fivem.net/natives/?_0xF166E48407BAC484)
+---[Native Documentation](https://docs.fivem.net/natives/?_0x89D9FCC2435112F1)
 ---@param ped number
----@param targetPed number
----@param p2 number
----@param p3 number
-function TaskCombatPed(ped, targetPed, p2, p3) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x8605AF0DE8B3A5AC)
----@param p0 any
----@param p1 any
----@param p2 number
----@param p3 number
----@param p4 number
----@param p5 any
----@param p6 boolean
----@param p7 boolean
-function TaskAimGunScriptedWithTarget(p0, p1, p2, p3, p4, p5, p6, p7) end
+---@param unused boolean
+function TaskClimb(ped, unused) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x944F30DCB7096BDE)
@@ -1302,14 +1304,6 @@ function TaskAimGunScriptedWithTarget(p0, p1, p2, p3, p4, p5, p6, p7) end
 ---@param p2 number
 ---@param p3 any
 function TaskCombatPedTimed(p0, ped, p2, p3) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x2BBA30B854534A0C)
----@param p0 any
----@param p1 number
----@param p2 any
----@param p3 any
-function TaskCombatHatedTargetsAroundPedTimed(p0, p1, p2, p3) end
 
 ---```
 ---Example:
@@ -1332,11 +1326,6 @@ function TaskCombatHatedTargetsAroundPedTimed(p0, p1, p2, p3) end
 ---@param firingPattern number | string
 function TaskDriveBy(driverPed, targetPed, targetVehicle, targetX, targetY, targetZ, distanceToShoot, pedAccuracy, p8, firingPattern) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x7F93691AB4B92272)
----@param vehicle number
-function TaskEveryoneLeaveVehicle(vehicle) end
-
 ---```
 ---Despite its name, it only attacks ONE hated target. The one closest hated target.  
 ---p2 seems to be always 0  
@@ -1346,6 +1335,17 @@ function TaskEveryoneLeaveVehicle(vehicle) end
 ---@param radius number
 ---@param p2 number
 function TaskCombatHatedTargetsAroundPed(ped, radius, p2) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x7F93691AB4B92272)
+---@param vehicle number
+function TaskEveryoneLeaveVehicle(vehicle) end
+
+---The ped will act like NPC's involved in a gunfight. The ped will squat down with their heads held in place and look around.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x3EB1FE9E8E908E15)
+---@param ped number
+---@param duration number
+function TaskCower(ped, duration) end
 
 ---```
 ---speed 1.0 = walk, 2.0 = run  
@@ -1362,20 +1362,6 @@ function TaskCombatHatedTargetsAroundPed(ped, radius, p2) end
 ---@param p6 any
 function TaskEnterVehicle(ped, vehicle, timeout, seatIndex, speed, flag, p6) end
 
----```
----Climbs or vaults the nearest thing.  
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x89D9FCC2435112F1)
----@param ped number
----@param unused boolean
-function TaskClimb(ped, unused) end
-
----The ped will act like NPC's involved in a gunfight. The ped will squat down with their heads held in place and look around.
----[Native Documentation](https://docs.fivem.net/natives/?_0x3EB1FE9E8E908E15)
----@param ped number
----@param duration number
-function TaskCower(ped, duration) end
-
 ---Adds a new point to the current point route; a maximum of 8 points can be added.
 ---
 ---Call [TASK_FLUSH_ROUTE](#\_0x841142A1376E9006) before the first call to this. Call [TASK_FOLLOW_POINT_ROUTE](#\_0x595583281858626E) to make the Ped go the route.
@@ -1384,6 +1370,23 @@ function TaskCower(ped, duration) end
 ---@param y number
 ---@param z number
 function TaskExtendRoute(x, y, z) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x7A192BE16D373D00)
+---@param ped number
+---@param scriptTask number | string
+---@param p2 boolean
+---@param p3 boolean
+function TaskAimGunScripted(ped, scriptTask, p2, p3) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x79B258E397854D29)
+---@param p0 any
+---@param p1 any
+---@param p2 number
+---@param p3 number
+---@param p4 number
+function TaskExitCover(p0, p1, p2, p3, p4) end
 
 ---```
 ---If no timeout, set timeout to -1.  
@@ -1434,35 +1437,9 @@ function TaskFollowNavMeshToCoordAdvanced(ped, x, y, z, speed, timeout, unkFloat
 ---@param unknown number
 function TaskFollowPointRoute(ped, speed, unknown) end
 
----```
----p6 always -1  
----p7 always 10.0  
----p8 always 1  
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x304AE42E357B8C7E)
----@param ped number
----@param entity number
----@param offsetX number
----@param offsetY number
----@param offsetZ number
----@param movementSpeed number
----@param timeout number
----@param stoppingRange number
----@param persistFollowing boolean
-function TaskFollowToOffsetOfEntity(ped, entity, offsetX, offsetY, offsetZ, movementSpeed, timeout, stoppingRange, persistFollowing) end
-
 ---Clears the current point route. Call this before [TASK_EXTEND_ROUTE](#\_0x1E7889778264843A) and [TASK_FOLLOW_POINT_ROUTE](#\_0x595583281858626E).
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x841142A1376E9006)
 function TaskFlushRoute() end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x79B258E397854D29)
----@param p0 any
----@param p1 any
----@param p2 number
----@param p3 number
----@param p4 number
-function TaskExitCover(p0, p1, p2, p3, p4) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xD76B57B44F1E6F8B)
@@ -1484,13 +1461,27 @@ function TaskGoStraightToCoord(ped, x, y, z, speed, timeout, targetHeading, dist
 function TaskForceMotionState(ped, state, p2) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x0759591819534F7B)
----@param p0 any
----@param p1 any
----@param p2 any
----@param p3 any
----@param p4 any
-function TaskFollowWaypointRecording(p0, p1, p2, p3, p4) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x9C00E77AF14B2DFF)
+---@param ped number
+---@param boat number
+function TaskGetOffBoat(ped, boat) end
+
+---```
+---p6 always -1  
+---p7 always 10.0  
+---p8 always 1  
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x304AE42E357B8C7E)
+---@param ped number
+---@param entity number
+---@param offsetX number
+---@param offsetY number
+---@param offsetZ number
+---@param movementSpeed number
+---@param timeout number
+---@param stoppingRange number
+---@param persistFollowing boolean
+function TaskFollowToOffsetOfEntity(ped, entity, offsetX, offsetY, offsetZ, movementSpeed, timeout, stoppingRange, persistFollowing) end
 
 ---```
 ---The ped will walk or run towards goToLocation, aiming towards goToLocation or focusLocation (depending on the aimingFlag) and shooting if shootAtEnemies = true to any enemy in his path.
@@ -1535,16 +1526,30 @@ function TaskFollowWaypointRecording(p0, p1, p2, p3, p4) end
 ---@param firingPattern number | string
 function TaskGoToCoordAndAimAtHatedEntitiesNearCoord(pedHandle, goToLocationX, goToLocationY, goToLocationZ, focusLocationX, focusLocationY, focusLocationZ, speed, shootAtEnemies, distanceToStopAt, noRoadsDistance, unkTrue, unkFlag, aimingFlag, firingPattern) end
 
+---```
+---example from fm_mission_controller
+---TASK::TASK_GO_TO_COORD_ANY_MEANS(l_649, sub_f7e86(-1, 0), 1.0, 0, 0, 786603, 0xbf800000);
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x5BC448CB78FA3E88)
+---@param ped number
+---@param x number
+---@param y number
+---@param z number
+---@param speed number
+---@param p5 any
+---@param p6 boolean
+---@param walkingStyle number
+---@param p8 number
+function TaskGoToCoordAnyMeans(ped, x, y, z, speed, p5, p6, walkingStyle, p8) end
+
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x61E360B7E040D12E)
----@param entity1 number
----@param entity2 number
----@param p2 number
----@param p3 number
----@param p4 number
----@param p5 number
----@param p6 any
-function TaskGoStraightToCoordRelativeToEntity(entity1, entity2, p2, p3, p4, p5, p6) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x0759591819534F7B)
+---@param p0 any
+---@param p1 any
+---@param p2 any
+---@param p3 any
+---@param p4 any
+function TaskFollowWaypointRecording(p0, p1, p2, p3, p4) end
 
 ---Will make the ped move to a coordinate while aiming (and optionally shooting) at given coordinates.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x11315AB3385B8AC0)
@@ -1619,22 +1624,20 @@ function TaskGoToCoordAnyMeansExtraParams(ped, x, y, z, speed, p5, p6, walkingSt
 function TaskGoToCoordAnyMeansExtraParamsWithCruiseSpeed(ped, x, y, z, speed, p5, p6, walkingStyle, p8, p9, p10, p11, p12) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xB2A16444EAD9AE47)
+---[Native Documentation](https://docs.fivem.net/natives/?_0x04701832B739DCE5)
 ---@param p0 any
----@param p1 number
+---@param p1 any
 ---@param p2 number
 ---@param p3 number
----@param p4 any
+---@param p4 number
 ---@param p5 number
 ---@param p6 boolean
 ---@param p7 number
 ---@param p8 number
 ---@param p9 boolean
----@param p10 any
----@param p11 boolean
----@param p12 any
----@param p13 any
-function TaskGoToCoordWhileAimingAtEntity(p0, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13) end
+---@param p10 boolean
+---@param p11 any
+function TaskGoToEntityWhileAimingAtCoord(p0, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11) end
 
 ---```
 ---eg
@@ -1652,26 +1655,22 @@ function TaskGoToCoordWhileAimingAtEntity(p0, p1, p2, p3, p4, p5, p6, p7, p8, p9
 function TaskGotoEntityAiming(ped, target, distanceToStopAt, StartAimingDist) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x9C00E77AF14B2DFF)
----@param ped number
----@param boat number
-function TaskGetOffBoat(ped, boat) end
-
----```
----example from fm_mission_controller
----TASK::TASK_GO_TO_COORD_ANY_MEANS(l_649, sub_f7e86(-1, 0), 1.0, 0, 0, 786603, 0xbf800000);
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x5BC448CB78FA3E88)
----@param ped number
----@param x number
----@param y number
----@param z number
----@param speed number
----@param p5 any
+---[Native Documentation](https://docs.fivem.net/natives/?_0xB2A16444EAD9AE47)
+---@param p0 any
+---@param p1 number
+---@param p2 number
+---@param p3 number
+---@param p4 any
+---@param p5 number
 ---@param p6 boolean
----@param walkingStyle number
+---@param p7 number
 ---@param p8 number
-function TaskGoToCoordAnyMeans(ped, x, y, z, speed, p5, p6, walkingStyle, p8) end
+---@param p9 boolean
+---@param p10 any
+---@param p11 boolean
+---@param p12 any
+---@param p13 any
+function TaskGoToCoordWhileAimingAtEntity(p0, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13) end
 
 ---```
 ---shootatEntity:  
@@ -1692,6 +1691,18 @@ function TaskGoToCoordAnyMeans(ped, x, y, z, speed, p5, p6, walkingStyle, p8) en
 function TaskGoToEntityWhileAimingAtEntity(ped, entityToWalkTo, entityToAimAt, speed, shootatEntity, p5, p6, p7, p8, firingPattern) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x338E7EF52B6095A9)
+---@param ped number
+---@param entity number
+---@param duration number
+---@param xOffset number
+---@param yOffset number
+---@param zOffset number
+---@param moveBlendRatio number
+---@param useNavmesh boolean
+function TaskGotoEntityOffsetXy(ped, entity, duration, xOffset, yOffset, zOffset, moveBlendRatio, useNavmesh) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xE39B4FF4FDEBDE27)
 ---@param ped number
 ---@param p1 any
@@ -1703,16 +1714,15 @@ function TaskGoToEntityWhileAimingAtEntity(ped, entityToWalkTo, entityToAimAt, s
 function TaskGotoEntityOffset(ped, p1, p2, x, y, z, duration) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x338E7EF52B6095A9)
----@param ped number
----@param entity number
----@param duration number
----@param xOffset number
----@param yOffset number
----@param zOffset number
----@param moveBlendRatio number
----@param useNavmesh boolean
-function TaskGotoEntityOffsetXy(ped, entity, duration, xOffset, yOffset, zOffset, moveBlendRatio, useNavmesh) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0xD2A207EEBDF9889B)
+---@param p0 any
+---@param p1 number
+---@param p2 number
+---@param p3 number
+---@param p4 number
+---@param p5 number
+---@param p6 any
+function TaskGuardAssignedDefensiveArea(p0, p1, p2, p3, p4, p5, p6) end
 
 ---```
 ---p0 - Guessing PedID  
@@ -1748,22 +1758,6 @@ function TaskGuardSphereDefensiveArea(p0, p1, p2, p3, p4, p5, p6, p7, p8, p9, p1
 ---@param p3 boolean
 function TaskGuardCurrentPosition(p0, p1, p2, p3) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x04701832B739DCE5)
----@param p0 any
----@param p1 any
----@param p2 number
----@param p3 number
----@param p4 number
----@param p5 number
----@param p6 boolean
----@param p7 number
----@param p8 number
----@param p9 boolean
----@param p10 boolean
----@param p11 any
-function TaskGoToEntityWhileAimingAtCoord(p0, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11) end
-
 ---```
 ---Ped pilot should be in a heli.  
 ---EntityToFollow can be a vehicle or Ped.  
@@ -1779,18 +1773,6 @@ function TaskGoToEntityWhileAimingAtCoord(p0, p1, p2, p3, p4, p5, p6, p7, p8, p9
 function TaskHeliChase(pilot, entityToFollow, x, y, z) end
 
 ---```
----NativeDB Introduced: v1290
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0xB385523325077210)
----@param pilot number
----@param heli1 number
----@param heli2 number
----@param p3 number
----@param p4 number
----@param p5 number
-function TaskHeliEscortHeli(pilot, heli1, heli2, p3, p4, p5) end
-
----```
 ---In the scripts, p3 was always -1.  
 ---p3 seems to be duration or timeout of turn animation.  
 ---Also facingPed can be 0 or -1 so ped will just raise hands up.  
@@ -1802,22 +1784,6 @@ function TaskHeliEscortHeli(pilot, heli1, heli2, p3, p4, p5) end
 ---@param p3 number
 ---@param p4 boolean
 function TaskHandsUp(ped, duration, facingPed, p3, p4) end
-
----```
----Definition is wrong. This has 4 parameters (Not sure when they were added. v350 has 2, v678 has 4).  
----v350: Ped ped, bool unused  
----v678: Ped ped, bool unused, bool flag1, bool flag2  
----flag1 = super jump, flag2 = do nothing if flag1 is false and doubles super jump height if flag1 is true.  
----```
----
----```
----NativeDB Added Parameter 3: Any p2
----NativeDB Added Parameter 4: Any p3
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x0AE4086104E067B1)
----@param ped number
----@param unused boolean
-function TaskJump(ped, unused) end
 
 ---```
 ---Needs more research.
@@ -1856,12 +1822,40 @@ function TaskJump(ped, unused) end
 ---@param landingFlags number
 function TaskHeliMission(pilot, aircraft, targetVehicle, targetPed, destinationX, destinationY, destinationZ, missionFlag, maxSpeed, landingRadius, targetHeading, unk1, unk2, unk3, landingFlags) end
 
+---```
+---NativeDB Introduced: v1290
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0xB385523325077210)
+---@param pilot number
+---@param heli1 number
+---@param heli2 number
+---@param p3 number
+---@param p4 number
+---@param p5 number
+function TaskHeliEscortHeli(pilot, heli1, heli2, p3, p4, p5) end
+
 ---Flags are the same flags used in [`TASK_LEAVE_VEHICLE`](#\_0xD3DBCE61A490BE02)
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x504D54DF3F6F2247)
 ---@param ped number
 ---@param p1 number
 ---@param flags number
 function TaskLeaveAnyVehicle(ped, p1, flags) end
+
+---```
+---Definition is wrong. This has 4 parameters (Not sure when they were added. v350 has 2, v678 has 4).  
+---v350: Ped ped, bool unused  
+---v678: Ped ped, bool unused, bool flag1, bool flag2  
+---flag1 = super jump, flag2 = do nothing if flag1 is false and doubles super jump height if flag1 is true.  
+---```
+---
+---```
+---NativeDB Added Parameter 3: Any p2
+---NativeDB Added Parameter 4: Any p3
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x0AE4086104E067B1)
+---@param ped number
+---@param unused boolean
+function TaskJump(ped, unused) end
 
 ---```
 ---Example:
@@ -1883,29 +1877,11 @@ function TaskLeaveAnyVehicle(ped, p1, flags) end
 ---@param flags number
 function TaskMoveNetworkAdvancedByName(ped, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, animDict, flags) end
 
----```
----Example:
----TASK::TASK_MOVE_NETWORK_BY_NAME(PLAYER::PLAYER_PED_ID(), "arm_wrestling_sweep_paired_a_rev3", 0.0f, true, "mini@arm_wrestling", 0);
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x2D537BA194896636)
----@param ped number
----@param task string
----@param multiplier number
----@param p3 boolean
----@param animDict string
----@param flags number
-function TaskMoveNetworkByName(ped, task, multiplier, p3, animDict, flags) end
-
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xD2A207EEBDF9889B)
----@param p0 any
----@param p1 number
----@param p2 number
----@param p3 number
----@param p4 number
----@param p5 number
----@param p6 any
-function TaskGuardAssignedDefensiveArea(p0, p1, p2, p3, p4, p5, p6) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x19D1B791CB3670FE)
+---@param ped number
+---@param ped2 number
+function TaskAgitatedAction(ped, ped2) end
 
 ---The given ped will try to open the nearest door to 'seat'.
 ---
@@ -1936,16 +1912,6 @@ function TaskOpenVehicleDoor(ped, vehicle, timeOut, seat, speed) end
 function TaskLeaveVehicle(ped, vehicle, flags) end
 
 ---```
----makes ped parachute to coords x y z. Works well with PATHFIND::GET_SAFE_COORD_FOR_PED  
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0xB33E291AFA6BD03A)
----@param ped number
----@param x number
----@param y number
----@param z number
-function TaskParachuteToTarget(ped, x, y, z) end
-
----```
 ---param3: duration in ms, use -1 to look forever  
 ---param4: using 2048 is fine  
 ---param5: using 3 is fine  
@@ -1957,6 +1923,28 @@ function TaskParachuteToTarget(ped, x, y, z) end
 ---@param unknown1 number
 ---@param unknown2 number
 function TaskLookAtEntity(ped, lookAt, duration, unknown1, unknown2) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x6FA46612594F7973)
+---@param entity number
+---@param x number
+---@param y number
+---@param z number
+---@param duration number
+---@param p5 any
+---@param p6 any
+function TaskLookAtCoord(entity, x, y, z, duration, p5, p6) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x61E360B7E040D12E)
+---@param entity1 number
+---@param entity2 number
+---@param p2 number
+---@param p3 number
+---@param p4 number
+---@param p5 number
+---@param p6 any
+function TaskGoStraightToCoordRelativeToEntity(entity1, entity2, p2, p3, p4, p5, p6) end
 
 ---```
 ---Used only once in the scripts (am_mp_nightclub)
@@ -1976,6 +1964,13 @@ function TaskLookAtEntity(ped, lookAt, duration, unknown1, unknown2) end
 ---@param flags number
 ---@return any
 function TaskMoveNetworkByNameWithInitParams(ped, p1, p3, p4, animDict, flags) end
+
+---This tasks the ped to do nothing for the specified amount of miliseconds.
+---This is useful if you want to add a delay between tasks when using a sequence task.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xE73A266DB0CA9042)
+---@param ped number
+---@param ms number
+function TaskPause(ped, ms) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xD04FE6765D990A06)
@@ -2012,59 +2007,6 @@ function TaskParachute(ped, p1) end
 ---@param p6 number
 function TaskPedSlideToCoordHdgRate(ped, x, y, z, heading, p5, p6) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x6FA46612594F7973)
----@param entity number
----@param x number
----@param y number
----@param z number
----@param duration number
----@param p5 any
----@param p6 any
-function TaskLookAtCoord(entity, x, y, z, duration, p5, p6) end
-
----This tasks the ped to do nothing for the specified amount of miliseconds.
----This is useful if you want to add a delay between tasks when using a sequence task.
----[Native Documentation](https://docs.fivem.net/natives/?_0xE73A266DB0CA9042)
----@param ped number
----@param ms number
-function TaskPause(ped, ms) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x89221B16730234F0)
----@param p0 any
----@param p1 any
----@param p2 any
----@param p3 any
-function TaskPerformSequenceFromProgress(p0, p1, p2, p3) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x2D2386F273FF7A25)
----@param pilot number
----@param entityToFollow number
----@param x number
----@param y number
----@param z number
-function TaskPlaneChase(pilot, entityToFollow, x, y, z) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xBF19721FA34D32C0)
----@param pilot number
----@param plane number
----@param runwayStartX number
----@param runwayStartY number
----@param runwayStartZ number
----@param runwayEndX number
----@param runwayEndY number
----@param runwayEndZ number
-function TaskPlaneLand(pilot, plane, runwayStartX, runwayStartY, runwayStartZ, runwayEndX, runwayEndY, runwayEndZ) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x8C33220C8D78CA0D)
----@param ped number
----@param taskSequenceId number
-function TaskPerformSequenceLocally(ped, taskSequenceId) end
-
 ---```
 ---After looking at some scripts the second parameter seems to be an id of some kind. Here are some I found from some R* scripts:
 ---"miss_Tower_01" (this went from 01 - 10)
@@ -2090,6 +2032,60 @@ function TaskPerformSequenceLocally(ped, taskSequenceId) end
 ---@param p3 boolean
 ---@param p4 boolean
 function TaskPatrol(ped, p1, p2, p3, p4) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x89221B16730234F0)
+---@param p0 any
+---@param p1 any
+---@param p2 any
+---@param p3 any
+function TaskPerformSequenceFromProgress(p0, p1, p2, p3) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x5ABA3986D90D8A3B)
+---@param ped number
+---@param taskSequenceId number
+function TaskPerformSequence(ped, taskSequenceId) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x2D2386F273FF7A25)
+---@param pilot number
+---@param entityToFollow number
+---@param x number
+---@param y number
+---@param z number
+function TaskPlaneChase(pilot, entityToFollow, x, y, z) end
+
+---```
+---Example:
+---TASK::TASK_MOVE_NETWORK_BY_NAME(PLAYER::PLAYER_PED_ID(), "arm_wrestling_sweep_paired_a_rev3", 0.0f, true, "mini@arm_wrestling", 0);
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x2D537BA194896636)
+---@param ped number
+---@param task string
+---@param multiplier number
+---@param p3 boolean
+---@param animDict string
+---@param flags number
+function TaskMoveNetworkByName(ped, task, multiplier, p3, animDict, flags) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xBF19721FA34D32C0)
+---@param pilot number
+---@param plane number
+---@param runwayStartX number
+---@param runwayStartY number
+---@param runwayStartZ number
+---@param runwayEndX number
+---@param runwayEndY number
+---@param runwayEndZ number
+function TaskPlaneLand(pilot, plane, runwayStartX, runwayStartY, runwayStartZ, runwayEndX, runwayEndY, runwayEndZ) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x8C33220C8D78CA0D)
+---@param ped number
+---@param taskSequenceId number
+function TaskPerformSequenceLocally(ped, taskSequenceId) end
 
 ---```
 ---EDITED (7/13/2017)  
@@ -2154,22 +2150,6 @@ function TaskPatrol(ped, p1, p2, p3, p4) end
 ---@param minZ number
 function TaskPlaneMission(pilot, aircraft, targetVehicle, targetPed, destinationX, destinationY, destinationZ, missionFlag, angularDrag, unk, targetHeading, maxZ, minZ) end
 
----```
----NativeDB Introduced: v1290
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0xF7F9DCCA89E7505B)
----@param ped number
----@param vehicle number
----@param p2 any
----@param p3 any
----@param p4 any
----@param p5 any
----@param p6 any
----@param p7 any
----@param p8 any
----@param p9 any
-function TaskPlaneGotoPreciseVtol(ped, vehicle, p2, p3, p4, p5, p6, p7, p8, p9) end
-
 ---It's similar to the one above, except the first 6 floats let you specify the initial position and rotation of the task. (Ped gets teleported to the position).
 ---
 ---[Animations list](https://alexguirre.github.io/animations-list/)
@@ -2193,15 +2173,6 @@ function TaskPlaneGotoPreciseVtol(ped, vehicle, p2, p3, p4, p5, p6, p7, p8, p9) 
 function TaskPlayAnimAdvanced(ped, animDict, animName, posX, posY, posZ, rotX, rotY, rotZ, animEnterSpeed, animExitSpeed, duration, flag, animTime, p14, p15) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x965FEC691D55E9BF)
----@param ped number
----@param x number
----@param y number
----@param z number
----@param heading number
-function TaskPlantBomb(ped, x, y, z, heading) end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x92C360B5F15D2302)
 ---@param pilot number
 ---@param aircraft number
@@ -2211,6 +2182,15 @@ function TaskPlantBomb(ped, x, y, z, heading) end
 ---@param p5 any
 ---@param p6 any
 function TaskPlaneTaxi(pilot, aircraft, p2, p3, p4, p5, p6) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x965FEC691D55E9BF)
+---@param ped number
+---@param x number
+---@param y number
+---@param z number
+---@param heading number
+function TaskPlantBomb(ped, x, y, z, heading) end
 
 ---[Animations list](https://alexguirre.github.io/animations-list/)
 ---
@@ -2304,19 +2284,6 @@ function TaskPlayAnim(ped, animDictionary, animationName, blendInSpeed, blendOut
 ---@param p7 boolean
 function TaskPlayPhoneGestureAnimation(ped, animDict, animation, boneMaskType, p4, p5, p6, p7) end
 
----```
----from armenian3.c4
----TASK::TASK_PUT_PED_DIRECTLY_INTO_MELEE(PlayerPed, armenianPed, 0.0, -1.0, 0.0, 0);
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x1C6CD14A876FFE39)
----@param ped number
----@param meleeTarget number
----@param p2 number
----@param p3 number
----@param p4 number
----@param p5 boolean
-function TaskPutPedDirectlyIntoMelee(ped, meleeTarget, p2, p3, p4, p5) end
-
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x4172393E6BE1FECE)
 ---@param ped number
@@ -2331,6 +2298,29 @@ function TaskPutPedDirectlyIntoMelee(ped, meleeTarget, p2, p3, p4, p5) end
 ---@param p9 any
 ---@param p10 boolean
 function TaskPutPedDirectlyIntoCover(ped, x, y, z, timeout, p5, p6, p7, p8, p9, p10) end
+
+---```
+---from armenian3.c4
+---TASK::TASK_PUT_PED_DIRECTLY_INTO_MELEE(PlayerPed, armenianPed, 0.0, -1.0, 0.0, 0);
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x1C6CD14A876FFE39)
+---@param ped number
+---@param meleeTarget number
+---@param p2 number
+---@param p3 number
+---@param p4 number
+---@param p5 boolean
+function TaskPutPedDirectlyIntoMelee(ped, meleeTarget, p2, p3, p4, p5) end
+
+---```
+---Only appears twice in the scripts.
+---TASK::TASK_RAPPEL_FROM_HELI(PLAYER::PLAYER_PED_ID(), 0x41200000);
+---TASK::TASK_RAPPEL_FROM_HELI(a_0, 0x41200000);
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x09693B0312F91649)
+---@param ped number
+---@param unused number
+function TaskRappelFromHeli(ped, unused) end
 
 ---Attaches a ped to a rope and allows player control to rappel down a wall.
 ---Disables all collisions while on the rope.
@@ -2364,38 +2354,6 @@ function TaskRappelDownWall(ped, x1, y1, z1, x2, y2, z2, minZ, ropeId, clipset, 
 function TaskReloadWeapon(ped, unused) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x72C896464915D1B1)
----@param ped number
----@param fleeTarget number
-function TaskReactAndFleePed(ped, fleeTarget) end
-
----```
----Only appears twice in the scripts.
----TASK::TASK_RAPPEL_FROM_HELI(PLAYER::PLAYER_PED_ID(), 0x41200000);
----TASK::TASK_RAPPEL_FROM_HELI(a_0, 0x41200000);
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x09693B0312F91649)
----@param ped number
----@param unused number
-function TaskRappelFromHeli(ped, unused) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x75AC2B60386D89F2)
----@param ped number
----@param x number
----@param y number
----@param z number
----@param duration number
----@param p5 boolean
-function TaskSeekCoverFromPos(ped, x, y, z, duration, p5) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x5ABA3986D90D8A3B)
----@param ped number
----@param taskSequenceId number
-function TaskPerformSequence(ped, taskSequenceId) end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x84D32B3BEC531324)
 ---@param ped number
 ---@param target number
@@ -2403,54 +2361,15 @@ function TaskPerformSequence(ped, taskSequenceId) end
 ---@param p3 boolean
 function TaskSeekCoverFromPed(ped, target, duration, p3) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xD43D95C7A869447F)
----@param p0 any
----@param p1 any
----@param p2 number
----@param p3 number
----@param p4 number
----@param p5 any
----@param p6 boolean
-function TaskSeekCoverToCoverPoint(p0, p1, p2, p3, p4, p5, p6) end
-
 ---```
----from michael2:
----TASK::TASK_SEEK_COVER_TO_COORDS(ped, 967.5164794921875, -2121.603515625, 30.479299545288086, 978.94677734375, -2125.84130859375, 29.4752, -1, 1);
----appears to be shorter variation
----from michael3:
----TASK::TASK_SEEK_COVER_TO_COORDS(ped, -2231.011474609375, 263.6326599121094, 173.60195922851562, -1, 0);
+---makes ped parachute to coords x y z. Works well with PATHFIND::GET_SAFE_COORD_FOR_PED  
 ---```
----[Native Documentation](https://docs.fivem.net/natives/?_0x39246A6958EF072C)
+---[Native Documentation](https://docs.fivem.net/natives/?_0xB33E291AFA6BD03A)
 ---@param ped number
----@param x1 number
----@param y1 number
----@param z1 number
----@param x2 number
----@param y2 number
----@param z2 number
----@param p7 any
----@param p8 boolean
-function TaskSeekCoverToCoords(ped, x1, y1, z1, x2, y2, z2, p7, p8) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x933C06518B52A9A4)
----@param p0 any
----@param p1 number
----@param p2 number
----@param p3 number
----@param p4 number
-function TaskSetSphereDefensiveArea(p0, p1, p2, p3, p4) end
-
----```
----I cant believe I have to define this, this is one of the best natives.  
----It makes the ped ignore basically all shocking events around it. Occasionally the ped may comment or gesture, but other than that they just continue their daily activities. This includes shooting and wounding the ped. And - most importantly - they do not flee.  
----Since it is a task, every time the native is called the ped will stop for a moment.  
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x90D2156198831D69)
----@param ped number
----@param toggle boolean
-function TaskSetBlockingOfNonTemporaryEvents(ped, toggle) end
+---@param x number
+---@param y number
+---@param z number
+function TaskParachuteToTarget(ped, x, y, z) end
 
 ---```
 ---From fm_mission_controller.c:  
@@ -2495,13 +2414,92 @@ function TaskSetBlockingOfNonTemporaryEvents(ped, toggle) end
 ---@return any, any, any
 function TaskScriptedAnimation(ped, p4, p5) end
 
----```
----p1 is always GET_HASH_KEY("empty") in scripts, for the rare times this is used  
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0xEB8517DDA73720DA)
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x75AC2B60386D89F2)
 ---@param ped number
----@param p1 number | string
-function TaskSetDecisionMaker(ped, p1) end
+---@param x number
+---@param y number
+---@param z number
+---@param duration number
+---@param p5 boolean
+function TaskSeekCoverFromPos(ped, x, y, z, duration, p5) end
+
+---```
+---from michael2:
+---TASK::TASK_SEEK_COVER_TO_COORDS(ped, 967.5164794921875, -2121.603515625, 30.479299545288086, 978.94677734375, -2125.84130859375, 29.4752, -1, 1);
+---appears to be shorter variation
+---from michael3:
+---TASK::TASK_SEEK_COVER_TO_COORDS(ped, -2231.011474609375, 263.6326599121094, 173.60195922851562, -1, 0);
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x39246A6958EF072C)
+---@param ped number
+---@param x1 number
+---@param y1 number
+---@param z1 number
+---@param x2 number
+---@param y2 number
+---@param z2 number
+---@param p7 any
+---@param p8 boolean
+function TaskSeekCoverToCoords(ped, x1, y1, z1, x2, y2, z2, p7, p8) end
+
+---```
+---I cant believe I have to define this, this is one of the best natives.  
+---It makes the ped ignore basically all shocking events around it. Occasionally the ped may comment or gesture, but other than that they just continue their daily activities. This includes shooting and wounding the ped. And - most importantly - they do not flee.  
+---Since it is a task, every time the native is called the ped will stop for a moment.  
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x90D2156198831D69)
+---@param ped number
+---@param toggle boolean
+function TaskSetBlockingOfNonTemporaryEvents(ped, toggle) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xD43D95C7A869447F)
+---@param p0 any
+---@param p1 any
+---@param p2 number
+---@param p3 number
+---@param p4 number
+---@param p5 any
+---@param p6 boolean
+function TaskSeekCoverToCoverPoint(p0, p1, p2, p3, p4, p5, p6) end
+
+---```
+---NativeDB Introduced: v1290
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0xF7F9DCCA89E7505B)
+---@param ped number
+---@param vehicle number
+---@param p2 any
+---@param p3 any
+---@param p4 any
+---@param p5 any
+---@param p6 any
+---@param p7 any
+---@param p8 any
+---@param p9 any
+function TaskPlaneGotoPreciseVtol(ped, vehicle, p2, p3, p4, p5, p6, p7, p8, p9) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x72C896464915D1B1)
+---@param ped number
+---@param fleeTarget number
+function TaskReactAndFleePed(ped, fleeTarget) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x452419CBD838065B)
+---@param ped number
+---@param eventHandle number
+function TaskShockingEventReact(ped, eventHandle) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x933C06518B52A9A4)
+---@param p0 any
+---@param p1 number
+---@param p2 number
+---@param p3 number
+---@param p4 number
+function TaskSetSphereDefensiveArea(p0, p1, p2, p3, p4) end
 
 ---```
 ---Firing Pattern Hash Information: https://pastebin.com/Px036isB
@@ -2559,11 +2557,12 @@ function TaskShuffleToNextVehicleSeat(ped, vehicle) end
 ---@param p7 boolean
 function TaskSmartFleeCoord(ped, x, y, z, distance, time, p6, p7) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x452419CBD838065B)
+---```
+---NativeDB Added Parameter 2: BOOL p1
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x601736CFE536B0A0)
 ---@param ped number
----@param eventHandle number
-function TaskShockingEventReact(ped, eventHandle) end
+function TaskSkyDive(ped) end
 
 ---```
 ---scenarioName example: "WORLD_HUMAN_GUARD_STAND"  
@@ -2576,6 +2575,20 @@ function TaskShockingEventReact(ped, eventHandle) end
 ---@param heading number
 ---@param scenarioName string
 function TaskStandGuard(ped, x, y, z, heading, scenarioName) end
+
+---```
+---Makes a ped run away from another ped (fleeTarget).  
+---distance = ped will flee this distance.  
+---fleeTime = ped will flee for this amount of time, set to "-1" to flee forever  
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x22B0D0E37CCB840D)
+---@param ped number
+---@param fleeTarget number
+---@param distance number
+---@param fleeTime any
+---@param p4 boolean
+---@param p5 boolean
+function TaskSmartFleePed(ped, fleeTarget, distance, fleeTime, p4, p5) end
 
 ---```
 ---Also a few more listed at TASK::TASK_START_SCENARIO_IN_PLACE just above.
@@ -2609,33 +2622,20 @@ function TaskStartScenarioAtPosition(ped, scenarioName, x, y, z, heading, durati
 function TaskStayInCover(ped) end
 
 ---```
----Makes a ped run away from another ped (fleeTarget).  
----distance = ped will flee this distance.  
----fleeTime = ped will flee for this amount of time, set to "-1" to flee forever  
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x22B0D0E37CCB840D)
----@param ped number
----@param fleeTarget number
----@param distance number
----@param fleeTime any
----@param p4 boolean
----@param p5 boolean
-function TaskSmartFleePed(ped, fleeTarget, distance, fleeTime, p4, p5) end
-
----```
----NativeDB Added Parameter 2: BOOL p1
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x601736CFE536B0A0)
----@param ped number
-function TaskSkyDive(ped) end
-
----```
 ---Makes the specified ped stand still for (time) milliseconds.  
 ---```
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x919BE13EED931959)
 ---@param ped number
 ---@param time number
 function TaskStandStill(ped, time) end
+
+---```
+---p1 is always GET_HASH_KEY("empty") in scripts, for the rare times this is used  
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0xEB8517DDA73720DA)
+---@param ped number
+---@param p1 number | string
+function TaskSetDecisionMaker(ped, p1) end
 
 ---```
 ---Plays a scenario on a Ped at their current location.  
@@ -2671,12 +2671,6 @@ function TaskStandStill(ped, time) end
 ---@param unkDelay number
 ---@param playEnterAnim boolean
 function TaskStartScenarioInPlace(ped, scenarioName, unkDelay, playEnterAnim) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xA21C51255B205245)
----@param ped number
----@param p1 boolean
-function TaskSwapWeapon(ped, p1) end
 
 ---```
 ---Stealth kill action name hashes:  
@@ -2715,6 +2709,13 @@ function TaskStealthKill(killer, target, actionType, p3, p4) end
 ---@return any, any, any, any
 function TaskSweepAimPosition(p0, p5, p6, p7, p8, p9, p10) end
 
+---```
+---NativeDB Added Parameter 2: Any p1
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x3FA00D4F4641BFAE)
+---@param ped number
+function TaskStopPhoneGestureAnimation(ped) end
+
 ---Used in am_vehicle_spawn.ysc and am_mp_submarine.ysc.
 ---p0 is always 0, p5 is always 1
 ---p1 is the vehicle handle of the submarine. Submarine must have a driver, but the ped handle is not passed to the native.
@@ -2733,13 +2734,6 @@ function TaskSweepAimPosition(p0, p5, p6, p7, p8, p9, p10) end
 function TaskSubmarineGotoAndStop(p0, submarine, x, y, z, p5) end
 
 ---```
----NativeDB Added Parameter 2: Any p1
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x3FA00D4F4641BFAE)
----@param ped number
-function TaskStopPhoneGestureAnimation(ped) end
-
----```
 --- TASK::TASK_SYNCHRONIZED_SCENE(ped, scene, "creatures@rottweiler@in_vehicle@std_car", "get_in", 1000.0, -8.0, 4, 0, 0x447a0000, 0);
 ---```
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xEEA929141F699854)
@@ -2754,6 +2748,41 @@ function TaskStopPhoneGestureAnimation(ped) end
 ---@param playbackRate number
 ---@param p9 any
 function TaskSynchronizedScene(ped, scene, animDictionary, animationName, speed, speedMultiplier, duration, flag, playbackRate, p9) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xA21C51255B205245)
+---@param ped number
+---@param p1 boolean
+function TaskSwapWeapon(ped, p1) end
+
+---```
+---duration: the amount of time in milliseconds to do the task. -1 will keep the task going until either another task is applied, or CLEAR_ALL_TASKS() is called with the ped  
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x5AD23D40115353AC)
+---@param ped number
+---@param entity number
+---@param duration number
+function TaskTurnPedToFaceEntity(ped, entity, duration) end
+
+---```
+---used in sequence task  
+---both parameters seems to be always 0  
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0xAC96609B9995EDF8)
+---@param p0 boolean
+---@param p1 boolean
+function TaskToggleDuck(p0, p1) end
+
+---```
+---duration in milliseconds  
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x1DDA930A0AC38571)
+---@param ped number
+---@param x number
+---@param y number
+---@param z number
+---@param duration number
+function TaskTurnPedToFaceCoord(ped, x, y, z, duration) end
 
 ---```
 ---In every case of this native, I've only seen the first parameter passed as 0, although I believe it's a Ped after seeing tasks around it using 0. That's because it's used in a Sequence Task.  
@@ -2777,13 +2806,19 @@ function TaskSynchronizedScene(ped, scene, animDictionary, animationName, speed,
 function TaskThrowProjectile(ped, x, y, z) end
 
 ---```
----duration: the amount of time in milliseconds to do the task. -1 will keep the task going until either another task is applied, or CLEAR_ALL_TASKS() is called with the ped  
+---Actually has 3 params, not 2.  
+---p0: Ped  
+---p1: int (or bool?)  
+---p2: int  
 ---```
----[Native Documentation](https://docs.fivem.net/natives/?_0x5AD23D40115353AC)
+---
+---```
+---NativeDB Added Parameter 3: Any p2
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0xBD2A8EC3AF4DE7DB)
 ---@param ped number
----@param entity number
----@param duration number
-function TaskTurnPedToFaceEntity(ped, entity, duration) end
+---@param p1 number
+function TaskUseMobilePhone(ped, p1) end
 
 ---```
 ---This function is called on peds in vehicles.  
@@ -2803,26 +2838,6 @@ function TaskTurnPedToFaceEntity(ped, entity, duration) end
 ---@param p8 number
 function TaskSweepAimEntity(ped, anim, p2, p3, p4, p5, vehicle, p7, p8) end
 
----```
----used in sequence task  
----both parameters seems to be always 0  
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0xAC96609B9995EDF8)
----@param p0 boolean
----@param p1 boolean
-function TaskToggleDuck(p0, p1) end
-
----```
----duration in milliseconds  
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x1DDA930A0AC38571)
----@param ped number
----@param x number
----@param y number
----@param z number
----@param duration number
-function TaskTurnPedToFaceCoord(ped, x, y, z, duration) end
-
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x97A28E63F0BA5631)
 ---@param p0 any
@@ -2834,29 +2849,12 @@ function TaskTurnPedToFaceCoord(ped, x, y, z, duration) end
 function TaskUseNearestScenarioChainToCoordWarp(p0, p1, p2, p3, p4, p5) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x58E2E0F23F6B76C3)
+---[Native Documentation](https://docs.fivem.net/natives/?_0x447C1E9EF844BC0F)
 ---@param ped number
 ---@param x number
 ---@param y number
 ---@param z number
----@param radius number
----@param p5 any
-function TaskUseNearestScenarioToCoordWarp(ped, x, y, z, radius, p5) end
-
----```
----Actually has 3 params, not 2.  
----p0: Ped  
----p1: int (or bool?)  
----p2: int  
----```
----
----```
----NativeDB Added Parameter 3: Any p2
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0xBD2A8EC3AF4DE7DB)
----@param ped number
----@param p1 number
-function TaskUseMobilePhone(ped, p1) end
+function TaskVehicleAimAtCoord(ped, x, y, z) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x9FDA1B3D7E7028B3)
@@ -2873,25 +2871,6 @@ function TaskUseNearestScenarioChainToCoord(p0, p1, p2, p3, p4, p5) end
 ---@param ped number
 ---@param target number
 function TaskVehicleAimAtPed(ped, target) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x5EE02954A14C69DB)
----@param ped number
----@param duration number
-function TaskUseMobilePhoneTimed(ped, duration) end
-
----```
----Updated variables
----An alternative to TASK::TASK_USE_NEAREST_SCENARIO_TO_COORD_WARP. Makes the ped walk to the scenario instead.
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x277F471BA9DB000B)
----@param ped number
----@param x number
----@param y number
----@param z number
----@param distance number
----@param duration number
-function TaskUseNearestScenarioToCoord(ped, x, y, z, distance, duration) end
 
 ---```
 ---info about driving modes: HTTP://gtaforums.com/topic/822314-guide-driving-styles/  
@@ -2915,6 +2894,12 @@ function TaskUseNearestScenarioToCoord(ped, x, y, z, distance, duration) end
 ---@param p10 number
 function TaskVehicleDriveToCoord(ped, vehicle, x, y, z, speed, p6, vehicleModel, drivingMode, stopRange, p10) end
 
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x5EE02954A14C69DB)
+---@param ped number
+---@param duration number
+function TaskUseMobilePhoneTimed(ped, duration) end
+
 ---Drive randomly with no destination set.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x480142959D337D00)
 ---@param ped number
@@ -2922,6 +2907,16 @@ function TaskVehicleDriveToCoord(ped, vehicle, x, y, z, speed, p6, vehicleModel,
 ---@param speed number
 ---@param drivingStyle number
 function TaskVehicleDriveWander(ped, vehicle, speed, drivingStyle) end
+
+---```
+---chases targetEnt fast and aggressively  
+-----  
+---Makes ped (needs to be in vehicle) chase targetEnt.  
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x3C08A8E30363B353)
+---@param driver number
+---@param targetEnt number
+function TaskVehicleChase(driver, targetEnt) end
 
 ---```
 ---Makes a ped follow the targetVehicle with <minDistance> in between.  
@@ -2948,16 +2943,6 @@ function TaskVehicleDriveWander(ped, vehicle, speed, drivingStyle) end
 ---@param noRoadsDistance number
 function TaskVehicleEscort(ped, vehicle, targetVehicle, mode, speed, drivingStyle, minDistance, p7, noRoadsDistance) end
 
----```
----chases targetEnt fast and aggressively  
------  
----Makes ped (needs to be in vehicle) chase targetEnt.  
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x3C08A8E30363B353)
----@param driver number
----@param targetEnt number
-function TaskVehicleChase(driver, targetEnt) end
-
 ---You can let your character drive to the destination at the speed and driving style you set. You can use map marks to set the destination.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x158BB33F920D360C)
 ---@param ped number
@@ -2969,19 +2954,6 @@ function TaskVehicleChase(driver, targetEnt) end
 ---@param driveMode number
 ---@param stopRange number
 function TaskVehicleDriveToCoordLongrange(ped, vehicle, x, y, z, speed, driveMode, stopRange) end
-
----```
----Makes a ped in a vehicle follow an entity (ped, vehicle, etc.)
----drivingStyle: http://gtaforums.com/topic/822314-guide-driving-styles/
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0xFC545A9F0626E3B6)
----@param driver number
----@param vehicle number
----@param targetEntity number
----@param speed number
----@param drivingStyle number
----@param minDistance number
-function TaskVehicleFollow(driver, vehicle, targetEntity, speed, drivingStyle, minDistance) end
 
 ---```
 ---task_vehicle_follow_waypoint_recording(Ped p0, Vehicle p1, string p2, int p3, int p4, int p5, int p6, float.x p7, float.Y p8, float.Z p9, bool p10, int p11)
@@ -3031,21 +3003,6 @@ function TaskVehicleFollowWaypointRecording(ped, vehicle, WPRecording, p3, p4, p
 ---@param stoppingRange number
 function TaskVehicleGotoNavmesh(ped, vehicle, x, y, z, speed, behaviorFlag, stoppingRange) end
 
----See [`TASK_VEHICLE_MISSION`](#\_0x659427E0EF36BCDE).
----[Native Documentation](https://docs.fivem.net/natives/?_0xF0AF20AA7731F8C3)
----@param ped number
----@param vehicle number
----@param x number
----@param y number
----@param z number
----@param p5 number
----@param p6 number
----@param p7 number
----@param p8 number
----@param p9 number
----@param DriveAgainstTraffic boolean
-function TaskVehicleMissionCoorsTarget(ped, vehicle, x, y, z, p5, p6, p7, p8, p9, DriveAgainstTraffic) end
-
 ---```
 ---pilot, vehicle and altitude are rather self-explanatory.  
 ---p4: is unused variable in the function.  
@@ -3065,14 +3022,6 @@ function TaskVehicleMissionCoorsTarget(ped, vehicle, x, y, z, p5, p6, p7, p8, p9
 ---@param altitude number
 ---@param p7 number
 function TaskVehicleHeliProtect(pilot, vehicle, entityToFollow, targetSpeed, p4, radius, altitude, p7) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x447C1E9EF844BC0F)
----@param ped number
----@param x number
----@param y number
----@param z number
-function TaskVehicleAimAtCoord(ped, x, y, z) end
 
 ---```
 ---Modes:  
@@ -3095,6 +3044,21 @@ function TaskVehicleAimAtCoord(ped, x, y, z) end
 function TaskVehiclePark(ped, vehicle, x, y, z, heading, mode, radius, keepEngineOn) end
 
 ---See [`TASK_VEHICLE_MISSION`](#\_0x659427E0EF36BCDE).
+---[Native Documentation](https://docs.fivem.net/natives/?_0xF0AF20AA7731F8C3)
+---@param ped number
+---@param vehicle number
+---@param x number
+---@param y number
+---@param z number
+---@param p5 number
+---@param p6 number
+---@param p7 number
+---@param p8 number
+---@param p9 number
+---@param DriveAgainstTraffic boolean
+function TaskVehicleMissionCoorsTarget(ped, vehicle, x, y, z, p5, p6, p7, p8, p9, DriveAgainstTraffic) end
+
+---See [`TASK_VEHICLE_MISSION`](#\_0x659427E0EF36BCDE).
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x9454528DF15D657A)
 ---@param ped number
 ---@param vehicle number
@@ -3106,15 +3070,6 @@ function TaskVehiclePark(ped, vehicle, x, y, z, heading, mode, radius, keepEngin
 ---@param p7 number
 ---@param DriveAgainstTraffic boolean
 function TaskVehicleMissionPedTarget(ped, vehicle, pedTarget, missionType, maxSpeed, drivingStyle, minDistance, p7, DriveAgainstTraffic) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x5190796ED39C9B6D)
----@param ped number
----@param x number
----@param y number
----@param z number
----@param p4 number
-function TaskVehicleShootAtCoord(ped, x, y, z, p4) end
 
 ---```
 ---missionType: https://alloc8or.re/gta5/doc/enums/eVehicleMissionType.txt
@@ -3170,6 +3125,15 @@ function TaskVehicleMission(driver, vehicle, vehicleTarget, missionType, p4, p5,
 ---@param time number
 function TaskVehicleTempAction(driver, vehicle, action, time) end
 
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x5190796ED39C9B6D)
+---@param ped number
+---@param x number
+---@param y number
+---@param z number
+---@param p4 number
+function TaskVehicleShootAtCoord(ped, x, y, z, p4) end
+
 ---```
 ---Most probably plays a specific animation on vehicle. For example getting chop out of van etc...
 ---Here's how its used -
@@ -3184,6 +3148,16 @@ function TaskVehicleTempAction(driver, vehicle, action, time) end
 function TaskVehiclePlayAnim(vehicle, animationSet, animationName) end
 
 ---```
+---NativeDB Introduced: v1868
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x6919A2F136426098)
+---@param p0 any
+---@param p1 any
+---@param p2 any
+---@param p3 any
+function TaskWanderSpecific(p0, p1, p2, p3) end
+
+---```
 ---NativeDB Added Parameter 5: Any p4
 ---NativeDB Added Parameter 6: Any p5
 ---```
@@ -3193,6 +3167,16 @@ function TaskVehiclePlayAnim(vehicle, animationSet, animationName) end
 ---@param time number
 ---@param p3 number
 function TaskWrithe(ped, target, time, p3) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x58E2E0F23F6B76C3)
+---@param ped number
+---@param x number
+---@param y number
+---@param z number
+---@param radius number
+---@param p5 any
+function TaskUseNearestScenarioToCoordWarp(ped, x, y, z, radius, p5) end
 
 ---```
 ---Makes ped walk around the area.  
@@ -3204,28 +3188,18 @@ function TaskWrithe(ped, target, time, p3) end
 ---@param p2 number
 function TaskWanderStandard(ped, p1, p2) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xA98FCAFD7893C834)
+---```
+---Updated variables
+---An alternative to TASK::TASK_USE_NEAREST_SCENARIO_TO_COORD_WARP. Makes the ped walk to the scenario instead.
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x277F471BA9DB000B)
 ---@param ped number
+---@param x number
+---@param y number
+---@param z number
+---@param distance number
 ---@param duration number
-function UpdateTaskHandsUpDuration(ped, duration) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x10AB107B887214D8)
----@param ped number
----@param target number
----@param p2 number
-function TaskVehicleShootAtPed(ped, target, p2) end
-
----```
----NativeDB Introduced: v1868
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x6919A2F136426098)
----@param p0 any
----@param p1 any
----@param p2 any
----@param p3 any
-function TaskWanderSpecific(p0, p1, p2, p3) end
+function TaskUseNearestScenarioToCoord(ped, x, y, z, distance, duration) end
 
 ---Makes a ped wander/patrol around the specified area.
 ---
@@ -3243,10 +3217,15 @@ function TaskWanderSpecific(p0, p1, p2, p3) end
 function TaskWanderInArea(ped, x, y, z, radius, minimalLength, timeBetweenWalks) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x121F0593E0A431D7)
----@param vehicle number
----@param speed number
-function VehicleWaypointPlaybackOverrideSpeed(vehicle, speed) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0xE4973DBDBE6E44B3)
+---@param ped number
+---@param entity number
+function UpdateTaskSweepAimEntity(ped, entity) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x67406F2C8F87FC4F)
+---@param ped number
+function UncuffPed(ped) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x9A7D091411C5F684)
@@ -3266,9 +3245,10 @@ function TaskWarpPedIntoVehicle(ped, vehicle, seatIndex) end
 function UpdateTaskAimGunScriptedTarget(p0, p1, p2, p3, p4, p5) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x67406F2C8F87FC4F)
----@param ped number
-function UncuffPed(ped) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x121F0593E0A431D7)
+---@param vehicle number
+---@param speed number
+function VehicleWaypointPlaybackOverrideSpeed(vehicle, speed) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xBB106883F5201FC4)
@@ -3298,10 +3278,9 @@ function UseWaypointRecordingAsAssistedMovementRoute(name, p1, p2, p3) end
 function WaypointPlaybackGetIsPaused(p0) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xE4973DBDBE6E44B3)
----@param ped number
----@param entity number
-function UpdateTaskSweepAimEntity(ped, entity) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0xDC04FCAA7839D492)
+---@param vehicle number
+function VehicleWaypointPlaybackResume(vehicle) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x0F342546AA06FED5)
@@ -3309,6 +3288,11 @@ function UpdateTaskSweepAimEntity(ped, entity) end
 ---@param p1 boolean
 ---@param p2 boolean
 function WaypointPlaybackPause(p0, p1, p2) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x5CEB25A7D2848963)
+---@param vehicle number
+function VehicleWaypointPlaybackUseDefaultSpeed(vehicle) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x7D7D2B47FA788E85)
@@ -3335,9 +3319,12 @@ function WaypointPlaybackStartAimingAtCoord(p0, p1, p2, p3, p4) end
 function WaypointPlaybackResume(p0, p1, p2, p3) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xDC04FCAA7839D492)
----@param vehicle number
-function VehicleWaypointPlaybackResume(vehicle) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0xE70BA7B90F8390DC)
+---@param p0 any
+---@param p1 any
+---@param p2 boolean
+---@param p3 any
+function WaypointPlaybackStartShootingAtPed(p0, p1, p2, p3) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x20E330937C399D29)
@@ -3347,12 +3334,9 @@ function VehicleWaypointPlaybackResume(vehicle) end
 function WaypointPlaybackStartAimingAtPed(p0, p1, p2) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xE70BA7B90F8390DC)
+---[Native Documentation](https://docs.fivem.net/natives/?_0x6599D834B12D0800)
 ---@param p0 any
----@param p1 any
----@param p2 boolean
----@param p3 any
-function WaypointPlaybackStartShootingAtPed(p0, p1, p2, p3) end
+function WaypointPlaybackUseDefaultSpeed(p0) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x057A25CFCC9DB671)
@@ -3364,16 +3348,6 @@ function WaypointPlaybackStartShootingAtPed(p0, p1, p2, p3) end
 ---@param p5 any
 function WaypointPlaybackStartShootingAtCoord(p0, p1, p2, p3, p4, p5) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x6599D834B12D0800)
----@param p0 any
-function WaypointPlaybackUseDefaultSpeed(p0) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x47EFA040EBB8E2EA)
----@param p0 any
-function WaypointPlaybackStopAimingOrShooting(p0) end
-
 ---```
 ---For a full list of the points, see here: goo.gl/wIH0vn
 ---```
@@ -3382,13 +3356,6 @@ function WaypointPlaybackStopAimingOrShooting(p0) end
 ---@param point number
 ---@return boolean, vector3
 function WaypointRecordingGetCoord(name, point) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x005622AEBC33ACA9)
----@param name string
----@param point number
----@return number
-function WaypointRecordingGetSpeedAtPoint(name, point) end
 
 ---```
 ---For a full list of the points, see here: goo.gl/wIH0vn
@@ -3402,9 +3369,26 @@ function WaypointRecordingGetSpeedAtPoint(name, point) end
 function WaypointRecordingGetClosestWaypoint(name, x, y, z) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x5CEB25A7D2848963)
----@param vehicle number
-function VehicleWaypointPlaybackUseDefaultSpeed(vehicle) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x005622AEBC33ACA9)
+---@param name string
+---@param point number
+---@return number
+function WaypointRecordingGetSpeedAtPoint(name, point) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x47EFA040EBB8E2EA)
+---@param p0 any
+function WaypointPlaybackStopAimingOrShooting(p0) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xA98FCAFD7893C834)
+---@param ped number
+---@param duration number
+function UpdateTaskHandsUpDuration(ped, duration) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xDB6708C0B46F56D8)
+function RemoveAllCoverBlockingAreas() end
 
 ---```
 ---For a full list of the points, see here: goo.gl/wIH0vn
@@ -3415,6 +3399,22 @@ function VehicleWaypointPlaybackUseDefaultSpeed(vehicle) end
 function WaypointRecordingGetNumPoints(name) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xDB6708C0B46F56D8)
-function RemoveAllCoverBlockingAreas() end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x10AB107B887214D8)
+---@param ped number
+---@param target number
+---@param p2 number
+function TaskVehicleShootAtPed(ped, target, p2) end
+
+---```
+---Makes a ped in a vehicle follow an entity (ped, vehicle, etc.)
+---drivingStyle: http://gtaforums.com/topic/822314-guide-driving-styles/
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0xFC545A9F0626E3B6)
+---@param driver number
+---@param vehicle number
+---@param targetEntity number
+---@param speed number
+---@param drivingStyle number
+---@param minDistance number
+function TaskVehicleFollow(driver, vehicle, targetEntity, speed, drivingStyle, minDistance) end
 

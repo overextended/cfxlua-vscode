@@ -20,13 +20,11 @@ function GetShapeTestResult(shapeTestHandle) end
 ---@return number, boolean, vector3, vector3, number, number
 function GetShapeTestResultIncludingMaterial(shapeTestHandle) end
 
----See [`START_SHAPE_TEST_LOS_PROBE`](#\_0x7EE9F5D83DD4F90E) for flags.
----[Native Documentation](https://docs.fivem.net/natives/?_0x37181417CE7C8900)
+---Invalidates the entity handle passed by removing the fwScriptGuid from the entity. This should be used when receiving an
+---ambient entity from shape testing natives, but can also be used for other natives returning an 'irrelevant' entity handle.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x2B3334BCA57CD799)
 ---@param entity number
----@param flags1 number
----@param flags2 number
----@return number
-function StartShapeTestBound(entity, flags1, flags2) end
+function ReleaseScriptGuidFromEntity(entity) end
 
 ---For more information, see [`START_EXPENSIVE_SYNCHRONOUS_SHAPE_TEST_LOS_PROBE`](#\_0x377906D8A31E5586) and [`START_SHAPE_TEST_LOS_PROBE`](#\_0x7EE9F5D83DD4F90E).
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xFE466162C4401D18)
@@ -62,30 +60,13 @@ function StartShapeTestBox(x, y, z, x1, y1, z1, rotX, rotY, rotZ, p9, flags, ent
 ---@return number
 function StartExpensiveSynchronousShapeTestLosProbe(x1, y1, z1, x2, y2, z2, flags, entity, p8) end
 
----Invalidates the entity handle passed by removing the fwScriptGuid from the entity. This should be used when receiving an
----ambient entity from shape testing natives, but can also be used for other natives returning an 'irrelevant' entity handle.
----[Native Documentation](https://docs.fivem.net/natives/?_0x2B3334BCA57CD799)
----@param entity number
-function ReleaseScriptGuidFromEntity(entity) end
-
----Since it is only used in the PC version, likely some mouse-friendly shape test. Uses **in** vector arguments.
----
----Asynchronous.
----
----```
----it returns a ShapeTest handle that can be used with GET_SHAPE_TEST_RESULT.  
----In its only usage in game scripts its called with flag set to 511, entity to player_ped_id and flag2 set to 7  
----```
----
 ---See [`START_SHAPE_TEST_LOS_PROBE`](#\_0x7EE9F5D83DD4F90E) for flags.
----[Native Documentation](https://docs.fivem.net/natives/?_0xFF6BE494C7987F34)
----@param pVec1 vector3
----@param pVec2 vector3
----@param flag number
+---[Native Documentation](https://docs.fivem.net/natives/?_0x37181417CE7C8900)
 ---@param entity number
----@param flag2 number
+---@param flags1 number
+---@param flags2 number
 ---@return number
-function StartShapeTestSurroundingCoords(pVec1, pVec2, flag, entity, flag2) end
+function StartShapeTestBound(entity, flags1, flags2) end
 
 ---Asynchronously starts a line-of-sight (raycast) world probe shape test.
 ---
@@ -121,13 +102,39 @@ function StartShapeTestSurroundingCoords(pVec1, pVec2, flag, entity, flag2) end
 ---@return number
 function StartShapeTestLosProbe(x1, y1, z1, x2, y2, z2, flags, entity, p8) end
 
----See [`START_SHAPE_TEST_LOS_PROBE`](#\_0x7EE9F5D83DD4F90E) for flags.
----[Native Documentation](https://docs.fivem.net/natives/?_0x052837721A854EC7)
+---Performs the same type of trace as START_SHAPE_TEST_CAPSULE, but with some different hardcoded parameters.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xE6AC6C45FBE83004)
+---@param x1 number
+---@param y1 number
+---@param z1 number
+---@param x2 number
+---@param y2 number
+---@param z2 number
+---@param radius number
+---@param flags number
 ---@param entity number
----@param flags1 number
----@param flags2 number
+---@param p9 number
 ---@return number
-function StartShapeTestBoundingBox(entity, flags1, flags2) end
+function StartShapeTestSweptSphere(x1, y1, z1, x2, y2, z2, radius, flags, entity, p9) end
+
+---Since it is only used in the PC version, likely some mouse-friendly shape test. Uses **in** vector arguments.
+---
+---Asynchronous.
+---
+---```
+---it returns a ShapeTest handle that can be used with GET_SHAPE_TEST_RESULT.  
+---In its only usage in game scripts its called with flag set to 511, entity to player_ped_id and flag2 set to 7  
+---```
+---
+---See [`START_SHAPE_TEST_LOS_PROBE`](#\_0x7EE9F5D83DD4F90E) for flags.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xFF6BE494C7987F34)
+---@param pVec1 vector3
+---@param pVec2 vector3
+---@param flag number
+---@param entity number
+---@param flag2 number
+---@return number
+function StartShapeTestSurroundingCoords(pVec1, pVec2, flag, entity, flag2) end
 
 ---Raycast from point to point, where the ray has a radius.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x28579D1B8F8AAC80)
@@ -144,18 +151,11 @@ function StartShapeTestBoundingBox(entity, flags1, flags2) end
 ---@return number
 function StartShapeTestCapsule(x1, y1, z1, x2, y2, z2, radius, flags, entity, p9) end
 
----Performs the same type of trace as START_SHAPE_TEST_CAPSULE, but with some different hardcoded parameters.
----[Native Documentation](https://docs.fivem.net/natives/?_0xE6AC6C45FBE83004)
----@param x1 number
----@param y1 number
----@param z1 number
----@param x2 number
----@param y2 number
----@param z2 number
----@param radius number
----@param flags number
+---See [`START_SHAPE_TEST_LOS_PROBE`](#\_0x7EE9F5D83DD4F90E) for flags.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x052837721A854EC7)
 ---@param entity number
----@param p9 number
+---@param flags1 number
+---@param flags2 number
 ---@return number
-function StartShapeTestSweptSphere(x1, y1, z1, x2, y2, z2, radius, flags, entity, p9) end
+function StartShapeTestBoundingBox(entity, flags1, flags2) end
 

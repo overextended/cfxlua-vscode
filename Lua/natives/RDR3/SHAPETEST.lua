@@ -69,6 +69,14 @@ function StartShapeTestCapsule(x1, y1, z1, x2, y2, z2, radius, flags, entityToIg
 ---@return any
 function StartShapeTestSweptSphere(x1, y1, z1, x2, y2, z2, radius, flags, entity, p9) end
 
+---Old name: _START_SHAPE_TEST_SURROUNDING_COORDS
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x9839013D8B6014F1)
+---@param flag number
+---@param entity number
+---@param flag2 number
+---@return any, vector3, vector3
+function StartShapeTestMouseCursorLosProbe(flag, entity, flag2) end
+
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xFE466162C4401D18)
 ---@param x number
@@ -101,12 +109,4 @@ function StartShapeTestBox(x, y, z, x1, y2, z2, rotX, rotY, rotZ, p9, p10, entit
 ---@param shapeTestHandle any
 ---@return number, boolean, vector3, vector3, number
 function GetShapeTestResult(shapeTestHandle) end
-
----Old name: _START_SHAPE_TEST_SURROUNDING_COORDS
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x9839013D8B6014F1)
----@param flag number
----@param entity number
----@param flag2 number
----@return any, vector3, vector3
-function StartShapeTestMouseCursorLosProbe(flag, entity, flag2) end
 

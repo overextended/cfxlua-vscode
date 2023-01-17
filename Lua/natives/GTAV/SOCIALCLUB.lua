@@ -16,6 +16,16 @@ function N_0x116fb94dc4b79f17(p0) end
 ---@return any
 function N_0x07dbd622d9533857(p0) end
 
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x16DA8172459434AA)
+---@return any
+function N_0x16da8172459434aa() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x225798743970412B)
+---@return boolean, number
+function N_0x225798743970412b() end
+
 ---```
 ---NativeDB Added Parameter 1: char* p0
 ---NativeDB Added Parameter 2: char* p1
@@ -27,25 +37,10 @@ function N_0x07dbd622d9533857(p0) end
 function N_0x1d12a56fc95be92e() end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x16DA8172459434AA)
----@return any
-function N_0x16da8172459434aa() end
-
----```
----NativeDB Introduced: v323
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x2D874D4AE612A65F)
----@return any
-function N_0x2d874d4ae612a65f() end
-
----```
----NativeDB Added Parameter 1: char* p0
----NativeDB Added Parameter 2: char* p1
----NativeDB Introduced: v323
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x33DF47CC0642061B)
----@return boolean
-function N_0x33df47cc0642061b() end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x19853B5B17D77BCA)
+---@param p0 any
+---@return boolean, any
+function N_0x19853b5b17d77bca(p0) end
 
 ---```
 ---NativeDB Added Parameter 1: char* p0
@@ -91,15 +86,14 @@ function N_0x4ed9c8d6da297639() end
 function N_0x44aca259d67651db(p1) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x675721C9F644D161)
+function N_0x675721c9f644d161() end
+
+---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x4737980E8A283806)
 ---@param p0 number
 ---@return boolean, any
 function N_0x4737980e8a283806(p0) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x225798743970412B)
----@return boolean, number
-function N_0x225798743970412b() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x4A7D6E727F941747)
@@ -131,17 +125,32 @@ function N_0x699e4a5c8c893a18(p0, p1) end
 ---@return boolean
 function N_0x710bcda8071eded1() end
 
+---```
+---NativeDB Added Parameter 1: char* p0
+---NativeDB Added Parameter 2: char* p1
+---NativeDB Introduced: v323
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x33DF47CC0642061B)
+---@return boolean
+function N_0x33df47cc0642061b() end
+
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x7DB18CA8CAD5B098)
 ---@return any
 function N_0x7db18ca8cad5b098() end
 
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x6BFB12CE158E3DD4)
+---@param p0 any
+---@return boolean
+function N_0x6bfb12ce158e3dd4(p0) end
+
 ---```
 ---NativeDB Introduced: v323
 ---```
----[Native Documentation](https://docs.fivem.net/natives/?_0x7FFCBFEE44ECFABF)
+---[Native Documentation](https://docs.fivem.net/natives/?_0x2D874D4AE612A65F)
 ---@return any
-function N_0x7ffcbfee44ecfabf() end
+function N_0x2d874d4ae612a65f() end
 
 ---```
 ---NativeDB Introduced: v1290
@@ -150,13 +159,6 @@ function N_0x7ffcbfee44ecfabf() end
 ---@param p0 any
 ---@return boolean
 function N_0x8a4416c0db05fa66(p0) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x8CC469AB4D349B7C)
----@param p0 number
----@param p1 string
----@return boolean, any
-function N_0x8cc469ab4d349b7c(p0, p1) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x9237E334F6E43156)
@@ -191,12 +193,6 @@ function N_0xa468e0be12b12c70() end
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xD8122C407663B995)
 ---@return any
 function N_0xd8122c407663b995() end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x6BFB12CE158E3DD4)
----@param p0 any
----@return boolean
-function N_0x6bfb12ce158e3dd4(p0) end
 
 ---```
 ---NativeDB Added Parameter 1: char* p0
@@ -246,11 +242,11 @@ function N_0xe4f6e8d07a2f0f51(p0) end
 ---@return boolean, number
 function N_0xf6baaaf762e1bf40(p0) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x19853B5B17D77BCA)
----@param p0 any
----@return boolean, any
-function N_0x19853b5b17d77bca(p0) end
+---```
+---NativeDB Introduced: v1290
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0xEA95C0853A27888E)
+function N_0xea95c0853a27888e() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xFE4C1D0D3B9CC17E)
@@ -264,16 +260,21 @@ function N_0xfe4c1d0d3b9cc17e(p0, p1) end
 ---@return string
 function RockstarMessageGetString() end
 
----```
----NativeDB Introduced: v1290
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0xEA95C0853A27888E)
-function N_0xea95c0853a27888e() end
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x8CC469AB4D349B7C)
+---@param p0 number
+---@param p1 string
+---@return boolean, any
+function N_0x8cc469ab4d349b7c(p0, p1) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xFF8F3A92B75ED67A)
 ---@return any
 function N_0xff8f3a92b75ed67a() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x55DF6DB45179236E)
+function ScEmailMessageClearRecipList() end
 
 ---```
 ---NativeDB Introduced: v323
@@ -282,10 +283,6 @@ function N_0xff8f3a92b75ed67a() end
 ---@param name string
 ---@return boolean, number
 function ScGamerdataGetFloat(name) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x675721C9F644D161)
-function N_0x675721c9f644d161() end
 
 ---```
 ---sfink: from scripts:
@@ -331,13 +328,6 @@ function ScInboxGetMessageTypeAtIndex(msgIndex) end
 ---@return boolean
 function ScInboxMessageDoApply(p0) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xFFE5C16F402D851D)
----@param p0 number
----@param p1 string
----@return boolean
-function ScInboxMessageGetDataBool(p0, p1) end
-
 ---```
 ---Returns the nickname of the logged-in Rockstar Social Club account.
 ---```
@@ -346,14 +336,22 @@ function ScInboxMessageGetDataBool(p0, p1) end
 function ScGetNickname() end
 
 ---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xFFE5C16F402D851D)
+---@param p0 number
+---@param p1 string
+---@return boolean
+function ScInboxMessageGetDataBool(p0, p1) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x93028F1DB42BFD08)
 ---@param msgIndex number
 ---@return boolean
 function ScInboxGetMessageIsReadAtIndex(msgIndex) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x55DF6DB45179236E)
-function ScEmailMessageClearRecipList() end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x03A93FF1A2CA0864)
+---@return number
+function ScInboxGetTotalNumMessages() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x87E0052F08BD64E6)
@@ -388,11 +386,12 @@ function ScInboxMessageGetString(p0) end
 ---@return boolean, any
 function ScInboxMessageGetUgcdata(p0) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x2C015348CF19CA1D)
----@param p0 number
----@return boolean
-function ScInboxMessagePop(p0) end
+---```
+---NativeDB Introduced: v323
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x7FFCBFEE44ECFABF)
+---@return any
+function N_0x7ffcbfee44ecfabf() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x6AFD2CD753FEEF83)
@@ -401,25 +400,33 @@ function ScInboxMessagePop(p0) end
 function ScInboxMessageSendBountyPresenceEvent(data) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x03A93FF1A2CA0864)
----@return number
-function ScInboxGetTotalNumMessages() end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xA68D3D229F4F3B06)
----@param data string
-function ScInboxMessageSendUgcStatUpdateEvent(data) end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x2330C12A7A605D16)
 ---@return number
 function ScEmailMessagePushGamerToRecipList() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x2C015348CF19CA1D)
+---@param p0 number
+---@return boolean
+function ScInboxMessagePop(p0) end
+
+---Social Club native to add license plate for the user
+---[Native Documentation](https://docs.fivem.net/natives/?_0x1989C6E6F67E76A8)
+---@param plateText string
+---@param plateData string
+---@return boolean, number
+function ScLicenseplateAdd(plateText, plateData) end
 
 ---Returns true if the add license plate text request is still pending.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x07C61676E5BB52CD)
 ---@param token number
 ---@return boolean
 function ScLicenseplateGetAddIsPending(token) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xDA024BDBD600F44A)
+---@return number
+function ScInboxMessagePushGamerToEventRecipList() end
 
 ---Returns a status for adding the license plate
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x8147FFF6A718E1AD)
@@ -433,6 +440,13 @@ function ScLicenseplateGetAddStatus(token) end
 ---@param token number
 ---@return number
 function ScLicenseplateGetCount(token) end
+
+---Gets license plate data related to the get license plate info request
+---[Native Documentation](https://docs.fivem.net/natives/?_0x2E89990DDFF670C3)
+---@param token number
+---@param plateIndex number
+---@return string
+function ScLicenseplateGetPlateData(token, plateIndex) end
 
 ---Checks if the "is valid license plate" request is still pending.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xD302E99EDF0449CF)
@@ -448,25 +462,6 @@ function ScLicenseplateGetIsvalidIsPending(token) end
 ---@return boolean
 function ScLicenseplateSetPlateData(oldPlateText, newPlateText, plateData) end
 
----Social Club native to add license plate for the user
----[Native Documentation](https://docs.fivem.net/natives/?_0x1989C6E6F67E76A8)
----@param plateText string
----@param plateData string
----@return boolean, number
-function ScLicenseplateAdd(plateText, plateData) end
-
----Gets license plate data related to the get license plate info request
----[Native Documentation](https://docs.fivem.net/natives/?_0x2E89990DDFF670C3)
----@param token number
----@param plateIndex number
----@return string
-function ScLicenseplateGetPlateData(token, plateIndex) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xDA024BDBD600F44A)
----@return number
-function ScInboxMessagePushGamerToEventRecipList() end
-
 ---```
 ---NativeDB Introduced: v323
 ---NativeDB Added Parameter 1: Hash attrHash
@@ -476,19 +471,25 @@ function ScInboxMessagePushGamerToEventRecipList() end
 ---@return boolean
 function ScPresenceAttrSetFloat() end
 
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x1F1E9682483697C7)
+---@param attrHash number | string
+---@param value number
+---@return boolean
+function ScPresenceAttrSetInt(attrHash, value) end
+
+---Gets the status of the is valid license plate request
+---[Native Documentation](https://docs.fivem.net/natives/?_0x5C4EBFFA98BDB41C)
+---@param token number
+---@return number
+function ScLicenseplateGetIsvalidStatus(token) end
+
 ---Gets license plate text related to the get license plate info request
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x1D4446A62D35B0D0)
 ---@param token number
 ---@param plateIndex number
 ---@return string
 function ScLicenseplateGetPlate(token, plateIndex) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x287F1F75D2803595)
----@param attrHash number | string
----@param value string
----@return boolean
-function ScPresenceAttrSetString(attrHash, value) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xEB2BF817463DFA28)
@@ -502,6 +503,13 @@ function ScProfanityCheckUgcString(string) end
 ---@return boolean, number
 function ScLicenseplateIsvalid(plateText) end
 
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x287F1F75D2803595)
+---@param attrHash number | string
+---@param value string
+---@return boolean
+function ScPresenceAttrSetString(attrHash, value) end
+
 ---Starts a task to check an entered string for profanity on the ROS/Social Club services.
 ---
 ---See also: [`SC_PROFANITY_GET_CHECK_IS_VALID`](#\_0x1753344C770358AE) and [`SC_PROFANITY_GET_CHECK_IS_PENDING`](#\_0x82E4A58BABC15AE7).
@@ -509,12 +517,6 @@ function ScLicenseplateIsvalid(plateText) end
 ---@param string string
 ---@return boolean, number
 function ScProfanityCheckString(string) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x82E4A58BABC15AE7)
----@param token number
----@return boolean
-function ScProfanityGetCheckIsPending(token) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x930DE22F07B1CCE3)
@@ -535,20 +537,18 @@ function ScProfanityGetCheckIsValid(token) end
 function ScProfanityGetStringPassed(token) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xA68D3D229F4F3B06)
+---@param data string
+function ScInboxMessageSendUgcStatUpdateEvent(data) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xBFA0A56A817C6C7D)
 ---@param toggle boolean
 function SetHandleRockstarMessageViaScript(toggle) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x1F1E9682483697C7)
----@param attrHash number | string
----@param value number
----@return boolean
-function ScPresenceAttrSetInt(attrHash, value) end
-
----Gets the status of the is valid license plate request
----[Native Documentation](https://docs.fivem.net/natives/?_0x5C4EBFFA98BDB41C)
+---[Native Documentation](https://docs.fivem.net/natives/?_0x82E4A58BABC15AE7)
 ---@param token number
----@return number
-function ScLicenseplateGetIsvalidStatus(token) end
+---@return boolean
+function ScProfanityGetCheckIsPending(token) end
 
