@@ -24,7 +24,6 @@ function PerformHttpRequest(url, cb, method, data, headers, options) end
 function GetPlayers() end
 
 ---@class StateBag
----@field get fun(self, key: string): any
 ---@field set fun(self, key: string, value: any, replicated?: boolean)
 ---@field [string] any
 

@@ -145,30 +145,25 @@ function scrub(...) end
 function vector(x, y, z, w) end
 
 ---@param x number
----@param y? number
+---@param y number
 ---@return vector2
+---@overload fun(n: number): vector2
 function vector2(x, y) end
 
 ---@param x number
 ---@param y number
 ---@param z number
 ---@return vector3
+---@overload fun(n: number): vector3
 function vector3(x, y, z) end
-
----@param x number
----@return vector3
-function vector3(x) end
 
 ---@param x number
 ---@param y number
 ---@param z number
 ---@param w number
 ---@return vector4
+---@overload fun(n: number): vector4
 function vector4(x, y, z, w) end
-
----@param x number
----@return vector4
-function vector4(x) end
 
 vec = vector
 vec2 = vector2
