@@ -39,7 +39,8 @@ function OnSetText(uri, text)
 
 	-- prevent diagnostic errors from safe navigation (foo?[bar])
 	for startPos, tableName, finishPos, index in str_gmatch(text, '()([_%w]+)?()(%b[])') do
-		if str_sub(index, 1, 2) ~= '[[' then -- ignore strings ([[]])
+		local indexBeginning = str_sub(index, 1, 2)
+		if indexBeginning ~= '[[' and indexBeginning ~= '[=' then -- ignore strings ([[]])
 			count = count + 1
 			diffs[count] = {
 				start  = startPos,
