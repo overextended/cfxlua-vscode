@@ -38,13 +38,15 @@ function OnSetText(uri, text)
 	end
 
 	-- prevent diagnostic errors from safe navigation (foo?[bar])
-	for startPos, tableName, finishPos in str_gmatch(text, '()([_%w]+)?()%b[]') do
-		count = count + 1
-		diffs[count] = {
-			start  = startPos,
-			finish = finishPos - 1,
-			text   = '(' .. tableName .. ' or {})',
-		}
+	for startPos, tableName, finishPos, index in str_gmatch(text, '()([_%w]+)?()(%b[])') do
+		if str_sub(index, 1, 2) ~= '[[' then -- ignore strings ([[]])
+			count = count + 1
+			diffs[count] = {
+				start  = startPos,
+				finish = finishPos - 1,
+				text   = '(' .. tableName .. ' or {})',
+			}
+		end
 	end
 
 	-- prevent diagnostic errors from in unpacking (a, b, c in t)
