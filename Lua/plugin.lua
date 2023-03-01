@@ -27,13 +27,23 @@ function OnSetText(uri, text)
 		}
 	end
 
-	-- prevent diagnostic errors from safe navigation (foo?.bar and foo?[bar])
-	for safeNav in str_gmatch(text, '()%?[%.%[]+') do
+	-- prevent diagnostic errors from safe navigation (foo?.bar)
+	for startPos, tableName, finishPos in str_gmatch(text, '()([_%w]+)?()%.[_%w]+') do
 		count = count + 1
 		diffs[count] = {
-			start  = safeNav,
-			finish = safeNav,
-			text   = '',
+			start  = startPos,
+			finish = finishPos - 1,
+			text   = '(' .. tableName .. ' or {})',
+		}
+	end
+
+	-- prevent diagnostic errors from safe navigation (foo?[bar])
+	for startPos, tableName, finishPos in str_gmatch(text, '()([_%w]+)?()%b[]') do
+		count = count + 1
+		diffs[count] = {
+			start  = startPos,
+			finish = finishPos - 1,
+			text   = '(' .. tableName .. ' or {})',
 		}
 	end
 
