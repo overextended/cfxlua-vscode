@@ -27,24 +27,31 @@ function OnSetText(uri, text)
 		}
 	end
 
-	-- prevent diagnostic errors from safe navigation (foo?.bar)
-	for startPos, tableName, finishPos in str_gmatch(text, '()([_%w]+)?()%.[_%w]+') do
+	-- prevent diagnostic errors from safe navigation
+	for pos in str_gmatch(text, '()%?[%.%[]+') do
 		count = count + 1
 		diffs[count] = {
-			start  = startPos,
-			finish = finishPos - 1,
-			text   = '(' .. tableName .. ' or {})',
+			start  = pos,
+			finish = pos,
+			text   = '',
 		}
 	end
 
-	-- prevent diagnostic errors from safe navigation (foo?[bar])
-	for startPos, tableName, finishPos, index in str_gmatch(text, '()([_%w]+)?()(%b[])') do
-		local indexBeginning = str_sub(index, 1, 2)
-		if indexBeginning ~= '[[' and indexBeginning ~= '[=' then -- ignore strings ([[]])
+	-- prevent nil check errors from most safe navigations
+	for startPos, tableName, finishPos in str_gmatch(text, '()([_%w]+)%?()%.[_%w]+') do
+		count = count + 1
+		diffs[count] = {
+			start  = startPos,
+			finish = finishPos - 2,
+			text   = '(' .. tableName .. ' or {})',
+		}
+	end
+	for startPos, tableName, finishPos, index in str_gmatch(text, '()([_%w]+)%?()(%b[])') do
+		if str_sub(index, 1, 2) ~= '[[' then -- ignore strings ([[]])
 			count = count + 1
 			diffs[count] = {
 				start  = startPos,
-				finish = finishPos - 1,
+				finish = finishPos - 2,
 				text   = '(' .. tableName .. ' or {})',
 			}
 		end
