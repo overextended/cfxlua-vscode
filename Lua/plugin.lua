@@ -4,8 +4,10 @@ local str_gmatch = string.gmatch
 local str_gsub = string.gsub
 
 function OnSetText(uri, text)
+	-- ignore .vscode dir, extension files (i.e. natives), and other meta files
 	if str_find(uri, '[\\/]%.vscode[\\/]') or str_sub(text, 1, 8) == '---@meta' then return end
 
+	-- ignore files using fx asset protection
 	if str_sub(text, 1, 4) == 'FXAP' then
 		return {{
 			start = 1,
@@ -38,7 +40,7 @@ function OnSetText(uri, text)
 	end
 
 	-- prevent "need-check-nil" diagnostic when using safe navigation
-	-- only works for the first index, and requires short table notation (i.e. mytable.index, not mytable["mytable"])
+	-- only works for the first index, and requires short table notation (i.e. mytable.index, not mytable["index"])
 	for startPos, tableName, finishPos in str_gmatch(text, '[=,;][%s]*()([_%w]+)()%?[%.%[]+') do
 		count = count + 1
 		diffs[count] = {
@@ -48,7 +50,8 @@ function OnSetText(uri, text)
 		}
 	end
 
-	-- prevent diagnostic errors from in unpacking (a, b, c in t)
+	-- prevent diagnostic errors from in unpacking (a, b, c in t)  
+	-- could benefit from detection of comments to prevent nonsense annotations/comments
 	for vars, inPos, afterInPos, tablePos, tableName, finishPos in str_gmatch(text, '([_%w, ]*)%s+()in()[     ]+()([_%w]*%s-%(?.-%)?)()') do
 		if tableName ~= '' and not str_find(vars, '^%s*for%s') then
 			-- replace 'in' with '='
