@@ -37,6 +37,17 @@ function OnSetText(uri, text)
 		}
 	end
 
+	-- prevent "need-check-nil" diagnostic when using safe navigation
+	-- only works for the first index, and requires short table notation (i.e. mytable.index, not mytable["mytable"])
+	for startPos, tableName, finishPos in str_gmatch(text, '[=,;][%s]*()([_%w]+)()%?[%.%[]+') do
+		count = count + 1
+		diffs[count] = {
+			start  = startPos,
+			finish = finishPos - 1,
+			text   = '(' .. tableName .. ' or {})',
+		}
+	end
+
 	-- prevent diagnostic errors from in unpacking (a, b, c in t)
 	for vars, inPos, afterInPos, tablePos, tableName, finishPos in str_gmatch(text, '([_%w, ]*)%s+()in()[     ]+()([_%w]*%s-%(?.-%)?)()') do
 		if tableName ~= '' and not str_find(vars, '^%s*for%s') then
