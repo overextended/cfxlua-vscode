@@ -1,14 +1,23 @@
 ---@meta
 
 ---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x8D30F648014A92B5)
+---@return boolean
+function GetExtraContentPackHasBeenInstalled() end
+
+---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x10D0A8F259E93EC9)
 ---@return boolean
 function GetIsLoadingScreenActive() end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x8D30F648014A92B5)
----@return boolean
-function GetExtraContentPackHasBeenInstalled() end
+---```
+---Sets the value of the specified variable to 0.
+---Always returns true.
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x46E2B844905BC5F0)
+---@param unused any
+---@return boolean, boolean
+function HasCloudRequestsFinished(unused) end
 
 ---```
 ---Example:
@@ -37,24 +46,24 @@ function IsDlcPresent(dlcHash) end
 ---@return boolean
 function N_0x241fca5b1aa14f75() end
 
----```
----Sets the value of the specified variable to 0.
----Always returns true.
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x46E2B844905BC5F0)
----@param unused any
----@return boolean, boolean
-function HasCloudRequestsFinished(unused) end
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x9489659372A81585)
+---@return boolean
+function N_0x9489659372a81585() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA213B11DFF526300)
 ---@return boolean
 function N_0xa213b11dff526300() end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x9489659372A81585)
+---GET_IS_LOADING_\*
+---
+---```
+---NativeDB Introduced: v1734
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0xC4637A6D03C24CC3)
 ---@return boolean
-function N_0x9489659372a81585() end
+function N_0xc4637a6d03c24cc3() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xF2E07819EF1A5289)
@@ -77,13 +86,4 @@ function OnEnterMp() end
 ---```
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xD7C10C4A637992C9)
 function OnEnterSp() end
-
----GET_IS_LOADING_\*
----
----```
----NativeDB Introduced: v1734
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0xC4637A6D03C24CC3)
----@return boolean
-function N_0xc4637a6d03c24cc3() end
 

@@ -1,20 +1,5 @@
 ---@meta
 
----Shows the cursor on screen for one frame.
----
----Old name: _SET_MOUSE_CURSOR_ACTIVE_THIS_FRAME
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xF12E4CCAF249DC10)
-function SetMouseCursorThisFrame() end
-
----Changes the mouse cursor's sprite.
----
----spriteId's: https://github.com/femga/rdr3_discoveries/tree/master/graphics/HUD/cursor_sprites#readme
----
----Old name: _SET_MOUSE_CURSOR_SPRITE
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x7F5858AAB5A58CCE)
----@param spriteId number
-function SetMouseCursorStyle(spriteId) end
-
 ---Allows camera to be moved if middle mouse button is held while in first person
 ---Must be called every frame
 ---_SET*
@@ -38,4 +23,19 @@ function N_0x61cae9d1fd055e44() end
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xF7F51A57349739F2)
 ---@return boolean
 function N_0xf7f51a57349739f2() end
+
+---Changes the mouse cursor's sprite.
+---
+---spriteId's: https://github.com/femga/rdr3_discoveries/tree/master/graphics/HUD/cursor_sprites#readme
+---
+---Old name: _SET_MOUSE_CURSOR_SPRITE
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x7F5858AAB5A58CCE)
+---@param spriteId number
+function SetMouseCursorStyle(spriteId) end
+
+---Shows the cursor on screen for one frame.
+---
+---Old name: _SET_MOUSE_CURSOR_ACTIVE_THIS_FRAME
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xF12E4CCAF249DC10)
+function SetMouseCursorThisFrame() end
 

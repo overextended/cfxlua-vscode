@@ -15,21 +15,10 @@ function Ceil(value) end
 function Cos(value) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xF2DB717A73826179)
----@param value number
----@return number
-function Round(value) end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xF34EE736CF047844)
 ---@param value number
 ---@return number
 function Floor(value) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x5AE11BC36633DE4E)
----@param value number
-function Settimerb(value) end
 
 ---```
 ---NativeDB Introduced: v1604
@@ -40,11 +29,17 @@ function Settimerb(value) end
 function Log10(value) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xEDD95A39E5544DE8)
----@param value number
----@param bitShift number
+---[Native Documentation](https://docs.fivem.net/natives/?_0xE3621CC40F31FE2E)
+---@param base number
+---@param exponent number
 ---@return number
-function ShiftLeft(value, bitShift) end
+function Pow(base, exponent) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xF2DB717A73826179)
+---@param value number
+---@return number
+function Round(value) end
 
 ---```
 ---0 = high
@@ -61,10 +56,16 @@ function SetThreadPriority(priority) end
 function Settimera(value) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x71D93B57D07F9804)
+---[Native Documentation](https://docs.fivem.net/natives/?_0x5AE11BC36633DE4E)
 ---@param value number
+function Settimerb(value) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xEDD95A39E5544DE8)
+---@param value number
+---@param bitShift number
 ---@return number
-function Sqrt(value) end
+function ShiftLeft(value, bitShift) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x97EF1E5BCE9DC075)
@@ -73,29 +74,17 @@ function Sqrt(value) end
 ---@return number
 function ShiftRight(value, bitShift) end
 
----```
----return : script thread id, 0 if failed  
----Pass pointer to struct of args in p1, size of struct goes into p2  
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0xB8BA7F44DF1575E1)
----@param scriptName string
----@param argCount number
----@param stackSize number
----@return number, any
-function StartNewScriptWithArgs(scriptName, argCount, stackSize) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xC4BB298BD441BE78)
----@param scriptHash number | string
----@param argCount number
----@param stackSize number
----@return number, any
-function StartNewScriptWithNameHashAndArgs(scriptHash, argCount, stackSize) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xC9D9444186B5A374)
+---Returns the sine of the given number.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x0BADBFA3B172435F)
+---@param value number
 ---@return number
-function Timerb() end
+function Sin(value) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x71D93B57D07F9804)
+---@param value number
+---@return number
+function Sqrt(value) end
 
 ---```
 ---Examples:
@@ -136,6 +125,57 @@ function Timerb() end
 function StartNewScript(scriptName, stackSize) end
 
 ---```
+---return : script thread id, 0 if failed  
+---Pass pointer to struct of args in p1, size of struct goes into p2  
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0xB8BA7F44DF1575E1)
+---@param scriptName string
+---@param argCount number
+---@param stackSize number
+---@return number, any
+function StartNewScriptWithArgs(scriptName, argCount, stackSize) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xEB1C67C3A5333A92)
+---@param scriptHash number | string
+---@param stackSize number
+---@return number
+function StartNewScriptWithNameHash(scriptHash, stackSize) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xC4BB298BD441BE78)
+---@param scriptHash number | string
+---@param argCount number
+---@param stackSize number
+---@return number, any
+function StartNewScriptWithNameHashAndArgs(scriptHash, argCount, stackSize) end
+
+---```
+---Counts up. Every 1000 is 1 real-time second. Use SETTIMERA(int value) to set the timer (e.g.: SETTIMERA(0)).  
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x83666F9FB8FEBD4B)
+---@return number
+function Timera() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xC9D9444186B5A374)
+---@return number
+function Timerb() end
+
+---```
+---Gets the current frame time.  
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x0000000050597EE2)
+---@return number
+function Timestep() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xBBDA792448DB5A89)
+---@param value number
+---@return number
+function ToFloat(value) end
+
+---```
 ---Calculates distance between vectors.  
 ---```
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x2A488C176D52CCA5)
@@ -147,27 +187,6 @@ function StartNewScript(scriptName, stackSize) end
 ---@param z2 number
 ---@return number
 function Vdist(x1, y1, z1, x2, y2, z2) end
-
----```
----Gets the current frame time.  
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x0000000050597EE2)
----@return number
-function Timestep() end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xEB1C67C3A5333A92)
----@param scriptHash number | string
----@param stackSize number
----@return number
-function StartNewScriptWithNameHash(scriptHash, stackSize) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xE3621CC40F31FE2E)
----@param base number
----@param exponent number
----@return number
-function Pow(base, exponent) end
 
 ---```
 ---Calculates distance between vectors but does not perform Sqrt operations. (Its way faster)  
@@ -193,13 +212,6 @@ function Vdist2(x1, y1, z1, x2, y2, z2) end
 function Vmag(x, y, z) end
 
 ---```
----Pauses execution of the current script, please note this behavior is only seen when called from one of the game script files(ysc). In order to wait an asi script use "static void WAIT(DWORD time);" found in main.h
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x4EDE34FBADD967A6)
----@param ms number
-function Wait(ms) end
-
----```
 ---Calculates the magnitude of a vector but does not perform Sqrt operations. (Its way faster)  
 ---```
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA8CEACB4F35AE058)
@@ -209,22 +221,10 @@ function Wait(ms) end
 ---@return number
 function Vmag2(x, y, z) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xBBDA792448DB5A89)
----@param value number
----@return number
-function ToFloat(value) end
-
----Returns the sine of the given number.
----[Native Documentation](https://docs.fivem.net/natives/?_0x0BADBFA3B172435F)
----@param value number
----@return number
-function Sin(value) end
-
 ---```
----Counts up. Every 1000 is 1 real-time second. Use SETTIMERA(int value) to set the timer (e.g.: SETTIMERA(0)).  
+---Pauses execution of the current script, please note this behavior is only seen when called from one of the game script files(ysc). In order to wait an asi script use "static void WAIT(DWORD time);" found in main.h
 ---```
----[Native Documentation](https://docs.fivem.net/natives/?_0x83666F9FB8FEBD4B)
----@return number
-function Timera() end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x4EDE34FBADD967A6)
+---@param ms number
+function Wait(ms) end
 

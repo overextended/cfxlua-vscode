@@ -1,22 +1,23 @@
 ---@meta
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xBEC0816FF5ACBCDA)
----@param player number
----@param toggle boolean
-function ActivateDamageTrackerOnPlayer(player, toggle) end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xD45B1FFCCD52FF19)
 ---@param netID number
 ---@param toggle boolean
 function ActivateDamageTrackerOnNetworkId(netID, toggle) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xBCBF4FEF9FA5D781)
----@param amount number
----@return boolean
-function CanRegisterMissionPeds(amount) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0xBEC0816FF5ACBCDA)
+---@param player number
+---@param toggle boolean
+function ActivateDamageTrackerOnPlayer(player, toggle) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xEC5E3AF5289DCA81)
+---@param event number
+---@param amountReceived number
+---@return boolean, number
+function BadSportPlayerLeftDetected(event, amountReceived) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x69778E7564BADE6D)
@@ -34,11 +35,10 @@ function CanRegisterMissionEntities(ped_amt, vehicle_amt, object_amt, pickup_amt
 function CanRegisterMissionObjects(amount) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xEC5E3AF5289DCA81)
----@param event number
----@param amountReceived number
----@return boolean, number
-function BadSportPlayerLeftDetected(event, amountReceived) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0xBCBF4FEF9FA5D781)
+---@param amount number
+---@return boolean
+function CanRegisterMissionPeds(amount) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x0A49D1CB6E34AF72)
@@ -52,10 +52,9 @@ function CanRegisterMissionPickups(amount) end
 ---@return boolean
 function CanRegisterMissionVehicles(amount) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x0B0CC10720653F3B)
----@return boolean
-function CloudGetAvailabilityCheckResult() end
+---**This native does absolutely nothing, just a nullsub**
+---[Native Documentation](https://docs.fivem.net/natives/?_0x966DD84FB6A46017)
+function ClearLaunchParams() end
 
 ---```
 ---Downloads prod.cloud.rockstargames.com/titles/gta5/[platform]/check.json
@@ -68,6 +67,17 @@ function CloudCheckAvailability() end
 ---@param p0 string
 ---@return number
 function CloudDeleteMemberFile(p0) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x3A3D5568AF297CD5)
+---@param handle number
+---@return boolean
+function CloudDidRequestSucceed(handle) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x0B0CC10720653F3B)
+---@return boolean
+function CloudGetAvailabilityCheckResult() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x4C61B39930D045DA)
@@ -103,15 +113,27 @@ function ConvertPosixTime(posixTime) end
 function FacebookDoUnkCheck() end
 
 ---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x43865688AE10F0D7)
+---@return boolean
+function FacebookIsAvailable() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x62B9FEC9A11F10EF)
+---@return boolean
+function FacebookIsSendingData() end
+
+---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xDC48473142545431)
 ---@return boolean
 function FacebookSetCreateCharacterComplete() end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x3A3D5568AF297CD5)
----@param handle number
+---[Native Documentation](https://docs.fivem.net/natives/?_0x098AB65B9ED9A9EC)
+---@param heistName string
+---@param cashEarned number
+---@param xpEarned number
 ---@return boolean
-function CloudDidRequestSucceed(handle) end
+function FacebookSetHeistComplete(heistName, cashEarned, xpEarned) end
 
 ---```
 ---milestoneId:  
@@ -128,10 +150,6 @@ function CloudDidRequestSucceed(handle) end
 ---@return boolean
 function FacebookSetMilestoneComplete(milestoneId) end
 
----**This native does absolutely nothing, just a nullsub**
----[Native Documentation](https://docs.fivem.net/natives/?_0x966DD84FB6A46017)
-function ClearLaunchParams() end
-
 ---```
 ---Hardcoded to not work in SP.  
 ---```
@@ -140,12 +158,11 @@ function ClearLaunchParams() end
 function FadeOutLocalPlayer(p0) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x098AB65B9ED9A9EC)
----@param heistName string
----@param cashEarned number
----@param xpEarned number
----@return boolean
-function FacebookSetHeistComplete(heistName, cashEarned, xpEarned) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0xCBBD7C4991B64809)
+---@param p1 any
+---@param p2 any
+---@return boolean, number
+function FilloutPmPlayerList(p1, p2) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x716B6DB9D1886106)
@@ -153,13 +170,6 @@ function FacebookSetHeistComplete(heistName, cashEarned, xpEarned) end
 ---@param p3 any
 ---@return boolean, any, any
 function FilloutPmPlayerListWithNames(p2, p3) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xCBBD7C4991B64809)
----@param p1 any
----@param p2 any
----@return boolean, number
-function FilloutPmPlayerList(p1, p2) end
 
 ---Returns POSIX timestamp.
 ---
@@ -175,12 +185,6 @@ function GetCloudTimeAsInt() end
 ---@return string
 function GetCloudTimeAsString() end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x662635855957C411)
----@param index number
----@return string
-function GetCommerceItemId(index) end
-
 ---```
 ---index2 is unused
 ---```
@@ -191,10 +195,10 @@ function GetCommerceItemId(index) end
 function GetCommerceItemCat(index, index2) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x2A7776C709904AB0)
+---[Native Documentation](https://docs.fivem.net/natives/?_0x662635855957C411)
 ---@param index number
----@return number
-function GetCommerceItemNumCats(index) end
+---@return string
+function GetCommerceItemId(index) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xB4271092CA7EDF48)
@@ -203,10 +207,10 @@ function GetCommerceItemNumCats(index) end
 function GetCommerceItemName(index) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xCA94551B50B4932C)
+---[Native Documentation](https://docs.fivem.net/natives/?_0x2A7776C709904AB0)
 ---@param index number
----@return string
-function GetCommerceProductPrice(index) end
+---@return number
+function GetCommerceItemNumCats(index) end
 
 ---```
 ---NativeDB Added Parameter 3: int p2
@@ -217,9 +221,20 @@ function GetCommerceProductPrice(index) end
 function GetCommerceItemTexturename(index) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xCA94551B50B4932C)
+---@param index number
+---@return string
+function GetCommerceProductPrice(index) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC7BE335216B5EC7C)
 ---@return number
 function GetMaxNumNetworkObjects() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x0C1F7D49C39D2289)
+---@return number
+function GetMaxNumNetworkPeds() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA72835064DD63E4C)
@@ -227,14 +242,14 @@ function GetMaxNumNetworkObjects() end
 function GetMaxNumNetworkPickups() end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x43865688AE10F0D7)
----@return boolean
-function FacebookIsAvailable() end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x0AFCE529F69B21FF)
 ---@return number
 function GetMaxNumNetworkVehicles() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x7A5487FE9FAA6B48)
+---@return number
+function GetNetworkTime() end
 
 ---Returns the same value as [`GetNetworkTime`](#\_0x7A5487FE9FAA6B48) in freemode, but as opposed to `GetNetworkTime` it always gets the most recent time, instead of once per tick.
 ---
@@ -244,26 +259,15 @@ function GetMaxNumNetworkVehicles() end
 function GetNetworkTimeAccurate() end
 
 ---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xF2EAC213D5EA0623)
+---@return number
+function GetNumCommerceItems() end
+
+---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x12B6281B6C6706C0)
 ---@param p0 boolean
 ---@return number
 function GetNumCreatedMissionObjects(p0) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x7A5487FE9FAA6B48)
----@return number
-function GetNetworkTime() end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x0CD9AB83489430EA)
----@param p0 boolean
----@return number
-function GetNumCreatedMissionVehicles(p0) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xF2EAC213D5EA0623)
----@return number
-function GetNumCommerceItems() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xCB215C4B56A7FAE7)
@@ -271,17 +275,11 @@ function GetNumCommerceItems() end
 ---@return number
 function GetNumCreatedMissionPeds(p0) end
 
----```
----p0 appears to be for MP  
----```
----
----```
----NativeDB Added Parameter 2: Any p1
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x1F13D5AE5CB17E17)
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x0CD9AB83489430EA)
 ---@param p0 boolean
 ---@return number
-function GetNumReservedMissionPeds(p0) end
+function GetNumCreatedMissionVehicles(p0) end
 
 ---```
 ---p0 appears to be for MP  
@@ -294,6 +292,18 @@ function GetNumReservedMissionPeds(p0) end
 ---@param p0 boolean
 ---@return number
 function GetNumReservedMissionObjects(p0) end
+
+---```
+---p0 appears to be for MP  
+---```
+---
+---```
+---NativeDB Added Parameter 2: Any p1
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x1F13D5AE5CB17E17)
+---@param p0 boolean
+---@return number
+function GetNumReservedMissionPeds(p0) end
 
 ---```
 ---p0 appears to be for MP  
@@ -318,6 +328,16 @@ function GetNumReservedMissionVehicles(p0) end
 ---@return string
 function GetOnlineVersion() end
 
+---```
+---0 = succeeded
+---1 = pending
+---2 = failed
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x8BD6C6DEA20E82C6)
+---@param p0 number
+---@return number
+function GetStatusOfTextureDownload(p0) end
+
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x9E23B1777A927DAD)
 ---@param time number
@@ -332,16 +352,6 @@ function GetTimeAsString(time) end
 ---@param timeB number
 ---@return number
 function GetTimeDifference(timeA, timeB) end
-
----```
----0 = succeeded
----1 = pending
----2 = failed
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x8BD6C6DEA20E82C6)
----@param p0 number
----@return number
-function GetStatusOfTextureDownload(p0) end
 
 ---```
 ---Adds the first argument to the second.  
@@ -368,26 +378,16 @@ function IsCommerceDataValid() end
 function IsCommerceStoreOpen() end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xB2092A1EAA7FD45F)
----@param player number
----@return boolean
-function IsDamageTrackerActiveOnPlayer(player) end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x6E192E33AD436366)
 ---@param netID number
 ---@return boolean
 function IsDamageTrackerActiveOnNetworkId(netID) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x0C1F7D49C39D2289)
----@return number
-function GetMaxNumNetworkPeds() end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x62B9FEC9A11F10EF)
+---[Native Documentation](https://docs.fivem.net/natives/?_0xB2092A1EAA7FD45F)
+---@param player number
 ---@return boolean
-function FacebookIsSendingData() end
+function IsDamageTrackerActiveOnPlayer(player) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x21D04D7BC538C146)
@@ -408,9 +408,13 @@ function IsNetworkIdOwnedByParticipant(netId) end
 function IsPlayerInCutscene(player) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x883D79C4071E18B3)
+---[Native Documentation](https://docs.fivem.net/natives/?_0xD82CF8E64C8729D8)
+---@param p0 number
+---@param p1 number
+---@param p2 number
+---@param p3 number
 ---@return boolean
-function IsStoreAvailableToUser() end
+function IsSphereVisibleToAnotherMachine(p0, p1, p2, p3) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xDC3A310219E5DA62)
@@ -422,14 +426,10 @@ function IsStoreAvailableToUser() end
 ---@return boolean
 function IsSphereVisibleToPlayer(p0, p1, p2, p3, p4) end
 
----```
----Subtracts the second argument from the first, then returns whether the result is negative.  
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0xCB2CF5148012C8D0)
----@param timeA number
----@param timeB number
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x883D79C4071E18B3)
 ---@return boolean
-function IsTimeLessThan(timeA, timeB) end
+function IsStoreAvailableToUser() end
 
 ---```
 ---Returns true if the two times are equal; otherwise returns false.  
@@ -440,14 +440,14 @@ function IsTimeLessThan(timeA, timeB) end
 ---@return boolean
 function IsTimeEqualTo(timeA, timeB) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xD82CF8E64C8729D8)
----@param p0 number
----@param p1 number
----@param p2 number
----@param p3 number
+---```
+---Subtracts the second argument from the first, then returns whether the result is negative.  
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0xCB2CF5148012C8D0)
+---@param timeA number
+---@param timeB number
 ---@return boolean
-function IsSphereVisibleToAnotherMachine(p0, p1, p2, p3) end
+function IsTimeLessThan(timeA, timeB) end
 
 ---```
 ---Subtracts the first argument from the second, then returns whether the result is negative.  
@@ -466,12 +466,28 @@ function IsTimeMoreThan(timeA, timeB) end
 function N_0x023acab2dc9dc4a4() end
 
 ---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x041C7F2A6C9894E6)
+---@param p0 any
+---@param p1 any
+---@param p2 any
+---@return any
+function N_0x041c7f2a6c9894e6(p0, p1, p2) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x04918A41BC9B8157)
 ---@param p0 any
 ---@param p1 any
 ---@param p2 any
 ---@return any
 function N_0x04918a41bc9b8157(p0, p1, p2) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x07EAB372C8841D99)
+---@param p0 any
+---@param p1 any
+---@param p2 any
+---@return any
+function N_0x07eab372c8841d99(p0, p1, p2) end
 
 ---```
 ---NativeDB Introduced: v1180
@@ -483,22 +499,6 @@ function N_0x04918a41bc9b8157(p0, p1, p2) end
 ---@return any
 function N_0x0cf6cc51aa18f0f8(p0, p1, p2) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x07EAB372C8841D99)
----@param p0 any
----@param p1 any
----@param p2 any
----@return any
-function N_0x07eab372c8841d99(p0, p1, p2) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x041C7F2A6C9894E6)
----@param p0 any
----@param p1 any
----@param p2 any
----@return any
-function N_0x041c7f2a6c9894e6(p0, p1, p2) end
-
 ---```
 ---NETWORK_SET_*
 ---```
@@ -507,8 +507,11 @@ function N_0x041c7f2a6c9894e6(p0, p1, p2) end
 function N_0x0d77a82dc2d0da59() end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x1153FA02A659051C)
-function N_0x1153fa02a659051c() end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x0EDE326D47CD0F3E)
+---@param ped number
+---@param player number
+---@return boolean
+function N_0x0ede326d47cd0f3e(ped, player) end
 
 ---```
 ---NativeDB Introduced: v2189
@@ -517,6 +520,10 @@ function N_0x1153fa02a659051c() end
 ---@param p0 any
 ---@param p1 any
 function N_0x0f1a4b45b7693b95(p0, p1) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x1153FA02A659051C)
+function N_0x1153fa02a659051c() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x1171A97A3D3981B6)
@@ -531,31 +538,27 @@ function N_0x1171a97a3d3981b6(p2, p3) end
 function N_0x1398582b7f72b3ed(p0) end
 
 ---```
----NETWORK_IS_*
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x14922ED3E38761F0)
----@return boolean
-function N_0x14922ed3e38761f0() end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x0EDE326D47CD0F3E)
----@param ped number
----@param player number
----@return boolean
-function N_0x0ede326d47cd0f3e(ped, player) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x162C23CA83ED0A62)
----@param p0 any
----@return boolean
-function N_0x162c23ca83ed0a62(p0) end
-
----```
 ---SET_NETWORK_*
 ---```
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x13F1FCB111B820B0)
 ---@param p0 boolean
 function N_0x13f1fcb111b820b0(p0) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x140E6A44870A11CE)
+function N_0x140e6a44870a11ce() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x144DA052257AE7D8)
+---@param p0 any
+function N_0x144da052257ae7d8(p0) end
+
+---```
+---NETWORK_IS_*
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x14922ED3E38761F0)
+---@return boolean
+function N_0x14922ed3e38761f0() end
 
 ---```
 ---Checks some commerce stuff
@@ -567,9 +570,10 @@ function N_0x13f1fcb111b820b0(p0) end
 function N_0x155467aca0f55705() end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x144DA052257AE7D8)
+---[Native Documentation](https://docs.fivem.net/natives/?_0x162C23CA83ED0A62)
 ---@param p0 any
-function N_0x144da052257ae7d8(p0) end
+---@return boolean
+function N_0x162c23ca83ed0a62(p0) end
 
 ---```
 ---NativeDB Introduced: v2060
@@ -579,9 +583,12 @@ function N_0x144da052257ae7d8(p0) end
 ---@param p1 any
 function N_0x17c9e241111a674d(p0, p1) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x140E6A44870A11CE)
-function N_0x140e6a44870a11ce() end
+---```
+---IS_COMMERCE_*
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x1D4DC17C38FEAFF0)
+---@return boolean
+function N_0x1d4dc17c38feaff0() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x1D610EB0FEA716D9)
@@ -595,26 +602,28 @@ function N_0x1d610eb0fea716d9(p0) end
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x1F7BC3539F9E0224)
 function N_0x1f7bc3539f9e0224() end
 
----```
----IS_COMMERCE_*
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x1D4DC17C38FEAFF0)
----@return boolean
-function N_0x1d4dc17c38feaff0() end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x2302C0264EA58D31)
-function N_0x2302c0264ea58d31() end
-
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x1F8E00FB18239600)
 ---@param p0 any
 function N_0x1f8e00fb18239600(p0) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x265559DA40B3F327)
----@param p0 any
-function N_0x265559da40b3f327(p0) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x2302C0264EA58D31)
+function N_0x2302c0264ea58d31() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x24E4E51FC16305F9)
+---@return any
+function N_0x24e4e51fc16305f9() end
+
+---```
+---Does nothing (it's a nullsub).
+---
+---NativeDB Introduced: v323
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x2555CF7DA5473794)
+---@return any
+function N_0x2555cf7da5473794() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x25D990F8E0E3F13C)
@@ -626,13 +635,22 @@ function N_0x25d990f8e0e3f13c() end
 function N_0x261e97ad7bcf3d40(p0) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x283B6062A2C01E9B)
-function N_0x283b6062a2c01e9b() end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x265559DA40B3F327)
+---@param p0 any
+function N_0x265559da40b3f327(p0) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x265635150FB0D82E)
+function N_0x265635150fb0d82e() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x26F07DD83A5F7F98)
 ---@return any
 function N_0x26f07dd83a5f7f98() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x283B6062A2C01E9B)
+function N_0x283b6062a2c01e9b() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x2B1C623823DB0D9D)
@@ -647,17 +665,6 @@ function N_0x26f07dd83a5f7f98() end
 function N_0x2b1c623823db0d9d(p0, p1, p2, p3, p4, p5, p6) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x2BF66D2E7414F686)
----@return any
-function N_0x2bf66d2e7414f686() end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x2D5DC831176D0114)
----@param p0 any
----@return boolean
-function N_0x2d5dc831176d0114(p0) end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x2B51EDBEFC301339)
 ---@param p0 number
 ---@param p1 string
@@ -665,9 +672,20 @@ function N_0x2d5dc831176d0114(p0) end
 function N_0x2b51edbefc301339(p0, p1) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x2BF66D2E7414F686)
+---@return any
+function N_0x2bf66d2e7414f686() end
+
+---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x2CE9D95E4051AECD)
 ---@param p0 any
 function N_0x2ce9d95e4051aecd(p0) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x2D5DC831176D0114)
+---@param p0 any
+---@return boolean
+function N_0x2d5dc831176d0114(p0) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x2DA41ED6E1FCD7A5)
@@ -702,19 +720,15 @@ function N_0x2e4c123d1c8a710e(p0, p1, p2, p3, p4, p5, p6) end
 function N_0x32ebd154cb6b8b99(p0, p1, p2) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x265635150FB0D82E)
-function N_0x265635150fb0d82e() end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x36391F397731595D)
+---@param p0 any
+---@return any
+function N_0x36391f397731595d(p0) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x367EF5E2F439B4C6)
 ---@param p0 number
 function N_0x367ef5e2f439b4c6(p0) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x36391F397731595D)
----@param p0 any
----@return any
-function N_0x36391f397731595d(p0) end
 
 ---I've had this return the player's ped handle sometimes, but also other random entities.
 ---
@@ -740,15 +754,10 @@ function N_0x3855fb5eb2c5e8b2(p0) end
 ---@param toggle boolean
 function N_0x38b7c51ab1edc7d8(entity, toggle) end
 
----nullsub, doesn't do anything
----
----```
----NativeDB Introduced: v1868
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x3FC795691834481D)
----@param p0 any
----@param p1 any
-function N_0x3fc795691834481d(p0, p1) end
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x39917E1B4CB0F911)
+---@param p0 boolean
+function N_0x39917e1b4cb0f911(p0) end
 
 ---```
 ---Sets some voice chat related value.
@@ -765,9 +774,15 @@ function N_0x3c5c1e2c2ff814b1(toggle) end
 ---@param state boolean
 function N_0x3fa36981311fa4ff(netId, state) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x45A83257ED02D9BC)
-function N_0x45a83257ed02d9bc() end
+---nullsub, doesn't do anything
+---
+---```
+---NativeDB Introduced: v1868
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x3FC795691834481D)
+---@param p0 any
+---@param p1 any
+function N_0x3fc795691834481d(p0, p1) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x4237E822315D8BA9)
@@ -775,9 +790,11 @@ function N_0x45a83257ed02d9bc() end
 function N_0x4237e822315d8ba9() end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x39917E1B4CB0F911)
----@param p0 boolean
-function N_0x39917e1b4cb0f911(p0) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x4348BFDA56023A2F)
+---@param p0 any
+---@param p1 any
+---@return any
+function N_0x4348bfda56023a2f(p0, p1) end
 
 ---```
 ---related to: 
@@ -794,6 +811,15 @@ function N_0x39917e1b4cb0f911(p0) end
 ---```
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x444C4525ECE0A4B9)
 function N_0x444c4525ece0a4b9() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x45A83257ED02D9BC)
+function N_0x45a83257ed02d9bc() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x45E816772E93A9DB)
+---@return any
+function N_0x45e816772e93a9db() end
 
 ---NETWORK_A\*
 ---Similar structure as NETWORK_ADD_ENTITY_TO_SYNCHRONISED_SCENE but it includes this time a hash.
@@ -816,11 +842,9 @@ function N_0x444c4525ece0a4b9() end
 function N_0x45f35c0edc33b03b(netScene, modelHash, x, y, z, p5, p6, p7, p8, flags) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x4348BFDA56023A2F)
+---[Native Documentation](https://docs.fivem.net/natives/?_0x4811BBAC21C5FCD5)
 ---@param p0 any
----@param p1 any
----@return any
-function N_0x4348bfda56023a2f(p0, p1) end
+function N_0x4811bbac21c5fcd5(p0) end
 
 ---**This native does absolutely nothing, just a nullsub**
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x4A9FDE3A5A6D0437)
@@ -835,14 +859,8 @@ function N_0x4a9fde3a5a6d0437(toggle) end
 function N_0x4ad490ae1536933b(p0, p1) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x4811BBAC21C5FCD5)
----@param p0 any
-function N_0x4811bbac21c5fcd5(p0) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x4D02279C83BE69FE)
----@return any
-function N_0x4d02279c83be69fe() end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x4C2A9FDC22377075)
+function N_0x4c2a9fdc22377075() end
 
 ---```
 ---NativeDB Introduced: v2060
@@ -850,6 +868,11 @@ function N_0x4d02279c83be69fe() end
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x4C9034162368E206)
 ---@return any
 function N_0x4c9034162368e206() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x4D02279C83BE69FE)
+---@return any
+function N_0x4d02279c83be69fe() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x4DF7CFFF471A7FB1)
@@ -887,10 +910,6 @@ function N_0x5539c3ebf104a53a(p0) end
 ---@return boolean, any
 function N_0x559ebf901a8c68e0() end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x4C2A9FDC22377075)
-function N_0x4c2a9fdc22377075() end
-
 ---```
 ---NativeDB Introduced: v1604
 ---```
@@ -905,11 +924,6 @@ function N_0x560b423d73015e77(p0) end
 ---@return boolean, any
 function N_0x584770794d758c18(p0) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x45E816772E93A9DB)
----@return any
-function N_0x45e816772e93a9db() end
-
 ---```
 ---IS_*
 ---```
@@ -923,23 +937,29 @@ function N_0x59328eb08c5ceb2b() end
 function N_0x59d421683d31835a(p0) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x5E3AA4CA2B6FB0EE)
+---[Native Documentation](https://docs.fivem.net/natives/?_0x5A34CD9C3C5BEC44)
 ---@param p0 any
-function N_0x5e3aa4ca2b6fb0ee(p0) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x600F8CB31C7AAB6E)
----@param p0 any
-function N_0x600f8cb31c7aab6e(p0) end
+---@return boolean
+function N_0x5a34cd9c3c5bec44(p0) end
 
 ---**This native does absolutely nothing, just a nullsub**
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x5C497525F803486B)
 function N_0x5c497525f803486b() end
 
 ---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x5E3AA4CA2B6FB0EE)
+---@param p0 any
+function N_0x5e3aa4ca2b6fb0ee(p0) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x5ECD378EE64450AB)
 ---@param p0 any
 function N_0x5ecd378ee64450ab(p0) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x600F8CB31C7AAB6E)
+---@param p0 any
+function N_0x600f8cb31c7aab6e(p0) end
 
 ---```
 ---Returns true if profile setting 901 is set to true and sets it to false.
@@ -970,11 +990,6 @@ function N_0x63b406d7884bfa95() end
 ---@return vector3
 function N_0x64d779659bc37b19(entity) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x67FC09BC554A75E5)
----@return any
-function N_0x67fc09bc554a75e5() end
-
 ---Hardcoded to return false.
 ---
 ---```
@@ -985,8 +1000,23 @@ function N_0x67fc09bc554a75e5() end
 function N_0x64e5c4cc82847b73() end
 
 ---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x67FC09BC554A75E5)
+---@return any
+function N_0x67fc09bc554a75e5() end
+
+---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x68103E2247887242)
 function N_0x68103e2247887242() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x692D58DF40657E8C)
+---@param p0 any
+---@param p1 any
+---@param p2 any
+---@param p4 any
+---@param p5 boolean
+---@return boolean, any
+function N_0x692d58df40657e8c(p0, p1, p2, p4, p5) end
 
 ---```
 ---Sets some voice chat related value.
@@ -996,14 +1026,19 @@ function N_0x68103e2247887242() end
 ---@param toggle boolean
 function N_0x6a5d89d7769a40d8(toggle) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x6CE50E47F5543D0C)
-function N_0x6ce50e47f5543d0c() end
-
 ---**This native does absolutely nothing, just a nullsub**
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x6BFF5F84102DF80A)
 ---@param player number
 function N_0x6bff5f84102df80a(player) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x6CE50E47F5543D0C)
+function N_0x6ce50e47f5543d0c() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x6FB7BB3607D27FA2)
+---@return any
+function N_0x6fb7bb3607d27fa2() end
 
 ---```
 ---Does nothing (it's a nullsub).
@@ -1051,6 +1086,15 @@ function N_0x742b58f723233ed9(p0) end
 function N_0x74fb3e29e6d10fa9() end
 
 ---```
+---Checks some commerce stuff
+---
+---NativeDB Introduced: v1290
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x754615490A029508)
+---@return number
+function N_0x754615490a029508() end
+
+---```
 ---NativeDB Introduced: v2189
 ---```
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x76B3F29D3F967692)
@@ -1062,20 +1106,6 @@ function N_0x76b3f29d3f967692(p0, p1) end
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x77FADDCBE3499DF7)
 ---@param p0 any
 function N_0x77faddcbe3499df7(p0) end
-
----```
----Checks some commerce stuff
----
----NativeDB Introduced: v1290
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x754615490A029508)
----@return number
-function N_0x754615490a029508() end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x793FF272D5B365F4)
----@return any
-function N_0x793ff272d5b365f4() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x7808619F31FF22DB)
@@ -1090,14 +1120,19 @@ function N_0x7808619f31ff22db() end
 function N_0x78321bea235fd8cd(p0, p1) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x7DB53B37A2F211A0)
----@return number
-function N_0x7db53b37a2f211a0() end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x793FF272D5B365F4)
+---@return any
+function N_0x793ff272d5b365f4() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x7D395EA61622E116)
 ---@param p0 boolean
 function N_0x7d395ea61622e116(p0) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x7DB53B37A2F211A0)
+---@return number
+function N_0x7db53b37a2f211a0() end
 
 ---```
 ---IS_*
@@ -1121,28 +1156,19 @@ function N_0x7fcc39c46c3c03bd(p0) end
 ---@return any
 function N_0x83660b734994124d(p0, p1, p2) end
 
----```
----Does nothing (it's a nullsub).
----
----NativeDB Introduced: v323
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x2555CF7DA5473794)
----@return any
-function N_0x2555cf7da5473794() end
-
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x83FE8D7229593017)
 function N_0x83fe8d7229593017() end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x8B0C2964BA471961)
----@return any
-function N_0x8b0c2964ba471961() end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x88B588B41FF7868E)
 ---@return any
 function N_0x88b588b41ff7868e() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x8B0C2964BA471961)
+---@return any
+function N_0x8b0c2964ba471961() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x8B4FFC790CA131EF)
@@ -1176,13 +1202,26 @@ function N_0x8ef52acaecc51d9c(toggle) end
 function N_0x906ca41a4b74eca4() end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x9465E683B12D3F6B)
-function N_0x9465e683b12d3f6b() end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x94538037EE44F5CF)
 ---@param p0 boolean
 function N_0x94538037ee44f5cf(p0) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x9465E683B12D3F6B)
+function N_0x9465e683b12d3f6b() end
+
+---```
+---NativeDB Introduced: v1604
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x95BAF97C82464629)
+---@param p0 any
+---@param p1 any
+function N_0x95baf97c82464629(p0, p1) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x973D76AA760A6CB6)
+---@param p0 boolean
+function N_0x973d76aa760a6cb6(p0) end
 
 ---```
 ---NativeDB Introduced: v2189
@@ -1193,12 +1232,13 @@ function N_0x94538037ee44f5cf(p0) end
 function N_0x9d724b400a7e8ffc(p0, p1) end
 
 ---```
----NativeDB Introduced: v1604
+---Sets some voice chat related value.
+---
+---NETWORK_SET_*
 ---```
----[Native Documentation](https://docs.fivem.net/natives/?_0x95BAF97C82464629)
----@param p0 any
----@param p1 any
-function N_0x95baf97c82464629(p0, p1) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x9D7AFCBF21C51712)
+---@param toggle boolean
+function N_0x9d7afcbf21c51712(toggle) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x9FEDF86898F100E9)
@@ -1211,18 +1251,9 @@ function N_0x9fedf86898f100e9() end
 function N_0xa0fa4ec6a05da44e() end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x973D76AA760A6CB6)
----@param p0 boolean
-function N_0x973d76aa760a6cb6(p0) end
-
----```
----Sets some voice chat related value.
----
----NETWORK_SET_*
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x9D7AFCBF21C51712)
----@param toggle boolean
-function N_0x9d7afcbf21c51712(toggle) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0xA12D3A5A3753CC23)
+---@return any
+function N_0xa12d3a5a3753cc23() end
 
 ---```
 ---Appears to set whether a transition should be started when the session is migrating.
@@ -1232,11 +1263,6 @@ function N_0x9d7afcbf21c51712(toggle) end
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA2E9C1AB8A92E8CD)
 ---@param toggle boolean
 function N_0xa2e9c1ab8a92e8cd(toggle) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xA12D3A5A3753CC23)
----@return any
-function N_0xa12d3a5a3753cc23() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA306F470D1660581)
@@ -1266,19 +1292,24 @@ function N_0xa5eafe473e45c442(p0, p1, p2, p3, p4, p5, p6, p7, p8, p9) end
 ---@param p0 any
 function N_0xa6fceccf4721d679(p0) end
 
----```
----NativeDB Added Parameter 1: Entity entity
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0xAA5FAFCD2C5F5E47)
----@return vector3
-function N_0xaa5fafcd2c5f5e47() end
-
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA7862BC5ED1DFD7E)
 ---@param p0 any
 ---@param p1 any
 ---@return boolean, any, any
 function N_0xa7862bc5ed1dfd7e(p0, p1) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xA8ACB6459542A8C8)
+---@return any
+function N_0xa8acb6459542a8c8() end
+
+---```
+---NativeDB Added Parameter 1: Entity entity
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0xAA5FAFCD2C5F5E47)
+---@return vector3
+function N_0xaa5fafcd2c5f5e47() end
 
 ---```
 ---gets 2 floats from the CNetGamePlayer of p0 and stores them in p1 and p2.  
@@ -1290,9 +1321,10 @@ function N_0xa7862bc5ed1dfd7e(p0, p1) end
 function N_0xadb57e5b663cca8b(p0) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xA8ACB6459542A8C8)
----@return any
-function N_0xa8acb6459542a8c8() end
+---[Native Documentation](https://docs.fivem.net/natives/?_0xAEAB987727C5A8A4)
+---@param p0 any
+---@return boolean
+function N_0xaeab987727c5a8a4(p0) end
 
 ---```
 ---Does nothing (it's a nullsub).
@@ -1304,29 +1336,8 @@ function N_0xa8acb6459542a8c8() end
 function N_0xaedf1bc1c133d6e3() end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xAEAB987727C5A8A4)
----@param p0 any
----@return boolean
-function N_0xaeab987727c5a8a4(p0) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x24E4E51FC16305F9)
----@return any
-function N_0x24e4e51fc16305f9() end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xB37E4E6A2388CA7B)
----@return boolean
-function N_0xb37e4e6a2388ca7b() end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xB13E88E655E5A3BC)
 function N_0xb13e88e655e5a3bc() end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x6FB7BB3607D27FA2)
----@return any
-function N_0x6fb7bb3607d27fa2() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xB309EBEA797E001F)
@@ -1334,37 +1345,25 @@ function N_0x6fb7bb3607d27fa2() end
 ---@return any
 function N_0xb309ebea797e001f(p0) end
 
----**This native does absolutely nothing, just a nullsub**
----[Native Documentation](https://docs.fivem.net/natives/?_0xB606E6CC59664972)
----@param p0 any
-function N_0xb606e6cc59664972(p0) end
-
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xBA7F0B77D80A4EB7)
----@param p0 any
----@param p1 any
-function N_0xba7f0b77d80a4eb7(p0, p1) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x692D58DF40657E8C)
----@param p0 any
----@param p1 any
----@param p2 any
----@param p4 any
----@param p5 boolean
----@return boolean, any
-function N_0x692d58df40657e8c(p0, p1, p2, p4, p5) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0xB37E4E6A2388CA7B)
+---@return boolean
+function N_0xb37e4e6a2388ca7b() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xB5D3453C98456528)
 ---@return any
 function N_0xb5d3453c98456528() end
 
+---**This native does absolutely nothing, just a nullsub**
+---[Native Documentation](https://docs.fivem.net/natives/?_0xB606E6CC59664972)
+---@param p0 any
+function N_0xb606e6cc59664972(p0) end
+
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xBF22E0F32968E967)
----@param player number
----@param p1 boolean
-function N_0xbf22e0f32968e967(player, p1) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0xB746D20B17F2A229)
+---@return boolean, any, any
+function N_0xb746d20b17f2a229() end
 
 ---```
 ---NativeDB Introduced: v2060
@@ -1375,9 +1374,15 @@ function N_0xbf22e0f32968e967(player, p1) end
 function N_0xb9351a07a0d458b1(p0) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xB746D20B17F2A229)
----@return boolean, any, any
-function N_0xb746d20b17f2a229() end
+---[Native Documentation](https://docs.fivem.net/natives/?_0xBA7F0B77D80A4EB7)
+---@param p0 any
+---@param p1 any
+function N_0xba7f0b77d80a4eb7(p0, p1) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xBD545D44CCE70597)
+---@return boolean
+function N_0xbd545d44cce70597() end
 
 ---```
 ---NETWORK_SESSION_IS_*
@@ -1385,6 +1390,12 @@ function N_0xb746d20b17f2a229() end
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xBDB6F89C729CF388)
 ---@return boolean
 function N_0xbdb6f89c729cf388() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xBF22E0F32968E967)
+---@param player number
+---@param p1 boolean
+function N_0xbf22e0f32968e967(player, p1) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC32EA7A2F6CA7557)
@@ -1403,19 +1414,6 @@ function N_0xc42dd763159f3461() end
 ---@return any
 function N_0xc434133d9ba52777(p0, p1) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xC87E740D9F3872CC)
----@return any
-function N_0xc87e740d9f3872cc() end
-
----NETWORK_S\*
----
----```
----NativeDB Introduced: v1734
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0xCA59CCAE5D01E4CE)
-function N_0xca59ccae5d01e4ce() end
-
 ---```
 ---NETWORK_IS_TRANSITION_*
 ---```
@@ -1424,14 +1422,22 @@ function N_0xca59ccae5d01e4ce() end
 function N_0xc571d0e77d8bbc29() end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xCFEB8AF24FC1D0BB)
----@param toggle boolean
-function NetworkBlockJoinQueueInvites(toggle) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0xC87E740D9F3872CC)
+---@return any
+function N_0xc87e740d9f3872cc() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xCA575C391FEA25CC)
 ---@param p0 any
 function N_0xca575c391fea25cc(p0) end
+
+---NETWORK_S\*
+---
+---```
+---NativeDB Introduced: v1734
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0xCA59CCAE5D01E4CE)
+function N_0xca59ccae5d01e4ce() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xCFEB46DCD7D8D5EB)
@@ -1485,6 +1491,12 @@ function N_0xe16aa70ce9beedc3(p0) end
 ---@param p6 any
 function N_0xe42d626eec94e5d9(p0, p1, p2, p3, p4, p5, p6) end
 
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xE6717E652B8C8D8A)
+---@param p0 any
+---@param p1 any
+function N_0xe6717e652b8c8d8a(p0, p1) end
+
 ---```
 ---NativeDB Introduced: v1868
 ---```
@@ -1494,15 +1506,13 @@ function N_0xe42d626eec94e5d9(p0, p1, p2, p3, p4, p5, p6) end
 function N_0xea8c0ddb10e2822a(p0, p1) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xE6717E652B8C8D8A)
----@param p0 any
----@param p1 any
-function N_0xe6717e652b8c8d8a(p0, p1) end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xEBCAB9E5048434F4)
 ---@return any
 function N_0xebcab9e5048434f4() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xEBF8284D8CADEB53)
+function N_0xebf8284d8cadeb53() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xEBFA8D50ADDC54C4)
@@ -1510,20 +1520,21 @@ function N_0xebcab9e5048434f4() end
 ---@return boolean
 function N_0xebfa8d50addc54c4(p0) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xEBF8284D8CADEB53)
-function N_0xebf8284d8cadeb53() end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xF49ABC20D8552257)
----@param p0 any
-function N_0xf49abc20d8552257(p0) end
-
 ---```
 ---NETWORK_RE*
 ---```
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xF083835B70BA9BFE)
 function N_0xf083835b70ba9bfe() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xF287F506767CC8A9)
+---@return any
+function N_0xf287f506767cc8a9() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xF49ABC20D8552257)
+---@param p0 any
+function N_0xf49abc20d8552257(p0) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xF6F4383B7C92F11A)
@@ -1534,11 +1545,22 @@ function N_0xf6f4383b7c92f11a(p0) end
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xF814FEC6A19FD6E0)
 function N_0xf814fec6a19fd6e0() end
 
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xFA2888E3833C8E96)
+function N_0xfa2888e3833c8e96() end
+
 ---```
 ---NativeDB Introduced: v1180
 ---```
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xFAC18E7356BD3210)
 function N_0xfac18e7356bd3210() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xFAE628F1E9ADB239)
+---@param p0 number | string
+---@param p1 number
+---@param p2 number | string
+function N_0xfae628f1e9adb239(p0, p1, p2) end
 
 ---```
 ---p0 is always 0. p1 is pointing to a global.  
@@ -1568,6 +1590,14 @@ function N_0xfd75dabc0957bf33(p0) end
 function NetToEnt(netHandle) end
 
 ---```
+---gets the object id of a network id  
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0xD8515F5FEA14CB3F)
+---@param netHandle number
+---@return number
+function NetToObj(netHandle) end
+
+---```
 ---gets the ped id of a network id  
 ---```
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xBDCD95FC216A8B3E)
@@ -1582,20 +1612,6 @@ function NetToPed(netHandle) end
 function NetToVeh(netHandle) end
 
 ---```
----gets the object id of a network id  
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0xD8515F5FEA14CB3F)
----@param netHandle number
----@return number
-function NetToObj(netHandle) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xFA91550DF9318B22)
----@param p0 any
----@return boolean
-function NetworkAcceptPresenceInvite(p0) end
-
----```
 ---NETWORK_RE*
 ---
 ---Triggers a CEventNetworkInviteConfirmed event
@@ -1605,11 +1621,10 @@ function NetworkAcceptPresenceInvite(p0) end
 function NetworkAcceptInvite() end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xFAE628F1E9ADB239)
----@param p0 number | string
----@param p1 number
----@param p2 number | string
-function N_0xfae628f1e9adb239(p0, p1, p2) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0xFA91550DF9318B22)
+---@param p0 any
+---@return boolean
+function NetworkAcceptPresenceInvite(p0) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xAA6A47A573ABB75A)
@@ -1640,11 +1655,6 @@ function NetworkAccessTunableFloat(tunableContext, tunableName) end
 function NetworkAccessTunableFloatHash(tunableContext, tunableName) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xF287F506767CC8A9)
----@return any
-function N_0xf287f506767cc8a9() end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x8BE1146DFD5D4468)
 ---@param tunableContext string
 ---@param tunableName string
@@ -1659,20 +1669,9 @@ function NetworkAccessTunableInt(tunableContext, tunableName) end
 function NetworkAccessTunableIntHash(tunableContext, tunableName) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xBD545D44CCE70597)
----@return boolean
-function N_0xbd545d44cce70597() end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x494C8FB299290269)
----@param p0 number
----@param p1 number
----@param p2 number
----@param p3 number
----@param p4 number
----@param p5 number
+---[Native Documentation](https://docs.fivem.net/natives/?_0xC88156EBB786F8D5)
 ---@return any
-function NetworkAddEntityArea(p0, p1, p2, p3, p4, p5) end
+function NetworkActionFollowInvite() end
 
 ---To remove, see: [`NETWORK_REMOVE_ENTITY_AREA`](#\_0x93CF869BAA0C4874).
 ---
@@ -1689,19 +1688,15 @@ function NetworkAddEntityArea(p0, p1, p2, p3, p4, p5) end
 function NetworkAddEntityAngledArea(x1, y1, z1, x2, y2, z2, width) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xFA2888E3833C8E96)
-function N_0xfa2888e3833c8e96() end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xF2404D68CBC855FA)
----@param entity number
----@param netScene number
----@param animDict string
----@param animName string
----@param speed number
----@param speedMulitiplier number
----@param flag number
-function NetworkAddEntityToSynchronisedScene(entity, netScene, animDict, animName, speed, speedMulitiplier, flag) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x494C8FB299290269)
+---@param p0 number
+---@param p1 number
+---@param p2 number
+---@param p3 number
+---@param p4 number
+---@param p5 number
+---@return any
+function NetworkAddEntityArea(p0, p1, p2, p3, p4, p5) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x25B99872D588A101)
@@ -1715,21 +1710,29 @@ function NetworkAddEntityToSynchronisedScene(entity, netScene, animDict, animNam
 function NetworkAddEntityDisplayedBoundaries(p0, p1, p2, p3, p4, p5) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xF2404D68CBC855FA)
+---@param entity number
+---@param netScene number
+---@param animDict string
+---@param animName string
+---@param speed number
+---@param speedMulitiplier number
+---@param flag number
+function NetworkAddEntityToSynchronisedScene(entity, netScene, animDict, animName, speed, speedMulitiplier, flag) end
+
+---```
+---..  
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x236406F60CF216D6)
+---@param p1 number
+---@return number
+function NetworkAddFollowers(p1) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x8E02D73914064223)
 ---@param message string
 ---@return boolean, number
 function NetworkAddFriend(message) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xC88156EBB786F8D5)
----@return any
-function NetworkActionFollowInvite() end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x5A34CD9C3C5BEC44)
----@param p0 any
----@return boolean
-function N_0x5a34cd9c3c5bec44(p0) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x742A637471BCECD9)
@@ -1746,6 +1749,13 @@ function N_0x5a34cd9c3c5bec44(p0) end
 function NetworkAddPedToSynchronisedScene(ped, netScene, animDict, animnName, blendInSpeed, blendOutSpeed, duration, flag, playbackRate, p9) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xCF8BD3B0BD6D42D7)
+---@param netScene number
+---@param animDict string
+---@param animName string
+function NetworkAddSynchronisedSceneCamera(netScene, animDict, animName) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xFAFC23AEE23868DB)
 ---@return boolean
 function NetworkAllocateTunablesRegistrationDataMap() end
@@ -1757,11 +1767,9 @@ function NetworkAllocateTunablesRegistrationDataMap() end
 function NetworkAllowLocalEntityAttachment(entity, toggle) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xCF8BD3B0BD6D42D7)
----@param netScene number
----@param animDict string
----@param animName string
-function NetworkAddSynchronisedSceneCamera(netScene, animDict, animName) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x15337C7C268A27B2)
+---@return boolean, any
+function NetworkAmIBlockedByGamer() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x87F395D957D4353D)
@@ -1806,6 +1814,13 @@ function NetworkApplyTransitionParameter(p0, p1) end
 ---@param p2 boolean
 function NetworkApplyTransitionParameterString(p0, string, p2) end
 
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xDBD2056652689917)
+---@param x number
+---@param y number
+---@param z number
+function NetworkApplyVoiceProximityOverride(x, y, z) end
+
 ---```
 ---Getter for SET_NETWORK_CUTSCENE_ENTITIES.
 ---```
@@ -1818,13 +1833,6 @@ function NetworkApplyTransitionParameterString(p0, string, p2) end
 function NetworkAreCutsceneEntities() end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xDBD2056652689917)
----@param x number
----@param y number
----@param z number
-function NetworkApplyVoiceProximityOverride(x, y, z) end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x57DBA049E110F217)
 ---@return boolean, number, number
 function NetworkAreHandlesTheSame() end
@@ -1833,6 +1841,12 @@ function NetworkAreHandlesTheSame() end
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xBA9775570DB788CF)
 ---@return boolean
 function NetworkAreSocialClubPoliciesCurrent() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x2615AA2A695930C1)
+---@param p0 any
+---@return boolean
+function NetworkAreTransitionDetailsValid(p0) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x478DCBD2A98B705A)
@@ -1850,23 +1864,6 @@ function NetworkAttachSynchronisedSceneToEntity(netScene, entity, bone) end
 function NetworkBail() end
 
 ---```
----NativeDB Introduced: v2699
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x023782EFC70585EE)
-function NetworkBailTransitionQuickmatch() end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x2615AA2A695930C1)
----@param p0 any
----@return boolean
-function NetworkAreTransitionDetailsValid(p0) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x6B07B9CE4D390375)
----@param p0 boolean
-function NetworkBlockKickedPlayers(p0) end
-
----```
 ---NativeDB Added Parameter 1: int p0
 ---NativeDB Added Parameter 2: int p1
 ---NativeDB Added Parameter 3: int p2
@@ -1874,10 +1871,30 @@ function NetworkBlockKickedPlayers(p0) end
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xEAA572036990CD1B)
 function NetworkBailTransition() end
 
+---```
+---NativeDB Introduced: v2699
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x023782EFC70585EE)
+function NetworkBailTransitionQuickmatch() end
+
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x34F9E9049454A7A0)
 ---@param toggle boolean
 function NetworkBlockInvites(toggle) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xCFEB8AF24FC1D0BB)
+---@param toggle boolean
+function NetworkBlockJoinQueueInvites(toggle) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x6B07B9CE4D390375)
+---@param p0 boolean
+function NetworkBlockKickedPlayers(p0) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xBD0BE0BFC927EAC1)
+function NetworkCacheLocalPlayerHeadBlendData() end
 
 ---```
 ---11 - Need to download tunables.  
@@ -1889,8 +1906,18 @@ function NetworkBlockInvites(toggle) end
 function NetworkCanAccessMultiplayer() end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xBD0BE0BFC927EAC1)
-function NetworkCacheLocalPlayerHeadBlendData() end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x580CE4438479CC61)
+---@return boolean
+function NetworkCanBail() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xFB8F2A6F3DF08CBE)
+function NetworkCancelRespawnSearch() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xA150A4F065806B1F)
+---@return boolean, number
+function NetworkCanCommunicateWithGamer() end
 
 ---```
 ---Same as NETWORK_CAN_COMMUNICATE_WITH_GAMER
@@ -1902,9 +1929,9 @@ function NetworkCacheLocalPlayerHeadBlendData() end
 function NetworkCanCommunicateWithGamer_2() end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x580CE4438479CC61)
+---[Native Documentation](https://docs.fivem.net/natives/?_0x7E782A910C362C25)
 ---@return boolean
-function NetworkCanBail() end
+function NetworkCanEnterMultiplayer() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x135F9B7B7ADD2185)
@@ -1912,19 +1939,9 @@ function NetworkCanBail() end
 function NetworkCanGamerPlayMultiplayerWithMe() end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xA150A4F065806B1F)
----@return boolean, number
-function NetworkCanCommunicateWithGamer() end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x07DD29D5E22763F1)
 ---@return boolean, any
 function NetworkCanPlayMultiplayerWithGamer() end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x7E782A910C362C25)
----@return boolean
-function NetworkCanEnterMultiplayer() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x4EEBC3694E49C572)
@@ -1932,24 +1949,20 @@ function NetworkCanEnterMultiplayer() end
 function NetworkCanSessionEnd() end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xB57A49545BA53CE7)
----@return boolean, any
-function NetworkCanViewGamerUserContent() end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC927EC229934AF60)
 ---@return boolean
 function NetworkCanSetWaypoint() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xB57A49545BA53CE7)
+---@return boolean, any
+function NetworkCanViewGamerUserContent() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xEEEDA5E6D7080987)
 ---@param p0 any
 ---@param p1 any
 function NetworkChangeTransitionSlots(p0, p1) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xFB8F2A6F3DF08CBE)
-function NetworkCancelRespawnSearch() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x83F28CE49FBBFFBA)
@@ -1973,11 +1986,6 @@ function NetworkCheckDataManagerSucceededForHandle(friendDataIndex) end
 ---@return boolean
 function NetworkCheckUserContentPrivileges(p0, p1, p2) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xB3F64A6A91432477)
----@return boolean
-function NetworkClanAnyDownloadMembershipPending() end
-
 ---```
 ---Only documented...  
 ---```
@@ -1988,20 +1996,30 @@ function NetworkClanAnyDownloadMembershipPending() end
 function NetworkClanAnimation(animDict, animName) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xB3F64A6A91432477)
+---@return boolean
+function NetworkClanAnyDownloadMembershipPending() end
+
+---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA989044E70010ABE)
 ---@return boolean, number
 function NetworkClanDownloadMembership() end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x1F471B79ACC90BEF)
----@return number
-function NetworkClanGetLocalMembershipsCount() end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x5B9E023DC6EBEDC0)
+---@return boolean, any
+function NetworkClanDownloadMembershipPending() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x5835D9CD92E83184)
 ---@param txdName string
 ---@return boolean, any
 function NetworkClanGetEmblemTxdName(txdName) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x1F471B79ACC90BEF)
+---@return number
+function NetworkClanGetLocalMembershipsCount() end
 
 ---Retrieves a membership for a player, from the cache (i.e. downloaded via NETWORK_CLAN_DOWNLOAD_MEMBERSHIP).
 ---
@@ -2017,23 +2035,17 @@ function NetworkClanGetMembership(membershipIndex) end
 ---@return number, number
 function NetworkClanGetMembershipCount() end
 
----Checks if a crew/membership for a player, from the cache (i.e. downloaded via NETWORK_CLAN_DOWNLOAD_MEMBERSHIP) is valid.
----[Native Documentation](https://docs.fivem.net/natives/?_0x48A59CF88D43DF0E)
----@param membershipIndex number
----@return boolean, number
-function NetworkClanGetMembershipValid(membershipIndex) end
-
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x48DE78AF2C8885B8)
 ---@param p1 number
 ---@return boolean, number
 function NetworkClanGetMembershipDesc(p1) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xA134777FF7F33331)
----@param p0 any
----@return boolean, any
-function NetworkClanIsEmblemReady(p0) end
+---Checks if a crew/membership for a player, from the cache (i.e. downloaded via NETWORK_CLAN_DOWNLOAD_MEMBERSHIP) is valid.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x48A59CF88D43DF0E)
+---@param membershipIndex number
+---@return boolean, number
+function NetworkClanGetMembershipValid(membershipIndex) end
 
 ---```
 ---bufferSize is 35 in the scripts.
@@ -2044,6 +2056,12 @@ function NetworkClanIsEmblemReady(p0) end
 ---@return number
 function NetworkClanGetUiFormattedTag(bufferSize, formattedTag) end
 
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xA134777FF7F33331)
+---@param p0 any
+---@return boolean, any
+function NetworkClanIsEmblemReady(p0) end
+
 ---```
 ---bufferSize is 35 in the scripts.  
 ---```
@@ -2053,23 +2071,10 @@ function NetworkClanGetUiFormattedTag(bufferSize, formattedTag) end
 function NetworkClanIsRockstarClan(bufferSize) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x15337C7C268A27B2)
----@return boolean, any
-function NetworkAmIBlockedByGamer() end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x9FAAA4F4FC71F87F)
 ---@param clanDesc number
 ---@return boolean
 function NetworkClanJoin(clanDesc) end
-
----```
----..  
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x236406F60CF216D6)
----@param p1 number
----@return number
-function NetworkAddFollowers(p1) end
 
 ---```
 ---bufferSize is 35 in the scripts.  
@@ -2083,9 +2088,14 @@ function NetworkAddFollowers(p1) end
 function NetworkClanPlayerGetDesc(bufferSize) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x5B9E023DC6EBEDC0)
----@return boolean, any
-function NetworkClanDownloadMembershipPending() end
+---[Native Documentation](https://docs.fivem.net/natives/?_0xB124B57F571D8F18)
+---@return boolean, number
+function NetworkClanPlayerIsActive() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x113E6E3E50E286B0)
+---@param p0 any
+function NetworkClanReleaseEmblem(p0) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xBB6E6FEE99D866B2)
@@ -2104,30 +2114,29 @@ function NetworkClanRequestEmblem(p0) end
 function NetworkClanServiceIsValid() end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x439BFDE3CD0610F6)
----@return any
-function NetworkClearFollowInvite() end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xD972DF67326F966E)
 function NetworkClearClockTimeOverride() end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x6D14CCEE1B40381A)
-function NetworkClearFoundGamers() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x058F43EC59A8631A)
 function NetworkClearFollowers() end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x1888694923EF4591)
-function NetworkClearGroupActivity() end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x439BFDE3CD0610F6)
+---@return any
+function NetworkClearFollowInvite() end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x113E6E3E50E286B0)
----@param p0 any
-function NetworkClanReleaseEmblem(p0) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x6D14CCEE1B40381A)
+function NetworkClearFoundGamers() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x86E0660E4F5C956D)
+function NetworkClearGetGamerStatus() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x1888694923EF4591)
+function NetworkClearGroupActivity() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC2B82527CA77053E)
@@ -2138,17 +2147,12 @@ function NetworkClearPropertyId() end
 function NetworkClearTransitionCreatorHandle() end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xB124B57F571D8F18)
----@return boolean, number
-function NetworkClanPlayerIsActive() end
+---[Native Documentation](https://docs.fivem.net/natives/?_0xE036A705F989E049)
+function NetworkClearVoiceChannel() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xF03755696450470C)
 function NetworkClearVoiceProximityOverride() end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xE036A705F989E049)
-function NetworkClearVoiceChannel() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x43F4DBA69710E01E)
@@ -2185,15 +2189,20 @@ function NetworkConcealPlayer(player, toggle, p2) end
 function NetworkCreateSynchronisedScene(x, y, z, xRot, yRot, zRot, rotationOrder, holdLastFrame, looped, p9, animTime, animSpeed) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x9DD368BF06983221)
----@param player number
----@param toggle boolean
-function NetworkDisableInvincibleFlashing(player, toggle) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0xF9B83B77929D8863)
+---@return boolean
+function NetworkDidFindGamersSucceed() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x5AE17C6B0134B7F1)
 ---@return boolean
 function NetworkDidGetGamerStatusSucceed() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x9DD368BF06983221)
+---@param player number
+---@param toggle boolean
+function NetworkDisableInvincibleFlashing(player, toggle) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC505036A35AFD01B)
@@ -2212,77 +2221,6 @@ function NetworkDisableProximityMigration(netID) end
 ---@param p1 any
 ---@return number, any
 function NetworkDisplaynamesFromHandlesStart(p1) end
-
----```
----NativeDB Added Parameter 5: Any p4
----NativeDB Added Parameter 6: Any p5
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0xA091A5E44F0072E5)
----@param p0 any
----@param p1 any
----@param p2 any
----@param p3 any
----@return boolean
-function NetworkDoTransitionQuickmatchAsync(p0, p1, p2, p3) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xF9B83B77929D8863)
----@return boolean
-function NetworkDidFindGamersSucceed() end
-
----```
----NativeDB Added Parameter 5: Any p4
----NativeDB Added Parameter 6: Any p5
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x71FB0EBCD4915D56)
----@param p0 any
----@param p1 any
----@param p2 any
----@param p3 any
----@return boolean
-function NetworkDoTransitionQuickmatch(p0, p1, p2, p3) end
-
----```
----p2 is true 3/4 of the occurrences I found.  
----'players' is the number of players for a session. On PS3/360 it's always 18. On PC it's 32.  
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x3AAD8B2FCA1E289F)
----@param p1 any
----@param p2 boolean
----@param players number
----@param p4 boolean
----@return boolean, any
-function NetworkDoTransitionToFreemode(p1, p2, players, p4) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x9E80A5BA8109F974)
----@param players number
----@param p3 boolean
----@param p4 boolean
----@param p5 boolean
----@return boolean, any, any
-function NetworkDoTransitionToNewFreemode(players, p3, p4, p5) end
-
----```
----NativeDB Added Parameter 7: Any p6
----NativeDB Added Parameter 8: Any p7
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x9C4AB58491FDC98A)
----@param p0 any
----@param p1 any
----@param p2 any
----@param p3 any
----@param p5 any
----@return boolean, any
-function NetworkDoTransitionQuickmatchWithGroup(p0, p1, p2, p3, p5) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x4665F51EFED00034)
----@param p0 boolean
----@param maxPlayers number
----@param p2 boolean
----@return boolean
-function NetworkDoTransitionToNewGame(p0, maxPlayers, p2) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x18A47D074708FD68)
@@ -2310,12 +2248,82 @@ function NetworkDoesTunableExist(tunableContext, tunableName) end
 ---@return boolean
 function NetworkDoesTunableExistHash(tunableContext, tunableName) end
 
+---```
+---NativeDB Added Parameter 5: Any p4
+---NativeDB Added Parameter 6: Any p5
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x71FB0EBCD4915D56)
+---@param p0 any
+---@param p1 any
+---@param p2 any
+---@param p3 any
+---@return boolean
+function NetworkDoTransitionQuickmatch(p0, p1, p2, p3) end
+
+---```
+---NativeDB Added Parameter 5: Any p4
+---NativeDB Added Parameter 6: Any p5
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0xA091A5E44F0072E5)
+---@param p0 any
+---@param p1 any
+---@param p2 any
+---@param p3 any
+---@return boolean
+function NetworkDoTransitionQuickmatchAsync(p0, p1, p2, p3) end
+
+---```
+---NativeDB Added Parameter 7: Any p6
+---NativeDB Added Parameter 8: Any p7
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x9C4AB58491FDC98A)
+---@param p0 any
+---@param p1 any
+---@param p2 any
+---@param p3 any
+---@param p5 any
+---@return boolean, any
+function NetworkDoTransitionQuickmatchWithGroup(p0, p1, p2, p3, p5) end
+
+---```
+---p2 is true 3/4 of the occurrences I found.  
+---'players' is the number of players for a session. On PS3/360 it's always 18. On PC it's 32.  
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x3AAD8B2FCA1E289F)
+---@param p1 any
+---@param p2 boolean
+---@param players number
+---@param p4 boolean
+---@return boolean, any
+function NetworkDoTransitionToFreemode(p1, p2, players, p4) end
+
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x3E9BB38102A589B0)
 ---@param p0 boolean
 ---@param maxPlayers number
 ---@return boolean
 function NetworkDoTransitionToGame(p0, maxPlayers) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x9E80A5BA8109F974)
+---@param players number
+---@param p3 boolean
+---@param p4 boolean
+---@param p5 boolean
+---@return boolean, any, any
+function NetworkDoTransitionToNewFreemode(players, p3, p4, p5) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x4665F51EFED00034)
+---@param p0 boolean
+---@param maxPlayers number
+---@param p2 boolean
+---@return boolean
+function NetworkDoTransitionToNewGame(p0, maxPlayers, p2) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xD0AFAFF5A51D72F7)
+function NetworkEndTutorialSession() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xE64A3CA08DFA37A9)
@@ -2328,6 +2336,14 @@ function NetworkEntityAreaDoesExist(areaHandle) end
 ---@param areaHandle number
 ---@return boolean
 function NetworkEntityAreaIsOccupied(areaHandle) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x2A5E0621DD815A9A)
+---@param heli number
+---@param isAudible boolean
+---@param isInvisible boolean
+---@param netScriptEntityId number
+function NetworkExplodeHeli(heli, isAudible, isInvisible, netScriptEntityId) end
 
 ---```
 ---In the console script dumps, this is only referenced once.   
@@ -2365,17 +2381,21 @@ function NetworkExplodeVehicle(vehicle, isAudible, isInvisible, p3) end
 ---@param state boolean
 function NetworkFadeInEntity(entity, state) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x86E0660E4F5C956D)
-function NetworkClearGetGamerStatus() end
+---```
+---normal - transition like when your coming out of LSC  
+---slow - transition like when you walk into a mission  
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0xDE564951F95E09ED)
+---@param entity number
+---@param normal boolean
+---@param slow boolean
+function NetworkFadeOutEntity(entity, normal, slow) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x2A5E0621DD815A9A)
----@param heli number
----@param isAudible boolean
----@param isInvisible boolean
----@param netScriptEntityId number
-function NetworkExplodeHeli(heli, isAudible, isInvisible, netScriptEntityId) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0xE532D6811B3A4D2A)
+---@param p0 any
+---@return boolean
+function NetworkFindGamersInCrew(p0) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xF7B2CFDE5C9F700D)
@@ -2387,24 +2407,13 @@ function NetworkExplodeHeli(heli, isAudible, isInvisible, netScriptEntityId) end
 function NetworkFindMatchedGamers(p0, p1, p2, p3) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x64F62AFB081E260D)
+function NetworkFinishBroadcastingData() end
+
+---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC9B43A33D09CADA7)
 ---@param sceneId number
 function NetworkForceLocalUseOfSyncedSceneCamera(sceneId) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xE532D6811B3A4D2A)
----@param p0 any
----@return boolean
-function NetworkFindGamersInCrew(p0) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xFD00798DBA7523DD)
----@return boolean
-function NetworkGamertagFromHandleSucceeded() end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x64F62AFB081E260D)
-function NetworkFinishBroadcastingData() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xF2FD55CB574BCC55)
@@ -2422,10 +2431,28 @@ function NetworkGamertagFromHandlePending() end
 function NetworkGamertagFromHandleStart() end
 
 ---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xFD00798DBA7523DD)
+---@return boolean
+function NetworkGamertagFromHandleSucceeded() end
+
+---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x73E2B500410DA5A2)
 ---@param p0 boolean
 ---@return number
 function NetworkGetActivityPlayerNum(p0) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x9614B71F8ADB982B)
+---@return number
+function NetworkGetAgeGroup() end
+
+---```
+---NativeDB Introduced: v323
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0xD414BE129BB81B32)
+---@param player number
+---@return number
+function NetworkGetAverageLatencyForPlayer(player) end
 
 ---```
 ---Same as _NETWORK_GET_AVERAGE_LATENCY_FOR_PLAYER (0xD414BE129BB81B32)
@@ -2440,22 +2467,14 @@ function NetworkGetActivityPlayerNum(p0) end
 function NetworkGetAverageLatencyForPlayer_2(player) end
 
 ---```
----normal - transition like when your coming out of LSC  
----slow - transition like when you walk into a mission  
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0xDE564951F95E09ED)
----@param entity number
----@param normal boolean
----@param slow boolean
-function NetworkFadeOutEntity(entity, normal, slow) end
-
----```
+---NETWORK_GET_*
+---
 ---NativeDB Introduced: v323
 ---```
----[Native Documentation](https://docs.fivem.net/natives/?_0xD414BE129BB81B32)
+---[Native Documentation](https://docs.fivem.net/natives/?_0x350C23949E43686C)
 ---@param player number
 ---@return number
-function NetworkGetAverageLatencyForPlayer(player) end
+function NetworkGetAveragePacketLossForPlayer(player) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x97A770BEEF227E2B)
@@ -2475,15 +2494,10 @@ function NetworkGetBackgroundLoadingRecipients(p0, p1) end
 ---@return number
 function NetworkGetContentModifierListId(contentHash) end
 
----```
----NETWORK_GET_*
----
----NativeDB Introduced: v323
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x350C23949E43686C)
----@param player number
----@return number
-function NetworkGetAveragePacketLossForPlayer(player) end
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x74881E6BCAE2327C)
+---@return boolean, any
+function NetworkGetCurrentlySelectedGamerHandleFromInviteMenu() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x4CACA84440FA26F6)
@@ -2491,15 +2505,6 @@ function NetworkGetAveragePacketLossForPlayer(player) end
 ---@param p1 any
 ---@return boolean, number
 function NetworkGetDestroyerOfEntity(p0, p1) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xD0AFAFF5A51D72F7)
-function NetworkEndTutorialSession() end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x74881E6BCAE2327C)
----@return boolean, any
-function NetworkGetCurrentlySelectedGamerHandleFromInviteMenu() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x7A1ADEEF01740A24)
@@ -2524,15 +2529,10 @@ function NetworkGetDisplaynamesFromHandles(p0, p1, p2) end
 function NetworkGetEntityFromNetworkId(netId) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x9614B71F8ADB982B)
----@return number
-function NetworkGetAgeGroup() end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x42B2DAA6B596F5F8)
----@param player number
----@return number, number
-function NetworkGetEntityKillerOfPlayer(player) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x0991549DE4D64762)
+---@param entity number
+---@return boolean
+function NetworkGetEntityIsLocal(entity) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC7827959479DCC78)
@@ -2541,10 +2541,10 @@ function NetworkGetEntityKillerOfPlayer(player) end
 function NetworkGetEntityIsNetworked(entity) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x9DCFF2AFB68B3476)
----@param p1 any
----@return boolean, any
-function NetworkGetFoundGamer(p1) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x42B2DAA6B596F5F8)
+---@param player number
+---@return number, number
+function NetworkGetEntityKillerOfPlayer(player) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x815F18AD865F057F)
@@ -2553,10 +2553,10 @@ function NetworkGetFoundGamer(p1) end
 function NetworkGetEntityNetScriptId(entity) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xE11EBBB2A783FE8B)
----@param friendIndex number
----@return string
-function NetworkGetFriendName(friendIndex) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x9DCFF2AFB68B3476)
+---@param p1 any
+---@return boolean, any
+function NetworkGetFoundGamer(p1) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x203F1CFD823B27A4)
@@ -2564,10 +2564,10 @@ function NetworkGetFriendName(friendIndex) end
 function NetworkGetFriendCount() end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x0991549DE4D64762)
----@param entity number
----@return boolean
-function NetworkGetEntityIsLocal(entity) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0xE11EBBB2A783FE8B)
+---@param friendIndex number
+---@return string
+function NetworkGetFriendName(friendIndex) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x4164F227D052E293)
@@ -2576,15 +2576,20 @@ function NetworkGetEntityIsLocal(entity) end
 function NetworkGetFriendNameFromIndex(friendIndex) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x426141162EBE5CDB)
----@return string, number
-function NetworkGetGamertagFromHandle() end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x2CC848A861D01493)
+---@return boolean
+function NetworkGetGamerStatusFromQueue() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x02A8BEC6FD9AF660)
 ---@param p1 any
 ---@return boolean, any
 function NetworkGetGamerStatusResult(p1) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x426141162EBE5CDB)
+---@return string, number
+function NetworkGetGamertagFromHandle() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x6D03BFBD643B2A02)
@@ -2606,6 +2611,11 @@ function NetworkGetGlobalMultiplayerClock() end
 function NetworkGetHostOfScript(scriptName, p1, p2) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xC7B4D79B01FA7A5C)
+---@return number
+function NetworkGetHostOfThisScript() end
+
+---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x638A3A81733086DB)
 ---@return number
 function NetworkGetInstanceIdOfThisScript() end
@@ -2618,17 +2628,6 @@ function NetworkGetInstanceIdOfThisScript() end
 ---@return vector3
 function NetworkGetLastVelocityReceived(entity) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x02C40BF885C567B6)
----@param netId number
----@return number
-function NetworkGetLocalSceneFromNetworkId(netId) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xC7B4D79B01FA7A5C)
----@return number
-function NetworkGetHostOfThisScript() end
-
 ---```
 ---Retrieves the local player's NetworkHandle* and stores it in the given buffer.  
 ---* Currently unknown struct  
@@ -2637,6 +2636,17 @@ function NetworkGetHostOfThisScript() end
 ---@param bufferSize number
 ---@return number
 function NetworkGetLocalHandle(bufferSize) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x02C40BF885C567B6)
+---@param netId number
+---@return number
+function NetworkGetLocalSceneFromNetworkId(netId) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xAFEBB0D5D8F687D2)
+---@return number
+function NetworkGetMaxFriends() end
 
 ---```
 ---Seems to always return 0, but it's used in quite a few loops.
@@ -2663,9 +2673,9 @@ function NetworkGetMaxNumParticipants() end
 function NetworkGetNetworkIdFromEntity(entity) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xAFEBB0D5D8F687D2)
+---[Native Documentation](https://docs.fivem.net/natives/?_0xD38C4A6D047C019D)
 ---@return number
-function NetworkGetMaxFriends() end
+function NetworkGetNumBodyTrackers() end
 
 ---```
 ---Returns the amount of players connected in the current session. Only works when connected to a session/server.  
@@ -2673,11 +2683,6 @@ function NetworkGetMaxFriends() end
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA4A79DD2D9600654)
 ---@return number
 function NetworkGetNumConnectedPlayers() end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x2CC848A861D01493)
----@return boolean
-function NetworkGetGamerStatusFromQueue() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA1B043EE79A916FB)
@@ -2701,11 +2706,13 @@ function NetworkGetNumPresenceInvites() end
 ---@return number, any
 function NetworkGetNumScriptParticipants(p1, p2) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x1B84DF6AF2A46938)
----@param index number
+---```
+---NativeDB Introduced: v323
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0xFF8FCF9FFC458A1C)
+---@param player number
 ---@return number
-function NetworkGetParticipantIndex(index) end
+function NetworkGetNumUnackedForPlayer(player) end
 
 ---```
 ---NETWORK_GET_*
@@ -2718,23 +2725,21 @@ function NetworkGetParticipantIndex(index) end
 function NetworkGetOldestResendCountForPlayer(player) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xD38C4A6D047C019D)
+---[Native Documentation](https://docs.fivem.net/natives/?_0x1B84DF6AF2A46938)
+---@param index number
 ---@return number
-function NetworkGetNumBodyTrackers() end
-
----```
----NativeDB Introduced: v323
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0xFF8FCF9FFC458A1C)
----@param player number
----@return number
-function NetworkGetNumUnackedForPlayer(player) end
+function NetworkGetParticipantIndex(index) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x24FB80D107371267)
----@param player number
+---[Native Documentation](https://docs.fivem.net/natives/?_0x120364DE2845DAF8)
+---@param dataSize number
+---@return number, any
+function NetworkGetPlatformPartyMembers(dataSize) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x01ABCE5E7CBDA196)
 ---@return number
-function NetworkGetPlayerIndex(player) end
+function NetworkGetPlatformPartyUnk() end
 
 ---Returns the coordinates of another player.
 ---
@@ -2743,6 +2748,17 @@ function NetworkGetPlayerIndex(player) end
 ---@param player number
 ---@return vector3
 function NetworkGetPlayerCoords(player) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xCE5F689CF5A0A49D)
+---@return number, number
+function NetworkGetPlayerFromGamerHandle() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x24FB80D107371267)
+---@param player number
+---@return number
+function NetworkGetPlayerIndex(player) end
 
 ---```
 ---Returns the Player associated to a given Ped when in an online session.  
@@ -2753,10 +2769,22 @@ function NetworkGetPlayerCoords(player) end
 function NetworkGetPlayerIndexFromPed(ped) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x120364DE2845DAF8)
----@param dataSize number
----@return number, any
-function NetworkGetPlatformPartyMembers(dataSize) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x21A1684A25C2867F)
+---@param player number
+---@return number
+function NetworkGetPlayerLoudness(player) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x82377B65E943F72D)
+---@param player number
+---@return boolean
+function NetworkGetPlayerOwnsWaypoint(player) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x3B39236746714134)
+---@param player number
+---@return number
+function NetworkGetPlayerTutorialSessionInstance(player) end
 
 ---```
 ---NativeDB Introduced: v2372
@@ -2766,10 +2794,10 @@ function NetworkGetPlatformPartyMembers(dataSize) end
 function NetworkGetPositionHashOfThisScript() end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x3B39236746714134)
----@param player number
----@return number
-function NetworkGetPlayerTutorialSessionInstance(player) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x24409FC4C55CB22D)
+---@param p0 any
+---@return any
+function NetworkGetPresenceInviteContentId(p0) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x3DBF2DF0AEB7D289)
@@ -2778,34 +2806,22 @@ function NetworkGetPlayerTutorialSessionInstance(player) end
 function NetworkGetPresenceInviteFromAdmin(p0) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x24409FC4C55CB22D)
----@param p0 any
----@return any
-function NetworkGetPresenceInviteContentId(p0) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x82377B65E943F72D)
----@param player number
----@return boolean
-function NetworkGetPlayerOwnsWaypoint(player) end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x38D5B0FEBB086F75)
 ---@param p0 any
 ---@return boolean, any
 function NetworkGetPresenceInviteHandle(p0) end
-
----Returns the Name of the inviter of the specific selected Invite.
----[Native Documentation](https://docs.fivem.net/natives/?_0x4962CC4AA2F345B7)
----@param inviteIndex number
----@return string
-function NetworkGetPresenceInviteInviter(inviteIndex) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xDFF09646E12EC386)
 ---@param p0 any
 ---@return any
 function NetworkGetPresenceInviteId(p0) end
+
+---Returns the Name of the inviter of the specific selected Invite.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x4962CC4AA2F345B7)
+---@param inviteIndex number
+---@return string
+function NetworkGetPresenceInviteInviter(inviteIndex) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x8806CEBFABD3CE05)
@@ -2832,15 +2848,23 @@ function NetworkGetPresenceInvitePlaylistLength(p0) end
 function NetworkGetPresenceInviteSessionId(inviteIndex) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x042E4B70B93E6054)
+function NetworkGetPrimaryClanDataCancel() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x9AA46BADAD0E27ED)
+---@return any
+function NetworkGetPrimaryClanDataClear() end
+
+---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC080FF658B2E41DA)
 ---@return boolean, any, any
 function NetworkGetPrimaryClanDataNew() end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x21A1684A25C2867F)
----@param player number
----@return number
-function NetworkGetPlayerLoudness(player) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0xB5074DB804E28CE7)
+---@return any
+function NetworkGetPrimaryClanDataPending() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xCE86D8191B762107)
@@ -2849,28 +2873,14 @@ function NetworkGetPlayerLoudness(player) end
 function NetworkGetPrimaryClanDataStart(p1) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x042E4B70B93E6054)
-function NetworkGetPrimaryClanDataCancel() end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x01ABCE5E7CBDA196)
----@return number
-function NetworkGetPlatformPartyUnk() end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x599E4FA1F87EB5FF)
----@return number
-function NetworkGetRandomInt() end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x5B4F04F19376A0BA)
 ---@return any
 function NetworkGetPrimaryClanDataSuccess() end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xCE5F689CF5A0A49D)
----@return number, number
-function NetworkGetPlayerFromGamerHandle() end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x599E4FA1F87EB5FF)
+---@return number
+function NetworkGetRandomInt() end
 
 ---```
 ---Same as GET_RANDOM_INT_IN_RANGE
@@ -2911,6 +2921,11 @@ function NetworkGetRosPrivilege_25() end
 function NetworkGetRosPrivilege_9() end
 
 ---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x57D158647A6BFABF)
+---@return number
+function NetworkGetScriptStatus() end
+
+---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x84F0F13120B4E098)
 ---@return number
 function NetworkGetTalkerProximity() end
@@ -2935,6 +2950,11 @@ function NetworkGetTimeoutTime() end
 ---@return number
 function NetworkGetTotalNumPlayers() end
 
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x65042B9774C4435E)
+---@return boolean, number
+function NetworkGetTransitionHost() end
+
 ---```
 ---Returns count.
 ---```
@@ -2943,11 +2963,6 @@ function NetworkGetTotalNumPlayers() end
 ---@return number, any
 function NetworkGetTransitionMembers(dataCount) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x65042B9774C4435E)
----@return boolean, number
-function NetworkGetTransitionHost() end
-
 ---```
 ---Actually returns the version (TUNABLE_VERSION)
 ---```
@@ -2955,22 +2970,22 @@ function NetworkGetTransitionHost() end
 ---@return number
 function NetworkGetTunableCloudCrc() end
 
+---```
+---NETWORK_*
+---
+---NativeDB Introduced: v323
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x3765C3A3E8192E10)
+---@param player number
+---@return number
+function NetworkGetUnreliableResendCountForPlayer(player) end
+
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xD45CB817D7E177D2)
 ---@param friendIndex number
 ---@param bufferSize number
 ---@return number
 function NetworkHandleFromFriend(friendIndex, bufferSize) end
-
----```
----Returns a NetworkHandle* from the specified user ID and stores it in a given buffer.  
----* Currently unknown struct  
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0xDCD51DD8F87AEC5C)
----@param userId string
----@param bufferSize number
----@return number
-function NetworkHandleFromUserId(userId, bufferSize) end
 
 ---```
 ---Returns a NetworkHandle* from the specified member ID and stores it in a given buffer.  
@@ -3003,6 +3018,16 @@ function NetworkHandleFromMemberId(memberId, bufferSize) end
 ---@return number
 function NetworkHandleFromPlayer(player, bufferSize) end
 
+---```
+---Returns a NetworkHandle* from the specified user ID and stores it in a given buffer.  
+---* Currently unknown struct  
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0xDCD51DD8F87AEC5C)
+---@param userId string
+---@param bufferSize number
+---@return number
+function NetworkHandleFromUserId(userId, bufferSize) end
+
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x1353F87E89946207)
 ---@return boolean
@@ -3033,16 +3058,16 @@ function NetworkHasControlOfEntity(entity) end
 function NetworkHasControlOfNetworkId(netId) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xB07D3185E11657A5)
----@param entity number
----@return boolean
-function NetworkHasEntityBeenRegisteredWithThisThread(entity) end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x5BC9495F0B3B6FA6)
 ---@param pickup number
 ---@return boolean
 function NetworkHasControlOfPickup(pickup) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xB07D3185E11657A5)
+---@param entity number
+---@return boolean
+function NetworkHasEntityBeenRegisteredWithThisThread(entity) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x76D9B976C4C09FDE)
@@ -3063,14 +3088,20 @@ function NetworkHasGameBeenAltered() end
 function NetworkHasHeadset() end
 
 ---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x58575AC3CF2CA8EC)
+---@return number, number
+function NetworkHashFromGamerHandle() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xBC1D768F2F5D6C05)
+---@param player number
+---@return number
+function NetworkHashFromPlayerHandle(player) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x71DC455F5CD1C2B1)
 ---@return boolean, number
 function NetworkHasInviteBeenAcked() end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xAC8C7B9B88C4A668)
----@return boolean
-function NetworkHasPendingInvite() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x4D86CD31E8976ECE)
@@ -3083,15 +3114,15 @@ function NetworkHasInvitedGamer() end
 function NetworkHasInvitedGamerToTransition() end
 
 ---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xAC8C7B9B88C4A668)
+---@return boolean
+function NetworkHasPendingInvite() end
+
+---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x9AC9CCBFA8C29795)
 ---@param player number
 ---@return boolean
 function NetworkHasPlayerStartedTransition(player) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x57D158647A6BFABF)
----@return number
-function NetworkGetScriptStatus() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x5D10B3795F3FC886)
@@ -3107,14 +3138,10 @@ function NetworkHasReceivedHostBroadcastData() end
 function NetworkHasRosPrivilege(index) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x9AA46BADAD0E27ED)
----@return any
-function NetworkGetPrimaryClanDataClear() end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x76BF03FADBF154F5)
----@return boolean
-function NetworkHasSocialNetworkingSharingPriv() end
+---[Native Documentation](https://docs.fivem.net/natives/?_0xC22912B1D85F26B1)
+---@param privilege number
+---@return boolean, number, vector3
+function NetworkHasRosPrivilegeEndDate(privilege) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x67A5589628E0CFF6)
@@ -3122,25 +3149,14 @@ function NetworkHasSocialNetworkingSharingPriv() end
 function NetworkHasSocialClubAccount() end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xC22912B1D85F26B1)
----@param privilege number
----@return boolean, number, vector3
-function NetworkHasRosPrivilegeEndDate(privilege) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x76BF03FADBF154F5)
+---@return boolean
+function NetworkHasSocialNetworkingSharingPriv() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x3F9990BF5F22759C)
 ---@return boolean, number
 function NetworkHasTransitionInviteBeenAcked() end
-
----```
----NETWORK_*
----
----NativeDB Introduced: v323
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x3765C3A3E8192E10)
----@param player number
----@return number
-function NetworkGetUnreliableResendCountForPlayer(player) end
 
 ---```
 ---Returns whether the signed-in user has valid Rockstar Online Services (ROS) credentials.
@@ -3150,20 +3166,9 @@ function NetworkGetUnreliableResendCountForPlayer(player) end
 function NetworkHasValidRosCredentials() end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x58575AC3CF2CA8EC)
----@return number, number
-function NetworkHashFromGamerHandle() end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x5EA784D197556507)
----@return boolean
-function NetworkHaveOnlinePrivilege_2() end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xBC1D768F2F5D6C05)
----@param player number
----@return number
-function NetworkHashFromPlayerHandle(player) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0xCCA4318E1AB03F1F)
+---@return boolean, any
+function NetworkHasViewGamerUserContentResult() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xAEEF48CDF5B6CE7C)
@@ -3173,9 +3178,24 @@ function NetworkHashFromPlayerHandle(player) end
 function NetworkHaveCommunicationPrivileges(p0, player) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x5EA784D197556507)
+---@return boolean
+function NetworkHaveOnlinePrivilege_2() end
+
+---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x25CB5A9F37BFD063)
 ---@return boolean
 function NetworkHaveOnlinePrivileges() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x8020A73847E0CA7D)
+---@return boolean
+function NetworkHaveRosBannedPriv() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xA0AD7E2AF5349F61)
+---@return boolean
+function NetworkHaveRosCreateTicketPriv() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x422D396F80A96547)
@@ -3218,11 +3238,6 @@ function NetworkHaveUserContentPrivileges(p0) end
 function NetworkHostTransition(p0, p1, p2, p3, p4, p5, p6, p7, p8, p9) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xA0AD7E2AF5349F61)
----@return boolean
-function NetworkHaveRosCreateTicketPriv() end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x9D80CD1D0E6327DE)
 ---@param p1 any
 ---@return boolean, any, any, any
@@ -3235,14 +3250,14 @@ function NetworkInviteGamers(p1) end
 function NetworkInviteGamersToTransition(p1) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x12103B9E0C9F92FB)
----@return boolean
-function NetworkIsActivitySpectator() end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x05095437424397FA)
 ---@return boolean
 function NetworkIsActivitySession() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x12103B9E0C9F92FB)
+---@return boolean
+function NetworkIsActivitySpectator() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x2763BBAA72A7BCB9)
@@ -3278,6 +3293,11 @@ function NetworkIsClockTimeOverridden() end
 ---@return boolean
 function NetworkIsCloudAvailable() end
 
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x8132C0EB8B2B3293)
+---@return boolean
+function NetworkIsCloudBackgroundScriptRequestPending() end
+
 ---```
 ---NETWORK_IS_*
 ---
@@ -3289,26 +3309,10 @@ function NetworkIsCloudAvailable() end
 function NetworkIsConnectionEndpointRelayServer(player) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x8132C0EB8B2B3293)
----@return boolean
-function NetworkIsCloudBackgroundScriptRequestPending() end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x422F32CC7E56ABAD)
----@param entity number
----@return boolean
-function NetworkIsEntityFading(entity) end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC01E93FAC20C3346)
 ---@param doorHash number | string
 ---@return boolean
 function NetworkIsDoorNetworked(doorHash) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xDDDF64C91BFCF0AA)
----@return boolean
-function NetworkIsFindingGamers() end
 
 ---Note: This only works for vehicles, which appears to be a bug (since the setter *does* work for every entity type and the name is 99% correct).
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x71302EC70689052A)
@@ -3317,14 +3321,37 @@ function NetworkIsFindingGamers() end
 function NetworkIsEntityConcealed(entity) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x87EB7A3FFCB314DB)
----@return boolean, number
-function NetworkIsFriendHandleOnline() end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x422F32CC7E56ABAD)
+---@param entity number
+---@return boolean
+function NetworkIsEntityFading(entity) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xDDDF64C91BFCF0AA)
+---@return boolean
+function NetworkIsFindingGamers() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x1A24A179F9B31654)
 ---@return boolean, number
 function NetworkIsFriend() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x87EB7A3FFCB314DB)
+---@return boolean, number
+function NetworkIsFriendHandleOnline() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xBAD8F2A42B844821)
+---@param friendIndex number
+---@return boolean
+function NetworkIsFriendIndexOnline(friendIndex) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x57005C18827F3A28)
+---@param friendName string
+---@return boolean
+function NetworkIsFriendInMultiplayer(friendName) end
 
 ---```
 ---In scripts R* calls 'NETWORK_GET_FRIEND_NAME' in this param.  
@@ -3335,27 +3362,10 @@ function NetworkIsFriend() end
 function NetworkIsFriendInSameTitle(friendName) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x57005C18827F3A28)
----@param friendName string
----@return boolean
-function NetworkIsFriendInMultiplayer(friendName) end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x425A44533437B64D)
 ---@param name string
 ---@return boolean
 function NetworkIsFriendOnline(name) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xBAD8F2A42B844821)
----@param friendIndex number
----@return boolean
-function NetworkIsFriendIndexOnline(friendIndex) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xE944C4F5AF1B5883)
----@return boolean, any
-function NetworkIsGamerBlockedByMe() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x10FAB35428CCC9D7)
@@ -3363,14 +3373,14 @@ function NetworkIsGamerBlockedByMe() end
 function NetworkIsGameInProgress() end
 
 ---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xE944C4F5AF1B5883)
+---@return boolean, any
+function NetworkIsGamerBlockedByMe() end
+
+---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x0F10B05DDF8D16E9)
 ---@return boolean, number
 function NetworkIsGamerInMySession() end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x71C33B22606CD88A)
----@return boolean, number
-function NetworkIsGamerTalking() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xCE60DE011B6C7978)
@@ -3378,9 +3388,20 @@ function NetworkIsGamerTalking() end
 function NetworkIsGamerMutedByMe() end
 
 ---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x71C33B22606CD88A)
+---@return boolean, number
+function NetworkIsGamerTalking() end
+
+---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x94A8394D150B013A)
 ---@return boolean
 function NetworkIsGettingGamerStatus() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x6F79B93B0A8E4133)
+---@param bufferSize number
+---@return boolean, number
+function NetworkIsHandleValid(bufferSize) end
 
 ---```
 ---If you are host, returns true else returns false.
@@ -3390,37 +3411,20 @@ function NetworkIsGettingGamerStatus() end
 function NetworkIsHost() end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xCCA4318E1AB03F1F)
----@return boolean, any
-function NetworkHasViewGamerUserContentResult() end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x6F79B93B0A8E4133)
----@param bufferSize number
----@return boolean, number
-function NetworkIsHandleValid(bufferSize) end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x83CD99A1E6061AB5)
 ---@return boolean
 function NetworkIsHostOfThisScript() end
+
+---Checks if the networkHandle is the same as any other user that is signed in on the local machine.
+---For example, if your console has two or more users signed in (on different controllers), the profile that is not controlling the game would be "inactive".
+---[Native Documentation](https://docs.fivem.net/natives/?_0x7E58745504313A2E)
+---@return boolean, number
+function NetworkIsInactiveProfile() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x6CC27C9FA2040220)
 ---@return boolean
 function NetworkIsInMpCutscene() end
-
----```
----Hardcoded to return false.
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x2FC5650B0271CB57)
----@return boolean
-function NetworkIsInPlatformParty() end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xCA97246103B63917)
----@return boolean
-function NetworkIsInSession() end
 
 ---```
 ---Note according to IDA TU27 X360(Console),  
@@ -3437,35 +3441,31 @@ function NetworkIsInParty() end
 ---```
 ---Hardcoded to return false.
 ---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x2FC5650B0271CB57)
+---@return boolean
+function NetworkIsInPlatformParty() end
+
+---```
+---Hardcoded to return false.
+---```
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xFD8B834A8BA05048)
 ---@return boolean
 function NetworkIsInPlatformPartyChat() end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x68049AEFF83D8F0A)
+---[Native Documentation](https://docs.fivem.net/natives/?_0xCA97246103B63917)
 ---@return boolean
-function NetworkIsInTransition() end
-
----Checks if the networkHandle is the same as any other user that is signed in on the local machine.
----For example, if your console has two or more users signed in (on different controllers), the profile that is not controlling the game would be "inactive".
----[Native Documentation](https://docs.fivem.net/natives/?_0x7E58745504313A2E)
----@return boolean, number
-function NetworkIsInactiveProfile() end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xB5074DB804E28CE7)
----@return any
-function NetworkGetPrimaryClanDataPending() end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xC0D2AF00BCC234CA)
----@return boolean
-function NetworkIsLocalTalking() end
+function NetworkIsInSession() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x048746E388762E11)
 ---@return boolean
 function NetworkIsInSpectatorMode() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x68049AEFF83D8F0A)
+---@return boolean
+function NetworkIsInTransition() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xADA24309FE08DACF)
@@ -3477,16 +3477,21 @@ function NetworkIsInTutorialSession() end
 ---@return boolean
 function NetworkIsLocalPlayerInvincible() end
 
----Returns true if the specified network id is controlled by someone else.
----[Native Documentation](https://docs.fivem.net/natives/?_0x7242F8B741CE1086)
----@param netId number
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xC0D2AF00BCC234CA)
 ---@return boolean
-function NetworkIsNetworkIdAClone(netId) end
+function NetworkIsLocalTalking() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x9747292807126EDA)
 ---@return boolean
 function NetworkIsMultiplayerDisabled() end
+
+---Returns true if the specified network id is controlled by someone else.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x7242F8B741CE1086)
+---@param netId number
+---@return boolean
+function NetworkIsNetworkIdAClone(netId) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x74698374C45701D2)
@@ -3511,17 +3516,13 @@ function NetworkIsParticipantActive(p0) end
 ---@return boolean, number
 function NetworkIsPartyMember() end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x3CA58F6CB7CBD784)
----@param player number
----@return boolean
-function NetworkIsPlayerAParticipant(player) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x57AF1F8E27483721)
----@param player number
----@return boolean
-function NetworkIsPlayerBlockedByMe(player) end
+---```
+---This function is hard-coded to always return 0.
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x0BE73DA6984A6E33)
+---@param p0 any
+---@return any
+function NetworkIsPendingFriend(p0) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xB8DFD30D6973E135)
@@ -3529,14 +3530,25 @@ function NetworkIsPlayerBlockedByMe(player) end
 ---@return boolean
 function NetworkIsPlayerActive(player) end
 
----```
----NETWORK_ARE_*  
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x9DE986FC9A87C474)
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x3CA58F6CB7CBD784)
 ---@param player number
----@param index number
 ---@return boolean
-function NetworkIsPlayerEqualToIndex(player, index) end
+function NetworkIsPlayerAParticipant(player) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x1AD5B71586B94820)
+---@param player1 number
+---@param script string
+---@param player2 number
+---@return boolean
+function NetworkIsPlayerAParticipantOnScript(player1, script, player2) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x57AF1F8E27483721)
+---@param player number
+---@return boolean
+function NetworkIsPlayerBlockedByMe(player) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x919B3C98ED8292F9)
@@ -3550,6 +3562,15 @@ function NetworkIsPlayerConcealed(player) end
 ---@return boolean
 function NetworkIsPlayerConnected(player) end
 
+---```
+---NETWORK_ARE_*  
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x9DE986FC9A87C474)
+---@param player number
+---@param index number
+---@return boolean
+function NetworkIsPlayerEqualToIndex(player, index) end
+
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x631DC5DFF4B110E3)
 ---@param player number
@@ -3557,12 +3578,16 @@ function NetworkIsPlayerConnected(player) end
 function NetworkIsPlayerFading(player) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x1AD5B71586B94820)
----@param player1 number
----@param script string
----@param player2 number
+---[Native Documentation](https://docs.fivem.net/natives/?_0x63F9EE203C3619F2)
+---@param player number
 ---@return boolean
-function NetworkIsPlayerAParticipantOnScript(player1, script, player2) end
+function NetworkIsPlayerInMpCutscene(player) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x8C71288AE68EDE39)
+---@param player number
+---@return boolean
+function NetworkIsPlayerMutedByMe(player) end
 
 ---```
 ---returns true if someone is screaming or talking in a microphone  
@@ -3573,24 +3598,9 @@ function NetworkIsPlayerAParticipantOnScript(player1, script, player2) end
 function NetworkIsPlayerTalking(player) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x8C71288AE68EDE39)
----@param player number
+---[Native Documentation](https://docs.fivem.net/natives/?_0x8D11E61A4ABF49CC)
 ---@return boolean
-function NetworkIsPlayerMutedByMe(player) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x63F9EE203C3619F2)
----@param player number
----@return boolean
-function NetworkIsPlayerInMpCutscene(player) end
-
----```
----This function is hard-coded to always return 0.
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x0BE73DA6984A6E33)
----@param p0 any
----@return any
-function NetworkIsPendingFriend(p0) end
+function NetworkIsPsnAvailable() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x9D40DF90FAD26098)
@@ -3601,10 +3611,16 @@ function NetworkIsPendingFriend(p0) end
 ---@return boolean
 function NetworkIsScriptActive(scriptName, player, p2, p3) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x8020A73847E0CA7D)
+---```
+---NativeDB Introduced: v2245
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0xDA7DE67F5FE5EE13)
+---@param scriptHash number | string
+---@param p1 number
+---@param p2 boolean
+---@param p3 number
 ---@return boolean
-function NetworkHaveRosBannedPriv() end
+function NetworkIsScriptActiveByHash(scriptHash, p1, p2, p3) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xD83C2B94E7508980)
@@ -3647,16 +3663,6 @@ function NetworkIsSignedOnline() end
 function NetworkIsTextChatActive() end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x520F3282A53D26B7)
----@return boolean
-function NetworkIsTransitionBusy() end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x6512765E3BE78C50)
----@return boolean
-function NetworkIsTransitionClosedFriends() end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xD1110739EEADB592)
 ---@param p0 any
 ---@param p1 boolean
@@ -3665,9 +3671,24 @@ function NetworkIsTransitionClosedFriends() end
 function NetworkIsThisScriptMarked(p0, p1, p2) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x520F3282A53D26B7)
+---@return boolean
+function NetworkIsTransitionBusy() end
+
+---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x0DBD5D7E3C5BEC3B)
 ---@return boolean
 function NetworkIsTransitionClosedCrew() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x6512765E3BE78C50)
+---@return boolean
+function NetworkIsTransitionClosedFriends() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x0B824797C9BF2159)
+---@return boolean
+function NetworkIsTransitionHost() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x6B5C83BA3EFE6A10)
@@ -3680,24 +3701,19 @@ function NetworkIsTransitionHostFromHandle() end
 function NetworkIsTransitionMatchmaking() end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x0B824797C9BF2159)
----@return boolean
-function NetworkIsTransitionHost() end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x37A4494483B9F5C9)
 ---@return boolean
 function NetworkIsTransitionOpenToMatchmaking() end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x5DC577201723960A)
----@return boolean
-function NetworkIsTransitionSolo() end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x5A6AA44FF8E931E6)
 ---@return boolean
 function NetworkIsTransitionPrivate() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x5DC577201723960A)
+---@return boolean
+function NetworkIsTransitionSolo() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x53FA83401D9C07FE)
@@ -3724,21 +3740,20 @@ function NetworkIsTunableCloudRequestPending() end
 ---@return boolean
 function NetworkIsTutorialSessionChangePending() end
 
----```
----NativeDB Introduced: v2245
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0xDA7DE67F5FE5EE13)
----@param scriptHash number | string
----@param p1 number
----@param p2 boolean
----@param p3 number
----@return boolean
-function NetworkIsScriptActiveByHash(scriptHash, p1, p2, p3) end
-
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA06509A691D12BE4)
 ---@return any
 function NetworkJoinGroupActivity() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x59DF79317F85A7E0)
+---@return boolean
+function NetworkJoinPreviouslyFailedSession() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xFFE1E5B792D92B34)
+---@return boolean
+function NetworkJoinPreviouslyFailedTransition() end
 
 ---```
 ---int handle[76];  
@@ -3751,11 +3766,6 @@ function NetworkJoinGroupActivity() end
 ---@param player number
 ---@return boolean
 function NetworkJoinTransition(player) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xFFE1E5B792D92B34)
----@return boolean
-function NetworkJoinPreviouslyFailedTransition() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x2DCF46CB1A4F0884)
@@ -3781,14 +3791,6 @@ function NetworkMemberIdFromGamerHandle() end
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x2B3A8F7CA3A38FDE)
 function NetworkOpenTransitionMatchmaking() end
 
----Works in Singleplayer too.
----Passing wrong data (e.g. hours above 23) will cause the game to crash.
----[Native Documentation](https://docs.fivem.net/natives/?_0xE679E3E06E363892)
----@param hours number
----@param minutes number
----@param seconds number
-function NetworkOverrideClockTime(hours, minutes, seconds) end
-
 ---```
 ---Could possibly bypass being muted or automatically muted  
 ---```
@@ -3803,6 +3805,14 @@ function NetworkOverrideChatRestrictions(player, toggle) end
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x42BF1D2E723B6D7E)
 ---@param ms number
 function NetworkOverrideClockMillisecondsPerGameMinute(ms) end
+
+---Works in Singleplayer too.
+---Passing wrong data (e.g. hours above 23) will cause the game to crash.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xE679E3E06E363892)
+---@param hours number
+---@param minutes number
+---@param seconds number
+function NetworkOverrideClockTime(hours, minutes, seconds) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA7E30DE9272B6D49)
@@ -3829,11 +3839,6 @@ function NetworkOverrideReceiveRestrictions(player, toggle) end
 ---@param toggle boolean
 function NetworkOverrideReceiveRestrictionsAll(toggle) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x57B192B4D4AD23D5)
----@param toggle boolean
-function NetworkOverrideSendRestrictionsAll(toggle) end
-
 ---```
 ---This is used alongside the native,
 ---'NETWORK_OVERRIDE_RECEIVE_RESTRICTIONS'. Read its description for more info.
@@ -3842,6 +3847,11 @@ function NetworkOverrideSendRestrictionsAll(toggle) end
 ---@param player number
 ---@param toggle boolean
 function NetworkOverrideSendRestrictions(player, toggle) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x57B192B4D4AD23D5)
+---@param toggle boolean
+function NetworkOverrideSendRestrictionsAll(toggle) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x6F697A66CE78674E)
@@ -3854,17 +3864,17 @@ function NetworkOverrideTeamRestrictions(team, toggle) end
 ---@param p0 boolean
 function NetworkOverrideTransitionChat(p0) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x59DF79317F85A7E0)
----@return boolean
-function NetworkJoinPreviouslyFailedSession() end
-
 ---```
 ---NativeDB Introduced: v2372
 ---```
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xF0BC9BCD24A511D5)
 ---@param ped number
 function NetworkPedForceGameStateUpdate(ped) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x172F75B6EE2233BA)
+---@return number
+function NetworkPlayerGetCheaterReason() end
 
 ---```
 ---Returns the name of a given player. Returns "**Invalid**" if CPlayerInfo of the given player cannot be retrieved or the player doesn't exist.
@@ -3895,24 +3905,14 @@ function NetworkPlayerHasHeadset(player) end
 function NetworkPlayerIndexIsCheater(player) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x655B91F1495A9090)
----@return boolean
-function NetworkPlayerIsCheater() end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x19D8DA0E5A68045A)
 ---@return boolean
 function NetworkPlayerIsBadsport() end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x3C891A251567DFCE)
----@return any, any
-function NetworkQueryRespawnResults() end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x06FAACD625D80CAA)
----@param entity number
-function NetworkRegisterEntityAsNetworked(entity) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x655B91F1495A9090)
+---@return boolean
+function NetworkPlayerIsCheater() end
 
 ---```
 ---Checks if a specific value (BYTE) in CPlayerInfo is nonzero.  
@@ -3927,9 +3927,19 @@ function NetworkRegisterEntityAsNetworked(entity) end
 function NetworkPlayerIsRockstarDev(player) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x3C891A251567DFCE)
+---@return any, any
+function NetworkQueryRespawnResults() end
+
+---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x85A0EF54A500882C)
 ---@return boolean, any
 function NetworkQueueGamerForStatus() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x06FAACD625D80CAA)
+---@param entity number
+function NetworkRegisterEntityAsNetworked(entity) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x3E9B2F01C50DF595)
@@ -3944,13 +3954,6 @@ function NetworkRegisterHostBroadcastVariables(numVars) end
 function NetworkRegisterPlayerBroadcastVariables(numVars) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x1950DAE9848A4739)
----@param contextHash number | string
----@param nameHash number | string
----@return boolean, number
-function NetworkRegisterTunableFloatHash(contextHash, nameHash) end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x697F508861875B42)
 ---@param contextHash number | string
 ---@param nameHash number | string
@@ -3958,8 +3961,11 @@ function NetworkRegisterTunableFloatHash(contextHash, nameHash) end
 function NetworkRegisterTunableBoolHash(contextHash, nameHash) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x726E0375C7A26368)
-function NetworkRemoveAllTransitionInvite() end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x1950DAE9848A4739)
+---@param contextHash number | string
+---@param nameHash number | string
+---@return boolean, number
+function NetworkRegisterTunableFloatHash(contextHash, nameHash) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x3A8B55FDA4C8DDEF)
@@ -3969,10 +3975,8 @@ function NetworkRemoveAllTransitionInvite() end
 function NetworkRegisterTunableIntHash(contextHash, nameHash) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xF0210268DB0974B1)
----@param p0 any
----@return boolean
-function NetworkRemovePresenceInvite(p0) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x726E0375C7A26368)
+function NetworkRemoveAllTransitionInvite() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x93CF869BAA0C4874)
@@ -3981,9 +3985,15 @@ function NetworkRemovePresenceInvite(p0) end
 function NetworkRemoveEntityArea(p0) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x172F75B6EE2233BA)
----@return number
-function NetworkPlayerGetCheaterReason() end
+---[Native Documentation](https://docs.fivem.net/natives/?_0xF0210268DB0974B1)
+---@param p0 any
+---@return boolean
+function NetworkRemovePresenceInvite(p0) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x7524B431B2E6F7EE)
+---@return any
+function NetworkRemoveTransitionInvite() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x5626D9D6810730D5)
@@ -4011,14 +4021,14 @@ function NetworkRequestControlOfDoor(doorID) end
 function NetworkRequestControlOfEntity(entity) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x72433699B4E6DD64)
-function NetworkResetBodyTracker() end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA670B3662FAFFBD0)
 ---@param netId number
 ---@return boolean
 function NetworkRequestControlOfNetworkId(netId) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x72433699B4E6DD64)
+function NetworkResetBodyTracker() end
 
 ---```
 ---p4 and p5 are always 0 in scripts  
@@ -4049,6 +4059,13 @@ function NetworkResurrectLocalPlayer(x, y, z, heading, unk, changetime) end
 ---@param seed number
 function NetworkSeedRandomNumberGenerator(seed) end
 
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xC3C7A6AFDB244624)
+---@param p2 any
+---@param p3 any
+---@return boolean, number, any
+function NetworkSendInviteViaPresence(p2, p3) end
+
 ---```
 ---String "NETWORK_SEND_PRESENCE_TRANSITION_INVITE" is contained in the function in ida so this one is correct.  
 ---```
@@ -4058,13 +4075,6 @@ function NetworkSeedRandomNumberGenerator(seed) end
 ---@return boolean, any, any
 function NetworkSendPresenceTransitionInvite(p2, p3) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xC3C7A6AFDB244624)
----@param p2 any
----@param p3 any
----@return boolean, number, any
-function NetworkSendInviteViaPresence(p2, p3) end
-
 ---```
 ---Message is limited to 64 characters.
 ---```
@@ -4072,15 +4082,6 @@ function NetworkSendInviteViaPresence(p2, p3) end
 ---@param message string
 ---@return boolean, number
 function NetworkSendTextMessage(message) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xBE3E347A87ACEB82)
----@param p0 any
----@param p1 any
----@param p2 any
----@param p3 any
----@return boolean
-function NetworkSessionActivityQuickmatch(p0, p1, p2, p3) end
 
 ---```
 ---the first arg seems to be the network player handle (&handle) and the second var is pretty much always "" and the third seems to be a number between 0 and ~10 and the 4th is is something like 0 to 5 and I guess the 5th is a bool cuz it is always 0 or 1  
@@ -4095,15 +4096,18 @@ function NetworkSessionActivityQuickmatch(p0, p1, p2, p3) end
 function NetworkSendTransitionGamerInstruction(p1, p2, p3, p4) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xBE3E347A87ACEB82)
+---@param p0 any
+---@param p1 any
+---@param p2 any
+---@param p3 any
+---@return boolean
+function NetworkSessionActivityQuickmatch(p0, p1, p2, p3) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xCAE55F48D3D7875C)
 ---@param groupId number
 function NetworkSessionAddActiveMatchmakingGroup(groupId) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xB4AB419E0D86ACAE)
----@param p0 number
----@param p1 boolean
-function NetworkSessionChangeSlots(p0, p1) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA73667484D7037C3)
@@ -4113,6 +4117,22 @@ function NetworkSessionBlockJoinRequests(toggle) end
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x2FBF47B1B36D36F9)
 function NetworkSessionCancelInvite() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xB4AB419E0D86ACAE)
+---@param p0 number
+---@param p1 boolean
+function NetworkSessionChangeSlots(p0, p1) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x94BC51E9449D917F)
+---@param p0 number
+---@param p1 number
+---@param p2 number
+---@param maxPlayers number
+---@param p4 boolean
+---@return boolean
+function NetworkSessionCrewMatchmaking(p0, p1, p2, maxPlayers, p4) end
 
 ---```
 ---p0 is always false and p1 varies.  
@@ -4125,16 +4145,6 @@ function NetworkSessionCancelInvite() end
 ---@param p1 boolean
 ---@return boolean
 function NetworkSessionEnd(p0, p1) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x94BC51E9449D917F)
----@param p0 number
----@param p1 number
----@param p2 number
----@param maxPlayers number
----@param p4 boolean
----@return boolean
-function NetworkSessionCrewMatchmaking(p0, p1, p2, maxPlayers, p4) end
 
 ---```
 ---unknown params  
@@ -4158,6 +4168,10 @@ function NetworkSessionCrewMatchmaking(p0, p1, p2, maxPlayers, p4) end
 function NetworkSessionEnter(p0, p1, p2, maxPlayers, p4, p5) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xA29177F7703B5644)
+function NetworkSessionForceCancelInvite() end
+
+---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x2CFC76E0D087C994)
 ---@param p0 number
 ---@param p1 number
@@ -4165,21 +4179,6 @@ function NetworkSessionEnter(p0, p1, p2, maxPlayers, p4, p5) end
 ---@param p3 boolean
 ---@return boolean
 function NetworkSessionFriendMatchmaking(p0, p1, maxPlayers, p3) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xA29177F7703B5644)
-function NetworkSessionForceCancelInvite() end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x53AFD64C6758F2F9)
----@return number
-function NetworkSessionGetPrivateSlots() end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x56CE820830EF040B)
----@param p0 number
----@return number
-function NetworkSessionGetMatchmakingGroupFree(p0) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xE57397B4A3429DD0)
@@ -4193,40 +4192,15 @@ function NetworkSessionGetInviter() end
 function NetworkSessionGetKickVote(player) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xED34C0C02C098BB7)
+---[Native Documentation](https://docs.fivem.net/natives/?_0x56CE820830EF040B)
 ---@param p0 number
----@param maxPlayers number
----@return boolean
-function NetworkSessionHostClosed(p0, maxPlayers) end
-
----```
----Loads up the map that is loaded when beeing in mission creator  
----Player gets placed in a mix between online/offline mode  
----p0 is always 2 in R* scripts.  
----Appears to be patched in gtav b757 (game gets terminated) alonside with most other network natives to prevent online modding ~ghost30812  
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0xC74C33FCA52856D5)
----@param p0 number
-function NetworkSessionHostSinglePlayer(p0) end
-
----```
----Does nothing in online but in offline it will cause the screen to fade to black. Nothing happens past then, the screen will sit at black until you restart GTA. Other stuff must be needed to actually host a session.  
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0xB9CFD27A5D578D83)
----@param p0 number
----@param maxPlayers number
----@return boolean
-function NetworkSessionHostFriendsOnly(p0, maxPlayers) end
+---@return number
+function NetworkSessionGetMatchmakingGroupFree(p0) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x74732C6CA90DA2B4)
----@return boolean
-function NetworkSessionIsClosedCrew() end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xFBCFA2EA2E206890)
----@return boolean
-function NetworkSessionIsClosedFriends() end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x53AFD64C6758F2F9)
+---@return number
+function NetworkSessionGetPrivateSlots() end
 
 ---```
 ---Does nothing in online but in offline it will cause the screen to fade to black. Nothing happens past then, the screen will sit at black until you restart GTA. Other stuff must be needed to actually host a session.  
@@ -4239,9 +4213,40 @@ function NetworkSessionIsClosedFriends() end
 function NetworkSessionHost(p0, maxPlayers, p2) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xCEF70AA5B3F89BA1)
+---[Native Documentation](https://docs.fivem.net/natives/?_0xED34C0C02C098BB7)
+---@param p0 number
+---@param maxPlayers number
 ---@return boolean
-function NetworkSessionIsPrivate() end
+function NetworkSessionHostClosed(p0, maxPlayers) end
+
+---```
+---Does nothing in online but in offline it will cause the screen to fade to black. Nothing happens past then, the screen will sit at black until you restart GTA. Other stuff must be needed to actually host a session.  
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0xB9CFD27A5D578D83)
+---@param p0 number
+---@param maxPlayers number
+---@return boolean
+function NetworkSessionHostFriendsOnly(p0, maxPlayers) end
+
+---```
+---Loads up the map that is loaded when beeing in mission creator  
+---Player gets placed in a mix between online/offline mode  
+---p0 is always 2 in R* scripts.  
+---Appears to be patched in gtav b757 (game gets terminated) alonside with most other network natives to prevent online modding ~ghost30812  
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0xC74C33FCA52856D5)
+---@param p0 number
+function NetworkSessionHostSinglePlayer(p0) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x74732C6CA90DA2B4)
+---@return boolean
+function NetworkSessionIsClosedCrew() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xFBCFA2EA2E206890)
+---@return boolean
+function NetworkSessionIsClosedFriends() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x855BC38818F6F684)
@@ -4249,19 +4254,24 @@ function NetworkSessionIsPrivate() end
 function NetworkSessionIsInVoiceSession() end
 
 ---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xCEF70AA5B3F89BA1)
+---@return boolean
+function NetworkSessionIsPrivate() end
+
+---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xF3929C2379B60CCE)
 ---@return boolean
 function NetworkSessionIsSolo() end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xEF0912DDF7C4CB4B)
----@return boolean
-function NetworkSessionIsVoiceSessionBusy() end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xBA416D68C631496A)
 ---@return boolean
 function NetworkSessionIsVisible() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xEF0912DDF7C4CB4B)
+---@return boolean
+function NetworkSessionIsVoiceSessionBusy() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC6F8AB8A4189CF3A)
@@ -4275,9 +4285,8 @@ function NetworkSessionJoinInvite() end
 function NetworkSessionKickPlayer(player) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x7524B431B2E6F7EE)
----@return any
-function NetworkRemoveTransitionInvite() end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x3442775428FD2DAA)
+function NetworkSessionLeaveSinglePlayer() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x271CC6AB59EBF9A5)
@@ -4288,11 +4297,6 @@ function NetworkSessionMarkVisible(toggle) end
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x49EC8030F5015F8B)
 ---@param matchmakingGroup number
 function NetworkSessionSetMatchmakingGroup(matchmakingGroup) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xC19F6C8E7865A6FF)
----@param p0 boolean
-function NetworkSessionValidateJoin(p0) end
 
 ---```
 ---playerTypes:
@@ -4309,6 +4313,16 @@ function NetworkSessionSetMatchmakingGroupMax(playerType, playerCount) end
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xF1EEA2DDA9FFA69D)
 ---@param p0 any
 function NetworkSessionSetMatchmakingMentalState(p0) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x3F52E880AAF6C8CA)
+---@param p0 boolean
+function NetworkSessionSetMatchmakingPropertyId(p0) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xC19F6C8E7865A6FF)
+---@param p0 boolean
+function NetworkSessionValidateJoin(p0) end
 
 ---```
 ---Only one occurence in the scripts:
@@ -4332,13 +4346,12 @@ function NetworkSessionSetMatchmakingMentalState(p0) end
 function NetworkSessionVoiceConnectToPlayer() end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x3F52E880AAF6C8CA)
----@param p0 boolean
-function NetworkSessionSetMatchmakingPropertyId(p0) end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x9C1556705F864230)
 function NetworkSessionVoiceHost() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x6793E42BE02B575D)
+function NetworkSessionVoiceLeave() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x7F8413B7FC2AA6B9)
@@ -4347,18 +4360,9 @@ function NetworkSessionVoiceHost() end
 function NetworkSessionVoiceRespondToRequest(p0, p1) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x0E4F77F7B9D74D84)
----@param playerCount number
-function NetworkSetActivityPlayerMax(playerCount) end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x5B8ED3DB018927B1)
 ---@param timeout number
 function NetworkSessionVoiceSetTimeout(timeout) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x3442775428FD2DAA)
-function NetworkSessionLeaveSinglePlayer() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x23DFB504655D0CE4)
@@ -4366,14 +4370,14 @@ function NetworkSessionLeaveSinglePlayer() end
 function NetworkSessionWasInvited() end
 
 ---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x0E4F77F7B9D74D84)
+---@param playerCount number
+function NetworkSetActivityPlayerMax(playerCount) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x75138790B4359A74)
 ---@param toggle boolean
 function NetworkSetActivitySpectator(toggle) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x796A87B3B68D1F3D)
----@return boolean, any
-function NetworkSetCurrentDataManagerHandle() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x9D277B76D1D12222)
@@ -4387,9 +4391,21 @@ function NetworkSetActivitySpectatorMax(maxSpectators) end
 function NetworkSetChoiceMigrateOptions(toggle, player) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x796A87B3B68D1F3D)
+---@return boolean, any
+function NetworkSetCurrentDataManagerHandle() end
+
+---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x7206F674F2A3B1BB)
 ---@return boolean, any
 function NetworkSetCurrentlySelectedGamerHandleFromInviteMenu() end
+
+---```
+---NativeDB Introduced: v2699
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x2C863ACDCD12B3DB)
+---@param missionId string
+function NetworkSetCurrentMissionId(missionId) end
 
 ---```
 ---mpSettingSpawn:
@@ -4428,23 +4444,16 @@ function NetworkSetCurrentlySelectedGamerHandleFromInviteMenu() end
 function NetworkSetCurrentSpawnSetting(mpSettingSpawn) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x4BA166079D658ED4)
----@param entity number
----@param p1 boolean
-function NetworkSetEntityGhostedWithOwner(entity, p1) end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xD830567D88A1E873)
 ---@param entity number
 ---@param toggle boolean
 function NetworkSetEntityCanBlend(entity, toggle) end
 
----```
----NativeDB Introduced: v2699
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x2C863ACDCD12B3DB)
----@param missionId string
-function NetworkSetCurrentMissionId(missionId) end
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x4BA166079D658ED4)
+---@param entity number
+---@param p1 boolean
+function NetworkSetEntityGhostedWithOwner(entity, p1) end
 
 ---```
 ---if set to true other network players can't see it  
@@ -4470,6 +4479,17 @@ function NetworkSetFriendlyFireOption(toggle) end
 function NetworkSetGamerInvitedToTransition() end
 
 ---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xFC18DB55AE19E046)
+---@param toggle boolean
+function NetworkSetInFreeCamMode(toggle) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x9CA5DE655269FEC4)
+---@param p0 boolean
+---@param p1 boolean
+function NetworkSetInMpCutscene(p0, p1) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x423DE3854BB50894)
 ---@param toggle boolean
 ---@param playerPed number
@@ -4483,25 +4503,19 @@ function NetworkSetInSpectatorMode(toggle, playerPed) end
 function NetworkSetInSpectatorModeExtended(toggle, playerPed, p2) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x9CA5DE655269FEC4)
----@param p0 boolean
----@param p1 boolean
-function NetworkSetInMpCutscene(p0, p1) end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x66F010A4B031A331)
 ---@return number
 function NetworkSetInviteOnCallForInviteMenu() end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x524FF0AEFF9C3973)
----@param toggle boolean
-function NetworkSetLocalPlayerSyncLookAt(toggle) end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x2D95C7E2D7E07307)
 ---@param time number
 function NetworkSetLocalPlayerInvincibleTime(time) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x524FF0AEFF9C3973)
+---@param toggle boolean
+function NetworkSetLocalPlayerSyncLookAt(toggle) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x3B3D11CD9FFCDFC9)
@@ -4529,22 +4543,17 @@ function NetworkSetObjectForceStaticBlend(object, enabled) end
 ---@param toggle boolean
 function NetworkSetOverrideSpectatorMode(toggle) end
 
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x1B857666604B1A74)
+---@param toggle boolean
+function NetworkSetPlayerIsPassive(toggle) end
+
 ---```
 ---value must be < 255
 ---```
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x1775961C2FBBCB5C)
 ---@param id number
 function NetworkSetPropertyId(id) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xFC18DB55AE19E046)
----@param toggle boolean
-function NetworkSetInFreeCamMode(toggle) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x1B857666604B1A74)
----@param toggle boolean
-function NetworkSetPlayerIsPassive(toggle) end
 
 ---```
 ---On PC it's a nullsub which means it does absolutely nothing.  
@@ -4569,8 +4578,9 @@ function NetworkSetRichPresenceString(p0, textLabel) end
 function NetworkSetScriptReadyForEvents(toggle) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x6793E42BE02B575D)
-function NetworkSessionVoiceLeave() end
+---[Native Documentation](https://docs.fivem.net/natives/?_0xCBF12D65F95AD686)
+---@param value number
+function NetworkSetTalkerProximity(value) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xD5B4883AC32F24C3)
@@ -4634,6 +4644,13 @@ function NetworkSetVoiceActive(toggle) end
 function NetworkSetVoiceChannel(channel) end
 
 ---```
+---Returns true if the NAT type is Strict (3) and a certain number of connections have failed.
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x82A2B386716608F1)
+---@return boolean
+function NetworkShouldShowConnectivityTroubleshooting() end
+
+---```
 ---Example:  
 ---int playerHandle;	  
 ---NETWORK_HANDLE_FROM_PLAYER(selectedPlayer, &playerHandle, 13);  
@@ -4642,13 +4659,6 @@ function NetworkSetVoiceChannel(channel) end
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x859ED1CEA343FCA8)
 ---@return number
 function NetworkShowProfileUi() end
-
----```
----Returns true if the NAT type is Strict (3) and a certain number of connections have failed.
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x82A2B386716608F1)
----@return boolean
-function NetworkShouldShowConnectivityTroubleshooting() end
 
 ---```
 ---One of the first things it does is get the players ped.  
@@ -4687,14 +4697,21 @@ function NetworkStartRespawnSearchForPlayer(player, x, y, z, radius, p5, p6, p7,
 function NetworkStartRespawnSearchInAngledAreaForPlayer(player, x1, y1, z1, x2, y2, z2, width, p8, p9, p10, flags) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x17E0198B3882C2CB)
+function NetworkStartSoloTutorialSession() end
+
+---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x9A1B3FCDB36C8697)
 ---@param netScene number
 function NetworkStartSynchronisedScene(netScene) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xCBF12D65F95AD686)
----@param value number
-function NetworkSetTalkerProximity(value) end
+---```
+---Always returns -1. Seems to be XB1 specific.
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0xDEB2B99A1AF1A2A6)
+---@param netHandle any
+---@return number
+function NetworkStartUserContentPermissionsCheck(netHandle) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC254481A4574CB2F)
@@ -4715,31 +4732,6 @@ function NetworkSuppressInvite(toggle) end
 ---@param p4 number
 function NetworkTransitionTrack(hash, p1, p2, state, p4) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x8D11E61A4ABF49CC)
----@return boolean
-function NetworkIsPsnAvailable() end
-
----```
----NativeDB Introduced: v2372
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0xC1447451DDB512F0)
----@param p0 any
----@param p1 any
-function NetworkUgcNav(p0, p1) end
-
----```
----Always returns -1. Seems to be XB1 specific.
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0xDEB2B99A1AF1A2A6)
----@param netHandle any
----@return number
-function NetworkStartUserContentPermissionsCheck(netHandle) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xB7C7F6AD6424304B)
-function NetworkUpdatePlayerScars() end
-
 ---```
 ---Returns defaultValue if the tunable doesn't exist.
 ---```
@@ -4750,14 +4742,44 @@ function NetworkUpdatePlayerScars() end
 ---@return boolean
 function NetworkTryAccessTunableBoolHash(tunableContext, tunableName, defaultValue) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x17E0198B3882C2CB)
-function NetworkStartSoloTutorialSession() end
+---```
+---NativeDB Introduced: v2372
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0xC1447451DDB512F0)
+---@param p0 any
+---@param p1 any
+function NetworkUgcNav(p0, p1) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x7368E683BB9038D6)
 ---@param entity number
 function NetworkUnregisterNetworkedEntity(entity) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xB7C7F6AD6424304B)
+function NetworkUpdatePlayerScars() end
+
+---```
+---Old name: _NETWORK_SET_NETWORK_ID_DYNAMIC
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x2B1813ABA29016C5)
+---@param netID number
+---@param toggle boolean
+function NetworkUseHighPrecisionBlending(netID, toggle) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xCD71A4ECAB22709E)
+---@param entity number
+function NetworkUseLogarithmicBlendingThisFrame(entity) end
+
+---```
+---Lets objects spawn online simply do it like this:  
+---int createdObject = OBJ_TO_NET(CREATE_OBJECT_NO_OFFSET(oball, pCoords.x, pCoords.y, pCoords.z, 1, 0, 0));  
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x99BFDC94A603E541)
+---@param object number
+---@return number
+function ObjToNet(object) end
 
 ---```
 ---Has a 3rd param (int) since patch [???].  
@@ -4772,21 +4794,11 @@ function NetworkUnregisterNetworkedEntity(entity) end
 function OpenCommerceStore(p0, p1) end
 
 ---```
----Old name: _NETWORK_SET_NETWORK_ID_DYNAMIC
+---Return the local Participant ID  
 ---```
----[Native Documentation](https://docs.fivem.net/natives/?_0x2B1813ABA29016C5)
----@param netID number
----@param toggle boolean
-function NetworkUseHighPrecisionBlending(netID, toggle) end
-
----```
----Lets objects spawn online simply do it like this:  
----int createdObject = OBJ_TO_NET(CREATE_OBJECT_NO_OFFSET(oball, pCoords.x, pCoords.y, pCoords.z, 1, 0, 0));  
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x99BFDC94A603E541)
----@param object number
+---[Native Documentation](https://docs.fivem.net/natives/?_0x90986E8876CE0A83)
 ---@return number
-function ObjToNet(object) end
+function ParticipantId() end
 
 ---```
 ---Return the local Participant ID.  
@@ -4804,12 +4816,15 @@ function ParticipantIdToInt() end
 ---@return number
 function PedToNet(ped) end
 
----```
----Return the local Participant ID  
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x90986E8876CE0A83)
----@return number
-function ParticipantId() end
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xE26CCFF8094D8C74)
+---@param p0 number
+---@return boolean
+function RefreshPlayerListStats(p0) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x72D0706CD6CCDB58)
+function ReleaseAllCommerceItemImages() end
 
 ---```
 ---NativeDB Added Parameter 1: Player player
@@ -4832,26 +4847,21 @@ function RemoteCheatDetected() end
 function RemoveAllStickyBombsFromEntity(entity) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xE26CCFF8094D8C74)
----@param p0 number
----@return boolean
-function RefreshPlayerListStats(p0) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xCD71A4ECAB22709E)
----@param entity number
-function NetworkUseLogarithmicBlendingThisFrame(entity) end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA2F952104FC6DD4B)
 ---@param index number
 ---@return boolean
 function RequestCommerceItemImage(index) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x4E5C93BD0C32FBF8)
+---```
+---Internal logging string: SCRIPT_RESERVING_LOCAL_OBJECTS
+---```
+---
+---```
+---NativeDB Introduced: v1290
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x797F9C5E661D920E)
 ---@param amount number
-function ReserveNetworkMissionObjects(amount) end
+function ReserveNetworkLocalObjects(amount) end
 
 ---```
 ---Internal logging string: SCRIPT_RESERVING_LOCAL_PEDS
@@ -4868,6 +4878,11 @@ function ReserveNetworkLocalPeds(amount) end
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x42613035157E4208)
 ---@param amount number
 function ReserveNetworkLocalVehicles(amount) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x4E5C93BD0C32FBF8)
+---@param amount number
+function ReserveNetworkMissionObjects(amount) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xB60FEBA45333D36F)
@@ -4890,11 +4905,6 @@ function ResetGhostedEntityAlpha() end
 ---@return boolean
 function SetBalanceAddMachine(contentId, contentTypeName) end
 
----Sets the provided entity not visible for yourself for the current frame.
----[Native Documentation](https://docs.fivem.net/natives/?_0xE135A9FF3F5D05D8)
----@param entity number
-function SetEntityLocallyInvisible(entity) end
-
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xB8322EEB38BE7C26)
 ---@param dataCount number
@@ -4902,16 +4912,22 @@ function SetEntityLocallyInvisible(entity) end
 ---@return boolean, any
 function SetBalanceAddMachines(dataCount, contentTypeName) end
 
----```
----Internal logging string: SCRIPT_RESERVING_LOCAL_OBJECTS
----```
----
----```
----NativeDB Introduced: v1290
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x797F9C5E661D920E)
----@param amount number
-function ReserveNetworkLocalObjects(amount) end
+---Sets the provided entity not visible for yourself for the current frame.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xE135A9FF3F5D05D8)
+---@param entity number
+function SetEntityLocallyInvisible(entity) end
+
+---Sets the provided entity visible for yourself for the current frame.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x241E289B5C059EDC)
+---@param entity number
+function SetEntityLocallyVisible(entity) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xE0031D3C8F36AB82)
+---@param p0 any
+---@param p1 boolean
+---@param p2 boolean
+function SetEntityVisibleInCutscene(p0, p1, p2) end
 
 ---Sets the alpha value used by [`_SET_LOCAL_PLAYER_AS_GHOST`](#\_0x5FFE9B4144F9712F), [`SET_NETWORK_VEHICLE_AS_GHOST`](#\_0x6274C4712850841E), and [`_NETWORK_SET_ENTITY_GHOSTED_WITH_OWNER`](#\_0x4BA166079D658ED4).
 ---
@@ -4919,11 +4935,6 @@ function ReserveNetworkLocalObjects(amount) end
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x658500AE6D723A7E)
 ---@param alpha number
 function SetGhostedEntityAlpha(alpha) end
-
----Sets the provided entity visible for yourself for the current frame.
----[Native Documentation](https://docs.fivem.net/natives/?_0x241E289B5C059EDC)
----@param entity number
-function SetEntityLocallyVisible(entity) end
 
 ---Formerly incorrectly named `USE_PLAYER_COLOUR_INSTEAD_OF_TEAM_COLOUR` due to incorrect treatment of console vs. PC native registration.
 ---
@@ -4937,15 +4948,25 @@ function SetEntityLocallyVisible(entity) end
 function SetLocalPlayerAsGhost(toggle) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xE5F773C1A1D9D168)
+---@param p0 boolean
+function SetLocalPlayerInvisibleLocally(p0) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xD1065D68947E7B6E)
 ---@param p0 boolean
 ---@param p1 boolean
 function SetLocalPlayerVisibleInCutscene(p0, p1) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xE5F773C1A1D9D168)
+---[Native Documentation](https://docs.fivem.net/natives/?_0x7619364C82D3BF14)
 ---@param p0 boolean
-function SetLocalPlayerInvisibleLocally(p0) end
+function SetLocalPlayerVisibleLocally(p0) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xAAA553E7DD28A457)
+---@param toggle boolean
+function SetNetworkCutsceneEntities(toggle) end
 
 ---```
 ---Enables a periodic ShapeTest within the NetBlender and invokes rage::netBlenderLinInterp::GoStraightToTarget (or some functional wrapper).
@@ -4954,12 +4975,6 @@ function SetLocalPlayerInvisibleLocally(p0) end
 ---@param vehicle number
 ---@param toggle boolean
 function SetNetworkEnableVehiclePositionCorrection(vehicle, toggle) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xE05E81A888FA63C8)
----@param netId number
----@param toggle boolean
-function SetNetworkIdExistsOnAllMachines(netId, toggle) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA8A024587329F36A)
@@ -4977,11 +4992,23 @@ function SetNetworkIdAlwaysExistsForPlayer(netId, player, toggle) end
 function SetNetworkIdCanMigrate(netId, toggle) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xE05E81A888FA63C8)
+---@param netId number
+---@param toggle boolean
+function SetNetworkIdExistsOnAllMachines(netId, toggle) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA6928482543022B4)
 ---@param netId number
 ---@param p1 boolean
 ---@param p2 boolean
 function SetNetworkIdVisibleInCutscene(netId, p1, p2) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x6274C4712850841E)
+---@param vehicle number
+---@param toggle boolean
+function SetNetworkVehicleAsGhost(vehicle, toggle) end
 
 ---```
 ---rage::netBlenderLinInterp::GetPositionMaxForUpdateLevel
@@ -4990,17 +5017,6 @@ function SetNetworkIdVisibleInCutscene(netId, p1, p2) end
 ---@param vehicle number
 ---@param multiplier number
 function SetNetworkVehiclePositionUpdateMultiplier(vehicle, multiplier) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x7619364C82D3BF14)
----@param p0 boolean
-function SetLocalPlayerVisibleLocally(p0) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x6274C4712850841E)
----@param vehicle number
----@param toggle boolean
-function SetNetworkVehicleAsGhost(vehicle, toggle) end
 
 ---```
 ---NativeDB Added Parameter 3: Any p2
@@ -5011,12 +5027,6 @@ function SetNetworkVehicleAsGhost(vehicle, toggle) end
 ---@param time number
 function SetNetworkVehicleRespotTimer(netId, time) end
 
----Enables ghosting between specific players. Name is between `_SET_RELATIONSHIP_GROUP_DONT_AFFECT_WANTED_LEVEL` and `SET_ROADS_BACK_TO_ORIGINAL`.
----[Native Documentation](https://docs.fivem.net/natives/?_0xA7C511FA1C5BDA38)
----@param player number
----@param p1 boolean
-function SetRelationshipToPlayer(player, p1) end
-
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x12B37D54667DB0B8)
 ---@param player number
@@ -5024,17 +5034,16 @@ function SetRelationshipToPlayer(player, p1) end
 function SetPlayerInvisibleLocally(player, toggle) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xE0031D3C8F36AB82)
----@param p0 any
----@param p1 boolean
----@param p2 boolean
-function SetEntityVisibleInCutscene(p0, p1, p2) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0xFAA10F1FAFB11AF2)
+---@param player number
+---@param toggle boolean
+function SetPlayerVisibleLocally(player, toggle) end
 
----```
----Starts a new singleplayer game (at the prologue).  
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x593850C16A36B692)
-function ShutdownAndLaunchSinglePlayerGame() end
+---Enables ghosting between specific players. Name is between `_SET_RELATIONSHIP_GROUP_DONT_AFFECT_WANTED_LEVEL` and `SET_ROADS_BACK_TO_ORIGINAL`.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xA7C511FA1C5BDA38)
+---@param player number
+---@param p1 boolean
+function SetRelationshipToPlayer(player, p1) end
 
 ---```
 ---Access to the store for shark cards etc...  
@@ -5042,6 +5051,12 @@ function ShutdownAndLaunchSinglePlayerGame() end
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x9641A9FF718E9C5E)
 ---@param toggle boolean
 function SetStoreEnabled(toggle) end
+
+---```
+---Starts a new singleplayer game (at the prologue).  
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x593850C16A36B692)
+function ShutdownAndLaunchSinglePlayerGame() end
 
 ---Disconnects you from the session, and starts loading single player, however you still remain connected to the server (only if you're the host, if you're not then you also (most likely) get disconnected from the server) and other players will not be able to join until you exit the game.
 ---
@@ -5055,14 +5070,21 @@ function SetStoreEnabled(toggle) end
 function ShutdownAndLoadMostRecentSave() end
 
 ---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x3448505B6E35262D)
+---@param p0 number
+---@return string
+function TextureDownloadGetName(p0) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x5776ED562C134687)
 ---@param p0 number
 ---@return boolean
 function TextureDownloadHasFailed(p0) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x72D0706CD6CCDB58)
-function ReleaseAllCommerceItemImages() end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x487EB90B98E9FB19)
+---@param p0 number
+function TextureDownloadRelease(p0) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x16160DA74A8E74A2)
@@ -5071,6 +5093,14 @@ function ReleaseAllCommerceItemImages() end
 ---@param p3 boolean
 ---@return number, number
 function TextureDownloadRequest(FilePath, Name, p3) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x0B203B4AFDE53A4F)
+---@param FilePath string
+---@param Name string
+---@param p2 boolean
+---@return number
+function TitleTextureDownloadRequest(FilePath, Name, p2) end
 
 ---```
 ---p1 = 6
@@ -5081,14 +5111,6 @@ function TextureDownloadRequest(FilePath, Name, p3) end
 ---@param scriptHash number | string
 ---@return boolean
 function TriggerScriptCrcCheckOnPlayer(player, p1, scriptHash) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x0B203B4AFDE53A4F)
----@param FilePath string
----@param Name string
----@param p2 boolean
----@return number
-function TitleTextureDownloadRequest(FilePath, Name, p2) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xE9B99B6853181409)
@@ -5107,13 +5129,18 @@ function UgcClearModifyResult() end
 function UgcClearOfflineQuery() end
 
 ---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xBA96394A0EECFA65)
+function UgcClearQueryResults() end
+
+---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x152D90E4C1B4738A)
 ---@return boolean, any, any
 function UgcCopyContent() end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xBA96394A0EECFA65)
-function UgcClearQueryResults() end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x941E5306BCD7C2C7)
+---@return any
+function UgcDidGetSucceed() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xD5A4B59980401588)
@@ -5123,16 +5150,6 @@ function UgcClearQueryResults() end
 function UgcGetBookmarkedContent(p0, p1) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x941E5306BCD7C2C7)
----@return any
-function UgcDidGetSucceed() end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xAAA553E7DD28A457)
----@param toggle boolean
-function SetNetworkCutsceneEntities(toggle) end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x40F7E66472DF3E5C)
 ---@param p0 any
 ---@param p1 any
@@ -5140,16 +5157,16 @@ function SetNetworkCutsceneEntities(toggle) end
 function UgcGetCachedDescription(p0, p1) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xFAA10F1FAFB11AF2)
----@param player number
----@param toggle boolean
-function SetPlayerVisibleLocally(player, toggle) end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA7BAB11E7C9C6C5A)
 ---@param p0 number
 ---@return number
 function UgcGetContentCategory(p0) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x7CF0448787B23758)
+---@param p0 any
+---@return number
+function UgcGetContentDescriptionHash(p0) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x37025B27D9B658B1)
@@ -5159,22 +5176,9 @@ function UgcGetContentCategory(p0) end
 function UgcGetContentFileVersion(p0, p1) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x7CF0448787B23758)
----@param p0 any
+---[Native Documentation](https://docs.fivem.net/natives/?_0x3A17A27D75C74887)
 ---@return number
-function UgcGetContentDescriptionHash(p0) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x70EA8DA57840F9BE)
----@param p0 any
----@return boolean
-function UgcGetContentHasPlayerRecord(p0) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x3054F114121C21EA)
----@param p0 any
----@return boolean
-function UgcGetContentIsPublished(p0) end
+function UgcGetContentHash() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x993CBE59D350D225)
@@ -5183,15 +5187,10 @@ function UgcGetContentIsPublished(p0) end
 function UgcGetContentHasPlayerBookmarked(p0) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x3A17A27D75C74887)
----@return number
-function UgcGetContentHash() end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xA9240A96C74CCA13)
+---[Native Documentation](https://docs.fivem.net/natives/?_0x70EA8DA57840F9BE)
 ---@param p0 any
 ---@return boolean
-function UgcGetContentIsVerified(p0) end
+function UgcGetContentHasPlayerRecord(p0) end
 
 ---```
 ---Return the mission id of a job.
@@ -5200,6 +5199,18 @@ function UgcGetContentIsVerified(p0) end
 ---@param p0 number
 ---@return string
 function UgcGetContentId(p0) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x3054F114121C21EA)
+---@param p0 any
+---@return boolean
+function UgcGetContentIsPublished(p0) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xA9240A96C74CCA13)
+---@param p0 any
+---@return boolean
+function UgcGetContentIsVerified(p0) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x32DD916F3F7C9672)
@@ -5212,6 +5223,11 @@ function UgcGetContentLanguage(p0) end
 ---@param p0 any
 ---@return any
 function UgcGetContentName(p0) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xE0A6138401BCB837)
+---@return any
+function UgcGetContentNum() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xBAF6BABF9E7CCC13)
@@ -5228,13 +5244,6 @@ function UgcGetContentPath(p0, p1) end
 function UgcGetContentRating(p0, p1) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x87E5C46C187FE0AE)
----@param p0 any
----@param p1 any
----@return any
-function UgcGetContentRatingPositiveCount(p0, p1) end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x759299C5BB31D2A9)
 ---@param p0 any
 ---@param p1 any
@@ -5249,15 +5258,22 @@ function UgcGetContentRatingCount(p0, p1) end
 function UgcGetContentRatingNegativeCount(p0, p1) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xCFD115B373C0DF63)
+---[Native Documentation](https://docs.fivem.net/natives/?_0x87E5C46C187FE0AE)
 ---@param p0 any
+---@param p1 any
 ---@return any
-function UgcGetContentUpdatedDate(p0) end
+function UgcGetContentRatingPositiveCount(p0, p1) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x769951E2455E2EB5)
 ---@return any
 function UgcGetContentTotal() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xCFD115B373C0DF63)
+---@param p0 any
+---@return any
+function UgcGetContentUpdatedDate(p0) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xCD67AD041A394C9C)
@@ -5266,21 +5282,10 @@ function UgcGetContentTotal() end
 function UgcGetContentUserId(p0) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x487EB90B98E9FB19)
----@param p0 number
-function TextureDownloadRelease(p0) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xFBC5E768C7A77A6A)
----@return any
-function UgcGetCreateResult() end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xF9E1CCAE8BA4C281)
+---[Native Documentation](https://docs.fivem.net/natives/?_0x703F12425ECA8BF5)
 ---@param p0 any
----@param p1 any
----@return boolean, any, any
-function UgcGetFriendContent(p0, p1) end
+---@return any
+function UgcGetContentUserName(p0) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC55A0B40FFB1ED23)
@@ -5288,12 +5293,9 @@ function UgcGetFriendContent(p0, p1) end
 function UgcGetCreateContentId() end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x678BB03C1A3BD51E)
----@param p0 any
----@param p1 any
----@param p2 any
----@return boolean, any, any
-function UgcGetGetByCategory(p0, p1, p2) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0xFBC5E768C7A77A6A)
+---@return any
+function UgcGetCreateResult() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x597F8DBA9B206FC7)
@@ -5309,6 +5311,21 @@ function UgcGetCreatorNum() end
 function UgcGetCrewContent(p0, p1, p2) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xF9E1CCAE8BA4C281)
+---@param p0 any
+---@param p1 any
+---@return boolean, any, any
+function UgcGetFriendContent(p0, p1) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x678BB03C1A3BD51E)
+---@param p0 any
+---@param p1 any
+---@param p2 any
+---@return boolean, any, any
+function UgcGetGetByCategory(p0, p1, p2) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x5A0A3D1A186A5508)
 ---@return any
 function UgcGetModifyResult() end
@@ -5320,6 +5337,11 @@ function UgcGetModifyResult() end
 ---@return boolean, any, any
 function UgcGetMyContent(p0, p1) end
 
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xEDF7F927136C224B)
+---@return any
+function UgcGetQueryResult() end
+
 ---```
 ---Return the root content id of a job.
 ---```
@@ -5329,14 +5351,14 @@ function UgcGetMyContent(p0, p1) end
 function UgcGetRootContentId(p0) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xE0A6138401BCB837)
----@return any
-function UgcGetContentNum() end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x5E24341A7F92A74B)
 ---@return boolean
 function UgcHasCreateFinished() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x02ADA21EA2F6918F)
+---@return boolean
+function UgcHasGetFinished() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x299EF3C576773506)
@@ -5361,20 +5383,20 @@ function UgcIsLanguageSupported(p0) end
 function UgcPoliciesMakePrivate(p0) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x158EC424F35EC469)
----@param contentId string
----@param latestVersion boolean
----@param contentTypeName string
----@return boolean
-function UgcQueryByContentId(contentId, latestVersion, contentTypeName) end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x1DE0F5F50D723CAA)
 ---@param contentId string
 ---@param baseContentId string
 ---@param contentTypeName string
 ---@return boolean
 function UgcPublish(contentId, baseContentId, contentTypeName) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x158EC424F35EC469)
+---@param contentId string
+---@param latestVersion boolean
+---@param contentTypeName string
+---@return boolean
+function UgcQueryByContentId(contentId, latestVersion, contentTypeName) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC7397A83F7A2A462)
@@ -5395,13 +5417,6 @@ function UgcQueryByContentIds(count, latestVersion, contentTypeName) end
 function UgcQueryMyContent(p0, p1, p3, p4, p5) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x171DF6A0C07FB3DC)
----@param p0 number
----@param p1 number
----@return number
-function UgcRequestContentDataFromIndex(p0, p1) end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x6D4CB481FAC835E8)
 ---@param offset number
 ---@param count number
@@ -5411,24 +5426,17 @@ function UgcRequestContentDataFromIndex(p0, p1) end
 function UgcQueryRecentlyCreatedContent(offset, count, contentTypeName, p3) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x274A1519DFC1094F)
----@param contentId string
----@param bookmarked boolean
----@param contentTypeName string
----@return boolean
-function UgcSetBookmarked(contentId, bookmarked, contentTypeName) end
-
----This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x5E0165278F6339EE)
 ---@param p0 number
 ---@return number
 function UgcRequestCachedDescription(p0) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xD05D1A6C74DA3498)
----@param p1 boolean
----@return boolean, any, any
-function UgcSetDeleted(p1) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x171DF6A0C07FB3DC)
+---@param p0 number
+---@param p1 number
+---@return number
+function UgcRequestContentDataFromIndex(p0, p1) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x7FD2990AF016795E)
@@ -5441,33 +5449,23 @@ function UgcSetDeleted(p1) end
 function UgcRequestContentDataFromParams(contentTypeName, contentId, p2, p3, p4) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x274A1519DFC1094F)
+---@param contentId string
+---@param bookmarked boolean
+---@param contentTypeName string
+---@return boolean
+function UgcSetBookmarked(contentId, bookmarked, contentTypeName) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xD05D1A6C74DA3498)
+---@param p1 boolean
+---@return boolean, any, any
+function UgcSetDeleted(p1) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xF98DDE0A8ED09323)
 ---@param p0 boolean
 function UgcSetQueryDataFromOffline(p0) end
-
----```
----calls from vehicle to net.  
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0xB4C94523F023419C)
----@param vehicle number
----@return number
-function VehToNet(vehicle) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x77758139EC9B66C7)
----@param toggle boolean
-function UsePlayerColourInsteadOfTeamColour(toggle) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x02ADA21EA2F6918F)
----@return boolean
-function UgcHasGetFinished() end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x3448505B6E35262D)
----@param p0 number
----@return string
-function TextureDownloadGetName(p0) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x308F96458B7087CC)
@@ -5479,13 +5477,15 @@ function TextureDownloadGetName(p0) end
 function UgcTextureDownloadRequest(p1, p2, p3, p5) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x703F12425ECA8BF5)
----@param p0 any
----@return any
-function UgcGetContentUserName(p0) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x77758139EC9B66C7)
+---@param toggle boolean
+function UsePlayerColourInsteadOfTeamColour(toggle) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xEDF7F927136C224B)
----@return any
-function UgcGetQueryResult() end
+---```
+---calls from vehicle to net.  
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0xB4C94523F023419C)
+---@param vehicle number
+---@return number
+function VehToNet(vehicle) end
 

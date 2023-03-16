@@ -26,24 +26,6 @@ function GetShapeTestResultIncludingMaterial(shapeTestHandle) end
 ---@param entity number
 function ReleaseScriptGuidFromEntity(entity) end
 
----For more information, see [`START_EXPENSIVE_SYNCHRONOUS_SHAPE_TEST_LOS_PROBE`](#\_0x377906D8A31E5586) and [`START_SHAPE_TEST_LOS_PROBE`](#\_0x7EE9F5D83DD4F90E).
----[Native Documentation](https://docs.fivem.net/natives/?_0xFE466162C4401D18)
----@param x number
----@param y number
----@param z number
----@param x1 number
----@param y1 number
----@param z1 number
----@param rotX number
----@param rotY number
----@param rotZ number
----@param p9 number
----@param flags number
----@param entity number
----@param p12 number
----@return number
-function StartShapeTestBox(x, y, z, x1, y1, z1, rotX, rotY, rotZ, p9, flags, entity, p12) end
-
 ---Does the same as [START_SHAPE_TEST_LOS_PROBE](#\_0x7EE9F5D83DD4F90E), except blocking until the shape test completes.
 ---
 ---Use [START_SHAPE_TEST_LOS_PROBE](#\_0x7EE9F5D83DD4F90E) instead. Literally. Rockstar named this correctly: it's expensive, and it's synchronous.
@@ -67,6 +49,47 @@ function StartExpensiveSynchronousShapeTestLosProbe(x1, y1, z1, x2, y2, z2, flag
 ---@param flags2 number
 ---@return number
 function StartShapeTestBound(entity, flags1, flags2) end
+
+---See [`START_SHAPE_TEST_LOS_PROBE`](#\_0x7EE9F5D83DD4F90E) for flags.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x052837721A854EC7)
+---@param entity number
+---@param flags1 number
+---@param flags2 number
+---@return number
+function StartShapeTestBoundingBox(entity, flags1, flags2) end
+
+---For more information, see [`START_EXPENSIVE_SYNCHRONOUS_SHAPE_TEST_LOS_PROBE`](#\_0x377906D8A31E5586) and [`START_SHAPE_TEST_LOS_PROBE`](#\_0x7EE9F5D83DD4F90E).
+---[Native Documentation](https://docs.fivem.net/natives/?_0xFE466162C4401D18)
+---@param x number
+---@param y number
+---@param z number
+---@param x1 number
+---@param y1 number
+---@param z1 number
+---@param rotX number
+---@param rotY number
+---@param rotZ number
+---@param p9 number
+---@param flags number
+---@param entity number
+---@param p12 number
+---@return number
+function StartShapeTestBox(x, y, z, x1, y1, z1, rotX, rotY, rotZ, p9, flags, entity, p12) end
+
+---Raycast from point to point, where the ray has a radius.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x28579D1B8F8AAC80)
+---@param x1 number
+---@param y1 number
+---@param z1 number
+---@param x2 number
+---@param y2 number
+---@param z2 number
+---@param radius number
+---@param flags number
+---@param entity number
+---@param p9 number
+---@return number
+function StartShapeTestCapsule(x1, y1, z1, x2, y2, z2, radius, flags, entity, p9) end
 
 ---Asynchronously starts a line-of-sight (raycast) world probe shape test.
 ---
@@ -102,21 +125,6 @@ function StartShapeTestBound(entity, flags1, flags2) end
 ---@return number
 function StartShapeTestLosProbe(x1, y1, z1, x2, y2, z2, flags, entity, p8) end
 
----Performs the same type of trace as START_SHAPE_TEST_CAPSULE, but with some different hardcoded parameters.
----[Native Documentation](https://docs.fivem.net/natives/?_0xE6AC6C45FBE83004)
----@param x1 number
----@param y1 number
----@param z1 number
----@param x2 number
----@param y2 number
----@param z2 number
----@param radius number
----@param flags number
----@param entity number
----@param p9 number
----@return number
-function StartShapeTestSweptSphere(x1, y1, z1, x2, y2, z2, radius, flags, entity, p9) end
-
 ---Since it is only used in the PC version, likely some mouse-friendly shape test. Uses **in** vector arguments.
 ---
 ---Asynchronous.
@@ -136,8 +144,8 @@ function StartShapeTestSweptSphere(x1, y1, z1, x2, y2, z2, radius, flags, entity
 ---@return number
 function StartShapeTestSurroundingCoords(pVec1, pVec2, flag, entity, flag2) end
 
----Raycast from point to point, where the ray has a radius.
----[Native Documentation](https://docs.fivem.net/natives/?_0x28579D1B8F8AAC80)
+---Performs the same type of trace as START_SHAPE_TEST_CAPSULE, but with some different hardcoded parameters.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xE6AC6C45FBE83004)
 ---@param x1 number
 ---@param y1 number
 ---@param z1 number
@@ -149,13 +157,5 @@ function StartShapeTestSurroundingCoords(pVec1, pVec2, flag, entity, flag2) end
 ---@param entity number
 ---@param p9 number
 ---@return number
-function StartShapeTestCapsule(x1, y1, z1, x2, y2, z2, radius, flags, entity, p9) end
-
----See [`START_SHAPE_TEST_LOS_PROBE`](#\_0x7EE9F5D83DD4F90E) for flags.
----[Native Documentation](https://docs.fivem.net/natives/?_0x052837721A854EC7)
----@param entity number
----@param flags1 number
----@param flags2 number
----@return number
-function StartShapeTestBoundingBox(entity, flags1, flags2) end
+function StartShapeTestSweptSphere(x1, y1, z1, x2, y2, z2, radius, flags, entity, p9) end
 

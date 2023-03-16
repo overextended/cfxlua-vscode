@@ -19,6 +19,11 @@ function CleanItemset(p0) end
 function CreateItemset(distri) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xDE18220B1C183EDA)
+---@param p0 any
+function DestroyItemset(p0) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x7A197E2521EE2BAB)
 ---@param p0 any
 ---@param p1 any
@@ -26,9 +31,10 @@ function CreateItemset(distri) end
 function GetIndexedItemInItemset(p0, p1) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xDE18220B1C183EDA)
----@param p0 any
-function DestroyItemset(p0) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0xD9127E83ABF7C631)
+---@param x any
+---@return any
+function GetItemsetSize(x) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x2D0FC594D1E9C107)
@@ -42,12 +48,6 @@ function IsInItemset(p0, p1) end
 ---@param p0 any
 ---@return boolean
 function IsItemsetValid(p0) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xD9127E83ABF7C631)
----@param x any
----@return any
-function GetItemsetSize(x) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x25E68244B0177686)

@@ -7,12 +7,6 @@
 ---@param y number
 function BgDisplayText(text, x, y) end
 
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xA1253A3C870B6843)
----@param scaleX number
----@param scaleY number
-function BgSetTextScale(scaleX, scaleY) end
-
 ---https://github.com/femga/rdr3_discoveries/tree/master/useful_info_from_rpfs/colours
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x16FA5CE47F184F1E)
 ---@param red number
@@ -20,4 +14,10 @@ function BgSetTextScale(scaleX, scaleY) end
 ---@param blue number
 ---@param alpha number
 function BgSetTextColor(red, green, blue, alpha) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xA1253A3C870B6843)
+---@param scaleX number
+---@param scaleY number
+function BgSetTextScale(scaleX, scaleY) end
 

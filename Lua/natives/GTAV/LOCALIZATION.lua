@@ -20,16 +20,16 @@
 function GetCurrentLanguage() end
 
 ---```
----Same return values as GET_CURRENT_LANGUAGE
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x497420E022796B3F)
----@return number
-function LocalizationGetSystemLanguage() end
-
----```
 ---Possible return values: 0, 1, 2
 ---```
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA8AE43AEC1A61314)
 ---@return number
 function LocalizationGetSystemDateFormat() end
+
+---```
+---Same return values as GET_CURRENT_LANGUAGE
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x497420E022796B3F)
+---@return number
+function LocalizationGetSystemLanguage() end
 

@@ -8,6 +8,12 @@
 ---@return boolean
 function DoesShopPedApparelHaveRestrictionTag(componentHash, restrictionTagHash, componentId) end
 
+---The Second item in the struct `*(Hash *)(outData + 1)` is the vehicle hash.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x33468EDC08E371F6)
+---@param dlcVehicleIndex number
+---@return boolean, any
+function GetDlcVehicleData(dlcVehicleIndex) end
+
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x5549EE11FA22FCF2)
 ---@param dlcVehicleIndex number
@@ -22,11 +28,11 @@ function GetDlcVehicleFlags(dlcVehicleIndex) end
 ---@return number
 function GetDlcVehicleModel(dlcVehicleIndex) end
 
----The Second item in the struct `*(Hash *)(outData + 1)` is the vehicle hash.
----[Native Documentation](https://docs.fivem.net/natives/?_0x33468EDC08E371F6)
----@param dlcVehicleIndex number
----@return boolean, any
-function GetDlcVehicleData(dlcVehicleIndex) end
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xC098810437312FFF)
+---@param hash number | string
+---@return number
+function GetDlcVehicleModLockHash(hash) end
 
 ---```
 ---p0 seems to be the weapon index  
@@ -64,21 +70,6 @@ function GetDlcWeaponComponentData(dlcWeaponIndex, dlcWeapCompIndex) end
 ---@param dlcWeapCompIndex number
 ---@return boolean, number
 function GetDlcWeaponComponentDataSp(dlcWeaponIndex, dlcWeapCompIndex) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xC098810437312FFF)
----@param hash number | string
----@return number
-function GetDlcVehicleModLockHash(hash) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x0368B3A838070348)
----@param entity number
----@param componentId number
----@param drawableVariant number
----@param textureVariant number
----@return number
-function GetHashNameForComponent(entity, componentId, drawableVariant, textureVariant) end
 
 ---```
 ---dlcWeaponIndex takes a number from 0 - GET_NUM_DLC_WEAPONS() - 1.  
@@ -127,6 +118,22 @@ function GetDlcWeaponDataSp(dlcWeaponIndex) end
 function GetForcedComponent(componentHash, forcedComponentIndex) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xE1CA84EBF72E691D)
+---@param componentHash number | string
+---@param forcedPropIndex number
+---@return number, number, number
+function GetForcedProp(componentHash, forcedPropIndex) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x0368B3A838070348)
+---@param entity number
+---@param componentId number
+---@param drawableVariant number
+---@param textureVariant number
+---@return number
+function GetHashNameForComponent(entity, componentId, drawableVariant, textureVariant) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x5D6160275CAEC8DD)
 ---@param entity number
 ---@param componentId number
@@ -135,6 +142,11 @@ function GetForcedComponent(componentHash, forcedComponentIndex) end
 ---@return number
 function GetHashNameForProp(entity, componentId, propIndex, propTextureIndex) end
 
+---Returns the total number of DLC vehicles.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xA7A866D21CD2329B)
+---@return number
+function GetNumDlcVehicles() end
+
 ---```
 ---Returns the total number of DLC weapon components.
 ---```
@@ -142,6 +154,16 @@ function GetHashNameForProp(entity, componentId, propIndex, propTextureIndex) en
 ---@param dlcWeaponIndex number
 ---@return number
 function GetNumDlcWeaponComponents(dlcWeaponIndex) end
+
+---Returns the total number of DLC weapon components that are available in SP.
+---
+---```
+---NativeDB Introduced: v2060
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0xAD2A7A6DFF55841B)
+---@param dlcWeaponIndex number
+---@return number
+function GetNumDlcWeaponComponentsSp(dlcWeaponIndex) end
 
 ---```
 ---Returns the total number of DLC weapons.
@@ -159,18 +181,6 @@ function GetNumDlcWeapons() end
 ---@return number
 function GetNumDlcWeaponsSp() end
 
----Returns the total number of DLC vehicles.
----[Native Documentation](https://docs.fivem.net/natives/?_0xA7A866D21CD2329B)
----@return number
-function GetNumDlcVehicles() end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xE1CA84EBF72E691D)
----@param componentHash number | string
----@param forcedPropIndex number
----@return number, number, number
-function GetForcedProp(componentHash, forcedPropIndex) end
-
 ---```
 ---Character types:
 ---0 = Michael,
@@ -184,12 +194,6 @@ function GetForcedProp(componentHash, forcedPropIndex) end
 ---@return number
 function GetNumTattooShopDlcItems(character) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xD40AAC51E8E4C663)
----@param propHash number | string
----@return number
-function GetShopPedApparelVariantPropCount(propHash) end
-
 ---```
 ---Returns number of possible values of the forcedComponentIndex argument of GET_FORCED_COMPONENT.
 ---```
@@ -197,36 +201,6 @@ function GetShopPedApparelVariantPropCount(propHash) end
 ---@param componentHash number | string
 ---@return number
 function GetShopPedApparelForcedComponentCount(componentHash) end
-
----```
----More info here: https://gist.github.com/root-cause/3b80234367b0c856d60bf5cb4b826f86
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x74C0E2A57EC66760)
----@param componentHash number | string
----@return any
-function GetShopPedComponent(componentHash) end
-
----Returns the total number of DLC weapon components that are available in SP.
----
----```
----NativeDB Introduced: v2060
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0xAD2A7A6DFF55841B)
----@param dlcWeaponIndex number
----@return number
-function GetNumDlcWeaponComponentsSp(dlcWeaponIndex) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xC17AD0E5752BECDA)
----@param componentHash number | string
----@return number
-function GetShopPedApparelVariantComponentCount(componentHash) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xB7952076E444979D)
----@param p0 any
----@return any
-function GetShopPedOutfit(p0) end
 
 ---```
 ---Returns number of possible values of the forcedPropIndex argument of GET_FORCED_PROP.
@@ -237,11 +211,43 @@ function GetShopPedOutfit(p0) end
 function GetShopPedApparelForcedPropCount(componentHash) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xC17AD0E5752BECDA)
+---@param componentHash number | string
+---@return number
+function GetShopPedApparelVariantComponentCount(componentHash) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xD40AAC51E8E4C663)
+---@param propHash number | string
+---@return number
+function GetShopPedApparelVariantPropCount(propHash) end
+
+---```
+---More info here: https://gist.github.com/root-cause/3b80234367b0c856d60bf5cb4b826f86
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x74C0E2A57EC66760)
+---@param componentHash number | string
+---@return any
+function GetShopPedComponent(componentHash) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xB7952076E444979D)
+---@param p0 any
+---@return any
+function GetShopPedOutfit(p0) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x19F2A026EDF0013F)
 ---@param outfit number | string
 ---@param slot number
 ---@return boolean, any
 function GetShopPedOutfitComponentVariant(outfit, slot) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x073CA26B079F956E)
+---@param p0 any
+---@return number
+function GetShopPedOutfitLocate(p0) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA9F9C2E0FDE11CBB)
@@ -257,10 +263,10 @@ function GetShopPedOutfitPropVariant(outfitHash, variantIndex) end
 function GetShopPedProp(componentHash) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xDE44A00999B2837D)
+---[Native Documentation](https://docs.fivem.net/natives/?_0x249E310B2D920699)
 ---@param componentId number
----@return any
-function GetShopPedQueryProp(componentId) end
+---@return number
+function GetShopPedQueryComponent(componentId) end
 
 ---```
 ---struct Outfit_s  
@@ -276,16 +282,10 @@ function GetShopPedQueryProp(componentId) end
 function GetShopPedQueryOutfit(outfitIndex) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x6E11F282F11863B6)
----@param componentHash number | string
----@param variantComponentIndex number
----@return number, number, number
-function GetVariantComponent(componentHash, variantComponentIndex) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x1E8C308FD312C036)
----@return number
-function InitShopPedComponent() end
+---[Native Documentation](https://docs.fivem.net/natives/?_0xDE44A00999B2837D)
+---@param componentId number
+---@return any
+function GetShopPedQueryProp(componentId) end
 
 ---Character types:
 ---
@@ -331,9 +331,11 @@ function InitShopPedComponent() end
 function GetTattooShopDlcItemData(characterType, decorationIndex) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xEB0A2B758F7B850F)
----@return number
-function InitShopPedProp() end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x6E11F282F11863B6)
+---@param componentHash number | string
+---@param variantComponentIndex number
+---@return number, number, number
+function GetVariantComponent(componentHash, variantComponentIndex) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xD81B7F27BC773E66)
@@ -343,16 +345,38 @@ function InitShopPedProp() end
 function GetVariantProp(componentHash, variantPropIndex) end
 
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x0564B9FF9631B82C)
----@param hash number | string
----@return boolean
-function IsDlcVehicleMod(hash) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x1E8C308FD312C036)
+---@return number
+function InitShopPedComponent() end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0xEB0A2B758F7B850F)
+---@return number
+function InitShopPedProp() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xD4D7B033C3AA243C)
 ---@param itemHash number | string
 ---@return boolean
 function IsContentItemLocked(itemHash) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x0564B9FF9631B82C)
+---@param hash number | string
+---@return boolean
+function IsDlcVehicleMod(hash) end
+
+---```
+---From fm_deathmatch_creator and fm_race_creator:
+---
+---FILES::_UNLOAD_CONTENT_CHANGE_SET_GROUP(joaat("GROUP_MAP_SP"));
+---FILES::_LOAD_CONTENT_CHANGE_SET_GROUP(joaat("GROUP_MAP"));
+---
+---NativeDB Introduced: v1604
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x6BEDF5769AC2DC07)
+---@param hash number | string
+function LoadContentChangeSetGroup(hash) end
 
 ---Returns some sort of index/offset for overlays/decorations.
 ---
@@ -375,18 +399,6 @@ function IsContentItemLocked(itemHash) end
 ---@return number
 function N_0x10144267dd22866c(overlayHash, p1, character) end
 
----```
----From fm_deathmatch_creator and fm_race_creator:
----
----FILES::_UNLOAD_CONTENT_CHANGE_SET_GROUP(joaat("GROUP_MAP_SP"));
----FILES::_LOAD_CONTENT_CHANGE_SET_GROUP(joaat("GROUP_MAP"));
----
----NativeDB Introduced: v1604
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x6BEDF5769AC2DC07)
----@param hash number | string
-function LoadContentChangeSetGroup(hash) end
-
 ---Returns some sort of index/offset for props.
 ---Needs \_GET_NUM_PROPS_FROM_OUTFIT to be called with p3 = true and componentId = -1 first, returns -1 otherwise.
 ---
@@ -397,6 +409,26 @@ function LoadContentChangeSetGroup(hash) end
 ---@param componentHash number | string
 ---@return number
 function N_0x6cebe002e58dee97(componentHash) end
+
+---Returns some sort of index/offset for components.
+---Needs \_GET_NUM_PROPS_FROM_OUTFIT to be called with p3 = false and componentId with the drawable's component slot first, returns -1 otherwise.
+---
+---```
+---NativeDB Introduced: v2189
+---```
+---[Native Documentation](https://docs.fivem.net/natives/?_0x96E2929292A4DB77)
+---@param componentHash number | string
+---@return number
+function N_0x96e2929292a4db77(componentHash) end
+
+---This native does not have an official description.
+---[Native Documentation](https://docs.fivem.net/natives/?_0x50F457823CE6EB5F)
+---@param p0 number
+---@param p1 number
+---@param p2 number
+---@param p3 number
+---@return number
+function SetupShopPedApparelQuery(p0, p1, p2, p3) end
 
 ---```
 ---character is 0 for Michael, 1 for Franklin, 2 for Trevor, 3 for freemode male, and 4 for freemode female.
@@ -417,33 +449,6 @@ function N_0x6cebe002e58dee97(componentHash) end
 ---@return number
 function SetupShopPedApparelQueryTu(character, p1, p2, p3, p4, componentId) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x50F457823CE6EB5F)
----@param p0 number
----@param p1 number
----@param p2 number
----@param p3 number
----@return number
-function SetupShopPedApparelQuery(p0, p1, p2, p3) end
-
----```
----From fm_deathmatch_creator and fm_race_creator:
----
----FILES::_UNLOAD_CONTENT_CHANGE_SET_GROUP(joaat("GROUP_MAP_SP"));
----FILES::_LOAD_CONTENT_CHANGE_SET_GROUP(joaat("GROUP_MAP"));
----
----NativeDB Introduced: v1604
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x3C1978285B036B25)
----@param hash number | string
-function UnloadContentChangeSetGroup(hash) end
-
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x249E310B2D920699)
----@param componentId number
----@return number
-function GetShopPedQueryComponent(componentId) end
-
 ---```
 ---characters
 ---0: Michael
@@ -458,20 +463,15 @@ function GetShopPedQueryComponent(componentId) end
 ---@return number
 function SetupShopPedOutfitQuery(character, p1) end
 
----This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x073CA26B079F956E)
----@param p0 any
----@return number
-function GetShopPedOutfitLocate(p0) end
-
----Returns some sort of index/offset for components.
----Needs \_GET_NUM_PROPS_FROM_OUTFIT to be called with p3 = false and componentId with the drawable's component slot first, returns -1 otherwise.
+---```
+---From fm_deathmatch_creator and fm_race_creator:
 ---
+---FILES::_UNLOAD_CONTENT_CHANGE_SET_GROUP(joaat("GROUP_MAP_SP"));
+---FILES::_LOAD_CONTENT_CHANGE_SET_GROUP(joaat("GROUP_MAP"));
+---
+---NativeDB Introduced: v1604
 ---```
----NativeDB Introduced: v2189
----```
----[Native Documentation](https://docs.fivem.net/natives/?_0x96E2929292A4DB77)
----@param componentHash number | string
----@return number
-function N_0x96e2929292a4db77(componentHash) end
+---[Native Documentation](https://docs.fivem.net/natives/?_0x3C1978285B036B25)
+---@param hash number | string
+function UnloadContentChangeSetGroup(hash) end
 
