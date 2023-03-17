@@ -40,13 +40,13 @@ function OnSetText(uri, text)
 	end
 
 	-- prevent "need-check-nil" diagnostic when using safe navigation
-	-- only works for the first index, and requires short table notation (i.e. mytable.index, not mytable["index"])
-	for startPos, tableName, finishPos in str_gmatch(text, '[=,;][%s]*()([_%w]+)()%?[%.%[]+') do
+	-- only works for the first index, and requires dot notation (i.e. mytable.index, not mytable["index"])
+	for pre, whitespace, tableStart, tableName, tableEnd in str_gmatch(text, '([=,;%s])([%s]*)()([_%w]+)()%?[%.%[]+') do
 		count = count + 1
 		diffs[count] = {
-			start  = startPos,
-			finish = finishPos - 1,
-			text   = '(' .. tableName .. ' or {})',
+			start  = tableStart - 1,
+			finish = tableEnd - 1,
+			text = ('%s(%s or {})'):format(whitespace == '' and pre or '', tableName)
 		}
 	end
 
