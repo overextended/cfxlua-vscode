@@ -101,7 +101,7 @@ function DeleteChildRope(ropeId) end
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x52B4829281364649)
 ---@param ropeId number
 ---@return number
-function DeleteRope(hopeId) end
+function DeleteRope(ropeId) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xBCF3026912A8647D)
