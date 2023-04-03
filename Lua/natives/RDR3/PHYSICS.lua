@@ -144,8 +144,8 @@ function DeleteChildRope(ropeId) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x52B4829281364649)
----@return number
-function DeleteRope() end
+---@param ropeId number
+function DeleteRope(ropeId) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xBCF3026912A8647D)

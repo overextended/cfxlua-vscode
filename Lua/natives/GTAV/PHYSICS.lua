@@ -96,8 +96,8 @@ function DeleteChildRope(ropeId) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x52B4829281364649)
----@return number
-function DeleteRope() end
+---@param ropeId number
+function DeleteRope(ropeId) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xBCF3026912A8647D)
@@ -113,8 +113,9 @@ function DoesRopeBelongToThisScript(ropeId) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xFD5448BE3111ED96)
----@return boolean, number
-function DoesRopeExist() end
+---@param ropeId number
+---@return boolean
+function DoesRopeExist(ropeId) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x8214A4B5A7A33612)
