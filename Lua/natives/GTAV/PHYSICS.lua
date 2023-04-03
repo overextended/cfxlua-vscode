@@ -6,9 +6,12 @@
 function ActivatePhysics(entity) end
 
 ---```
----Creates a rope at the specific position, that extends in the specified direction when not attached to any entities.  ---
----__  ---
----Rope does NOT interact with anything you attach it to, in some cases it make interact with the world AFTER it breaks (seems to occur if you set the type to -1).  ---
+---Creates a rope at the specific position, that extends in the specified direction when not attached to any entities.  
+---
+---__  
+---
+---Rope does NOT interact with anything you attach it to, in some cases it make interact with the world AFTER it breaks (seems to occur if you set the type to -1).  
+---
 ---Rope will sometimes contract and fall to the ground like you'd expect it to, but since it doesn't interact with the world the effect is just jaring.  
 ---```
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xE832D760399EB220)
@@ -96,8 +99,9 @@ function DeleteChildRope(ropeId) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x52B4829281364649)
+---@param ropeId number
 ---@return number
-function DeleteRope() end
+function DeleteRope(hopeId) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xBCF3026912A8647D)
