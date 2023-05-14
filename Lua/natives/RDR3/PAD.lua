@@ -56,6 +56,12 @@ function GetControlUnboundNormal(control, action) end
 ---@return number
 function GetControlValue(control, action) end
 
+---Gets the current control context. See: _SET_CONTROL_CONTEXT
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xDDCEB0F26C89C00F)
+---@param control number
+---@return number
+function GetCurrentControlContext(control) end
+
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x771DFCB24D19C2F6)
 ---@param control number
@@ -191,21 +197,15 @@ function N_0x709ba8c08c5c008d() end
 ---@return any
 function N_0xbd629c1c4f501c80(p0) end
 
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xDDCEB0F26C89C00F)
----@param p0 number
----@return any
-function N_0xddceb0f26c89c00f(p0) end
-
 ---Sets the current control context. Must be called every frame.
 ---
 ---context: https://alloc8or.re/rdr3/doc/misc/input_contexts.txt
 ---For more information, see common:/data/control/settings.meta
 ---https://github.com/femga/rdr3_discoveries/tree/master/Controls
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x2804658EB7D8A50B)
----@param p0 number
+---@param control number
 ---@param context number | string
-function SetControlContext(p0, context) end
+function SetControlContext(control, context) end
 
 ---nullsub, doesn't do anything
 ---

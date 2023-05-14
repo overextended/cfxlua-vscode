@@ -204,15 +204,17 @@ function CompendiumHorseWildBroken(ped) end
 ---@return boolean
 function CompendiumWasAnimalObserved(ped) end
 
+---Only used in R* SP Scripts, category = GANGS
 ---_COMPENDIUM_GET_*
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x725D52F21A5E9E22)
 ---@param category number | string
----@return any
+---@return number
 function N_0x725d52f21a5e9e22(category) end
 
----_COMPENDIUM_GET_*
+---Only used in R* SP Scripts, category = GANGS
+---_COMPENDIUM_GET_NUM_OF_ENTRIES_IN_*
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x729D52461AEA9E22)
 ---@param category number | string
----@return any
+---@return number
 function N_0x729d52461aea9e22(category) end
 

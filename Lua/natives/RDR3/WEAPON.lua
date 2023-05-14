@@ -668,6 +668,12 @@ function IsWeaponBinoculars(weaponHash) end
 ---@return boolean
 function IsWeaponBow(weaponHash) end
 
+---Returns true if the ped is currently holstering or unholstering a weapon
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x2387D6E9C6B478AA)
+---@param ped number
+---@return boolean
+function IsWeaponHolsterStateChanging(ped) end
+
 ---Returns true when the weapon passed is either a lasso, the camera or the binoculars
 ---_IS_WEAPON_M* - _IS_WEAPON_P*
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x6ABAD7B0A854F8FB)
@@ -804,12 +810,13 @@ function MakePedReload(ped) end
 ---@param p0 any
 function N_0x000fa7a4a8443af7(p0) end
 
----This native does not have an official description.
+---Seems to return true if the passed weapon is some sort of non-lethal melee weapon.
+---Weapon must currently be held/equipped by the ped.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x07E1C35F0078C3F9)
----@param p0 any
----@param p1 any
----@return any
-function N_0x07e1c35f0078c3f9(p0, p1) end
+---@param ped number
+---@param weapon number | string
+---@return boolean
+function N_0x07e1c35f0078c3f9(ped, weapon) end
 
 ---_GET_D* - _GET_L*
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x0DE0944ECCB3DF5D)
@@ -836,12 +843,6 @@ function N_0x16d9841a85fa627e(ped, toggle) end
 ---@param p0 any
 ---@param p1 any
 function N_0x183ce355115b6e75(p0, p1) end
-
----Returns true if ped is holstering/unholstering a weapon
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x2387D6E9C6B478AA)
----@param ped number
----@return boolean
-function N_0x2387d6e9c6b478aa(ped) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x23BF601A42F329A0)

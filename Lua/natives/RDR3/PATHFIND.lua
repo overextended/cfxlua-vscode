@@ -254,13 +254,6 @@ function N_0x264e9a5cd78c338f(p0) end
 function N_0x34c9af25649172d0(p0) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x430F8319AE56C8A9)
----@param p0 any
----@param p1 any
----@return vector3
-function N_0x430f8319ae56c8a9(p0, p1) end
-
----This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x4358BCF14C91761C)
 ---@param p0 any
 ---@param p1 any
@@ -308,12 +301,6 @@ function N_0x5a3b54addf5472a3(p0) end
 function N_0x5a4e1a41e3a02ad0(p0, p1, p2) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x661BB1E1FF77742D)
----@param p0 any
----@return any
-function N_0x661bb1e1ff77742d(p0) end
-
----This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x665B21666351CB37)
 ---@param p0 any
 ---@param p1 any
@@ -343,12 +330,6 @@ function N_0x6dad6630ae4a74cb(p0, p1) end
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x869A7015BD4606E9)
 ---@param p0 any
 function N_0x869a7015bd4606e9(p0) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x8800776E410EB669)
----@param p0 any
----@return any
-function N_0x8800776e410eb669(p0) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xA33914B00CA55756)
@@ -396,12 +377,6 @@ function N_0xca27a86caa4e98ed(p0, p1, p2, p3, p4, p5, p6) end
 function N_0xcf213a5fc3abfc08(p0, p1, p2) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xD470725E0703D22F)
----@param p0 any
----@return any
-function N_0xd470725e0703d22f(p0) end
-
----This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xE5EF9DE716FF737E)
 ---@param p0 any
 ---@param p1 any
@@ -423,12 +398,6 @@ function N_0xefc535c9faf563b3(p0) end
 function N_0xf2a2177ac848b3a8(volume, p1, p2) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xF61CFEDEAB627BFA)
----@param p0 any
----@return any
-function N_0xf61cfedeab627bfa(p0) end
-
----This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x7C334FF4D9215912)
 ---@param name string
 ---@return boolean
@@ -440,6 +409,12 @@ function NavmeshActivateSwap(name) end
 ---@param navMeshName string
 ---@return boolean
 function NavmeshAssignNavmeshToVehicle(vehicle, navMeshName) end
+
+---Called in scripts after finished with requested pathes. Immediately resets all values connected to the path handle except query status, which changes from 1 to 2 before eventually becoming fully invalidated to 0.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x661BB1E1FF77742D)
+---@param path number
+---@return boolean
+function NavmeshClearRequestedPath(path) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x527B97C203BB8606)
@@ -459,6 +434,31 @@ function NavmeshDoesSwapExist(name) end
 ---@return boolean
 function NavmeshIsSwapActive(name) end
 
+---Returns the number of waypoints for a requested path (NAVMESH_REQUEST_PATH) if the query is completed (_NAVMESH_REQUESTED_QUERY_STATUS). For use with _NAVMESH_REQUESTED_PATH_WAYPOINT_BY_INDEX
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xD470725E0703D22F)
+---@param path number
+---@return number
+function NavmeshRequestedPathNumWaypoints(path) end
+
+---Returns a vector3 waypoint at the specified index for a path. Use _NAVMESH_REQUESTED_PATH_NUM_WAYPOINTS to get available indexes.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x430F8319AE56C8A9)
+---@param path number
+---@param waypointIndex number
+---@return vector3
+function NavmeshRequestedPathWaypointByIndex(path, waypointIndex) end
+
+---Returns true if a path of waypoints was found. Waypoints can be retrieved with _NAVMESH_REQUESTED_PATH_NUM_WAYPOINTS and _NAVMESH_REQUESTED_PATH_WAYPOINT_BY_INDEX
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x8800776E410EB669)
+---@param path number
+---@return boolean
+function NavmeshRequestedPathWaypointsFound(path) end
+
+---Returns a bit flag for seemingly terrain within the waypoints in the path. Checked against bit value 2 to match water in the path, seems to always contain at least 1 though regardless of location/ped.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xF61CFEDEAB627BFA)
+---@param path number
+---@return number
+function NavmeshRequestedPathWaypointsTerrain(path) end
+
 ---Returns eNavMeshQueryStatus
 ---enum eNavMeshQueryStatus
 ---{
@@ -466,23 +466,29 @@ function NavmeshIsSwapActive(name) end
 ---	QS_COMPLETE,
 ---	QS_PENDING
 ---};
+---
+---It appears that the pending state of 2 is at least also used when cleaning up a request (_NAVMESH_CLEAR_REQUESTED_PATH) or if a request never completes. Eventually queries are invalidated and return 0.
+---
+---Old name: _NAVMESH_QUERY_STATUS
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x3A0F82F6EE2291C8)
----@param p0 any
+---@param path number
 ---@return number
-function NavmeshQueryStatus(p0) end
+function NavmeshRequestedQueryStatus(path) end
 
----This native does not have an official description.
+---Starts a nav mesh query for a path between coordinates with a given ped and returns a handle to be validated by _NAVMESH_REQUESTED_QUERY_STATUS and then _NAVMESH_REQUESTED_PATH_WAYPOINTS_FOUND
+---
+---Only bit flag values used in scripts are 0, 23, and 29. 23 is used with dogs and horses. 29 with legendary animals.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x348F211CA2404039)
----@param p0 any
----@param p1 any
----@param p2 any
----@param p3 any
----@param p4 any
----@param p5 any
----@param p6 any
----@param p7 any
----@return any
-function NavmeshRequestPath(p0, p1, p2, p3, p4, p5, p6, p7) end
+---@param ped number
+---@param x1 number
+---@param y1 number
+---@param z1 number
+---@param x2 number
+---@param y2 number
+---@param z2 number
+---@param bitFlag number
+---@return number
+function NavmeshRequestPath(ped, x1, y1, z1, x2, y2, z2, bitFlag) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x46399A7895957C0E)

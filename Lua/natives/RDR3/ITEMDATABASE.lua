@@ -574,10 +574,10 @@ function N_0xd389a2549c4efb30(collectionId) end
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xDBEADA0DF5F9AB9F)
 ---@param p0 any
----@param p1 any
----@param p2 any
+---@param index number
+---@param menuKey any
 ---@return boolean
-function N_0xdbeada0df5f9ab9f(p0, p1, p2) end
+function N_0xdbeada0df5f9ab9f(p0, index, menuKey) end
 
 ---Returns fillOutIndex (?)
 ---_ITEMDATABASE_GET_(A)* - _ITEMDATABASE_GET_(B)*

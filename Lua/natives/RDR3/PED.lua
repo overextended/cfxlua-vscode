@@ -770,6 +770,17 @@ function GetCarrierAsMount(entity) end
 ---@return number
 function GetCarrierAsPed(entity) end
 
+---Gets MetaPedExpression at index specified
+---
+---For index, see: _SET_CHAR_EXPRESSION
+---
+---Old name: _GET_PED_FACE_FEATURE
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xFD1BA1EEF7985BB8)
+---@param ped number
+---@param index number
+---@return number
+function GetCharExpression(ped, index) end
+
 ---Gets the closest ped in a radius.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xC33AB876A77F8164)
 ---@param x number
@@ -1233,13 +1244,6 @@ function GetPedDefensiveVolume(ped, p1) end
 function GetPedDrunkness(ped) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xFD1BA1EEF7985BB8)
----@param ped number
----@param index number
----@return number
-function GetPedFaceFeature(ped, index) end
-
----This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xF3C873ED0C595109)
 ---@param ped number
 ---@return number
@@ -1432,13 +1436,15 @@ function GetPedNearbyVehicles(ped) end
 ---@return number
 function GetPedQuality(ped) end
 
----Params: p1 = p_banjo01x_XH_R_HAND00, mp006_p_dblcello01x_XH_R_HAND00, p_fiddle01x_PH_L_HAND, p_guitar01x_XH_R_HAND00, mp006_p_mnshn_washboard01x_XH_R_HAND00, p_bottleBeer01x_PH_R_HAND
+---Gets a registered/attached prop entity for a particular ped. Second parameter will detach the prop entity from the ped if true. Props primarily appear to come from scenarios, such as a broom or hay bale.
+---
+---Known props: https://pastebin.com/ap2NEJqB
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x4D0D2E3D8BC000EB)
 ---@param ped number
----@param p1 string
----@param p2 boolean
+---@param propName string
+---@param detachProp boolean
 ---@return number
-function GetPedRegisterProp(ped, p1, p2) end
+function GetPedRegisterProp(ped, propName, detachProp) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x42FDD0F017B1E38E)
@@ -1594,6 +1600,27 @@ function GetSeatPedIsTryingToEnter(ped) end
 ---@param ped number
 ---@return number
 function GetSeatPedIsUsing(ped) end
+
+---Returns the number of wearable states available for a shop item / component. p2 seems to be true in scripts.
+---
+---For use with 0x6243635AF2F1B826 (_GET_SHOP_ITEM_AVAILABLE_WEARABLE_STATE_BY_INDEX)
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xFFCC2DB2D9953401)
+---@param componentHash number | string
+---@param isMpFemale boolean
+---@param p2 boolean
+---@return number
+function GetShopItemNumWearableStates(componentHash, isMpFemale, p2) end
+
+---Gets an available wearable state by index for a shop item / component - it does not retreive what the current state is. p3 seems to be true in scripts.
+---
+---Use 0xFFCC2DB2D9953401 (_GET_SHOP_ITEM_NUM_WEARABLE_STATES) to get the number of available wearable states
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x6243635AF2F1B826)
+---@param componentHash number | string
+---@param wearableStateIndex number
+---@param isMpFemale boolean
+---@param p3 boolean
+---@return number
+function GetShopItemWearableStateByIndex(componentHash, wearableStateIndex, isMpFemale, p3) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x63342C50EC115CE8)
@@ -2265,6 +2292,19 @@ function IsPedInMeleeCombat(ped) end
 ---@return boolean
 function IsPedInModel(ped, modelHash) end
 
+---If returned true: There are enemy peds near friendly turn in ped. Going to aggro.
+---If returned false: Moving back to idle as there aren't any remaining enemy peds near ped
+---_IS_PED_IN_*
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x078076AB50FB117F)
+---@param ped number
+---@param x number
+---@param y number
+---@param z number
+---@param radius number
+---@param p5 boolean
+---@return boolean
+function IsPedInPoint(ped, x, y, z, radius, p5) end
+
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x57779B55B83E2BEA)
 ---@param ped number
@@ -2278,6 +2318,12 @@ function IsPedIntimidated(ped) end
 ---@param atGetIn boolean
 ---@return boolean
 function IsPedInVehicle(ped, vehicle, atGetIn) end
+
+---_IS_PED_IN*
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x7583A9D35248B83F)
+---@param ped number
+---@return boolean
+function IsPedInvestigating(ped) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x4AE4FF911DFB61DA)
@@ -2296,6 +2342,12 @@ function IsPedJumping(ped) end
 ---@param ped number
 ---@return boolean
 function IsPedLassoed(ped) end
+
+---_IS_PED_L* - _IS_PED_M*
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x917760CFE7A0E0F1)
+---@param ped number
+---@return boolean
+function IsPedLeadingAnyGroup(ped) end
 
 ---Returns true/false if the ped is/isn't male.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x6D9F5FAA7488BA46)
@@ -2648,19 +2700,6 @@ function N_0x06fa94c835787c64(ped) end
 ---@param p0 any
 ---@param p1 any
 function N_0x070a3841406c43d5(p0, p1) end
-
----If returned true: There are enemy peds near friendly turn in ped. Going to aggro.
----If returned false: Moving back to idle as there aren't any remaining enemy peds near ped
----_IS_PED_IN_*
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x078076AB50FB117F)
----@param ped number
----@param x number
----@param y number
----@param z number
----@param p4 number
----@param p5 boolean
----@return boolean
-function N_0x078076ab50fb117f(ped, x, y, z, p4, p5) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x07EA5B053FA60AC7)
@@ -3454,15 +3493,6 @@ function N_0x604e1010e3162e86(p0, p1, p2) end
 ---@param p1 any
 function N_0x606d529dada3c940(ped, p1) end
 
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x6243635AF2F1B826)
----@param p0 any
----@param p1 any
----@param p2 any
----@param p3 any
----@return any
-function N_0x6243635af2f1b826(p0, p1, p2, p3) end
-
 ---Returns p1 value for 0x8E84119A23C16623
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x62FDF4E678E40CC6)
 ---@param entity number
@@ -3568,12 +3598,6 @@ function N_0x735662994e60a710(ped, p1) end
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x7406C71F4AC2FFCC)
 ---@param p0 any
 function N_0x7406c71f4ac2ffcc(p0) end
-
----_IS_PED_IN*
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x7583A9D35248B83F)
----@param ped number
----@return boolean
-function N_0x7583a9d35248b83f(ped) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x758F081DB204DDDE)
@@ -3860,12 +3884,6 @@ function N_0x9078fb0557364099(p0) end
 ---@param ped number
 ---@return boolean
 function N_0x913d04a5176f84c9(ped) end
-
----_IS_PED_L* - _IS_PED_M*
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x917760CFE7A0E0F1)
----@param ped number
----@return boolean
-function N_0x917760cfe7a0e0f1(ped) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x9184788BFF1EDAD7)
@@ -4322,11 +4340,11 @@ function N_0xbb3e5370ebb6be28(p0, p1) end
 ---@param p0 any
 function N_0xbc1dc48270468444(p0) end
 
----This native does not have an official description.
+---Set to false for player horse in scripts and seems it's only true when releasing/changing a player horse? Cannot determine what effect it has, but it doesn't seem to affect _GET_HORSE_TAMING_STATE
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xBCC76708E5677E1D)
----@param ped number
+---@param horse number
 ---@param p1 boolean
-function N_0xbcc76708e5677e1d(ped, p1) end
+function N_0xbcc76708e5677e1d(horse, p1) end
 
 ---_IS_PED_M* - _IS_PED_O*
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xBD0E4F52F6D95242)
@@ -4991,14 +5009,6 @@ function N_0xfea6126c34df2532(ped, p1) end
 ---@param p1 number
 function N_0xffa1594703ed27ca(ped, p1) end
 
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xFFCC2DB2D9953401)
----@param p0 any
----@param p1 any
----@param p2 any
----@return any
-function N_0xffcc2db2d9953401(p0, p1, p2) end
-
 ---_GET_PED_COMBAT_M* - _GET_PED_C*
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xFFDE295662405B25)
 ---@param ped number
@@ -5493,6 +5503,24 @@ function SetBlockingOfNonTemporaryEvents(ped, toggle) end
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x9911F4A24485F653)
 ---@param p0 boolean
 function SetBlockingOfNonTemporaryEventsForAmbientPedsThisFrame(p0) end
+
+---Sets MetaPedExpression at index specified. Morphs components, such as changing body size or facial features.
+---
+---Note: You have to update the ped's variation (using 0xCC8CA3E88256E58F) after calling this native
+---
+---index = MetaPedExpression IDs
+---List of face features: https://pastebin.com/9jb88FXW
+---Full list of MetaPedExpressions: https://pastebin.com/Ld76cAn7
+---value: -1.0 to 1.0 (values beyond this likely won't sync to other clients)
+---
+---This native also allows you to change a horse's gender.
+---
+---Old name: _SET_PED_FACE_FEATURE
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x5653AB26C82938CF)
+---@param ped number
+---@param index number
+---@param value number
+function SetCharExpression(ped, index, value) end
 
 ---combatType can be between 0-14. See GET_COMBAT_FLOAT below for a list of possible parameters.
 ---https://github.com/femga/rdr3_discoveries/tree/master/AI/COMBAT_FLOATS
@@ -6056,7 +6084,8 @@ function SetPedCombatStyle(ped, combatStyleHash, p2, duration) end
 ---@param duration number
 function SetPedCombatStyleMod(ped, combatStyleModHash, duration) end
 
----flagId: https://alloc8or.re/rdr3/doc/enums/ePedScriptConfigFlags.txt
+---flagId: https://github.com/Halen84/RDR3-Native-Flags-And-Enums/tree/main/ePedScriptConfigFlags
+---https://alloc8or.re/rdr3/doc/enums/ePedScriptConfigFlags.txt
 ---https://github.com/femga/rdr3_discoveries/tree/master/AI/CPED_CONFIG_FLAGS
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x1913FE4CBF41C463)
 ---@param ped number
@@ -6202,19 +6231,6 @@ function SetPedDisableKickMove(ped, disable) end
 ---@param enabled boolean
 ---@param drunknessLevel number
 function SetPedDrunkness(ped, enabled, drunknessLevel) end
-
----Note: You have to update the ped's variation (using 0xCC8CA3E88256E58F) after calling this native
----
----index = Ped expression ID's / face features
----List of face features: https://pastebin.com/9jb88FXW
----value: -1.0 to 1.0
----
----This native also allows you to change a horse's gender.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x5653AB26C82938CF)
----@param ped number
----@param index number
----@param value number
-function SetPedFaceFeature(ped, index, value) end
 
 ---Used in various R* MP & SP Scripts
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x9AC577F5A12AD8A9)
@@ -6624,6 +6640,8 @@ function SetPedRelationshipGroupDefaultHash(ped, hash) end
 function SetPedRelationshipGroupHash(ped, relationshipGroup) end
 
 ---Needs to be called every frame
+---
+---flagid:https://github.com/Halen84/RDR3-Native-Flags-And-Enums/tree/main/ePedScriptResetFlags
 ---https://github.com/femga/rdr3_discoveries/tree/master/AI/CPED_RESET_FLAGS
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xC1E8A365BF3B29F2)
 ---@param ped number

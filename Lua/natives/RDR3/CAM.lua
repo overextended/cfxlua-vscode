@@ -177,10 +177,6 @@ function DisableCinematicBonnetCameraThisUpdate() end
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x8910C24B7E0046EC)
 function DisableCinematicModeThisFrame() end
 
----Does the same as 0x9C473089A934C930
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x05AB44D906738426)
-function DisableFirstPersonCamThisFrame_2() end
-
 ---nullsub, doesn't do anything
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x77D65669A05D1A1A)
 function DisableFirstPersonFlashEffectThisUpdate() end
@@ -188,6 +184,10 @@ function DisableFirstPersonFlashEffectThisUpdate() end
 ---Old name: _DISABLE_FIRST_PERSON_CAM_THIS_FRAME
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x9C473089A934C930)
 function DisableOnFootFirstPersonViewThisUpdate() end
+
+---Does the same as 0x9C473089A934C930 (DISABLE_ON_FOOT_FIRST_PERSON_VIEW_THIS_UPDATE)
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x05AB44D906738426)
+function DisableOnFootFirstPersonViewThisUpdate_2() end
 
 ---Returns whether or not the passed camera handle exists.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x153AD457764FD704)
@@ -791,12 +791,6 @@ function N_0x8e036b41c37d0e5f(p0) end
 function N_0x975f6ebb62632fe3() end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x986F7A51EE3E1F92)
----@param p0 any
----@param p1 any
-function N_0x986f7a51ee3e1f92(p0, p1) end
-
----This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x9AC65A36D3C0C189)
 ---@param p0 any
 function N_0x9ac65a36d3c0c189(p0) end
@@ -994,6 +988,13 @@ function PointCamAtCoord(cam, x, y, z) end
 ---@param p4 number
 ---@param p5 boolean
 function PointCamAtEntity(cam, entity, p2, p3, p4, p5) end
+
+---Used to enable headshot kill replay when you headshot set ped.
+---Params: p1 seems to be 0 or 1 in R* Scripts
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x986F7A51EE3E1F92)
+---@param ped number
+---@param p1 number
+function ReactivatePedHeadshotExecuteSlowcam(ped, p1) end
 
 ---ease - smooth transition between the camera's positions
 ---easeTime - Time in milliseconds for the transition to happen

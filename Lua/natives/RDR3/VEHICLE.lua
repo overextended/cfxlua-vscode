@@ -384,7 +384,7 @@ function GetRowingOars(vehicle) end
 ---@param trackIndex number
 ---@param stationIndex number
 ---@return vector3
-function GetStationCoorsFromTrainStationData(trackIndex, stationIndex) end
+function GetStationCoordsFromTrainStationData(trackIndex, stationIndex) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x233B51C7913FA031)

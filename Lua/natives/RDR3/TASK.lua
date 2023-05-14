@@ -907,13 +907,6 @@ function N_0x098036cab8373d36(p0) end
 function N_0x098caa6dbe7d8d82(p0, p1) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x099D4A855D53B03B)
----@param p0 any
----@param p1 any
----@param p2 any
-function N_0x099d4a855d53b03b(p0, p1, p2) end
-
----This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x0A98A362C5A19A43)
 ---@param p0 any
 ---@return any
@@ -2488,6 +2481,13 @@ function SetTaskMoveNetworkSignalBool(ped, signalName, value) end
 ---@param signalName string
 ---@param value number
 function SetTaskMoveNetworkSignalFloat(ped, signalName, value) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x099D4A855D53B03B)
+---@param ped number
+---@param signalName string
+---@param value number
+function SetTaskMoveNetworkSignalFloat_2(ped, signalName, value) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x4662BFE01938D98D)

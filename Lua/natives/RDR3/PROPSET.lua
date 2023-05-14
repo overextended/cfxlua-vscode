@@ -49,20 +49,6 @@ function CreatePropSet(hash, x, y, z, p4, heading, p6, p7, p8) end
 ---@return any
 function CreatePropSet_2(hash, x, y, z, p4, p5, p6, p7, p8) end
 
----Same as CREATE_PROP_SET_INSTANCE_ATTACHED_TO_ENTITY
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xACA7FB30269096D4)
----@param hash number | string
----@param x number
----@param y number
----@param z number
----@param entity number
----@param p5 number
----@param p6 boolean
----@param p7 number
----@param p8 boolean
----@return any
-function CreatePropSet_4(hash, x, y, z, entity, p5, p6, p7, p8) end
-
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x9609DBDDE18FAD8C)
 ---@param hash number | string
@@ -76,6 +62,20 @@ function CreatePropSet_4(hash, x, y, z, entity, p5, p6, p7, p8) end
 ---@param p8 boolean
 ---@return any
 function CreatePropSetInstanceAttachedToEntity(hash, x, y, z, entity, p5, p6, p7, p8) end
+
+---Same as CREATE_PROP_SET_INSTANCE_ATTACHED_TO_ENTITY
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xACA7FB30269096D4)
+---@param hash number | string
+---@param x number
+---@param y number
+---@param z number
+---@param entity number
+---@param p5 number
+---@param p6 boolean
+---@param p7 number
+---@param p8 boolean
+---@return any
+function CreatePropSetInstanceAttachedToEntity_2(hash, x, y, z, entity, p5, p6, p7, p8) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x58AC173A55D9D7B4)

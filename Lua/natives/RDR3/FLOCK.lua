@@ -55,6 +55,12 @@ function GetAnimalTuningFloatParam(animal, index) end
 function GetSpeciesTuningFloatParam(p0, p1, p2) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x8D913E493BAFE0A3)
+---@param herdHandle any
+---@return boolean
+function IsHerdValid(herdHandle) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x0816C31480764AB0)
 ---@param p0 any
 ---@param p1 any
@@ -157,12 +163,6 @@ function N_0x706b434fefad6a24(p0) end
 ---@param p6 any
 ---@return any
 function N_0x8049b17bec937662(p0, p1, p2, p3, p4, p5, p6) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x8D913E493BAFE0A3)
----@param p0 any
----@return any
-function N_0x8d913e493bafe0a3(p0) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x9E13ACC38BA8F9C3)

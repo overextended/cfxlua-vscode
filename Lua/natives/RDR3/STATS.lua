@@ -207,11 +207,6 @@ function N_0x8ba3d7b1e83ef803(p0) end
 ---@param ped number
 function N_0x8c889e4cbb4b2356(p0, ped) end
 
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x90E9A5DADBABC918)
----@param animalType number | string
-function N_0x90e9a5dadbabc918(animalType) end
-
 ---statId: see STAT_ID_IS_VALID
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x91A4F58E01ED5E4C)
 ---@param value number
@@ -352,6 +347,11 @@ function N_0xf2b5abde09958689(unlockHash, ped1, ped2) end
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xF8181B5EF156862C)
 ---@param ped number
 function N_0xf8181b5ef156862c(ped) end
+
+---Related to animal tagging
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x90E9A5DADBABC918)
+---@param animalType number | string
+function StatAddAnimalSampleTarget(animalType) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x6B1044FDC2B09101)

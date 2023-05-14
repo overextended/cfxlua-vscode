@@ -127,11 +127,6 @@ function InventoryDoesItemOwnEquipment(inventoryId, item) end
 ---@param item number | string
 function InventoryEnableItem(inventoryId, item) end
 
----This native has no functionality.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x597F571DDEE3FFAC)
----@param toggle boolean
-function InventoryEnableMissionInventory(toggle) end
-
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xD5D72F1624F3BA7C)
 ---@param inventoryId number
@@ -325,11 +320,6 @@ function InventoryGetItemExpiryTime() end
 function InventoryGetItemFromCollectionIndex(collectionId, itemIndex) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xFD41D1D4350F6413)
----@return any
-function InventoryHandleItemPromptInfoRequest() end
-
----This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xB881CA836CC4B6D4)
 ---@return boolean, any
 function InventoryIsGuidValid() end
@@ -392,11 +382,6 @@ function InventoryRemoveInventoryItemWithGuid(inventoryId, quantity, removeReaso
 ---@param removeReason number | string
 ---@return boolean
 function InventoryRemoveInventoryItemWithItemid(inventoryId, item, quantity, removeReason) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xF666EF30F4F0AC4E)
----@return any
-function InventorySetCarriableCarryActionPromptOverride() end
 
 ---Used with CClothingItem
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x9A113C660AEA3832)
@@ -596,4 +581,19 @@ function N_0xe1f45a67a9f0dcbc(inventoryId) end
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xE36D4A38D28D9CFB)
 ---@param p0 boolean
 function N_0xe36d4a38d28d9cfb(p0) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xF666EF30F4F0AC4E)
+---@return any
+function SetCarriableCarryActionPromptOverride() end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xFD41D1D4350F6413)
+---@return any
+function SetItemPromptInfoRequest() end
+
+---This native has no functionality.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x597F571DDEE3FFAC)
+---@param toggle boolean
+function SetUseMissionInventory(toggle) end
 

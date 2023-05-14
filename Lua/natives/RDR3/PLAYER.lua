@@ -661,6 +661,12 @@ function IsPlayerWantedLevelGreater(player, wantedLevel) end
 ---@return boolean
 function IsSecondarySpecialAbilityActive(player) end
 
+---Returns true if eagle eye is enabled for the player
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xE022CC1B545F1D9F)
+---@param player number
+---@return boolean
+function IsSecondarySpecialAbilityEnabled(player) end
+
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xB16223CB7DA965F0)
 ---@param player number
@@ -1667,12 +1673,6 @@ function N_0xde6c85975f9d4894(p0) end
 function N_0xdf93973251fb2ca5(player, p1) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xE022CC1B545F1D9F)
----@param p0 any
----@return any
-function N_0xe022cc1b545f1d9f(p0) end
-
----This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xE1D356F5A66D0FFA)
 ---@param emote number | string
 ---@return boolean
@@ -2265,6 +2265,7 @@ function SetPlayerOwnsVehicle(player, vehicle) end
 ---@param accuracy number
 function SetPlayerRemoteAccuracyFloorModifier(player, accuracy) end
 
+---https://github.com/Halen84/RDR3-Native-Flags-And-Enums/tree/main/ePlayerResetFlags
 ---https://github.com/femga/rdr3_discoveries/tree/master/AI/PLAYER_RESET_FLAGS
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x9F9A829C6751F3C7)
 ---@param player number

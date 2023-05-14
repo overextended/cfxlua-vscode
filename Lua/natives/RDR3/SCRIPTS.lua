@@ -283,6 +283,12 @@ function IsGoalContextActive(goalContext) end
 function IsLoadingScreenVisible() end
 
 ---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x72B2E00C9BAC6789)
+---@param bitIndex number
+---@return boolean, any
+function IsPlayerBitSetAtIndex(bitIndex) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x46E9AE36D8FA6417)
 ---@param threadId number
 ---@param ignoreKilledState boolean
@@ -369,13 +375,6 @@ function N_0x64f765d9a1f8f02c() end
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x6F700A4BF7C3331B)
 ---@param p0 boolean
 function N_0x6f700a4bf7c3331b(p0) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x72B2E00C9BAC6789)
----@param p0 any
----@param p1 any
----@return any
-function N_0x72b2e00c9bac6789(p0, p1) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x76CBCD9EADC00955)

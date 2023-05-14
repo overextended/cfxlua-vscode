@@ -13,6 +13,11 @@ function AddBounty(player, itemValueAmount) end
 ---@param pedGroup number
 function AddWitnessResponse(player, crimeType, pedGroup) end
 
+---Only used in rcm_homerob00 R* Script
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xECE3C34B270428D5)
+---@return boolean
+function AreAnyLawPedsInvestigating() end
+
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xF0FBFB9AB15F7734)
 ---@param player number
@@ -540,11 +545,6 @@ function N_0xe9ac8466abe484bb(p0, p1) end
 ---@param player number
 ---@return number
 function N_0xe9eb79cbf9c0f58a(player) end
-
----Only used in rcm_homerob00 R* Script
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xECE3C34B270428D5)
----@return boolean
-function N_0xece3c34b270428d5() end
 
 ---_SET_C* - _SET_D*
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xEDFC6C1FD1C964F5)

@@ -662,10 +662,10 @@ function N_0x5cb8b0c846d0f30b(p0) end
 ---@param p0 any
 function N_0x5cd3aad8ff9ed121(p0) end
 
----This native does not have an official description.
+---_NETWORK_SPAWN_CONFIG_*
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x5D3C528B7A7DF836)
----@param p0 number | string
-function N_0x5d3c528b7a7df836(p0) end
+---@param nsctf number | string
+function N_0x5d3c528b7a7df836(nsctf) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x5ED39DA62BEB1330)
@@ -734,7 +734,7 @@ function N_0x6c27442a225a241a(p0) end
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x6C7E04E9DE451789)
 function N_0x6c7e04e9de451789() end
 
----This native does not have an official description.
+---_NETWORK_SPAWN_CONFIG_*
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x6CEE2E30021DAEC6)
 function N_0x6cee2e30021daec6() end
 

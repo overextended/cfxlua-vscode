@@ -9,47 +9,13 @@ function AnalyticsPlaytimeFreemodeEnd() end
 function AnalyticsPlaytimeFreemodeStart() end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x2C24AF8EEEEF8A55)
----@param p0 any
----@param p1 any
----@param p2 any
-function N_0x2c24af8eeeef8a55(p0, p1, p2) end
-
----This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x32D5898C4898CD95)
-function N_0x32d5898c4898cd95() end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x37AA282163B0D2C4)
----@param p0 any
----@param p1 any
-function N_0x37aa282163b0d2c4(p0, p1) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x6571E4327390EC0B)
----@param p0 any
----@param p1 any
----@param p2 any
----@param p3 any
----@param p4 any
----@param p5 any
-function N_0x6571e4327390ec0b(p0, p1, p2, p3, p4, p5) end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x7E002A36AEFCFB55)
-function N_0x7e002a36aefcfb55() end
+function ClearTelemetryShopUi() end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x80A02D9F948A8BCA)
 ---@return boolean, any, any
 function N_0x80a02d9f948a8bca() end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xCA9E42F437625A85)
----@param p0 number
----@param p1 number | string
----@param p2 number | string
-function N_0xca9e42f437625a85(p0, p1, p2) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xEC0BD8736DCAF841)
@@ -147,8 +113,8 @@ function TelemetryCoupon(p0, p1, p2, p3, p4, p5) end
 ---@param p0 any
 ---@param p1 any
 ---@param p2 any
----@param p3 any
-function TelemetryCraftItem(p0, p1, p2, p3) end
+---@param quantity any
+function TelemetryCraftItem(p0, p1, p2, quantity) end
 
 ---Works in MP only.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xE692D336F8A2A97F)
@@ -171,6 +137,13 @@ function TelemetryDefensive(p0, p1, p2) end
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xF5EAD898EF387E73)
 ---@param p0 any
 function TelemetryDiscoverable(p0) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x2C24AF8EEEEF8A55)
+---@param p0 any
+---@param p1 any
+---@param emote number | string
+function TelemetryEmoteAddCategoryToSave(p0, p1, emote) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x7CEF4AC79F7E7FAD)
@@ -244,6 +217,12 @@ function TelemetryHonor(p0, p1) end
 function TelemetryHubNavigation(p0, p1, p2, p3) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x37AA282163B0D2C4)
+---@param couponItem any
+---@param p1 any
+function TelemetryHubOffers(couponItem, p1) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x1B554723799245F4)
 ---@param p0 any
 ---@param p1 any
@@ -315,6 +294,16 @@ function TelemetryMenuNavigation(p0, p1, p2, p3) end
 ---@param p1 any
 ---@param p2 any
 function TelemetryMissionCheckpoint(p0, p1, p2) end
+
+---_TELEMETRY_C* - _TELEMETRY_G*
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x6571E4327390EC0B)
+---@param p0 any
+---@param p1 any
+---@param x number
+---@param y number
+---@param z number
+---@param reason number
+function TelemetryMissionFailedToLaunch(p0, p1, x, y, z, reason) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xEA323F5E1A4DA2F1)
@@ -510,6 +499,11 @@ function TelemetryRoleTokenTransaction(p0, p1, p2, p3, p4, p5) end
 ---@param p1 any
 function TelemetryRoleTrader(p0, p1) end
 
+---Creation of the metric is related to attribute filling, i. e. at camp fires, when the ped is resting.
+---_TELEMETRY_C* - _TELEMETRY_P*
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x7E002A36AEFCFB55)
+function TelemetryRpgGlobalCalculateAttributeCoreDelta() end
+
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x61559675D23D8BD1)
 ---@param p0 any
@@ -525,6 +519,13 @@ function TelemetrySample(p0, p1, p2, p3, bTranq) end
 function TelemetrySetIsFlow(toggle) end
 
 ---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xCA9E42F437625A85)
+---@param transactionId number
+---@param p1 number | string
+---@param p2 number | string
+function TelemetrySetShopForTransaction(transactionId, p1, p2) end
+
+---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xB0B19B56697836F5)
 ---@param p0 any
 ---@param p1 any
@@ -534,13 +535,13 @@ function TelemetryShopCutscene(p0, p1, p2, p3) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x775B2ED944E44973)
----@param p0 any
----@param p1 any
----@param p2 any
+---@param shopType any
+---@param shopRegion any
+---@param region any
 ---@param p3 any
 ---@param p4 any
 ---@param p5 any
-function TelemetryShopEntry(p0, p1, p2, p3, p4, p5) end
+function TelemetryShopEntry(shopType, shopRegion, region, p3, p4, p5) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xF78E669FDC202E73)
@@ -563,8 +564,8 @@ function TelemetryShopPurchase(p0, p1, p2, p3, p4) end
 ---@param p1 any
 ---@param p2 any
 ---@param p3 any
----@param p4 any
-function TelemetryShopSell(p0, p1, p2, p3, p4) end
+---@param centSalePrice number
+function TelemetryShopSell(p0, p1, p2, p3, centSalePrice) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xF9F14080D80937BD)

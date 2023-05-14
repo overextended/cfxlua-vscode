@@ -327,12 +327,6 @@ function N_0x751df00eeff122e3(p0) end
 function N_0x76bad9d538bca1aa(ropeId, p1) end
 
 ---This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x7A54D82227A139DB)
----@param p1 any
----@return number
-function N_0x7a54d82227a139db(p1) end
-
----This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x814D453FCFDF119F)
 ---@param p0 any
 ---@param p1 any
@@ -476,6 +470,12 @@ function N_0xfb9153a54ac713e8(ropeId, p1) end
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x6076213101A47B3B)
 ---@param ropeId number
 function ReleaseRope(ropeId) end
+
+---This native does not have an official description.
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x7A54D82227A139DB)
+---@param visible boolean
+---@return number
+function RopeChangeVisibility(visible) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xF159A63806BB5BA8)

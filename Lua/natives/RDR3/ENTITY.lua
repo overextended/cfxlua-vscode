@@ -954,9 +954,16 @@ function IsEntityOwnedByPersistenceSystem(entity) end
 ---@param entity number
 ---@param animDict string
 ---@param animName string
----@param taskFlag number
+---@param animType number
 ---@return boolean
-function IsEntityPlayingAnim(entity, animDict, animName, taskFlag) end
+function IsEntityPlayingAnim(entity, animDict, animName, animType) end
+
+---Params: p1 (probably animType) = 1, 0
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x0B7CB1300CBFE19C)
+---@param entity number
+---@param p1 number
+---@return boolean
+function IsEntityPlayingAnyAnim(entity, p1) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x86468ADFA0F6B861)
@@ -1044,13 +1051,6 @@ function N_0x007aac783ed323ed(p0, p1, p2) end
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x0939E773925C4719)
 function N_0x0939e773925c4719() end
-
----This native does not have an official description.
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x0B7CB1300CBFE19C)
----@param p0 any
----@param p1 any
----@return any
-function N_0x0b7cb1300cbfe19c(p0, p1) end
 
 ---This native does not have an official description.
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x0CCEFC6C2C95DA2A)
