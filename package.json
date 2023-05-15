@@ -16,6 +16,20 @@
     "Linters",
     "Programming Languages"
   ],
+  "contributes": {
+    "configuration": {
+      "title": "CfxLua",
+      "properties": {
+        "cfxlua.game": {
+          "default": "gtav",
+          "enum": [
+            "gtav",
+            "rdr3"
+          ]
+        }
+      }
+    }
+  },
   "keywords": [
     "Lua",
     "FiveM",
