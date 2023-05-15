@@ -14,6 +14,16 @@ export async function activate(context: vscode.ExtensionContext) {
   await setLibrary("runtime", true);
   await setLibrary("natives/CFX-NATIVE", true);
   await setNativeLibrary();
+
+  context.subscriptions.push(
+    vscode.commands.registerCommand("cfxlua.game.gtav", () => {
+      setNativeLibrary('gtav');
+    }), 
+    
+    vscode.commands.registerCommand("cfxlua.game.rdr3", () => {
+      setNativeLibrary('rdr3');
+    })
+  );
 }
 
 // this method is called when your extension is deactivated

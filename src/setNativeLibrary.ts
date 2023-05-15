@@ -1,14 +1,20 @@
 import { workspace } from "vscode";
 import setLibrary from "./setLibrary";
 
-// todo: command or such to easily swap out the native library
-export default async function setNativeLibrary() {
+export default async function setNativeLibrary(game?: string) {
   const config = workspace.getConfiguration("cfxlua");
-  let game: string = config.get("game") || "gtav";
+
+  if (!game) {
+    game = config.get("game") || "gtav";
+  }
 
   await config.update("game", game, true);
 
   game = game.toUpperCase();
+
+  if (game !== "GTAV" && game !== "RDR3") {
+    return;
+  }
 
   if (game !== "GTAV") {
     await setLibrary(`natives/GTAV`, false);

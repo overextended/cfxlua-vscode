@@ -17,6 +17,18 @@
     "Programming Languages"
   ],
   "contributes": {
+    "commands": [
+      {
+        "command": "cfxlua.game.rdr3",
+        "title": "Use RDR3 natives",
+        "category": "CfxLua"
+      },
+      {
+        "command": "cfxlua.game.gtav",
+        "title": "Use GTAV natives",
+        "category": "CfxLua"
+      }
+    ],
     "configuration": {
       "title": "CfxLua",
       "properties": {
