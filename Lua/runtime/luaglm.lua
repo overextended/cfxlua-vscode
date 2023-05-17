@@ -127,11 +127,11 @@ function utf8.strcmputf8i(stringLH, stringRH) end
 function scrub(...) end
 
 ---@param x number
----@param y? number
----@param z? number
----@param w? number
----@return vector
-function vector(x, y, z, w) end
+---@return number
+---@overload fun(x: number, y: number): vector2
+---@overload fun(x: number, y: number, z: number): vector3
+---@overload fun(x: number, y: number, z: number, w: number): vector4
+function vector(x) end
 
 ---@param x number
 ---@param y number
