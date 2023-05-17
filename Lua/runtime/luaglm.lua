@@ -55,6 +55,12 @@
 ---@operator unm: vector4
 ---@field n 4
 
+---@class quat
+---@field w number
+---@field x number
+---@field y number
+---@field z number
+
 ---@alias matrix vector[]
 
 ---Compute the Jenkins hash of the input string.\
@@ -211,13 +217,19 @@ function norm(v) end
 ---@return vector
 function slerp(x, y, t) end
 
-function defer(...) end
+---@nodiscard
+---@param fn function
+---When assigned to a to-be-closed variable it will call the function once the variable falls out of scope.
+function defer(fn) end
 
 function each(...) end
 
-function quat(...) end
-
-qua = quat
+---@param w number
+---@param x number
+---@param y number
+---@param z number
+---@return quat
+function quat(w, x, y, z) end
 
 ---Returns the current time in nanoseconds.
 ---@return number
