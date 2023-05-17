@@ -1,10 +1,12 @@
 ---@meta
 
----https://github.com/citizenfx/lua/blob/luaglm-dev/cfx/README.md
----https://github.com/citizenfx/lua/blob/luaglm-dev/cfx/EXTENDED.md
+-- https://github.com/citizenfx/lua/blob/luaglm-dev/cfx/README.md
+-- https://github.com/citizenfx/lua/blob/luaglm-dev/cfx/EXTENDED.md
+-- investigation into custom types and functions is slowly ongoing
 
 ---@class vector
 ---@field x number
+---@field n number
 ---@field y? number
 ---@field z? number
 ---@field w? number
@@ -27,6 +29,7 @@
 ---@operator div(vector2|number): vector2
 ---@operator unm: vector2
 ---@operator len: number
+---@field n 2
 
 ---@class vector3 : vector2
 ---@field z number
@@ -38,6 +41,7 @@
 ---@operator mul(vector3|number): vector3
 ---@operator div(vector3|number): vector3
 ---@operator unm: vector3
+---@field n 3
 
 ---@class vector4 : vector3
 ---@field w number
@@ -49,6 +53,7 @@
 ---@operator mul(vector4|number): vector4
 ---@operator div(vector4|number): vector4
 ---@operator unm: vector4
+---@field n 4
 
 ---@alias matrix vector[]
 
