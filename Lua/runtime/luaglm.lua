@@ -18,48 +18,37 @@
 ---@field y number
 ---@field r number
 ---@field g number
+---@field [1] number
+---@field [2] number
+---@field xy vector2
 ---@operator add(vector2|number): vector2
 ---@operator sub(vector2|number): vector2
 ---@operator mul(vector2|number): vector2
 ---@operator div(vector2|number): vector2
 ---@operator unm: vector2
----@operator unm: vector2
 ---@operator len: number
 
----@class vector3
----@field x number
----@field y number
+---@class vector3 : vector2
 ---@field z number
----@field r number
----@field g number
 ---@field b number
----@field xy vector2
+---@field [3] number
+---@field xyz vector3
 ---@operator add(vector3|number): vector3
 ---@operator sub(vector3|number): vector3
 ---@operator mul(vector3|number): vector3
 ---@operator div(vector3|number): vector3
 ---@operator unm: vector3
----@operator unm: vector3
----@operator len: number
 
----@class vector4
----@field x number
----@field y number
----@field z number
+---@class vector4 : vector3
 ---@field w number
----@field r number
----@field g number
----@field b number
 ---@field a number
----@field xy vector2
----@field xyz vector3
+---@field [4] number
+---@field xyzw vector4
 ---@operator add(vector4|number): vector4
 ---@operator sub(vector4|number): vector4
 ---@operator mul(vector4|number): vector4
 ---@operator div(vector4|number): vector4
 ---@operator unm: vector4
----@operator unm: vector4
----@operator len: number
 
 ---@alias matrix vector[]
 
