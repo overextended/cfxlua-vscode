@@ -127,6 +127,7 @@ function scrub(...) end
 ---@overload fun(x: number, y: number): vector2
 ---@overload fun(x: number, y: number, z: number): vector3
 ---@overload fun(x: number, y: number, z: number, w: number): vector4
+---@overload fun(q: quat): vector4
 function vector(x) end
 
 ---@param x number
@@ -148,6 +149,7 @@ function vector3(x, y, z) end
 ---@param w number
 ---@return vector4
 ---@overload fun(n: number): vector4
+---@overload fun(q: quat): vector4
 function vector4(x, y, z, w) end
 
 vec = vector
@@ -155,44 +157,64 @@ vec2 = vector2
 vec3 = vector3
 vec4 = vector4
 
----@vararg vector
----@return matrix
-function mat(...) end
+---@generic T: vector
+---@param x T
+---@param y T
+---@param z? T
+---@param w? T
+---@return matrix<T>
+function mat(x, y, z, w) end
 
-mat4 = mat
-mat4x4 = mat
-mat2x2 = mat
-mat2 = mat
-mat2x3 = mat
-mat2x4 = mat
-mat3x2 = mat
-mat3x3 = mat
-mat3 = mat
-mat3x4 = mat
-mat4x2 = mat
-mat4x3 = mat
-mat4x4 = mat
+---@return matrix<vector2>
+function mat2(...) end
+
+mat2x2 = mat2
+mat3x2 = mat2
+mat4x2 = mat2
+
+---@return matrix<vector3>
+function mat3(...) end
+
+mat2x3 = mat3
+mat3x3 = mat3
+mat4x3 = mat3
+
+---@return matrix<vector4>
+function mat4(...) end
+
+mat2x4 = mat4
+mat3x4 = mat4
+mat4x4 = mat4
 
 ---Returns the dot product of x and y.
----@param x number|vector
----@param y number|vector
+---@param x number
+---@param y number
 ---@return number
+---@overload fun(x: vector2, y: vector2): number
+---@overload fun(x: vector3, y: vector3): number
+---@overload fun(x: vector4, y: vector4): number
+---@overload fun(x: quat, y: quat): number
 function dot(x, y) end
 
 ---Returns the cross product of x and y.
----@param x vector2|vector3
----@param y vector2|vector3
----@return number|vector3
+---@param x vector2
+---@param y vector2
+---@return number
+---@overload fun(x: vector3, y: vector3): vector3
+---@overload fun(x: quat, y: quat): quat
+---@overload fun(x: vector3 | quat, y: vector3 | quat): vector3
 function cross(x, y) end
 
 ---Returns the quaternion inverse, or inverse of a squared matrix.
----@param v matrix
----@return matrix
-function inv(v) end
+---@generic T: matrix | quat
+---@param v T
+---@return T
+function inverse(v) end
 
 ---Returns a vector in the same direction as x but with length of 1.
----@param v vector
----@return vector
+---@generic T: vector | quat
+---@param v T
+---@return T
 function norm(v) end
 
 ---Returns spherical interpolation between two vectors.
@@ -200,6 +222,7 @@ function norm(v) end
 ---@param y vector
 ---@param t number
 ---@return vector
+---@overload fun(x: quat, y: quat, t: number): quat
 function slerp(x, y, t) end
 
 ---@nodiscard
@@ -214,6 +237,10 @@ function each(...) end
 ---@param y number
 ---@param z number
 ---@return quat
+---@overload fun(): quat
+---@overload fun(xyz: vector3, target: vector3): quat
+---@overload fun(angle: number, axis: vector3): quat
+---@overload fun(matrix: matrix): quat
 function quat(w, x, y, z) end
 
 ---Returns the current time in nanoseconds.
