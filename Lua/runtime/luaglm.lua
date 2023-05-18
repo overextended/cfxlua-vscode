@@ -107,7 +107,7 @@ function string.strconcat(...) end
 function string.strsplit(delimiter, string, pieces) end
 
 --- Converts all arguments to strings.
----@return ...
+---@return string ...
 function string.tostringall(...) end
 
 utf8.strlenutf8 = utf8.len
@@ -120,6 +120,7 @@ utf8.strlenutf8 = utf8.len
 function utf8.strcmputf8i(stringLH, stringRH) end
 
 --- Return all arguments with non-number/boolean/string values changed to nil.
+---@return number | boolean | string | nil ...
 function scrub(...) end
 
 ---@param x number
@@ -230,7 +231,8 @@ function slerp(x, y, t) end
 ---When assigned to a to-be-closed variable it will call the function once the variable falls out of scope.
 function defer(fn) end
 
-function each(...) end
+---@todo
+each = pairs
 
 ---@param w number
 ---@param x number
