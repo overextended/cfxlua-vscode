@@ -4,17 +4,6 @@
 -- https://github.com/citizenfx/lua/blob/luaglm-dev/cfx/EXTENDED.md
 -- investigation into custom types and functions is slowly ongoing
 
----@class vector
----@field x number
----@field n number
----@field y? number
----@field z? number
----@field w? number
----@field r number
----@field g? number
----@field b? number
----@field a? number
-
 ---@class vector2
 ---@field x number
 ---@field y number
@@ -55,13 +44,9 @@
 ---@operator unm: vector4
 ---@field n 4
 
----@class quat
----@field w number
----@field x number
----@field y number
----@field z number
-
----@alias matrix vector[]
+---@alias vector vector2 | vector3 | vector4
+---@class quat : vector4
+---@class matrix<T>: { [number]: T }
 
 ---Compute the Jenkins hash of the input string.\
 ---If 'ignore_casing' is true, the byte data is hashed as is. Otherwise, each\
