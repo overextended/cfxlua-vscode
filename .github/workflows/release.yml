@@ -1,17 +1,19 @@
-on:
-  push:
-    tags:
-      - "*"
+name: update extension
+on: [push]
 
-name: Deploy Extension
 jobs:
-  deploy:
+  bump:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
         with:
           node-version: 16
+
+      - name: Bumping version
+        uses: jpb06/bump-package@latest
+
       - run: yarn install --frozen-lockfile
       - name: Publish to Visual Studio Marketplace
         uses: HaaLeo/publish-vscode-extension@v1
