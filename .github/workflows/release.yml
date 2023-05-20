@@ -13,6 +13,10 @@ jobs:
 
       - name: Bumping version
         uses: jpb06/bump-package@latest
+        with:
+          major-keywords: BREAKING CHANGE
+          minor-keywords: feat
+          should-default-to-patch: true
 
       - run: yarn install --frozen-lockfile
       - name: Publish to Visual Studio Marketplace
