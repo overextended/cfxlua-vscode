@@ -18,12 +18,12 @@ export default async function setNativeLibrary(game?: string) {
   }
 
   if (game !== "GTAV") {
-    await setLibrary(`natives/GTAV`, false);
+    await setLibrary([`natives/GTAV`], false);
   }
 
   if (game !== "RDR3") {
-    await setLibrary(`natives/RDR3`, false);
+    await setLibrary([`natives/RDR3`], false);
   }
 
-  await setLibrary(`natives/${game}`, true);
+  await setLibrary([`natives/${game}`], true);
 }
