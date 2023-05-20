@@ -1,5 +1,6 @@
 import { workspace } from "vscode";
 import setLibrary from "./setLibrary";
+import getSettingsScope from "./getSettingsScope";
 
 export default async function setNativeLibrary(game?: string) {
   const config = workspace.getConfiguration("cfxlua");
@@ -8,7 +9,7 @@ export default async function setNativeLibrary(game?: string) {
     game = config.get("game") || "gtav";
   }
 
-  await config.update("game", game, true);
+  await config.update("game", game, getSettingsScope());
 
   game = game.toUpperCase();
 
