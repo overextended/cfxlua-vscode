@@ -1,4 +1,4 @@
-import{ ExtensionContext, extensions, workspace, commands} from "vscode";
+import { ExtensionContext, extensions, workspace, commands } from "vscode";
 
 export const id = "overextended.cfxlua-vscode";
 export const path = extensions.getExtension(id)!.extensionPath;
@@ -12,15 +12,18 @@ import setNativeLibrary from "./setNativeLibrary";
 export async function activate(context: ExtensionContext) {
   const game = workspace.getConfiguration("cfxlua").get("game", "GTAV");
   await setPlugin(true);
-  await setLibrary(["runtime", "natives/CFX-NATIVE", `natives/${game}`], true);
+  await setLibrary(
+    ["runtime", "natives/CFX-NATIVE", `natives/${game.toUpperCase()}`],
+    true
+  );
 
   context.subscriptions.push(
     commands.registerCommand("cfxlua.game.gtav", () => {
-      setNativeLibrary('gtav');
-    }), 
-    
+      setNativeLibrary("gtav");
+    }),
+
     commands.registerCommand("cfxlua.game.rdr3", () => {
-      setNativeLibrary('rdr3');
+      setNativeLibrary("rdr3");
     })
   );
 }
@@ -28,5 +31,8 @@ export async function activate(context: ExtensionContext) {
 // this method is called when your extension is deactivated
 export async function deactivate() {
   await setPlugin(false);
-  await setLibrary(["runtime", "natives/CFX-NATIVE", "natives/GTAV", "natives/RDR3"], false);
+  await setLibrary(
+    ["runtime", "natives/CFX-NATIVE", "natives/GTAV", "natives/RDR3"],
+    false
+  );
 }
