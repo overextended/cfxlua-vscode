@@ -1,5 +1,7 @@
 ---@meta
 
+---**`FIRE` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0xE3AD2BDBAEE269AC)  
 ---```
 ---NativeDB Added Parameter 9: BOOL noDamage
 ---```
@@ -99,7 +101,6 @@
 ---    EXP_TAG_SUBMARINE_BIG = 82,
 ---};
 ---```
----[Native Documentation](https://docs.fivem.net/natives/?_0xE3AD2BDBAEE269AC)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -110,8 +111,9 @@
 ---@param cameraShake number
 function AddExplosion(x, y, z, explosionType, damageScale, isAudible, isInvisible, cameraShake) end
 
+---**`FIRE` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0x36DD3FE58B5E5212)  
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x36DD3FE58B5E5212)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -123,8 +125,9 @@ function AddExplosion(x, y, z, explosionType, damageScale, isAudible, isInvisibl
 ---@param cameraShake number
 function AddExplosionWithUserVfx(x, y, z, explosionType, explosionFx, damageScale, isAudible, isInvisible, cameraShake) end
 
+---**`FIRE` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0x172AA1B624FA1013)  
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x172AA1B624FA1013)
 ---@param ped number
 ---@param x number
 ---@param y number
@@ -136,20 +139,22 @@ function AddExplosionWithUserVfx(x, y, z, explosionType, explosionFx, damageScal
 ---@param cameraShake number
 function AddOwnedExplosion(ped, x, y, z, explosionType, damageScale, isAudible, isInvisible, cameraShake) end
 
+---**`FIRE` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0x352A9F6BCF90081F)  
 ---```
 ---Returns TRUE if it found something. FALSE if not.  
 ---```
----[Native Documentation](https://docs.fivem.net/natives/?_0x352A9F6BCF90081F)
 ---@param x number
 ---@param y number
 ---@param z number
 ---@return boolean, vector3
 function GetClosestFirePos(x, y, z) end
 
+---**`FIRE` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0x14BA4BA137AF6CEC)  
 ---```
 ---Returns a handle to the first entity within the a circle spawned inside the 2 points from a radius.
 ---```
----[Native Documentation](https://docs.fivem.net/natives/?_0x14BA4BA137AF6CEC)
 ---@param explosionType number
 ---@param x1 number
 ---@param y1 number
@@ -161,10 +166,11 @@ function GetClosestFirePos(x, y, z) end
 ---@return number
 function GetEntityInsideExplosionArea(explosionType, x1, y1, z1, x2, y2, z2, radius) end
 
+---**`FIRE` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0xB3CD51E3DB86F176)  
 ---```
 ---NativeDB Introduced: v1290
 ---```
----[Native Documentation](https://docs.fivem.net/natives/?_0xB3CD51E3DB86F176)
 ---@param explosionType number
 ---@param x number
 ---@param y number
@@ -173,8 +179,9 @@ function GetEntityInsideExplosionArea(explosionType, x1, y1, z1, x2, y2, z2, rad
 ---@return number
 function GetEntityInsideExplosionSphere(explosionType, x, y, z, radius) end
 
+---**`FIRE` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0x50CAD495A460B305)  
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x50CAD495A460B305)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -182,14 +189,16 @@ function GetEntityInsideExplosionSphere(explosionType, x, y, z, radius) end
 ---@return number
 function GetNumberOfFiresInRange(x, y, z, radius) end
 
+---**`FIRE` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0x28D3FED7190D3A0B)  
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x28D3FED7190D3A0B)
 ---@param entity number
 ---@return boolean
 function IsEntityOnFire(entity) end
 
+---**`FIRE` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0x6070104B699B2EF4)  
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x6070104B699B2EF4)
 ---@param explosionType number
 ---@param x1 number
 ---@param y1 number
@@ -200,8 +209,9 @@ function IsEntityOnFire(entity) end
 ---@return boolean
 function IsExplosionActiveInArea(explosionType, x1, y1, z1, x2, y2, z2) end
 
+---**`FIRE` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0xA079A6C51525DC4B)  
 ---See [`IS_POINT_IN_ANGLED_AREA`](#\_0x2A70BAE8883E4C81) for the definition of an angled area.
----[Native Documentation](https://docs.fivem.net/natives/?_0xA079A6C51525DC4B)
 ---@param explosionType number
 ---@param x1 number
 ---@param y1 number
@@ -213,8 +223,9 @@ function IsExplosionActiveInArea(explosionType, x1, y1, z1, x2, y2, z2) end
 ---@return boolean
 function IsExplosionInAngledArea(explosionType, x1, y1, z1, x2, y2, z2, width) end
 
+---**`FIRE` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0x2E2EBA0EE7CED0E0)  
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x2E2EBA0EE7CED0E0)
 ---@param explosionType number
 ---@param x1 number
 ---@param y1 number
@@ -225,8 +236,9 @@ function IsExplosionInAngledArea(explosionType, x1, y1, z1, x2, y2, z2, width) e
 ---@return boolean
 function IsExplosionInArea(explosionType, x1, y1, z1, x2, y2, z2) end
 
+---**`FIRE` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0xAB0F816885B0E483)  
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xAB0F816885B0E483)
 ---@param explosionType number
 ---@param x number
 ---@param y number
@@ -235,33 +247,37 @@ function IsExplosionInArea(explosionType, x1, y1, z1, x2, y2, z2) end
 ---@return boolean
 function IsExplosionInSphere(explosionType, x, y, z, radius) end
 
+---**`FIRE` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0x7FF548385680673F)  
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x7FF548385680673F)
 ---@param fireHandle number
 function RemoveScriptFire(fireHandle) end
 
+---**`FIRE` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0x8F390AC4155099BA)  
 ---SET_FIRE_\*
 ---
 ---```
 ---NativeDB Introduced: v1734
 ---```
----[Native Documentation](https://docs.fivem.net/natives/?_0x8F390AC4155099BA)
 ---@param p0 number
 function SetFireSpreadRate(p0) end
 
+---**`FIRE` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0xF6A9D9708F6F23DF)  
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0xF6A9D9708F6F23DF)
 ---@param entity number
 ---@return number
 function StartEntityFire(entity) end
 
+---**`FIRE` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0x6B83617E04503888)  
 ---```
 ---Starts a fire:  
 ---xyz: Location of fire  
 ---maxChildren: The max amount of times a fire can spread to other objects. Must be 25 or less, or the function will do nothing.  
 ---isGasFire: Whether or not the fire is powered by gasoline.  
 ---```
----[Native Documentation](https://docs.fivem.net/natives/?_0x6B83617E04503888)
 ---@param X number
 ---@param Y number
 ---@param Z number
@@ -270,13 +286,15 @@ function StartEntityFire(entity) end
 ---@return number
 function StartScriptFire(X, Y, Z, maxChildren, isGasFire) end
 
+---**`FIRE` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0x7F0DD2EBBB651AFF)  
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x7F0DD2EBBB651AFF)
 ---@param entity number
 function StopEntityFire(entity) end
 
+---**`FIRE` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0x056A8A219B8E829F)  
 ---This native does not have an official description.
----[Native Documentation](https://docs.fivem.net/natives/?_0x056A8A219B8E829F)
 ---@param x number
 ---@param y number
 ---@param z number

@@ -1,5 +1,7 @@
 ---@meta
 
+---**`ZONE` `client`**  
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x43AD8FC02B429D33)  
 ---Returns name hash, see common:/data/levels/rdr3/mapzones.meta
 ---
 ---type (-1 matches any type):
@@ -25,7 +27,6 @@
 ---};
 ---
 ---https://github.com/femga/rdr3_discoveries/tree/master/zones & https://alloc8or.re/rdr3/doc/enums/CMapZone__Type.txt
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x43AD8FC02B429D33)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -33,6 +34,8 @@
 ---@return number
 function GetMapZoneAtCoords(x, y, z, type) end
 
+---**`ZONE` `client`**  
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x5BA7A68A346A5A91)  
 ---Returns the zone's name hash if its type matches one of the following:
 ---- LAKE
 ---- RIVER
@@ -42,7 +45,6 @@ function GetMapZoneAtCoords(x, y, z, type) end
 ---- CREEK
 ---- POND
 ---- GLACIER
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x5BA7A68A346A5A91)
 ---@param x number
 ---@param y number
 ---@param z number

@@ -8,9 +8,8 @@ exports = {}
 
 ---Trigger a coroutine when the event is called.
 ---[Documentation](https://docs.fivem.net/docs/scripting-manual/working-with-events/listening-for-events/)
----@async
 ---@param eventName string
----@param eventRoutine async function
+---@param eventRoutine function
 ---@return { key: number, name : string}
 function AddEventHandler(eventName, eventRoutine) end
 
@@ -20,7 +19,7 @@ function RemoveEventHandler(eventData) end
 ---Registers an event as safe for network, allowing it to be triggered by both the client and server.
 ---[Documentation](https://docs.fivem.net/docs/scripting-manual/working-with-events/listening-for-events/)
 ---@param eventName string
----@param cb? async function trigger a coroutine when the event is called.
+---@param cb? function trigger a coroutine when the event is called.
 ---@return { key: number, name : string}?
 function RegisterNetEvent(eventName, cb) end
 

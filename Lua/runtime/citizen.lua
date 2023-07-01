@@ -3,19 +3,16 @@
 Citizen = {}
 
 ---Creates a coroutine to handle code asynchronously.
----@async
 ---@param threadFunction function
 function Citizen.CreateThread(threadFunction) end
 
 CreateThread = Citizen.CreateThread
 
 ---Creates a coroutine to handle code asynchronously.
----@async
 ---@param threadFunction function
 function Citizen.CreateThreadNow(threadFunction) end
 
 ---Executes a coroutine after the given time has passed in milliseconds.
----@async
 ---@param msec number
 ---@param callback function
 function Citizen.SetTimeout(msec, callback) end
