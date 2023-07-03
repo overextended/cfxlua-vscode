@@ -1,4 +1,6 @@
-### CfxLua support for VSCode (and FXCode)
+# CfxLua (FiveM/RedM) IntelliSense
+
+![](https://img.shields.io/visual-studio-marketplace/d/overextended.cfxlua-vscode) ![](https://img.shields.io/visual-studio-marketplace/i/overextended.cfxlua-vscode)
 
 _This extension is not authored, published, sponsored, nor endorsed by Cfx.re._
 
@@ -12,9 +14,9 @@ IntelliSense and annotations are provided by [sumneko's lua language server](htt
 ![image](https://user-images.githubusercontent.com/65407488/141656446-21f9105a-9371-4bb3-9089-ab672930f830.png)
 ![image](https://user-images.githubusercontent.com/65407488/141656539-77221fb4-6ed7-4352-8a5b-cdc1c02de8fd.png)
 
-### Native declarations
+## Manually building native declarations
 
-_Natives for FiveM and FXServer are included with the extension. This guide is for manually generating natives._
+_Natives for FiveM and FXServer are included with the extension - this section can be ignored for standard use._
 
 - Install [NodeJS](https://nodejs.org/en/)
 - Download [JetbrainIDE-CFX.RE](https://github.com/thelindat/JetbrainIDE-CFX.RE)
