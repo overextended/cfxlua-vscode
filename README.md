@@ -4,19 +4,21 @@
 
 _This extension is not authored, published, sponsored, nor endorsed by Cfx.re._
 
-Adds declarations for functions and types added by the Lua Script Runtime, LuaGLM language, environmental globals, and (FiveM/CFX) natives.  
-IntelliSense and annotations are provided by [sumneko's lua language server](https://marketplace.visualstudio.com/items?itemName=sumneko.lua).
+## Features
+- Diagnostics, IntelliSense, annotations, and auto-completion provided by [sumneko's Lua Language Server](https://marketplace.visualstudio.com/items?itemName=sumneko.lua).
+- Support for Cfx's implementation of the [Lua language (LuaGLM)](https://github.com/citizenfx/lua/tree/luaglm-dev/cfx).
+  - Support for vector, quat, and matrix types.
+  - Support for [safe navigation](https://github.com/citizenfx/lua/blob/luaglm-dev/cfx/README.md#safe-navigation) `t?.x?.y == nil`.
+  - Support for [in unpacking](https://github.com/citizenfx/lua/blob/luaglm-dev/cfx/README.md#in-unpacking) `local a,b,c in t`.
+- Support for runtime/environment globals (e.g. CreateThread, promises, json, statebags).
+- Support for FiveM, RedM, and CFX natives.
 
-- [Script Runtime](https://github.com/citizenfx/fivem/blob/master/code/components/citizen-scripting-lua/src/LuaScriptRuntime.cpp)
-- [LuaGLM](https://github.com/citizenfx/lua/tree/luaglm-dev/cfx)
-- [scheduler.lua](https://github.com/citizenfx/fivem/blob/master/data/shared/citizen/scripting/lua/scheduler.lua)
-
-![image](https://user-images.githubusercontent.com/65407488/141656446-21f9105a-9371-4bb3-9089-ab672930f830.png)
-![image](https://user-images.githubusercontent.com/65407488/141656539-77221fb4-6ed7-4352-8a5b-cdc1c02de8fd.png)
+![image](https://github.com/overextended/cfxlua-vscode/assets/65407488/6f609fa2-ca19-4705-adf5-80635d539cbd)
+![image](https://github.com/overextended/cfxlua-vscode/assets/65407488/b837c0a8-01b0-4e3d-95f9-f925cb1320bf)
 
 ## Manually building native declarations
 
-_Natives for FiveM and FXServer are included with the extension - this section can be ignored for standard use._
+_Natives are included with the extension - this section can be ignored for standard use._
 
 - Install [NodeJS](https://nodejs.org/en/)
 - Download [JetbrainIDE-CFX.RE](https://github.com/thelindat/JetbrainIDE-CFX.RE)
