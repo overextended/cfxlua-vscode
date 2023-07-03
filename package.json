@@ -48,7 +48,7 @@
     "RedM",
     "IntelliSense"
   ],
-  "icon": "cfxlua.png",
+  "icon": "logo.png",
   "activationEvents": [
     "onLanguage:lua"
   ],
