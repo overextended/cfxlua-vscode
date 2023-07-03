@@ -51,32 +51,34 @@ function OnSetText(uri, text)
 	end
 
 	-- prevent diagnostic errors from in unpacking (a, b, c in t)  
-	-- could benefit from detection of comments to prevent nonsense annotations/comments
-	for vars, inPos, afterInPos, tablePos, tableName, finishPos in str_gmatch(text, '([_%w, ]*)%s+()in()[     ]+()([_%w]*%s-%(?.-%)?)()') do
-		if tableName ~= '' and not str_find(vars, '^%s*for%s') then
-			-- replace 'in' with '='
-			count = count + 1
-			diffs[count] = {
-				start = inPos,
-				finish = afterInPos - 1,
-				text = '='
-			}
+	-- needs better comment detection (i.e. comment blocks) to prevent nonsense changes to annotations
+	for comment, vars, inPos, afterInPos, tablePos, tableName, finishPos in str_gmatch(text, '(%-?%-?)([_%w, ]*)%s+()in()[     ]+()([_%w]*%s-%(?.-%)?)()') do
+		if comment == '' then
+			if tableName ~= '' and not str_find(vars, '^%s*for%s') then
+				-- replace 'in' with '='
+				count = count + 1
+				diffs[count] = {
+					start = inPos,
+					finish = afterInPos - 1,
+					text = '='
+				}
 
-			local tableVars = ''
-			vars = str_gsub(vars, '^%s*local%s', '')
+				local tableVars = ''
+				vars = str_gsub(vars, '^%s*local%s', '')
 
-			-- replace 't' with 't.a, t.b, t.c'
-			for varName in str_gmatch(str_gsub(vars, '%s+', ''), '([_%w]+)') do
-				if #tableVars > 0 then tableVars = tableVars .. ',' end
-				tableVars = tableVars .. tableName .. '.' .. varName
+				-- replace 't' with 't.a, t.b, t.c'
+				for varName in str_gmatch(str_gsub(vars, '%s+', ''), '([_%w]+)') do
+					if #tableVars > 0 then tableVars = tableVars .. ',' end
+					tableVars = tableVars .. tableName .. '.' .. varName
+				end
+
+				count = count + 1
+				diffs[count] = {
+					start = tablePos,
+					finish = finishPos - 1,
+					text = tableVars
+				}
 			end
-
-			count = count + 1
-			diffs[count] = {
-				start = tablePos,
-				finish = finishPos - 1,
-				text = tableVars
-			}
 		end
 	end
 
