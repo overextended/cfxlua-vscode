@@ -1,14 +1,31 @@
 ---@meta
 
----[lua-cmsgpack](https://github.com/citizenfx/lua-cmsgpack/tree/grit)
+---[citizenfx/lua-cmsgpack](https://github.com/citizenfx/lua-cmsgpack/tree/grit)
 msgpack = {}
 
----Refer to [lua-cmsgpack#configuration](https://github.com/citizenfx/lua-cmsgpack/tree/grit#configuration).
----@param option string
+---@alias msgpack_options
+---| 'float'
+---| 'double'
+---| 'integer'
+---| 'unsigne'
+---| 'string_compat'
+---| 'string_binary'
+---| 'always_as_map'
+---| 'without_hole'
+---| 'with_hole'
+---| 'empty_table_as_array'
+---| 'sentinel'
+---| 'ignore_invalid'
+---| 'small_lua'
+---| 'full64bits'
+---| 'long_double'
+
+---Return the value of a global encoding/decoding option. See [citizenfx/lua-cmsgpack#configuration](https://github.com/citizenfx/lua-cmsgpack/tree/grit#configuration).
+---@param option msgpack_options
 function msgpack.getoption(option) end
 
----Set a global encoding/decoding option; see msgpack.getoption.
----@param option string
+---Set a global encoding/decoding option. See [citizenfx/lua-cmsgpack#configuration](https://github.com/citizenfx/lua-cmsgpack/tree/grit#configuration).
+---@param option msgpack_options
 ---@param value any
 function msgpack.setoption(option, value) end
 
@@ -17,39 +34,51 @@ msgpack.null = nil
 msgpack.sentinel = msgpack.null
 
 ---Receives any number of arguments and pack their values.
----Refer to [lua-cmsgpack#packing](https://github.com/citizenfx/lua-cmsgpack/tree/grit#packing).
+---See [citizenfx/lua-cmsgpack#packing](https://github.com/citizenfx/lua-cmsgpack/tree/grit#packing).
 ---@return string
 function msgpack.pack(...) end
 
 ---Receives any number of arguments and pack their values as an array, handling intermediate nil values.
----Refer to [lua-cmsgpack#packing](https://github.com/citizenfx/lua-cmsgpack/tree/grit#packing).
+---See [citizenfx/lua-cmsgpack#packing](https://github.com/citizenfx/lua-cmsgpack/tree/grit#packing).
 ---@return string
 function msgpack.pack_args(...) end
 
----Refer to [lua-cmsgpack#packing](https://github.com/citizenfx/lua-cmsgpack/tree/grit#packing).
+---Create, and place onto the Lua stack, a new userdata that can be used to pack Lua values.
+---See [citizenfx/lua-cmsgpack#packing](https://github.com/citizenfx/lua-cmsgpack/tree/grit#packing).
 ---@return userdata
 function msgpack.new() end
 
----Refer to [lua-cmsgpack#unpacking](https://github.com/citizenfx/lua-cmsgpack/tree/grit#unpacking).
----@param string string
----@param offset number?
----@param limit number?
----@param endposition number?
+---See [citizenfx/lua-cmsgpack#unpacking](https://github.com/citizenfx/lua-cmsgpack/tree/grit#unpacking).
+---@param encoded_string string
+---@param offset number? Offset within the encoded string to start decoding.
+---@param limit number? Number of Lua objects to decode, 0 to decode the entire string.
+---@param end_position number? Length of the encoded substring (starting at offset).
 ---@return any
-function msgpack.unpack(string, offset, limit, endposition) end
+function msgpack.unpack(encoded_string, offset, limit, end_position) end
+
+---Unpack all elements, up to a potential limit, from a msgpack encoded string.  
+---Returning (1) the position in the string where the decoding ended, 0 for  
+---completion; and (2) and all decoded objects (up to limit).
+---@param encoded_string string
+---@param position number? Offset within the encoded string to start decoding.
+---@param limit number? Number of Lua objects to decode, 0 to decode the entire string.
+---@param end_position number? Length of the encoded substring (starting at offset).
+---@return number position
+---@return any element
+function msgpack.next(encoded_string, position, limit, end_position) end
 
 ---Register an extension-type with a pack and unpack methods, and a unique identifier.
----Refer to [lua-cmsgpack#extensions](https://github.com/citizenfx/lua-cmsgpack/tree/grit#extensions).
+---See [citizenfx/lua-cmsgpack#extensions](https://github.com/citizenfx/lua-cmsgpack/tree/grit#extensions).
 ---@param encoder table
 function msgpack.extend(encoder) end
 
 ---Get the extension-type definition for encoding/decoding tables/userdata definitions.
----Refer to [lua-cmsgpack#extensions](https://github.com/citizenfx/lua-cmsgpack/tree/grit#extensions).
+---See [citizenfx/lua-cmsgpack#extensions](https://github.com/citizenfx/lua-cmsgpack/tree/grit#extensions).
 ---@return table
 function msgpack.extend_get(ext_id) end
 
 ---Explicitly remove the extension definition for all type identifiers provided.
----Refer to [lua-cmsgpack#extensions](https://github.com/citizenfx/lua-cmsgpack/tree/grit#extensions).
+---See [citizenfx/lua-cmsgpack#extensions](https://github.com/citizenfx/lua-cmsgpack/tree/grit#extensions).
 ---@vararg string
 function msgpack.extend_clear(...) end
 
