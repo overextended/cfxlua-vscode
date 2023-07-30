@@ -538,9 +538,7 @@ function RemoveClipSet(clipSet) end
 
 ---**`STREAMING` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xEE6C5AD3ECE0A82D)  
----```
----IPL list: pastebin.com/iNGLY32D  
----```
+---IPL list can be found [here](https://gist.github.com/4mmonium/4c8a076b5f712a7cc64666003009a2e7).
 ---@param iplName string
 function RemoveIpl(iplName) end
 

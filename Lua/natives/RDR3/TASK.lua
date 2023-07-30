@@ -60,24 +60,24 @@ function AddFleeTargetPed(ped, targetPed, p2) end
 ---**`TASK` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x23083260DEC3A551)  
 ---This native does not have an official description.
----@param p0 any
----@param p1 any
-function AddPatrolRouteLink(p0, p1) end
+---@param node1 number
+---@param node2 number
+function AddPatrolRouteLink(node1, node2) end
 
 ---**`TASK` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x8EDF950167586B7C)  
 ---This native does not have an official description.
----@param p0 any
----@param p1 any
----@param p2 any
----@param p3 any
----@param p4 any
----@param p5 any
----@param p6 any
----@param p7 any
----@param p8 any
----@param p9 any
-function AddPatrolRouteNode(p0, p1, p2, p3, p4, p5, p6, p7, p8, p9) end
+---@param nodeId number
+---@param scenarioName string
+---@param x number
+---@param y number
+---@param z number
+---@param lookPosX number
+---@param lookPosY number
+---@param lookPosZ number
+---@param duration number
+---@param p9 boolean
+function AddPatrolRouteNode(nodeId, scenarioName, x, y, z, lookPosX, lookPosY, lookPosZ, duration, p9) end
 
 ---**`TASK` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x5E5D96BE25E9DF68)  
@@ -738,30 +738,30 @@ function IsMountedWeaponTaskUnderneathDrivingTask(ped) end
 ---**`TASK` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xD4D8636C0199A939)  
 ---This native does not have an official description.
----@param ped number
+---@param moveBlendRatio number
 ---@return boolean
-function IsMoveBlendRatioRunning(ped) end
+function IsMoveBlendRatioRunning(moveBlendRatio) end
 
 ---**`TASK` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x24A2AD74FA9814E2)  
 ---This native does not have an official description.
----@param ped number
+---@param moveBlendRatio number
 ---@return boolean
-function IsMoveBlendRatioSprinting(ped) end
+function IsMoveBlendRatioSprinting(moveBlendRatio) end
 
 ---**`TASK` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x349CE7B56DAFD95C)  
 ---This native does not have an official description.
----@param ped number
+---@param moveBlendRatio number
 ---@return boolean
-function IsMoveBlendRatioStill(ped) end
+function IsMoveBlendRatioStill(moveBlendRatio) end
 
 ---**`TASK` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xF133BBBE91E1691F)  
 ---This native does not have an official description.
----@param ped number
+---@param moveBlendRatio number
 ---@return boolean
-function IsMoveBlendRatioWalking(ped) end
+function IsMoveBlendRatioWalking(moveBlendRatio) end
 
 ---**`TASK` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xAA135F9482C82CC3)  
@@ -2380,9 +2380,9 @@ function N_0xfc7f71cf49f70b6b(p0) end
 ---**`TASK` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xFDECCA06E8B81346)  
 ---This native does not have an official description.
----@param p0 any
+---@param ped number
 ---@return any
-function N_0xfdecca06e8b81346(p0) end
+function N_0xfdecca06e8b81346(ped) end
 
 ---**`TASK` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xFE5D28B9B7837CC1)  
@@ -2416,7 +2416,7 @@ function N_0xffb520a3e16f7b7b(ped, p1) end
 
 ---**`TASK` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xA36BFB5EE89F3D82)  
----This native does not have an official description.
+---Note: patrolRoute must be prefixed with 'miss_' for it to be valid
 ---@param patrolRoute string
 function OpenPatrolRoute(patrolRoute) end
 
@@ -2827,10 +2827,10 @@ function SetScenarioTypeEnabledHash(scenarioType, toggle) end
 
 ---**`TASK` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x58C70CF3A41E4AE7)  
----This native does not have an official description.
+---repeatMode: 0 = REPEAT_NOT; 1 = REPEAT_FOREVER
 ---@param taskSequenceId number
----@param _repeat boolean
-function SetSequenceToRepeat(taskSequenceId, _repeat) end
+---@param repeatMode number
+function SetSequenceToRepeat(taskSequenceId, repeatMode) end
 
 ---**`TASK` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xF3735ACD11ACD501)  
@@ -3156,9 +3156,9 @@ function TaskClimb_2(ped, heading) end
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xB6C987F9285A3814)  
 ---This native does not have an official description.
 ---@param ped number
----@param p1 any
----@param p2 any
----@param p3 any
+---@param p1 number
+---@param p2 boolean
+---@param p3 boolean
 function TaskClimbLadder(ped, p1, p2, p3) end
 
 ---**`TASK` `client`**  
@@ -3202,9 +3202,9 @@ function TaskCombatHatedTargetsAroundPed(ped, radius, flags, p3) end
 ---This native does not have an official description.
 ---@param ped number
 ---@param radius number
----@param p2 number
----@param p3 any
-function TaskCombatHatedTargetsAroundPedTimed(ped, radius, p2, p3) end
+---@param time number
+---@param flags number
+function TaskCombatHatedTargetsAroundPedTimed(ped, radius, time, flags) end
 
 ---**`TASK` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x4CF5F55DAC3280A0)  
@@ -3992,12 +3992,12 @@ function TaskGotoEntityOffset(ped, entity, p2, x, y, z, duration) end
 ---@param ped number
 ---@param entity number
 ---@param duration number
----@param p3 number
----@param p4 number
----@param p5 number
----@param p6 number
----@param p7 boolean
-function TaskGotoEntityOffsetXy(ped, entity, duration, p3, p4, p5, p6, p7) end
+---@param targetRadius number
+---@param xOffset number
+---@param yOffset number
+---@param moveBlendRatio number
+---@param offsetFlags number
+function TaskGotoEntityOffsetXy(ped, entity, duration, targetRadius, xOffset, yOffset, moveBlendRatio, offsetFlags) end
 
 ---**`TASK` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x901BD69984400F62)  
@@ -4148,13 +4148,13 @@ function TaskGuardCurrentPosition(ped, p1, p2, p3) end
 
 ---**`TASK` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xF2EAB31979A7F910)  
----This native does not have an official description.
+---flags: 0 = HANDS_UP_NOTHING; 1 = HANDS_UP_STRAIGHT_TO_LOOP
 ---@param ped number
 ---@param duration number
 ---@param facingPed number
----@param p3 number
----@param p4 boolean
-function TaskHandsUp(ped, duration, facingPed, p3, p4) end
+---@param timeToFacePed number
+---@param flags number
+function TaskHandsUp(ped, duration, facingPed, timeToFacePed, flags) end
 
 ---**`TASK` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x9030AD4B6207BFE8)  
@@ -4334,11 +4334,11 @@ function TaskLeaveVehicle(ped, vehicle, flags, unkPed) end
 ---@param x number
 ---@param y number
 ---@param z number
----@param p4 any
----@param p5 any
----@param p6 any
----@param p7 any
-function TaskLookAtCoord(ped, x, y, z, p4, p5, p6, p7) end
+---@param duration number
+---@param flags number
+---@param p6 number
+---@param p7 boolean
+function TaskLookAtCoord(ped, x, y, z, duration, flags, p6, p7) end
 
 ---**`TASK` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x69F4BE8C8CC4796C)  
@@ -4893,12 +4893,12 @@ function TaskSeekClearLosToEntity(ped, entity, p2, p3, p4) end
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x84D32B3BEC531324)  
 ---This native does not have an official description.
 ---@param ped number
----@param p1 any
----@param p2 any
+---@param fromPed number
+---@param duration number
 ---@param p3 any
 ---@param p4 any
 ---@param p5 any
-function TaskSeekCoverFromPed(ped, p1, p2, p3, p4, p5) end
+function TaskSeekCoverFromPed(ped, fromPed, duration, p3, p4, p5) end
 
 ---**`TASK` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x75AC2B60386D89F2)  
@@ -4907,11 +4907,11 @@ function TaskSeekCoverFromPed(ped, p1, p2, p3, p4, p5) end
 ---@param x number
 ---@param y number
 ---@param z number
----@param p4 any
+---@param duration number
 ---@param p5 any
 ---@param p6 any
 ---@param p7 any
-function TaskSeekCoverFromPos(ped, x, y, z, p4, p5, p6, p7) end
+function TaskSeekCoverFromPos(ped, x, y, z, duration, p5, p6, p7) end
 
 ---**`TASK` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x39246A6958EF072C)  

@@ -466,6 +466,20 @@ function IsCamRendering(cam) end
 function IsCamShaking(cam) end
 
 ---**`CAM` `client`**  
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xAA235E2F2C09E952)  
+---This native does not have an official description.
+---@param sLocationDictName string
+---@return boolean
+function IsCinematicCamLocationLoaded(sLocationDictName) end
+
+---**`CAM` `client`**  
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x595550376B7EA230)  
+---Checks data related to Cinematic Cam Locations, if the check fails, the location is being loaded using 0x1B3C2D961F5FC0E1.
+---@param locationDictName string
+---@return boolean
+function IsCinematicCamLocationLoaded_2(locationDictName) end
+
+---**`CAM` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xBF7C780731AADBF8)  
 ---This native does not have an official description.
 ---@return boolean
@@ -758,15 +772,6 @@ function N_0x4138ee36bc3dc0a7(p0, p1) end
 function N_0x41e452a3c580d1a7() end
 
 ---**`CAM` `client`**  
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x4285804FD65D8066)  
----script_rel: DRUNK_SHAKE, REINFORCED_LASSO_STRUGGLE_SHAKE, CORRECTOR_SHAKE, MINIGAME_BOUNTY_SHAKE, HAND_SHAKE, MINIGAME_TRAIN_SHAKE
----script_mp_rel: DRUNK_SHAKE, REINFORCED_LASSO_STRUGGLE_SHAKE
----_STOP_GAMEPLAY_CAM* - _STOP_I*
----@param shakeName string
----@param p1 boolean
-function N_0x4285804fd65d8066(shakeName, p1) end
-
----**`CAM` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x450769C833D58844)  
 ---This native does not have an official description.
 ---@return any
@@ -795,13 +800,6 @@ function N_0x4d2f46d1b28d90fb(p0, p1) end
 function N_0x5060fa977cea4455() end
 
 ---**`CAM` `client`**  
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x595550376B7EA230)  
----Checks data related to Cinematic Cam Locations, if the check fails, the location is being loaded using 0x1B3C2D961F5FC0E1.
----@param locationDictName string
----@return boolean
-function N_0x595550376b7ea230(locationDictName) end
-
----**`CAM` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x5B637D6F3B67716A)  
 ---This native does not have an official description.
 ---@param p0 any
@@ -821,9 +819,9 @@ function N_0x632be8d84846fa56() end
 
 ---**`CAM` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x63E5841A9264D016)  
----This native does not have an official description.
----@param p0 any
-function N_0x63e5841a9264d016(p0) end
+---Maintains the death camera after respawn
+---@param toggle boolean
+function N_0x63e5841a9264d016(toggle) end
 
 ---**`CAM` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x641092322A8852AB)  
@@ -951,13 +949,6 @@ function N_0xa54d643d0773eb65(dictionary, shotName, duration) end
 function N_0xa8ba2e0204d8486f() end
 
 ---**`CAM` `client`**  
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xAA235E2F2C09E952)  
----This native does not have an official description.
----@param sLocationDictName string
----@return boolean
-function N_0xaa235e2f2c09e952(sLocationDictName) end
-
----**`CAM` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xAC77757C05DE9E5A)  
 ---This native does not have an official description.
 ---@param cameraDictionary string
@@ -990,9 +981,9 @@ function N_0xc252c0cc969af79a(p0) end
 ---**`CAM` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xC285FD21294A1C49)  
 ---This native does not have an official description.
----@param p0 any
----@return any
-function N_0xc285fd21294a1c49(p0) end
+---@param cameraDictionary string
+---@return boolean
+function N_0xc285fd21294a1c49(cameraDictionary) end
 
 ---**`CAM` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xC3742F1FDF0A6824)  
@@ -1137,10 +1128,10 @@ function PauseCameraFocus(cam, pause) end
 ---@param xRot number
 ---@param yRot number
 ---@param zRot number
----@param p9 boolean
----@param p10 number
+---@param animFlags number
+---@param rotOrder number
 ---@return boolean
-function PlayCamAnim(cam, animName, animDictionary, x, y, z, xRot, yRot, zRot, p9, p10) end
+function PlayCamAnim(cam, animName, animDictionary, x, y, z, xRot, yRot, zRot, animFlags, rotOrder) end
 
 ---**`CAM` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x948B39341C3A40C2)  
@@ -1423,15 +1414,15 @@ function SetGameplayCamShakeAmplitude(amplitude) end
 
 ---**`CAM` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xFA33B8C69A4A6A0F)  
----This native does not have an official description.
+---Hash used in finale1.ysc: 1726668277
 ---@param x number
 ---@param y number
 ---@param z number
 ---@param duration number
 ---@param blendOutDuration number
 ---@param blendInDuration number
----@param unk number
-function SetGameplayCoordHint(x, y, z, duration, blendOutDuration, blendInDuration, unk) end
+---@param p6 number | string
+function SetGameplayCoordHint(x, y, z, duration, blendOutDuration, blendInDuration, p6) end
 
 ---**`CAM` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xD1F7F32640ADFD12)  
@@ -1624,6 +1615,15 @@ function StopCodeGameplayHint(p0) end
 ---This native does not have an official description.
 ---@param p0 boolean
 function StopGameplayCamShaking(p0) end
+
+---**`CAM` `client`**  
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x4285804FD65D8066)  
+---script_rel: DRUNK_SHAKE, REINFORCED_LASSO_STRUGGLE_SHAKE, CORRECTOR_SHAKE, MINIGAME_BOUNTY_SHAKE, HAND_SHAKE, MINIGAME_TRAIN_SHAKE
+---script_mp_rel: DRUNK_SHAKE, REINFORCED_LASSO_STRUGGLE_SHAKE
+---_STOP_GAMEPLAY_CAM* - _STOP_I*
+---@param shakeName string
+---@param p1 boolean
+function StopGameplayCamShakingWithName(shakeName, p1) end
 
 ---**`CAM` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x1BCEC33D54CFCA8A)  

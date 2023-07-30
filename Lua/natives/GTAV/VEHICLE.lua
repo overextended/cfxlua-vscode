@@ -276,16 +276,28 @@ function CopyVehicleDamages(sourceVehicle, targetVehicle) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x63C6CCA8E68AE8C8)  
----Train models must be [requested](#\_0x963D27A58DF860AC) before use. See trains.xml for freight and metro variations.
+---Train models must be [requested](#\_0x963D27A58DF860AC) before use. See trains.xml (located in `Grand Theft Auto V\update\update.rpf\common\data\levels\gta5\trains.xml`) for freight and metro variations.
+---
+---Model names to request can be found by searching `model_name` in the file.
+---
+---The `Lua` usage example provided down below has been provided in such way so users can test each and every train variation.
+---
+---### Newly added parameters (seen in 2372 build)
 ---
 ---```
----NativeDB Added Parameter 6: Any p5
----NativeDB Added Parameter 7: Any p6
+---NativeDB Added Parameter 6: BOOL isNetwork
+---NativeDB Added Parameter 7: BOOL netMissionEntity
 ---```
+---
+---*   **isNetwork**: Whether to create a network object for the train. If false, the train exists only locally.
+---*   **netMissionEntity**: Whether to register the train as pinned to the script host in the R\* network model.
 ---
 ---### Train Models:
 ---
 ---*   freight
+---
+---### Carriage Models:
+---
 ---*   freightcar
 ---*   freightcar2 (Added v2372)
 ---*   freightcont1
@@ -293,6 +305,12 @@ function CopyVehicleDamages(sourceVehicle, targetVehicle) end
 ---*   freightgrain
 ---*   metrotrain
 ---*   tankercar
+---
+---### Some train variations (default from trains.xml as of build 2372)
+---
+---*   17. Very long train and freight variation.
+---*   18. Freight train only.
+---*   25. Double metro train (with both models flipped opposite to each other). This used to be `24` before the 2372 build.
 ---@param variation number
 ---@param x number
 ---@param y number
@@ -379,7 +397,7 @@ function DeleteAllTrains() end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x5B76B14AE875C795)  
----This native does not have an official description.
+---Used to delete mission trains created with [`CREATE_MISSION_TRAIN`](#\_0x63C6CCA8E68AE8C8).
 ---@param train number
 function DeleteMissionTrain(train) end
 
@@ -623,6 +641,13 @@ function DoesVehicleTyreExist(vehicle, tyreIndex) end
 function EjectJb700Roof(vehicle, x, y, z) end
 
 ---**`VEHICLE` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0x8AA9180DE2FEDD45)  
+---Will disable a plane or a helicopter's need to swerve around object in its heightmap when using TASK_PLANE_MISSION or other AI / Pilot behavior.  Will ensure plane flys directly to it's destination or die trying! This native does NOT need to be called every frame, but instead, just called once on the vehicle (NOT THE PED) you're trying to disable avoidance for!
+---@param vehicle number
+---@param avoidObstacles boolean
+function EnableAircraftObstacleAvoidance(vehicle, avoidObstacles) end
+
+---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xBA71116ADF5B514C)  
 ---```
 ---Explodes a selected vehicle.  
@@ -768,18 +793,17 @@ function GetClosestVehicle(x, y, z, radius, modelHash, flags) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xF8C397922FC03F41)  
----```
+---Returns the convertible state of the specified vehicle.
+---
+---```cpp
 ---enum RoofState
 ---{
----     ROOFSTATE_UP = 0;
----     ROOFSTATE_LOWERING,
----     ROOFSTATE_DOWN,
----     ROOFSTATE_RAISING
+---     ROOFSTATE_UP = 0,
+---     ROOFSTATE_LOWERING = 1,
+---     ROOFSTATE_DOWN = 2,
+---     ROOFSTATE_RAISING = 3
 ---};
 ---```
----
----Got a "6" return value but not sure about what the value means
----6 -> unknown (Stopped but not fully open ?)
 ---@param vehicle number
 ---@return number
 function GetConvertibleRoofState(vehicle) end
@@ -1377,14 +1401,7 @@ function GetVehicleCanActivateParachute(vehicle) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xE495D1EF4C91FD20)  
----```
----iVar3 = get_vehicle_cause_of_destruction(uLocal_248[iVar2]);  
----if (iVar3 == joaat("weapon_stickybomb"))  
----{  
----     func_171(726);  
----     iLocal_260 = 1;  
----}  
----```
+---This native does not have an official description.
 ---@param vehicle number
 ---@return number
 function GetVehicleCauseOfDestruction(vehicle) end
@@ -1558,6 +1575,8 @@ function GetVehicleDirtLevel(vehicle) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xFE3F9C29F7B32BD5)  
+---Checks the angle of the door mapped from 0.0 - 1.0 where 0.0 is fully closed and 1.0 is fully open.
+---
 ---See eDoorId declared in [`SET_VEHICLE_DOOR_SHUT`](#\_0x93D9BD300D7789E5)
 ---@param vehicle number
 ---@param doorIndex number
@@ -2758,7 +2777,7 @@ function IsVehicleSirenAudioOn(vehicle) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x4C9BF537BE2634B2)  
----This native does not have an official description.
+---Returns whether the vehicle's lights and sirens are on.
 ---@param vehicle number
 ---@return boolean
 function IsVehicleSirenOn(vehicle) end
@@ -2863,14 +2882,14 @@ function IsVehicleWeaponDisabled(weaponHash, vehicle, owner) end
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x46E571A0E20D01F1)  
 ---```cpp
 ---enum eWindowId {
----	VEH_EXT_WINDSCREEN = 0,
----	VEH_EXT_WINDSCREEN_R = 1,
----	VEH_EXT_WINDOW_LF = 2,
----	VEH_EXT_WINDOW_RF = 3,
----	VEH_EXT_WINDOW_LR = 4,
----	VEH_EXT_WINDOW_RR = 5,
----	VEH_EXT_WINDOW_LM = 6,
----	VEH_EXT_WINDOW_RM = 7,
+---	VEH_EXT_WINDOW_LF = 0,
+---	VEH_EXT_WINDOW_RF = 1,
+---	VEH_EXT_WINDOW_LR = 2,
+---	VEH_EXT_WINDOW_RR = 3,
+---	VEH_EXT_WINDOW_LM = 4,
+---	VEH_EXT_WINDOW_RM = 5,
+---	VEH_EXT_WINDSCREEN = 6,
+---	VEH_EXT_WINDSCREEN_R = 7,
 ---}
 ---```
 ---@param vehicle number
@@ -3462,13 +3481,6 @@ function N_0x887fa38787de8c72(vehicle) end
 ---@param vehicle number
 ---@param p1 boolean
 function N_0x88bc673ca9e0ae99(vehicle, p1) end
-
----**`VEHICLE` `client`**  
----[Native Documentation](https://docs.fivem.net/natives/?_0x8AA9180DE2FEDD45)  
----This native does not have an official description.
----@param vehicle number
----@param p1 boolean
-function N_0x8aa9180de2fedd45(vehicle, p1) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x8F0D5BA1C2CC91D7)  
@@ -4919,7 +4931,7 @@ function SetTrailerLegsRaised(vehicle) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x16469284DB8C62B5)  
----This native does not have an official description.
+---Used to control train speed, can be used to start and stop its movement as well.
 ---@param train number
 ---@param speed number
 function SetTrainCruiseSpeed(train, speed) end

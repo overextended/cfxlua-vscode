@@ -96,6 +96,14 @@ function EventGetTargetEntityFromEvent(entity, eventType, p2, p3) end
 function EventGetTimeSinceEvent(entity, eventType, p2, p3) end
 
 ---**`EVENT` `client`**  
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x797B3D4D92E56094)  
+---This native does not have an official description.
+---@param eventName string
+---@param shockingEvent number | string
+---@return boolean
+function IsEventTrackerActive(eventName, shockingEvent) end
+
+---**`EVENT` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x9DB47E16060D6354)  
 ---eventType: https://alloc8or.re/rdr3/doc/enums/eEventType.txt
 ---@param eventType number | string
@@ -172,14 +180,6 @@ function N_0x4b2b1a891d437ca7(p0) end
 ---Params: p0 = value returned by 0x18E93EBFC1FCFA48
 ---@param p0 any
 function N_0x56b3410626a473e7(p0) end
-
----**`EVENT` `client`**  
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x797B3D4D92E56094)  
----_IS_EVENT
----@param eventName string
----@param eventType number | string
----@return boolean
-function N_0x797b3d4d92e56094(eventName, eventType) end
 
 ---**`EVENT` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x7C511E91738A0828)  

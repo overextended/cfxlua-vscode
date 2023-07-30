@@ -155,17 +155,16 @@ function GetNthClosestVehicleNodeId(x, y, z, nth, nodetype, p5, p6) end
 
 ---**`PATHFIND` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x4114EAA8A7F7766D)  
----This native does not have an official description.
+---Returns the nth closest vehicle node with a heading to a coord
 ---@param x number
 ---@param y number
 ---@param z number
 ---@param nthClosest number
----@param outHeading number
----@param p6 any
----@param p7 number
----@param p8 number
----@return boolean, vector3
-function GetNthClosestVehicleNodeIdWithHeading(x, y, z, nthClosest, outHeading, p6, p7, p8) end
+---@param nodeFlags number
+---@param zMeasureMult number
+---@param zTolerance number
+---@return number, number, number
+function GetNthClosestVehicleNodeIdWithHeading(x, y, z, nthClosest, nodeFlags, zMeasureMult, zTolerance) end
 
 ---**`PATHFIND` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x591B40D4390DB54A)  
@@ -199,11 +198,11 @@ function GetNumNavmeshesExistingInArea(p0, p1, p2, p3, p4, p5) end
 ---@param y number
 ---@param z number
 ---@param radius number
----@param p4 boolean
----@param p5 boolean
----@param p6 boolean
+---@param minLanes number
+---@param avoidDeadEnds boolean
+---@param avoidHighways boolean
 ---@return boolean, vector3, number
-function GetRandomVehicleNode(x, y, z, radius, p4, p5, p6) end
+function GetRandomVehicleNode(x, y, z, radius, minLanes, avoidDeadEnds, avoidHighways) end
 
 ---**`PATHFIND` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xB61C8E878A4199CA)  
@@ -345,15 +344,15 @@ function N_0x665b21666351cb37(p0, p1, p2) end
 ---**`PATHFIND` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x6C3F12ECEB6D2E2A)  
 ---This native does not have an official description.
----@param p0 any
----@param p1 any
----@param p2 any
----@param p3 any
----@param p4 any
----@param p5 any
+---@param xMin number
+---@param yMin number
+---@param zMin number
+---@param xMax number
+---@param yMax number
+---@param zMax number
 ---@param p6 any
 ---@param p7 any
-function N_0x6c3f12eceb6d2e2a(p0, p1, p2, p3, p4, p5, p6, p7) end
+function N_0x6c3f12eceb6d2e2a(xMin, yMin, zMin, xMax, yMax, zMax, p6, p7) end
 
 ---**`PATHFIND` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x6DAD6630AE4A74CB)  
@@ -379,15 +378,15 @@ function N_0xa33914b00ca55756(p0, p1) end
 ---**`PATHFIND` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xAFE2AE66F6251C66)  
 ---This native does not have an official description.
----@param p0 any
----@param p1 any
----@param p2 any
----@param p3 any
----@param p4 any
----@param p5 any
----@param p6 any
+---@param xMin number
+---@param yMin number
+---@param zMin number
+---@param xMax number
+---@param yMax number
+---@param zMax number
+---@param p6 number
 ---@param p7 any
-function N_0xafe2ae66f6251c66(p0, p1, p2, p3, p4, p5, p6, p7) end
+function N_0xafe2ae66f6251c66(xMin, yMin, zMin, xMax, yMax, zMax, p6, p7) end
 
 ---**`PATHFIND` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xB03944057FD735BA)  
@@ -616,15 +615,15 @@ function SetPedPathsInArea(x1, y1, z1, x2, y2, z2, unknown, p7) end
 ---**`PATHFIND` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x1EE7063B80FFC77C)  
 ---This native does not have an official description.
----@param p0 any
----@param p1 any
----@param p2 any
----@param p3 any
----@param p4 any
----@param p5 any
+---@param xMin number
+---@param yMin number
+---@param zMin number
+---@param xMax number
+---@param yMax number
+---@param zMax number
 ---@param p6 any
 ---@param p7 any
-function SetRoadsBackToOriginal(p0, p1, p2, p3, p4, p5, p6, p7) end
+function SetRoadsBackToOriginal(xMin, yMin, zMin, xMax, yMax, zMax, p6, p7) end
 
 ---**`PATHFIND` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x0027501B9F3B407E)  
@@ -659,16 +658,16 @@ function SetRoadsInAngledArea(p0, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10) end
 ---**`PATHFIND` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xBF1A602B5BA52FEE)  
 ---This native does not have an official description.
----@param p0 any
----@param p1 any
----@param p2 any
----@param p3 any
----@param p4 any
----@param p5 any
+---@param xMin number
+---@param yMin number
+---@param zMin number
+---@param xMax number
+---@param yMax number
+---@param zMax number
 ---@param p6 any
 ---@param p7 any
 ---@param p8 any
-function SetRoadsInArea(p0, p1, p2, p3, p4, p5, p6, p7, p8) end
+function SetRoadsInArea(xMin, yMin, zMin, xMax, yMax, zMax, p6, p7, p8) end
 
 ---**`PATHFIND` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xC1799FAFD2FDF52B)  

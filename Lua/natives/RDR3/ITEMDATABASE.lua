@@ -5,9 +5,9 @@
 ---This native does not have an official description.
 ---@param p0 any
 ---@param p1 any
----@param p2 any
+---@param slotId number | string
 ---@return boolean
-function ItemdatabaseCanEquipItemOnCategory(p0, p1, p2) end
+function ItemdatabaseCanEquipItemOnCategory(p0, p1, slotId) end
 
 ---**`ITEMDATABASE` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x71EFA7999AE79408)  
@@ -182,6 +182,21 @@ function ItemdatabaseGetAcquireCost(p0, p1, p2) end
 function ItemdatabaseGetAcquireCostsCount(p0) end
 
 ---**`ITEMDATABASE` `client`**  
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x12DF9C58201DD19A)  
+---_ITEMDATABASE_GET_(A)* - _ITEMDATABASE_GET_(B)*
+---@param p0 any
+---@return number
+function ItemdatabaseGetAwardAcquireCostType(p0) end
+
+---**`ITEMDATABASE` `client`**  
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xE81D0378A384E755)  
+---This native does not have an official description.
+---@param p0 any
+---@param p1 any
+---@return boolean
+function ItemdatabaseGetAwardCostModifiers(p0, p1) end
+
+---**`ITEMDATABASE` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x3FAA928A79591761)  
 ---Returns iAwardItemCount
 ---@param award number | string
@@ -212,6 +227,14 @@ function ItemdatabaseGetBundleItemCount(p0, p1) end
 ---@param p3 any
 ---@return boolean
 function ItemdatabaseGetBundleItemInfo(p0, p1, p2, p3) end
+
+---**`ITEMDATABASE` `client`**  
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xD389A2549C4EFB30)  
+---Returns (collection?) size/index (?)
+---_ITEMDATABASE_GET_(A)* - _ITEMDATABASE_GET_(B)*
+---@param collectionId number
+---@return number
+function ItemdatabaseGetCollectionSize(collectionId) end
 
 ---**`ITEMDATABASE` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x8750F69A720C2E41)  
@@ -510,13 +533,6 @@ function ItemdatabaseLocalizationGetValue(p0, label, p2) end
 function ItemdatabaseReleaseItemCollection(collectionId) end
 
 ---**`ITEMDATABASE` `client`**  
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x12DF9C58201DD19A)  
----_ITEMDATABASE_GET_(A)* - _ITEMDATABASE_GET_(B)*
----@param p0 any
----@return number
-function N_0x12df9c58201dd19a(p0) end
-
----**`ITEMDATABASE` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x17721003A66C72BF)  
 ---This native does not have an official description.
 ---@param p0 any
@@ -529,10 +545,9 @@ function N_0x17721003a66c72bf(p0, p1, p2) end
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x1FC25AEB5F76B38D)  
 ---_ITEMDATABASE_GET_(A)* - _ITEMDATABASE_GET_(B)*
 ---@param p0 any
----@param p1 any
----@param p2 any
----@return boolean
-function N_0x1fc25aeb5f76b38d(p0, p1, p2) end
+---@param index number
+---@return boolean, any
+function N_0x1fc25aeb5f76b38d(p0, index) end
 
 ---**`ITEMDATABASE` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x388088BFF3681189)  
@@ -576,11 +591,11 @@ function N_0x74c3b1093728d263(p0, p1) end
 
 ---**`ITEMDATABASE` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x799FCD53358ED5FA)  
----This native does not have an official description.
----@param p0 any
+---Returns Item Count
+---@param bundle any
 ---@param p1 any
 ---@return number
-function N_0x799fcd53358ed5fa(p0, p1) end
+function N_0x799fcd53358ed5fa(bundle, p1) end
 
 ---**`ITEMDATABASE` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x7A35A72A692BE9DB)  
@@ -626,12 +641,12 @@ function N_0xaa29a5f13b2c20b2(p0, p1) end
 ---**`ITEMDATABASE` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xC4146375D8A0B374)  
 ---This native does not have an official description.
----@param p0 any
+---@param bundle any
 ---@param p1 any
----@param p2 any
+---@param index number
 ---@param p3 any
 ---@return boolean
-function N_0xc4146375d8a0b374(p0, p1, p2, p3) end
+function N_0xc4146375d8a0b374(bundle, p1, index, p3) end
 
 ---**`ITEMDATABASE` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xD076DB9B96FAADF1)  
@@ -640,14 +655,6 @@ function N_0xc4146375d8a0b374(p0, p1, p2, p3) end
 ---@param p1 any
 ---@return boolean
 function N_0xd076db9b96faadf1(p0, p1) end
-
----**`ITEMDATABASE` `client`**  
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xD389A2549C4EFB30)  
----Returns (collection?) size/index (?)
----_ITEMDATABASE_GET_(A)* - _ITEMDATABASE_GET_(B)*
----@param collectionId number
----@return number
-function N_0xd389a2549c4efb30(collectionId) end
 
 ---**`ITEMDATABASE` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xDBEADA0DF5F9AB9F)  
@@ -668,31 +675,23 @@ function N_0xdbeada0df5f9ab9f(p0, index, menuKey) end
 function N_0xdee7b3c76ed664be(p0, costShop) end
 
 ---**`ITEMDATABASE` `client`**  
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xE81D0378A384E755)  
----This native does not have an official description.
----@param p0 any
----@param p1 any
----@return boolean
-function N_0xe81d0378a384e755(p0, p1) end
-
----**`ITEMDATABASE` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xF27F01BBF5ACD3F3)  
 ---_ITEMDATABASE_FILLOUT_(A)* - _ITEMDATABASE_FILLOUT_(B)*
----@param p0 any
----@param p1 any
----@param p2 any
+---@param award any
+---@param cost number | string
+---@param index number
 ---@param p3 any
 ---@return boolean
-function N_0xf27f01bbf5acd3f3(p0, p1, p2, p3) end
+function N_0xf27f01bbf5acd3f3(award, cost, index, p3) end
 
 ---**`ITEMDATABASE` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xF540239F9937033B)  
 ---Returns itemCount (?)
 ---_ITEMDATABASE_GET_(A)* - _ITEMDATABASE_GET_(B)*
----@param p0 any
----@param p1 any
+---@param award any
+---@param cost number | string
 ---@return number
-function N_0xf540239f9937033b(p0, p1) end
+function N_0xf540239f9937033b(award, cost) end
 
 ---**`ITEMDATABASE` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xF8D09EF8CE61D7BF)  

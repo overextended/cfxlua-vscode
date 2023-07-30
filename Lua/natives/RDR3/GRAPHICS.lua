@@ -481,10 +481,10 @@ function DrawLightWithRange(posX, posY, posZ, colorR, colorG, colorB, range, int
 
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xF1142E5D64B47802)  
----This native does not have an official description.
+---nullsub, doesn't do anything (GTA5 leftover, there is no phone in RDR3)
 ---@param p0 boolean
----@param p1 boolean
-function DrawLowQualityPhotoToPhone(p0, p1) end
+---@param photoRotation number
+function DrawLowQualityPhotoToPhone(p0, photoRotation) end
 
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x2A32FAA57B937173)  
@@ -895,14 +895,6 @@ function N_0x1ff8731be1dfc0c0(p0, p1) end
 function N_0x21f00e08cbb5f37b(component) end
 
 ---**`GRAPHICS` `client`**  
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x249CD6B7285536F2)  
----This native does not have an official description.
----@param p0 any
----@param p1 any
----@param p2 any
-function N_0x249cd6b7285536f2(p0, p1, p2) end
-
----**`GRAPHICS` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x26DD2FB0A88CC412)  
 ---effectName2, p2 and p3 are unused
 ---
@@ -1159,11 +1151,6 @@ function N_0xa201a3d0ac087c37(effectName) end
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xA21AF60C9F99CCC5)  
 ---This native does not have an official description.
 function N_0xa21af60c9f99ccc5() end
-
----**`GRAPHICS` `client`**  
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xAF4D239B8903FCBE)  
----Used for script function RPG_GLOBAL_STATS__PRIVATE__DEACTIVATE_STAT_FLAG - Inspiration Aura unequip
-function N_0xaf4d239b8903fcbe() end
 
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xB032C085D9A03907)  
@@ -1456,6 +1443,11 @@ function RemoveVegModifierSphere(vegModifierHandle, p1) end
 function ResetAdaptation(unk) end
 
 ---**`GRAPHICS` `client`**  
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xAF4D239B8903FCBE)  
+---Used for script function RPG_GLOBAL_STATS__PRIVATE__DEACTIVATE_STAT_FLAG - Inspiration Aura unequip
+function ResetEntityAura() end
+
+---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x274B3DABF7E72DEF)  
 ---Resets the effect of SET_PARTICLE_FX_OVERRIDE
 ---@param name string
@@ -1543,6 +1535,15 @@ function SetDisablePetrolDecalsIgnitingThisFrame() end
 ---This native does not have an official description.
 ---@param p0 string
 function SetDistrictPhotoTakenStat(p0) end
+
+---**`GRAPHICS` `client`**  
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x249CD6B7285536F2)  
+---Used for script function RPG_GLOBAL_STATS__PRIVATE__ACTIVATE_STAT_FLAG - Quite and Inspiration Aura equip
+---Params: 0f, 2f, 2f
+---@param p0 number
+---@param p1 number
+---@param p2 number
+function SetEntityAura(p0, p1, p2) end
 
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xE92012611461A42A)  
@@ -2043,7 +2044,7 @@ function StartParticleFxLoopedOnPedBone(effectName, ped, xOffset, yOffset, zOffs
 ---@param xAxis boolean
 ---@param yAxis boolean
 ---@param zAxis boolean
----@return number
+---@return boolean
 function StartParticleFxNonLoopedAtCoord(effectName, xPos, yPos, zPos, xRot, yRot, zRot, scale, xAxis, yAxis, zAxis) end
 
 ---**`GRAPHICS` `client`**  

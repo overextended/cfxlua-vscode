@@ -107,11 +107,11 @@ function AttachCamToEntity(cam, entity, xOffset, yOffset, zOffset, isRelative) e
 ---@param cam number
 ---@param ped number
 ---@param boneIndex number
----@param x number
----@param y number
----@param z number
----@param heading boolean
-function AttachCamToPedBone(cam, ped, boneIndex, x, y, z, heading) end
+---@param xOffset number
+---@param yOffset number
+---@param zOffset number
+---@param isRelative boolean
+function AttachCamToPedBone(cam, ped, boneIndex, xOffset, yOffset, zOffset, isRelative) end
 
 ---**`CAM` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x149916F50C34A40D)  
@@ -203,7 +203,7 @@ function CreateCamera(camHash, active) end
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x6ABFA3E16460F22D)  
 ---CAM::\_GET_GAMEPLAY_CAM_COORDS can be used instead of posX,Y,Z\
 ---CAM::\_GET_GAMEPLAY_CAM_ROT can be used instead of rotX,Y,Z\
----CAM::\_80EC114669DAEFF4() can be used instead of p7 (Possible p7 is FOV parameter. )\
+---CAM::\_GET_FINAL_RENDERED_CAM_FOV can be used instead of p7 (Possible p7 is FOV parameter. )\
 ---rotationOrder is 2 usually
 ---@param camHash number | string
 ---@param posX number
@@ -222,14 +222,7 @@ function CreateCameraWithParams(camHash, posX, posY, posZ, rotX, rotY, rotZ, fov
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xB51194800B257161)  
 ---Create a camera with the specified cam name/type, You can use `SET_CAM_` natives to manipulate the camera.
 ---
----Camera names found in the b617d scripts:
----
----```
----"DEFAULT_ANIMATED_CAMERA"  
----"DEFAULT_SCRIPTED_CAMERA"  
----"DEFAULT_SCRIPTED_FLY_CAMERA"  
----"DEFAULT_SPLINE_CAMERA" 
----```
+---Take a look at [CREATE_CAM](#\_0xC3981DCE61D9E13F) if you would like to see the available camera names.
 ---@param camName string
 ---@param posX number
 ---@param posY number
@@ -317,9 +310,7 @@ function DisableVehicleFirstPersonCamThisFrame() end
 
 ---**`CAM` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA7A932170592B50E)  
----```
----Returns whether or not the passed camera handle exists.  
----```
+---Looks up a camera handle in the current camera pool and returns `true` if the handle is found, otherwise it returns `false`.
 ---@param cam number
 ---@return boolean
 function DoesCamExist(cam) end
@@ -436,9 +427,7 @@ function GetCamNearDof(cam) end
 
 ---**`CAM` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x7D304C1C955E3E12)  
----```
----The last parameter, as in other "ROT" methods, is usually 2.  
----```
+---Gets a camera's rotation by handle (`cam`) lookup, outputs a `Vector3` in degrees.
 ---@param cam number
 ---@param rotationOrder number
 ---@return vector3
@@ -630,18 +619,9 @@ function GetGameplayCamRelativePitch() end
 
 ---**`CAM` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x837765A25378F0BB)  
----```
----p0 dosen't seem to change much, I tried it with 0, 1, 2:  
----0-Pitch(X): -70.000092  
----0-Roll(Y): -0.000001  
----0-Yaw(Z): -43.886459  
----1-Pitch(X): -70.000092  
----1-Roll(Y): -0.000001  
----1-Yaw(Z): -43.886463  
----2-Pitch(X): -70.000092  
----2-Roll(Y): -0.000002  
----2-Yaw(Z): -43.886467  
----```
+---This function takes a rotation order and outputs a `Vector3` in degrees.
+---
+---It first calls a game function to calculate these values given the rotation order and effectively multiplies those values by `180/PI`, hence degrees since the function it calls outputs radians which are then converted to degrees.
 ---@param rotationOrder number
 ---@return vector3
 function GetGameplayCamRot(rotationOrder) end
@@ -1525,11 +1505,7 @@ function SetCamParams(cam, posX, posY, posZ, rotX, rotY, rotZ, fieldOfView, tran
 
 ---**`CAM` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x85973643155D0B07)  
----```
----Sets the rotation of the cam.  
----Last parameter unknown.  
----Last parameter seems to always be set to 2.  
----```
+---Sets the rotation of the camera.
 ---@param cam number
 ---@param rotX number
 ---@param rotY number

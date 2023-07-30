@@ -234,9 +234,9 @@ function N_0x1d97da8acb5d2582(ropeId, p1) end
 ---**`PHYSICS` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x1FC92BDBA1106BD2)  
 ---This native does not have an official description.
----@param p0 any
----@param p1 any
-function N_0x1fc92bdba1106bd2(p0, p1) end
+---@param ropeId number
+---@param p1 number
+function N_0x1fc92bdba1106bd2(ropeId, p1) end
 
 ---**`PHYSICS` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x21D0890D88DFB0B0)  
@@ -275,13 +275,6 @@ function N_0x32f4dbfdfcccc735(p0, p1, p2) end
 ---@param p0 any
 ---@param p1 any
 function N_0x3900491c0d61ed4b(p0, p1) end
-
----**`PHYSICS` `client`**  
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x3D69537039F8D824)  
----This native does not have an official description.
----@param p0 any
----@return any
-function N_0x3d69537039f8d824(p0) end
 
 ---**`PHYSICS` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x423C6B1F3786D28B)  
@@ -439,7 +432,7 @@ function N_0xbdda142759307528(p0) end
 ---**`PHYSICS` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xC64E7A62632AD2FE)  
 ---This native does not have an official description.
----@param p0 any
+---@param ropeId number
 ---@param p1 any
 ---@param p2 any
 ---@param p3 any
@@ -447,7 +440,7 @@ function N_0xbdda142759307528(p0) end
 ---@param p5 any
 ---@param p6 any
 ---@param p7 any
-function N_0xc64e7a62632ad2fe(p0, p1, p2, p3, p4, p5, p6, p7) end
+function N_0xc64e7a62632ad2fe(ropeId, p1, p2, p3, p4, p5, p6, p7) end
 
 ---**`PHYSICS` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xC89E7410A93AC19A)  
@@ -476,12 +469,12 @@ function N_0xdede679ed29dd4e7(ropeId, p1) end
 ---**`PHYSICS` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xE54BF2CE6C7D23A9)  
 ---This native does not have an official description.
----@param p0 any
----@param p1 any
----@param p2 any
----@param p3 any
----@param p4 any
-function N_0xe54bf2ce6c7d23a9(p0, p1, p2, p3, p4) end
+---@param ropeId number
+---@param p1 number
+---@param x number
+---@param y number
+---@param z number
+function N_0xe54bf2ce6c7d23a9(ropeId, p1, x, y, z) end
 
 ---**`PHYSICS` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xEAF529446488EB18)  
@@ -555,6 +548,13 @@ function RopeForceLength(ropeId, length) end
 ---@param ropeId number
 ---@return number
 function RopeGetBreakerOfRope(ropeId) end
+
+---**`PHYSICS` `client`**  
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x3D69537039F8D824)  
+---This native does not have an official description.
+---@param ropeId number
+---@return number
+function RopeGetForcedLength(ropeId) end
 
 ---**`PHYSICS` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xDC57A637A20006ED)  

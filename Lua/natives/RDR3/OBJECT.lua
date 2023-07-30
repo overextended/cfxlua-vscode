@@ -276,6 +276,13 @@ function DoorSystemSetAutomaticDistance(doorHash, distance) end
 function DoorSystemSetAutomaticRate(doorHash, rate) end
 
 ---**`OBJECT` `client`**  
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x1BC47A9DEDC8DF5D)  
+---_ALLOW_* - _ATTACH_*
+---@param doorHash number | string
+---@param disable boolean
+function DoorSystemSetAutomaticState(doorHash, disable) end
+
+---**`OBJECT` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x6BAB9442830C7F53)  
 ---Door lock states:
 ---enum eDoorState
@@ -554,13 +561,6 @@ function N_0x0943113e02322164(object, p1) end
 ---This native does not have an official description.
 ---@param p0 any
 function N_0x0c0a373d181bf900(p0) end
-
----**`OBJECT` `client`**  
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x1BC47A9DEDC8DF5D)  
----This native does not have an official description.
----@param p0 any
----@param p1 any
-function N_0x1bc47a9dedc8df5d(p0, p1) end
 
 ---**`OBJECT` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x1F5E07E14A86FAFC)  

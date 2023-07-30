@@ -203,9 +203,9 @@ function GetEventData(eventGroup, eventIndex, eventDataSize) end
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xC9F59C0A710ECD34)  
 ---eventGroup: 0 = SCRIPT_EVENT_QUEUE_AI (CEventGroupScriptAI), 1 = SCRIPT_EVENT_QUEUE_NETWORK (CEventGroupScriptNetwork), 2 = unk, 3 = unk, 4 = SCRIPT_EVENT_QUEUE_SCRIPT_ERRORS (CEventGroupScriptErrors)
 ---@param eventGroup number
----@param eventIndex number
+---@param eventType number | string
 ---@return boolean
-function GetEventExists(eventGroup, eventIndex) end
+function GetEventExists(eventGroup, eventType) end
 
 ---**`SCRIPTS` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x42A7EB5C814C2DE0)  

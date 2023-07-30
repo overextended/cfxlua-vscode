@@ -911,17 +911,6 @@ function N_0x08e22898a6af4905(p0, p1) end
 function N_0x0b7803f6f7bb43e0() end
 
 ---**`PLAYER` `client`**  
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x0E1DB1F8F5B561DC)  
----This native does not have an official description.
----@param p0 any
----@param p1 any
----@param p2 any
----@param p3 any
----@param p4 any
----@param p5 any
-function N_0x0e1db1f8f5b561dc(p0, p1, p2, p3, p4, p5) end
-
----**`PLAYER` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x0E9057A9DA78D0F8)  
 ---This native does not have an official description.
 ---@param player number
@@ -2819,6 +2808,17 @@ function SetSpecialAbilityType(player, type) end
 ---@param player number
 ---@param multiplier number
 function SetSwimMultiplierForPlayer(player, multiplier) end
+
+---**`PLAYER` `client`**  
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x0E1DB1F8F5B561DC)  
+---This native does not have an official description.
+---@param health number
+---@param stamina number
+---@param deadeye number
+---@param healthCore number
+---@param staminaCore number
+---@param deadeyeCore number
+function SetUsedItemEffect(health, stamina, deadeye, healthCore, staminaCore, deadeyeCore) end
 
 ---**`PLAYER` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xD7FA719CB54866C2)  

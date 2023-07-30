@@ -34,11 +34,11 @@ function ApplyForceToEntity(entity, forceFlags, x, y, z, offX, offY, offZ, boneI
 ---@param x number
 ---@param y number
 ---@param z number
----@param p5 boolean
+---@param component number
 ---@param isDirectionRel boolean
 ---@param isForceRel boolean
 ---@param p8 boolean
-function ApplyForceToEntityCenterOfMass(entity, forceType, x, y, z, p5, isDirectionRel, isForceRel, p8) end
+function ApplyForceToEntityCenterOfMass(entity, forceType, x, y, z, component, isDirectionRel, isForceRel, p8) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x6B9BBD38AB0796DF)  

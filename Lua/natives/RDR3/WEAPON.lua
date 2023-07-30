@@ -936,9 +936,9 @@ function N_0x07e1c35f0078c3f9(ped, weapon) end
 ---**`WEAPON` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x0DE0944ECCB3DF5D)  
 ---_GET_D* - _GET_L*
----@param p0 any
+---@param ped number
 ---@return boolean
-function N_0x0de0944eccb3df5d(p0) end
+function N_0x0de0944eccb3df5d(ped) end
 
 ---**`WEAPON` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x14FF0C2545527F9B)  
@@ -1195,7 +1195,7 @@ function N_0x9eefd670f10656d7(weaponCollection, weaponGroup) end
 ---**`WEAPON` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x9F0E1892C7F228A8)  
 ---This native does not have an official description.
----@param p0 any
+---@param p0 boolean
 ---@return any
 function N_0x9f0e1892c7f228a8(p0) end
 

@@ -103,8 +103,8 @@ function AttachEntityBoneToEntityBonePhysically(entity1, entity2, entityBone, en
 ---@param collision boolean
 ---@param isPed boolean
 ---@param rotationOrder number
----@param fixedRot boolean
-function AttachEntityToEntity(entity1, entity2, boneIndex, xPos, yPos, zPos, xRot, yRot, zRot, p9, useSoftPinning, collision, isPed, rotationOrder, fixedRot) end
+---@param syncRot boolean
+function AttachEntityToEntity(entity1, entity2, boneIndex, xPos, yPos, zPos, xRot, yRot, zRot, p9, useSoftPinning, collision, isPed, rotationOrder, syncRot) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC3675780C92F90F9)  

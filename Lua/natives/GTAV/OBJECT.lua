@@ -62,10 +62,7 @@ function ClearObjectsInsideGarage(garageHash, vehicles, peds, objects, isNetwork
 
 ---**`OBJECT` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x673966A0C0FD7171)  
----```
----Used for doing money drop  
----Pickup hashes: pastebin.com/8EuSv2r1  
----```
+---Creates an ambient pickup given the hash. Pickup hashes can be found [here](https://gist.github.com/4mmonium/1eabfb6b3996e3aa6b9525a3eccf8a0b).
 ---@param pickupHash number | string
 ---@param posX number
 ---@param posY number
@@ -161,9 +158,7 @@ function CreateObjectNoOffset(modelHash, x, y, z, isNetwork, netMissionEntity, d
 
 ---**`OBJECT` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xFBA08C503DD5FA58)  
----```
----Pickup hashes: pastebin.com/8EuSv2r1  
----```
+---Pickup hashes can be found [here](https://gist.github.com/4mmonium/1eabfb6b3996e3aa6b9525a3eccf8a0b).
 ---@param pickupHash number | string
 ---@param posX number
 ---@param posY number
@@ -200,9 +195,7 @@ function CreatePickupRotate(pickupHash, posX, posY, posZ, rotX, rotY, rotZ, flag
 
 ---**`OBJECT` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x2EAF1FDB2FB55698)  
----```
----Pickup hashes: pastebin.com/8EuSv2r1
----```
+---Pickup hashes can be found [here](https://gist.github.com/4mmonium/1eabfb6b3996e3aa6b9525a3eccf8a0b).
 ---@param pickupHash number | string
 ---@param x number
 ---@param y number
@@ -256,9 +249,7 @@ function DoesPickupObjectExist(pickupObject) end
 
 ---**`OBJECT` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xF9C36251F6E48E33)  
----```
----Pickup hashes: pastebin.com/8EuSv2r1  
----```
+---Pickup hashes can be found [here](https://gist.github.com/4mmonium/1eabfb6b3996e3aa6b9525a3eccf8a0b).
 ---@param pickupHash number | string
 ---@param x number
 ---@param y number
@@ -1248,9 +1239,7 @@ function PreventCollectionOfPortablePickup(object, p1, p2) end
 
 ---**`OBJECT` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x27F9D613092159CF)  
----```
----Pickup hashes: pastebin.com/8EuSv2r1  
----```
+---Pickup hashes can be found [here](https://gist.github.com/4mmonium/1eabfb6b3996e3aa6b9525a3eccf8a0b).
 ---@param pickupHash number | string
 function RemoveAllPickupsOfType(pickupHash) end
 

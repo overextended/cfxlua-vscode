@@ -2100,9 +2100,7 @@ function SetRadioToStationIndex(radioStation) end
 
 ---**`AUDIO` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC69EDA28699D5107)  
----```
----For a full list, see here: pastebin.com/Kj9t38KF  
----```
+---Find the radio station list [here](https://gist.github.com/4mmonium/b47d6512a2d992cbf4eea15d9038b581)
 ---@param stationName string
 function SetRadioToStationName(stationName) end
 
@@ -2309,9 +2307,7 @@ function SetVehicleStartupRevSound(vehicle, p1, p2) end
 
 ---**`AUDIO` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x1B9C0099CB942AC6)  
----```
----For a full list, see here: pastebin.com/Kj9t38KF  
----```
+---Find the radio station list [here](https://gist.github.com/4mmonium/b47d6512a2d992cbf4eea15d9038b581)
 ---@param vehicle number
 ---@param radioStation string
 function SetVehRadioStation(vehicle, radioStation) end

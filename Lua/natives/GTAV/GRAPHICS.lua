@@ -599,20 +599,18 @@ function DontRenderInGameUi(p0) end
 
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x7118E83EEB9F7238)  
----```
----NativeDB Introduced: v1290
----```
+---Must be called each frame, will play at specified position on screen when called with [`_PLAY_BINK_MOVIE`](#\_0x70D2CC8A542A973C)
 ---@param binkMovie number
----@param p1 number
----@param p2 number
----@param p3 number
----@param p4 number
----@param p5 number
+---@param posX number
+---@param posY number
+---@param scaleX number
+---@param scaleY number
+---@param rotation number
 ---@param r number
 ---@param g number
 ---@param b number
 ---@param a number
-function DrawBinkMovie(binkMovie, p1, p2, p3, p4, p5, r, g, b, a) end
+function DrawBinkMovie(binkMovie, posX, posY, scaleX, scaleY, rotation, r, g, b, a) end
 
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xD3A9971CADAC7252)  
@@ -1331,8 +1329,20 @@ function EnableAlienBloodVfx(toggle) end
 
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xD821490579791273)  
+---If true, this native will create purple explosions upon projectile impact, add comic-like PTFX when firing a weapon, create a sound on bullet impact and have its own "blood effect".
+---
+---If the PTFX asset "scr_rcbarry2" is not requested using ([`RequestNamedPtfxAsset`](#\_0xD821490579791273)) then this native **will not work as intended**.
+---
+---Excerpt from fm_content_drug_lab_work.c:
+---
 ---```
----Creates cartoon effect when Michel smokes the weed  
+---STREAMING::REQUEST_NAMED_PTFX_ASSET("scr_rcbarry2");
+---if (STREAMING::HAS_NAMED_PTFX_ASSET_LOADED("scr_rcbarry2"))
+---{
+---  GRAPHICS::ENABLE_CLOWN_BLOOD_VFX(true);
+---  AUDIO::START_AUDIO_SCENE("DLC_CM2022_DRUG_TRIP_SPRINKLERS_SCENE");
+---  func_720(26);
+---}
 ---```
 ---@param toggle boolean
 function EnableClownBloodVfx(toggle) end
@@ -3010,20 +3020,15 @@ function SetBackfaceculling(toggle) end
 
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x338D9F609FD632DB)  
----```
----NativeDB Introduced: v1290
----```
+---Creates an integer (usually 1) for a BINK movie to be called with other natives.
+---[List of all BINK movies (alphabetically ordered) as of b2802](https://gist.github.com/ItsJunction/8046f28c29ea8ff2821e9e4f933f595f)
 ---@param name string
 ---@return number
 function SetBinkMovie(name) end
 
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x0CB6B3446855B57A)  
----```
----In percentage: 0.0 - 100.0
----
----NativeDB Introduced: v1290
----```
+---Seeks a BINK movie to a specified position.
 ---@param binkMovie number
 ---@param progress number
 function SetBinkMovieTime(binkMovie, progress) end

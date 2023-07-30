@@ -118,7 +118,7 @@ function SetWorldWaterType(waterType) end
 ---@param y2 number
 ---@param z2 number
 ---@param flags number
----@return number, number
+---@return number, vector3
 function TestProbeAgainstAllWater(x1, y1, z1, x2, y2, z2, flags) end
 
 ---**`WATER` `client`**  

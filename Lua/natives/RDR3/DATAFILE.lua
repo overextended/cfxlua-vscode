@@ -128,16 +128,14 @@ function DatadictGetVector(key) end
 ---**`DATAFILE` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xB04B69CF277D15C0)  
 ---This native does not have an official description.
----@param p0 any
----@return boolean
-function DatadictIsArrayValid(p0) end
+---@return boolean, any
+function DatadictIsArrayValid() end
 
 ---**`DATAFILE` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x4607D57C5F7D332A)  
 ---This native does not have an official description.
----@param p0 any
----@return boolean
-function DatadictIsDictValid(p0) end
+---@return boolean, any
+function DatadictIsDictValid() end
 
 ---**`DATAFILE` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x26FDF5E99AA2F3E9)  

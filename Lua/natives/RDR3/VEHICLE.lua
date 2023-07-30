@@ -674,7 +674,7 @@ function HasTrainLoaded(train) end
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xB935F3154BC913C8)  
 ---This native does not have an official description.
----@param vehicleAsset number
+---@param vehicleAsset number | string
 ---@return boolean
 function HasVehicleAssetLoaded(vehicleAsset) end
 
@@ -1968,7 +1968,7 @@ function RemoveRoadNodeSpeedZone(speedzone) end
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x888A4E675B38F5AD)  
 ---This native does not have an official description.
----@param vehicleAsset number
+---@param vehicleAsset number | string
 function RemoveVehicleAsset(vehicleAsset) end
 
 ---**`VEHICLE` `client`**  
@@ -2258,10 +2258,10 @@ function SetHorseTrafficGroupingDistribution(p0, p1, p2, p3) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xBBE7648349B49BE8)  
----This native does not have an official description.
+---flags = 0: DEFAULT; 1: KEEP_OLD_SPEED
 ---@param train number
----@param p1 boolean
-function SetMissionTrainAsNoLongerNeeded(train, p1) end
+---@param flags number
+function SetMissionTrainAsNoLongerNeeded(train, flags) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x7632755962AB9922)  

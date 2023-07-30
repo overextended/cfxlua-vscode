@@ -7,10 +7,24 @@
 function ActivateCompanionAnalysis(groupId) end
 
 ---**`COMPANION` `client`**  
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xDEB369F6AD168C58)  
+---Used for Script Function NET_FETCH_CLIENT_ACTIVATE_COMAPNION_ANALYSIS: Hiding! Ped
+---@param ped number
+---@param p1 number
+function AddCompanionFlag(ped, p1) end
+
+---**`COMPANION` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x72B7F65F11FC8896)  
 ---This native does not have an official description.
 ---@param groupId number
 function DeactivateCompanionAnalysis(groupId) end
+
+---**`COMPANION` `client`**  
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xB7E0590C86E1711F)  
+---enum _0x18F77396
+---@param groupId number
+---@return number
+function GetCompanionActivity(groupId) end
 
 ---**`COMPANION` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x0A8FD91EDE7B328A)  
@@ -29,23 +43,9 @@ function N_0x0c6a00dae896614c(p0, p1) end
 ---**`COMPANION` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x0DE02DA3C0F66955)  
 ---This native does not have an official description.
----@param p0 any
----@param p1 any
-function N_0x0de02da3c0f66955(p0, p1) end
-
----**`COMPANION` `client`**  
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x0F1CD8CA9E65D5F6)  
----This native does not have an official description.
----@param groupId number
----@param p1 number | string
-function N_0x0f1cd8ca9e65d5f6(groupId, p1) end
-
----**`COMPANION` `client`**  
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x1740E3DEE0AE4D27)  
----This native does not have an official description.
 ---@param ped number
----@param p1 number
-function N_0x1740e3dee0ae4d27(ped, p1) end
+---@param p1 number | string
+function N_0x0de02da3c0f66955(ped, p1) end
 
 ---**`COMPANION` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x2917E634206B9E17)  
@@ -119,13 +119,6 @@ function N_0x9c902084f48d2e6c(p0) end
 function N_0xa079ff7cfb9ac8bd(p0, p1) end
 
 ---**`COMPANION` `client`**  
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xB7E0590C86E1711F)  
----This native does not have an official description.
----@param p0 any
----@return any
-function N_0xb7e0590c86e1711f(p0) end
-
----**`COMPANION` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xBF6583E926D13890)  
 ---This native does not have an official description.
 ---@param p0 any
@@ -169,16 +162,23 @@ function N_0xd730281e496621fb(ped, p1) end
 function N_0xd747979c053efa7a(p0) end
 
 ---**`COMPANION` `client`**  
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xDEB369F6AD168C58)  
----Used for Script Function NET_FETCH_CLIENT_ACTIVATE_COMAPNION_ANALYSIS: Hiding! Ped
----@param ped number
----@param p1 number
-function N_0xdeb369f6ad168c58(ped, p1) end
-
----**`COMPANION` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xF06CBB8CCCA823C0)  
 ---This native does not have an official description.
 ---@param p0 any
 ---@param p1 any
 function N_0xf06cbb8ccca823c0(p0, p1) end
+
+---**`COMPANION` `client`**  
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x1740E3DEE0AE4D27)  
+---This native does not have an official description.
+---@param ped number
+---@param p1 number
+function RemoveCompanionFlag(ped, p1) end
+
+---**`COMPANION` `client`**  
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x0F1CD8CA9E65D5F6)  
+---enum _0x18F77396
+---@param groupId number
+---@param activity number | string
+function SetCompanionActivity(groupId, activity) end
 

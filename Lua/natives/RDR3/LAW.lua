@@ -547,8 +547,8 @@ function N_0xc7dc5a0a7df608cb(flag) end
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xCBFB4951F2E3934C)  
 ---This native does not have an official description.
 ---@param player number
----@param p1 any
-function N_0xcbfb4951f2e3934c(player, p1) end
+---@return any
+function N_0xcbfb4951f2e3934c(player) end
 
 ---**`LAW` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xD6C0A8C7C0B2F82C)  

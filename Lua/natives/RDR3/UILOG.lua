@@ -9,9 +9,9 @@ function N_0x2a4765812202e671() end
 ---**`UILOG` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x763637F9B838B0A7)  
 ---This native does not have an official description.
----@param p0 any
----@param p1 any
----@param p2 any
+---@param p0 number
+---@param p1 number | string
+---@param p2 string
 function N_0x763637f9b838b0a7(p0, p1, p2) end
 
 ---**`UILOG` `client`**  

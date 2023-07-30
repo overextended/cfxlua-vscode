@@ -1136,16 +1136,16 @@ function IsProjectileTypeInAngledArea(p0, p1, p2, p3, p4, p5, p6, p7, p8) end
 ---**`MISC` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x04965FB9E14235C7)  
 ---Determines whether there is a projectile of a specific type within the specified coordinates. The coordinates form a rectangle.
----@param x1 number
----@param y1 number
----@param z1 number
----@param x2 number
----@param y2 number
----@param z2 number
----@param type number
----@param p7 boolean
+---@param xMin number
+---@param yMin number
+---@param zMin number
+---@param xMax number
+---@param yMax number
+---@param zMax number
+---@param weaponType number | string
+---@param isPlayer boolean
 ---@return boolean
-function IsProjectileTypeInArea(x1, y1, z1, x2, y2, z2, type, p7) end
+function IsProjectileTypeInArea(xMin, yMin, zMin, xMax, yMax, zMax, weaponType, isPlayer) end
 
 ---**`MISC` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xF51C9BAAD9ED64C4)  
@@ -1229,8 +1229,8 @@ function N_0x0a487cc74a517fb5(p0) end
 ---**`MISC` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x0D0AE5081F88CFE1)  
 ---This native does not have an official description.
----@param p0 any
----@return any
+---@param p0 number | string
+---@return boolean
 function N_0x0d0ae5081f88cfe1(p0) end
 
 ---**`MISC` `client`**  
@@ -1248,8 +1248,8 @@ function N_0x154340e87d8cc178(p0) end
 ---**`MISC` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x183672FE838A661B)  
 ---This native does not have an official description.
----@param p0 any
-function N_0x183672fe838a661b(p0) end
+---@return any
+function N_0x183672fe838a661b() end
 
 ---**`MISC` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x243CEDE8F916B994)  
@@ -1284,7 +1284,7 @@ function N_0x35165c658077cd0b() end
 ---**`MISC` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x38C0C9CAE1544500)  
 ---This native does not have an official description.
----@param p0 any
+---@param p0 number | string
 function N_0x38c0c9cae1544500(p0) end
 
 ---**`MISC` `client`**  
@@ -1323,7 +1323,7 @@ function N_0x49c44fe78a135a1d(p0) end
 ---**`MISC` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x49F3241C28EBBFBC)  
 ---This native does not have an official description.
----@param p0 any
+---@param p0 number
 function N_0x49f3241c28ebbfbc(p0) end
 
 ---**`MISC` `client`**  
@@ -1711,16 +1711,14 @@ function NextOnscreenKeyboardResultWillDisplayUsingTheseFonts(fontBitField) end
 ---**`MISC` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xB2C69E11A37B5AF0)  
 ---This native does not have an official description.
----@param p0 boolean
----@param p1 number
----@param p2 number
----@param p3 number
----@param p4 number
----@param p5 boolean
----@param p6 number
----@param p7 number
----@return boolean
-function OverrideSaveHouse(p0, p1, p2, p3, p4, p5, p6, p7) end
+---@param override boolean
+---@param x number
+---@param y number
+---@param z number
+---@param heading number
+---@param isAutosave boolean
+---@return boolean, vector3, number
+function OverrideSaveHouse(override, x, y, z, heading, isAutosave) end
 
 ---**`MISC` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x66AB6B6C7E72F393)  

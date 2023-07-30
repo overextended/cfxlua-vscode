@@ -1241,7 +1241,7 @@ function PrepareSoundWithEntity(soundName, entity, soundsetName, soundId) end
 ---**`AUDIO` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xC6ED9D5092438D91)  
 ---nullsub, doesn't do anything
----@param p0 number
+---@param p0 boolean
 function RegisterScriptWithAudio(p0) end
 
 ---**`AUDIO` `client`**  

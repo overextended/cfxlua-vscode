@@ -107,7 +107,7 @@ function DisablePlayerFiring(player, toggle) end
 
 ---**`PLAYER` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC142BE3BB9CE125F)  
----This native does not have an official description.
+---Disables vehicle rewards for the current frame.
 ---@param player number
 function DisablePlayerVehicleRewards(player) end
 
@@ -404,9 +404,13 @@ function GetPlayerRgbColour(player) end
 
 ---**`PLAYER` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xB6997A7EB3F5C8C0)  
----```
----Alternative: GET_VEHICLE_PED_IS_IN(PLAYER_PED_ID(), 1);  
----```
+---### Warning
+---
+---This native will return `0` if the last vehicle the player was in was destroyed.
+---
+---### Alternative
+---
+---You can use [GET_VEHICLE_PED_IS_IN](#\_0x9A9112A0FE9A4713), which will actually get the last vehicle, even if it was destroyed.
 ---@return number
 function GetPlayersLastVehicle() end
 
@@ -1331,10 +1335,10 @@ function ResetWorldBoundaryForPlayer() end
 
 ---**`PLAYER` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA352C1B864CAFD33)  
----This native does not have an official description.
+---Adds a percentage to a players stamina
 ---@param player number
----@param p1 number
-function RestorePlayerStamina(player, p1) end
+---@param percentage number
+function RestorePlayerStamina(player, percentage) end
 
 ---**`PLAYER` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC2AFFFDABBDC2C5C)  

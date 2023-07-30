@@ -100,10 +100,10 @@ function AddTextureLayer(textureId, albedoHash, normalHash, materialHash, blendT
 ---damages a ped with the given amount
 ---@param ped number
 ---@param damageAmount number
----@param p2 number
+---@param damageArmour boolean
 ---@param boneId number
 ---@param pedKiller number
-function ApplyDamageToPed(ped, damageAmount, p2, boneId, pedKiller) end
+function ApplyDamageToPed(ped, damageAmount, damageArmour, boneId, pedKiller) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xEF0D582CBF2D9B0F)  
@@ -2274,9 +2274,9 @@ function IsPedBeingStealthKilled(ped) end
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x4FBACCE3B4138EE8)  
 ---This native does not have an official description.
 ---@param ped number
----@param p1 number
+---@param weaponType number | string
 ---@return boolean
-function IsPedBeingStunned(ped, p1) end
+function IsPedBeingStunned(ped, weaponType) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xA911EE21EDF69DAF)  
@@ -3677,7 +3677,7 @@ function N_0x45fea6d5539bd474(ped, p1) end
 ---@param p1 number
 ---@param p3 number
 ---@param p4 number
----@return any, any
+---@return number, any
 function N_0x4642182a298187d0(ped, p1, p3, p4) end
 
 ---**`PED` `client`**  
@@ -4122,13 +4122,6 @@ function N_0x763fa8a9d76ee3a7(ped) end
 ---@param ped number
 ---@return boolean
 function N_0x77243ed4f7caaa55(ped) end
-
----**`PED` `client`**  
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x7883AA809DF43D98)  
----_SET_M*
----@param ped number
----@param healthLimit number
-function N_0x7883aa809df43d98(ped, healthLimit) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x7ABBD9E449E0DB00)  
@@ -5627,9 +5620,9 @@ function N_0xfc23348f0f4e245f(p0, p1, p2, p3) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xFC3B580C4380B5B7)  
 ---This native does not have an official description.
----@param p0 any
----@return any
-function N_0xfc3b580c4380b5b7(p0) end
+---@param ped number
+---@return number
+function N_0xfc3b580c4380b5b7(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xFD3C31A2E45671E7)  
@@ -6431,6 +6424,13 @@ function SetMetaPedTag(ped, drawable, albedo, normal, material, palette, tint0, 
 ---@param ped number
 ---@param weariness number
 function SetMetaPedWeariness(ped, weariness) end
+
+---**`PED` `client`**  
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x7883AA809DF43D98)  
+---This native does not have an official description.
+---@param ped number
+---@param healthAmount number
+function SetMinPedHealthThreshold(ped, healthAmount) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xA69899995997A63B)  
@@ -7370,9 +7370,9 @@ function SetPedMinMoveBlendRatio(ped, value) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xE163A4BCE4DE6F11)  
 ---This native does not have an official description.
----@param ped number
+---@param model number | string
 ---@param toggle boolean
-function SetPedModelIsSuppressed(ped, toggle) end
+function SetPedModelIsSuppressed(model, toggle) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xA9C8960E8684C1B5)  
@@ -7749,16 +7749,16 @@ function SetPedToPlayerWeaponDamageModifier(ped, damageModifier) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xAE99FB955581844A)  
----Params: p6 = DraggedByCart in R* SP Script marston8
+---nmTaskMessageParameterName: See physicstasks.ymt. Search for DraggedByCart or 0xD00820D7 (Used in R* SP Script marston8)
 ---@param ped number
 ---@param timeMin number
 ---@param timeMax number
 ---@param ragdollType number
----@param p4 boolean
----@param p5 boolean
----@param p6 string
+---@param abortIfInjured boolean
+---@param abortIfDead boolean
+---@param nmTaskMessageParameterName string
 ---@return boolean
-function SetPedToRagdoll(ped, timeMin, timeMax, ragdollType, p4, p5, p6) end
+function SetPedToRagdoll(ped, timeMin, timeMax, ragdollType, abortIfInjured, abortIfDead, nmTaskMessageParameterName) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xD76632D99E4966C8)  

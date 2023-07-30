@@ -332,15 +332,6 @@ function N_0xca1f0b5103936891(p0) end
 function N_0xca41e86545413b5b(p0, p1, p2, p3, p4, p5, p6) end
 
 ---**`STATS` `client`**  
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xD5910ECF81A2278C)  
----This native does not have an official description.
----@param deedType number
----@param deedHash number | string
----@param missionStatus number
----@return any
-function N_0xd5910ecf81a2278c(deedType, deedHash, missionStatus) end
-
----**`STATS` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xD64DBC8B0424135F)  
 ---This native does not have an official description.
 ---@param ped number
@@ -585,6 +576,15 @@ function StatRegisterLegendaryAnimalDeed(deedHash) end
 ---@param p0 number | string
 ---@param p1 any
 function StatstrackerDeedStarted(p0, p1) end
+
+---**`STATS` `client`**  
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xD5910ECF81A2278C)  
+---This native does not have an official description.
+---@param deedType number
+---@param deedHash number | string
+---@param missionStatus number
+---@return any
+function StatstrackerDeedStatus(deedType, deedHash, missionStatus) end
 
 ---**`STATS` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x01F4D242765C6B24)  

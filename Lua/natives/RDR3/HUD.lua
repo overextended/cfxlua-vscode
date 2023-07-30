@@ -153,7 +153,7 @@ function GetFilenameForAudioConversation(labelName) end
 ---@param worldX number
 ---@param worldY number
 ---@param worldZ number
----@return boolean, number, number
+---@return number, number, number
 function GetHudScreenPositionFromWorldPosition(worldX, worldY, worldZ) end
 
 ---**`HUD` `client`**  
@@ -415,7 +415,7 @@ function N_0x3fe4fb41ef7d2196(p0) end
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x53CE46C01A089DA1)  
 ---This native does not have an official description.
 ---@param prompt any
----@param p1 any
+---@param p1 boolean
 function N_0x53ce46c01a089da1(prompt, p1) end
 
 ---**`HUD` `client`**  
@@ -438,13 +438,6 @@ function N_0x7ec0d68233e391ac(p0) end
 ---@param p2 any
 ---@return any
 function N_0x806862e5d266cf38(p0, p1, p2) end
-
----**`HUD` `client`**  
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x81801291806DBC50)  
----This native does not have an official description.
----@param p0 any
----@return any
-function N_0x81801291806dbc50(p0) end
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x8A59D44189AF2BC5)  
@@ -822,6 +815,13 @@ function UiPromptGetGroupIdForTargetEntity(entity) end
 ---@param prompt any
 ---@return number
 function UiPromptGetMashModeProgress(prompt) end
+
+---**`HUD` `client`**  
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x81801291806DBC50)  
+---This native does not have an official description.
+---@param prompt any
+---@return number
+function UiPromptGetProgress(prompt) end
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x1FBA0DABECDDB52B)  

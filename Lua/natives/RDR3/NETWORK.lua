@@ -1824,7 +1824,6 @@ function NetworkDoesTunableExist(tunableContext, tunableName) end
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xAEDF1BC1C133D6E3)  
 ---nullsub, doesn't do anything
----@return any
 function NetworkDumpNetIfConfig() end
 
 ---**`NETWORK` `client`**  
@@ -2033,7 +2032,6 @@ function NetworkGetMaxNumParticipants() end
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x6FD992C4A1C1B986)  
 ---nullsub, doesn't do anything
----@return any
 function NetworkGetNetStatisticsInfo() end
 
 ---**`NETWORK` `client`**  

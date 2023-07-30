@@ -322,15 +322,13 @@ function ClearAreaLeaveVehicleHealth(x, y, z, radius, p4, p5, p6, p7) end
 
 ---**`MISC` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x04F8FC8FCF58F88D)  
----```
----flags appears to always be 0
----```
+---Clears an area of cops at the given coordinates and radius.
 ---@param x number
 ---@param y number
 ---@param z number
 ---@param radius number
----@param flags number
-function ClearAreaOfCops(x, y, z, radius, flags) end
+---@param createNetEvent boolean
+function ClearAreaOfCops(x, y, z, radius, createNetEvent) end
 
 ---**`MISC` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xDD9B9B385AAC7F5B)  
@@ -346,25 +344,23 @@ function ClearAreaOfObjects(x, y, z, radius, flags) end
 
 ---**`MISC` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xBE31FD6CE464AC59)  
----```
----Example:       CLEAR_AREA_OF_PEDS(0, 0, 0, 10000, 1);
----```
+---Clears an area of peds at the given coordinates and radius.
 ---@param x number
 ---@param y number
 ---@param z number
 ---@param radius number
----@param flags number
-function ClearAreaOfPeds(x, y, z, radius, flags) end
+---@param createNetEvent boolean
+function ClearAreaOfPeds(x, y, z, radius, createNetEvent) end
 
 ---**`MISC` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x0A1CB9094635D1A6)  
----This native does not have an official description.
+---Clears an area of projectiles at the given coordinates and radius.
 ---@param x number
 ---@param y number
 ---@param z number
 ---@param radius number
----@param flags number
-function ClearAreaOfProjectiles(x, y, z, radius, flags) end
+---@param createNetEvent boolean
+function ClearAreaOfProjectiles(x, y, z, radius, createNetEvent) end
 
 ---**`MISC` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x01C7B9B38428AEB6)  
@@ -863,7 +859,7 @@ function GetFakeWantedLevel() end
 
 ---**`MISC` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xFC8202EFC642E6F2)  
----This native does not have an official description.
+---Gets the number of the current frame being displayed.
 ---@return number
 function GetFrameCount() end
 
@@ -2625,7 +2621,8 @@ function SetStuntJumpsCanTrigger(toggle) end
 
 ---**`MISC` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x57FFF03E423A4C0B)  
----This native does not have an official description.
+---Allows the player to perform super jumps. This function must be called every frame for it to work.
+---It basically OR's a flag for a single frame, allowing the ped to perform a super jump only when the flag is set.
 ---@param player number
 function SetSuperJumpThisFrame(player) end
 
@@ -2893,9 +2890,7 @@ function Tan(p0) end
 
 ---**`MISC` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x9DC711BC69C548DF)  
----```
----For a full list, see here: pastebin.com/yLNWicUi  
----```
+---For a full list, see [here](https://gist.github.com/4mmonium/f76f3ecef649ed275b260b433ea84494).
 ---@param scriptName string
 function TerminateAllScriptsWithThisName(scriptName) end
 

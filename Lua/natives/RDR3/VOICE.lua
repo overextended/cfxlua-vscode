@@ -77,8 +77,8 @@ function N_0x767931c727df2ed7(player, p1) end
 ---**`VOICE` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x79F478FF5F9F4F05)  
 ---This native does not have an official description.
----@param p0 boolean
-function N_0x79f478ff5f9f4f05(p0) end
+---@param enabled boolean
+function N_0x79f478ff5f9f4f05(enabled) end
 
 ---**`VOICE` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x8E462DB1EAA9C47C)  
@@ -116,8 +116,8 @@ function N_0xb6e79850b759a30e(teamId, allow) end
 ---**`VOICE` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xB779F4FA19269AEC)  
 ---This native does not have an official description.
----@param p0 number
-function N_0xb779f4fa19269aec(p0) end
+---@param flag boolean
+function N_0xb779f4fa19269aec(flag) end
 
 ---**`VOICE` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xCCF71FCFA0070B1A)  

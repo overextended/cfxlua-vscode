@@ -363,9 +363,21 @@ function GetScriptedCoverPointCoords(coverpoint) end
 
 ---**`TASK` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x77F1BEB8863288D5)  
+---Gets the status of a spesifed script-assigned task on the given ped. The return value is always an int between 0-7.
+---
+---You can set taskHash to `SCRIPT_TASK_ANY` to check if any task is active, it will return 1 for active, 3 for no active.
+---`SCRIPT_TASK_INVALID` can be similarly used, it returns 7 if there are any active task, and 3 if there are no active tasks.
+---
+---taskHash list: https://alloc8or.re/gta5/doc/enums/eScriptTaskHash.txt
+---
+---Returns:
+---
 ---```
----Gets the status of a script-assigned task.
----taskHash: https://alloc8or.re/gta5/doc/enums/eScriptTaskHash.txt
+---0 = WAITING_TO_START_TASK
+---1 = PERFORMING_TASK
+---2 = DORMANT_TASK
+---3 = VACANT_STAGE
+---7 = TASK_FINISHED_OR_NOT_FOUND
 ---```
 ---@param ped number
 ---@param taskHash number | string
@@ -1262,8 +1274,8 @@ function StopAnimPlayback(ped, p1, p2) end
 ---@param ped number
 ---@param animDictionary string
 ---@param animationName string
----@param p3 number
-function StopAnimTask(ped, animDictionary, animationName, p3) end
+---@param animExitSpeed number
+function StopAnimTask(ped, animDictionary, animationName, animExitSpeed) end
 
 ---**`TASK` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x93B93A37987F1F3D)  

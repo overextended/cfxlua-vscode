@@ -519,7 +519,7 @@ function N_0x6d5f9e69ba1be783(p0) end
 ---**`VOLUME` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x748C5F51A18CB8F0)  
 ---nullsub, doesn't do anything
----@param p0 any
+---@param p0 boolean
 function N_0x748c5f51a18cb8f0(p0) end
 
 ---**`VOLUME` `client`**  
@@ -568,9 +568,9 @@ function N_0xac355980681a7f89(p0) end
 ---**`VOLUME` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xB440F4E35393FC39)  
 ---This native does not have an official description.
----@param p0 any
+---@param volume any
 ---@param p1 any
-function N_0xb440f4e35393fc39(p0, p1) end
+function N_0xb440f4e35393fc39(volume, p1) end
 
 ---**`VOLUME` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xB469CFD9E065EB99)  
@@ -582,9 +582,9 @@ function N_0xb469cfd9e065eb99(p0, p1) end
 ---**`VOLUME` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xC4019CF9AE8E931A)  
 ---This native does not have an official description.
----@param p0 any
+---@param volLockRequestId number
 ---@return vector3
-function N_0xc4019cf9ae8e931a(p0) end
+function N_0xc4019cf9ae8e931a(volLockRequestId) end
 
 ---**`VOLUME` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xC61E2FD926DBB406)  
@@ -602,9 +602,9 @@ function N_0xca5c90d40665d5ce(p0, p1) end
 ---**`VOLUME` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xD460135C98940274)  
 ---This native does not have an official description.
----@param p0 any
+---@param volume any
 ---@param p1 any
-function N_0xd460135c98940274(p0, p1) end
+function N_0xd460135c98940274(volume, p1) end
 
 ---**`VOLUME` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xD4FA73FE628FEC63)  

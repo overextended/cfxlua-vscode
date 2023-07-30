@@ -111,8 +111,8 @@ function N_0x4afc7288c77238b3(p0) end
 ---**`PERSCHAR` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x4F81EAD1DE8FA19B)  
 ---This native does not have an official description.
----@param p0 any
-function N_0x4f81ead1de8fa19b(p0) end
+---@param persChar any
+function N_0x4f81ead1de8fa19b(persChar) end
 
 ---**`PERSCHAR` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x535A66AAD2BF68F9)  
@@ -154,8 +154,8 @@ function N_0x669c25840c6f7ae2(p0, p1) end
 ---**`PERSCHAR` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x6759BEE6762E140B)  
 ---This native does not have an official description.
----@param p0 any
-function N_0x6759bee6762e140b(p0) end
+---@param persChar any
+function N_0x6759bee6762e140b(persChar) end
 
 ---**`PERSCHAR` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x69786495C92A3044)  
@@ -237,8 +237,8 @@ function N_0xa8120ebeaf290c7a(p0) end
 ---**`PERSCHAR` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xA8C406C2A56EDC16)  
 ---This native does not have an official description.
----@param p0 any
-function N_0xa8c406c2a56edc16(p0) end
+---@param persChar any
+function N_0xa8c406c2a56edc16(persChar) end
 
 ---**`PERSCHAR` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xB173599D61FAEB31)  
@@ -248,14 +248,14 @@ function N_0xb173599d61faeb31() end
 ---**`PERSCHAR` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xB65E7F733956CF25)  
 ---This native does not have an official description.
----@param p0 any
-function N_0xb65e7f733956cf25(p0) end
+---@param persChar any
+function N_0xb65e7f733956cf25(persChar) end
 
 ---**`PERSCHAR` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xBB68908CD11AEBDC)  
 ---This native does not have an official description.
----@param p0 any
-function N_0xbb68908cd11aebdc(p0) end
+---@param persChar any
+function N_0xbb68908cd11aebdc(persChar) end
 
 ---**`PERSCHAR` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xCEB40B678E403759)  
@@ -319,8 +319,8 @@ function N_0xf8de7154f7d1458f(p0) end
 ---**`PERSCHAR` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xFCC6DB8DBE709BC8)  
 ---This native does not have an official description.
----@param p0 any
-function N_0xfcc6db8dbe709bc8(p0) end
+---@param persChar any
+function N_0xfcc6db8dbe709bc8(persChar) end
 
 ---**`PERSCHAR` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x631CD2D77FDC0316)  
