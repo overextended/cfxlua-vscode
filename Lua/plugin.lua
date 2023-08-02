@@ -52,7 +52,7 @@ function OnSetText(uri, text)
 
 	-- prevent diagnostic errors from in unpacking (a, b, c in t)  
 	-- needs better comment detection (i.e. comment blocks) to prevent nonsense changes to annotations
-	for comment, vars, inPos, afterInPos, tablePos, tableName, finishPos in str_gmatch(text, '(%-?%-?)([_%w, ]*)%s+()in()[     ]+()([_%w]*%s-%(?.-%)?)()') do
+	for comment, vars, inPos, afterInPos, tablePos, tableName, finishPos in str_gmatch(text, '(%-?%-?)([_%w, ]*)%s+()in()[     ]+()([_%w]*%s-[%(%[]?.-[^\n][%)%]]?)()') do
 		if comment == '' then
 			if tableName ~= '' and not str_find(vars, '^%s*for%s') then
 				-- replace 'in' with '='
