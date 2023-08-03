@@ -52,50 +52,34 @@ function OnSetText(uri, text)
 
 	-- prevent diagnostic errors from in unpacking (a, b, c in t)  
 	-- needs better comment detection (i.e. comment blocks) to prevent nonsense changes to annotations
-	for comment, vars, inPos, afterInPos, tablePos, tableName, finishPos in str_gmatch(text, '(%-?%-?)([_%w, ]*)%s+()in()[ \t]+()([%S ]+)[\n\t]?()') do
-		if comment ~= '' or tableName == '' or str_find(vars, '^%s*for%s') or str_find(tableName, '["`\']%.?$') then
-			goto continue
-		end
+	for comment, vars, inPos, afterInPos, tablePos, tableName, finishPos in str_gmatch(text, '(%-?%-?)([_%w, ]*)%s+()in()[     ]+()([_%w]*%s-%(?.-%)?)()') do
+		if comment == '' then
+			if tableName ~= '' and not str_find(vars, '^%s*for%s') then
+				-- replace 'in' with '='
+				count = count + 1
+				diffs[count] = {
+					start = inPos,
+					finish = afterInPos - 1,
+					text = '='
+				}
 
-		if string.match(tableName, '^.+["`\'%]]%.?$') and not (
-			string.match(tableName, '%b[]')
-			or string.match(tableName, '%b""')
-			or string.match(tableName, "%b''")
-			or string.match(tableName, "%b``")
-		) then
-			goto continue
-		end
+				local tableVars = ''
+				vars = str_gsub(vars, '^%s*local%s', '')
 
-		local tableVars = {}
-		vars = str_gsub(vars, '^%s*local%s', '')
+				-- replace 't' with 't.a, t.b, t.c'
+				for varName in str_gmatch(str_gsub(vars, '%s+', ''), '([_%w]+)') do
+					if #tableVars > 0 then tableVars = tableVars .. ',' end
+					tableVars = tableVars .. tableName .. '.' .. varName
+				end
 
-		-- replace 't' with 't.a, t.b, t.c'
-		for varName in str_gmatch(str_gsub(vars, '%s+', ''), '([_%w]+)') do
-			local tblIndex = ('%s.%s'):format(tableName, varName)
-
-			if str_find(tblIndex, '},?%.') then
-				goto continue
+				count = count + 1
+				diffs[count] = {
+					start = tablePos,
+					finish = finishPos - 1,
+					text = tableVars
+				}
 			end
-
-			tableVars[#tableVars + 1] = tblIndex
 		end
-
-		-- replace 'in' with '='
-		count = count + 1
-		diffs[count] = {
-			start = inPos,
-			finish = afterInPos - 1,
-			text = '='
-		}
-
-		count = count + 1
-		diffs[count] = {
-			start = tablePos,
-			finish = finishPos - 1,
-			text = table.concat(tableVars, ', ')
-		}
-
-		::continue::
 	end
 
 	return diffs
