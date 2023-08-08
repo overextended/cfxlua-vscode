@@ -879,8 +879,8 @@ function DrawLowQualityPhotoToPhone(p0, p1) end
 ---@param faceCamera boolean
 ---@param p19 number
 ---@param rotate boolean
----@param textureDict string
----@param textureName string
+---@param textureDict string | nil
+---@param textureName string | nil
 ---@param drawOnEnts boolean
 function DrawMarker(type, posX, posY, posZ, dirX, dirY, dirZ, rotX, rotY, rotZ, scaleX, scaleY, scaleZ, red, green, blue, alpha, bobUpAndDown, faceCamera, p19, rotate, textureDict, textureName, drawOnEnts) end
 

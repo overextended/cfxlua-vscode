@@ -372,6 +372,10 @@ function BeginTextCommandPrint(GxtEntry) end
 ---@param textLabel string
 function BeginTextCommandSetBlipName(textLabel) end
 
+---**`HUD` `client`**
+---@param text string
+function AddTextComponentString(text) end
+
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x202709F4C58A0424)  
 ---Declares the entry type of a notification, for example "STRING".
