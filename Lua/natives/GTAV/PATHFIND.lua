@@ -42,7 +42,7 @@ function AreAllNavmeshRegionsLoaded() end
 function AreNodesLoadedForArea(x1, y1, x2, y2) end
 
 ---@deprecated
-AreNodesLoadedForArea = ArePathNodesLoadedInArea
+ArePathNodesLoadedInArea = AreNodesLoadedForArea
 
 ---**`PATHFIND` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xADD95C7005C4A197)  
@@ -392,7 +392,7 @@ function GetRandomVehicleNode(x, y, z, radius, p4, p5, p6) end
 function GetRoadBoundaryUsingHeading(x, y, z, heading) end
 
 ---@deprecated
-GetRoadBoundaryUsingHeading = GetRoadSidePointWithHeading
+GetRoadSidePointWithHeading = GetRoadBoundaryUsingHeading
 
 ---**`PATHFIND` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xB61C8E878A4199CA)  
@@ -443,7 +443,7 @@ function GetStreetNameAtCoord(x, y, z) end
 function GetVehicleNodeIsGpsAllowed(nodeID) end
 
 ---@deprecated
-GetVehicleNodeIsGpsAllowed = GetSupportsGpsRouteFlag
+GetSupportsGpsRouteFlag = GetVehicleNodeIsGpsAllowed
 
 ---**`PATHFIND` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x4F5070AA58F69279)  
@@ -456,7 +456,7 @@ GetVehicleNodeIsGpsAllowed = GetSupportsGpsRouteFlag
 function GetVehicleNodeIsSwitchedOff(nodeID) end
 
 ---@deprecated
-GetVehicleNodeIsSwitchedOff = GetIsSlowRoadFlag
+GetIsSlowRoadFlag = GetVehicleNodeIsSwitchedOff
 
 ---**`PATHFIND` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x703123E5E7D429C2)  

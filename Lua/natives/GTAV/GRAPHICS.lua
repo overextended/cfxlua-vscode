@@ -161,7 +161,7 @@ function AddTcmodifierOverride(modifierName1, modifierName2) end
 function AddVehicleCrewEmblem(vehicle, ped, boneIndex, x1, x2, x3, y1, y2, y3, z1, z2, z3, scale, p13, alpha) end
 
 ---@deprecated
-AddVehicleCrewEmblem = AddClanDecalToVehicle
+AddClanDecalToVehicle = AddVehicleCrewEmblem
 
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xE35B38A27E8E7179)  
@@ -178,7 +178,7 @@ function AnimpostfxGetUnk(effectName) end
 function AnimpostfxIsRunning(effectName) end
 
 ---@deprecated
-AnimpostfxIsRunning = GetScreenEffectIsActive
+GetScreenEffectIsActive = AnimpostfxIsRunning
 
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x2206BF9A37B7F724)  
@@ -192,7 +192,7 @@ AnimpostfxIsRunning = GetScreenEffectIsActive
 function AnimpostfxPlay(effectName, duration, looped) end
 
 ---@deprecated
-AnimpostfxPlay = StartScreenEffect
+StartScreenEffect = AnimpostfxPlay
 
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x068E835A1D0DC0E3)  
@@ -201,7 +201,7 @@ AnimpostfxPlay = StartScreenEffect
 function AnimpostfxStop(effectName) end
 
 ---@deprecated
-AnimpostfxStop = StopScreenEffect
+StopScreenEffect = AnimpostfxStop
 
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xB4EDDC19532BFB85)  
@@ -209,7 +209,7 @@ AnimpostfxStop = StopScreenEffect
 function AnimpostfxStopAll() end
 
 ---@deprecated
-AnimpostfxStopAll = StopAllScreenEffects
+StopAllScreenEffects = AnimpostfxStopAll
 
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xD2209BE128B5418C)  
@@ -236,7 +236,7 @@ function AttachTvAudioToEntity(entity) end
 function BeginScaleformMovieMethod(scaleform, methodName) end
 
 ---@deprecated
-BeginScaleformMovieMethod = PushScaleformMovieFunction
+PushScaleformMovieFunction = BeginScaleformMovieMethod
 
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xAB58C27C2E6123C6)  
@@ -249,9 +249,9 @@ BeginScaleformMovieMethod = PushScaleformMovieFunction
 function BeginScaleformMovieMethodOnFrontend(functionName) end
 
 ---@deprecated
-BeginScaleformMovieMethodOnFrontend = PushScaleformMovieFunctionN
+PushScaleformMovieFunctionN = BeginScaleformMovieMethodOnFrontend
 ---@deprecated
-BeginScaleformMovieMethodOnFrontend = BeginScaleformMovieMethodN
+BeginScaleformMovieMethodN = BeginScaleformMovieMethodOnFrontend
 
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xB9449845F73F5E9C)  
@@ -263,7 +263,7 @@ BeginScaleformMovieMethodOnFrontend = BeginScaleformMovieMethodN
 function BeginScaleformMovieMethodOnFrontendHeader(functionName) end
 
 ---@deprecated
-BeginScaleformMovieMethodOnFrontendHeader = BeginScaleformMovieMethodV
+BeginScaleformMovieMethodV = BeginScaleformMovieMethodOnFrontendHeader
 
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x98C494FD5BDFBFD5)  
@@ -280,9 +280,9 @@ BeginScaleformMovieMethodOnFrontendHeader = BeginScaleformMovieMethodV
 function BeginScaleformScriptHudMovieMethod(hudComponent, methodName) end
 
 ---@deprecated
-BeginScaleformScriptHudMovieMethod = PushScaleformMovieFunctionFromHudComponent
+PushScaleformMovieFunctionFromHudComponent = BeginScaleformScriptHudMovieMethod
 ---@deprecated
-BeginScaleformScriptHudMovieMethod = BeginScaleformMovieMethodHudComponent
+BeginScaleformMovieMethodHudComponent = BeginScaleformScriptHudMovieMethod
 
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA67C35C56EB1BD9D)  
@@ -319,7 +319,7 @@ function BeginTakeMissionCreatorPhoto() end
 function BeginTextCommandScaleformString(textLabel) end
 
 ---@deprecated
-BeginTextCommandScaleformString = BeginTextComponent
+BeginTextComponent = BeginTextCommandScaleformString
 
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xFBD96D87AC96D533)  
@@ -331,7 +331,7 @@ BeginTextCommandScaleformString = BeginTextComponent
 function CallScaleformMovieMethod(scaleform, method) end
 
 ---@deprecated
-CallScaleformMovieMethod = CallScaleformMovieFunctionVoid
+CallScaleformMovieFunctionVoid = CallScaleformMovieMethod
 
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xD0837058AE2E4BEE)  
@@ -349,7 +349,7 @@ CallScaleformMovieMethod = CallScaleformMovieFunctionVoid
 function CallScaleformMovieMethodWithNumber(scaleform, methodName, param1, param2, param3, param4, param5) end
 
 ---@deprecated
-CallScaleformMovieMethodWithNumber = CallScaleformMovieFunctionFloatParams
+CallScaleformMovieFunctionFloatParams = CallScaleformMovieMethodWithNumber
 
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xEF662D8D57E290B1)  
@@ -378,7 +378,7 @@ CallScaleformMovieMethodWithNumber = CallScaleformMovieFunctionFloatParams
 function CallScaleformMovieMethodWithNumberAndString(scaleform, methodName, floatParam1, floatParam2, floatParam3, floatParam4, floatParam5, stringParam1, stringParam2, stringParam3, stringParam4, stringParam5) end
 
 ---@deprecated
-CallScaleformMovieMethodWithNumberAndString = CallScaleformMovieFunctionMixedParams
+CallScaleformMovieFunctionMixedParams = CallScaleformMovieMethodWithNumberAndString
 
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x51BC1ED3CC44E8F7)  
@@ -396,7 +396,7 @@ CallScaleformMovieMethodWithNumberAndString = CallScaleformMovieFunctionMixedPar
 function CallScaleformMovieMethodWithString(scaleform, methodName, param1, param2, param3, param4, param5) end
 
 ---@deprecated
-CallScaleformMovieMethodWithString = CallScaleformMovieFunctionStringParams
+CallScaleformMovieFunctionStringParams = CallScaleformMovieMethodWithString
 
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x27CB772218215325)  
@@ -404,7 +404,7 @@ CallScaleformMovieMethodWithString = CallScaleformMovieFunctionStringParams
 function CascadeShadowsClearShadowSampleType() end
 
 ---@deprecated
-CascadeShadowsClearShadowSampleType = CascadeshadowsResetType
+CascadeshadowsResetType = CascadeShadowsClearShadowSampleType
 
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x80ECBC0C856D3B0B)  
@@ -416,7 +416,7 @@ CascadeShadowsClearShadowSampleType = CascadeshadowsResetType
 function CascadeShadowsEnableEntityTracker(toggle) end
 
 ---@deprecated
-CascadeShadowsEnableEntityTracker = SetFarShadowsSuppressed
+SetFarShadowsSuppressed = CascadeShadowsEnableEntityTracker
 
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x03FC694AE06C5A20)  
@@ -497,7 +497,7 @@ function CascadeShadowsSetEntityTrackerScale(p0) end
 function CascadeShadowsSetShadowSampleType(type) end
 
 ---@deprecated
-CascadeShadowsSetShadowSampleType = CascadeshadowsSetType
+CascadeshadowsSetType = CascadeShadowsSetShadowSampleType
 
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xFF0B610F6BE0D7AF)  
@@ -609,7 +609,7 @@ function DisableOcclusionThisFrame() end
 function DisableScreenblurFade() end
 
 ---@deprecated
-DisableScreenblurFade = PausedScreenblurLoaded
+PausedScreenblurLoaded = DisableScreenblurFade
 
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xEFD97FF47B745B8D)  
@@ -650,9 +650,9 @@ function DoesParticleFxLoopedExist(ptfxHandle) end
 function DoesVehicleHaveCrewEmblem(vehicle, p1) end
 
 ---@deprecated
-DoesVehicleHaveCrewEmblem = HasVehicleGotDecal
+HasVehicleGotDecal = DoesVehicleHaveCrewEmblem
 ---@deprecated
-DoesVehicleHaveCrewEmblem = DoesVehicleHaveDecal
+DoesVehicleHaveDecal = DoesVehicleHaveCrewEmblem
 
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x22A249A53034450A)  
@@ -879,7 +879,7 @@ function DrawLightWithRange(posX, posY, posZ, colorR, colorG, colorB, range, int
 function DrawLightWithRangeAndShadow(x, y, z, r, g, b, range, intensity, shadow) end
 
 ---@deprecated
-DrawLightWithRangeAndShadow = DrawLightWithRangeWithShadow
+DrawLightWithRangeWithShadow = DrawLightWithRangeAndShadow
 
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x6B7256074AE34680)  
@@ -1102,7 +1102,7 @@ function DrawScaleformMovie_3d(scaleform, posX, posY, posZ, rotX, rotY, rotZ, p7
 function DrawScaleformMovie_3dSolid(scaleform, posX, posY, posZ, rotX, rotY, rotZ, p7, p8, p9, scaleX, scaleY, scaleZ, p13) end
 
 ---@deprecated
-DrawScaleformMovie_3dSolid = DrawScaleformMovie_3dNonAdditive
+DrawScaleformMovie_3dNonAdditive = DrawScaleformMovie_3dSolid
 
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x0DF606929C105BE1)  
@@ -1417,7 +1417,7 @@ function EnableAlienBloodVfx(toggle) end
 function EnableClownBloodVfx(toggle) end
 
 ---@deprecated
-EnableClownBloodVfx = SetCameraEndtime
+SetCameraEndtime = EnableClownBloodVfx
 
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x74C180030FDE4B69)  
@@ -1444,7 +1444,7 @@ function EndPetrolTrailDecals() end
 function EndScaleformMovieMethod() end
 
 ---@deprecated
-EndScaleformMovieMethod = PopScaleformMovieFunctionVoid
+PopScaleformMovieFunctionVoid = EndScaleformMovieMethod
 
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC50AA39A577AF886)  
@@ -1453,9 +1453,9 @@ EndScaleformMovieMethod = PopScaleformMovieFunctionVoid
 function EndScaleformMovieMethodReturnValue() end
 
 ---@deprecated
-EndScaleformMovieMethodReturnValue = PopScaleformMovieFunction
+PopScaleformMovieFunction = EndScaleformMovieMethodReturnValue
 ---@deprecated
-EndScaleformMovieMethodReturnValue = EndScaleformMovieMethodReturn
+EndScaleformMovieMethodReturn = EndScaleformMovieMethodReturnValue
 
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x362E2D3FE93A9959)  
@@ -1463,7 +1463,7 @@ EndScaleformMovieMethodReturnValue = EndScaleformMovieMethodReturn
 function EndTextCommandScaleformString() end
 
 ---@deprecated
-EndTextCommandScaleformString = EndTextComponent
+EndTextComponent = EndTextCommandScaleformString
 
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xAE4E8157D9ECF087)  
@@ -1518,7 +1518,7 @@ function FreeMemoryForMissionCreatorPhoto() end
 function GetActiveScreenResolution() end
 
 ---@deprecated
-GetActiveScreenResolution = GetScreenActiveResolution
+GetScreenActiveResolution = GetActiveScreenResolution
 
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xF1307EF624A80D87)  
@@ -1528,7 +1528,7 @@ GetActiveScreenResolution = GetScreenActiveResolution
 function GetAspectRatio(b) end
 
 ---@deprecated
-GetAspectRatio = GetScreenAspectRatio
+GetScreenAspectRatio = GetAspectRatio
 
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x8E17DDD6B9D5BF29)  
@@ -1548,9 +1548,9 @@ function GetBinkMovieTime(binkMovie) end
 function GetCurrentNumberOfCloudPhotos() end
 
 ---@deprecated
-GetCurrentNumberOfCloudPhotos = GetNumberOfPhotos
+GetNumberOfPhotos = GetCurrentNumberOfCloudPhotos
 ---@deprecated
-GetCurrentNumberOfCloudPhotos = GetCurrentNumberOfPhotos
+GetCurrentNumberOfPhotos = GetCurrentNumberOfCloudPhotos
 
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x323F647679A09103)  
@@ -1604,7 +1604,7 @@ function GetIsWidescreen() end
 function GetMaximumNumberOfCloudPhotos() end
 
 ---@deprecated
-GetMaximumNumberOfCloudPhotos = GetMaximumNumberOfPhotos_2
+GetMaximumNumberOfPhotos_2 = GetMaximumNumberOfCloudPhotos
 
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x34D23450F028B0BF)  
@@ -1645,7 +1645,7 @@ function GetScaleformMovieMethodReturnValueBool(methodReturn) end
 function GetScaleformMovieMethodReturnValueInt(method_return) end
 
 ---@deprecated
-GetScaleformMovieMethodReturnValueInt = GetScaleformMovieFunctionReturnInt
+GetScaleformMovieFunctionReturnInt = GetScaleformMovieMethodReturnValueInt
 
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xE1E258829A885245)  
@@ -1655,9 +1655,9 @@ GetScaleformMovieMethodReturnValueInt = GetScaleformMovieFunctionReturnInt
 function GetScaleformMovieMethodReturnValueString(method_return) end
 
 ---@deprecated
-GetScaleformMovieMethodReturnValueString = SittingTv
+SittingTv = GetScaleformMovieMethodReturnValueString
 ---@deprecated
-GetScaleformMovieMethodReturnValueString = GetScaleformMovieFunctionReturnString
+GetScaleformMovieFunctionReturnString = GetScaleformMovieMethodReturnValueString
 
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x5CCABFFCA31DDE33)  
@@ -1666,7 +1666,7 @@ GetScaleformMovieMethodReturnValueString = GetScaleformMovieFunctionReturnString
 function GetScreenblurFadeCurrentTime() end
 
 ---@deprecated
-GetScreenblurFadeCurrentTime = IsParticleFxDelayedBlink
+IsParticleFxDelayedBlink = GetScreenblurFadeCurrentTime
 
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x34E82F05DF2974F5)  
@@ -1700,7 +1700,7 @@ GetScreenblurFadeCurrentTime = IsParticleFxDelayedBlink
 function GetScreenCoordFromWorldCoord(worldX, worldY, worldZ) end
 
 ---@deprecated
-GetScreenCoordFromWorldCoord = World3dToScreen2d
+World3dToScreen2d = GetScreenCoordFromWorldCoord
 
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x888D57E407E63624)  
@@ -1804,9 +1804,9 @@ function GetTvVolume() end
 function GetUsingnightvision() end
 
 ---@deprecated
-GetUsingnightvision = IsNightvisionInactive
+IsNightvisionInactive = GetUsingnightvision
 ---@deprecated
-GetUsingnightvision = IsNightvisionActive
+IsNightvisionActive = GetUsingnightvision
 
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x44B80ABAB9D80BD3)  
@@ -1815,7 +1815,7 @@ GetUsingnightvision = IsNightvisionActive
 function GetUsingseethrough() end
 
 ---@deprecated
-GetUsingseethrough = IsSeethroughActive
+IsSeethroughActive = GetUsingseethrough
 
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xFE26117A5841B2FF)  
@@ -1970,7 +1970,7 @@ function HasScaleformContainerMovieLoadedIntoParent(scaleformHandle) end
 function HasScaleformMovieFilenameLoaded(scaleformName) end
 
 ---@deprecated
-HasScaleformMovieFilenameLoaded = HasNamedScaleformMovieLoaded
+HasNamedScaleformMovieLoaded = HasScaleformMovieFilenameLoaded
 
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x85F01B8D5B90570E)  
@@ -1987,7 +1987,7 @@ function HasScaleformMovieLoaded(scaleformHandle) end
 function HasScaleformScriptHudMovieLoaded(hudComponent) end
 
 ---@deprecated
-HasScaleformScriptHudMovieLoaded = HasHudScaleformLoaded
+HasHudScaleformLoaded = HasScaleformScriptHudMovieLoaded
 
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x0145F696AAAAD2E4)  
@@ -2022,7 +2022,7 @@ function IsPlaylistUnk(tvChannel, p1) end
 function IsScaleformMovieMethodReturnValueReady(method_return) end
 
 ---@deprecated
-IsScaleformMovieMethodReturnValueReady = GetScaleformMovieFunctionReturnBool
+GetScaleformMovieFunctionReturnBool = IsScaleformMovieMethodReturnValueReady
 
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x7B226C785A52A0A9)  
@@ -2049,7 +2049,7 @@ function IsTrackedPointVisible(point) end
 function IsTvPlaylistItemPlaying(videoCliphash) end
 
 ---@deprecated
-IsTvPlaylistItemPlaying = LoadTvChannel
+LoadTvChannel = IsTvPlaylistItemPlaying
 
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x4862437A486F91B0)  
@@ -2316,7 +2316,7 @@ function N_0x5debd9c4dc995692() end
 function N_0x5f6df3d92271e8a1(toggle) end
 
 ---@deprecated
-N_0x5f6df3d92271e8a1 = SetParticleFxBloodScale
+SetParticleFxBloodScale = N_0x5f6df3d92271e8a1
 
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x615D3925E87A3B26)  
@@ -2770,9 +2770,9 @@ function OverridePedBadgeTexture(ped, txd, txn) end
 function PatchDecalDiffuseMap(decalType, textureDict, textureName) end
 
 ---@deprecated
-PatchDecalDiffuseMap = AddDecalToMarker
+AddDecalToMarker = PatchDecalDiffuseMap
 ---@deprecated
-PatchDecalDiffuseMap = OverrideDecalTexture
+OverrideDecalTexture = PatchDecalDiffuseMap
 
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x70D2CC8A542A973C)  
@@ -2944,7 +2944,7 @@ function RequestScaleformMovieInstance(scaleformName) end
 function RequestScaleformMovieInteractive(scaleformName) end
 
 ---@deprecated
-RequestScaleformMovieInteractive = RequestScaleformMovie3
+RequestScaleformMovie3 = RequestScaleformMovieInteractive
 
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x9304881D6F6537EA)  
@@ -2953,7 +2953,7 @@ RequestScaleformMovieInteractive = RequestScaleformMovie3
 function RequestScaleformScriptHudMovie(hudComponent) end
 
 ---@deprecated
-RequestScaleformScriptHudMovie = RequestHudScaleform
+RequestHudScaleform = RequestScaleformScriptHudMovie
 
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xDFA2EF8E04127DD5)  
@@ -2983,7 +2983,7 @@ function ResetExtraTimecycleModifierStrength() end
 function ResetParticleFxOverride(name) end
 
 ---@deprecated
-ResetParticleFxOverride = ResetParticleFxAssetOldToNew
+ResetParticleFxAssetOldToNew = ResetParticleFxOverride
 
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xE1C8709406F2C41C)  
@@ -2998,7 +2998,7 @@ function ResetPausedRenderphases() end
 function ResetScriptGfxAlign() end
 
 ---@deprecated
-ResetScriptGfxAlign = ScreenDrawPositionEnd
+ScreenDrawPositionEnd = ResetScriptGfxAlign
 
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x40AFB081F8ADD4EE)  
@@ -3023,9 +3023,9 @@ function SaveHighQualityPhoto(unused) end
 function ScaleformMovieMethodAddParamBool(value) end
 
 ---@deprecated
-ScaleformMovieMethodAddParamBool = PushScaleformMovieFunctionParameterBool
+PushScaleformMovieFunctionParameterBool = ScaleformMovieMethodAddParamBool
 ---@deprecated
-ScaleformMovieMethodAddParamBool = PushScaleformMovieMethodParameterBool
+PushScaleformMovieMethodParameterBool = ScaleformMovieMethodAddParamBool
 
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xD69736AAE04DB51A)  
@@ -3036,9 +3036,9 @@ ScaleformMovieMethodAddParamBool = PushScaleformMovieMethodParameterBool
 function ScaleformMovieMethodAddParamFloat(value) end
 
 ---@deprecated
-ScaleformMovieMethodAddParamFloat = PushScaleformMovieFunctionParameterFloat
+PushScaleformMovieFunctionParameterFloat = ScaleformMovieMethodAddParamFloat
 ---@deprecated
-ScaleformMovieMethodAddParamFloat = PushScaleformMovieMethodParameterFloat
+PushScaleformMovieMethodParameterFloat = ScaleformMovieMethodAddParamFloat
 
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC3D0841A0CC546A6)  
@@ -3049,9 +3049,9 @@ ScaleformMovieMethodAddParamFloat = PushScaleformMovieMethodParameterFloat
 function ScaleformMovieMethodAddParamInt(value) end
 
 ---@deprecated
-ScaleformMovieMethodAddParamInt = PushScaleformMovieFunctionParameterInt
+PushScaleformMovieFunctionParameterInt = ScaleformMovieMethodAddParamInt
 ---@deprecated
-ScaleformMovieMethodAddParamInt = PushScaleformMovieMethodParameterInt
+PushScaleformMovieMethodParameterInt = ScaleformMovieMethodAddParamInt
 
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xEC52C631A1831C03)  
@@ -3063,7 +3063,7 @@ ScaleformMovieMethodAddParamInt = PushScaleformMovieMethodParameterInt
 function ScaleformMovieMethodAddParamLatestBriefString(value) end
 
 ---@deprecated
-ScaleformMovieMethodAddParamLatestBriefString = ScaleformMovieMethodAddParamIntString
+ScaleformMovieMethodAddParamIntString = ScaleformMovieMethodAddParamLatestBriefString
 
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xE83A3E3557A56640)  
@@ -3075,7 +3075,7 @@ ScaleformMovieMethodAddParamLatestBriefString = ScaleformMovieMethodAddParamIntS
 function ScaleformMovieMethodAddParamPlayerNameString(string) end
 
 ---@deprecated
-ScaleformMovieMethodAddParamPlayerNameString = PushScaleformMovieMethodParameterButtonName
+PushScaleformMovieMethodParameterButtonName = ScaleformMovieMethodAddParamPlayerNameString
 
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xBA7148484BD90365)  
@@ -3084,9 +3084,9 @@ ScaleformMovieMethodAddParamPlayerNameString = PushScaleformMovieMethodParameter
 function ScaleformMovieMethodAddParamTextureNameString(string) end
 
 ---@deprecated
-ScaleformMovieMethodAddParamTextureNameString = PushScaleformMovieFunctionParameterString
+PushScaleformMovieFunctionParameterString = ScaleformMovieMethodAddParamTextureNameString
 ---@deprecated
-ScaleformMovieMethodAddParamTextureNameString = PushScaleformMovieMethodParameterString
+PushScaleformMovieMethodParameterString = ScaleformMovieMethodAddParamTextureNameString
 
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x77FE3402004CD1B0)  
@@ -3098,7 +3098,7 @@ ScaleformMovieMethodAddParamTextureNameString = PushScaleformMovieMethodParamete
 function ScaleformMovieMethodAddParamTextureNameString_2(string) end
 
 ---@deprecated
-ScaleformMovieMethodAddParamTextureNameString_2 = PushScaleformMovieMethodParameterString_2
+PushScaleformMovieMethodParameterString_2 = ScaleformMovieMethodAddParamTextureNameString_2
 
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x43DBAE39626CE83F)  
@@ -3183,7 +3183,7 @@ function SeethroughSetNoiseAmountMin(amount) end
 function SetArtificialLightsState(state) end
 
 ---@deprecated
-SetArtificialLightsState = SetBlackout
+SetBlackout = SetArtificialLightsState
 
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xE2B187C0939B3D32)  
@@ -3210,7 +3210,7 @@ function SetBackfaceculling(toggle) end
 function SetBinkMovie(name) end
 
 ---@deprecated
-SetBinkMovie = SetBinkMovieRequested
+SetBinkMovieRequested = SetBinkMovie
 
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x0CB6B3446855B57A)  
@@ -3220,7 +3220,7 @@ SetBinkMovie = SetBinkMovieRequested
 function SetBinkMovieTime(binkMovie, progress) end
 
 ---@deprecated
-SetBinkMovieTime = SetBinkMovieProgress
+SetBinkMovieProgress = SetBinkMovieTime
 
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xF816F2933752322D)  
@@ -3245,7 +3245,7 @@ function SetBinkMovieUnk_2(binkMovie, p1) end
 function SetBinkMovieVolume(binkMovie, value) end
 
 ---@deprecated
-SetBinkMovieVolume = SetBinkMovieUnk
+SetBinkMovieUnk = SetBinkMovieVolume
 
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x6805D58CAA427B72)  
@@ -3257,7 +3257,7 @@ SetBinkMovieVolume = SetBinkMovieUnk
 function SetBinkShouldSkip(binkMovie, shouldSkip) end
 
 ---@deprecated
-SetBinkShouldSkip = N_0x6805d58caa427b72
+N_0x6805d58caa427b72 = SetBinkShouldSkip
 
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x2707AAE9D9297D89)  
@@ -3282,7 +3282,7 @@ function SetCheckpointCylinderHeight(checkpoint, nearHeight, farHeight, radius) 
 function SetCheckpointIconHeight(checkpoint, height_multiplier) end
 
 ---@deprecated
-SetCheckpointIconHeight = SetCheckpointScale
+SetCheckpointScale = SetCheckpointIconHeight
 
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x44621483FF966526)  
@@ -3316,7 +3316,7 @@ function SetCheckpointRgba(checkpoint, red, green, blue, alpha) end
 function SetCheckpointRgba2(checkpoint, red, green, blue, alpha) end
 
 ---@deprecated
-SetCheckpointRgba2 = SetCheckpointIconRgba
+SetCheckpointIconRgba = SetCheckpointRgba2
 
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xBBF327DED94E4DEB)  
@@ -3419,7 +3419,7 @@ function SetForceVehicleTrails(toggle) end
 function SetHidofOverride(p0, p1, nearplaneOut, nearplaneIn, farplaneOut, farplaneIn) end
 
 ---@deprecated
-SetHidofOverride = SetHidofEnvBlurParams
+SetHidofEnvBlurParams = SetHidofOverride
 
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xBF59707B3E5ED531)  
@@ -3509,7 +3509,7 @@ function SetParticleFxLoopedEvolution(ptfxHandle, propertyName, amount, noNetwor
 function SetParticleFxLoopedFarClipDist(ptfxHandle, range) end
 
 ---@deprecated
-SetParticleFxLoopedFarClipDist = SetParticleFxLoopedRange
+SetParticleFxLoopedRange = SetParticleFxLoopedFarClipDist
 
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xF7DDEBEC43483C43)  
@@ -3569,9 +3569,9 @@ function SetParticleFxNonLoopedEmitterScale(p0, p1, scale) end
 function SetParticleFxOverride(oldAsset, newAsset) end
 
 ---@deprecated
-SetParticleFxOverride = SetPtfxAssetOld_2New
+SetPtfxAssetOld_2New = SetParticleFxOverride
 ---@deprecated
-SetParticleFxOverride = SetParticleFxAssetOldToNew
+SetParticleFxAssetOldToNew = SetParticleFxOverride
 
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x96EF97DAEB89BEF5)  
@@ -3642,9 +3642,9 @@ function SetScaleformMovieToUseSystemTime(scaleform, toggle) end
 function SetScriptGfxAlign(horizontalAlign, verticalAlign) end
 
 ---@deprecated
-SetScriptGfxAlign = SetScreenDrawPosition
+SetScreenDrawPosition = SetScriptGfxAlign
 ---@deprecated
-SetScriptGfxAlign = ScreenDrawPositionBegin
+ScreenDrawPositionBegin = SetScriptGfxAlign
 
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xF5A2C681787E579D)  
@@ -3658,7 +3658,7 @@ SetScriptGfxAlign = ScreenDrawPositionBegin
 function SetScriptGfxAlignParams(x, y, w, h) end
 
 ---@deprecated
-SetScriptGfxAlignParams = ScreenDrawPositionRatio
+ScreenDrawPositionRatio = SetScriptGfxAlignParams
 
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC6372ECD45D73BCD)  
@@ -3678,9 +3678,9 @@ function SetScriptGfxDrawBehindPausemenu(flag) end
 function SetScriptGfxDrawOrder(order) end
 
 ---@deprecated
-SetScriptGfxDrawOrder = Set_2dLayer
+Set_2dLayer = SetScriptGfxDrawOrder
 ---@deprecated
-SetScriptGfxDrawOrder = SetUiLayer
+SetUiLayer = SetScriptGfxDrawOrder
 
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x7E08924259E08CE0)  
@@ -3773,7 +3773,7 @@ function SetTvChannel(channel) end
 function SetTvChannelPlaylist(tvChannel, playlistName, restart) end
 
 ---@deprecated
-SetTvChannelPlaylist = LoadTvChannelSequence
+LoadTvChannelSequence = SetTvChannelPlaylist
 
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x2201C576FACAEBE8)  
@@ -3817,7 +3817,7 @@ function SetTvVolume(volume) end
 function StartNetworkedParticleFxLoopedOnEntity(effectName, entity, xOffset, yOffset, zOffset, xRot, yRot, zRot, scale, xAxis, yAxis, zAxis) end
 
 ---@deprecated
-StartNetworkedParticleFxLoopedOnEntity = StartParticleFxLoopedOnEntity_2
+StartParticleFxLoopedOnEntity_2 = StartNetworkedParticleFxLoopedOnEntity
 
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xDDE23F30CC5A0F03)  
@@ -3848,7 +3848,7 @@ StartNetworkedParticleFxLoopedOnEntity = StartParticleFxLoopedOnEntity_2
 function StartNetworkedParticleFxLoopedOnEntityBone(effectName, entity, xOffset, yOffset, zOffset, xRot, yRot, zRot, boneIndex, scale, xAxis, yAxis, zAxis) end
 
 ---@deprecated
-StartNetworkedParticleFxLoopedOnEntityBone = StartParticleFxLoopedOnEntityBone_2
+StartParticleFxLoopedOnEntityBone_2 = StartNetworkedParticleFxLoopedOnEntityBone
 
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xF56B8137DF10135D)  
@@ -3876,7 +3876,7 @@ StartNetworkedParticleFxLoopedOnEntityBone = StartParticleFxLoopedOnEntityBone_2
 function StartNetworkedParticleFxNonLoopedAtCoord(effectName, xPos, yPos, zPos, xRot, yRot, zRot, scale, xAxis, yAxis, zAxis) end
 
 ---@deprecated
-StartNetworkedParticleFxNonLoopedAtCoord = StartParticleFxNonLoopedAtCoord_2
+StartParticleFxNonLoopedAtCoord_2 = StartNetworkedParticleFxNonLoopedAtCoord
 
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC95EB1DB6E92113D)  
@@ -3897,7 +3897,7 @@ StartNetworkedParticleFxNonLoopedAtCoord = StartParticleFxNonLoopedAtCoord_2
 function StartNetworkedParticleFxNonLoopedOnEntity(effectName, entity, offsetX, offsetY, offsetZ, rotX, rotY, rotZ, scale, axisX, axisY, axisZ) end
 
 ---@deprecated
-StartNetworkedParticleFxNonLoopedOnEntity = StartParticleFxNonLoopedOnEntity_2
+StartParticleFxNonLoopedOnEntity_2 = StartNetworkedParticleFxNonLoopedOnEntity
 
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x02B1F2A72E0F5325)  
@@ -3940,7 +3940,7 @@ function StartNetworkedParticleFxNonLoopedOnEntityBone(effectName, entity, offse
 function StartNetworkedParticleFxNonLoopedOnPedBone(effectName, ped, offsetX, offsetY, offsetZ, rotX, rotY, rotZ, boneIndex, scale, axisX, axisY, axisZ) end
 
 ---@deprecated
-StartNetworkedParticleFxNonLoopedOnPedBone = StartParticleFxNonLoopedOnPedBone_2
+StartParticleFxNonLoopedOnPedBone_2 = StartNetworkedParticleFxNonLoopedOnPedBone
 
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xE184F4F0DC5910E7)  
@@ -4182,9 +4182,9 @@ function TerraingridSetParams(x, y, z, p3, rotation, p5, width, height, p8, scal
 function TogglePausedRenderphases(toggle) end
 
 ---@deprecated
-TogglePausedRenderphases = EnableGameplayCam
+EnableGameplayCam = TogglePausedRenderphases
 ---@deprecated
-TogglePausedRenderphases = SetFrozenRenderingDisabled
+SetFrozenRenderingDisabled = TogglePausedRenderphases
 
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA328A24AAA6B7FDC)  
@@ -4194,7 +4194,7 @@ TogglePausedRenderphases = SetFrozenRenderingDisabled
 function TriggerScreenblurFadeIn(transitionTime) end
 
 ---@deprecated
-TriggerScreenblurFadeIn = TransitionToBlurred
+TransitionToBlurred = TriggerScreenblurFadeIn
 
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xEFACC8AEF94430D5)  
@@ -4204,7 +4204,7 @@ TriggerScreenblurFadeIn = TransitionToBlurred
 function TriggerScreenblurFadeOut(transitionTime) end
 
 ---@deprecated
-TriggerScreenblurFadeOut = TransitionFromBlurred
+TransitionFromBlurred = TriggerScreenblurFadeOut
 
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xD3A10FC7FD8D98CD)  
@@ -4231,7 +4231,7 @@ function Ui3dscenePushPreset(presetName) end
 function UnpatchDecalDiffuseMap(decalType) end
 
 ---@deprecated
-UnpatchDecalDiffuseMap = UndoDecalTextureOverride
+UndoDecalTextureOverride = UnpatchDecalDiffuseMap
 
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xDEADC0DEDEADC0DE)  
@@ -4240,7 +4240,7 @@ UnpatchDecalDiffuseMap = UndoDecalTextureOverride
 function UpdateLightsOnEntity(entity) end
 
 ---@deprecated
-UpdateLightsOnEntity = EntityDescriptionText
+EntityDescriptionText = UpdateLightsOnEntity
 
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x6C38AF3693A69A91)  
@@ -4258,9 +4258,9 @@ UpdateLightsOnEntity = EntityDescriptionText
 function UseParticleFxAsset(name) end
 
 ---@deprecated
-UseParticleFxAsset = SetPtfxAssetNextCall
+SetPtfxAssetNextCall = UseParticleFxAsset
 ---@deprecated
-UseParticleFxAsset = UseParticleFxAssetNextCall
+UseParticleFxAssetNextCall = UseParticleFxAsset
 
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x5B712761429DBC14)  

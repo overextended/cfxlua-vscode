@@ -29,7 +29,7 @@ function CellCamActivate(p0, p1) end
 function CellCamDisableThisFrame(toggle) end
 
 ---@deprecated
-CellCamDisableThisFrame = DisablePhoneThisFrame
+DisablePhoneThisFrame = CellCamDisableThisFrame
 
 ---**`MOBILE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x439E9BC95B7E7FBE)  
@@ -47,7 +47,7 @@ function CellCamIsCharVisibleNoFaceCheck(entity) end
 function CellCamMoveFinger(direction) end
 
 ---@deprecated
-CellCamMoveFinger = MoveFinger
+MoveFinger = CellCamMoveFinger
 
 ---**`MOBILE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x53F4892D18EC90A4)  
@@ -89,7 +89,7 @@ function CellCamSetHorizontalOffset(p0) end
 function CellCamSetLean(toggle) end
 
 ---@deprecated
-CellCamSetLean = SetPhoneLean
+SetPhoneLean = CellCamSetLean
 
 ---**`MOBILE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x15E69E2802C24B8D)  

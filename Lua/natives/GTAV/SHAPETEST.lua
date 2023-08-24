@@ -12,7 +12,7 @@
 function GetShapeTestResult(shapeTestHandle) end
 
 ---@deprecated
-GetShapeTestResult = GetRaycastResult
+GetRaycastResult = GetShapeTestResult
 
 ---**`SHAPETEST` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x65287525D951F6BE)  
@@ -26,7 +26,7 @@ GetShapeTestResult = GetRaycastResult
 function GetShapeTestResultIncludingMaterial(shapeTestHandle) end
 
 ---@deprecated
-GetShapeTestResultIncludingMaterial = GetShapeTestResultEx
+GetShapeTestResultEx = GetShapeTestResultIncludingMaterial
 
 ---**`SHAPETEST` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x2B3334BCA57CD799)  
@@ -36,7 +36,7 @@ GetShapeTestResultIncludingMaterial = GetShapeTestResultEx
 function ReleaseScriptGuidFromEntity(entity) end
 
 ---@deprecated
-ReleaseScriptGuidFromEntity = ShapeTestResultEntity
+ShapeTestResultEntity = ReleaseScriptGuidFromEntity
 
 ---**`SHAPETEST` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x377906D8A31E5586)  
@@ -56,9 +56,9 @@ ReleaseScriptGuidFromEntity = ShapeTestResultEntity
 function StartExpensiveSynchronousShapeTestLosProbe(x1, y1, z1, x2, y2, z2, flags, entity, p8) end
 
 ---@deprecated
-StartExpensiveSynchronousShapeTestLosProbe = CastRayPointToPoint
+CastRayPointToPoint = StartExpensiveSynchronousShapeTestLosProbe
 ---@deprecated
-StartExpensiveSynchronousShapeTestLosProbe = StartShapeTestRay
+StartShapeTestRay = StartExpensiveSynchronousShapeTestLosProbe
 
 ---**`SHAPETEST` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x37181417CE7C8900)  
@@ -114,7 +114,7 @@ function StartShapeTestBox(x, y, z, x1, y1, z1, rotX, rotY, rotZ, p9, flags, ent
 function StartShapeTestCapsule(x1, y1, z1, x2, y2, z2, radius, flags, entity, p9) end
 
 ---@deprecated
-StartShapeTestCapsule = Cast_3dRayPointToPoint
+Cast_3dRayPointToPoint = StartShapeTestCapsule
 
 ---**`SHAPETEST` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x7EE9F5D83DD4F90E)  
@@ -188,5 +188,5 @@ function StartShapeTestSurroundingCoords(pVec1, pVec2, flag, entity, flag2) end
 function StartShapeTestSweptSphere(x1, y1, z1, x2, y2, z2, radius, flags, entity, p9) end
 
 ---@deprecated
-StartShapeTestSweptSphere = StartShapeTestCapsule_2
+StartShapeTestCapsule_2 = StartShapeTestSweptSphere
 

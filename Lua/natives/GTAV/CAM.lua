@@ -481,7 +481,7 @@ function GetDebugCamera() end
 function GetFinalRenderedCamCoord() end
 
 ---@deprecated
-GetFinalRenderedCamCoord = GetGameplayCamCoords
+GetGameplayCamCoords = GetFinalRenderedCamCoord
 
 ---**`CAM` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xDFC8CBC606FDB0FC)  
@@ -490,7 +490,7 @@ GetFinalRenderedCamCoord = GetGameplayCamCoords
 function GetFinalRenderedCamFarClip() end
 
 ---@deprecated
-GetFinalRenderedCamFarClip = GetGameplayCamFarClip
+GetGameplayCamFarClip = GetFinalRenderedCamFarClip
 
 ---**`CAM` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x9780F32BCAF72431)  
@@ -499,7 +499,7 @@ GetFinalRenderedCamFarClip = GetGameplayCamFarClip
 function GetFinalRenderedCamFarDof() end
 
 ---@deprecated
-GetFinalRenderedCamFarDof = GetGameplayCamFarDof
+GetGameplayCamFarDof = GetFinalRenderedCamFarDof
 
 ---**`CAM` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x80EC114669DAEFF4)  
@@ -514,7 +514,7 @@ function GetFinalRenderedCamFov() end
 function GetFinalRenderedCamMotionBlurStrength() end
 
 ---@deprecated
-GetFinalRenderedCamMotionBlurStrength = GetGameplayCamFarClip_2
+GetGameplayCamFarClip_2 = GetFinalRenderedCamMotionBlurStrength
 
 ---**`CAM` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xD0082607100D7193)  
@@ -523,7 +523,7 @@ GetFinalRenderedCamMotionBlurStrength = GetGameplayCamFarClip_2
 function GetFinalRenderedCamNearClip() end
 
 ---@deprecated
-GetFinalRenderedCamNearClip = GetGameplayCamNearClip
+GetGameplayCamNearClip = GetFinalRenderedCamNearClip
 
 ---**`CAM` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA03502FC581F7D9B)  
@@ -532,7 +532,7 @@ GetFinalRenderedCamNearClip = GetGameplayCamNearClip
 function GetFinalRenderedCamNearDof() end
 
 ---@deprecated
-GetFinalRenderedCamNearDof = GetGameplayCamNearDof
+GetGameplayCamNearDof = GetFinalRenderedCamNearDof
 
 ---**`CAM` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x5B4E4C817FCC2DFB)  
@@ -542,7 +542,7 @@ GetFinalRenderedCamNearDof = GetGameplayCamNearDof
 function GetFinalRenderedCamRot(rotationOrder) end
 
 ---@deprecated
-GetFinalRenderedCamRot = GetGameplayCamRot_2
+GetGameplayCamRot_2 = GetFinalRenderedCamRot
 
 ---**`CAM` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x5F35F6732C3FBBA0)  
@@ -566,7 +566,7 @@ function GetFinalRenderedInWhenFriendlyRot(player, rotationOrder) end
 function GetFirstPersonAimCamZoomFactor() end
 
 ---@deprecated
-GetFirstPersonAimCamZoomFactor = GetGameplayCamZoom
+GetGameplayCamZoom = GetFirstPersonAimCamZoomFactor
 
 ---**`CAM` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x89215EC747DF244A)  
@@ -741,7 +741,7 @@ function IsCamSplinePaused(p0) end
 function IsCinematicCamInputActive() end
 
 ---@deprecated
-IsCinematicCamInputActive = IsCinematicCamActive
+IsCinematicCamActive = IsCinematicCamInputActive
 
 ---**`CAM` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xB15162CB5826E9E8)  
@@ -1099,7 +1099,7 @@ function N_0x91ef6ee6419e5b97(p0) end
 function N_0x9dfe13ecdc1ec196(p0, p1) end
 
 ---@deprecated
-N_0x9dfe13ecdc1ec196 = SetTimeIdleDrop
+SetTimeIdleDrop = N_0x9dfe13ecdc1ec196
 
 ---**`CAM` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x9F97DA93681F87EA)  
@@ -1690,7 +1690,7 @@ function SetCinematicNewsChannelActiveThisUpdate() end
 function SetFirstPersonAimCamNearClipThisUpdate(distance) end
 
 ---@deprecated
-SetFirstPersonAimCamNearClipThisUpdate = SetFirstPersonCamNearClip
+SetFirstPersonCamNearClip = SetFirstPersonAimCamNearClipThisUpdate
 
 ---**`CAM` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x70894BD0915C5BCA)  
@@ -1731,7 +1731,7 @@ function SetFlyCamHorizontalResponse(cam, p1, p2, p3) end
 function SetFlyCamMaxHeight(cam, height) end
 
 ---@deprecated
-SetFlyCamMaxHeight = SetCameraRange
+SetCameraRange = SetFlyCamMaxHeight
 
 ---**`CAM` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xE827B9382CFB41BA)  
@@ -1759,7 +1759,7 @@ function SetFlyCamVerticalSpeedMultiplier(cam, p1, p2, p3) end
 function SetFollowPedCamThisUpdate(camName, p1) end
 
 ---@deprecated
-SetFollowPedCamThisUpdate = SetFollowPedCamCutsceneChat
+SetFollowPedCamCutsceneChat = SetFollowPedCamThisUpdate
 
 ---**`CAM` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x5A4F9EDF1673F704)  
@@ -1907,7 +1907,7 @@ function SetGameplayEntityHint(entity, xOffset, yOffset, zOffset, p4, p5, p6, p7
 function SetGameplayHintAnimCloseup(toggle) end
 
 ---@deprecated
-SetGameplayHintAnimCloseup = GetIsMultiplayerBrief
+GetIsMultiplayerBrief = SetGameplayHintAnimCloseup
 
 ---**`CAM` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x5D7B620DAE436138)  
@@ -1928,7 +1928,7 @@ function SetGameplayHintAnimOffsety(yOffset) end
 function SetGameplayHintBaseOrbitPitchOffset(value) end
 
 ---@deprecated
-SetGameplayHintBaseOrbitPitchOffset = SetGameplayHintAngle
+SetGameplayHintAngle = SetGameplayHintBaseOrbitPitchOffset
 
 ---**`CAM` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xF8BDBF3D573049A1)  
@@ -1937,7 +1937,7 @@ SetGameplayHintBaseOrbitPitchOffset = SetGameplayHintAngle
 function SetGameplayHintFollowDistanceScalar(value) end
 
 ---@deprecated
-SetGameplayHintFollowDistanceScalar = SetGameplayHintAnimOffsetz
+SetGameplayHintAnimOffsetz = SetGameplayHintFollowDistanceScalar
 
 ---**`CAM` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x513403FB9C56211F)  
@@ -1998,7 +1998,7 @@ function SetInVehicleCamStateThisUpdate(p0, p1) end
 function SetThirdPersonAimCamNearClipThisUpdate(distance) end
 
 ---@deprecated
-SetThirdPersonAimCamNearClipThisUpdate = SetThirdPersonAimCamNearClip
+SetThirdPersonAimCamNearClip = SetThirdPersonAimCamNearClipThisUpdate
 
 ---**`CAM` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA13B0222F3D94A94)  
@@ -2139,7 +2139,7 @@ function StopGameplayHint(p0) end
 function StopRenderingScriptCamsUsingCatchUp(render, p1, p2) end
 
 ---@deprecated
-StopRenderingScriptCamsUsingCatchUp = RenderFirstPersonCam
+RenderFirstPersonCam = StopRenderingScriptCamsUsingCatchUp
 
 ---**`CAM` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x1C9D7949FA533490)  

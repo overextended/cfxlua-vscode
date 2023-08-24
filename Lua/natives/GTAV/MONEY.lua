@@ -962,7 +962,7 @@ function NetworkEarnFromBbEventCargo(amount) end
 function NetworkEarnFromBendJob(amount, heistHash) end
 
 ---@deprecated
-NetworkEarnFromBendJob = NetworkEarnFromMissionH
+NetworkEarnFromMissionH = NetworkEarnFromBendJob
 
 ---**`MONEY` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x827A5BA1A44ACA6D)  
@@ -1164,7 +1164,7 @@ function NetworkEarnFromDailyObjectiveEvent(amount) end
 function NetworkEarnFromDailyObjectives(p0, p1, p2) end
 
 ---@deprecated
-NetworkEarnFromDailyObjectives = NetworkEarnFromDailyObjective
+NetworkEarnFromDailyObjective = NetworkEarnFromDailyObjectives
 
 ---**`MONEY` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xCAC672087B4A24AB)  
@@ -1634,7 +1634,7 @@ function NetworkGetPvcBalance() end
 function NetworkGetPvcTransferBalance() end
 
 ---@deprecated
-NetworkGetPvcTransferBalance = NetworkGetRemainingVcDailyTransfers
+NetworkGetRemainingVcDailyTransfers = NetworkGetPvcTransferBalance
 
 ---**`MONEY` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xEA560AC9EEB1E19B)  
@@ -1647,7 +1647,7 @@ NetworkGetPvcTransferBalance = NetworkGetRemainingVcDailyTransfers
 function NetworkGetRemainingTransferBalance() end
 
 ---@deprecated
-NetworkGetRemainingTransferBalance = NetworkGetRemainingVcDailyTransfers_2
+NetworkGetRemainingVcDailyTransfers_2 = NetworkGetRemainingTransferBalance
 
 ---**`MONEY` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA6FA3979BED01B81)  
@@ -1656,7 +1656,7 @@ NetworkGetRemainingTransferBalance = NetworkGetRemainingVcDailyTransfers_2
 function NetworkGetStringBankBalance() end
 
 ---@deprecated
-NetworkGetStringBankBalance = NetworkGetBankBalanceString
+NetworkGetBankBalanceString = NetworkGetStringBankBalance
 
 ---**`MONEY` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x700AF71AE615E6DD)  

@@ -145,7 +145,7 @@ function GetCgoffset(entity) end
 function GetHasObjectFragInst(object) end
 
 ---@deprecated
-GetHasObjectFragInst = DoesEntityHaveFragInst
+DoesEntityHaveFragInst = GetHasObjectFragInst
 
 ---**`PHYSICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x21BB0FBD3E217C2D)  
@@ -304,7 +304,7 @@ function RopeForceLength(ropeId, length) end
 function RopeGetDistanceBetweenEnds(ropeId) end
 
 ---@deprecated
-RopeGetDistanceBetweenEnds = GetRopeLength
+GetRopeLength = RopeGetDistanceBetweenEnds
 
 ---**`PHYSICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x9B9039DBF2D258C1)  

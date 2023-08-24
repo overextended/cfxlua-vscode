@@ -214,7 +214,7 @@ function GetNumDlcWeaponsSp() end
 function GetNumTattooShopDlcItems(character) end
 
 ---@deprecated
-GetNumTattooShopDlcItems = GetNumDecorations
+GetNumDecorations = GetNumTattooShopDlcItems
 
 ---**`FILES` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC6B9DB42C04DD8C3)  
@@ -226,7 +226,7 @@ GetNumTattooShopDlcItems = GetNumDecorations
 function GetShopPedApparelForcedComponentCount(componentHash) end
 
 ---@deprecated
-GetShopPedApparelForcedComponentCount = GetNumForcedComponents
+GetNumForcedComponents = GetShopPedApparelForcedComponentCount
 
 ---**`FILES` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x017568A8182D98A6)  
@@ -276,7 +276,7 @@ function GetShopPedOutfit(p0) end
 function GetShopPedOutfitComponentVariant(outfit, slot) end
 
 ---@deprecated
-GetShopPedOutfitComponentVariant = GetPropFromOutfit
+GetPropFromOutfit = GetShopPedOutfitComponentVariant
 
 ---**`FILES` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x073CA26B079F956E)  
@@ -373,7 +373,7 @@ function GetShopPedQueryProp(componentId) end
 function GetTattooShopDlcItemData(characterType, decorationIndex) end
 
 ---@deprecated
-GetTattooShopDlcItemData = GetTattooCollectionData
+GetTattooCollectionData = GetTattooShopDlcItemData
 
 ---**`FILES` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x6E11F282F11863B6)  
@@ -411,9 +411,9 @@ function InitShopPedProp() end
 function IsContentItemLocked(itemHash) end
 
 ---@deprecated
-IsContentItemLocked = IsOutfitEmpty
+IsOutfitEmpty = IsContentItemLocked
 ---@deprecated
-IsContentItemLocked = IsDlcDataEmpty
+IsDlcDataEmpty = IsContentItemLocked
 
 ---**`FILES` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x0564B9FF9631B82C)  
@@ -512,7 +512,7 @@ function SetupShopPedApparelQuery(p0, p1, p2, p3) end
 function SetupShopPedApparelQueryTu(character, p1, p2, p3, p4, componentId) end
 
 ---@deprecated
-SetupShopPedApparelQueryTu = GetNumPropsFromOutfit
+GetNumPropsFromOutfit = SetupShopPedApparelQueryTu
 
 ---**`FILES` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xF3FBE2D50A6A8C28)  

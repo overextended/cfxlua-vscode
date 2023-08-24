@@ -343,7 +343,7 @@ function ScEmailMessagePushGamerToRecipList() end
 function ScGamerdataGetBool(name) end
 
 ---@deprecated
-ScGamerdataGetBool = ScGetIsProfileAttributeSet
+ScGetIsProfileAttributeSet = ScGamerdataGetBool
 
 ---**`SOCIALCLUB` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA770C8EEC6FB2AC5)  
@@ -355,7 +355,7 @@ ScGamerdataGetBool = ScGetIsProfileAttributeSet
 function ScGamerdataGetFloat(name) end
 
 ---@deprecated
-ScGamerdataGetFloat = N_0xa770c8eec6fb2ac5
+N_0xa770c8eec6fb2ac5 = ScGamerdataGetFloat
 
 ---**`SOCIALCLUB` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC85A7127E7AD02AA)  
@@ -367,7 +367,7 @@ ScGamerdataGetFloat = N_0xa770c8eec6fb2ac5
 function ScGamerdataGetInt(name) end
 
 ---@deprecated
-ScGamerdataGetInt = N_0xc85a7127e7ad02aa
+N_0xc85a7127e7ad02aa = ScGamerdataGetInt
 
 ---**`SOCIALCLUB` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x418DC16FAE452C1C)  
@@ -401,7 +401,7 @@ function ScInboxGetEmails(offset, limit) end
 function ScInboxGetMessageIsReadAtIndex(msgIndex) end
 
 ---@deprecated
-ScInboxGetMessageIsReadAtIndex = IsScInboxValid
+IsScInboxValid = ScInboxGetMessageIsReadAtIndex
 
 ---**`SOCIALCLUB` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xBB8EA16ECBC976C4)  
@@ -411,7 +411,7 @@ ScInboxGetMessageIsReadAtIndex = IsScInboxValid
 function ScInboxGetMessageTypeAtIndex(msgIndex) end
 
 ---@deprecated
-ScInboxGetMessageTypeAtIndex = ScInboxMessageInit
+ScInboxMessageInit = ScInboxGetMessageTypeAtIndex
 
 ---**`SOCIALCLUB` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x03A93FF1A2CA0864)  
@@ -420,7 +420,7 @@ ScInboxGetMessageTypeAtIndex = ScInboxMessageInit
 function ScInboxGetTotalNumMessages() end
 
 ---@deprecated
-ScInboxGetTotalNumMessages = GetTotalScInboxIds
+GetTotalScInboxIds = ScInboxGetTotalNumMessages
 
 ---**`SOCIALCLUB` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x9A2C8064B6C1E41A)  
@@ -430,7 +430,7 @@ ScInboxGetTotalNumMessages = GetTotalScInboxIds
 function ScInboxMessageDoApply(p0) end
 
 ---@deprecated
-ScInboxMessageDoApply = ScInboxMessagePush
+ScInboxMessagePush = ScInboxMessageDoApply
 
 ---**`SOCIALCLUB` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x87E0052F08BD64E6)  
@@ -572,7 +572,7 @@ function ScLicenseplateGetPlateData(token, plateIndex) end
 function ScLicenseplateIsvalid(plateText) end
 
 ---@deprecated
-ScLicenseplateIsvalid = N_0x0f73393bac7e6730
+N_0x0f73393bac7e6730 = ScLicenseplateIsvalid
 
 ---**`SOCIALCLUB` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xD0EE05FE193646EA)  
@@ -619,7 +619,7 @@ function ScPresenceAttrSetString(attrHash, value) end
 function ScProfanityCheckString(string) end
 
 ---@deprecated
-ScProfanityCheckString = ScStartCheckStringTask
+ScStartCheckStringTask = ScProfanityCheckString
 
 ---**`SOCIALCLUB` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xEB2BF817463DFA28)  
@@ -636,7 +636,7 @@ function ScProfanityCheckUgcString(string) end
 function ScProfanityGetCheckIsPending(token) end
 
 ---@deprecated
-ScProfanityGetCheckIsPending = ScGetCheckStringStatus
+ScGetCheckStringStatus = ScProfanityGetCheckIsPending
 
 ---**`SOCIALCLUB` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x1753344C770358AE)  
@@ -646,7 +646,7 @@ ScProfanityGetCheckIsPending = ScGetCheckStringStatus
 function ScProfanityGetCheckIsValid(token) end
 
 ---@deprecated
-ScProfanityGetCheckIsValid = ScHasCheckStringTaskCompleted
+ScHasCheckStringTaskCompleted = ScProfanityGetCheckIsValid
 
 ---**`SOCIALCLUB` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x85535ACF97FC0969)  

@@ -321,7 +321,7 @@ function ClearArea(X, Y, Z, radius, p4, ignoreCopCars, ignoreObjects, p7) end
 function ClearAreaLeaveVehicleHealth(x, y, z, radius, p4, p5, p6, p7) end
 
 ---@deprecated
-ClearAreaLeaveVehicleHealth = ClearAreaOfEverything
+ClearAreaOfEverything = ClearAreaLeaveVehicleHealth
 
 ---**`MISC` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x04F8FC8FCF58F88D)  
@@ -419,7 +419,7 @@ function ClearReplayStats() end
 function ClearRestartCustomPosition() end
 
 ---@deprecated
-ClearRestartCustomPosition = SetNextRespawnToCustom
+SetNextRespawnToCustom = ClearRestartCustomPosition
 
 ---**`MISC` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xB3CD58CCA6CDA852)  
@@ -638,7 +638,7 @@ function DisplayOnscreenKeyboard(p0, windowTitle, p2, defaultText, defaultConcat
 function DisplayOnscreenKeyboardWithLongerInitialString(p0, windowTitle, defaultText, defaultConcat1, defaultConcat2, defaultConcat3, defaultConcat4, defaultConcat5, defaultConcat6, defaultConcat7, maxInputLength) end
 
 ---@deprecated
-DisplayOnscreenKeyboardWithLongerInitialString = DisplayOnscreenKeyboard_2
+DisplayOnscreenKeyboard_2 = DisplayOnscreenKeyboardWithLongerInitialString
 
 ---**`MISC` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x50EEAAD86232EE55)  
@@ -747,7 +747,7 @@ function FindSpawnPointInDirection(posX, posY, posZ, dirX, dirY, dirZ, distance)
 function ForceGameStatePlaying() end
 
 ---@deprecated
-ForceGameStatePlaying = ResetLocalplayerState
+ResetLocalplayerState = ForceGameStatePlaying
 
 ---**`MISC` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xF6062E089251C898)  
@@ -757,7 +757,7 @@ ForceGameStatePlaying = ResetLocalplayerState
 function ForceLightningFlash() end
 
 ---@deprecated
-ForceLightningFlash = CreateLightningThunder
+CreateLightningThunder = ForceLightningFlash
 
 ---**`MISC` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xEB6891F03362FB12)  
@@ -842,7 +842,7 @@ function GetCloudHatOpacity() end
 function GetCoordsOfProjectileTypeInArea(x1, y1, z1, x2, y2, z2, projectileHash, ownedByPlayer) end
 
 ---@deprecated
-GetCoordsOfProjectileTypeInArea = GetIsProjectileTypeInArea
+GetIsProjectileTypeInArea = GetCoordsOfProjectileTypeInArea
 
 ---**`MISC` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xDFB4138EEFED7B81)  
@@ -855,7 +855,7 @@ GetCoordsOfProjectileTypeInArea = GetIsProjectileTypeInArea
 function GetCoordsOfProjectileTypeWithinDistance(ped, weaponHash, distance, ownedByPlayer) end
 
 ---@deprecated
-GetCoordsOfProjectileTypeWithinDistance = GetProjectileNearPedCoords
+GetProjectileNearPedCoords = GetCoordsOfProjectileTypeWithinDistance
 
 ---**`MISC` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xF1B760881820C952)  
@@ -917,7 +917,7 @@ function GetGlobalCharBuffer() end
 function GetGroundZAndNormalFor_3dCoord(x, y, z) end
 
 ---@deprecated
-GetGroundZAndNormalFor_3dCoord = GetGroundZCoordWithOffsets
+GetGroundZCoordWithOffsets = GetGroundZAndNormalFor_3dCoord
 
 ---**`MISC` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC906A7DAB05C8D2B)  
@@ -1011,7 +1011,7 @@ function GetModelDimensions(modelHash) end
 function GetNextWeatherTypeHashName() end
 
 ---@deprecated
-GetNextWeatherTypeHashName = GetNextWeatherType
+GetNextWeatherType = GetNextWeatherTypeHashName
 
 ---**`MISC` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xFEAD16FC8F9DFC0F)  
@@ -1021,7 +1021,7 @@ GetNextWeatherTypeHashName = GetNextWeatherType
 function GetNumberOfFreeStacksOfThisSize(stackSize) end
 
 ---@deprecated
-GetNumberOfFreeStacksOfThisSize = GetFreeStackSlotsCount
+GetFreeStackSlotsCount = GetNumberOfFreeStacksOfThisSize
 
 ---**`MISC` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xEB4A0C2D56441717)  
@@ -1031,7 +1031,7 @@ GetNumberOfFreeStacksOfThisSize = GetFreeStackSlotsCount
 function GetNumDispatchedUnitsForPlayer(dispatchService) end
 
 ---@deprecated
-GetNumDispatchedUnitsForPlayer = GetNumberOfDispatchedUnitsForPlayer
+GetNumberOfDispatchedUnitsForPlayer = GetNumDispatchedUnitsForPlayer
 
 ---**`MISC` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x996DD1E1E02F1008)  
@@ -1062,7 +1062,7 @@ function GetPowerSavingModeDuration() end
 function GetPrevWeatherTypeHashName() end
 
 ---@deprecated
-GetPrevWeatherTypeHashName = GetPrevWeatherType
+GetPrevWeatherType = GetPrevWeatherTypeHashName
 
 ---**`MISC` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC488FF2356EA7791)  
@@ -1551,7 +1551,7 @@ function IsProjectileTypeInArea(x1, y1, z1, x2, y2, z2, type, ownedByPlayer) end
 function IsProjectileTypeWithinDistance(x, y, z, projHash, radius, ownedByPlayer) end
 
 ---@deprecated
-IsProjectileTypeWithinDistance = IsProjectileTypeInRadius
+IsProjectileTypeInRadius = IsProjectileTypeWithinDistance
 
 ---**`MISC` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xCCA1072C29D096C2)  
@@ -1664,7 +1664,7 @@ function LandingMenuIsActive() end
 function LoadCloudHat(name, transitionTime) end
 
 ---@deprecated
-LoadCloudHat = SetCloudHatTransition
+SetCloudHatTransition = LoadCloudHat
 
 ---**`MISC` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x02DEAAC8F8EA7FE7)  
@@ -2149,7 +2149,7 @@ function OverrideSaveHouse(p0, p1, p2, p3, p4, p5, p6, p7) end
 function PauseDeathArrestRestart(toggle) end
 
 ---@deprecated
-PauseDeathArrestRestart = DisableAutomaticRespawn
+DisableAutomaticRespawn = PauseDeathArrestRestart
 
 ---**`MISC` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x8FA9C42FC5D7C64B)  
@@ -2543,7 +2543,7 @@ function SetIncidentUnk(incidentId, p1) end
 function SetInstancePriorityHint(flag) end
 
 ---@deprecated
-SetInstancePriorityHint = SetUnkMapFlag
+SetUnkMapFlag = SetInstancePriorityHint
 
 ---**`MISC` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x9BAE5AD2508DF078)  
@@ -2552,11 +2552,11 @@ SetInstancePriorityHint = SetUnkMapFlag
 function SetInstancePriorityMode(toggle) end
 
 ---@deprecated
-SetInstancePriorityMode = EnableMpDlcMaps
+EnableMpDlcMaps = SetInstancePriorityMode
 ---@deprecated
-SetInstancePriorityMode = UseFreemodeMapBehavior
+UseFreemodeMapBehavior = SetInstancePriorityMode
 ---@deprecated
-SetInstancePriorityMode = LowerMapPropDensity
+LowerMapPropDensity = SetInstancePriorityMode
 
 ---**`MISC` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x19E00D7322C6F85B)  
@@ -2590,7 +2590,7 @@ function SetOverrideWeather(weatherType) end
 function SetPlayerIsInAnimalForm(toggle) end
 
 ---@deprecated
-SetPlayerIsInAnimalForm = ShowPedInPauseMenu
+ShowPedInPauseMenu = SetPlayerIsInAnimalForm
 
 ---**`MISC` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x9D8D44ADBBA61EF2)  
@@ -2613,7 +2613,7 @@ function SetPlayerRockstarEditorDisabled(toggle) end
 function SetRainLevel(level) end
 
 ---@deprecated
-SetRainLevel = SetRainFxIntensity
+SetRainFxIntensity = SetRainLevel
 
 ---**`MISC` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x971927086CFD2158)  
@@ -2645,7 +2645,7 @@ function SetRandomWeatherType() end
 function SetRestartCustomPosition(x, y, z, heading) end
 
 ---@deprecated
-SetRestartCustomPosition = SetCustomRespawnPosition
+SetCustomRespawnPosition = SetRestartCustomPosition
 
 ---**`MISC` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x2587A48BC88DFADF)  
@@ -2751,7 +2751,7 @@ function SetWeatherTypeNowPersist(weatherType) end
 function SetWeatherTypeOvertimePersist(weatherType, time) end
 
 ---@deprecated
-SetWeatherTypeOvertimePersist = SetWeatherTypeOverTime
+SetWeatherTypeOverTime = SetWeatherTypeOvertimePersist
 
 ---**`MISC` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x704983DF373B198F)  
@@ -2838,7 +2838,7 @@ function ShootSingleBulletBetweenCoords(x1, y1, z1, x2, y2, z2, damage, pureAccu
 function ShootSingleBulletBetweenCoordsIgnoreEntity(x1, y1, z1, x2, y2, z2, damage, p7, weaponHash, ownerPed, isAudible, isInvisible, speed, entity) end
 
 ---@deprecated
-ShootSingleBulletBetweenCoordsIgnoreEntity = ShootSingleBulletBetweenCoordsPresetParams
+ShootSingleBulletBetweenCoordsPresetParams = ShootSingleBulletBetweenCoordsIgnoreEntity
 
 ---**`MISC` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xBFE5756E7407064A)  
@@ -2868,7 +2868,7 @@ ShootSingleBulletBetweenCoordsIgnoreEntity = ShootSingleBulletBetweenCoordsPrese
 function ShootSingleBulletBetweenCoordsIgnoreEntityNew(x1, y1, z1, x2, y2, z2, damage, p7, weaponHash, ownerPed, isAudible, isInvisible, speed, entity, p14, p15, p16, p17) end
 
 ---@deprecated
-ShootSingleBulletBetweenCoordsIgnoreEntityNew = ShootSingleBulletBetweenCoordsWithExtraParams
+ShootSingleBulletBetweenCoordsWithExtraParams = ShootSingleBulletBetweenCoordsIgnoreEntityNew
 
 ---**`MISC` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xD3D15555431AB793)  
@@ -2877,7 +2877,7 @@ ShootSingleBulletBetweenCoordsIgnoreEntityNew = ShootSingleBulletBetweenCoordsWi
 function ShouldUseMetricMeasurements() end
 
 ---@deprecated
-ShouldUseMetricMeasurements = IsGameUsingMetricMeasurementSystem
+IsGameUsingMetricMeasurementSystem = ShouldUseMetricMeasurements
 
 ---**`MISC` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xF2F6A2FA49278625)  
@@ -2910,7 +2910,7 @@ function StartBenchmarkRecording() end
 function StartSaveArrayWithSize(size, arrayName) end
 
 ---@deprecated
-StartSaveArrayWithSize = StartSaveArray
+StartSaveArray = StartSaveArrayWithSize
 
 ---**`MISC` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA9575F812C6A7997)  
@@ -2929,7 +2929,7 @@ function StartSaveData(p1, p2) end
 function StartSaveStructWithSize(size, structName) end
 
 ---@deprecated
-StartSaveStructWithSize = StartSaveStruct
+StartSaveStruct = StartSaveStructWithSize
 
 ---**`MISC` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC7DB36C24634F52B)  

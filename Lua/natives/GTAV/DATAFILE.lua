@@ -8,7 +8,7 @@
 function DataarrayAddBool(value) end
 
 ---@deprecated
-DataarrayAddBool = ArrayValueAddBoolean
+ArrayValueAddBoolean = DataarrayAddBool
 
 ---**`DATAFILE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x6889498B3E19C797)  
@@ -17,7 +17,7 @@ DataarrayAddBool = ArrayValueAddBoolean
 function DataarrayAddDict() end
 
 ---@deprecated
-DataarrayAddDict = ArrayValueAddObject
+ArrayValueAddObject = DataarrayAddDict
 
 ---**`DATAFILE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x57A995FD75D37F56)  
@@ -27,7 +27,7 @@ DataarrayAddDict = ArrayValueAddObject
 function DataarrayAddFloat(value) end
 
 ---@deprecated
-DataarrayAddFloat = ArrayValueAddFloat
+ArrayValueAddFloat = DataarrayAddFloat
 
 ---**`DATAFILE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xCABDB751D86FE93B)  
@@ -37,7 +37,7 @@ DataarrayAddFloat = ArrayValueAddFloat
 function DataarrayAddInt(value) end
 
 ---@deprecated
-DataarrayAddInt = ArrayValueAddInteger
+ArrayValueAddInteger = DataarrayAddInt
 
 ---**`DATAFILE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x2F0661C155AEEEAA)  
@@ -47,7 +47,7 @@ DataarrayAddInt = ArrayValueAddInteger
 function DataarrayAddString(value) end
 
 ---@deprecated
-DataarrayAddString = ArrayValueAddString
+ArrayValueAddString = DataarrayAddString
 
 ---**`DATAFILE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x407F8D034F70F0C2)  
@@ -59,7 +59,7 @@ DataarrayAddString = ArrayValueAddString
 function DataarrayAddVector(valueX, valueY, valueZ) end
 
 ---@deprecated
-DataarrayAddVector = ArrayValueAddVector3
+ArrayValueAddVector3 = DataarrayAddVector
 
 ---**`DATAFILE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x50C1B2874E50C114)  
@@ -69,7 +69,7 @@ DataarrayAddVector = ArrayValueAddVector3
 function DataarrayGetBool(arrayIndex) end
 
 ---@deprecated
-DataarrayGetBool = ArrayValueGetBoolean
+ArrayValueGetBoolean = DataarrayGetBool
 
 ---**`DATAFILE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x065DB281590CEA2D)  
@@ -78,7 +78,7 @@ DataarrayGetBool = ArrayValueGetBoolean
 function DataarrayGetCount() end
 
 ---@deprecated
-DataarrayGetCount = ArrayValueGetSize
+ArrayValueGetSize = DataarrayGetCount
 
 ---**`DATAFILE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x8B5FADCC4E3A145F)  
@@ -88,7 +88,7 @@ DataarrayGetCount = ArrayValueGetSize
 function DataarrayGetDict(arrayIndex) end
 
 ---@deprecated
-DataarrayGetDict = ArrayValueGetObject
+ArrayValueGetObject = DataarrayGetDict
 
 ---**`DATAFILE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC0C527B525D7CFB5)  
@@ -98,7 +98,7 @@ DataarrayGetDict = ArrayValueGetObject
 function DataarrayGetFloat(arrayIndex) end
 
 ---@deprecated
-DataarrayGetFloat = ArrayValueGetFloat
+ArrayValueGetFloat = DataarrayGetFloat
 
 ---**`DATAFILE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x3E5AE19425CD74BE)  
@@ -108,7 +108,7 @@ DataarrayGetFloat = ArrayValueGetFloat
 function DataarrayGetInt(arrayIndex) end
 
 ---@deprecated
-DataarrayGetInt = ArrayValueGetInteger
+ArrayValueGetInteger = DataarrayGetInt
 
 ---**`DATAFILE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xD3F2FFEB8D836F52)  
@@ -118,7 +118,7 @@ DataarrayGetInt = ArrayValueGetInteger
 function DataarrayGetString(arrayIndex) end
 
 ---@deprecated
-DataarrayGetString = ArrayValueGetString
+ArrayValueGetString = DataarrayGetString
 
 ---**`DATAFILE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x3A0014ADB172A3C5)  
@@ -137,7 +137,7 @@ DataarrayGetString = ArrayValueGetString
 function DataarrayGetType(arrayIndex) end
 
 ---@deprecated
-DataarrayGetType = ArrayValueGetType
+ArrayValueGetType = DataarrayGetType
 
 ---**`DATAFILE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x8D2064E5B64A628A)  
@@ -147,7 +147,7 @@ DataarrayGetType = ArrayValueGetType
 function DataarrayGetVector(arrayIndex) end
 
 ---@deprecated
-DataarrayGetVector = ArrayValueGetVector3
+ArrayValueGetVector3 = DataarrayGetVector
 
 ---**`DATAFILE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x5B11728527CA6E5F)  
@@ -157,7 +157,7 @@ DataarrayGetVector = ArrayValueGetVector3
 function DatadictCreateArray(key) end
 
 ---@deprecated
-DatadictCreateArray = ObjectValueAddArray
+ObjectValueAddArray = DatadictCreateArray
 
 ---**`DATAFILE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA358F56F10732EE1)  
@@ -167,7 +167,7 @@ DatadictCreateArray = ObjectValueAddArray
 function DatadictCreateDict(key) end
 
 ---@deprecated
-DatadictCreateDict = ObjectValueAddObject
+ObjectValueAddObject = DatadictCreateDict
 
 ---**`DATAFILE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x7A983AA9DA2659ED)  
@@ -177,7 +177,7 @@ DatadictCreateDict = ObjectValueAddObject
 function DatadictGetArray(key) end
 
 ---@deprecated
-DatadictGetArray = ObjectValueGetArray
+ObjectValueGetArray = DatadictGetArray
 
 ---**`DATAFILE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x1186940ED72FFEEC)  
@@ -187,7 +187,7 @@ DatadictGetArray = ObjectValueGetArray
 function DatadictGetBool(key) end
 
 ---@deprecated
-DatadictGetBool = ObjectValueGetBoolean
+ObjectValueGetBoolean = DatadictGetBool
 
 ---**`DATAFILE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xB6B9DDC412FCEEE2)  
@@ -197,7 +197,7 @@ DatadictGetBool = ObjectValueGetBoolean
 function DatadictGetDict(key) end
 
 ---@deprecated
-DatadictGetDict = ObjectValueGetObject
+ObjectValueGetObject = DatadictGetDict
 
 ---**`DATAFILE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x06610343E73B9727)  
@@ -207,7 +207,7 @@ DatadictGetDict = ObjectValueGetObject
 function DatadictGetFloat(key) end
 
 ---@deprecated
-DatadictGetFloat = ObjectValueGetFloat
+ObjectValueGetFloat = DatadictGetFloat
 
 ---**`DATAFILE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x78F06F6B1FB5A80C)  
@@ -217,7 +217,7 @@ DatadictGetFloat = ObjectValueGetFloat
 function DatadictGetInt(key) end
 
 ---@deprecated
-DatadictGetInt = ObjectValueGetInteger
+ObjectValueGetInteger = DatadictGetInt
 
 ---**`DATAFILE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x3D2FD9E763B24472)  
@@ -227,7 +227,7 @@ DatadictGetInt = ObjectValueGetInteger
 function DatadictGetString(key) end
 
 ---@deprecated
-DatadictGetString = ObjectValueGetString
+ObjectValueGetString = DatadictGetString
 
 ---**`DATAFILE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x031C55ED33227371)  
@@ -246,7 +246,7 @@ DatadictGetString = ObjectValueGetString
 function DatadictGetType(key) end
 
 ---@deprecated
-DatadictGetType = ObjectValueGetType
+ObjectValueGetType = DatadictGetType
 
 ---**`DATAFILE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x46CD3CB66E0825CC)  
@@ -256,7 +256,7 @@ DatadictGetType = ObjectValueGetType
 function DatadictGetVector(key) end
 
 ---@deprecated
-DatadictGetVector = ObjectValueGetVector3
+ObjectValueGetVector3 = DatadictGetVector
 
 ---**`DATAFILE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x35124302A556A325)  
@@ -267,7 +267,7 @@ DatadictGetVector = ObjectValueGetVector3
 function DatadictSetBool(key, value) end
 
 ---@deprecated
-DatadictSetBool = ObjectValueAddBoolean
+ObjectValueAddBoolean = DatadictSetBool
 
 ---**`DATAFILE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC27E1CC2D795105E)  
@@ -278,7 +278,7 @@ DatadictSetBool = ObjectValueAddBoolean
 function DatadictSetFloat(key, value) end
 
 ---@deprecated
-DatadictSetFloat = ObjectValueAddFloat
+ObjectValueAddFloat = DatadictSetFloat
 
 ---**`DATAFILE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xE7E035450A7948D5)  
@@ -289,7 +289,7 @@ DatadictSetFloat = ObjectValueAddFloat
 function DatadictSetInt(key, value) end
 
 ---@deprecated
-DatadictSetInt = ObjectValueAddInteger
+ObjectValueAddInteger = DatadictSetInt
 
 ---**`DATAFILE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x8FF3847DADD8E30C)  
@@ -300,7 +300,7 @@ DatadictSetInt = ObjectValueAddInteger
 function DatadictSetString(key, value) end
 
 ---@deprecated
-DatadictSetString = ObjectValueAddString
+ObjectValueAddString = DatadictSetString
 
 ---**`DATAFILE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x4CD49B76338C7DEE)  
@@ -313,7 +313,7 @@ DatadictSetString = ObjectValueAddString
 function DatadictSetVector(key, valueX, valueY, valueZ) end
 
 ---@deprecated
-DatadictSetVector = ObjectValueAddVector3
+ObjectValueAddVector3 = DatadictSetVector
 
 ---**`DATAFILE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x6CC86E78358D5119)  
@@ -417,7 +417,7 @@ function DatafileIsValidRequestId(index) end
 function DatafileLoadOfflineUgc(filename) end
 
 ---@deprecated
-DatafileLoadOfflineUgc = LoadUgcFile
+LoadUgcFile = DatafileLoadOfflineUgc
 
 ---**`DATAFILE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x22DA66936E0FFF37)  

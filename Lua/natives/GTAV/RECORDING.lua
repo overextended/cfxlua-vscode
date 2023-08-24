@@ -118,7 +118,7 @@ function StopRecordingAndDiscardClip() end
 function StopRecordingAndSaveClip() end
 
 ---@deprecated
-StopRecordingAndSaveClip = StopRecording
+StopRecording = StopRecordingAndSaveClip
 
 ---**`RECORDING` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xEB2D525B57F42B40)  

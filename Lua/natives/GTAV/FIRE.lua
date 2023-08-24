@@ -126,7 +126,7 @@ function AddExplosion(x, y, z, explosionType, damageScale, isAudible, isInvisibl
 function AddExplosionWithUserVfx(x, y, z, explosionType, explosionFx, damageScale, isAudible, isInvisible, cameraShake) end
 
 ---@deprecated
-AddExplosionWithUserVfx = AddSpecfxExplosion
+AddSpecfxExplosion = AddExplosionWithUserVfx
 
 ---**`FIRE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x172AA1B624FA1013)  
@@ -170,7 +170,7 @@ function GetClosestFirePos(x, y, z) end
 function GetEntityInsideExplosionArea(explosionType, x1, y1, z1, x2, y2, z2, radius) end
 
 ---@deprecated
-GetEntityInsideExplosionArea = GetPedInsideExplosionArea
+GetPedInsideExplosionArea = GetEntityInsideExplosionArea
 
 ---**`FIRE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xB3CD51E3DB86F176)  

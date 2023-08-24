@@ -2487,7 +2487,7 @@ function GetVehicleSteeringScale(vehicle) end
 function GetVehicleThrottleOffset(vehicle) end
 
 ---@deprecated
-GetVehicleThrottleOffset = GetVehicleCurrentAcceleration
+GetVehicleCurrentAcceleration = GetVehicleThrottleOffset
 
 ---**`CFX` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x998B7FEE)  
@@ -2706,7 +2706,7 @@ function GetVehicleWheelXOffset(vehicle, wheelIndex) end
 function GetVehicleWheelYRotation(vehicle, wheelIndex) end
 
 ---@deprecated
-GetVehicleWheelYRotation = GetVehicleWheelXrot
+GetVehicleWheelXrot = GetVehicleWheelYRotation
 
 ---**`CFX` `server`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x13D53892)  
@@ -5752,7 +5752,7 @@ function SetVehicleWheelXOffset(vehicle, wheelIndex, offset) end
 function SetVehicleWheelYRotation(vehicle, wheelIndex, value) end
 
 ---@deprecated
-SetVehicleWheelYRotation = SetVehicleWheelXrot
+SetVehicleWheelXrot = SetVehicleWheelYRotation
 
 ---**`CFX` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x1683E7F0)  

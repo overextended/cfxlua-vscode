@@ -129,7 +129,7 @@ function CreateNonNetworkedAmbientPickup(pickupHash, posX, posY, posZ, flags, va
 function CreateNonNetworkedPortablePickup(pickupHash, x, y, z, placeOnGround, modelHash) end
 
 ---@deprecated
-CreateNonNetworkedPortablePickup = CreatePortablePickup_2
+CreatePortablePickup_2 = CreateNonNetworkedPortablePickup
 
 ---**`OBJECT` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x509D5878EB39E842)  
@@ -262,7 +262,7 @@ function DoesPickupObjectExist(pickupObject) end
 function DoesPickupOfTypeExistInArea(pickupHash, x, y, z, radius) end
 
 ---@deprecated
-DoesPickupOfTypeExistInArea = IsPickupWithinRadius
+IsPickupWithinRadius = DoesPickupOfTypeExistInArea
 
 ---**`OBJECT` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x52AF537A0C5B8AAD)  
@@ -274,7 +274,7 @@ DoesPickupOfTypeExistInArea = IsPickupWithinRadius
 function DoesRayfireMapObjectExist(object) end
 
 ---@deprecated
-DoesRayfireMapObjectExist = DoesDesObjectExist
+DoesDesObjectExist = DoesRayfireMapObjectExist
 
 ---**`OBJECT` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x9B12F9A24FABEDB0)  
@@ -380,7 +380,7 @@ function DoorSystemSetAutomaticRate(doorHash, rate, requestDoor, forceUpdate) en
 function DoorSystemSetDoorState(doorHash, state, requestDoor, forceUpdate) end
 
 ---@deprecated
-DoorSystemSetDoorState = SetDoorAccelerationLimit
+SetDoorAccelerationLimit = DoorSystemSetDoorState
 
 ---**`OBJECT` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xD9B71952F78A2640)  
@@ -402,7 +402,7 @@ function DoorSystemSetHoldOpen(doorHash, toggle) end
 function DoorSystemSetOpenRatio(doorHash, ajar, requestDoor, forceUpdate) end
 
 ---@deprecated
-DoorSystemSetOpenRatio = SetDoorAjarAngle
+SetDoorAjarAngle = DoorSystemSetOpenRatio
 
 ---**`OBJECT` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC485E07E4F0B7958)  
@@ -546,7 +546,7 @@ function GetPickupObject(pickup) end
 function GetRayfireMapObject(x, y, z, radius, name) end
 
 ---@deprecated
-GetRayfireMapObject = GetDesObject
+GetDesObject = GetRayfireMapObject
 
 ---**`OBJECT` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x260EE4FDBDF4DB01)  
@@ -559,7 +559,7 @@ GetRayfireMapObject = GetDesObject
 function GetRayfireMapObjectAnimPhase(object) end
 
 ---@deprecated
-GetRayfireMapObjectAnimPhase = GetDesObjectAnimProgress
+GetDesObjectAnimProgress = GetRayfireMapObjectAnimPhase
 
 ---**`OBJECT` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x6E16BC2503FF1FF0)  
@@ -598,7 +598,7 @@ function GetStateOfClosestDoorOfType(type, x, y, z) end
 function GetStateOfRayfireMapObject(object) end
 
 ---@deprecated
-GetStateOfRayfireMapObject = GetDesObjectState
+GetDesObjectState = GetStateOfRayfireMapObject
 
 ---**`OBJECT` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x08F96CA6C551AD51)  
@@ -608,7 +608,7 @@ GetStateOfRayfireMapObject = GetDesObjectState
 function GetWeaponTypeFromPickupType(pickupHash) end
 
 ---@deprecated
-GetWeaponTypeFromPickupType = GetWeaponHashFromPickup
+GetWeaponHashFromPickup = GetWeaponTypeFromPickupType
 
 ---**`OBJECT` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x761B0E69AC4D007E)  
@@ -658,7 +658,7 @@ function HasPickupBeenCollected(pickup) end
 function HidePortablePickupWhenDetached(pickup, toggle) end
 
 ---@deprecated
-HidePortablePickupWhenDetached = HidePickup
+HidePickup = HidePortablePickupWhenDetached
 
 ---**`OBJECT` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x673ED815D6E323B7)  
@@ -702,7 +702,7 @@ function IsDoorClosed(doorHash) end
 function IsDoorRegisteredWithSystem(doorHash) end
 
 ---@deprecated
-IsDoorRegisteredWithSystem = DoesDoorExist
+DoesDoorExist = IsDoorRegisteredWithSystem
 
 ---**`OBJECT` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x90E47239EA1980B8)  
@@ -928,7 +928,7 @@ function N_0x39a5fb7eaf150840(p0, p1) end
 function N_0x3b2fd68db5f8331c(object, toggle, R, G, B) end
 
 ---@deprecated
-N_0x3b2fd68db5f8331c = SetObjectColour
+SetObjectColour = N_0x3b2fd68db5f8331c
 
 ---**`OBJECT` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x3BD770D281982DB5)  
@@ -1318,7 +1318,7 @@ function RemovePickup(pickup) end
 function RenderFakePickupGlow(x, y, z, colorIndex) end
 
 ---@deprecated
-RenderFakePickupGlow = HighlightPlacementCoords
+HighlightPlacementCoords = RenderFakePickupGlow
 
 ---**`OBJECT` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x406137F8EF90EAF5)  
@@ -1403,7 +1403,7 @@ function SetMaxNumPortablePickupsCarriedByPlayer(modelHash, p1) end
 function SetObjectAllowLowLodBuoyancy(object, toggle) end
 
 ---@deprecated
-SetObjectAllowLowLodBuoyancy = SetObjectCanClimbOn
+SetObjectCanClimbOn = SetObjectAllowLowLodBuoyancy
 
 ---**`OBJECT` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x77F33F2CCF64B3AA)  
@@ -1414,7 +1414,7 @@ SetObjectAllowLowLodBuoyancy = SetObjectCanClimbOn
 function SetObjectForceVehiclesToAvoid(object, toggle) end
 
 ---@deprecated
-SetObjectForceVehiclesToAvoid = SetObjectSomething
+SetObjectSomething = SetObjectForceVehiclesToAvoid
 
 ---**`OBJECT` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x5F048334B4A4E774)  
@@ -1515,7 +1515,7 @@ function SetObjectTargettable(object, targettable) end
 function SetObjectTextureVariation(object, textureVariation) end
 
 ---@deprecated
-SetObjectTextureVariation = SetObjectTextureVariant
+SetObjectTextureVariant = SetObjectTextureVariation
 
 ---**`OBJECT` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x318516E02DE3ECE2)  
@@ -1582,7 +1582,7 @@ function SetStateOfClosestDoorOfType(type, x, y, z, locked, heading, p6) end
 function SetStateOfRayfireMapObject(object, state) end
 
 ---@deprecated
-SetStateOfRayfireMapObject = SetDesObjectState
+SetDesObjectState = SetStateOfRayfireMapObject
 
 ---**`OBJECT` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x53E0DF1A2A3CF0CA)  

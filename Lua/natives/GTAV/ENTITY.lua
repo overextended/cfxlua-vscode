@@ -435,7 +435,7 @@ function GetEntityBoneIndexByName(entity, boneName) end
 function GetEntityBonePosition_2(entity, boneIndex) end
 
 ---@deprecated
-GetEntityBonePosition_2 = GetWorldPositionOfEntityBone_2
+GetWorldPositionOfEntityBone_2 = GetEntityBonePosition_2
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xCE6294A232D03786)  
@@ -448,7 +448,7 @@ GetEntityBonePosition_2 = GetWorldPositionOfEntityBone_2
 function GetEntityBoneRotation(entity, boneIndex) end
 
 ---@deprecated
-GetEntityBoneRotation = GetWorldRotationOfEntityBone
+GetWorldRotationOfEntityBone = GetEntityBoneRotation
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xBD8D32550E5CEBFE)  
@@ -477,7 +477,7 @@ function GetEntityCanBeDamaged(entity) end
 function GetEntityCollisionDisabled(entity) end
 
 ---@deprecated
-GetEntityCollisionDisabled = GetEntityCollisonDisabled
+GetEntityCollisonDisabled = GetEntityCollisionDisabled
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x3FEF770D40960D5A)  
@@ -1568,9 +1568,9 @@ function SetEntityCanBeTargetedWithoutLos(entity, toggle) end
 function SetEntityCleanupByEngine(entity, toggle) end
 
 ---@deprecated
-SetEntityCleanupByEngine = SetEntityRegister
+SetEntityRegister = SetEntityCleanupByEngine
 ---@deprecated
-SetEntityCleanupByEngine = SetEntitySomething
+SetEntitySomething = SetEntityCleanupByEngine
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x1A9205C1B9EE827F)  
@@ -1589,7 +1589,7 @@ function SetEntityCollision(entity, toggle, keepPhysics) end
 function SetEntityCompletelyDisableCollision(entity, toggle, keepPhysics) end
 
 ---@deprecated
-SetEntityCompletelyDisableCollision = SetEntityCollision_2
+SetEntityCollision_2 = SetEntityCompletelyDisableCollision
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x06843DA7060A026B)  
@@ -1630,7 +1630,7 @@ function SetEntityCoordsNoOffset(entity, xPos, yPos, zPos, alive, deadFlag, ragd
 function SetEntityCoordsWithoutPlantsReset(entity, xPos, yPos, zPos, alive, deadFlag, ragdollFlag, clearArea) end
 
 ---@deprecated
-SetEntityCoordsWithoutPlantsReset = SetEntityCoords_2
+SetEntityCoords_2 = SetEntityCoordsWithoutPlantsReset
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x2C2E3DC128F44309)  

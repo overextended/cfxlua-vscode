@@ -142,7 +142,7 @@ function EnableSpecialAbility(player, toggle) end
 function ExtendWorldBoundaryForPlayer(x, y, z) end
 
 ---@deprecated
-ExtendWorldBoundaryForPlayer = ExpandWorldLimits
+ExpandWorldLimits = ExtendWorldBoundaryForPlayer
 
 ---**`PLAYER` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xBC8983F38F78ED51)  
@@ -179,7 +179,7 @@ function ForceCleanupForThreadWithThisId(id, cleanupFlags) end
 function GetAchievementProgress(achievement) end
 
 ---@deprecated
-GetAchievementProgress = GetAchievementProgression
+GetAchievementProgression = GetAchievementProgress
 
 ---**`PLAYER` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x9A41CF4674A12272)  
@@ -1114,7 +1114,7 @@ function N_0xbc9490ca15aea8fb(player) end
 function N_0xc3376f42b1faccc6(player) end
 
 ---@deprecated
-N_0xc3376f42b1faccc6 = SetAreasGeneratorOrientation
+SetAreasGeneratorOrientation = N_0xc3376f42b1faccc6
 
 ---**`PLAYER` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xCAC57395B151135F)  
@@ -1170,7 +1170,7 @@ function N_0xdd2620b7b9d16ff1(player, p1) end
 function N_0xde45d1a1ef45ee61(player, toggle) end
 
 ---@deprecated
-N_0xde45d1a1ef45ee61 = SetHudAnimStopLevel
+SetHudAnimStopLevel = N_0xde45d1a1ef45ee61
 
 ---**`PLAYER` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xF10B44FD479D69F3)  
@@ -1362,7 +1362,7 @@ function RestorePlayerStamina(player, percentage) end
 function SetAchievementProgress(achievement, progress) end
 
 ---@deprecated
-SetAchievementProgress = SetAchievementProgression
+SetAchievementProgression = SetAchievementProgress
 
 ---**`PLAYER` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xCA7DC8329F0A1E9E)  
@@ -2140,7 +2140,7 @@ function SpecialAbilityChargeMedium(player, p1, p2) end
 function SpecialAbilityChargeNormalized(player, normalizedValue, p2) end
 
 ---@deprecated
-SpecialAbilityChargeNormalized = ResetSpecialAbilityControlsCinematic
+ResetSpecialAbilityControlsCinematic = SpecialAbilityChargeNormalized
 
 ---**`PLAYER` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC9A763D8FE87436A)  
@@ -2290,5 +2290,5 @@ function SwitchCrimeType(player, p1) end
 function UpdatePlayerTeleport(player) end
 
 ---@deprecated
-UpdatePlayerTeleport = HasPlayerTeleportFinished
+HasPlayerTeleportFinished = UpdatePlayerTeleport
 

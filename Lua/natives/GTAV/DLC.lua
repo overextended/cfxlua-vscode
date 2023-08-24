@@ -23,7 +23,7 @@ function GetIsLoadingScreenActive() end
 function HasCloudRequestsFinished(unused) end
 
 ---@deprecated
-HasCloudRequestsFinished = Nullify
+Nullify = HasCloudRequestsFinished
 
 ---**`DLC` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x812595A0644CE1DE)  
@@ -92,7 +92,7 @@ function N_0xf2e07819ef1a5289() end
 function OnEnterMp() end
 
 ---@deprecated
-OnEnterMp = LoadMpDlcMaps
+LoadMpDlcMaps = OnEnterMp
 
 ---**`DLC` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xD7C10C4A637992C9)  
@@ -105,5 +105,5 @@ OnEnterMp = LoadMpDlcMaps
 function OnEnterSp() end
 
 ---@deprecated
-OnEnterSp = LoadSpDlcMaps
+LoadSpDlcMaps = OnEnterSp
 

@@ -91,7 +91,7 @@ function N_0xe3e5a7c64ca2c6ed() end
 function NetGameserverBasketAddItem(quantity) end
 
 ---@deprecated
-NetGameserverBasketAddItem = NetworkShopBasketAddItem
+NetworkShopBasketAddItem = NetGameserverBasketAddItem
 
 ---**`NETSHOPPING` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xE1A0450ED46A7812)  
@@ -101,7 +101,7 @@ NetGameserverBasketAddItem = NetworkShopBasketAddItem
 function NetGameserverBasketApplyServerData(p0) end
 
 ---@deprecated
-NetGameserverBasketApplyServerData = NetworkShopBasketApplyServerData
+NetworkShopBasketApplyServerData = NetGameserverBasketApplyServerData
 
 ---**`NETSHOPPING` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xFA336E7F40C0A0D0)  
@@ -118,7 +118,7 @@ function NetGameserverBasketDelete() end
 function NetGameserverBasketEnd() end
 
 ---@deprecated
-NetGameserverBasketEnd = NetworkShopBasketEnd
+NetworkShopBasketEnd = NetGameserverBasketEnd
 
 ---**`NETSHOPPING` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x27F76CC6C55AD30E)  
@@ -127,7 +127,7 @@ NetGameserverBasketEnd = NetworkShopBasketEnd
 function NetGameserverBasketIsFull() end
 
 ---@deprecated
-NetGameserverBasketIsFull = NetworkShopBasketIsFull
+NetworkShopBasketIsFull = NetGameserverBasketIsFull
 
 ---**`NETSHOPPING` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x279F08B1A4B29B7E)  
@@ -139,7 +139,7 @@ NetGameserverBasketIsFull = NetworkShopBasketIsFull
 function NetGameserverBasketStart(categoryHash, actionHash, flags) end
 
 ---@deprecated
-NetGameserverBasketStart = NetworkShopBasketStart
+NetworkShopBasketStart = NetGameserverBasketStart
 
 ---**`NETSHOPPING` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x3C5FD37B5499582E)  
@@ -153,7 +153,7 @@ NetGameserverBasketStart = NetworkShopBasketStart
 function NetGameserverBeginService(categoryHash, itemHash, actionTypeHash, value, flags) end
 
 ---@deprecated
-NetGameserverBeginService = NetworkShopBeginService
+NetworkShopBeginService = NetGameserverBeginService
 
 ---**`NETSHOPPING` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x3C4487461E9B0DCB)  
@@ -169,9 +169,9 @@ function NetGameserverCatalogIsReady() end
 function NetGameserverCatalogItemExists(name) end
 
 ---@deprecated
-NetGameserverCatalogItemExists = NetworkShopIsItemUnlocked
+NetworkShopIsItemUnlocked = NetGameserverCatalogItemExists
 ---@deprecated
-NetGameserverCatalogItemExists = NetworkShopDoesItemExist
+NetworkShopDoesItemExist = NetGameserverCatalogItemExists
 
 ---**`NETSHOPPING` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x247F0F73A182EA0B)  
@@ -181,9 +181,9 @@ NetGameserverCatalogItemExists = NetworkShopDoesItemExist
 function NetGameserverCatalogItemExistsHash(hash) end
 
 ---@deprecated
-NetGameserverCatalogItemExistsHash = NetworkShopIsItemUnlockedHash
+NetworkShopIsItemUnlockedHash = NetGameserverCatalogItemExistsHash
 ---@deprecated
-NetGameserverCatalogItemExistsHash = NetworkShopDoesItemExistHash
+NetworkShopDoesItemExistHash = NetGameserverCatalogItemExistsHash
 
 ---**`NETSHOPPING` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x39BE7CEA8D9CC8E6)  
@@ -193,7 +193,7 @@ NetGameserverCatalogItemExistsHash = NetworkShopDoesItemExistHash
 function NetGameserverCheckoutStart(transactionId) end
 
 ---@deprecated
-NetGameserverCheckoutStart = NetworkShopCheckoutStart
+NetworkShopCheckoutStart = NetGameserverCheckoutStart
 
 ---**`NETSHOPPING` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x51F1A8E48C3D2F6D)  
@@ -217,7 +217,7 @@ function NetGameserverDeleteCharacterSlotGetStatus() end
 function NetGameserverDeleteSetTelemetryNonceSeed() end
 
 ---@deprecated
-NetGameserverDeleteSetTelemetryNonceSeed = NetworkShopDeleteSetTelemetryNonceSeed
+NetworkShopDeleteSetTelemetryNonceSeed = NetGameserverDeleteSetTelemetryNonceSeed
 
 ---**`NETSHOPPING` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xE2A99A9B524BEFFF)  
@@ -227,9 +227,9 @@ NetGameserverDeleteSetTelemetryNonceSeed = NetworkShopDeleteSetTelemetryNonceSee
 function NetGameserverEndService(transactionId) end
 
 ---@deprecated
-NetGameserverEndService = NetworkShopEndService
+NetworkShopEndService = NetGameserverEndService
 ---@deprecated
-NetGameserverEndService = NetworkShopTerminateService
+NetworkShopTerminateService = NetGameserverEndService
 
 ---**`NETSHOPPING` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x35A1B3E1D1315CFA)  
@@ -259,7 +259,7 @@ function NetGameserverGetCatalogState() end
 function NetGameserverGetPrice(itemHash, categoryHash, p2) end
 
 ---@deprecated
-NetGameserverGetPrice = NetworkShopGetPrice
+NetworkShopGetPrice = NetGameserverGetPrice
 
 ---**`NETSHOPPING` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x897433D292B44130)  
@@ -280,7 +280,7 @@ function NetGameserverIsCatalogValid() end
 function NetGameserverIsSessionRefreshPending() end
 
 ---@deprecated
-NetGameserverIsSessionRefreshPending = NetworkShopGetTransactionsDisabled
+NetworkShopGetTransactionsDisabled = NetGameserverIsSessionRefreshPending
 
 ---**`NETSHOPPING` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xB24F0944DA203D9E)  
@@ -290,7 +290,7 @@ NetGameserverIsSessionRefreshPending = NetworkShopGetTransactionsDisabled
 function NetGameserverIsSessionValid(charSlot) end
 
 ---@deprecated
-NetGameserverIsSessionValid = NetworkShopGetTransactionsEnabledForCharacter
+NetworkShopGetTransactionsEnabledForCharacter = NetGameserverIsSessionValid
 
 ---**`NETSHOPPING` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x2F41D51BA3BCD1F1)  
@@ -300,7 +300,7 @@ NetGameserverIsSessionValid = NetworkShopGetTransactionsEnabledForCharacter
 function NetGameserverSessionApplyReceivedData(charSlot) end
 
 ---@deprecated
-NetGameserverSessionApplyReceivedData = NetworkShopSessionApplyReceivedData
+NetworkShopSessionApplyReceivedData = NetGameserverSessionApplyReceivedData
 
 ---**`NETSHOPPING` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x9507D4271988E1AE)  
@@ -310,7 +310,7 @@ NetGameserverSessionApplyReceivedData = NetworkShopSessionApplyReceivedData
 function NetGameserverSetTelemetryNonceSeed(p0) end
 
 ---@deprecated
-NetGameserverSetTelemetryNonceSeed = NetworkShopSetTelemetryNonceSeed
+NetworkShopSetTelemetryNonceSeed = NetGameserverSetTelemetryNonceSeed
 
 ---**`NETSHOPPING` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA135AC892A58FC07)  
@@ -320,7 +320,7 @@ NetGameserverSetTelemetryNonceSeed = NetworkShopSetTelemetryNonceSeed
 function NetGameserverStartSession(charSlot) end
 
 ---@deprecated
-NetGameserverStartSession = NetworkShopStartSession
+NetworkShopStartSession = NetGameserverStartSession
 
 ---**`NETSHOPPING` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xD47A2C1BA117471D)  
@@ -331,7 +331,7 @@ NetGameserverStartSession = NetworkShopStartSession
 function NetGameserverTransferBankToWallet(charSlot, amount) end
 
 ---@deprecated
-NetGameserverTransferBankToWallet = NetworkTransferBankToWallet
+NetworkTransferBankToWallet = NetGameserverTransferBankToWallet
 
 ---**`NETSHOPPING` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x23789E777D14CE44)  
@@ -358,7 +358,7 @@ function NetGameserverTransferCashGetStatus_2() end
 function NetGameserverTransferCashSetTelemetryNonceSeed() end
 
 ---@deprecated
-NetGameserverTransferCashSetTelemetryNonceSeed = NetworkShopCashTransferSetTelemetryNonceSeed
+NetworkShopCashTransferSetTelemetryNonceSeed = NetGameserverTransferCashSetTelemetryNonceSeed
 
 ---**`NETSHOPPING` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC2F7FE5309181C7D)  
@@ -369,7 +369,7 @@ NetGameserverTransferCashSetTelemetryNonceSeed = NetworkShopCashTransferSetTelem
 function NetGameserverTransferWalletToBank(charSlot, amount) end
 
 ---@deprecated
-NetGameserverTransferWalletToBank = NetworkTransferWalletToBank
+NetworkTransferWalletToBank = NetGameserverTransferWalletToBank
 
 ---**`NETSHOPPING` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x7D2708796355B20B)  

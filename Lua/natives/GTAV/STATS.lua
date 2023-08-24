@@ -68,7 +68,7 @@ function GetNgstatIntHash(index, spStat, charStat, character, section) end
 function GetPackedBoolStatKey(index, spStat, charStat, character) end
 
 ---@deprecated
-GetPackedBoolStatKey = GetPstatBoolHash
+GetPstatBoolHash = GetPackedBoolStatKey
 
 ---**`STATS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x61E111E323419E07)  
@@ -81,7 +81,7 @@ GetPackedBoolStatKey = GetPstatBoolHash
 function GetPackedIntStatKey(index, spStat, charStat, character) end
 
 ---@deprecated
-GetPackedIntStatKey = GetPstatIntHash
+GetPstatIntHash = GetPackedIntStatKey
 
 ---**`STATS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC4BB08EE7907471E)  
@@ -94,9 +94,9 @@ GetPackedIntStatKey = GetPstatIntHash
 function GetPackedTuBoolStatKey(index, spStat, charStat, character) end
 
 ---@deprecated
-GetPackedTuBoolStatKey = GetTupstatBoolHash
+GetTupstatBoolHash = GetPackedTuBoolStatKey
 ---@deprecated
-GetPackedTuBoolStatKey = GetPackedTitleUpdateBoolStatKey
+GetPackedTitleUpdateBoolStatKey = GetPackedTuBoolStatKey
 
 ---**`STATS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xD16C2AD6B8E32854)  
@@ -109,9 +109,9 @@ GetPackedTuBoolStatKey = GetPackedTitleUpdateBoolStatKey
 function GetPackedTuIntStatKey(index, spStat, charStat, character) end
 
 ---@deprecated
-GetPackedTuIntStatKey = GetTupstatIntHash
+GetTupstatIntHash = GetPackedTuIntStatKey
 ---@deprecated
-GetPackedTuIntStatKey = GetPackedTitleUpdateIntStatKey
+GetPackedTitleUpdateIntStatKey = GetPackedTuIntStatKey
 
 ---**`STATS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x792271AB35C356A4)  
@@ -1660,9 +1660,9 @@ function PlaystatsCopyRankIntoNewSlot(p0, p1, p2, p3, p4, p5, p6) end
 function PlaystatsCrateCreated(p0, p1, p2) end
 
 ---@deprecated
-PlaystatsCrateCreated = PlaystatsAmbientMissionCrateCreated
+PlaystatsAmbientMissionCrateCreated = PlaystatsCrateCreated
 ---@deprecated
-PlaystatsCrateCreated = PlaystatsCrateCreatedMissionDone
+PlaystatsCrateCreatedMissionDone = PlaystatsCrateCreated
 
 ---**`STATS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x1CAE5D2E3F9A07F0)  
@@ -1679,7 +1679,7 @@ PlaystatsCrateCreated = PlaystatsCrateCreatedMissionDone
 function PlaystatsCrateDropMissionDone(p0, p1, p2, p3, p4, p5) end
 
 ---@deprecated
-PlaystatsCrateDropMissionDone = PlaystatsCrateDrop
+PlaystatsCrateDrop = PlaystatsCrateDropMissionDone
 
 ---**`STATS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x0BC254FF3A911501)  
@@ -1793,7 +1793,7 @@ function PlaystatsHeistSaveCheat(hash, p1) end
 function PlaystatsHoldUpMissionDone(p0, p1, p2, p3) end
 
 ---@deprecated
-PlaystatsHoldUpMissionDone = PlaystatsHoldUp
+PlaystatsHoldUp = PlaystatsHoldUpMissionDone
 
 ---**`STATS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x5DA3A8DE8CB6226F)  
@@ -1813,7 +1813,7 @@ function PlaystatsIdleKick(time) end
 function PlaystatsImportExportMissionDone(p0, p1, p2, p3) end
 
 ---@deprecated
-PlaystatsImportExportMissionDone = PlaystatsImpExp
+PlaystatsImpExp = PlaystatsImportExportMissionDone
 
 ---**`STATS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x887DAD63CF5B7908)  
@@ -1973,7 +1973,7 @@ function PlaystatsRaceCheckpoint(p0, p1, p2, p3, p4) end
 function PlaystatsRaceToPointMissionDone(p0, p1, p2, p3, p4, p5, p6, p7, p8, p9) end
 
 ---@deprecated
-PlaystatsRaceToPointMissionDone = PlaystatsRaceToPoint
+PlaystatsRaceToPoint = PlaystatsRaceToPointMissionDone
 
 ---**`STATS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x71862B1D855F32E1)  
@@ -2121,7 +2121,7 @@ function PlaystatsWebsiteVisited(scaleformHash, p1) end
 function PresenceEventUpdatestatFloat(statHash, value, p2) end
 
 ---@deprecated
-PresenceEventUpdatestatFloat = UpdateStatFloat
+UpdateStatFloat = PresenceEventUpdatestatFloat
 
 ---**`STATS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x11FF1C80276097ED)  
@@ -2132,7 +2132,7 @@ PresenceEventUpdatestatFloat = UpdateStatFloat
 function PresenceEventUpdatestatInt(statHash, value, p2) end
 
 ---@deprecated
-PresenceEventUpdatestatInt = UpdateStatInt
+UpdateStatInt = PresenceEventUpdatestatInt
 
 ---**`STATS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xDAC073C7901F9E15)  
@@ -2602,7 +2602,7 @@ function StatSetPos(statName, x, y, z, save) end
 function StatSetProfileSettingValue(profileSetting, value) end
 
 ---@deprecated
-StatSetProfileSettingValue = StatSetProfileSetting
+StatSetProfileSetting = StatSetProfileSettingValue
 
 ---**`STATS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA87B2335D12531D7)  

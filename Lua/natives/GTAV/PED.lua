@@ -41,9 +41,9 @@ function AddArmourToPed(ped, amount) end
 function AddPedDecorationFromHashes(ped, collection, overlay) end
 
 ---@deprecated
-AddPedDecorationFromHashes = ApplyPedOverlay
+ApplyPedOverlay = AddPedDecorationFromHashes
 ---@deprecated
-AddPedDecorationFromHashes = SetPedDecoration
+SetPedDecoration = AddPedDecorationFromHashes
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x5619BFA07CFD7833)  
@@ -54,7 +54,7 @@ AddPedDecorationFromHashes = SetPedDecoration
 function AddPedDecorationFromHashesInCorona(ped, collection, overlay) end
 
 ---@deprecated
-AddPedDecorationFromHashesInCorona = SetPedFacialDecoration
+SetPedFacialDecoration = AddPedDecorationFromHashesInCorona
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xF372BC22FCB88606)  
@@ -292,7 +292,7 @@ function CanPedRagdoll(ped) end
 function CanPedSeeHatedPed(ped1, ped2) end
 
 ---@deprecated
-CanPedSeeHatedPed = CanPedSeePed
+CanPedSeePed = CanPedSeeHatedPed
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xCD8A7537A9B52F06)  
@@ -382,7 +382,7 @@ function ClearPedDecorations(ped) end
 function ClearPedDecorationsLeaveScars(ped) end
 
 ---@deprecated
-ClearPedDecorationsLeaveScars = ClearPedFacialDecorations
+ClearPedFacialDecorations = ClearPedDecorationsLeaveScars
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x4AFE3690D7E0B5AC)  
@@ -427,7 +427,7 @@ function ClearPedProp(ped, propId) end
 function ClearPedScubaGearVariation(ped) end
 
 ---@deprecated
-ClearPedScubaGearVariation = RemovePedScubaGearNow
+RemovePedScubaGearNow = ClearPedScubaGearVariation
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x687C0B594907D2E8)  
@@ -453,7 +453,7 @@ function ClearPedWetness(ped) end
 function ClearRagdollBlockingFlags(ped, flags) end
 
 ---@deprecated
-ClearRagdollBlockingFlags = ResetPedRagdollBlockingFlags
+ResetPedRagdollBlockingFlags = ClearRagdollBlockingFlags
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x5E29243FB56FC6D4)  
@@ -499,7 +499,7 @@ function ClonePed(ped, isNetwork, bScriptHostPed, copyHeadBlendFlag) end
 function ClonePedEx(ped, heading, isNetwork, bScriptHostPed, p4) end
 
 ---@deprecated
-ClonePedEx = ClonePed_2
+ClonePed_2 = ClonePedEx
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xE952D6431689AD9A)  
@@ -511,7 +511,7 @@ ClonePedEx = ClonePed_2
 function ClonePedToTarget(ped, targetPed) end
 
 ---@deprecated
-ClonePedToTarget = AssignPlayerToPed
+AssignPlayerToPed = ClonePedToTarget
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x148B08C2D2ACB884)  
@@ -555,7 +555,7 @@ function CreateNmMessage(startImmediately, messageId) end
 function CreateParachuteBagObject(ped, p1, p2) end
 
 ---@deprecated
-CreateParachuteBagObject = CreateParachuteObject
+CreateParachuteObject = CreateParachuteBagObject
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xD49F9B0955C367DE)  
@@ -1489,7 +1489,7 @@ function GetPedDecorationsState(ped) end
 function GetPedDecorationZoneFromHashes(collection, overlay) end
 
 ---@deprecated
-GetPedDecorationZoneFromHashes = GetTattooZone
+GetTattooZone = GetPedDecorationZoneFromHashes
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x3C06B8786DD94CD1)  
@@ -1538,7 +1538,7 @@ function GetPedDrawableVariation(ped, componentId) end
 function GetPedEmissiveIntensity(ped) end
 
 ---@deprecated
-GetPedEmissiveIntensity = GetPedIlluminatedClothingGlowIntensity
+GetPedIlluminatedClothingGlowIntensity = GetPedEmissiveIntensity
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x9C14D30395A51A3C)  
@@ -1598,7 +1598,7 @@ function GetPedGroupIndex(ped) end
 function GetPedHairRgbColor(hairColorIndex) end
 
 ---@deprecated
-GetPedHairRgbColor = GetHairRgbColor
+GetHairRgbColor = GetPedHairRgbColor
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x2746BD9D88C5C5D0)  
@@ -1627,7 +1627,7 @@ function GetPedHeadBlendData(ped) end
 function GetPedHeadBlendFirstIndex(type) end
 
 ---@deprecated
-GetPedHeadBlendFirstIndex = GetFirstParentIdForPedType
+GetFirstParentIdForPedType = GetPedHeadBlendFirstIndex
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x5EF37013A6539C9D)  
@@ -1639,7 +1639,7 @@ GetPedHeadBlendFirstIndex = GetFirstParentIdForPedType
 function GetPedHeadBlendNumHeads(type) end
 
 ---@deprecated
-GetPedHeadBlendNumHeads = GetNumParentPedsOfType
+GetNumParentPedsOfType = GetPedHeadBlendNumHeads
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xCF1CE768BB43480E)  
@@ -1651,7 +1651,7 @@ GetPedHeadBlendNumHeads = GetNumParentPedsOfType
 function GetPedHeadOverlayNum(overlayID) end
 
 ---@deprecated
-GetPedHeadOverlayNum = GetNumHeadOverlayValues
+GetNumHeadOverlayValues = GetPedHeadOverlayNum
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA60EF3B6461A4D43)  
@@ -1707,7 +1707,7 @@ function GetPedLastDamageBone(ped) end
 function GetPedMakeupRgbColor(makeupColorIndex) end
 
 ---@deprecated
-GetPedMakeupRgbColor = GetMakeupRgbColor
+GetMakeupRgbColor = GetPedMakeupRgbColor
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x4700A416E8324EF3)  
@@ -1873,7 +1873,7 @@ function GetPedsJacker(ped) end
 function GetPedSourceOfDeath(ped) end
 
 ---@deprecated
-GetPedSourceOfDeath = GetPedKiller
+GetPedKiller = GetPedSourceOfDeath
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x7C2AC9CA66575FBF)  
@@ -2075,7 +2075,7 @@ function GetTimeOfLastPedWeaponDamage(ped, weaponHash) end
 function GetVehiclePedIsEntering(ped) end
 
 ---@deprecated
-GetVehiclePedIsEntering = SetExclusivePhoneRelationships
+SetExclusivePhoneRelationships = GetVehiclePedIsEntering
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x9A9112A0FE9A4713)  
@@ -2205,7 +2205,7 @@ function HasStealthModeAssetLoaded(asset) end
 function HaveAllStreamingRequestsCompleted(ped) end
 
 ---@deprecated
-HaveAllStreamingRequestsCompleted = HasStreamedPedAssetsLoaded
+HasStreamedPedAssetsLoaded = HaveAllStreamingRequestsCompleted
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x62AB793144DE75DC)  
@@ -2674,7 +2674,7 @@ function IsPedInGroup(ped) end
 function IsPedInHighCover(ped) end
 
 ---@deprecated
-IsPedInHighCover = IsPedStandingInCover
+IsPedStandingInCover = IsPedInHighCover
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x84A2DD9AC37C35C1)  
@@ -3676,7 +3676,7 @@ function N_0xfab944d4d481accb(ped, toggle) end
 function N_0xfd325494792302d7(ped, toggle) end
 
 ---@deprecated
-N_0xfd325494792302d7 = SetTimeExclusiveDisplayTexture
+SetTimeExclusiveDisplayTexture = N_0xfd325494792302d7
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xFEC9A3B1820F3331)  
@@ -3858,7 +3858,7 @@ function RequestPedheadshotImgUpload(id) end
 function RequestPedVehicleVisibilityTracking(ped, p1) end
 
 ---@deprecated
-RequestPedVehicleVisibilityTracking = GetPedFloodInvincibility
+GetPedFloodInvincibility = RequestPedVehicleVisibilityTracking
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x7D7A2E43E74E2EB8)  
@@ -5380,7 +5380,7 @@ function SetPedDucking(ped, toggle) end
 function SetPedEmissiveIntensity(ped, intensity) end
 
 ---@deprecated
-SetPedEmissiveIntensity = SetPedIlluminatedClothingGlowIntensity
+SetPedIlluminatedClothingGlowIntensity = SetPedEmissiveIntensity
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x97A790315D3831FD)  
@@ -6011,7 +6011,7 @@ function SetPedPreferredCoverSet(ped, itemSet) end
 function SetPedPreloadPropData(ped, componentId, drawableId, textureId) end
 
 ---@deprecated
-SetPedPreloadPropData = IsPedPropValid
+IsPedPropValid = SetPedPreloadPropData
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x39D55A620FCB6A3A)  
@@ -6468,7 +6468,7 @@ function SetPopControlSphereThisFrame(x, y, z, min, max) end
 function SetRagdollBlockingFlags(ped, flags) end
 
 ---@deprecated
-SetRagdollBlockingFlags = SetPedRagdollBlockingFlags
+SetPedRagdollBlockingFlags = SetRagdollBlockingFlags
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xBF25EB89375A37AD)  
@@ -6546,7 +6546,7 @@ function SetScriptedConversionCoordThisFrame(x, y, z) end
 function SetSynchronizedSceneHoldLastFrame(sceneID, toggle) end
 
 ---@deprecated
-SetSynchronizedSceneHoldLastFrame = SetSynchronizedSceneOcclusionPortal
+SetSynchronizedSceneOcclusionPortal = SetSynchronizedSceneHoldLastFrame
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xD9A897A4C6C2974F)  

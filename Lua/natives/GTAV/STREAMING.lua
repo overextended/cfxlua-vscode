@@ -118,7 +118,7 @@ function GetPlayerSwitchInterpOutCurrentTime() end
 function GetPlayerSwitchInterpOutDuration() end
 
 ---@deprecated
-GetPlayerSwitchInterpOutDuration = SetPlayerInvertedUp
+SetPlayerInvertedUp = GetPlayerSwitchInterpOutDuration
 
 ---**`STREAMING` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x78C0D93253149435)  
@@ -211,7 +211,7 @@ function HasPtfxAssetLoaded() end
 function InitCreatorBudget() end
 
 ---@deprecated
-InitCreatorBudget = LoadMissionCreatorData
+LoadMissionCreatorData = InitCreatorBudget
 
 ---**`STREAMING` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x2DDFF3FB9075D747)  
@@ -313,7 +313,7 @@ function IsSwitchReadyForDescent() end
 function IsSwitchSkippingDescent() end
 
 ---@deprecated
-IsSwitchSkippingDescent = DestroyPlayerInPauseMenu
+DestroyPlayerInPauseMenu = IsSwitchSkippingDescent
 
 ---**`STREAMING` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xBD6E84632DD4CB3F)  
@@ -643,7 +643,7 @@ function RequestModel(model) end
 function RequestModelsInRoom(interior, roomName) end
 
 ---@deprecated
-RequestModelsInRoom = RequestInteriorRoomByName
+RequestInteriorRoomByName = RequestModelsInRoom
 
 ---**`STREAMING` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xB80D8756B4668AB6)  
@@ -704,7 +704,7 @@ function SetFocusEntity(entity) end
 function SetFocusPosAndVel(x, y, z, offsetX, offsetY, offsetZ) end
 
 ---@deprecated
-SetFocusPosAndVel = SetFocusArea
+SetFocusArea = SetFocusPosAndVel
 
 ---**`STREAMING` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x717CD6E6FAEBBEDC)  
@@ -912,7 +912,7 @@ function StreamvolCreateLine(p0, p1, p2, p3, p4, p5, p6) end
 function StreamvolCreateSphere(x, y, z, rad, p4, p5) end
 
 ---@deprecated
-StreamvolCreateSphere = FormatFocusHeading
+FormatFocusHeading = StreamvolCreateSphere
 
 ---**`STREAMING` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x1EE7D8DF4425F053)  

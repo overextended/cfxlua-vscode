@@ -19,7 +19,7 @@ function LoadingscreenGetLoadFreemodeWithEventName() end
 function LoadingscreenIsLoadingFreemode() end
 
 ---@deprecated
-LoadingscreenIsLoadingFreemode = IsUiLoadingMultiplayer
+IsUiLoadingMultiplayer = LoadingscreenIsLoadingFreemode
 
 ---**`LOADINGSCREEN` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC7E7181C09F33B69)  
@@ -34,7 +34,7 @@ function LoadingscreenSetIsLoadingFreemode(toggle) end
 function LoadingscreenSetLoadFreemode(toggle) end
 
 ---@deprecated
-LoadingscreenSetLoadFreemode = GetBroadcastFinshedLosSound
+GetBroadcastFinshedLosSound = LoadingscreenSetLoadFreemode
 
 ---**`LOADINGSCREEN` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xFC309E94546FCDB5)  
@@ -45,7 +45,7 @@ LoadingscreenSetLoadFreemode = GetBroadcastFinshedLosSound
 function LoadingscreenSetLoadFreemodeWithEventName(toggle) end
 
 ---@deprecated
-LoadingscreenSetLoadFreemodeWithEventName = IsInLoadingScreen
+IsInLoadingScreen = LoadingscreenSetLoadFreemodeWithEventName
 
 ---**`LOADINGSCREEN` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xF2CA003F167E21D2)  
@@ -54,7 +54,7 @@ LoadingscreenSetLoadFreemodeWithEventName = IsInLoadingScreen
 function N_0xf2ca003f167e21d2() end
 
 ---@deprecated
-N_0xf2ca003f167e21d2 = ReturnZero
+ReturnZero = N_0xf2ca003f167e21d2
 
 ---**`LOADINGSCREEN` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xFA1E0E893D915215)  

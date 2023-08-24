@@ -166,9 +166,9 @@ function AddTextComponentSubstringBlipName(blip) end
 function AddTextComponentSubstringKeyboardDisplay(string) end
 
 ---@deprecated
-AddTextComponentSubstringKeyboardDisplay = AddTextComponentString3
+AddTextComponentString3 = AddTextComponentSubstringKeyboardDisplay
 ---@deprecated
-AddTextComponentSubstringKeyboardDisplay = AddTextComponentScaleform
+AddTextComponentScaleform = AddTextComponentSubstringKeyboardDisplay
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x761B77454205A61D)  
@@ -180,7 +180,7 @@ AddTextComponentSubstringKeyboardDisplay = AddTextComponentScaleform
 function AddTextComponentSubstringPhoneNumber(p0, p1) end
 
 ---@deprecated
-AddTextComponentSubstringPhoneNumber = AddTextComponentAppTitle
+AddTextComponentAppTitle = AddTextComponentSubstringPhoneNumber
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x6C188BE134E074AA)  
@@ -191,7 +191,7 @@ AddTextComponentSubstringPhoneNumber = AddTextComponentAppTitle
 function AddTextComponentSubstringPlayerName(text) end
 
 ---@deprecated
-AddTextComponentSubstringPlayerName = AddTextComponentString
+AddTextComponentString = AddTextComponentSubstringPlayerName
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC63CD5D2920ACBE7)  
@@ -200,7 +200,7 @@ AddTextComponentSubstringPlayerName = AddTextComponentString
 function AddTextComponentSubstringTextLabel(labelName) end
 
 ---@deprecated
-AddTextComponentSubstringTextLabel = AddTextComponentItemString
+AddTextComponentItemString = AddTextComponentSubstringTextLabel
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x17299B63C7683A2B)  
@@ -228,7 +228,7 @@ function AddTextComponentSubstringTime(timestamp, flags) end
 function AddTextComponentSubstringWebsite(website) end
 
 ---@deprecated
-AddTextComponentSubstringWebsite = AddTextComponentString2
+AddTextComponentString2 = AddTextComponentSubstringWebsite
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xCC3FDDED67BCFC63)  
@@ -282,9 +282,9 @@ function AllowSonarBlips(toggle) end
 function BeginTextCommandBusyspinnerOn(string) end
 
 ---@deprecated
-BeginTextCommandBusyspinnerOn = SetLoadingPromptTextEntry
+SetLoadingPromptTextEntry = BeginTextCommandBusyspinnerOn
 ---@deprecated
-BeginTextCommandBusyspinnerOn = BeginTextCommandBusyString
+BeginTextCommandBusyString = BeginTextCommandBusyspinnerOn
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xE124FA80A759019C)  
@@ -303,7 +303,7 @@ function BeginTextCommandClearPrint(text) end
 function BeginTextCommandDisplayHelp(inputType) end
 
 ---@deprecated
-BeginTextCommandDisplayHelp = SetTextComponentFormat
+SetTextComponentFormat = BeginTextCommandDisplayHelp
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x25FBB336DF1804CB)  
@@ -318,7 +318,7 @@ BeginTextCommandDisplayHelp = SetTextComponentFormat
 function BeginTextCommandDisplayText(text) end
 
 ---@deprecated
-BeginTextCommandDisplayText = SetTextEntry
+SetTextEntry = BeginTextCommandDisplayText
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x54CE8AC98E120CAB)  
@@ -333,9 +333,9 @@ BeginTextCommandDisplayText = SetTextEntry
 function BeginTextCommandGetWidth(text) end
 
 ---@deprecated
-BeginTextCommandGetWidth = SetTextEntryForWidth
+SetTextEntryForWidth = BeginTextCommandGetWidth
 ---@deprecated
-BeginTextCommandGetWidth = BeginTextCommandWidth
+BeginTextCommandWidth = BeginTextCommandGetWidth
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x853648FD1063A213)  
@@ -372,7 +372,7 @@ function BeginTextCommandIsThisHelpMessageBeingDisplayed(labelName) end
 function BeginTextCommandLineCount(entry) end
 
 ---@deprecated
-BeginTextCommandLineCount = SetTextGxtEntry
+SetTextGxtEntry = BeginTextCommandLineCount
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x23D69E0465570028)  
@@ -387,7 +387,7 @@ function BeginTextCommandObjective(p0) end
 function BeginTextCommandOverrideButtonText(gxtEntry) end
 
 ---@deprecated
-BeginTextCommandOverrideButtonText = BeginTextCommandTimer
+BeginTextCommandTimer = BeginTextCommandOverrideButtonText
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xB87A37EEB7FAA67D)  
@@ -404,7 +404,7 @@ BeginTextCommandOverrideButtonText = BeginTextCommandTimer
 function BeginTextCommandPrint(GxtEntry) end
 
 ---@deprecated
-BeginTextCommandPrint = SetTextEntry_2
+SetTextEntry_2 = BeginTextCommandPrint
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xF9113A30DE5C6670)  
@@ -427,7 +427,7 @@ function BeginTextCommandSetBlipName(textLabel) end
 function BeginTextCommandThefeedPost(text) end
 
 ---@deprecated
-BeginTextCommandThefeedPost = SetNotificationTextEntry
+SetNotificationTextEntry = BeginTextCommandThefeedPost
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xB2A592B04648A9CB)  
@@ -442,7 +442,7 @@ function BusyspinnerIsDisplaying() end
 function BusyspinnerIsOn() end
 
 ---@deprecated
-BusyspinnerIsOn = IsLoadingPromptBeingDisplayed
+IsLoadingPromptBeingDisplayed = BusyspinnerIsOn
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x10D373323E5B9C0D)  
@@ -452,7 +452,7 @@ BusyspinnerIsOn = IsLoadingPromptBeingDisplayed
 function BusyspinnerOff() end
 
 ---@deprecated
-BusyspinnerOff = RemoveLoadingPrompt
+RemoveLoadingPrompt = BusyspinnerOff
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x0772DF77852C2E30)  
@@ -464,9 +464,9 @@ BusyspinnerOff = RemoveLoadingPrompt
 function ChangeFakeMpCash(cash, bank) end
 
 ---@deprecated
-ChangeFakeMpCash = SetSingleplayerHudCash
+SetSingleplayerHudCash = ChangeFakeMpCash
 ---@deprecated
-ChangeFakeMpCash = SetPlayerCashChange
+SetPlayerCashChange = ChangeFakeMpCash
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x2A179DF17CCF04CD)  
@@ -577,7 +577,7 @@ function ClearThisPrint(p0) end
 function CloseMultiplayerChat() end
 
 ---@deprecated
-CloseMultiplayerChat = AbortTextChat
+AbortTextChat = CloseMultiplayerChat
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xD2B32BE3FC1626C6)  
@@ -600,7 +600,7 @@ function CloseSocialClubMenu() end
 function CreateFakeMpGamerTag(ped, username, crewIsPrivate, crewIsRockstar, crewName, crewRank) end
 
 ---@deprecated
-CreateFakeMpGamerTag = CreateMpGamerTag
+CreateMpGamerTag = CreateFakeMpGamerTag
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x6DD05E9D83EFA4C9)  
@@ -621,11 +621,11 @@ CreateFakeMpGamerTag = CreateMpGamerTag
 function CreateMpGamerTagWithCrewColor(player, username, crewIsPrivate, crewIsRockstar, crewName, crewRank, crewR, crewG, crewB) end
 
 ---@deprecated
-CreateMpGamerTagWithCrewColor = CreateMpGamerTagColor
+CreateMpGamerTagColor = CreateMpGamerTagWithCrewColor
 ---@deprecated
-CreateMpGamerTagWithCrewColor = SetMpGamerTagColor
+SetMpGamerTagColor = CreateMpGamerTagWithCrewColor
 ---@deprecated
-CreateMpGamerTagWithCrewColor = CreateMpGamerTagForNetPlayer
+CreateMpGamerTagForNetPlayer = CreateMpGamerTagWithCrewColor
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xD8E694757BCEA8E9)  
@@ -644,7 +644,7 @@ function DisableFrontendThisFrame() end
 function DisableMultiplayerChat(disable) end
 
 ---@deprecated
-DisableMultiplayerChat = SetTextChatUnk
+SetTextChatUnk = DisableMultiplayerChat
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA5E78BA2B1331C55)  
@@ -776,7 +776,7 @@ function DoesTextLabelExist(gxt) end
 function DontTiltMinimapThisFrame() end
 
 ---@deprecated
-DontTiltMinimapThisFrame = CenterPlayerOnRadarThisFrame
+CenterPlayerOnRadarThisFrame = DontTiltMinimapThisFrame
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xBD12F8228410D9B4)  
@@ -794,9 +794,9 @@ DontTiltMinimapThisFrame = CenterPlayerOnRadarThisFrame
 function EndTextCommandBusyspinnerOn(busySpinnerType) end
 
 ---@deprecated
-EndTextCommandBusyspinnerOn = ShowLoadingPrompt
+ShowLoadingPrompt = EndTextCommandBusyspinnerOn
 ---@deprecated
-EndTextCommandBusyspinnerOn = EndTextCommandBusyString
+EndTextCommandBusyString = EndTextCommandBusyspinnerOn
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xFCC75460ABA29378)  
@@ -813,7 +813,7 @@ function EndTextCommandClearPrint() end
 function EndTextCommandDisplayHelp(shape, loop, beep, duration) end
 
 ---@deprecated
-EndTextCommandDisplayHelp = DisplayHelpTextFromStringLabel
+DisplayHelpTextFromStringLabel = EndTextCommandDisplayHelp
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xCD015E5BB0D96A57)  
@@ -829,7 +829,7 @@ EndTextCommandDisplayHelp = DisplayHelpTextFromStringLabel
 function EndTextCommandDisplayText(x, y) end
 
 ---@deprecated
-EndTextCommandDisplayText = DrawText
+DrawText = EndTextCommandDisplayText
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x85F061DA64ED2F67)  
@@ -844,7 +844,7 @@ EndTextCommandDisplayText = DrawText
 function EndTextCommandGetWidth(p0) end
 
 ---@deprecated
-EndTextCommandGetWidth = GetTextScreenWidth
+GetTextScreenWidth = EndTextCommandGetWidth
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x8A9BA1AB3E237613)  
@@ -880,9 +880,9 @@ function EndTextCommandIsThisHelpMessageBeingDisplayed(hudIndex) end
 function EndTextCommandLineCount(x, y) end
 
 ---@deprecated
-EndTextCommandLineCount = GetTextScreenLineCount
+GetTextScreenLineCount = EndTextCommandLineCount
 ---@deprecated
-EndTextCommandLineCount = EndTextCommandGetLineCount
+EndTextCommandGetLineCount = EndTextCommandLineCount
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xCFDBDF5AE59BA0F4)  
@@ -897,7 +897,7 @@ function EndTextCommandObjective(p0) end
 function EndTextCommandOverrideButtonText(buttonIndex) end
 
 ---@deprecated
-EndTextCommandOverrideButtonText = EndTextCommandTimer
+EndTextCommandTimer = EndTextCommandOverrideButtonText
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x9D77056A530643F6)  
@@ -912,7 +912,7 @@ EndTextCommandOverrideButtonText = EndTextCommandTimer
 function EndTextCommandPrint(duration, drawImmediately) end
 
 ---@deprecated
-EndTextCommandPrint = DrawSubtitleTimed
+DrawSubtitleTimed = EndTextCommandPrint
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xBC38B49BCB83BC9B)  
@@ -943,9 +943,9 @@ function EndTextCommandSetBlipName(blip) end
 function EndTextCommandThefeedPostAward(textureDict, textureName, rpBonus, colorOverlay, titleLabel) end
 
 ---@deprecated
-EndTextCommandThefeedPostAward = DrawNotificationIcon
+DrawNotificationIcon = EndTextCommandThefeedPostAward
 ---@deprecated
-EndTextCommandThefeedPostAward = DrawNotificationAward
+DrawNotificationAward = EndTextCommandThefeedPostAward
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x8EFCCF6EC66D85E4)  
@@ -1007,9 +1007,9 @@ function EndTextCommandThefeedPostCrewRankup(chTitle, clanTxd, clanTxn, isImport
 function EndTextCommandThefeedPostCrewtag(crewTypeIsPrivate, crewTagContainsRockstar, rank, hasFounderStatus, isImportant, clanHandle, r, g, b) end
 
 ---@deprecated
-EndTextCommandThefeedPostCrewtag = NotificationSendApartmentInvite
+NotificationSendApartmentInvite = EndTextCommandThefeedPostCrewtag
 ---@deprecated
-EndTextCommandThefeedPostCrewtag = DrawNotificationApartmentInvite
+DrawNotificationApartmentInvite = EndTextCommandThefeedPostCrewtag
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x137BC35589E34E1E)  
@@ -1048,9 +1048,9 @@ EndTextCommandThefeedPostCrewtag = DrawNotificationApartmentInvite
 function EndTextCommandThefeedPostCrewtagWithGameName(crewTypeIsPrivate, crewTagContainsRockstar, rank, isLeader, isImportant, clanHandle, gamerStr, r, g, b) end
 
 ---@deprecated
-EndTextCommandThefeedPostCrewtagWithGameName = NotificationSendClanInvite
+NotificationSendClanInvite = EndTextCommandThefeedPostCrewtagWithGameName
 ---@deprecated
-EndTextCommandThefeedPostCrewtagWithGameName = DrawNotificationClanInvite
+DrawNotificationClanInvite = EndTextCommandThefeedPostCrewtagWithGameName
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x1CCD9A37359072CF)  
@@ -1090,7 +1090,7 @@ EndTextCommandThefeedPostCrewtagWithGameName = DrawNotificationClanInvite
 function EndTextCommandThefeedPostMessagetext(textureDict, textureName, flash, iconType, sender, subject) end
 
 ---@deprecated
-EndTextCommandThefeedPostMessagetext = SetNotificationMessage
+SetNotificationMessage = EndTextCommandThefeedPostMessagetext
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC6F580E4C94926AC)  
@@ -1108,9 +1108,9 @@ EndTextCommandThefeedPostMessagetext = SetNotificationMessage
 function EndTextCommandThefeedPostMessagetextGxtEntry(txdName, textureName, flash, iconType, sender, subject) end
 
 ---@deprecated
-EndTextCommandThefeedPostMessagetextGxtEntry = SetNotificationMessage_3
+SetNotificationMessage_3 = EndTextCommandThefeedPostMessagetextGxtEntry
 ---@deprecated
-EndTextCommandThefeedPostMessagetextGxtEntry = EndTextCommandThefeedPostMessagetextEntry
+EndTextCommandThefeedPostMessagetextEntry = EndTextCommandThefeedPostMessagetextGxtEntry
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x1E6611149DB3DB6B)  
@@ -1136,7 +1136,7 @@ EndTextCommandThefeedPostMessagetextGxtEntry = EndTextCommandThefeedPostMessaget
 function EndTextCommandThefeedPostMessagetextTu(picTxd, picTxn, flash, iconType, nameStr, subtitleStr, duration) end
 
 ---@deprecated
-EndTextCommandThefeedPostMessagetextTu = SetNotificationMessage_4
+SetNotificationMessage_4 = EndTextCommandThefeedPostMessagetextTu
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x5CBF7BADE20DB93E)  
@@ -1170,7 +1170,7 @@ EndTextCommandThefeedPostMessagetextTu = SetNotificationMessage_4
 function EndTextCommandThefeedPostMessagetextWithCrewTag(picTxd, picTxn, flash, iconType, nameStr, subtitleStr, duration, crewPackedStr) end
 
 ---@deprecated
-EndTextCommandThefeedPostMessagetextWithCrewTag = SetNotificationMessageClanTag
+SetNotificationMessageClanTag = EndTextCommandThefeedPostMessagetextWithCrewTag
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x531B84E7DA981FB6)  
@@ -1214,7 +1214,7 @@ EndTextCommandThefeedPostMessagetextWithCrewTag = SetNotificationMessageClanTag
 function EndTextCommandThefeedPostMessagetextWithCrewTagAndAdditionalIcon(picTxd, picTxn, flash, iconType1, nameStr, subtitleStr, duration, crewPackedStr, iconType2, textColor) end
 
 ---@deprecated
-EndTextCommandThefeedPostMessagetextWithCrewTagAndAdditionalIcon = SetNotificationMessageClanTag_2
+SetNotificationMessageClanTag_2 = EndTextCommandThefeedPostMessagetextWithCrewTagAndAdditionalIcon
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xF020C96915705B3A)  
@@ -1225,7 +1225,7 @@ EndTextCommandThefeedPostMessagetextWithCrewTagAndAdditionalIcon = SetNotificati
 function EndTextCommandThefeedPostMpticker(blink, bHasTokens) end
 
 ---@deprecated
-EndTextCommandThefeedPostMpticker = DrawNotification_4
+DrawNotification_4 = EndTextCommandThefeedPostMpticker
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xD202B92CBF1D816F)  
@@ -1243,7 +1243,7 @@ EndTextCommandThefeedPostMpticker = DrawNotification_4
 function EndTextCommandThefeedPostReplayIcon(eType, iIcon, sTitle) end
 
 ---@deprecated
-EndTextCommandThefeedPostReplayIcon = DrawNotificationWithIcon
+DrawNotificationWithIcon = EndTextCommandThefeedPostReplayIcon
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xDD6CB2CCE7C2735C)  
@@ -1267,7 +1267,7 @@ EndTextCommandThefeedPostReplayIcon = DrawNotificationWithIcon
 function EndTextCommandThefeedPostReplayInput(type, button, text) end
 
 ---@deprecated
-EndTextCommandThefeedPostReplayInput = DrawNotificationWithButton
+DrawNotificationWithButton = EndTextCommandThefeedPostReplayInput
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x2B7E9A4EAAA93C89)  
@@ -1287,7 +1287,7 @@ EndTextCommandThefeedPostReplayInput = DrawNotificationWithButton
 function EndTextCommandThefeedPostStats(statTitle, iconEnum, stepVal, barValue, isImportant, picTxd, picTxn) end
 
 ---@deprecated
-EndTextCommandThefeedPostStats = SetNotificationMessage_2
+SetNotificationMessage_2 = EndTextCommandThefeedPostStats
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x2ED7843F8F801023)  
@@ -1300,7 +1300,7 @@ EndTextCommandThefeedPostStats = SetNotificationMessage_2
 function EndTextCommandThefeedPostTicker(isImportant, bHasTokens) end
 
 ---@deprecated
-EndTextCommandThefeedPostTicker = DrawNotification
+DrawNotification = EndTextCommandThefeedPostTicker
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x44FA03975424A0EE)  
@@ -1311,7 +1311,7 @@ EndTextCommandThefeedPostTicker = DrawNotification
 function EndTextCommandThefeedPostTickerForced(blink, bHasTokens) end
 
 ---@deprecated
-EndTextCommandThefeedPostTickerForced = DrawNotification_2
+DrawNotification_2 = EndTextCommandThefeedPostTickerForced
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x378E809BF61EC840)  
@@ -1322,7 +1322,7 @@ EndTextCommandThefeedPostTickerForced = DrawNotification_2
 function EndTextCommandThefeedPostTickerWithTokens(isImportant, bHasTokens) end
 
 ---@deprecated
-EndTextCommandThefeedPostTickerWithTokens = DrawNotification_3
+DrawNotification_3 = EndTextCommandThefeedPostTickerWithTokens
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x33EE12743CCD6343)  
@@ -1377,7 +1377,7 @@ function EndTextCommandThefeedPostVersusTu(ch1TXD, ch1TXN, val1, ch2TXD, ch2TXN,
 function FlagPlayerContextInTournament(toggle) end
 
 ---@deprecated
-FlagPlayerContextInTournament = SetIsInTournament
+SetIsInTournament = FlagPlayerContextInTournament
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x02CFBA0C9E9275CE)  
@@ -1556,7 +1556,7 @@ function GetClosestBlipOfType(blipSprite) end
 function GetCurrentFrontendMenuVersion() end
 
 ---@deprecated
-GetCurrentFrontendMenuVersion = GetCurrentFrontendMenu
+GetCurrentFrontendMenu = GetCurrentFrontendMenuVersion
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x01A358D9128B7A86)  
@@ -1565,7 +1565,7 @@ GetCurrentFrontendMenuVersion = GetCurrentFrontendMenu
 function GetCurrentWebpageId() end
 
 ---@deprecated
-GetCurrentWebpageId = GetActiveWebsiteId
+GetActiveWebsiteId = GetCurrentWebpageId
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x97D47996FC48CBAD)  
@@ -1633,7 +1633,7 @@ function GetHudComponentPosition(id) end
 function GetHudScreenPositionFromWorldPosition(worldX, worldY, worldZ) end
 
 ---@deprecated
-GetHudScreenPositionFromWorldPosition = Get_2dCoordFrom_3dCoord
+Get_2dCoordFrom_3dCoord = GetHudScreenPositionFromWorldPosition
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x7B5280EBA9840C72)  
@@ -1662,7 +1662,7 @@ function GetLengthOfLiteralString(string) end
 function GetLengthOfLiteralStringInBytes(string) end
 
 ---@deprecated
-GetLengthOfLiteralStringInBytes = GetLengthOfString
+GetLengthOfString = GetLengthOfLiteralStringInBytes
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x801BD273D3A23F74)  
@@ -1703,7 +1703,7 @@ function GetMenuPedFloatStat(p0) end
 function GetMenuPedIntStat(p0) end
 
 ---@deprecated
-GetMenuPedIntStat = SetUseridsUihidden
+SetUseridsUihidden = GetMenuPedIntStat
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x90A6526CF0381030)  
@@ -1724,7 +1724,7 @@ function GetMenuPedMaskedIntStat(p0, p2, p3) end
 function GetMinimapFowCoordinateIsRevealed(x, y, z) end
 
 ---@deprecated
-GetMinimapFowCoordinateIsRevealed = IsMinimapAreaRevealed
+IsMinimapAreaRevealed = GetMinimapFowCoordinateIsRevealed
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xE0130B41D3CF4574)  
@@ -1733,7 +1733,7 @@ GetMinimapFowCoordinateIsRevealed = IsMinimapAreaRevealed
 function GetMinimapFowDiscoveryRatio() end
 
 ---@deprecated
-GetMinimapFowDiscoveryRatio = GetMinimapRevealPercentage
+GetMinimapRevealPercentage = GetMinimapFowDiscoveryRatio
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x1A6478B61C6BDC3B)  
@@ -1749,7 +1749,7 @@ function GetNamedRendertargetRenderId(name) end
 function GetNewSelectedMissionCreatorBlip() end
 
 ---@deprecated
-GetNewSelectedMissionCreatorBlip = DisableBlipNameForVar
+DisableBlipNameForVar = GetNewSelectedMissionCreatorBlip
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x14F96AA50D6FBEA7)  
@@ -1832,7 +1832,7 @@ function GetPauseMenuState() end
 function GetRenderedCharacterHeight(size, font) end
 
 ---@deprecated
-GetRenderedCharacterHeight = GetTextScaleHeight
+GetTextScaleHeight = GetRenderedCharacterHeight
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x632B2940C67F4EA9)  
@@ -1872,7 +1872,7 @@ function GetScaleformMovieCursorSelection(scaleformHandle) end
 function GetStandardBlipEnumId() end
 
 ---@deprecated
-GetStandardBlipEnumId = GetLevelBlipSprite
+GetLevelBlipSprite = GetStandardBlipEnumId
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xD0EF8A959B8A4CB9)  
@@ -1954,7 +1954,7 @@ function GetWarningMessageTitleHash() end
 function GetWaypointBlipEnumId() end
 
 ---@deprecated
-GetWaypointBlipEnumId = GetBlipInfoIdIterator
+GetBlipInfoIdIterator = GetWaypointBlipEnumId
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xAC0BFBDC3BE00E14)  
@@ -2057,7 +2057,7 @@ function HideLoadingOnFadeThisFrame() end
 function HideMinimapExteriorMapThisFrame() end
 
 ---@deprecated
-HideMinimapExteriorMapThisFrame = DisableRadarThisFrame
+DisableRadarThisFrame = HideMinimapExteriorMapThisFrame
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x20FE7FDFEEAD38C0)  
@@ -2090,7 +2090,7 @@ function HudDisplayLoadingScreenTips() end
 function HudForceWeaponWheel(show) end
 
 ---@deprecated
-HudForceWeaponWheel = ShowWeaponWheel
+ShowWeaponWheel = HudForceWeaponWheel
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x72C1056D678BB7D8)  
@@ -2101,7 +2101,7 @@ HudForceWeaponWheel = ShowWeaponWheel
 function HudSetWeaponWheelTopSlot(weaponHash) end
 
 ---@deprecated
-HudSetWeaponWheelTopSlot = HudWeaponWheelSetSlotHash
+HudWeaponWheelSetSlotHash = HudSetWeaponWheelTopSlot
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA48931185F0536FE)  
@@ -2136,7 +2136,7 @@ function HudWeaponWheelIgnoreControlInput(toggle) end
 function HudWeaponWheelIgnoreSelection() end
 
 ---@deprecated
-HudWeaponWheelIgnoreSelection = BlockWeaponWheelThisFrame
+BlockWeaponWheelThisFrame = HudWeaponWheelIgnoreSelection
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA5E41FD83AD6CEF0)  
@@ -2260,7 +2260,7 @@ function IsMinimapInInterior() end
 function IsMinimapRendering() end
 
 ---@deprecated
-IsMinimapRendering = IsRadarEnabled
+IsRadarEnabled = IsMinimapRendering
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x26F49BF3381D933D)  
@@ -2291,7 +2291,7 @@ function IsMpGamerTagActive(gamerTagId) end
 function IsMpGamerTagFree(gamerTagId) end
 
 ---@deprecated
-IsMpGamerTagFree = AddTrevorRandomModifier
+AddTrevorRandomModifier = IsMpGamerTagFree
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x6E0EB3EB47C8D7AA)  
@@ -2300,7 +2300,7 @@ IsMpGamerTagFree = AddTrevorRandomModifier
 function IsMpGamerTagMovieActive() end
 
 ---@deprecated
-IsMpGamerTagMovieActive = HasMpGamerTag
+HasMpGamerTag = IsMpGamerTagMovieActive
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xB118AF58B5F332A1)  
@@ -2311,7 +2311,7 @@ IsMpGamerTagMovieActive = HasMpGamerTag
 function IsMultiplayerChatActive() end
 
 ---@deprecated
-IsMultiplayerChatActive = IsTextChatActive
+IsTextChatActive = IsMultiplayerChatActive
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x113750538FA31298)  
@@ -2412,9 +2412,9 @@ function IsSubtitlePreferenceSwitchedOn() end
 function IsValidMpGamerTagMovie(gamerTagId) end
 
 ---@deprecated
-IsValidMpGamerTagMovie = HasMpGamerTag_2
+HasMpGamerTag_2 = IsValidMpGamerTagMovie
 ---@deprecated
-IsValidMpGamerTagMovie = HasMpGamerTagCrewFlagsSet
+HasMpGamerTagCrewFlagsSet = IsValidMpGamerTagMovie
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xE18B138FABC53103)  
@@ -2423,7 +2423,7 @@ IsValidMpGamerTagMovie = HasMpGamerTagCrewFlagsSet
 function IsWarningMessageActive() end
 
 ---@deprecated
-IsWarningMessageActive = IsMedicalDisabled
+IsMedicalDisabled = IsWarningMessageActive
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xAF42195A42C63BBA)  
@@ -2861,7 +2861,7 @@ function N_0xf83d0febe75e62c9(p0, p1, p2, p3, p4, p5, p6, p7) end
 function OpenOnlinePoliciesMenu() end
 
 ---@deprecated
-OpenOnlinePoliciesMenu = ShowSocialClubLegalScreen
+ShowSocialClubLegalScreen = OpenOnlinePoliciesMenu
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x523A590C1A3CC0D3)  
@@ -2871,7 +2871,7 @@ OpenOnlinePoliciesMenu = ShowSocialClubLegalScreen
 function OpenReportugcMenu() end
 
 ---@deprecated
-OpenReportugcMenu = DisplayJobReport
+DisplayJobReport = OpenReportugcMenu
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x75D3691713C3B05A)  
@@ -2931,7 +2931,7 @@ function OverrideMultiplayerChatPrefix(gxtEntryHash) end
 function PauseMenuActivateContext(hash) end
 
 ---@deprecated
-PauseMenuActivateContext = AddFrontendMenuContext
+AddFrontendMenuContext = PauseMenuActivateContext
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x77F16B447824DA6C)  
@@ -2952,7 +2952,7 @@ function PauseMenuceptionTheKick() end
 function PauseMenuDeactivateContext(contextHash) end
 
 ---@deprecated
-PauseMenuDeactivateContext = ObjectDecalToggle
+ObjectDecalToggle = PauseMenuDeactivateContext
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x9245E81072704B8A)  
@@ -2992,7 +2992,7 @@ function PauseMenuIsContextMenuActive() end
 function PauseMenuRedrawInstructionalButtons(p0) end
 
 ---@deprecated
-PauseMenuRedrawInstructionalButtons = EnableDeathbloodSeethrough
+EnableDeathbloodSeethrough = PauseMenuRedrawInstructionalButtons
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC78E239AC5B2DDB9)  
@@ -3040,7 +3040,7 @@ function RaceGalleryAddBlip(x, y, z) end
 function RaceGalleryFullscreen(toggle) end
 
 ---@deprecated
-RaceGalleryFullscreen = SetMapFullScreen
+SetMapFullScreen = RaceGalleryFullscreen
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x1EAE6DD17B7A5EFA)  
@@ -3121,7 +3121,7 @@ function RemoveWarningMessageListItems() end
 function ReplaceHudColour(hudColorIndex, hudColorIndex2) end
 
 ---@deprecated
-ReplaceHudColour = SetHudColoursSwitch
+SetHudColoursSwitch = ReplaceHudColour
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xF314CF4F0211894E)  
@@ -3134,7 +3134,7 @@ ReplaceHudColour = SetHudColoursSwitch
 function ReplaceHudColourWithRgba(hudColorIndex, r, g, b, a) end
 
 ---@deprecated
-ReplaceHudColourWithRgba = SetHudColour
+SetHudColour = ReplaceHudColourWithRgba
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x71A78003C8E71424)  
@@ -3153,7 +3153,7 @@ function RequestAdditionalText(gxt, slot) end
 function RequestAdditionalTextForDlc(gxt, slot) end
 
 ---@deprecated
-RequestAdditionalTextForDlc = RequestAdditionalText_2
+RequestAdditionalText_2 = RequestAdditionalTextForDlc
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xB99C4E4D9499DF29)  
@@ -3221,7 +3221,7 @@ function SetAllowAbilityBarInMultiplayer(toggle) end
 function SetBigmapActive(toggleBigMap, showFullMap) end
 
 ---@deprecated
-SetBigmapActive = SetRadarBigmapEnabled
+SetRadarBigmapEnabled = SetBigmapActive
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x45FF974EEE1C8734)  
@@ -3517,7 +3517,7 @@ function SetBlipSquaredRotation(blip, heading) end
 function SetColourOfNextTextComponent(hudColor) end
 
 ---@deprecated
-SetColourOfNextTextComponent = SetNotificationColorNext
+SetNotificationColorNext = SetColourOfNextTextComponent
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x2632482FD6B9AB87)  
@@ -3673,7 +3673,7 @@ function SetMaxHealthHudDisplay(maximumValue) end
 function SetMinimapAltitudeIndicatorLevel(altitude, p1) end
 
 ---@deprecated
-SetMinimapAltitudeIndicatorLevel = SetMinimapAttitudeIndicatorLevel
+SetMinimapAttitudeIndicatorLevel = SetMinimapAltitudeIndicatorLevel
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x58FADDED207897DC)  
@@ -3734,7 +3734,7 @@ function SetMinimapGolfCourseOff() end
 function SetMinimapHideFow(toggle) end
 
 ---@deprecated
-SetMinimapHideFow = SetMinimapRevealed
+SetMinimapRevealed = SetMinimapHideFow
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x9133955F1A2DA957)  
@@ -3745,9 +3745,9 @@ SetMinimapHideFow = SetMinimapRevealed
 function SetMinimapInPrologue(toggle) end
 
 ---@deprecated
-SetMinimapInPrologue = SetDrawMapVisible
+SetDrawMapVisible = SetMinimapInPrologue
 ---@deprecated
-SetMinimapInPrologue = SetNorthYanktonMap
+SetNorthYanktonMap = SetMinimapInPrologue
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x1A5CD7752DD28CD3)  
@@ -3757,7 +3757,7 @@ SetMinimapInPrologue = SetNorthYanktonMap
 function SetMinimapInSpectatorMode(toggle, ped) end
 
 ---@deprecated
-SetMinimapInSpectatorMode = KeyHudColour
+KeyHudColour = SetMinimapInSpectatorMode
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x6B50FC8749632EC1)  
@@ -3789,7 +3789,7 @@ function SetMissionName_2(p0, name) end
 function SetMouseCursorActiveThisFrame() end
 
 ---@deprecated
-SetMouseCursorActiveThisFrame = ShowCursorThisFrame
+ShowCursorThisFrame = SetMouseCursorActiveThisFrame
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x8DB8CFFD58B62552)  
@@ -3816,7 +3816,7 @@ SetMouseCursorActiveThisFrame = ShowCursorThisFrame
 function SetMouseCursorSprite(spriteId) end
 
 ---@deprecated
-SetMouseCursorSprite = SetCursorSprite
+SetCursorSprite = SetMouseCursorSprite
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x98215325A695E78A)  
@@ -3843,7 +3843,7 @@ function SetMpGamerTagAlpha(gamerTagId, component, alpha) end
 function SetMpGamerTagBigText(gamerTagId, string) end
 
 ---@deprecated
-SetMpGamerTagBigText = SetMpGamerTagChatting
+SetMpGamerTagChatting = SetMpGamerTagBigText
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x613ED644950626AE)  
@@ -3862,7 +3862,7 @@ function SetMpGamerTagColour(gamerTagId, component, hudColorIndex) end
 function SetMpGamerTagDisablePlayerHealthSync(gamerTagId, toggle) end
 
 ---@deprecated
-SetMpGamerTagDisablePlayerHealthSync = SetMpGamerHealthBarDisplay
+SetMpGamerHealthBarDisplay = SetMpGamerTagDisablePlayerHealthSync
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x3158C77A7E888AB4)  
@@ -3872,7 +3872,7 @@ SetMpGamerTagDisablePlayerHealthSync = SetMpGamerHealthBarDisplay
 function SetMpGamerTagHealthBarColour(gamerTagId, hudColorIndex) end
 
 ---@deprecated
-SetMpGamerTagHealthBarColour = SetMpGamerTagHealthBarColor
+SetMpGamerTagHealthBarColor = SetMpGamerTagHealthBarColour
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x9C16459B2324B2CF)  
@@ -3884,7 +3884,7 @@ SetMpGamerTagHealthBarColour = SetMpGamerTagHealthBarColor
 function SetMpGamerTagMpBagLargeCount(gamerTagId, count) end
 
 ---@deprecated
-SetMpGamerTagMpBagLargeCount = SetMpGamerTagUnk
+SetMpGamerTagUnk = SetMpGamerTagMpBagLargeCount
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xDEA2B8283BAA3944)  
@@ -3903,7 +3903,7 @@ function SetMpGamerTagName(gamerTagId, string) end
 function SetMpGamerTagOverridePlayerHealth(gamerTagId, health, maximumHealth) end
 
 ---@deprecated
-SetMpGamerTagOverridePlayerHealth = SetMpGamerHealthBarMax
+SetMpGamerHealthBarMax = SetMpGamerTagOverridePlayerHealth
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA67F9C46D612B6F1)  
@@ -3914,7 +3914,7 @@ SetMpGamerTagOverridePlayerHealth = SetMpGamerHealthBarMax
 function SetMpGamerTagUseVehicleHealth(gamerTagId, toggle) end
 
 ---@deprecated
-SetMpGamerTagUseVehicleHealth = SetMpGamerTagIcons
+SetMpGamerTagIcons = SetMpGamerTagUseVehicleHealth
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x63BB75ABEDC1F6A0)  
@@ -3970,11 +3970,11 @@ function SetMpGamerTagVisibility(gamerTagId, component, toggle) end
 function SetMpGamerTagVisibilityAll(gamerTagId, toggle) end
 
 ---@deprecated
-SetMpGamerTagVisibilityAll = SetMpGamerTag_
+SetMpGamerTag_ = SetMpGamerTagVisibilityAll
 ---@deprecated
-SetMpGamerTagVisibilityAll = SetMpGamerTag
+SetMpGamerTag = SetMpGamerTagVisibilityAll
 ---@deprecated
-SetMpGamerTagVisibilityAll = SetMpGamerTagEnabled
+SetMpGamerTagEnabled = SetMpGamerTagVisibilityAll
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xCF228E2AA03099C3)  
@@ -4054,7 +4054,7 @@ function SetPauseMenuPedSleepState(state) end
 function SetPedAiBlipForcedOn(ped, toggle) end
 
 ---@deprecated
-SetPedAiBlipForcedOn = IsAiBlipAlwaysShown
+IsAiBlipAlwaysShown = SetPedAiBlipForcedOn
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xE52B8E7F85D39A08)  
@@ -4064,7 +4064,7 @@ SetPedAiBlipForcedOn = IsAiBlipAlwaysShown
 function SetPedAiBlipGangId(ped, gangId) end
 
 ---@deprecated
-SetPedAiBlipGangId = SetAiBlipType
+SetAiBlipType = SetPedAiBlipGangId
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x3EED80DFF7325CAA)  
@@ -4074,7 +4074,7 @@ SetPedAiBlipGangId = SetAiBlipType
 function SetPedAiBlipHasCone(ped, toggle) end
 
 ---@deprecated
-SetPedAiBlipHasCone = HideSpecialAbilityLockonOperation
+HideSpecialAbilityLockonOperation = SetPedAiBlipHasCone
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x97C65887D4B37FA9)  
@@ -4084,7 +4084,7 @@ SetPedAiBlipHasCone = HideSpecialAbilityLockonOperation
 function SetPedAiBlipNoticeRange(ped, range) end
 
 ---@deprecated
-SetPedAiBlipNoticeRange = SetAiBlipMaxDistance
+SetAiBlipMaxDistance = SetPedAiBlipNoticeRange
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xFCFACD0DB9D7A57D)  
@@ -4104,9 +4104,9 @@ function SetPedAiBlipSprite(ped, spriteId) end
 function SetPedHasAiBlip(ped, hasCone) end
 
 ---@deprecated
-SetPedHasAiBlip = SetPedEnemyAiBlip
+SetPedEnemyAiBlip = SetPedHasAiBlip
 ---@deprecated
-SetPedHasAiBlip = SetPedAiBlip
+SetPedAiBlip = SetPedHasAiBlip
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xB13DCB4C6FAAD238)  
@@ -4137,7 +4137,7 @@ function SetPlayerBlipPositionThisFrame(x, y) end
 function SetPlayerIsInDirectorMode(toggle) end
 
 ---@deprecated
-SetPlayerIsInDirectorMode = SetDirectorMode
+SetDirectorMode = SetPlayerIsInDirectorMode
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x1EAC5F91BCBC5073)  
@@ -4178,7 +4178,7 @@ function SetRadarZoom(zoomLevel) end
 function SetRadarZoomPrecise(zoom) end
 
 ---@deprecated
-SetRadarZoomPrecise = RespondingAsTemp
+RespondingAsTemp = SetRadarZoomPrecise
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xF98E4B3E56AFC7B1)  
@@ -4194,7 +4194,7 @@ function SetRadarZoomToBlip(blip, zoom) end
 function SetRadarZoomToDistance(zoom) end
 
 ---@deprecated
-SetRadarZoomToDistance = SetRadarZoomLevelThisFrame
+SetRadarZoomLevelThisFrame = SetRadarZoomToDistance
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x25615540D894B814)  
@@ -4536,7 +4536,7 @@ function SetWarningMessageListRow(index, name, cash, rp, lvl, colour) end
 function SetWarningMessageWithAlert(labelTitle, labelMsg, p2, p3, labelMsg2, p5, p6, p7, p8, p9, background, errorCode) end
 
 ---@deprecated
-SetWarningMessageWithAlert = DrawFrontendAlert
+DrawFrontendAlert = SetWarningMessageWithAlert
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xDC38CC1E35B6A5D7)  
@@ -4564,7 +4564,7 @@ SetWarningMessageWithAlert = DrawFrontendAlert
 function SetWarningMessageWithHeader(titleMsg, entryLine1, flags, promptMsg, p4, p5, background, showBg) end
 
 ---@deprecated
-SetWarningMessageWithHeader = SetWarningMessage_2
+SetWarningMessage_2 = SetWarningMessageWithHeader
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x701919482C74B5AB)  
@@ -4587,7 +4587,7 @@ SetWarningMessageWithHeader = SetWarningMessage_2
 function SetWarningMessageWithHeaderAndSubstringFlags(entryHeader, entryLine1, instructionalKey, entryLine2, p4, p5, p6, p9) end
 
 ---@deprecated
-SetWarningMessageWithHeaderAndSubstringFlags = SetWarningMessage_3
+SetWarningMessage_3 = SetWarningMessageWithHeaderAndSubstringFlags
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x38B55259C2E078ED)  
@@ -4637,7 +4637,7 @@ function SetWidescreenFormat(p0) end
 function ShowCrewIndicatorOnBlip(blip, toggle) end
 
 ---@deprecated
-ShowCrewIndicatorOnBlip = SetBlipCrew
+SetBlipCrew = ShowCrewIndicatorOnBlip
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x23C3EB807312F01A)  
@@ -4649,7 +4649,7 @@ ShowCrewIndicatorOnBlip = SetBlipCrew
 function ShowFriendIndicatorOnBlip(blip, toggle) end
 
 ---@deprecated
-ShowFriendIndicatorOnBlip = SetBlipFriend
+SetBlipFriend = ShowFriendIndicatorOnBlip
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xCAC2031EBF79B1A8)  
@@ -4731,7 +4731,7 @@ function ShowNumberOnBlip(blip, number) end
 function ShowOutlineIndicatorOnBlip(blip, toggle) end
 
 ---@deprecated
-ShowOutlineIndicatorOnBlip = SetBlipFriendly
+SetBlipFriendly = ShowOutlineIndicatorOnBlip
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x4F38DCA127DAAEA2)  
@@ -4764,7 +4764,7 @@ function ShowStartMissionInstructionalButton(p0) end
 function ShowTickOnBlip(blip, toggle) end
 
 ---@deprecated
-ShowTickOnBlip = SetBlipChecked
+SetBlipChecked = ShowTickOnBlip
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xDB34E8D56FC13B08)  
@@ -4814,7 +4814,7 @@ function TakeControlOfFrontend() end
 function ThefeedClearFrozenPost() end
 
 ---@deprecated
-ThefeedClearFrozenPost = ThefeedFlushPersistent
+ThefeedFlushPersistent = ThefeedClearFrozenPost
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xADED7F5748ACAFE6)  
@@ -4824,7 +4824,7 @@ ThefeedClearFrozenPost = ThefeedFlushPersistent
 function ThefeedCommentTeleportPoolOff() end
 
 ---@deprecated
-ThefeedCommentTeleportPoolOff = ThefeedShowGtaoTooltips
+ThefeedShowGtaoTooltips = ThefeedCommentTeleportPoolOff
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x56C8B608CFD49854)  
@@ -4839,7 +4839,7 @@ function ThefeedCommentTeleportPoolOn() end
 function ThefeedDisableLoadingScreenTips() end
 
 ---@deprecated
-ThefeedDisableLoadingScreenTips = ThefeedDisable
+ThefeedDisable = ThefeedDisableLoadingScreenTips
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x15CFA549788D35EF)  
@@ -4847,7 +4847,7 @@ ThefeedDisableLoadingScreenTips = ThefeedDisable
 function ThefeedDisplayLoadingScreenTips() end
 
 ---@deprecated
-ThefeedDisplayLoadingScreenTips = ThefeedEnable
+ThefeedEnable = ThefeedDisplayLoadingScreenTips
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA8FDB297A8D25FBA)  
@@ -4860,7 +4860,7 @@ function ThefeedFlushQueue() end
 function ThefeedForceRenderOff() end
 
 ---@deprecated
-ThefeedForceRenderOff = ThefeedHideGtaoTooltips
+ThefeedHideGtaoTooltips = ThefeedForceRenderOff
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA13C11E1B5C06BFC)  
@@ -4875,7 +4875,7 @@ function ThefeedForceRenderOn() end
 function ThefeedFreezeNextPost() end
 
 ---@deprecated
-ThefeedFreezeNextPost = ThefeedSetNextPostPersistent
+ThefeedSetNextPostPersistent = ThefeedFreezeNextPost
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x82352748437638CA)  
@@ -4886,9 +4886,9 @@ ThefeedFreezeNextPost = ThefeedSetNextPostPersistent
 function ThefeedGetFirstVisibleDeleteRemaining() end
 
 ---@deprecated
-ThefeedGetFirstVisibleDeleteRemaining = GetCurrentNotification
+GetCurrentNotification = ThefeedGetFirstVisibleDeleteRemaining
 ---@deprecated
-ThefeedGetFirstVisibleDeleteRemaining = ThefeedGetCurrentNotification
+ThefeedGetCurrentNotification = ThefeedGetFirstVisibleDeleteRemaining
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x25F87B30C382FCA7)  
@@ -4896,7 +4896,7 @@ ThefeedGetFirstVisibleDeleteRemaining = ThefeedGetCurrentNotification
 function ThefeedHideThisFrame() end
 
 ---@deprecated
-ThefeedHideThisFrame = HideHudNotificationsThisFrame
+HideHudNotificationsThisFrame = ThefeedHideThisFrame
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA9CBFD40B3FA3010)  
@@ -4924,7 +4924,7 @@ function ThefeedPause() end
 function ThefeedRemoveItem(notificationId) end
 
 ---@deprecated
-ThefeedRemoveItem = RemoveNotification
+RemoveNotification = ThefeedRemoveItem
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xFDD85225B2DEA55E)  
@@ -4932,7 +4932,7 @@ ThefeedRemoveItem = RemoveNotification
 function ThefeedResetAllParameters() end
 
 ---@deprecated
-ThefeedResetAllParameters = ThefeedClearAnimpostfx
+ThefeedClearAnimpostfx = ThefeedResetAllParameters
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xE1CD1E48E025E661)  
@@ -4949,7 +4949,7 @@ function ThefeedResume() end
 function ThefeedSetAnimpostfxColor(red, green, blue, alpha) end
 
 ---@deprecated
-ThefeedSetAnimpostfxColor = SetNotificationFlashColor
+SetNotificationFlashColor = ThefeedSetAnimpostfxColor
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x17AD8C9706BDD88A)  
@@ -4990,9 +4990,9 @@ function ThefeedSetFlushAnimpostfx(toggle) end
 function ThefeedSetNextPostBackgroundColor(hudColorIndex) end
 
 ---@deprecated
-ThefeedSetNextPostBackgroundColor = SetNotificationBackgroundColor
+SetNotificationBackgroundColor = ThefeedSetNextPostBackgroundColor
 ---@deprecated
-ThefeedSetNextPostBackgroundColor = ThefeedNextPostBackgroundColor
+ThefeedNextPostBackgroundColor = ThefeedSetNextPostBackgroundColor
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x55598D21339CB998)  
@@ -5001,7 +5001,7 @@ ThefeedSetNextPostBackgroundColor = ThefeedNextPostBackgroundColor
 function ThefeedSetScriptedMenuHeight(pos) end
 
 ---@deprecated
-ThefeedSetScriptedMenuHeight = ClearNotificationsPos
+ClearNotificationsPos = ThefeedSetScriptedMenuHeight
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xB695E2CD0A2DA9EE)  
@@ -5009,7 +5009,7 @@ ThefeedSetScriptedMenuHeight = ClearNotificationsPos
 function ThefeedSpsExtendWidescreenOff() end
 
 ---@deprecated
-ThefeedSpsExtendWidescreenOff = ThefeedDisableBaselineOffset
+ThefeedDisableBaselineOffset = ThefeedSpsExtendWidescreenOff
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xD4438C0564490E63)  
@@ -5017,7 +5017,7 @@ ThefeedSpsExtendWidescreenOff = ThefeedDisableBaselineOffset
 function ThefeedSpsExtendWidescreenOn() end
 
 ---@deprecated
-ThefeedSpsExtendWidescreenOn = ThefeedEnableBaselineOffset
+ThefeedEnableBaselineOffset = ThefeedSpsExtendWidescreenOn
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x317EBA71D7543F52)  
@@ -5033,7 +5033,7 @@ ThefeedSpsExtendWidescreenOn = ThefeedEnableBaselineOffset
 function ThefeedUpdateItemTexture(txdString1, txnString1, txdString2, txnString2) end
 
 ---@deprecated
-ThefeedUpdateItemTexture = ThefeedAddTxdRef
+ThefeedAddTxdRef = ThefeedUpdateItemTexture
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x6AFDFB93754950C7)  
