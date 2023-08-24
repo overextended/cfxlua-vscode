@@ -90,12 +90,18 @@ function N_0xe3e5a7c64ca2c6ed() end
 ---@return boolean, any
 function NetGameserverBasketAddItem(quantity) end
 
+---@deprecated
+NetGameserverBasketAddItem = NetworkShopBasketAddItem
+
 ---**`NETSHOPPING` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xE1A0450ED46A7812)  
 ---This native does not have an official description.
 ---@param p0 any
 ---@return boolean, any
 function NetGameserverBasketApplyServerData(p0) end
+
+---@deprecated
+NetGameserverBasketApplyServerData = NetworkShopBasketApplyServerData
 
 ---**`NETSHOPPING` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xFA336E7F40C0A0D0)  
@@ -111,11 +117,17 @@ function NetGameserverBasketDelete() end
 ---@return boolean
 function NetGameserverBasketEnd() end
 
+---@deprecated
+NetGameserverBasketEnd = NetworkShopBasketEnd
+
 ---**`NETSHOPPING` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x27F76CC6C55AD30E)  
 ---This native does not have an official description.
 ---@return boolean
 function NetGameserverBasketIsFull() end
+
+---@deprecated
+NetGameserverBasketIsFull = NetworkShopBasketIsFull
 
 ---**`NETSHOPPING` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x279F08B1A4B29B7E)  
@@ -125,6 +137,9 @@ function NetGameserverBasketIsFull() end
 ---@param flags number
 ---@return boolean, number
 function NetGameserverBasketStart(categoryHash, actionHash, flags) end
+
+---@deprecated
+NetGameserverBasketStart = NetworkShopBasketStart
 
 ---**`NETSHOPPING` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x3C5FD37B5499582E)  
@@ -136,6 +151,9 @@ function NetGameserverBasketStart(categoryHash, actionHash, flags) end
 ---@param flags number
 ---@return boolean, number
 function NetGameserverBeginService(categoryHash, itemHash, actionTypeHash, value, flags) end
+
+---@deprecated
+NetGameserverBeginService = NetworkShopBeginService
 
 ---**`NETSHOPPING` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x3C4487461E9B0DCB)  
@@ -150,6 +168,11 @@ function NetGameserverCatalogIsReady() end
 ---@return boolean
 function NetGameserverCatalogItemExists(name) end
 
+---@deprecated
+NetGameserverCatalogItemExists = NetworkShopIsItemUnlocked
+---@deprecated
+NetGameserverCatalogItemExists = NetworkShopDoesItemExist
+
 ---**`NETSHOPPING` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x247F0F73A182EA0B)  
 ---This native does not have an official description.
@@ -157,12 +180,20 @@ function NetGameserverCatalogItemExists(name) end
 ---@return boolean
 function NetGameserverCatalogItemExistsHash(hash) end
 
+---@deprecated
+NetGameserverCatalogItemExistsHash = NetworkShopIsItemUnlockedHash
+---@deprecated
+NetGameserverCatalogItemExistsHash = NetworkShopDoesItemExistHash
+
 ---**`NETSHOPPING` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x39BE7CEA8D9CC8E6)  
 ---This native does not have an official description.
 ---@param transactionId number
 ---@return boolean
 function NetGameserverCheckoutStart(transactionId) end
+
+---@deprecated
+NetGameserverCheckoutStart = NetworkShopCheckoutStart
 
 ---**`NETSHOPPING` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x51F1A8E48C3D2F6D)  
@@ -185,12 +216,20 @@ function NetGameserverDeleteCharacterSlotGetStatus() end
 ---@return boolean
 function NetGameserverDeleteSetTelemetryNonceSeed() end
 
+---@deprecated
+NetGameserverDeleteSetTelemetryNonceSeed = NetworkShopDeleteSetTelemetryNonceSeed
+
 ---**`NETSHOPPING` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xE2A99A9B524BEFFF)  
 ---This native does not have an official description.
 ---@param transactionId number
 ---@return boolean
 function NetGameserverEndService(transactionId) end
+
+---@deprecated
+NetGameserverEndService = NetworkShopEndService
+---@deprecated
+NetGameserverEndService = NetworkShopTerminateService
 
 ---**`NETSHOPPING` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x35A1B3E1D1315CFA)  
@@ -219,6 +258,9 @@ function NetGameserverGetCatalogState() end
 ---@return number
 function NetGameserverGetPrice(itemHash, categoryHash, p2) end
 
+---@deprecated
+NetGameserverGetPrice = NetworkShopGetPrice
+
 ---**`NETSHOPPING` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x897433D292B44130)  
 ---This native does not have an official description.
@@ -237,12 +279,18 @@ function NetGameserverIsCatalogValid() end
 ---@return boolean
 function NetGameserverIsSessionRefreshPending() end
 
+---@deprecated
+NetGameserverIsSessionRefreshPending = NetworkShopGetTransactionsDisabled
+
 ---**`NETSHOPPING` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xB24F0944DA203D9E)  
 ---This native does not have an official description.
 ---@param charSlot number
 ---@return boolean
 function NetGameserverIsSessionValid(charSlot) end
+
+---@deprecated
+NetGameserverIsSessionValid = NetworkShopGetTransactionsEnabledForCharacter
 
 ---**`NETSHOPPING` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x2F41D51BA3BCD1F1)  
@@ -251,12 +299,18 @@ function NetGameserverIsSessionValid(charSlot) end
 ---@return boolean
 function NetGameserverSessionApplyReceivedData(charSlot) end
 
+---@deprecated
+NetGameserverSessionApplyReceivedData = NetworkShopSessionApplyReceivedData
+
 ---**`NETSHOPPING` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x9507D4271988E1AE)  
 ---This native does not have an official description.
 ---@param p0 number
 ---@return boolean
 function NetGameserverSetTelemetryNonceSeed(p0) end
+
+---@deprecated
+NetGameserverSetTelemetryNonceSeed = NetworkShopSetTelemetryNonceSeed
 
 ---**`NETSHOPPING` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA135AC892A58FC07)  
@@ -265,6 +319,9 @@ function NetGameserverSetTelemetryNonceSeed(p0) end
 ---@return boolean
 function NetGameserverStartSession(charSlot) end
 
+---@deprecated
+NetGameserverStartSession = NetworkShopStartSession
+
 ---**`NETSHOPPING` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xD47A2C1BA117471D)  
 ---This native does not have an official description.
@@ -272,6 +329,9 @@ function NetGameserverStartSession(charSlot) end
 ---@param amount number
 ---@return boolean
 function NetGameserverTransferBankToWallet(charSlot, amount) end
+
+---@deprecated
+NetGameserverTransferBankToWallet = NetworkTransferBankToWallet
 
 ---**`NETSHOPPING` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x23789E777D14CE44)  
@@ -297,6 +357,9 @@ function NetGameserverTransferCashGetStatus_2() end
 ---@return boolean
 function NetGameserverTransferCashSetTelemetryNonceSeed() end
 
+---@deprecated
+NetGameserverTransferCashSetTelemetryNonceSeed = NetworkShopCashTransferSetTelemetryNonceSeed
+
 ---**`NETSHOPPING` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC2F7FE5309181C7D)  
 ---This native does not have an official description.
@@ -304,6 +367,9 @@ function NetGameserverTransferCashSetTelemetryNonceSeed() end
 ---@param amount number
 ---@return boolean
 function NetGameserverTransferWalletToBank(charSlot, amount) end
+
+---@deprecated
+NetGameserverTransferWalletToBank = NetworkTransferWalletToBank
 
 ---**`NETSHOPPING` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x7D2708796355B20B)  

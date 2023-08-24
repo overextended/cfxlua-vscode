@@ -12,6 +12,9 @@
 ---@return number
 function AddRoadNodeSpeedZone(x, y, z, radius, speed, p5) end
 
+---@deprecated
+AddRoadNodeSpeedZone = AddSpeedZoneForCoord
+
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x54B0F614960F4A5F)  
 ---This native does not have an official description.
@@ -24,6 +27,9 @@ function AddRoadNodeSpeedZone(x, y, z, radius, speed, p5) end
 ---@param p6 number
 ---@return any
 function AddVehicleCombatAngledAvoidanceArea(p0, p1, p2, p3, p4, p5, p6) end
+
+---@deprecated
+AddVehicleCombatAngledAvoidanceArea = AddVehicleCombatAvoidanceArea
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x99AD4CCCB128CBC9)  
@@ -67,12 +73,18 @@ function AreAllVehicleWindowsIntact(vehicle) end
 ---@return boolean
 function AreAnyVehicleSeatsFree(vehicle) end
 
+---@deprecated
+AreAnyVehicleSeatsFree = IsAnyVehicleSeatEmpty
+
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xD0917A423314BBA8)  
 ---Returns true when the bomb bay doors of this plane are open. False if they're closed.
 ---@param aircraft number
 ---@return boolean
 function AreBombBayDoorsOpen(aircraft) end
+
+---@deprecated
+AreBombBayDoorsOpen = GetAreBombBayDoorsOpen
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xAEF12960FA943792)  
@@ -104,12 +116,20 @@ function AreOutriggerLegsDeployed(vehicle) end
 ---@return boolean
 function ArePlanePropellersIntact(plane) end
 
+---@deprecated
+ArePlanePropellersIntact = ArePropellersUndamaged
+
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x5991A01434CE9677)  
 ---This native does not have an official description.
 ---@param plane number
 ---@return boolean
 function ArePlaneWingsIntact(plane) end
+
+---@deprecated
+ArePlaneWingsIntact = AddAMarkerOverVehicle
+---@deprecated
+ArePlaneWingsIntact = AreVehicleWingsIntact
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x6A98C2ECF57FA5D4)  
@@ -193,12 +213,20 @@ function AttachVehicleToTrailer(vehicle, trailer, radius) end
 ---@param unknown boolean
 function BringVehicleToHalt(vehicle, distance, duration, unknown) end
 
+---@deprecated
+BringVehicleToHalt = SetVehicleHalt
+
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x26C10ECBDA5D043B)  
 ---This native does not have an official description.
 ---@param vehicle number
 ---@return boolean
 function CanAnchorBoatHere(vehicle) end
+
+---@deprecated
+CanAnchorBoatHere = GetBoatAnchor
+---@deprecated
+CanAnchorBoatHere = CanBoatBeAnchored
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x24F4121D07579880)  
@@ -210,6 +238,9 @@ function CanAnchorBoatHere(vehicle) end
 ---@param vehicle number
 ---@return boolean
 function CanAnchorBoatHere_2(vehicle) end
+
+---@deprecated
+CanAnchorBoatHere_2 = CanBoatBeAnchored_2
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x30785D90C956BF35)  
@@ -266,6 +297,9 @@ function CloseBombBayDoors(vehicle) end
 ---@param vehicle number
 ---@param state number
 function ControlLandingGear(vehicle, state) end
+
+---@deprecated
+ControlLandingGear = SetVehicleLandingGear
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xE44A982368A4AF23)  
@@ -333,6 +367,9 @@ function CreateMissionTrain(variation, x, y, z, direction) end
 ---@param cargobob number
 ---@param state number
 function CreatePickUpRopeForCargobob(cargobob, state) end
+
+---@deprecated
+CreatePickUpRopeForCargobob = EnableCargobobHook
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x9DEF883114668116)  
@@ -475,12 +512,18 @@ function DetachVehicleFromTrailer(vehicle) end
 ---This native does not have an official description.
 function DetonateVehiclePhoneExplosiveDevice() end
 
+---@deprecated
+DetonateVehiclePhoneExplosiveDevice = RequestVehiclePhoneExplosion
+
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x500873A45724C863)  
 ---This native does not have an official description.
 ---@param vehicle number
 ---@param propeller number
 function DisableIndividualPlanePropeller(vehicle, propeller) end
+
+---@deprecated
+DisableIndividualPlanePropeller = DisablePlanePropeller
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x23428FC53C60919C)  
@@ -534,6 +577,9 @@ function DisableVehicleWorldCollision(vehicle) end
 ---@return boolean
 function DoesCargobobHavePickupMagnet(cargobob) end
 
+---@deprecated
+DoesCargobobHavePickupMagnet = IsCargobobMagnetActive
+
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x1821D91AD4B56108)  
 ---```
@@ -542,6 +588,9 @@ function DoesCargobobHavePickupMagnet(cargobob) end
 ---@param cargobob number
 ---@return boolean
 function DoesCargobobHavePickUpRope(cargobob) end
+
+---@deprecated
+DoesCargobobHavePickUpRope = IsCargobobHookActive
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x1262D55792428154)  
@@ -584,6 +633,9 @@ function DoesVehicleExistWithDecorator(decorator) end
 ---@param vehicle number
 ---@return boolean
 function DoesVehicleHaveLandingGear(vehicle) end
+
+---@deprecated
+DoesVehicleHaveLandingGear = GetVehicleHasLandingGear
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x8AC862B0B32C5B80)  
@@ -647,6 +699,9 @@ function EjectJb700Roof(vehicle, x, y, z) end
 ---@param avoidObstacles boolean
 function EnableAircraftObstacleAvoidance(vehicle, avoidObstacles) end
 
+---@deprecated
+EnableAircraftObstacleAvoidance = N_0x8aa9180de2fedd45
+
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xBA71116ADF5B514C)  
 ---```
@@ -690,6 +745,9 @@ function FindRandomPointInSpace(ped) end
 ---@param entity number
 ---@return number
 function FindVehicleCarryingThisEntity(entity) end
+
+---@deprecated
+FindVehicleCarryingThisEntity = GetVehicleAttachedToEntity
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x772282EBEB95E682)  
@@ -753,6 +811,11 @@ function GetBoatBoomPositionRatio_3(vehicle, p1) end
 ---@param vehicle number
 ---@return boolean
 function GetCanVehicleJump(vehicle) end
+
+---@deprecated
+GetCanVehicleJump = HasVehicleJumpingAbility
+---@deprecated
+GetCanVehicleJump = DoesVehicleHaveJumpingAbility
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xCBDB9B923CACC92D)  
@@ -869,12 +932,22 @@ function GetEntryPositionOfDoor(vehicle, doorIndex) end
 ---@return boolean
 function GetHasRetractableWheels(vehicle) end
 
+---@deprecated
+GetHasRetractableWheels = GetHasLowerableWheels
+---@deprecated
+GetHasRetractableWheels = DoesVehicleHaveRetractableWheels
+
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x36D782F68B309BDA)  
 ---This native does not have an official description.
 ---@param vehicle number
 ---@return boolean
 function GetHasRocketBoost(vehicle) end
+
+---@deprecated
+GetHasRocketBoost = HasVehicleRocketBoost
+---@deprecated
+GetHasRocketBoost = DoesVehicleHaveRocketBoost
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xE4CB7541F413D2C5)  
@@ -895,6 +968,9 @@ function GetHeliMainRotorHealth(vehicle) end
 ---@param vehicle number
 ---@return number
 function GetHeliTailBoomHealth(vehicle) end
+
+---@deprecated
+GetHeliTailBoomHealth = GetHeliEngineHealth
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xAE8CE82A4219AC8C)  
@@ -924,6 +1000,9 @@ function GetHydraulicWheelValue(vehicle, wheelId) end
 ---@return boolean
 function GetIsDoorValid(vehicle, doorIndex) end
 
+---@deprecated
+GetIsDoorValid = DoesVehicleHaveDoor
+
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x5EF77C9ADD3B11A3)  
 ---```
@@ -933,6 +1012,9 @@ function GetIsDoorValid(vehicle, doorIndex) end
 ---@return boolean
 function GetIsLeftVehicleHeadlightDamaged(vehicle) end
 
+---@deprecated
+GetIsLeftVehicleHeadlightDamaged = IsHeadlightLBroken
+
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA7ECB73355EB2F20)  
 ---```
@@ -941,6 +1023,9 @@ function GetIsLeftVehicleHeadlightDamaged(vehicle) end
 ---@param vehicle number
 ---@return boolean
 function GetIsRightVehicleHeadlightDamaged(vehicle) end
+
+---@deprecated
+GetIsRightVehicleHeadlightDamaged = IsHeadlightRBroken
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x0506ED94363AD905)  
@@ -961,6 +1046,9 @@ function GetIsVehicleEmpDisabled(vehicle) end
 ---@param vehicle number
 ---@return boolean
 function GetIsVehicleEngineRunning(vehicle) end
+
+---@deprecated
+GetIsVehicleEngineRunning = IsVehicleEngineOn
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xF095C0405307B21B)  
@@ -1009,6 +1097,9 @@ function GetIsWheelsLoweredStateActive(vehicle) end
 ---@param vehicle number
 ---@return number
 function GetLandingGearState(vehicle) end
+
+---@deprecated
+GetLandingGearState = GetVehicleLandingGear
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xB2D06FAEDE65B577)  
@@ -1392,12 +1483,18 @@ function GetVehicleBodyHealth(vehicle) end
 ---@return number
 function GetVehicleBombCount(aircraft) end
 
+---@deprecated
+GetVehicleBombCount = GetAircraftBombCount
+
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA916396DF4154EE3)  
 ---This native does not have an official description.
 ---@param vehicle number
 ---@return boolean
 function GetVehicleCanActivateParachute(vehicle) end
+
+---@deprecated
+GetVehicleCanActivateParachute = CanVehicleParachuteBeActivated
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xE495D1EF4C91FD20)  
@@ -1448,6 +1545,9 @@ function GetVehicleClass(vehicle) end
 ---@param vehicleClass number
 ---@return number
 function GetVehicleClassEstimatedMaxSpeed(vehicleClass) end
+
+---@deprecated
+GetVehicleClassEstimatedMaxSpeed = GetVehicleClassMaxSpeed
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xDEDF1C8BD47C2200)  
@@ -1519,6 +1619,9 @@ function GetVehicleColours(vehicle) end
 ---@return number
 function GetVehicleCountermeasureCount(aircraft) end
 
+---@deprecated
+GetVehicleCountermeasureCount = GetAircraftCountermeasureCount
+
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x36492C2F0D134C56)  
 ---```
@@ -1549,6 +1652,9 @@ function GetVehicleCustomSecondaryColour(vehicle) end
 ---@param vehicle number
 ---@return number
 function GetVehicleDashboardColor(vehicle) end
+
+---@deprecated
+GetVehicleDashboardColor = GetVehicleDashboardColour
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x4EC6CFBC7B2E9536)  
@@ -1644,12 +1750,18 @@ function GetVehicleEngineHealth(vehicle) end
 ---@return number
 function GetVehicleEnveffScale(vehicle) end
 
+---@deprecated
+GetVehicleEnveffScale = GetVehiclePaintFade
+
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x53AF99BAA671CA47)  
 ---This native does not have an official description.
 ---@param vehicle number
 ---@return number
 function GetVehicleEstimatedMaxSpeed(vehicle) end
+
+---@deprecated
+GetVehicleEstimatedMaxSpeed = GetVehicleMaxSpeed
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x3BC4245933A166F7)  
@@ -1665,6 +1777,13 @@ function GetVehicleExtraColours(vehicle) end
 ---@return number
 function GetVehicleFlightNozzlePosition(aircraft) end
 
+---@deprecated
+GetVehicleFlightNozzlePosition = GetPlaneHoverModePercentage
+---@deprecated
+GetVehicleFlightNozzlePosition = GetVehicleHoverModePercentage
+---@deprecated
+GetVehicleFlightNozzlePosition = GetPlaneVtolDirection
+
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x50634E348C8D44EF)  
 ---This native does not have an official description.
@@ -1672,12 +1791,20 @@ function GetVehicleFlightNozzlePosition(aircraft) end
 ---@return boolean
 function GetVehicleHasKers(vehicle) end
 
+---@deprecated
+GetVehicleHasKers = HasVehicleKersBoost
+
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xBC9CFF381338CB4F)  
 ---This native does not have an official description.
 ---@param vehicle number
 ---@return boolean
 function GetVehicleHasParachute(vehicle) end
+
+---@deprecated
+GetVehicleHasParachute = HasVehicleParachute
+---@deprecated
+GetVehicleHasParachute = DoesVehicleHaveParachute
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xB8EF61207C2393A9)  
@@ -1692,6 +1819,9 @@ function GetVehicleHasParachute(vehicle) end
 ---@param vehicle number
 ---@return number
 function GetVehicleHealthPercentage(vehicle) end
+
+---@deprecated
+GetVehicleHealthPercentage = GetVehicleBodyHealth_2
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xE6B0E8CFC3633BF0)  
@@ -1711,6 +1841,9 @@ function GetVehicleHomingLockonState(vehicle) end
 ---@param vehicle number
 ---@return number
 function GetVehicleInteriorColor(vehicle) end
+
+---@deprecated
+GetVehicleInteriorColor = GetVehicleInteriorColour
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xD4C4642CB7F50B5D)  
@@ -1761,6 +1894,9 @@ function GetVehicleLiveryCount(vehicle) end
 ---@param vehicle number
 ---@return boolean, number
 function GetVehicleLockOnTarget(vehicle) end
+
+---@deprecated
+GetVehicleLockOnTarget = GetVehicleOwner
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xAD7E85FC227197C4)  
@@ -1844,6 +1980,9 @@ function GetVehicleModelAcceleration(modelHash) end
 ---@return number
 function GetVehicleModelEstimatedAgility(modelHash) end
 
+---@deprecated
+GetVehicleModelEstimatedAgility = GetVehicleModelDownForce
+
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xF417C2502FFFED43)  
 ---```
@@ -1852,6 +1991,9 @@ function GetVehicleModelEstimatedAgility(modelHash) end
 ---@param modelHash number | string
 ---@return number
 function GetVehicleModelEstimatedMaxSpeed(modelHash) end
+
+---@deprecated
+GetVehicleModelEstimatedMaxSpeed = GetVehicleModelMaxSpeed
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xDC53FD41B4ED944C)  
@@ -1868,6 +2010,9 @@ function GetVehicleModelMaxBraking(modelHash) end
 ---@param modelHash number | string
 ---@return number
 function GetVehicleModelMaxBrakingMaxMods(modelHash) end
+
+---@deprecated
+GetVehicleModelMaxBrakingMaxMods = GetVehicleModelHandBrake
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC6AD107DDC9054CC)  
@@ -1907,6 +2052,9 @@ function GetVehicleModelMoveResistance(modelHash) end
 ---@return number
 function GetVehicleModelNumberOfSeats(modelHash) end
 
+---@deprecated
+GetVehicleModelNumberOfSeats = GetVehicleModelMaxNumberOfPassengers
+
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x5873C14A52D74236)  
 ---```
@@ -1915,6 +2063,9 @@ function GetVehicleModelNumberOfSeats(modelHash) end
 ---@param vehicleModel number | string
 ---@return number
 function GetVehicleModelValue(vehicleModel) end
+
+---@deprecated
+GetVehicleModelValue = GetVehicleModelMonetaryValue
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x4593CF82AA179706)  
@@ -1926,6 +2077,9 @@ function GetVehicleModelValue(vehicleModel) end
 ---@param modIndex number
 ---@return number
 function GetVehicleModIdentifierHash(vehicle, modType, modIndex) end
+
+---@deprecated
+GetVehicleModIdentifierHash = GetVehicleModData
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x6325D1A044AE510D)  
@@ -2185,6 +2339,11 @@ function GetVehicleWindowTint(vehicle) end
 ---@return number
 function GetVehicleXenonLightsColor(vehicle) end
 
+---@deprecated
+GetVehicleXenonLightsColor = GetVehicleHeadlightsColour
+---@deprecated
+GetVehicleXenonLightsColor = GetVehicleXenonLightsColour
+
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x91D6DD290888CBAB)  
 ---```
@@ -2228,6 +2387,9 @@ function HasVehicleRecordingBeenLoaded(recording, script) end
 ---@return boolean
 function HaveVehicleModsStreamedIn(vehicle) end
 
+---@deprecated
+HaveVehicleModsStreamedIn = IsVehicleModLoadDone
+
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xAE71FB656C600587)  
 ---```
@@ -2255,6 +2417,11 @@ function IsAnyEntityAttachedToHandlerFrame(vehicle) end
 ---@param vehicle number
 ---@return boolean
 function IsAnyPedRappellingFromHeli(vehicle) end
+
+---@deprecated
+IsAnyPedRappellingFromHeli = AnyPassengersRappeling
+---@deprecated
+IsAnyPedRappellingFromHeli = IsAnyPassengerRappelingFromVehicle
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x61E1DD6125A3EEE6)  
@@ -2308,6 +2475,11 @@ function IsCopVehicleInArea_3d(x1, x2, y1, y2, z1, z2) end
 ---@return boolean
 function IsEntityAttachedToHandlerFrame(vehicle, entity) end
 
+---@deprecated
+IsEntityAttachedToHandlerFrame = SetPedEnabledBikeRingtone
+---@deprecated
+IsEntityAttachedToHandlerFrame = IsVehicleNearEntity
+
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x89D630CF5EA96D23)  
 ---This native does not have an official description.
@@ -2357,6 +2529,9 @@ function IsPedExclusiveDriverOfVehicle(ped, vehicle, outIndex) end
 ---@param plane number
 ---@return boolean
 function IsPlaneLandingGearIntact(plane) end
+
+---@deprecated
+IsPlaneLandingGearIntact = VehicleHasLandingGear
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x1C8A4C2C19E68EEC)  
@@ -2432,6 +2607,11 @@ function IsThisModelAHeli(model) end
 ---@param model number | string
 ---@return boolean
 function IsThisModelAJetski(model) end
+
+---@deprecated
+IsThisModelAJetski = IsThisModelASubmersible
+---@deprecated
+IsThisModelAJetski = IsThisModelAnEmergencyBoat
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x633F6F44A537EBB6)  
@@ -2653,6 +2833,9 @@ function IsVehicleInGarageArea(garageName, vehicle) end
 ---@return boolean
 function IsVehicleInSubmarineMode(vehicle) end
 
+---@deprecated
+IsVehicleInSubmarineMode = GetIsSubmarineVehicleTransformed
+
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x423E8DE37D934D89)  
 ---This native does not have an official description.
@@ -2775,6 +2958,9 @@ function IsVehicleSeatFree(vehicle, seatIndex) end
 ---@return boolean
 function IsVehicleSirenAudioOn(vehicle) end
 
+---@deprecated
+IsVehicleSirenAudioOn = IsVehicleSirenSoundOn
+
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x4C9BF537BE2634B2)  
 ---Returns whether the vehicle's lights and sirens are on.
@@ -2797,6 +2983,9 @@ function IsVehicleSlipstreamLeader(vehicle) end
 ---@param vehicle number
 ---@return boolean
 function IsVehicleSprayable(vehicle) end
+
+---@deprecated
+IsVehicleSprayable = IsVehicleShopResprayAllowed
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x4AF9BD80EEBEB453)  
@@ -2916,6 +3105,9 @@ function LowerRetractableWheels(vehicle) end
 ---@param vehicle number
 ---@param value number
 function ModifyVehicleTopSpeed(vehicle, value) end
+
+---@deprecated
+ModifyVehicleTopSpeed = SetVehicleEnginePowerMultiplier
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x0205F5365292D2EB)  
@@ -3959,6 +4151,9 @@ function NetworkUseHighPrecisionVehicleBlending(vehicle, toggle) end
 ---@param vehicle number
 function OpenBombBayDoors(vehicle) end
 
+---@deprecated
+OpenBombBayDoors = OpenVehicleBombBay
+
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x632A689BF42301B1)  
 ---This native does not have an official description.
@@ -3970,6 +4165,9 @@ function PausePlaybackRecordedVehicle(vehicle) end
 ---Detaches the vehicle's windscreen.
 ---@param vehicle number
 function PopOutVehicleWindscreen(vehicle) end
+
+---@deprecated
+PopOutVehicleWindscreen = DetachVehicleWindscreen
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x758F49C24925568A)  
@@ -3992,6 +4190,9 @@ function RaiseConvertibleRoof(vehicle, instantlyRaise) end
 ---@param vehicle number
 function RaiseRetractableWheels(vehicle) end
 
+---@deprecated
+RaiseRetractableWheels = RaiseLowerableWheels
+
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x445D79F995508307)  
 ---This native does not have an official description.
@@ -4007,12 +4208,18 @@ function ReleasePreloadMods(vehicle) end
 ---@param cargobob number
 function RemovePickUpRopeForCargobob(cargobob) end
 
+---@deprecated
+RemovePickUpRopeForCargobob = RetractCargobobHook
+
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x1033371FC8E842A7)  
 ---This native does not have an official description.
 ---@param speedzone number
 ---@return boolean
 function RemoveRoadNodeSpeedZone(speedzone) end
+
+---@deprecated
+RemoveRoadNodeSpeedZone = RemoveSpeedZone
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xACE699C71AB9DEB5)  
@@ -4210,6 +4417,9 @@ function SetAllVehicleGeneratorsActiveInArea(x1, y1, z1, x2, y2, z2, p6, p7) end
 ---@param range number
 function SetAmbientVehicleRangeMultiplierThisFrame(range) end
 
+---@deprecated
+SetAmbientVehicleRangeMultiplierThisFrame = SetSomeVehicleDensityMultiplierThisFrame
+
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x9CFA4896C3A53CBB)  
 ---```
@@ -4223,6 +4433,9 @@ function SetAmbientVehicleRangeMultiplierThisFrame(range) end
 ---@param x number
 ---@param y number
 function SetBikeOnStand(vehicle, x, y) end
+
+---@deprecated
+SetBikeOnStand = SetBikeLeanAngle
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x75DBEC174AEEAD10)  
@@ -4262,6 +4475,9 @@ function SetBoatFrozenWhenAnchored(vehicle, toggle) end
 ---@param vehicle number
 function SetBoatIsSinking(vehicle) end
 
+---@deprecated
+SetBoatIsSinking = SetBoatSinking
+
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xE842A9398079BD82)  
 ---This native does not have an official description.
@@ -4269,12 +4485,18 @@ function SetBoatIsSinking(vehicle) end
 ---@param value number
 function SetBoatMovementResistance(vehicle, value) end
 
+---@deprecated
+SetBoatMovementResistance = SetBoatAnchorBuoyancyCoefficient
+
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x8F719973E1445BA2)  
 ---This native does not have an official description.
 ---@param vehicle number
 ---@param toggle boolean
 function SetBoatSinksWhenWrecked(vehicle, toggle) end
+
+---@deprecated
+SetBoatSinksWhenWrecked = SetBoatExplodesOnWreckedAction
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x1201E8A3290A3B98)  
@@ -4305,6 +4527,9 @@ function SetCarBootOpen(vehicle) end
 ---@param toggle boolean
 function SetCargobobForceDontDetachVehicle(cargobob, toggle) end
 
+---@deprecated
+SetCargobobForceDontDetachVehicle = SetCargobobHookCanDetach
+
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x94A68DA412C4007D)  
 ---```
@@ -4326,6 +4551,9 @@ function SetCargobobHookCanAttach(vehicle, toggle) end
 ---@param cargobob number
 ---@param isActive boolean
 function SetCargobobPickupMagnetActive(cargobob, isActive) end
+
+---@deprecated
+SetCargobobPickupMagnetActive = CargobobMagnetGrabVehicle
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA17BAD153B51547E)  
@@ -4441,6 +4669,9 @@ function SetDisablePretendOccupants(vehicle, toggle) end
 ---@param toggle boolean
 function SetDisableRandomTrainsThisFrame(toggle) end
 
+---@deprecated
+SetDisableRandomTrainsThisFrame = SetSomethingMultiplierThisFrame
+
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xB088E9A47AE6EDD5)  
 ---This native does not have an official description.
@@ -4458,6 +4689,9 @@ function SetDisableSuperdummyMode(vehicle, p1) end
 ---@param vehicle number
 ---@param turretIdx number
 function SetDisableTurretMovementThisFrame(vehicle, turretIdx) end
+
+---@deprecated
+SetDisableTurretMovementThisFrame = SetDisableTurretMovement
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x91A0BD635321F145)  
@@ -4478,6 +4712,9 @@ function SetDisableVehicleEngineFires(vehicle, toggle) end
 ---@param vehicle number
 ---@param direction boolean
 function SetDisableVehicleFlightNozzlePosition(vehicle, direction) end
+
+---@deprecated
+SetDisableVehicleFlightNozzlePosition = SetPlaneVtolAnimationDisabled
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x37C8252A7C92D017)  
@@ -4523,6 +4760,9 @@ function SetDisableVehicleWindowCollisions(vehicle, toggle) end
 ---```
 ---@param toggle boolean
 function SetDistantCarsEnabled(toggle) end
+
+---@deprecated
+SetDistantCarsEnabled = DisplayDistantVehicles
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x5AC79C98C5C17F05)  
@@ -4620,6 +4860,9 @@ function SetHeliMainRotorHealth(vehicle, health) end
 ---@param p1 boolean
 function SetHeliTailExplodeThrowDashboard(vehicle, p1) end
 
+---@deprecated
+SetHeliTailExplodeThrowDashboard = WasCounterActivated
+
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xFE205F38AAA58E5B)  
 ---This native does not have an official description.
@@ -4672,6 +4915,9 @@ function SetHydraulicWheelStateTransition(vehicle, wheelId, state, value, p4) en
 ---@param wheelId number
 ---@param value number
 function SetHydraulicWheelValue(vehicle, wheelId, value) end
+
+---@deprecated
+SetHydraulicWheelValue = SetHydraulicState
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xACFB2463CC22BED2)  
@@ -4732,6 +4978,9 @@ function SetParkedVehicleDensityMultiplierThisFrame(multiplier) end
 ---@param length2 number
 ---@param state boolean
 function SetPickupRopeLengthForCargobob(cargobob, length1, length2, state) end
+
+---@deprecated
+SetPickupRopeLengthForCargobob = SetCargobobHookPosition
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x2A86A0475B6A1434)  
@@ -4881,12 +5130,20 @@ function SetSpecialflightWingRatio(vehicle, ratio) end
 ---@param depth3 number
 function SetSubmarineCrushDepths(vehicle, toggle, depth1, depth2, depth3) end
 
+---@deprecated
+SetSubmarineCrushDepths = JitterVehicle
+
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xB893215D8D4C015B)  
 ---This native does not have an official description.
 ---@param plane number
 ---@param height number
 function SetTaskVehicleGotoPlaneMinHeightAboveTerrain(plane, height) end
+
+---@deprecated
+SetTaskVehicleGotoPlaneMinHeightAboveTerrain = SetPlaneMinHeightAboveGround
+---@deprecated
+SetTaskVehicleGotoPlaneMinHeightAboveTerrain = SetPlaneMinHeightAboveTerrain
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x598803E85E8448D9)  
@@ -5061,6 +5318,9 @@ function SetVehicleActiveDuringPlayback(vehicle, toggle) end
 ---@param toggle boolean
 function SetVehicleActiveForPedNavigation(vehicle, toggle) end
 
+---@deprecated
+SetVehicleActiveForPedNavigation = SetVehicleCloseDoorDeferedAction
+
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xCDE5E70C1DDB954C)  
 ---This native does not have an official description.
@@ -5105,6 +5365,11 @@ function SetVehicleBodyHealth(vehicle, value) end
 ---@param aircraft number
 ---@param bombCount number
 function SetVehicleBombCount(aircraft, bombCount) end
+
+---@deprecated
+SetVehicleBombCount = SetVehicleBombs
+---@deprecated
+SetVehicleBombCount = SetAircraftBombCount
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xE4E2FD323574965C)  
@@ -5223,6 +5488,9 @@ function SetVehicleCanSaveInGarage(vehicle, toggle) end
 ---@param height number
 function SetVehicleCeilingHeight(vehicle, height) end
 
+---@deprecated
+SetVehicleCeilingHeight = GetVehicleDeformationGetTree
+
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xB59E4BD37AE292DB)  
 ---```
@@ -5236,6 +5504,9 @@ function SetVehicleCeilingHeight(vehicle, height) end
 ---@param vehicle number
 ---@param value number
 function SetVehicleCheatPowerIncrease(vehicle, value) end
+
+---@deprecated
+SetVehicleCheatPowerIncrease = SetVehicleEngineTorqueMultiplier
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x33E8CD3322E2FE31)  
@@ -5274,6 +5545,9 @@ function SetVehicleControlsInverted(vehicle, state) end
 ---@param aircraft number
 ---@param count number
 function SetVehicleCountermeasureCount(aircraft, count) end
+
+---@deprecated
+SetVehicleCountermeasureCount = SetAircraftCountermeasureCount
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x7141766F91D15BEA)  
@@ -5328,6 +5602,9 @@ function SetVehicleDamageModifier(vehicle, p1) end
 ---@param color number
 function SetVehicleDashboardColor(vehicle, color) end
 
+---@deprecated
+SetVehicleDashboardColor = SetVehicleDashboardColour
+
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x953DA1E1B12C0491)  
 ---```
@@ -5378,6 +5655,9 @@ function SetVehicleDoorBroken(vehicle, doorIndex, deleteDoor) end
 ---@param doorIndex number
 ---@param isBreakable boolean
 function SetVehicleDoorCanBreak(vehicle, doorIndex, isBreakable) end
+
+---@deprecated
+SetVehicleDoorCanBreak = SetVehicleDoorBreakable
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xF2BFA0430F0A0FCB)  
@@ -5507,6 +5787,9 @@ function SetVehicleDoorsShut(vehicle, closeInstantly) end
 ---@param toggle boolean
 function SetVehicleDropsMoneyWhenBlownUp(vehicle, toggle) end
 
+---@deprecated
+SetVehicleDropsMoneyWhenBlownUp = SetVehicleCreatesMoneyPickupsWhenExploded
+
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x983765856F2564F9)  
 ---This native does not have an official description.
@@ -5554,6 +5837,9 @@ function SetVehicleEngineOn(vehicle, value, instantly, disableAutoStart) end
 ---@param vehicle number
 ---@param fade number
 function SetVehicleEnveffScale(vehicle, fade) end
+
+---@deprecated
+SetVehicleEnveffScale = SetVehiclePaintFade
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x41062318F23ED854)  
@@ -5638,12 +5924,22 @@ function SetVehicleFixed(vehicle) end
 ---@param angleRatio number
 function SetVehicleFlightNozzlePosition(vehicle, angleRatio) end
 
+---@deprecated
+SetVehicleFlightNozzlePosition = SetDesiredVerticalFlightPhase
+---@deprecated
+SetVehicleFlightNozzlePosition = SetPlaneVtolDesiredDirection
+
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x9AA47FFF660CB932)  
 ---This native does not have an official description.
 ---@param vehicle number
 ---@param angle number
 function SetVehicleFlightNozzlePositionImmediate(vehicle, angle) end
+
+---@deprecated
+SetVehicleFlightNozzlePositionImmediate = SetVerticalFlightPhase
+---@deprecated
+SetVehicleFlightNozzlePositionImmediate = SetPlaneVtolDirection
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xB055A34527CB8FD7)  
@@ -5734,6 +6030,11 @@ function SetVehicleHasBeenOwnedByPlayer(vehicle, owned) end
 ---@param toggle boolean
 function SetVehicleHasMutedSirens(vehicle, toggle) end
 
+---@deprecated
+SetVehicleHasMutedSirens = DisableVehicleImpactExplosionActivation
+---@deprecated
+SetVehicleHasMutedSirens = SetDisableVehicleSirenSound
+
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x92F0CF722BC4202F)  
 ---```
@@ -5749,6 +6050,9 @@ function SetVehicleHasStrongAxles(vehicle, toggle) end
 ---@param vehicle number
 ---@param p1 boolean
 function SetVehicleHasUnbreakableLights(vehicle, p1) end
+
+---@deprecated
+SetVehicleHasUnbreakableLights = SetVehicleLightsCanBeVisiblyDamaged
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x2D55FE374D5FDB91)  
@@ -5791,6 +6095,9 @@ function SetVehicleHoverTransformEnabled(vehicle, toggle) end
 ---@param state number
 function SetVehicleHoverTransformPercentage(vehicle, state) end
 
+---@deprecated
+SetVehicleHoverTransformPercentage = SetVehicleTransformState
+
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xD138FA15C9776837)  
 ---```
@@ -5826,12 +6133,20 @@ function SetVehicleIndicatorLights(vehicle, turnSignal, toggle) end
 ---@param doorLockStatus number
 function SetVehicleIndividualDoorsLocked(vehicle, doorIndex, doorLockStatus) end
 
+---@deprecated
+SetVehicleIndividualDoorsLocked = SetPedTargettableVehicleDestroy
+---@deprecated
+SetVehicleIndividualDoorsLocked = SetVehicleDoorDestroyType
+
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xF40DD601A65F7F19)  
 ---This native does not have an official description.
 ---@param vehicle number
 ---@param color number
 function SetVehicleInteriorColor(vehicle, color) end
+
+---@deprecated
+SetVehicleInteriorColor = SetVehicleInteriorColour
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xBC2042F090AF6AD3)  
@@ -5857,6 +6172,9 @@ function SetVehicleIsConsideredByPlayer(vehicle, toggle) end
 ---@param vehicle number
 ---@param toggle boolean
 function SetVehicleIsRacing(vehicle, toggle) end
+
+---@deprecated
+SetVehicleIsRacing = SteerUnlockBias
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x67B2C79AA7FF5738)  
@@ -5887,6 +6205,9 @@ function SetVehicleJetEngineOn(vehicle, toggle) end
 ---@param vehicle number
 ---@param toggle boolean
 function SetVehicleKersAllowed(vehicle, toggle) end
+
+---@deprecated
+SetVehicleKersAllowed = SetVehicleHudSpecialAbilityBarActive
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xB385454F8791F57C)  
@@ -6212,6 +6533,9 @@ function SetVehicleParachuteActive(vehicle, active) end
 ---@param modelHash number | string
 function SetVehicleParachuteModel(vehicle, modelHash) end
 
+---@deprecated
+SetVehicleParachuteModel = VehicleSetCustomParachuteModel
+
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA74AD2439468C883)  
 ---```
@@ -6220,6 +6544,11 @@ function SetVehicleParachuteModel(vehicle, modelHash) end
 ---@param vehicle number
 ---@param textureVariation number
 function SetVehicleParachuteTextureVariation(vehicle, textureVariation) end
+
+---@deprecated
+SetVehicleParachuteTextureVariation = VehicleSetCustomParachuteTexture
+---@deprecated
+SetVehicleParachuteTextureVariation = SetVehicleParachuteTextureVariatiion
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x70DB57649FA8D0D8)  
@@ -6265,6 +6594,9 @@ function SetVehicleRampUpwardsLaunchMotion(vehicle, toggle) end
 ---@param vehicle number
 ---@param toggle boolean
 function SetVehicleReceivesRampDamage(vehicle, toggle) end
+
+---@deprecated
+SetVehicleReceivesRampDamage = SetRampVehicleReceivesRampDamage
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x222FF6A823D122E2)  
@@ -6452,6 +6784,11 @@ function SetVehicleTimedExplosion(vehicle, ped, toggle) end
 ---@param position number
 function SetVehicleTowTruckArmPosition(vehicle, position) end
 
+---@deprecated
+SetVehicleTowTruckArmPosition = SetTowTruckCraneRaised
+---@deprecated
+SetVehicleTowTruckArmPosition = SetTowTruckCraneHeight
+
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x1093408B4B9D1146)  
 ---This native does not have an official description.
@@ -6568,6 +6905,9 @@ function SetVehicleUseAlternateHandling(vehicle, toggle) end
 ---@return any
 function SetVehicleUseCutsceneWheelCompression(p0, p1, p2, p3) end
 
+---@deprecated
+SetVehicleUseCutsceneWheelCompression = SetAllVehiclesSpawn
+
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC45C27EF50F36ADC)  
 ---This native does not have an official description.
@@ -6612,6 +6952,9 @@ function SetVehicleWheelsCanBreak(vehicle, enabled) end
 ---@param vehicle number
 ---@param toggle boolean
 function SetVehicleWheelsCanBreakOffWhenBlowUp(vehicle, toggle) end
+
+---@deprecated
+SetVehicleWheelsCanBreakOffWhenBlowUp = SetVehicleMaxStrTrap
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x2970EAA18FD5E42F)  
@@ -6659,6 +7002,11 @@ function SetVehicleWindowTint(vehicle, tint) end
 ---@param vehicle number
 ---@param color number
 function SetVehicleXenonLightsColor(vehicle, color) end
+
+---@deprecated
+SetVehicleXenonLightsColor = SetVehicleHeadlightsColour
+---@deprecated
+SetVehicleXenonLightsColor = SetVehicleXenonLightsColour
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x9438F7AD68771A20)  
@@ -6818,12 +7166,22 @@ function TrackVehicleVisibility(vehicle) end
 ---@param instantly boolean
 function TransformToCar(vehicle, instantly) end
 
+---@deprecated
+TransformToCar = TransformStormbergToRoadVehicle
+---@deprecated
+TransformToCar = TransformSubmarineToVehicle
+
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xBE4C854FFDB6EEBE)  
 ---Transforms the `stormberg` to its "water vehicle" variant. If the vehicle is already in that state then the vehicle transformation audio will still play, but the vehicle won't change at all.
 ---@param vehicle number
 ---@param instantly boolean
 function TransformToSubmarine(vehicle, instantly) end
+
+---@deprecated
+TransformToSubmarine = TransformStormbergToWaterVehicle
+---@deprecated
+TransformToSubmarine = TransformVehicleToSubmarine
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x8879EE09268305D5)  

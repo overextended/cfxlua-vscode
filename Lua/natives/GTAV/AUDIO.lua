@@ -17,6 +17,9 @@ function ActivateAudioSlowmoMode(p0) end
 ---@param p2 number
 function AddEntityToAudioMixGroup(entity, groupName, p2) end
 
+---@deprecated
+AddEntityToAudioMixGroup = DynamicMixerRelatedFn
+
 ---**`AUDIO` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC5EF963405593646)  
 ---```
@@ -89,6 +92,9 @@ function BlockDeathJingle(toggle) end
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xB4F90FAF7670B16F)  
 ---This native does not have an official description.
 function CancelCurrentPoliceReport() end
+
+---@deprecated
+CancelCurrentPoliceReport = DisablePoliceReports
 
 ---**`AUDIO` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x5B17A90291133DA5)  
@@ -169,6 +175,9 @@ function DisablePedPainAudio(ped, toggle) end
 ---@param value boolean
 function DistantCopCarSirens(value) end
 
+---@deprecated
+DistantCopCarSirens = ForceAmbientSiren
+
 ---**`AUDIO` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x109697E2FFBAC8A1)  
 ---This native does not have an official description.
@@ -220,6 +229,9 @@ function ForceRadioTrackListPosition(radioStation, trackListName, milliseconds) 
 ---@param audioName string
 function ForceVehicleEngineAudio(vehicle, audioName) end
 
+---@deprecated
+ForceVehicleEngineAudio = SetVehicleAudio
+
 ---**`AUDIO` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xD57AAAE0E2214D11)  
 ---This native does not have an official description.
@@ -266,6 +278,9 @@ function GetCurrentRadioTrackName(radioStationName) end
 ---@return number
 function GetCurrentRadioTrackPlaybackTime(radioStationName) end
 
+---@deprecated
+GetCurrentRadioTrackPlaybackTime = GetCurrentRadioStationHash
+
 ---**`AUDIO` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x480357EE890C295A)  
 ---This native does not have an official description.
@@ -299,6 +314,9 @@ function GetNetworkIdFromSoundId(soundId) end
 ---This native does not have an official description.
 ---@return number
 function GetNumUnlockedRadioStations() end
+
+---@deprecated
+GetNumUnlockedRadioStations = MaxRadioStationIndex
 
 ---**`AUDIO` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA571991A7FE6CCEB)  
@@ -366,6 +384,9 @@ function GetVehicleDefaultHorn(vehicle) end
 ---@param vehicle number
 ---@return number
 function GetVehicleDefaultHornIgnoreMods(vehicle) end
+
+---@deprecated
+GetVehicleDefaultHornIgnoreMods = GetVehicleHornHash
 
 ---**`AUDIO` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xD53F3A29BCE2580E)  
@@ -528,6 +549,9 @@ function IsMissionCompleteReadyForUi() end
 ---@return boolean
 function IsMissionNewsStoryUnlocked(newsStory) end
 
+---@deprecated
+IsMissionNewsStoryUnlocked = GetNumberOfPassengerVoiceVariations
+
 ---**`AUDIO` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x7497D2CE2C30D24C)  
 ---This native does not have an official description.
@@ -565,6 +589,9 @@ function IsPedRingtonePlaying(ped) end
 ---This native does not have an official description.
 ---@return boolean
 function IsPlayerVehRadioEnable() end
+
+---@deprecated
+IsPlayerVehRadioEnable = IsPlayerVehicleRadioEnabled
 
 ---**`AUDIO` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x0626A247D2405330)  
@@ -681,6 +708,9 @@ function LoadStreamWithStartOffset(streamName, startOffset, soundSet) end
 ---@param radioStationName string
 ---@param toggle boolean
 function LockRadioStation(radioStationName, toggle) end
+
+---@deprecated
+LockRadioStation = SetRadioStationDisabled
 
 ---**`AUDIO` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xFF5E5EA2DCEEACF3)  
@@ -1130,6 +1160,9 @@ function PauseScriptedConversation(p0) end
 ---@param speechParam string
 function PlayAmbientSpeechFromPositionNative(speechName, voiceName, x, y, z, speechParam) end
 
+---@deprecated
+PlayAmbientSpeechFromPositionNative = PlayAmbientSpeechAtCoords
+
 ---**`AUDIO` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xEE066C7006C49C0A)  
 ---```
@@ -1242,6 +1275,9 @@ function PlayPain(ped, painID, p1) end
 ---@param speechParam string
 function PlayPedAmbientSpeechAndCloneNative(ped, speechName, speechParam) end
 
+---@deprecated
+PlayPedAmbientSpeechAndCloneNative = PlayAmbientSpeech2
+
 ---**`AUDIO` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x8E04FEDD28D42462)  
 ---Plays ambient speech; see also [`PLAY_PED_AMBIENT_SPEECH_AND_CLONE_NATIVE`](#\_0xC6941B4A3A8FBBB9).
@@ -1296,6 +1332,9 @@ function PlayPedAmbientSpeechAndCloneNative(ped, speechName, speechParam) end
 ---@param speechParam string
 function PlayPedAmbientSpeechNative(ped, speechName, speechParam) end
 
+---@deprecated
+PlayPedAmbientSpeechNative = PlayAmbientSpeech1
+
 ---**`AUDIO` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x3523634255FC3318)  
 ---```
@@ -1310,6 +1349,9 @@ function PlayPedAmbientSpeechNative(ped, speechName, speechParam) end
 ---@param speechParam string
 ---@param p4 boolean
 function PlayPedAmbientSpeechWithVoiceNative(ped, speechName, voiceName, speechParam, p4) end
+
+---@deprecated
+PlayPedAmbientSpeechWithVoiceNative = PlayAmbientSpeechWithVoice
 
 ---**`AUDIO` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xF9E56683CA8E11A5)  
@@ -1421,6 +1463,9 @@ function PlayStreamFromPed(ped) end
 ---@param y number
 ---@param z number
 function PlayStreamFromPosition(x, y, z) end
+
+---@deprecated
+PlayStreamFromPosition = SpecialFrontendEqual
 
 ---**`AUDIO` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xB70374A758007DFA)  
@@ -2201,6 +2246,9 @@ function SetUserRadioControlEnabled(toggle) end
 ---@param value number
 function SetVariableOnCutsceneAudio(variableName, value) end
 
+---@deprecated
+SetVariableOnCutsceneAudio = GetPlayerHeadsetSoundAlternate
+
 ---**`AUDIO` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xAD6B3148A78AE9B6)  
 ---This native does not have an official description.
@@ -2434,6 +2482,9 @@ function StopCurrentPlayingAmbientSpeech(ped) end
 ---This native does not have an official description.
 ---@param ped number
 function StopCurrentPlayingSpeech(ped) end
+
+---@deprecated
+StopCurrentPlayingSpeech = SetPedMute
 
 ---**`AUDIO` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x806058BBDC136E06)  

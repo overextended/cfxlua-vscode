@@ -20,6 +20,11 @@
 ---@return number
 function GetCurrentLanguage() end
 
+---@deprecated
+GetCurrentLanguage = GetUiLanguageId
+---@deprecated
+GetCurrentLanguage = GetCurrentLanguageId
+
 ---**`LOCALIZATION` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA8AE43AEC1A61314)  
 ---```
@@ -27,6 +32,9 @@ function GetCurrentLanguage() end
 ---```
 ---@return number
 function LocalizationGetSystemDateFormat() end
+
+---@deprecated
+LocalizationGetSystemDateFormat = GetUserLanguageId
 
 ---**`LOCALIZATION` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x497420E022796B3F)  

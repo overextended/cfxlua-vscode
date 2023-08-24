@@ -12,6 +12,9 @@
 ---@return number
 function AddExtraCalmingQuad(xLow, yLow, xHigh, yHigh, height) end
 
+---@deprecated
+AddExtraCalmingQuad = AddCurrentRise
+
 ---**`WATER` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x2B2A2CC86778B619)  
 ---```
@@ -19,6 +22,11 @@ function AddExtraCalmingQuad(xLow, yLow, xHigh, yHigh, height) end
 ---```
 ---@return number
 function GetDeepOceanScaler() end
+
+---@deprecated
+GetDeepOceanScaler = GetWavesIntensity
+---@deprecated
+GetDeepOceanScaler = GetCurrentIntensity
 
 ---**`WATER` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xF6829842C06AE524)  
@@ -74,6 +82,11 @@ function RemoveCurrentRise(p0) end
 ---```
 function ResetDeepOceanScaler() end
 
+---@deprecated
+ResetDeepOceanScaler = ResetWavesIntensity
+---@deprecated
+ResetDeepOceanScaler = ResetCurrentIntensity
+
 ---**`WATER` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xB96B00E976BE977F)  
 ---```
@@ -82,6 +95,11 @@ function ResetDeepOceanScaler() end
 ---```
 ---@param intensity number
 function SetDeepOceanScaler(intensity) end
+
+---@deprecated
+SetDeepOceanScaler = SetWavesIntensity
+---@deprecated
+SetDeepOceanScaler = SetCurrentIntensity
 
 ---**`WATER` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x8974647ED222EA5F)  

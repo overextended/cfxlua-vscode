@@ -67,6 +67,9 @@ function GetNgstatIntHash(index, spStat, charStat, character, section) end
 ---@return number
 function GetPackedBoolStatKey(index, spStat, charStat, character) end
 
+---@deprecated
+GetPackedBoolStatKey = GetPstatBoolHash
+
 ---**`STATS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x61E111E323419E07)  
 ---This native does not have an official description.
@@ -76,6 +79,9 @@ function GetPackedBoolStatKey(index, spStat, charStat, character) end
 ---@param character number
 ---@return number
 function GetPackedIntStatKey(index, spStat, charStat, character) end
+
+---@deprecated
+GetPackedIntStatKey = GetPstatIntHash
 
 ---**`STATS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC4BB08EE7907471E)  
@@ -87,6 +93,11 @@ function GetPackedIntStatKey(index, spStat, charStat, character) end
 ---@return number
 function GetPackedTuBoolStatKey(index, spStat, charStat, character) end
 
+---@deprecated
+GetPackedTuBoolStatKey = GetTupstatBoolHash
+---@deprecated
+GetPackedTuBoolStatKey = GetPackedTitleUpdateBoolStatKey
+
 ---**`STATS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xD16C2AD6B8E32854)  
 ---This native does not have an official description.
@@ -96,6 +107,11 @@ function GetPackedTuBoolStatKey(index, spStat, charStat, character) end
 ---@param character number
 ---@return number
 function GetPackedTuIntStatKey(index, spStat, charStat, character) end
+
+---@deprecated
+GetPackedTuIntStatKey = GetTupstatIntHash
+---@deprecated
+GetPackedTuIntStatKey = GetPackedTitleUpdateIntStatKey
 
 ---**`STATS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x792271AB35C356A4)  
@@ -1643,6 +1659,11 @@ function PlaystatsCopyRankIntoNewSlot(p0, p1, p2, p3, p4, p5, p6) end
 ---@param p2 number
 function PlaystatsCrateCreated(p0, p1, p2) end
 
+---@deprecated
+PlaystatsCrateCreated = PlaystatsAmbientMissionCrateCreated
+---@deprecated
+PlaystatsCrateCreated = PlaystatsCrateCreatedMissionDone
+
 ---**`STATS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x1CAE5D2E3F9A07F0)  
 ---```
@@ -1656,6 +1677,9 @@ function PlaystatsCrateCreated(p0, p1, p2) end
 ---@param p4 any
 ---@param p5 any
 function PlaystatsCrateDropMissionDone(p0, p1, p2, p3, p4, p5) end
+
+---@deprecated
+PlaystatsCrateDropMissionDone = PlaystatsCrateDrop
 
 ---**`STATS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x0BC254FF3A911501)  
@@ -1768,6 +1792,9 @@ function PlaystatsHeistSaveCheat(hash, p1) end
 ---@param p3 any
 function PlaystatsHoldUpMissionDone(p0, p1, p2, p3) end
 
+---@deprecated
+PlaystatsHoldUpMissionDone = PlaystatsHoldUp
+
 ---**`STATS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x5DA3A8DE8CB6226F)  
 ---```
@@ -1784,6 +1811,9 @@ function PlaystatsIdleKick(time) end
 ---@param p2 any
 ---@param p3 any
 function PlaystatsImportExportMissionDone(p0, p1, p2, p3) end
+
+---@deprecated
+PlaystatsImportExportMissionDone = PlaystatsImpExp
 
 ---**`STATS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x887DAD63CF5B7908)  
@@ -1942,6 +1972,9 @@ function PlaystatsRaceCheckpoint(p0, p1, p2, p3, p4) end
 ---@param p9 any
 function PlaystatsRaceToPointMissionDone(p0, p1, p2, p3, p4, p5, p6, p7, p8, p9) end
 
+---@deprecated
+PlaystatsRaceToPointMissionDone = PlaystatsRaceToPoint
+
 ---**`STATS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x71862B1D855F32E1)  
 ---This native does not have an official description.
@@ -2087,6 +2120,9 @@ function PlaystatsWebsiteVisited(scaleformHash, p1) end
 ---@param p2 number
 function PresenceEventUpdatestatFloat(statHash, value, p2) end
 
+---@deprecated
+PresenceEventUpdatestatFloat = UpdateStatFloat
+
 ---**`STATS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x11FF1C80276097ED)  
 ---This native does not have an official description.
@@ -2094,6 +2130,9 @@ function PresenceEventUpdatestatFloat(statHash, value, p2) end
 ---@param value number
 ---@param p2 number
 function PresenceEventUpdatestatInt(statHash, value, p2) end
+
+---@deprecated
+PresenceEventUpdatestatInt = UpdateStatInt
 
 ---**`STATS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xDAC073C7901F9E15)  
@@ -2561,6 +2600,9 @@ function StatSetPos(statName, x, y, z, save) end
 ---@param profileSetting number
 ---@param value number
 function StatSetProfileSettingValue(profileSetting, value) end
+
+---@deprecated
+StatSetProfileSettingValue = StatSetProfileSetting
 
 ---**`STATS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA87B2335D12531D7)  

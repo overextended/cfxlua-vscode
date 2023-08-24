@@ -281,12 +281,20 @@ function IsLookInverted() end
 ---@return boolean
 function IsUsingKeyboard(padIndex) end
 
+---@deprecated
+IsUsingKeyboard = GetLastInputMethod
+---@deprecated
+IsUsingKeyboard = IsInputDisabled
+
 ---**`PAD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x13337B38DB572509)  
 ---This native does not have an official description.
 ---@param padIndex number
 ---@return boolean
 function IsUsingKeyboard_2(padIndex) end
+
+---@deprecated
+IsUsingKeyboard_2 = IsInputJustDisabled
 
 ---**`PAD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x14D29BB12D47F68C)  
@@ -380,6 +388,9 @@ function ResetInputMappingScheme() end
 ---@param green number
 ---@param blue number
 function SetControlLightEffectColor(padIndex, red, green, blue) end
+
+---@deprecated
+SetControlLightEffectColor = SetControlGroupColor
 
 ---**`PAD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xE8A25867FBA3B05E)  

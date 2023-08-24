@@ -11,6 +11,9 @@
 ---@return number, boolean, vector3, vector3, number
 function GetShapeTestResult(shapeTestHandle) end
 
+---@deprecated
+GetShapeTestResult = GetRaycastResult
+
 ---**`SHAPETEST` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x65287525D951F6BE)  
 ---Returns the result of a shape test, also returning the material of any touched surface.
@@ -22,12 +25,18 @@ function GetShapeTestResult(shapeTestHandle) end
 ---@return number, boolean, vector3, vector3, number, number
 function GetShapeTestResultIncludingMaterial(shapeTestHandle) end
 
+---@deprecated
+GetShapeTestResultIncludingMaterial = GetShapeTestResultEx
+
 ---**`SHAPETEST` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x2B3334BCA57CD799)  
 ---Invalidates the entity handle passed by removing the fwScriptGuid from the entity. This should be used when receiving an
 ---ambient entity from shape testing natives, but can also be used for other natives returning an 'irrelevant' entity handle.
 ---@param entity number
 function ReleaseScriptGuidFromEntity(entity) end
+
+---@deprecated
+ReleaseScriptGuidFromEntity = ShapeTestResultEntity
 
 ---**`SHAPETEST` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x377906D8A31E5586)  
@@ -45,6 +54,11 @@ function ReleaseScriptGuidFromEntity(entity) end
 ---@param p8 number
 ---@return number
 function StartExpensiveSynchronousShapeTestLosProbe(x1, y1, z1, x2, y2, z2, flags, entity, p8) end
+
+---@deprecated
+StartExpensiveSynchronousShapeTestLosProbe = CastRayPointToPoint
+---@deprecated
+StartExpensiveSynchronousShapeTestLosProbe = StartShapeTestRay
 
 ---**`SHAPETEST` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x37181417CE7C8900)  
@@ -98,6 +112,9 @@ function StartShapeTestBox(x, y, z, x1, y1, z1, rotX, rotY, rotZ, p9, flags, ent
 ---@param p9 number
 ---@return number
 function StartShapeTestCapsule(x1, y1, z1, x2, y2, z2, radius, flags, entity, p9) end
+
+---@deprecated
+StartShapeTestCapsule = Cast_3dRayPointToPoint
 
 ---**`SHAPETEST` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x7EE9F5D83DD4F90E)  
@@ -169,4 +186,7 @@ function StartShapeTestSurroundingCoords(pVec1, pVec2, flag, entity, flag2) end
 ---@param p9 number
 ---@return number
 function StartShapeTestSweptSphere(x1, y1, z1, x2, y2, z2, radius, flags, entity, p9) end
+
+---@deprecated
+StartShapeTestSweptSphere = StartShapeTestCapsule_2
 

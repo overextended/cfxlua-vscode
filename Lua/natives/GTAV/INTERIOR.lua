@@ -9,6 +9,9 @@
 ---@param entitySetName string
 function ActivateInteriorEntitySet(interior, entitySetName) end
 
+---@deprecated
+ActivateInteriorEntitySet = EnableInteriorProp
+
 ---**`INTERIOR` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x3F6167F351168730)  
 ---This native does not have an official description.
@@ -53,6 +56,9 @@ function ClearRoomForGameViewport() end
 ---@param entitySetName string
 function DeactivateInteriorEntitySet(interior, entitySetName) end
 
+---@deprecated
+DeactivateInteriorEntitySet = DisableInteriorProp
+
 ---**`INTERIOR` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x6170941419D7D8EC)  
 ---```
@@ -71,6 +77,9 @@ function DisableInterior(interiorID, toggle) end
 ---```
 ---@param mapObjectHash number | string
 function EnableExteriorCullModelThisFrame(mapObjectHash) end
+
+---@deprecated
+EnableExteriorCullModelThisFrame = HideMapObjectThisFrame
 
 ---**`INTERIOR` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x50C375537449F369)  
@@ -135,6 +144,9 @@ function GetInteriorAtCoordsWithType(x, y, z, interiorType) end
 ---@return number
 function GetInteriorAtCoordsWithTypehash(x, y, z, typeHash) end
 
+---@deprecated
+GetInteriorAtCoordsWithTypehash = UnkGetInteriorAtCoords
+
 ---**`INTERIOR` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xEC4CF9FCB29A4424)  
 ---This native does not have an official description.
@@ -160,6 +172,9 @@ function GetInteriorFromEntity(entity) end
 ---```
 ---@return number
 function GetInteriorFromPrimaryView() end
+
+---@deprecated
+GetInteriorFromPrimaryView = GetInteriorFromGameplayCam
 
 ---**`INTERIOR` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xE4A84ABF135EF91A)  
@@ -190,6 +205,9 @@ function GetInteriorHeading(interior) end
 ---@return vector3, number
 function GetInteriorLocationAndNamehash(interior) end
 
+---@deprecated
+GetInteriorLocationAndNamehash = GetInteriorInfo
+
 ---**`INTERIOR` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x399685DB942336BC)  
 ---```
@@ -215,6 +233,9 @@ function GetOffsetFromInteriorInWorldCoords(interior, x, y, z) end
 ---@return number
 function GetRoomKeyForGameViewport() end
 
+---@deprecated
+GetRoomKeyForGameViewport = GetRoomKeyFromGameplayCam
+
 ---**`INTERIOR` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x47C2A06D4F5F424B)  
 ---```
@@ -232,6 +253,9 @@ function GetRoomKeyFromEntity(entity) end
 ---@param z number
 ---@return boolean
 function IsCollisionMarkedOutside(x, y, z) end
+
+---@deprecated
+IsCollisionMarkedOutside = AreCoordsCollidingWithExterior
 
 ---**`INTERIOR` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x92BAC8ACF88CEC26)  
@@ -254,6 +278,9 @@ function IsInteriorDisabled(interior) end
 ---@param entitySetName string
 ---@return boolean
 function IsInteriorEntitySetActive(interior, entitySetName) end
+
+---@deprecated
+IsInteriorEntitySetActive = IsInteriorPropEnabled
 
 ---**`INTERIOR` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x6726BDCCC1932F0E)  
@@ -354,6 +381,9 @@ function N_0xaf348afcb575a441(roomName) end
 ---@param interior number
 function PinInteriorInMemory(interior) end
 
+---@deprecated
+PinInteriorInMemory = LoadInterior
+
 ---**`INTERIOR` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x41F37C3427C75AE0)  
 ---This native does not have an official description.
@@ -367,6 +397,9 @@ function RefreshInterior(interiorID) end
 ---@param entitySetName string
 ---@param color number
 function SetInteriorEntitySetColor(interior, entitySetName, color) end
+
+---@deprecated
+SetInteriorEntitySetColor = SetInteriorPropColor
 
 ---**`INTERIOR` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x261CCE7EED010641)  

@@ -7,11 +7,17 @@
 ---@return any
 function DataarrayAddBool(value) end
 
+---@deprecated
+DataarrayAddBool = ArrayValueAddBoolean
+
 ---**`DATAFILE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x6889498B3E19C797)  
 ---This native does not have an official description.
 ---@return any, any
 function DataarrayAddDict() end
+
+---@deprecated
+DataarrayAddDict = ArrayValueAddObject
 
 ---**`DATAFILE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x57A995FD75D37F56)  
@@ -20,6 +26,9 @@ function DataarrayAddDict() end
 ---@return any
 function DataarrayAddFloat(value) end
 
+---@deprecated
+DataarrayAddFloat = ArrayValueAddFloat
+
 ---**`DATAFILE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xCABDB751D86FE93B)  
 ---This native does not have an official description.
@@ -27,12 +36,18 @@ function DataarrayAddFloat(value) end
 ---@return any
 function DataarrayAddInt(value) end
 
+---@deprecated
+DataarrayAddInt = ArrayValueAddInteger
+
 ---**`DATAFILE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x2F0661C155AEEEAA)  
 ---This native does not have an official description.
 ---@param value string
 ---@return any
 function DataarrayAddString(value) end
+
+---@deprecated
+DataarrayAddString = ArrayValueAddString
 
 ---**`DATAFILE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x407F8D034F70F0C2)  
@@ -43,6 +58,9 @@ function DataarrayAddString(value) end
 ---@return any
 function DataarrayAddVector(valueX, valueY, valueZ) end
 
+---@deprecated
+DataarrayAddVector = ArrayValueAddVector3
+
 ---**`DATAFILE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x50C1B2874E50C114)  
 ---This native does not have an official description.
@@ -50,11 +68,17 @@ function DataarrayAddVector(valueX, valueY, valueZ) end
 ---@return boolean, any
 function DataarrayGetBool(arrayIndex) end
 
+---@deprecated
+DataarrayGetBool = ArrayValueGetBoolean
+
 ---**`DATAFILE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x065DB281590CEA2D)  
 ---This native does not have an official description.
 ---@return number, any
 function DataarrayGetCount() end
+
+---@deprecated
+DataarrayGetCount = ArrayValueGetSize
 
 ---**`DATAFILE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x8B5FADCC4E3A145F)  
@@ -63,12 +87,18 @@ function DataarrayGetCount() end
 ---@return any, any
 function DataarrayGetDict(arrayIndex) end
 
+---@deprecated
+DataarrayGetDict = ArrayValueGetObject
+
 ---**`DATAFILE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC0C527B525D7CFB5)  
 ---This native does not have an official description.
 ---@param arrayIndex number
 ---@return number, any
 function DataarrayGetFloat(arrayIndex) end
+
+---@deprecated
+DataarrayGetFloat = ArrayValueGetFloat
 
 ---**`DATAFILE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x3E5AE19425CD74BE)  
@@ -77,12 +107,18 @@ function DataarrayGetFloat(arrayIndex) end
 ---@return number, any
 function DataarrayGetInt(arrayIndex) end
 
+---@deprecated
+DataarrayGetInt = ArrayValueGetInteger
+
 ---**`DATAFILE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xD3F2FFEB8D836F52)  
 ---This native does not have an official description.
 ---@param arrayIndex number
 ---@return string, any
 function DataarrayGetString(arrayIndex) end
+
+---@deprecated
+DataarrayGetString = ArrayValueGetString
 
 ---**`DATAFILE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x3A0014ADB172A3C5)  
@@ -100,12 +136,18 @@ function DataarrayGetString(arrayIndex) end
 ---@return number, any
 function DataarrayGetType(arrayIndex) end
 
+---@deprecated
+DataarrayGetType = ArrayValueGetType
+
 ---**`DATAFILE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x8D2064E5B64A628A)  
 ---This native does not have an official description.
 ---@param arrayIndex number
 ---@return vector3, any
 function DataarrayGetVector(arrayIndex) end
+
+---@deprecated
+DataarrayGetVector = ArrayValueGetVector3
 
 ---**`DATAFILE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x5B11728527CA6E5F)  
@@ -114,12 +156,18 @@ function DataarrayGetVector(arrayIndex) end
 ---@return any, any
 function DatadictCreateArray(key) end
 
+---@deprecated
+DatadictCreateArray = ObjectValueAddArray
+
 ---**`DATAFILE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA358F56F10732EE1)  
 ---This native does not have an official description.
 ---@param key string
 ---@return any, any
 function DatadictCreateDict(key) end
+
+---@deprecated
+DatadictCreateDict = ObjectValueAddObject
 
 ---**`DATAFILE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x7A983AA9DA2659ED)  
@@ -128,12 +176,18 @@ function DatadictCreateDict(key) end
 ---@return any, any
 function DatadictGetArray(key) end
 
+---@deprecated
+DatadictGetArray = ObjectValueGetArray
+
 ---**`DATAFILE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x1186940ED72FFEEC)  
 ---This native does not have an official description.
 ---@param key string
 ---@return boolean, any
 function DatadictGetBool(key) end
+
+---@deprecated
+DatadictGetBool = ObjectValueGetBoolean
 
 ---**`DATAFILE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xB6B9DDC412FCEEE2)  
@@ -142,12 +196,18 @@ function DatadictGetBool(key) end
 ---@return any, any
 function DatadictGetDict(key) end
 
+---@deprecated
+DatadictGetDict = ObjectValueGetObject
+
 ---**`DATAFILE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x06610343E73B9727)  
 ---This native does not have an official description.
 ---@param key string
 ---@return number, any
 function DatadictGetFloat(key) end
+
+---@deprecated
+DatadictGetFloat = ObjectValueGetFloat
 
 ---**`DATAFILE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x78F06F6B1FB5A80C)  
@@ -156,12 +216,18 @@ function DatadictGetFloat(key) end
 ---@return number, any
 function DatadictGetInt(key) end
 
+---@deprecated
+DatadictGetInt = ObjectValueGetInteger
+
 ---**`DATAFILE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x3D2FD9E763B24472)  
 ---This native does not have an official description.
 ---@param key string
 ---@return string, any
 function DatadictGetString(key) end
+
+---@deprecated
+DatadictGetString = ObjectValueGetString
 
 ---**`DATAFILE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x031C55ED33227371)  
@@ -179,12 +245,18 @@ function DatadictGetString(key) end
 ---@return number, any
 function DatadictGetType(key) end
 
+---@deprecated
+DatadictGetType = ObjectValueGetType
+
 ---**`DATAFILE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x46CD3CB66E0825CC)  
 ---This native does not have an official description.
 ---@param key string
 ---@return vector3, any
 function DatadictGetVector(key) end
+
+---@deprecated
+DatadictGetVector = ObjectValueGetVector3
 
 ---**`DATAFILE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x35124302A556A325)  
@@ -194,6 +266,9 @@ function DatadictGetVector(key) end
 ---@return any
 function DatadictSetBool(key, value) end
 
+---@deprecated
+DatadictSetBool = ObjectValueAddBoolean
+
 ---**`DATAFILE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC27E1CC2D795105E)  
 ---This native does not have an official description.
@@ -201,6 +276,9 @@ function DatadictSetBool(key, value) end
 ---@param value number
 ---@return any
 function DatadictSetFloat(key, value) end
+
+---@deprecated
+DatadictSetFloat = ObjectValueAddFloat
 
 ---**`DATAFILE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xE7E035450A7948D5)  
@@ -210,6 +288,9 @@ function DatadictSetFloat(key, value) end
 ---@return any
 function DatadictSetInt(key, value) end
 
+---@deprecated
+DatadictSetInt = ObjectValueAddInteger
+
 ---**`DATAFILE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x8FF3847DADD8E30C)  
 ---This native does not have an official description.
@@ -217,6 +298,9 @@ function DatadictSetInt(key, value) end
 ---@param value string
 ---@return any
 function DatadictSetString(key, value) end
+
+---@deprecated
+DatadictSetString = ObjectValueAddString
 
 ---**`DATAFILE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x4CD49B76338C7DEE)  
@@ -227,6 +311,9 @@ function DatadictSetString(key, value) end
 ---@param valueZ number
 ---@return any
 function DatadictSetVector(key, valueX, valueY, valueZ) end
+
+---@deprecated
+DatadictSetVector = ObjectValueAddVector3
 
 ---**`DATAFILE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x6CC86E78358D5119)  
@@ -328,6 +415,9 @@ function DatafileIsValidRequestId(index) end
 ---@param filename string
 ---@return boolean
 function DatafileLoadOfflineUgc(filename) end
+
+---@deprecated
+DatafileLoadOfflineUgc = LoadUgcFile
 
 ---**`DATAFILE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x22DA66936E0FFF37)  

@@ -117,6 +117,9 @@ function GetPlayerSwitchInterpOutCurrentTime() end
 ---@return number
 function GetPlayerSwitchInterpOutDuration() end
 
+---@deprecated
+GetPlayerSwitchInterpOutDuration = SetPlayerInvertedUp
+
 ---**`STREAMING` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x78C0D93253149435)  
 ---This native does not have an official description.
@@ -206,6 +209,9 @@ function HasPtfxAssetLoaded() end
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xB5A4DB34FE89B88A)  
 ---This native does not have an official description.
 function InitCreatorBudget() end
+
+---@deprecated
+InitCreatorBudget = LoadMissionCreatorData
 
 ---**`STREAMING` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x2DDFF3FB9075D747)  
@@ -305,6 +311,9 @@ function IsSwitchReadyForDescent() end
 ---This native does not have an official description.
 ---@return boolean
 function IsSwitchSkippingDescent() end
+
+---@deprecated
+IsSwitchSkippingDescent = DestroyPlayerInPauseMenu
 
 ---**`STREAMING` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xBD6E84632DD4CB3F)  
@@ -633,6 +642,9 @@ function RequestModel(model) end
 ---@param roomName string
 function RequestModelsInRoom(interior, roomName) end
 
+---@deprecated
+RequestModelsInRoom = RequestInteriorRoomByName
+
 ---**`STREAMING` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xB80D8756B4668AB6)  
 ---```
@@ -690,6 +702,9 @@ function SetFocusEntity(entity) end
 ---@param offsetY number
 ---@param offsetZ number
 function SetFocusPosAndVel(x, y, z, offsetX, offsetY, offsetZ) end
+
+---@deprecated
+SetFocusPosAndVel = SetFocusArea
 
 ---**`STREAMING` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x717CD6E6FAEBBEDC)  
@@ -895,6 +910,9 @@ function StreamvolCreateLine(p0, p1, p2, p3, p4, p5, p6) end
 ---@param p5 any
 ---@return any
 function StreamvolCreateSphere(x, y, z, rad, p4, p5) end
+
+---@deprecated
+StreamvolCreateSphere = FormatFocusHeading
 
 ---**`STREAMING` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x1EE7D8DF4425F053)  

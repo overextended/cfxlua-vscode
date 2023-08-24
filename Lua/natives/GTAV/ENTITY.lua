@@ -434,6 +434,9 @@ function GetEntityBoneIndexByName(entity, boneName) end
 ---@return vector3
 function GetEntityBonePosition_2(entity, boneIndex) end
 
+---@deprecated
+GetEntityBonePosition_2 = GetWorldPositionOfEntityBone_2
+
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xCE6294A232D03786)  
 ---```
@@ -443,6 +446,9 @@ function GetEntityBonePosition_2(entity, boneIndex) end
 ---@param boneIndex number
 ---@return vector3
 function GetEntityBoneRotation(entity, boneIndex) end
+
+---@deprecated
+GetEntityBoneRotation = GetWorldRotationOfEntityBone
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xBD8D32550E5CEBFE)  
@@ -469,6 +475,9 @@ function GetEntityCanBeDamaged(entity) end
 ---@param entity number
 ---@return boolean
 function GetEntityCollisionDisabled(entity) end
+
+---@deprecated
+GetEntityCollisionDisabled = GetEntityCollisonDisabled
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x3FEF770D40960D5A)  
@@ -1558,6 +1567,11 @@ function SetEntityCanBeTargetedWithoutLos(entity, toggle) end
 ---@param toggle boolean
 function SetEntityCleanupByEngine(entity, toggle) end
 
+---@deprecated
+SetEntityCleanupByEngine = SetEntityRegister
+---@deprecated
+SetEntityCleanupByEngine = SetEntitySomething
+
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x1A9205C1B9EE827F)  
 ---This native does not have an official description.
@@ -1573,6 +1587,9 @@ function SetEntityCollision(entity, toggle, keepPhysics) end
 ---@param toggle boolean
 ---@param keepPhysics boolean
 function SetEntityCompletelyDisableCollision(entity, toggle, keepPhysics) end
+
+---@deprecated
+SetEntityCompletelyDisableCollision = SetEntityCollision_2
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x06843DA7060A026B)  
@@ -1611,6 +1628,9 @@ function SetEntityCoordsNoOffset(entity, xPos, yPos, zPos, alive, deadFlag, ragd
 ---@param ragdollFlag boolean
 ---@param clearArea boolean
 function SetEntityCoordsWithoutPlantsReset(entity, xPos, yPos, zPos, alive, deadFlag, ragdollFlag, clearArea) end
+
+---@deprecated
+SetEntityCoordsWithoutPlantsReset = SetEntityCoords_2
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x2C2E3DC128F44309)  

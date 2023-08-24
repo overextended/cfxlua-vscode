@@ -213,6 +213,9 @@ function GetNumDlcWeaponsSp() end
 ---@return number
 function GetNumTattooShopDlcItems(character) end
 
+---@deprecated
+GetNumTattooShopDlcItems = GetNumDecorations
+
 ---**`FILES` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC6B9DB42C04DD8C3)  
 ---```
@@ -221,6 +224,9 @@ function GetNumTattooShopDlcItems(character) end
 ---@param componentHash number | string
 ---@return number
 function GetShopPedApparelForcedComponentCount(componentHash) end
+
+---@deprecated
+GetShopPedApparelForcedComponentCount = GetNumForcedComponents
 
 ---**`FILES` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x017568A8182D98A6)  
@@ -268,6 +274,9 @@ function GetShopPedOutfit(p0) end
 ---@param slot number
 ---@return boolean, any
 function GetShopPedOutfitComponentVariant(outfit, slot) end
+
+---@deprecated
+GetShopPedOutfitComponentVariant = GetPropFromOutfit
 
 ---**`FILES` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x073CA26B079F956E)  
@@ -363,6 +372,9 @@ function GetShopPedQueryProp(componentId) end
 ---@return boolean, any
 function GetTattooShopDlcItemData(characterType, decorationIndex) end
 
+---@deprecated
+GetTattooShopDlcItemData = GetTattooCollectionData
+
 ---**`FILES` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x6E11F282F11863B6)  
 ---This native does not have an official description.
@@ -397,6 +409,11 @@ function InitShopPedProp() end
 ---@param itemHash number | string
 ---@return boolean
 function IsContentItemLocked(itemHash) end
+
+---@deprecated
+IsContentItemLocked = IsOutfitEmpty
+---@deprecated
+IsContentItemLocked = IsDlcDataEmpty
 
 ---**`FILES` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x0564B9FF9631B82C)  
@@ -493,6 +510,9 @@ function SetupShopPedApparelQuery(p0, p1, p2, p3) end
 ---@param componentId number
 ---@return number
 function SetupShopPedApparelQueryTu(character, p1, p2, p3, p4, componentId) end
+
+---@deprecated
+SetupShopPedApparelQueryTu = GetNumPropsFromOutfit
 
 ---**`FILES` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xF3FBE2D50A6A8C28)  

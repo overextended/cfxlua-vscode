@@ -961,6 +961,9 @@ function NetworkEarnFromBbEventCargo(amount) end
 ---@param heistHash string
 function NetworkEarnFromBendJob(amount, heistHash) end
 
+---@deprecated
+NetworkEarnFromBendJob = NetworkEarnFromMissionH
+
 ---**`MONEY` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x827A5BA1A44ACA6D)  
 ---This native does not have an official description.
@@ -1159,6 +1162,9 @@ function NetworkEarnFromDailyObjectiveEvent(amount) end
 ---@param p1 string
 ---@param p2 number
 function NetworkEarnFromDailyObjectives(p0, p1, p2) end
+
+---@deprecated
+NetworkEarnFromDailyObjectives = NetworkEarnFromDailyObjective
 
 ---**`MONEY` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xCAC672087B4A24AB)  
@@ -1627,6 +1633,9 @@ function NetworkGetPvcBalance() end
 ---@return number
 function NetworkGetPvcTransferBalance() end
 
+---@deprecated
+NetworkGetPvcTransferBalance = NetworkGetRemainingVcDailyTransfers
+
 ---**`MONEY` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xEA560AC9EEB1E19B)  
 ---```
@@ -1637,11 +1646,17 @@ function NetworkGetPvcTransferBalance() end
 ---@return number
 function NetworkGetRemainingTransferBalance() end
 
+---@deprecated
+NetworkGetRemainingTransferBalance = NetworkGetRemainingVcDailyTransfers_2
+
 ---**`MONEY` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA6FA3979BED01B81)  
 ---This native does not have an official description.
 ---@return string
 function NetworkGetStringBankBalance() end
+
+---@deprecated
+NetworkGetStringBankBalance = NetworkGetBankBalanceString
 
 ---**`MONEY` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x700AF71AE615E6DD)  

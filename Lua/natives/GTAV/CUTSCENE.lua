@@ -311,6 +311,9 @@ function RequestCutscene(cutsceneName, flags) end
 ---@param flags number
 function RequestCutsceneWithPlaybackList(cutsceneName, playbackFlags, flags) end
 
+---@deprecated
+RequestCutsceneWithPlaybackList = RequestCutsceneEx
+
 ---**`CUTSCENE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x41FAA8FB2ECE8720)  
 ---This native does not have an official description.

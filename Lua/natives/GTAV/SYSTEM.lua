@@ -158,6 +158,9 @@ function StartNewScriptWithArgs(scriptName, argCount, stackSize) end
 ---@return number
 function StartNewScriptWithNameHash(scriptHash, stackSize) end
 
+---@deprecated
+StartNewScriptWithNameHash = StartNewStreamedScript
+
 ---**`SYSTEM` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC4BB298BD441BE78)  
 ---This native does not have an official description.
@@ -166,6 +169,9 @@ function StartNewScriptWithNameHash(scriptHash, stackSize) end
 ---@param stackSize number
 ---@return number, any
 function StartNewScriptWithNameHashAndArgs(scriptHash, argCount, stackSize) end
+
+---@deprecated
+StartNewScriptWithNameHashAndArgs = StartNewStreamedScriptWithArgs
 
 ---**`SYSTEM` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x83666F9FB8FEBD4B)  

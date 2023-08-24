@@ -92,6 +92,9 @@ function GetEventExists(eventGroup, eventIndex) end
 ---@return number
 function GetHashOfThisScriptName() end
 
+---@deprecated
+GetHashOfThisScriptName = GetThisScriptHash
+
 ---**`SCRIPT` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC30338E8088E2E21)  
 ---This native does not have an official description.
@@ -104,6 +107,9 @@ function GetIdOfThisThread() end
 ---@param threadId number
 ---@return string
 function GetNameOfThread(threadId) end
+
+---@deprecated
+GetNameOfThread = GetThreadName
 
 ---**`SCRIPT` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x18C1270EA7F199BC)  
@@ -133,6 +139,11 @@ function GetNumberOfEvents(eventGroup) end
 ---@return number
 function GetNumberOfReferencesOfScriptWithNameHash(scriptHash) end
 
+---@deprecated
+GetNumberOfReferencesOfScriptWithNameHash = GetNumberOfInstancesOfStreamedScript
+---@deprecated
+GetNumberOfReferencesOfScriptWithNameHash = GetNumberOfInstancesOfScriptWithNameHash
+
 ---**`SCRIPT` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x442E0A7EDE4A738A)  
 ---This native does not have an official description.
@@ -152,6 +163,9 @@ function HasScriptLoaded(scriptName) end
 ---@param scriptHash number | string
 ---@return boolean
 function HasScriptWithNameHashLoaded(scriptHash) end
+
+---@deprecated
+HasScriptWithNameHashLoaded = HasStreamedScriptLoaded
 
 ---**`SCRIPT` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x46E9AE36D8FA6417)  
@@ -237,6 +251,9 @@ function RequestScript(scriptName) end
 ---@param scriptHash number | string
 function RequestScriptWithNameHash(scriptHash) end
 
+---@deprecated
+RequestScriptWithNameHash = RequestStreamedScript
+
 ---**`SCRIPT` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x30B4FA1C82DD4B9F)  
 ---```
@@ -245,11 +262,17 @@ function RequestScriptWithNameHash(scriptHash) end
 ---@return number
 function ScriptThreadIteratorGetNextThreadId() end
 
+---@deprecated
+ScriptThreadIteratorGetNextThreadId = GetIdOfNextThreadInEnumeration
+
 ---**`SCRIPT` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xDADFADA5A20143A8)  
 ---Starts a new iteration of the current threads.
 ---Call this first, then SCRIPT_THREAD_ITERATOR_GET_NEXT_THREAD_ID (0x30B4FA1C82DD4B9F)
 function ScriptThreadIteratorReset() end
+
+---@deprecated
+ScriptThreadIteratorReset = BeginEnumeratingThreads
 
 ---**`SCRIPT` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x5262CC1995D07E09)  
@@ -268,6 +291,9 @@ function SetScriptAsNoLongerNeeded(scriptName) end
 ---This native does not have an official description.
 ---@param scriptHash number | string
 function SetScriptWithNameHashAsNoLongerNeeded(scriptHash) end
+
+---@deprecated
+SetScriptWithNameHashAsNoLongerNeeded = SetStreamedScriptAsNoLongerNeeded
 
 ---**`SCRIPT` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x078EBE9809CCD637)  

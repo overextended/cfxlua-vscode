@@ -320,6 +320,9 @@ function ClearArea(X, Y, Z, radius, p4, ignoreCopCars, ignoreObjects, p7) end
 ---@param p7 boolean
 function ClearAreaLeaveVehicleHealth(x, y, z, radius, p4, p5, p6, p7) end
 
+---@deprecated
+ClearAreaLeaveVehicleHealth = ClearAreaOfEverything
+
 ---**`MISC` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x04F8FC8FCF58F88D)  
 ---Clears an area of cops at the given coordinates and radius.
@@ -414,6 +417,9 @@ function ClearReplayStats() end
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA2716D40842EAF79)  
 ---This native does not have an official description.
 function ClearRestartCustomPosition() end
+
+---@deprecated
+ClearRestartCustomPosition = SetNextRespawnToCustom
 
 ---**`MISC` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xB3CD58CCA6CDA852)  
@@ -631,6 +637,9 @@ function DisplayOnscreenKeyboard(p0, windowTitle, p2, defaultText, defaultConcat
 ---@return any
 function DisplayOnscreenKeyboardWithLongerInitialString(p0, windowTitle, defaultText, defaultConcat1, defaultConcat2, defaultConcat3, defaultConcat4, defaultConcat5, defaultConcat6, defaultConcat7, maxInputLength) end
 
+---@deprecated
+DisplayOnscreenKeyboardWithLongerInitialString = DisplayOnscreenKeyboard_2
+
 ---**`MISC` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x50EEAAD86232EE55)  
 ---This native does not have an official description.
@@ -737,12 +746,18 @@ function FindSpawnPointInDirection(posX, posY, posZ, dirX, dirY, dirZ, distance)
 ---```
 function ForceGameStatePlaying() end
 
+---@deprecated
+ForceGameStatePlaying = ResetLocalplayerState
+
 ---**`MISC` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xF6062E089251C898)  
 ---```
 ---creates single lightning+thunder at random position  
 ---```
 function ForceLightningFlash() end
+
+---@deprecated
+ForceLightningFlash = CreateLightningThunder
 
 ---**`MISC` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xEB6891F03362FB12)  
@@ -826,6 +841,9 @@ function GetCloudHatOpacity() end
 ---@return boolean, vector3
 function GetCoordsOfProjectileTypeInArea(x1, y1, z1, x2, y2, z2, projectileHash, ownedByPlayer) end
 
+---@deprecated
+GetCoordsOfProjectileTypeInArea = GetIsProjectileTypeInArea
+
 ---**`MISC` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xDFB4138EEFED7B81)  
 ---This native does not have an official description.
@@ -835,6 +853,9 @@ function GetCoordsOfProjectileTypeInArea(x1, y1, z1, x2, y2, z2, projectileHash,
 ---@param ownedByPlayer boolean
 ---@return boolean, vector3
 function GetCoordsOfProjectileTypeWithinDistance(ped, weaponHash, distance, ownedByPlayer) end
+
+---@deprecated
+GetCoordsOfProjectileTypeWithinDistance = GetProjectileNearPedCoords
 
 ---**`MISC` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xF1B760881820C952)  
@@ -894,6 +915,9 @@ function GetGlobalCharBuffer() end
 ---@param z number
 ---@return boolean, number, vector3
 function GetGroundZAndNormalFor_3dCoord(x, y, z) end
+
+---@deprecated
+GetGroundZAndNormalFor_3dCoord = GetGroundZCoordWithOffsets
 
 ---**`MISC` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC906A7DAB05C8D2B)  
@@ -986,6 +1010,9 @@ function GetModelDimensions(modelHash) end
 ---@return number
 function GetNextWeatherTypeHashName() end
 
+---@deprecated
+GetNextWeatherTypeHashName = GetNextWeatherType
+
 ---**`MISC` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xFEAD16FC8F9DFC0F)  
 ---This native does not have an official description.
@@ -993,12 +1020,18 @@ function GetNextWeatherTypeHashName() end
 ---@return number
 function GetNumberOfFreeStacksOfThisSize(stackSize) end
 
+---@deprecated
+GetNumberOfFreeStacksOfThisSize = GetFreeStackSlotsCount
+
 ---**`MISC` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xEB4A0C2D56441717)  
 ---This native does not have an official description.
 ---@param dispatchService number
 ---@return number
 function GetNumDispatchedUnitsForPlayer(dispatchService) end
+
+---@deprecated
+GetNumDispatchedUnitsForPlayer = GetNumberOfDispatchedUnitsForPlayer
 
 ---**`MISC` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x996DD1E1E02F1008)  
@@ -1027,6 +1060,9 @@ function GetPowerSavingModeDuration() end
 ---Refer to [`SET_WEATHER_TYPE_NOW_PERSIST`](#\_0xED712CA327900C8A) for weather types.
 ---@return number
 function GetPrevWeatherTypeHashName() end
+
+---@deprecated
+GetPrevWeatherTypeHashName = GetPrevWeatherType
 
 ---**`MISC` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC488FF2356EA7791)  
@@ -1514,6 +1550,9 @@ function IsProjectileTypeInArea(x1, y1, z1, x2, y2, z2, type, ownedByPlayer) end
 ---@return boolean
 function IsProjectileTypeWithinDistance(x, y, z, projHash, radius, ownedByPlayer) end
 
+---@deprecated
+IsProjectileTypeWithinDistance = IsProjectileTypeInRadius
+
 ---**`MISC` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xCCA1072C29D096C2)  
 ---This native does not have an official description.
@@ -1623,6 +1662,9 @@ function LandingMenuIsActive() end
 ---@param name string
 ---@param transitionTime number
 function LoadCloudHat(name, transitionTime) end
+
+---@deprecated
+LoadCloudHat = SetCloudHatTransition
 
 ---**`MISC` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x02DEAAC8F8EA7FE7)  
@@ -2106,6 +2148,9 @@ function OverrideSaveHouse(p0, p1, p2, p3, p4, p5, p6, p7) end
 ---@param toggle boolean
 function PauseDeathArrestRestart(toggle) end
 
+---@deprecated
+PauseDeathArrestRestart = DisableAutomaticRespawn
+
 ---**`MISC` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x8FA9C42FC5D7C64B)  
 ---This native does not have an official description.
@@ -2497,11 +2542,21 @@ function SetIncidentUnk(incidentId, p1) end
 ---@param flag number
 function SetInstancePriorityHint(flag) end
 
+---@deprecated
+SetInstancePriorityHint = SetUnkMapFlag
+
 ---**`MISC` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x9BAE5AD2508DF078)  
 ---Sets the maximum prop density and changes a loading screen flag from 'loading story mode' to 'loading GTA Online'. It causes a loading screen to show as it reloads map data.
 ---@param toggle number
 function SetInstancePriorityMode(toggle) end
+
+---@deprecated
+SetInstancePriorityMode = EnableMpDlcMaps
+---@deprecated
+SetInstancePriorityMode = UseFreemodeMapBehavior
+---@deprecated
+SetInstancePriorityMode = LowerMapPropDensity
 
 ---**`MISC` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x19E00D7322C6F85B)  
@@ -2534,6 +2589,9 @@ function SetOverrideWeather(weatherType) end
 ---@param toggle boolean
 function SetPlayerIsInAnimalForm(toggle) end
 
+---@deprecated
+SetPlayerIsInAnimalForm = ShowPedInPauseMenu
+
 ---**`MISC` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x9D8D44ADBBA61EF2)  
 ---```
@@ -2553,6 +2611,9 @@ function SetPlayerRockstarEditorDisabled(toggle) end
 ---To use the rain level of the current weather, call this native with `-1f` as `level`.
 ---@param level number
 function SetRainLevel(level) end
+
+---@deprecated
+SetRainLevel = SetRainFxIntensity
 
 ---**`MISC` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x971927086CFD2158)  
@@ -2582,6 +2643,9 @@ function SetRandomWeatherType() end
 ---@param z number
 ---@param heading number
 function SetRestartCustomPosition(x, y, z, heading) end
+
+---@deprecated
+SetRestartCustomPosition = SetCustomRespawnPosition
 
 ---**`MISC` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x2587A48BC88DFADF)  
@@ -2686,6 +2750,9 @@ function SetWeatherTypeNowPersist(weatherType) end
 ---@param time number
 function SetWeatherTypeOvertimePersist(weatherType, time) end
 
+---@deprecated
+SetWeatherTypeOvertimePersist = SetWeatherTypeOverTime
+
 ---**`MISC` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x704983DF373B198F)  
 ---Refer to [`SET_WEATHER_TYPE_NOW_PERSIST`](#\_0xED712CA327900C8A) for weather types.
@@ -2770,6 +2837,9 @@ function ShootSingleBulletBetweenCoords(x1, y1, z1, x2, y2, z2, damage, pureAccu
 ---@param entity number
 function ShootSingleBulletBetweenCoordsIgnoreEntity(x1, y1, z1, x2, y2, z2, damage, p7, weaponHash, ownerPed, isAudible, isInvisible, speed, entity) end
 
+---@deprecated
+ShootSingleBulletBetweenCoordsIgnoreEntity = ShootSingleBulletBetweenCoordsPresetParams
+
 ---**`MISC` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xBFE5756E7407064A)  
 ---```
@@ -2797,11 +2867,17 @@ function ShootSingleBulletBetweenCoordsIgnoreEntity(x1, y1, z1, x2, y2, z2, dama
 ---@param p17 boolean
 function ShootSingleBulletBetweenCoordsIgnoreEntityNew(x1, y1, z1, x2, y2, z2, damage, p7, weaponHash, ownerPed, isAudible, isInvisible, speed, entity, p14, p15, p16, p17) end
 
+---@deprecated
+ShootSingleBulletBetweenCoordsIgnoreEntityNew = ShootSingleBulletBetweenCoordsWithExtraParams
+
 ---**`MISC` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xD3D15555431AB793)  
 ---Returns true if the game is using the metric measurement system (profile setting 227), false if imperial is used.
 ---@return boolean
 function ShouldUseMetricMeasurements() end
+
+---@deprecated
+ShouldUseMetricMeasurements = IsGameUsingMetricMeasurementSystem
 
 ---**`MISC` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xF2F6A2FA49278625)  
@@ -2833,6 +2909,9 @@ function StartBenchmarkRecording() end
 ---@return any
 function StartSaveArrayWithSize(size, arrayName) end
 
+---@deprecated
+StartSaveArrayWithSize = StartSaveArray
+
 ---**`MISC` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA9575F812C6A7997)  
 ---This native does not have an official description.
@@ -2848,6 +2927,9 @@ function StartSaveData(p1, p2) end
 ---@param structName string
 ---@return any
 function StartSaveStructWithSize(size, structName) end
+
+---@deprecated
+StartSaveStructWithSize = StartSaveStruct
 
 ---**`MISC` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC7DB36C24634F52B)  

@@ -117,6 +117,9 @@ function StopRecordingAndDiscardClip() end
 ---```
 function StopRecordingAndSaveClip() end
 
+---@deprecated
+StopRecordingAndSaveClip = StopRecording
+
 ---**`RECORDING` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xEB2D525B57F42B40)  
 ---This disable the recording feature and has to be called every frame.

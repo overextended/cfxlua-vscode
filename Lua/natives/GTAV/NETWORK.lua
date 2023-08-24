@@ -72,6 +72,9 @@ function ClearLaunchParams() end
 ---```
 function CloudCheckAvailability() end
 
+---@deprecated
+CloudCheckAvailability = DownloadCheck
+
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC64DED7EF0D2FE37)  
 ---This native does not have an official description.
@@ -91,6 +94,9 @@ function CloudDidRequestSucceed(handle) end
 ---This native does not have an official description.
 ---@return boolean
 function CloudGetAvailabilityCheckResult() end
+
+---@deprecated
+CloudGetAvailabilityCheckResult = NetworkEnableMotionDrugged
 
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x4C61B39930D045DA)  
@@ -122,6 +128,9 @@ function CloudIsCheckingAvailability() end
 ---@param posixTime number
 ---@return any
 function ConvertPosixTime(posixTime) end
+
+---@deprecated
+ConvertPosixTime = GetDateAndTimeFromUnixEpoch
 
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA75E2B6733DA5142)  
@@ -375,6 +384,9 @@ function GetNumReservedMissionVehicles(p0) end
 ---@return string
 function GetOnlineVersion() end
 
+---@deprecated
+GetOnlineVersion = GetGameVersion
+
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x8BD6C6DEA20E82C6)  
 ---```
@@ -392,6 +404,9 @@ function GetStatusOfTextureDownload(p0) end
 ---@param time number
 ---@return string
 function GetTimeAsString(time) end
+
+---@deprecated
+GetTimeAsString = FormatTime
 
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA2C6FC031D46FFF0)  
@@ -452,12 +467,18 @@ function IsDamageTrackerActiveOnPlayer(player) end
 ---@return boolean
 function IsEntityGhostedToLocalPlayer(entity) end
 
+---@deprecated
+IsEntityGhostedToLocalPlayer = IsEntityAGhost
+
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA1607996431332DF)  
 ---This native does not have an official description.
 ---@param netId number
 ---@return boolean
 function IsNetworkIdOwnedByParticipant(netId) end
+
+---@deprecated
+IsNetworkIdOwnedByParticipant = NetworkCanNetworkIdBeSeen
 
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xE73092F4157CD126)  
@@ -503,6 +524,9 @@ function IsStoreAvailableToUser() end
 ---@return boolean
 function IsTimeEqualTo(timeA, timeB) end
 
+---@deprecated
+IsTimeEqualTo = AreIntegersEqual
+
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xCB2CF5148012C8D0)  
 ---```
@@ -513,6 +537,9 @@ function IsTimeEqualTo(timeA, timeB) end
 ---@return boolean
 function IsTimeLessThan(timeA, timeB) end
 
+---@deprecated
+IsTimeLessThan = SubtractBFromAAndCheckIfNegative
+
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xDE350F8651E4346C)  
 ---```
@@ -522,6 +549,9 @@ function IsTimeLessThan(timeA, timeB) end
 ---@param timeB number
 ---@return boolean
 function IsTimeMoreThan(timeA, timeB) end
+
+---@deprecated
+IsTimeMoreThan = SubtractAFromBAndCheckIfNegative
 
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x023ACAB2DC9DC4A4)  
@@ -2058,6 +2088,9 @@ function NetworkAmIMutedByPlayer(player) end
 ---@return boolean
 function NetworkApplyCachedPlayerHeadBlendData(ped, player) end
 
+---@deprecated
+NetworkApplyCachedPlayerHeadBlendData = NetworkCopyPedBlendData
+
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xE66C690248F11150)  
 ---This native does not have an official description.
@@ -2087,6 +2120,9 @@ function NetworkApplyTransitionParameterString(p0, string, p2) end
 ---@param y number
 ---@param z number
 function NetworkApplyVoiceProximityOverride(x, y, z) end
+
+---@deprecated
+NetworkApplyVoiceProximityOverride = IsNetworkVehicleBeenDamagedByAnyObject
 
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x66D6A5E9C511214A)  
@@ -2163,6 +2199,9 @@ function NetworkBlockInvites(toggle) end
 ---This native does not have an official description.
 ---@param toggle boolean
 function NetworkBlockJoinQueueInvites(toggle) end
+
+---@deprecated
+NetworkBlockJoinQueueInvites = NetworkBlockInvites_2
 
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x6B07B9CE4D390375)  
@@ -2296,6 +2335,9 @@ function NetworkClanAnimation(animDict, animName) end
 ---@return boolean
 function NetworkClanAnyDownloadMembershipPending() end
 
+---@deprecated
+NetworkClanAnyDownloadMembershipPending = NetworkIsClanMembershipFinishedDownloading
+
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA989044E70010ABE)  
 ---This native does not have an official description.
@@ -2315,11 +2357,19 @@ function NetworkClanDownloadMembershipPending() end
 ---@return boolean, any
 function NetworkClanGetEmblemTxdName(txdName) end
 
+---@deprecated
+NetworkClanGetEmblemTxdName = NetworkGetPlayerCrewEmblemTxdName
+
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x1F471B79ACC90BEF)  
 ---This native does not have an official description.
 ---@return number
 function NetworkClanGetLocalMembershipsCount() end
+
+---@deprecated
+NetworkClanGetLocalMembershipsCount = GetNumMembershipDesc
+---@deprecated
+NetworkClanGetLocalMembershipsCount = NetworkClanGetNumMembershipDesc
 
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC8BC2011F67B3411)  
@@ -2426,6 +2476,9 @@ function NetworkClanRequestEmblem(p0) end
 ---This native does not have an official description.
 ---@return boolean
 function NetworkClanServiceIsValid() end
+
+---@deprecated
+NetworkClanServiceIsValid = NetworkPlayerIsInClan
 
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xD972DF67326F966E)  
@@ -2750,6 +2803,9 @@ function NetworkFadeOutEntity(entity, normal, slow) end
 ---@return boolean
 function NetworkFindGamersInCrew(p0) end
 
+---@deprecated
+NetworkFindGamersInCrew = NetworkXAffectsGamers
+
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xF7B2CFDE5C9F700D)  
 ---This native does not have an official description.
@@ -2861,6 +2917,9 @@ function NetworkGetBackgroundLoadingRecipients(p0, p1) end
 ---@return number
 function NetworkGetContentModifierListId(contentHash) end
 
+---@deprecated
+NetworkGetContentModifierListId = GetTunablesContentModifierId
+
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x74881E6BCAE2327C)  
 ---This native does not have an official description.
@@ -2874,6 +2933,9 @@ function NetworkGetCurrentlySelectedGamerHandleFromInviteMenu() end
 ---@param p1 any
 ---@return boolean, number
 function NetworkGetDestroyerOfEntity(p0, p1) end
+
+---@deprecated
+NetworkGetDestroyerOfEntity = NetworkGetDesroyerOfEntity
 
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x7A1ADEEF01740A24)  
@@ -2980,6 +3042,9 @@ function NetworkGetGamertagFromHandle() end
 ---@return number, number, number
 function NetworkGetGlobalMultiplayerClock() end
 
+---@deprecated
+NetworkGetGlobalMultiplayerClock = NetworkGetServerTime
+
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x1D6A14F1F9A736FC)  
 ---```
@@ -3033,6 +3098,11 @@ function NetworkGetLocalHandle(bufferSize) end
 ---@return number
 function NetworkGetLocalSceneFromNetworkId(netId) end
 
+---@deprecated
+NetworkGetLocalSceneFromNetworkId = NetworkUnlinkNetworkedSynchronisedScene
+---@deprecated
+NetworkGetLocalSceneFromNetworkId = NetworkConvertSynchronisedSceneToSynchronizedScene
+
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xAFEBB0D5D8F687D2)  
 ---This native does not have an official description.
@@ -3051,6 +3121,9 @@ function NetworkGetMaxFriends() end
 ---```
 ---@return number
 function NetworkGetMaxNumParticipants() end
+
+---@deprecated
+NetworkGetMaxNumParticipants = NetworkGetNumParticipantsHost
 
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA11700682F3AD45C)  
@@ -3320,6 +3393,9 @@ function NetworkGetRandomInt() end
 ---@return number
 function NetworkGetRandomIntRanged(rangeStart, rangeEnd) end
 
+---@deprecated
+NetworkGetRandomIntRanged = NetworkGetRandomIntInRange
+
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x371EA43692861CF1)  
 ---```
@@ -3412,6 +3488,9 @@ function NetworkGetTransitionMembers(dataCount) end
 ---```
 ---@return number
 function NetworkGetTunableCloudCrc() end
+
+---@deprecated
+NetworkGetTunableCloudCrc = NetworkGetTunablesVersion
 
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x3765C3A3E8192E10)  
@@ -3611,6 +3690,9 @@ function NetworkHasRosPrivilege(index) end
 ---@return boolean, number, vector3
 function NetworkHasRosPrivilegeEndDate(privilege) end
 
+---@deprecated
+NetworkHasRosPrivilegeEndDate = NetworkGetBanData
+
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x67A5589628E0CFF6)  
 ---This native does not have an official description.
@@ -3636,6 +3718,11 @@ function NetworkHasTransitionInviteBeenAcked() end
 ---```
 ---@return boolean
 function NetworkHasValidRosCredentials() end
+
+---@deprecated
+NetworkHasValidRosCredentials = NetworkAreRosAvailable
+---@deprecated
+NetworkHasValidRosCredentials = NetworkHaveJustUploadLater
 
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xCCA4318E1AB03F1F)  
@@ -3669,11 +3756,21 @@ function NetworkHaveOnlinePrivileges() end
 ---@return boolean
 function NetworkHaveRosBannedPriv() end
 
+---@deprecated
+NetworkHaveRosBannedPriv = IsRockstarBanned
+---@deprecated
+NetworkHaveRosBannedPriv = NetworkHasPlayerBeenBanned
+
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA0AD7E2AF5349F61)  
 ---This native does not have an official description.
 ---@return boolean
 function NetworkHaveRosCreateTicketPriv() end
+
+---@deprecated
+NetworkHaveRosCreateTicketPriv = IsSocialclubBanned
+---@deprecated
+NetworkHaveRosCreateTicketPriv = NetworkHaveSocialClubPrivilege
 
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x422D396F80A96547)  
@@ -3681,17 +3778,30 @@ function NetworkHaveRosCreateTicketPriv() end
 ---@return boolean
 function NetworkHaveRosLeaderboardWritePriv() end
 
+---@deprecated
+NetworkHaveRosLeaderboardWritePriv = NetworkGetRosPrivilege_4
+
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x5F91D5D0B36AA310)  
 ---This native does not have an official description.
 ---@return boolean
 function NetworkHaveRosMultiplayerPriv() end
 
+---@deprecated
+NetworkHaveRosMultiplayerPriv = IsPlayerBanned
+---@deprecated
+NetworkHaveRosMultiplayerPriv = CanPlayOnline
+---@deprecated
+NetworkHaveRosMultiplayerPriv = NetworkGetRosPrivilege_3
+
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x606E4D3E3CCCF3EB)  
 ---This native does not have an official description.
 ---@return boolean
 function NetworkHaveRosSocialClubPriv() end
+
+---@deprecated
+NetworkHaveRosSocialClubPriv = NetworkGetRosPrivilege_10
 
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x72D918C99BCACC54)  
@@ -3792,6 +3902,11 @@ function NetworkIsCloudAvailable() end
 ---@return boolean
 function NetworkIsCloudBackgroundScriptRequestPending() end
 
+---@deprecated
+NetworkIsCloudBackgroundScriptRequestPending = HasBgScriptBeenDownloaded
+---@deprecated
+NetworkIsCloudBackgroundScriptRequestPending = NetworkIsCloudBackgroundScriptsRequestPending
+
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x16D3D49902F697BB)  
 ---```
@@ -3809,6 +3924,9 @@ function NetworkIsConnectionEndpointRelayServer(player) end
 ---@param doorHash number | string
 ---@return boolean
 function NetworkIsDoorNetworked(doorHash) end
+
+---@deprecated
+NetworkIsDoorNetworked = NetworkHasControlOfPavementStats
 
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x71302EC70689052A)  
@@ -3841,6 +3959,9 @@ function NetworkIsFriend() end
 ---This native does not have an official description.
 ---@return boolean, number
 function NetworkIsFriendHandleOnline() end
+
+---@deprecated
+NetworkIsFriendHandleOnline = NetworkIsFriendOnline_2
 
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xBAD8F2A42B844821)  
@@ -4222,6 +4343,9 @@ function NetworkIsTextChatActive() end
 ---@return boolean
 function NetworkIsThisScriptMarked(p0, p1, p2) end
 
+---@deprecated
+NetworkIsThisScriptMarked = NetworkSetThisScriptMarked
+
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x520F3282A53D26B7)  
 ---This native does not have an official description.
@@ -4299,6 +4423,9 @@ function NetworkIsTransitionVisibilityLocked() end
 ---This native does not have an official description.
 ---@return boolean
 function NetworkIsTunableCloudRequestPending() end
+
+---@deprecated
+NetworkIsTunableCloudRequestPending = HasTunablesBeenDownloaded
 
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x35F0B98A8387274D)  
@@ -4436,6 +4563,9 @@ function NetworkOverrideSendRestrictions(player, toggle) end
 ---@param toggle boolean
 function NetworkOverrideSendRestrictionsAll(toggle) end
 
+---@deprecated
+NetworkOverrideSendRestrictionsAll = NetworkChatMute
+
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x6F697A66CE78674E)  
 ---This native does not have an official description.
@@ -4463,6 +4593,9 @@ function NetworkPedForceGameStateUpdate(ped) end
 ---@return number
 function NetworkPlayerGetCheaterReason() end
 
+---@deprecated
+NetworkPlayerGetCheaterReason = NetworkPlayerIsUnk
+
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x7718D2E2060837D2)  
 ---```
@@ -4481,6 +4614,9 @@ function NetworkPlayerGetName(player) end
 ---@return string, number
 function NetworkPlayerGetUserid(player) end
 
+---@deprecated
+NetworkPlayerGetUserid = NetworkPlayerGetUserId
+
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x3FB99A8B08D18FD6)  
 ---This native does not have an official description.
@@ -4494,6 +4630,9 @@ function NetworkPlayerHasHeadset(player) end
 ---@param player number
 ---@return boolean
 function NetworkPlayerIndexIsCheater(player) end
+
+---@deprecated
+NetworkPlayerIndexIsCheater = NetworkPlayerSomething
 
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x19D8DA0E5A68045A)  
@@ -4531,6 +4670,9 @@ function NetworkQueryRespawnResults() end
 ---This native does not have an official description.
 ---@return boolean, any
 function NetworkQueueGamerForStatus() end
+
+---@deprecated
+NetworkQueueGamerForStatus = NetworkGetGamerStatus
 
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x06FAACD625D80CAA)  
@@ -4683,6 +4825,9 @@ function NetworkSeedRandomNumberGenerator(seed) end
 ---@return boolean, number, any
 function NetworkSendInviteViaPresence(p2, p3) end
 
+---@deprecated
+NetworkSendInviteViaPresence = NetworkSendPresenceInvite
+
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC116FF9B4D488291)  
 ---```
@@ -4823,12 +4968,20 @@ function NetworkSessionGetInviter() end
 ---@return boolean
 function NetworkSessionGetKickVote(player) end
 
+---@deprecated
+NetworkSessionGetKickVote = NetworkSessionArePlayersVotingToKick
+---@deprecated
+NetworkSessionGetKickVote = NetworkSessionIsPlayerVotedToKick
+
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x56CE820830EF040B)  
 ---This native does not have an official description.
 ---@param p0 number
 ---@return number
 function NetworkSessionGetMatchmakingGroupFree(p0) end
+
+---@deprecated
+NetworkSessionGetMatchmakingGroupFree = NetworkSessionGetUnk
 
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x53AFD64C6758F2F9)  
@@ -4923,6 +5076,9 @@ function NetworkSessionIsVoiceSessionBusy() end
 ---This native does not have an official description.
 function NetworkSessionJoinInvite() end
 
+---@deprecated
+NetworkSessionJoinInvite = NetworkIsPlayerAnimationDrawingSynchronized
+
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xFA8904DC5F304220)  
 ---```
@@ -4948,6 +5104,9 @@ function NetworkSessionMarkVisible(toggle) end
 ---@param matchmakingGroup number
 function NetworkSessionSetMatchmakingGroup(matchmakingGroup) end
 
+---@deprecated
+NetworkSessionSetMatchmakingGroup = NetworkSctvSlots
+
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x8B6A4DD0AF9CE215)  
 ---```
@@ -4959,6 +5118,9 @@ function NetworkSessionSetMatchmakingGroup(matchmakingGroup) end
 ---@param playerType number
 ---@param playerCount number
 function NetworkSessionSetMatchmakingGroupMax(playerType, playerCount) end
+
+---@deprecated
+NetworkSessionSetMatchmakingGroupMax = NetworkSessionSetMaxPlayers
 
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xF1EEA2DDA9FFA69D)  
@@ -4977,6 +5139,9 @@ function NetworkSessionSetMatchmakingPropertyId(p0) end
 ---This native does not have an official description.
 ---@param p0 boolean
 function NetworkSessionValidateJoin(p0) end
+
+---@deprecated
+NetworkSessionValidateJoin = NetworkSessionHosted
 
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xABD5E88B8A2D3DB2)  
@@ -5000,6 +5165,9 @@ function NetworkSessionValidateJoin(p0) end
 ---@return any
 function NetworkSessionVoiceConnectToPlayer() end
 
+---@deprecated
+NetworkSessionVoiceConnectToPlayer = NetworkVoiceConnectToPlayer
+
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x9C1556705F864230)  
 ---This native does not have an official description.
@@ -5017,11 +5185,17 @@ function NetworkSessionVoiceLeave() end
 ---@param p1 number
 function NetworkSessionVoiceRespondToRequest(p0, p1) end
 
+---@deprecated
+NetworkSessionVoiceRespondToRequest = NetworkSetKeepFocuspoint
+
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x5B8ED3DB018927B1)  
 ---This native does not have an official description.
 ---@param timeout number
 function NetworkSessionVoiceSetTimeout(timeout) end
+
+---@deprecated
+NetworkSessionVoiceSetTimeout = N_0x5b8ed3db018927b1
 
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x23DFB504655D0CE4)  
@@ -5059,6 +5233,9 @@ function NetworkSetChoiceMigrateOptions(toggle, player) end
 ---This native does not have an official description.
 ---@return boolean, any
 function NetworkSetCurrentDataManagerHandle() end
+
+---@deprecated
+NetworkSetCurrentDataManagerHandle = NetworkCheckDataManagerForHandle
 
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x7206F674F2A3B1BB)  
@@ -5138,6 +5315,9 @@ function NetworkSetEntityGhostedWithOwner(entity, p1) end
 ---@param entity number
 ---@param toggle boolean
 function NetworkSetEntityInvisibleToNetwork(entity, toggle) end
+
+---@deprecated
+NetworkSetEntityInvisibleToNetwork = NetworkSetEntityVisibleToNetwork
 
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xF808475FA571D823)  
@@ -5259,6 +5439,9 @@ function NetworkSetRichPresence(p0, p1, p2, p3) end
 ---@param p0 number
 ---@param textLabel string
 function NetworkSetRichPresenceString(p0, textLabel) end
+
+---@deprecated
+NetworkSetRichPresenceString = NetworkSetRichPresence_2
 
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x7AC752103856FB20)  
@@ -5452,6 +5635,9 @@ function NetworkTransitionTrack(hash, p1, p2, state, p4) end
 ---@return boolean
 function NetworkTryAccessTunableBoolHash(tunableContext, tunableName, defaultValue) end
 
+---@deprecated
+NetworkTryAccessTunableBoolHash = NetworkAccessTunableBoolHashFailVal
+
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC1447451DDB512F0)  
 ---```
@@ -5480,6 +5666,9 @@ function NetworkUpdatePlayerScars() end
 ---@param netID number
 ---@param toggle boolean
 function NetworkUseHighPrecisionBlending(netID, toggle) end
+
+---@deprecated
+NetworkUseHighPrecisionBlending = NetworkSetNetworkIdDynamic
 
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xCD71A4ECAB22709E)  
@@ -5542,6 +5731,9 @@ function PedToNet(ped) end
 ---@param p0 number
 ---@return boolean
 function RefreshPlayerListStats(p0) end
+
+---@deprecated
+RefreshPlayerListStats = UsingNetworkWeapontype
 
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x72D0706CD6CCDB58)  
@@ -5728,6 +5920,9 @@ function SetNetworkEnableVehiclePositionCorrection(vehicle, toggle) end
 ---@param toggle boolean
 function SetNetworkIdAlwaysExistsForPlayer(netId, player, toggle) end
 
+---@deprecated
+SetNetworkIdAlwaysExistsForPlayer = SetNetworkIdSyncToPlayer
+
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x299EEB23175895FC)  
 ---```
@@ -5759,6 +5954,9 @@ function SetNetworkIdVisibleInCutscene(netId, p1, p2) end
 ---@param toggle boolean
 function SetNetworkVehicleAsGhost(vehicle, toggle) end
 
+---@deprecated
+SetNetworkVehicleAsGhost = SetNetworkObjectNonContact
+
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA2A707979FE754DC)  
 ---```
@@ -5767,6 +5965,9 @@ function SetNetworkVehicleAsGhost(vehicle, toggle) end
 ---@param vehicle number
 ---@param multiplier number
 function SetNetworkVehiclePositionUpdateMultiplier(vehicle, multiplier) end
+
+---@deprecated
+SetNetworkVehiclePositionUpdateMultiplier = SetNetworkVehicleBlenderDistanceMultiplier
 
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xEC51713AB6EC36E8)  
@@ -5875,6 +6076,9 @@ function TitleTextureDownloadRequest(FilePath, Name, p2) end
 ---@return boolean
 function TriggerScriptCrcCheckOnPlayer(player, p1, scriptHash) end
 
+---@deprecated
+TriggerScriptCrcCheckOnPlayer = NetworkIsPlayerInScript
+
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xE9B99B6853181409)  
 ---This native does not have an official description.
@@ -5935,12 +6139,18 @@ function UgcGetCachedDescription(p0, p1) end
 ---@return number
 function UgcGetContentCategory(p0) end
 
+---@deprecated
+UgcGetContentCategory = GetContentCategory
+
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x7CF0448787B23758)  
 ---This native does not have an official description.
 ---@param p0 any
 ---@return number
 function UgcGetContentDescriptionHash(p0) end
+
+---@deprecated
+UgcGetContentDescriptionHash = GetContentDescriptionHash
 
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x37025B27D9B658B1)  
@@ -5949,6 +6159,9 @@ function UgcGetContentDescriptionHash(p0) end
 ---@param p1 any
 ---@return any
 function UgcGetContentFileVersion(p0, p1) end
+
+---@deprecated
+UgcGetContentFileVersion = GetContentFileVersion
 
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x3A17A27D75C74887)  
@@ -5978,6 +6191,9 @@ function UgcGetContentHasPlayerRecord(p0) end
 ---@param p0 number
 ---@return string
 function UgcGetContentId(p0) end
+
+---@deprecated
+UgcGetContentId = GetContentId
 
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x3054F114121C21EA)  
@@ -6020,6 +6236,9 @@ function UgcGetContentNum() end
 ---@param p1 number
 ---@return string
 function UgcGetContentPath(p0, p1) end
+
+---@deprecated
+UgcGetContentPath = UgcGetCloudPath
 
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x1ACCFBA3D8DAB2EE)  
@@ -6072,6 +6291,11 @@ function UgcGetContentUpdatedDate(p0) end
 ---@param p0 number
 ---@return string
 function UgcGetContentUserId(p0) end
+
+---@deprecated
+UgcGetContentUserId = GetContentUserId
+---@deprecated
+UgcGetContentUserId = GetPlayerAdvancedModifierPrivileges
 
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x703F12425ECA8BF5)  
@@ -6152,6 +6376,9 @@ function UgcGetQueryResult() end
 ---@param p0 number
 ---@return string
 function UgcGetRootContentId(p0) end
+
+---@deprecated
+UgcGetRootContentId = GetRootContentId
 
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x5E24341A7F92A74B)  

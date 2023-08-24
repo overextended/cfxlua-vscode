@@ -342,6 +342,9 @@ function ScEmailMessagePushGamerToRecipList() end
 ---@return boolean
 function ScGamerdataGetBool(name) end
 
+---@deprecated
+ScGamerdataGetBool = ScGetIsProfileAttributeSet
+
 ---**`SOCIALCLUB` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA770C8EEC6FB2AC5)  
 ---```
@@ -351,6 +354,9 @@ function ScGamerdataGetBool(name) end
 ---@return boolean, number
 function ScGamerdataGetFloat(name) end
 
+---@deprecated
+ScGamerdataGetFloat = N_0xa770c8eec6fb2ac5
+
 ---**`SOCIALCLUB` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC85A7127E7AD02AA)  
 ---```
@@ -359,6 +365,9 @@ function ScGamerdataGetFloat(name) end
 ---@param name string
 ---@return boolean, number
 function ScGamerdataGetInt(name) end
+
+---@deprecated
+ScGamerdataGetInt = N_0xc85a7127e7ad02aa
 
 ---**`SOCIALCLUB` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x418DC16FAE452C1C)  
@@ -391,6 +400,9 @@ function ScInboxGetEmails(offset, limit) end
 ---@return boolean
 function ScInboxGetMessageIsReadAtIndex(msgIndex) end
 
+---@deprecated
+ScInboxGetMessageIsReadAtIndex = IsScInboxValid
+
 ---**`SOCIALCLUB` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xBB8EA16ECBC976C4)  
 ---This native does not have an official description.
@@ -398,11 +410,17 @@ function ScInboxGetMessageIsReadAtIndex(msgIndex) end
 ---@return number
 function ScInboxGetMessageTypeAtIndex(msgIndex) end
 
+---@deprecated
+ScInboxGetMessageTypeAtIndex = ScInboxMessageInit
+
 ---**`SOCIALCLUB` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x03A93FF1A2CA0864)  
 ---This native does not have an official description.
 ---@return number
 function ScInboxGetTotalNumMessages() end
+
+---@deprecated
+ScInboxGetTotalNumMessages = GetTotalScInboxIds
 
 ---**`SOCIALCLUB` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x9A2C8064B6C1E41A)  
@@ -410,6 +428,9 @@ function ScInboxGetTotalNumMessages() end
 ---@param p0 number
 ---@return boolean
 function ScInboxMessageDoApply(p0) end
+
+---@deprecated
+ScInboxMessageDoApply = ScInboxMessagePush
 
 ---**`SOCIALCLUB` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x87E0052F08BD64E6)  
@@ -550,6 +571,9 @@ function ScLicenseplateGetPlateData(token, plateIndex) end
 ---@return boolean, number
 function ScLicenseplateIsvalid(plateText) end
 
+---@deprecated
+ScLicenseplateIsvalid = N_0x0f73393bac7e6730
+
 ---**`SOCIALCLUB` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xD0EE05FE193646EA)  
 ---Changes the license plate for the user (no insert).
@@ -594,6 +618,9 @@ function ScPresenceAttrSetString(attrHash, value) end
 ---@return boolean, number
 function ScProfanityCheckString(string) end
 
+---@deprecated
+ScProfanityCheckString = ScStartCheckStringTask
+
 ---**`SOCIALCLUB` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xEB2BF817463DFA28)  
 ---This native does not have an official description.
@@ -608,12 +635,18 @@ function ScProfanityCheckUgcString(string) end
 ---@return boolean
 function ScProfanityGetCheckIsPending(token) end
 
+---@deprecated
+ScProfanityGetCheckIsPending = ScGetCheckStringStatus
+
 ---**`SOCIALCLUB` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x1753344C770358AE)  
 ---This native does not have an official description.
 ---@param token number
 ---@return boolean
 function ScProfanityGetCheckIsValid(token) end
+
+---@deprecated
+ScProfanityGetCheckIsValid = ScHasCheckStringTaskCompleted
 
 ---**`SOCIALCLUB` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x85535ACF97FC0969)  

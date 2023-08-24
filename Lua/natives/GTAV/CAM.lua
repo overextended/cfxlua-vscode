@@ -480,17 +480,26 @@ function GetDebugCamera() end
 ---@return vector3
 function GetFinalRenderedCamCoord() end
 
+---@deprecated
+GetFinalRenderedCamCoord = GetGameplayCamCoords
+
 ---**`CAM` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xDFC8CBC606FDB0FC)  
 ---This native does not have an official description.
 ---@return number
 function GetFinalRenderedCamFarClip() end
 
+---@deprecated
+GetFinalRenderedCamFarClip = GetGameplayCamFarClip
+
 ---**`CAM` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x9780F32BCAF72431)  
 ---This native does not have an official description.
 ---@return number
 function GetFinalRenderedCamFarDof() end
+
+---@deprecated
+GetFinalRenderedCamFarDof = GetGameplayCamFarDof
 
 ---**`CAM` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x80EC114669DAEFF4)  
@@ -504,11 +513,17 @@ function GetFinalRenderedCamFov() end
 ---@return number
 function GetFinalRenderedCamMotionBlurStrength() end
 
+---@deprecated
+GetFinalRenderedCamMotionBlurStrength = GetGameplayCamFarClip_2
+
 ---**`CAM` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xD0082607100D7193)  
 ---This native does not have an official description.
 ---@return number
 function GetFinalRenderedCamNearClip() end
+
+---@deprecated
+GetFinalRenderedCamNearClip = GetGameplayCamNearClip
 
 ---**`CAM` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA03502FC581F7D9B)  
@@ -516,12 +531,18 @@ function GetFinalRenderedCamNearClip() end
 ---@return number
 function GetFinalRenderedCamNearDof() end
 
+---@deprecated
+GetFinalRenderedCamNearDof = GetGameplayCamNearDof
+
 ---**`CAM` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x5B4E4C817FCC2DFB)  
 ---This native does not have an official description.
 ---@param rotationOrder number
 ---@return vector3
 function GetFinalRenderedCamRot(rotationOrder) end
+
+---@deprecated
+GetFinalRenderedCamRot = GetGameplayCamRot_2
 
 ---**`CAM` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x5F35F6732C3FBBA0)  
@@ -543,6 +564,9 @@ function GetFinalRenderedInWhenFriendlyRot(player, rotationOrder) end
 ---This native does not have an official description.
 ---@return number
 function GetFirstPersonAimCamZoomFactor() end
+
+---@deprecated
+GetFirstPersonAimCamZoomFactor = GetGameplayCamZoom
 
 ---**`CAM` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x89215EC747DF244A)  
@@ -715,6 +739,9 @@ function IsCamSplinePaused(p0) end
 ---```
 ---@return boolean
 function IsCinematicCamInputActive() end
+
+---@deprecated
+IsCinematicCamInputActive = IsCinematicCamActive
 
 ---**`CAM` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xB15162CB5826E9E8)  
@@ -1070,6 +1097,9 @@ function N_0x91ef6ee6419e5b97(p0) end
 ---@param p0 boolean
 ---@param p1 boolean
 function N_0x9dfe13ecdc1ec196(p0, p1) end
+
+---@deprecated
+N_0x9dfe13ecdc1ec196 = SetTimeIdleDrop
 
 ---**`CAM` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x9F97DA93681F87EA)  
@@ -1659,6 +1689,9 @@ function SetCinematicNewsChannelActiveThisUpdate() end
 ---@param distance number
 function SetFirstPersonAimCamNearClipThisUpdate(distance) end
 
+---@deprecated
+SetFirstPersonAimCamNearClipThisUpdate = SetFirstPersonCamNearClip
+
 ---**`CAM` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x70894BD0915C5BCA)  
 ---This native does not have an official description.
@@ -1697,6 +1730,9 @@ function SetFlyCamHorizontalResponse(cam, p1, p2, p3) end
 ---@param height number
 function SetFlyCamMaxHeight(cam, height) end
 
+---@deprecated
+SetFlyCamMaxHeight = SetCameraRange
+
 ---**`CAM` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xE827B9382CFB41BA)  
 ---This native does not have an official description.
@@ -1721,6 +1757,9 @@ function SetFlyCamVerticalSpeedMultiplier(cam, p1, p2, p3) end
 ---@param p1 number
 ---@return boolean
 function SetFollowPedCamThisUpdate(camName, p1) end
+
+---@deprecated
+SetFollowPedCamThisUpdate = SetFollowPedCamCutsceneChat
 
 ---**`CAM` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x5A4F9EDF1673F704)  
@@ -1867,6 +1906,9 @@ function SetGameplayEntityHint(entity, xOffset, yOffset, zOffset, p4, p5, p6, p7
 ---@param toggle boolean
 function SetGameplayHintAnimCloseup(toggle) end
 
+---@deprecated
+SetGameplayHintAnimCloseup = GetIsMultiplayerBrief
+
 ---**`CAM` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x5D7B620DAE436138)  
 ---This native does not have an official description.
@@ -1885,11 +1927,17 @@ function SetGameplayHintAnimOffsety(yOffset) end
 ---@param value number
 function SetGameplayHintBaseOrbitPitchOffset(value) end
 
+---@deprecated
+SetGameplayHintBaseOrbitPitchOffset = SetGameplayHintAngle
+
 ---**`CAM` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xF8BDBF3D573049A1)  
 ---This native does not have an official description.
 ---@param value number
 function SetGameplayHintFollowDistanceScalar(value) end
+
+---@deprecated
+SetGameplayHintFollowDistanceScalar = SetGameplayHintAnimOffsetz
 
 ---**`CAM` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x513403FB9C56211F)  
@@ -1948,6 +1996,9 @@ function SetInVehicleCamStateThisUpdate(p0, p1) end
 ---This native does not have an official description.
 ---@param distance number
 function SetThirdPersonAimCamNearClipThisUpdate(distance) end
+
+---@deprecated
+SetThirdPersonAimCamNearClipThisUpdate = SetThirdPersonAimCamNearClip
 
 ---**`CAM` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA13B0222F3D94A94)  
@@ -2086,6 +2137,9 @@ function StopGameplayHint(p0) end
 ---@param p1 number
 ---@param p2 number
 function StopRenderingScriptCamsUsingCatchUp(render, p1, p2) end
+
+---@deprecated
+StopRenderingScriptCamsUsingCatchUp = RenderFirstPersonCam
 
 ---**`CAM` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x1C9D7949FA533490)  

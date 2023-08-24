@@ -128,6 +128,9 @@ function CreateNonNetworkedAmbientPickup(pickupHash, posX, posY, posZ, flags, va
 ---@return number
 function CreateNonNetworkedPortablePickup(pickupHash, x, y, z, placeOnGround, modelHash) end
 
+---@deprecated
+CreateNonNetworkedPortablePickup = CreatePortablePickup_2
+
 ---**`OBJECT` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x509D5878EB39E842)  
 ---Creates an object (prop) with the specified model at the specified position, offset on the Z axis by the radius of the object's model.
@@ -258,6 +261,9 @@ function DoesPickupObjectExist(pickupObject) end
 ---@return boolean
 function DoesPickupOfTypeExistInArea(pickupHash, x, y, z, radius) end
 
+---@deprecated
+DoesPickupOfTypeExistInArea = IsPickupWithinRadius
+
 ---**`OBJECT` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x52AF537A0C5B8AAD)  
 ---```
@@ -266,6 +272,9 @@ function DoesPickupOfTypeExistInArea(pickupHash, x, y, z, radius) end
 ---@param object number
 ---@return boolean
 function DoesRayfireMapObjectExist(object) end
+
+---@deprecated
+DoesRayfireMapObjectExist = DoesDesObjectExist
 
 ---**`OBJECT` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x9B12F9A24FABEDB0)  
@@ -370,6 +379,9 @@ function DoorSystemSetAutomaticRate(doorHash, rate, requestDoor, forceUpdate) en
 ---@param forceUpdate boolean
 function DoorSystemSetDoorState(doorHash, state, requestDoor, forceUpdate) end
 
+---@deprecated
+DoorSystemSetDoorState = SetDoorAccelerationLimit
+
 ---**`OBJECT` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xD9B71952F78A2640)  
 ---Includes networking check: ownership vs. or the door itself **isn't** networked.
@@ -388,6 +400,9 @@ function DoorSystemSetHoldOpen(doorHash, toggle) end
 ---@param requestDoor boolean
 ---@param forceUpdate boolean
 function DoorSystemSetOpenRatio(doorHash, ajar, requestDoor, forceUpdate) end
+
+---@deprecated
+DoorSystemSetOpenRatio = SetDoorAjarAngle
 
 ---**`OBJECT` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC485E07E4F0B7958)  
@@ -530,6 +545,9 @@ function GetPickupObject(pickup) end
 ---@return number
 function GetRayfireMapObject(x, y, z, radius, name) end
 
+---@deprecated
+GetRayfireMapObject = GetDesObject
+
 ---**`OBJECT` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x260EE4FDBDF4DB01)  
 ---```
@@ -539,6 +557,9 @@ function GetRayfireMapObject(x, y, z, radius, name) end
 ---@param object number
 ---@return number
 function GetRayfireMapObjectAnimPhase(object) end
+
+---@deprecated
+GetRayfireMapObjectAnimPhase = GetDesObjectAnimProgress
 
 ---**`OBJECT` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x6E16BC2503FF1FF0)  
@@ -576,12 +597,18 @@ function GetStateOfClosestDoorOfType(type, x, y, z) end
 ---@return number
 function GetStateOfRayfireMapObject(object) end
 
+---@deprecated
+GetStateOfRayfireMapObject = GetDesObjectState
+
 ---**`OBJECT` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x08F96CA6C551AD51)  
 ---This native does not have an official description.
 ---@param pickupHash number | string
 ---@return number
 function GetWeaponTypeFromPickupType(pickupHash) end
+
+---@deprecated
+GetWeaponTypeFromPickupType = GetWeaponHashFromPickup
 
 ---**`OBJECT` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x761B0E69AC4D007E)  
@@ -630,6 +657,9 @@ function HasPickupBeenCollected(pickup) end
 ---@param toggle boolean
 function HidePortablePickupWhenDetached(pickup, toggle) end
 
+---@deprecated
+HidePortablePickupWhenDetached = HidePickup
+
 ---**`OBJECT` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x673ED815D6E323B7)  
 ---This native does not have an official description.
@@ -670,6 +700,9 @@ function IsDoorClosed(doorHash) end
 ---@param doorHash number | string
 ---@return boolean
 function IsDoorRegisteredWithSystem(doorHash) end
+
+---@deprecated
+IsDoorRegisteredWithSystem = DoesDoorExist
 
 ---**`OBJECT` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x90E47239EA1980B8)  
@@ -893,6 +926,9 @@ function N_0x39a5fb7eaf150840(p0, p1) end
 ---@param G number
 ---@param B number
 function N_0x3b2fd68db5f8331c(object, toggle, R, G, B) end
+
+---@deprecated
+N_0x3b2fd68db5f8331c = SetObjectColour
 
 ---**`OBJECT` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x3BD770D281982DB5)  
@@ -1281,6 +1317,9 @@ function RemovePickup(pickup) end
 ---@param colorIndex number
 function RenderFakePickupGlow(x, y, z, colorIndex) end
 
+---@deprecated
+RenderFakePickupGlow = HighlightPlacementCoords
+
 ---**`OBJECT` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x406137F8EF90EAF5)  
 ---This native does not have an official description.
@@ -1363,6 +1402,9 @@ function SetMaxNumPortablePickupsCarriedByPlayer(modelHash, p1) end
 ---@param toggle boolean
 function SetObjectAllowLowLodBuoyancy(object, toggle) end
 
+---@deprecated
+SetObjectAllowLowLodBuoyancy = SetObjectCanClimbOn
+
 ---**`OBJECT` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x77F33F2CCF64B3AA)  
 ---Overrides a flag on the object which determines if the object should be avoided by a vehicle in task: CTaskVehicleGoToPointWithAvoidanceAutomobile.
@@ -1370,6 +1412,9 @@ function SetObjectAllowLowLodBuoyancy(object, toggle) end
 ---@param object number
 ---@param toggle boolean
 function SetObjectForceVehiclesToAvoid(object, toggle) end
+
+---@deprecated
+SetObjectForceVehiclesToAvoid = SetObjectSomething
 
 ---**`OBJECT` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x5F048334B4A4E774)  
@@ -1469,6 +1514,9 @@ function SetObjectTargettable(object, targettable) end
 ---@param textureVariation number
 function SetObjectTextureVariation(object, textureVariation) end
 
+---@deprecated
+SetObjectTextureVariation = SetObjectTextureVariant
+
 ---**`OBJECT` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x318516E02DE3ECE2)  
 ---This native does not have an official description.
@@ -1532,6 +1580,9 @@ function SetStateOfClosestDoorOfType(type, x, y, z, locked, heading, p6) end
 ---@param object number
 ---@param state number
 function SetStateOfRayfireMapObject(object, state) end
+
+---@deprecated
+SetStateOfRayfireMapObject = SetDesObjectState
 
 ---**`OBJECT` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x53E0DF1A2A3CF0CA)  

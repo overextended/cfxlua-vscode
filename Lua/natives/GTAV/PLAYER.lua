@@ -141,6 +141,9 @@ function EnableSpecialAbility(player, toggle) end
 ---@param z number
 function ExtendWorldBoundaryForPlayer(x, y, z) end
 
+---@deprecated
+ExtendWorldBoundaryForPlayer = ExpandWorldLimits
+
 ---**`PLAYER` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xBC8983F38F78ED51)  
 ---```
@@ -174,6 +177,9 @@ function ForceCleanupForThreadWithThisId(id, cleanupFlags) end
 ---@param achievement number
 ---@return number
 function GetAchievementProgress(achievement) end
+
+---@deprecated
+GetAchievementProgress = GetAchievementProgression
 
 ---**`PLAYER` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x9A41CF4674A12272)  
@@ -1107,6 +1113,9 @@ function N_0xbc9490ca15aea8fb(player) end
 ---@param player number
 function N_0xc3376f42b1faccc6(player) end
 
+---@deprecated
+N_0xc3376f42b1faccc6 = SetAreasGeneratorOrientation
+
 ---**`PLAYER` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xCAC57395B151135F)  
 ---```
@@ -1159,6 +1168,9 @@ function N_0xdd2620b7b9d16ff1(player, p1) end
 ---@param player number
 ---@param toggle boolean
 function N_0xde45d1a1ef45ee61(player, toggle) end
+
+---@deprecated
+N_0xde45d1a1ef45ee61 = SetHudAnimStopLevel
 
 ---**`PLAYER` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xF10B44FD479D69F3)  
@@ -1348,6 +1360,9 @@ function RestorePlayerStamina(player, percentage) end
 ---@param progress number
 ---@return boolean
 function SetAchievementProgress(achievement, progress) end
+
+---@deprecated
+SetAchievementProgress = SetAchievementProgression
 
 ---**`PLAYER` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xCA7DC8329F0A1E9E)  
@@ -2124,6 +2139,9 @@ function SpecialAbilityChargeMedium(player, p1, p2) end
 ---@param p2 boolean
 function SpecialAbilityChargeNormalized(player, normalizedValue, p2) end
 
+---@deprecated
+SpecialAbilityChargeNormalized = ResetSpecialAbilityControlsCinematic
+
 ---**`PLAYER` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC9A763D8FE87436A)  
 ---```
@@ -2270,4 +2288,7 @@ function SwitchCrimeType(player, p1) end
 ---@param player number
 ---@return boolean
 function UpdatePlayerTeleport(player) end
+
+---@deprecated
+UpdatePlayerTeleport = HasPlayerTeleportFinished
 

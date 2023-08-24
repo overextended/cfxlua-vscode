@@ -939,6 +939,9 @@ function SetAnimLooped(p0, p1, p2, p3) end
 ---@param p3 boolean
 function SetAnimPhase(entity, p1, p2, p3) end
 
+---@deprecated
+SetAnimPhase = SetAnimPlaybackTime
+
 ---**`TASK` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x032D49C5E359C847)  
 ---This native does not have an official description.
@@ -1133,6 +1136,9 @@ function SetPedPathClimbCostModifier(ped, modifier) end
 ---@param mayEnterWater boolean
 function SetPedPathMayEnterWater(ped, mayEnterWater) end
 
+---@deprecated
+SetPedPathMayEnterWater = SetPedPathsWidthPlant
+
 ---**`TASK` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x38FE1EC73743793C)  
 ---This native does not have an official description.
@@ -1213,6 +1219,9 @@ function SetSequenceToRepeat(taskSequenceId, _repeat) end
 ---@param value boolean
 function SetTaskMoveNetworkSignalBool(ped, signalName, value) end
 
+---@deprecated
+SetTaskMoveNetworkSignalBool = SetTaskPropertyBool
+
 ---**`TASK` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xD5BB4025AE449A4E)  
 ---```
@@ -1226,6 +1235,9 @@ function SetTaskMoveNetworkSignalBool(ped, signalName, value) end
 ---@param signalName string
 ---@param value number
 function SetTaskMoveNetworkSignalFloat(ped, signalName, value) end
+
+---@deprecated
+SetTaskMoveNetworkSignalFloat = SetTaskPropertyFloat
 
 ---**`TASK` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x373EF409B82697A3)  
@@ -2142,6 +2154,9 @@ function TaskLookAtEntity(ped, lookAt, duration, unknown1, unknown2) end
 ---@param flags number
 function TaskMoveNetworkAdvancedByName(ped, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, animDict, flags) end
 
+---@deprecated
+TaskMoveNetworkAdvancedByName = TaskMoveNetworkAdvanced
+
 ---**`TASK` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x2D537BA194896636)  
 ---```
@@ -2155,6 +2170,9 @@ function TaskMoveNetworkAdvancedByName(ped, p1, p2, p3, p4, p5, p6, p7, p8, p9, 
 ---@param animDict string
 ---@param flags number
 function TaskMoveNetworkByName(ped, task, multiplier, p3, animDict, flags) end
+
+---@deprecated
+TaskMoveNetworkByName = TaskMoveNetwork
 
 ---**`TASK` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x3D45B0B355C5E0C9)  
@@ -2175,6 +2193,9 @@ function TaskMoveNetworkByName(ped, task, multiplier, p3, animDict, flags) end
 ---@param flags number
 ---@return any
 function TaskMoveNetworkByNameWithInitParams(ped, p1, p3, p4, animDict, flags) end
+
+---@deprecated
+TaskMoveNetworkByNameWithInitParams = TaskMoveNetworkScripted
 
 ---**`TASK` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x965791A9A488A062)  

@@ -16,6 +16,9 @@ function AddAmmoToPed(ped, weaponHash, ammo) end
 ---@param ammo number
 function AddAmmoToPedByType(ped, ammoType, ammo) end
 
+---@deprecated
+AddAmmoToPedByType = AddPedAmmo
+
 ---**`WEAPON` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xBC7BE5ABC0879F74)  
 ---```
@@ -210,6 +213,9 @@ function GetIsPedGadgetEquipped(ped, gadgetHash) end
 ---@return number
 function GetLockonDistanceOfCurrentPedWeapon(ped) end
 
+---@deprecated
+GetLockonDistanceOfCurrentPedWeapon = GetLockonRangeOfCurrentPedWeapon
+
 ---**`WEAPON` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xDC16122C7A20C933)  
 ---This native does not have an official description.
@@ -225,6 +231,9 @@ function GetMaxAmmo(ped, weaponHash) end
 ---@param ammoType number | string
 ---@return boolean, number
 function GetMaxAmmoByType(ped, ammoType) end
+
+---@deprecated
+GetMaxAmmoByType = GetMaxAmmo_2
 
 ---**`WEAPON` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA38DCFFCEA8962FA)  
@@ -265,6 +274,9 @@ function GetPedAmmoByType(ped, ammoType) end
 ---@param weaponHash number | string
 ---@return number
 function GetPedAmmoTypeFromWeapon(ped, weaponHash) end
+
+---@deprecated
+GetPedAmmoTypeFromWeapon = GetPedAmmoType
 
 ---**`WEAPON` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xF489B44DD5AF4BD9)  
@@ -641,12 +653,18 @@ function HidePedWeaponForScriptedCutscene(ped, toggle) end
 ---@return boolean
 function IsAnyAirDefenseZoneInsideSphere(x, y, z, radius, outZoneId) end
 
+---@deprecated
+IsAnyAirDefenseZoneInsideSphere = IsAirDefenseZoneInsideSphere
+
 ---**`WEAPON` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x4B7620C47217126C)  
 ---This native does not have an official description.
 ---@param ped number
 ---@return boolean
 function IsFlashLightOn(ped) end
+
+---@deprecated
+IsFlashLightOn = SetWeaponSmokegrenadeAssigned
 
 ---**`WEAPON` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x475768A975D5AD17)  
@@ -764,6 +782,9 @@ function N_0xe6d2cedd370ff98e(p0, p1) end
 ---@return boolean
 function RefillAmmoInstantly(ped) end
 
+---@deprecated
+RefillAmmoInstantly = PedSkipNextReloading
+
 ---**`WEAPON` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x0ABF535877897560)  
 ---This native does not have an official description.
@@ -868,6 +889,9 @@ function SetCanPedEquipAllWeapons(ped, toggle) end
 ---@param weaponHash number | string
 ---@param toggle boolean
 function SetCanPedEquipWeapon(ped, weaponHash, toggle) end
+
+---@deprecated
+SetCanPedEquipWeapon = SetCanPedSelectWeapon
 
 ---**`WEAPON` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x75C55983C2C39DAA)  
@@ -1132,6 +1156,9 @@ function SetWeaponAnimationOverride(ped, animStyle) end
 ---@param weaponHash number | string
 ---@param damageMultiplier number
 function SetWeaponDamageModifier(weaponHash, damageMultiplier) end
+
+---@deprecated
+SetWeaponDamageModifier = SetWeaponDamageModifierThisFrame
 
 ---**`WEAPON` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x4AE5AC8B852D642C)  
