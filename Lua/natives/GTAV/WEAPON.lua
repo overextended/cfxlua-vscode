@@ -649,9 +649,8 @@ function HidePedWeaponForScriptedCutscene(ped, toggle) end
 ---@param y number
 ---@param z number
 ---@param radius number
----@param outZoneId number
----@return boolean
-function IsAnyAirDefenseZoneInsideSphere(x, y, z, radius, outZoneId) end
+---@return boolean, number
+function IsAnyAirDefenseZoneInsideSphere(x, y, z, radius) end
 
 ---@deprecated
 IsAirDefenseZoneInsideSphere = IsAnyAirDefenseZoneInsideSphere

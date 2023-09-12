@@ -423,9 +423,8 @@ function N_0x1a7ce7cd3e653485(p0) end
 ---**`STATS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x1A8EA222F9C67DBB)  
 ---This native does not have an official description.
----@param p0 any
----@return any
-function N_0x1a8ea222f9c67dbb(p0) end
+---@return any, number
+function N_0x1a8ea222f9c67dbb() end
 
 ---**`STATS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x26D7399B9587FE89)  
@@ -756,9 +755,8 @@ function N_0x6a7f19756f1a9016() end
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x6BC0ACD0673ACEBE)  
 ---This native does not have an official description.
 ---@param p0 any
----@param p1 any
----@param p2 any
-function N_0x6bc0acd0673acebe(p0, p1, p2) end
+---@return number, number
+function N_0x6bc0acd0673acebe(p0) end
 
 ---**`STATS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x6BCCF9948492FD85)  
@@ -1320,9 +1318,8 @@ function N_0xf06a6f41cb445443(p0) end
 ---**`STATS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xF11F01D98113536A)  
 ---This native does not have an official description.
----@param p0 any
----@return any
-function N_0xf11f01d98113536a(p0) end
+---@return any, number
+function N_0xf11f01d98113536a() end
 
 ---**`STATS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xF1A1803D3476F215)  

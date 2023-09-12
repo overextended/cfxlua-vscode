@@ -2519,9 +2519,8 @@ function IsMissionTrain(vehicle) end
 ---This native does not have an official description.
 ---@param ped number
 ---@param vehicle number
----@param outIndex number
----@return boolean
-function IsPedExclusiveDriverOfVehicle(ped, vehicle, outIndex) end
+---@return boolean, number
+function IsPedExclusiveDriverOfVehicle(ped, vehicle) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x4198AB0022B15F87)  
@@ -3789,15 +3788,14 @@ function N_0xa247f9ef01d8082e(p0) end
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA4822F1CF23F4810)  
 ---This native does not have an official description.
----@param p1 any
 ---@param p3 any
 ---@param p4 any
 ---@param p5 any
 ---@param p6 any
 ---@param p7 any
 ---@param p8 any
----@return boolean, vector3, vector3
-function N_0xa4822f1cf23f4810(p1, p3, p4, p5, p6, p7, p8) end
+---@return boolean, vector3, vector3, vector3
+function N_0xa4822f1cf23f4810(p3, p4, p5, p6, p7, p8) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA4A9A4C40E615885)  
