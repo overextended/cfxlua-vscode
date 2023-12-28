@@ -1,0 +1,34 @@
+name: Update native definitions
+on:
+  schedule:
+    - cron: 0 0 * * SUN
+
+jobs:
+  bump:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - name: Generate natives
+        run: |
+          wget https://github.com/thelindat/fivem-lua-natives/archive/master.zip -O repo.zip
+          unzip repo.zip
+          cd fivem-lua-natives-master
+          npm install
+          npm start
+          cd ..
+          rm -rf Lua/natives/*
+          mv -f fivem-lua-natives-master/build/cfx/{CFX-NATIVE,GTAV,RDR3} Lua/natives/
+          rm -rf fivem-lua-natives-master
+
+      - name: Update repository
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .
+          git diff-index --quiet HEAD || git commit -am "ci: generate native definitions"
+          git push
