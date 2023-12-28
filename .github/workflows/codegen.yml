@@ -25,6 +25,7 @@ jobs:
           rm -rf Lua/natives/*
           mv -f fivem-lua-natives-master/build/cfx/{CFX-NATIVE,GTAV,RDR3} Lua/natives/
           rm -rf fivem-lua-natives-master
+          rm repo.zip
 
       - name: Update repository
         run: |
