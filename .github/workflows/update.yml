@@ -9,12 +9,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+        with:
+          submodules: true
 
       - name: Update submodules
         run: |
+          git pull --recurse-submodules
+          git submodule update --remote --recursive
+
+      - name: Commit update
+        run: |
           git config --global user.name "GitHub Actions"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git submodule foreach git pull
-          git add .
-          git diff-index --quiet HEAD || git commit -am "ci: update submodules"
-          git push
+          git commit -am "ci: update submodules" && git push || echo "No changes to commit"
