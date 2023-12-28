@@ -735,9 +735,12 @@ function SetInteriorActive(interiorID, toggle) end
 ---```
 ---NativeDB Introduced: v2189
 ---```
----@param name string
+---@param islandName string
 ---@param toggle boolean
-function SetIslandHopperEnabled(name, toggle) end
+function SetIslandEnabled(islandName, toggle) end
+
+---@deprecated
+SetIslandHopperEnabled = SetIslandEnabled
 
 ---**`STREAMING` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xAF12610C644A35C9)  
@@ -935,31 +938,24 @@ function StreamvolHasLoaded(unused) end
 function StreamvolIsValid(unused) end
 
 ---**`STREAMING` `client`**  
----[Native Documentation](https://docs.fivem.net/natives/?_0xD8295AF639FD9CB8)  
----Use after using \_SWITCH_OUT_PLAYER to swoop the camera back down to the player's ped.
----@param ped number
-function SwitchInPlayer(ped) end
-
----**`STREAMING` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xAAB3200ED59016BC)  
----```
----doesn't act normally when used on mount chilliad
+---You can check if the player is in a Switch state with [`IS_PLAYER_SWITCH_IN_PROGRESS`](#\_0xD9D2CFFF49FAB35F).
 ---
----flags:
----
----0: normal
----1: no transition
----255: switch IN
----
----switchType: 0 - 3
----
----0: 1 step towards ped
----1: 3 steps out from ped
----2: 1 step out from ped
----3: 1 step towards ped
----```
+---***Note:** Doesn't act normally when used on Mount Chiliad.*
 ---@param ped number
 ---@param flags number
 ---@param switchType number
-function SwitchOutPlayer(ped, flags, switchType) end
+function SwitchToMultiFirstpart(ped, flags, switchType) end
+
+---@deprecated
+SwitchOutPlayer = SwitchToMultiFirstpart
+
+---**`STREAMING` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0xD8295AF639FD9CB8)  
+---After using [`SWITCH_TO_MULTI_FIRSTPART`](#\_0xAAB3200ED59016BC) , use this native to smoothly return the camera to the player's character.
+---@param ped number
+function SwitchToMultiSecondpart(ped) end
+
+---@deprecated
+SwitchInPlayer = SwitchToMultiSecondpart
 

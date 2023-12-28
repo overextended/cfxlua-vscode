@@ -56,6 +56,12 @@ function AddVehicleStuckCheckWithWarp(p0, p1, p2, p3, p4, p5, p6) end
 function AddVehicleUpsidedownCheck(vehicle) end
 
 ---**`VEHICLE` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0xB264C4D2F2B0A78B)  
+---This native it's a debug native. Won't do anything.
+---@param vehicle number
+function AllowAmbientVehiclesToAvoidAdverseConditions(vehicle) end
+
+---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x11D862A3E977A9EF)  
 ---```
 ---Appears to return false if any window is broken.  
@@ -168,16 +174,14 @@ function AttachVehicleOnToTrailer(vehicle, trailer, offsetX, offsetY, offsetZ, c
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x4127F1D84E347769)  
----```
----p2 is unknown and is always -1 in the script natives.
----```
----@param vehicle number
+---This native does not have an official description.
 ---@param cargobob number
----@param p2 number
+---@param vehicle number
+---@param vehicleBoneIndex number
 ---@param x number
 ---@param y number
 ---@param z number
-function AttachVehicleToCargobob(vehicle, cargobob, p2, x, y, z) end
+function AttachVehicleToCargobob(cargobob, vehicle, vehicleBoneIndex, x, y, z) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x29A16F8D621C4508)  
@@ -202,16 +206,12 @@ function AttachVehicleToTrailer(vehicle, trailer, radius) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x260BE8F09E326A20)  
----```
----This native makes the vehicle stop immediately, as happens when we enter a MP garage.  
----. distance defines how far it will travel until stopping. Garage doors use 3.0.  
----. If killEngine is set to 1, you cannot resume driving the vehicle once it stops. This looks like is a bitmapped integer.  
----```
+---This native makes the vehicle stop immediately, as it happens when we enter a multiplayer garage.
 ---@param vehicle number
 ---@param distance number
 ---@param duration number
----@param unknown boolean
-function BringVehicleToHalt(vehicle, distance, duration, unknown) end
+---@param bControlVerticalVelocity boolean
+function BringVehicleToHalt(vehicle, distance, duration, bControlVerticalVelocity) end
 
 ---@deprecated
 SetVehicleHalt = BringVehicleToHalt
@@ -344,7 +344,7 @@ function CopyVehicleDamages(sourceVehicle, targetVehicle) end
 ---
 ---*   17. Very long train and freight variation.
 ---*   18. Freight train only.
----*   25. Double metro train (with both models flipped opposite to each other). This used to be `24` before the 2372 build.
+---*   26. Double metro train (with both models flipped opposite to each other). This used to be `25` before the 2802 build, it also used to be `24` before the 2372 build.
 ---@param variation number
 ---@param x number
 ---@param y number
@@ -488,9 +488,9 @@ function DetachVehicleFromAnyTowTruck(vehicle) end
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x0E21D3DF1051399D)  
 ---This native does not have an official description.
----@param vehicle number
 ---@param cargobob number
-function DetachVehicleFromCargobob(vehicle, cargobob) end
+---@param vehicle number
+function DetachVehicleFromCargobob(cargobob, vehicle) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC2DB6B6708350ED8)  
@@ -646,6 +646,8 @@ function DoesVehicleHaveRoof(vehicle) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x99015ED7DBEA5113)  
+---Determines whether the specified vehicle is equipped with a searchlight.
+---
 ---```
 ---NativeDB Introduced: v2189
 ---```
@@ -991,6 +993,13 @@ function GetHeliTailRotorHealth(vehicle) end
 ---@param wheelId number
 ---@return number
 function GetHydraulicWheelValue(vehicle, wheelId) end
+
+---**`VEHICLE` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0xBA91D045575699AD)  
+---Checks whether the specified boat vehicle is capsized, meaning it has overturned or is upside down in the water.
+---@param vehicle number
+---@return boolean
+function GetIsBoatCapsized(vehicle) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x645F4B6E8499F632)  
@@ -1690,16 +1699,6 @@ function GetVehicleDirtLevel(vehicle) end
 function GetVehicleDoorAngleRatio(vehicle, doorIndex) end
 
 ---**`VEHICLE` `client`**  
----[Native Documentation](https://docs.fivem.net/natives/?_0xCA4AC3EAAE46EC7B)  
----See eDoorId declared in [`SET_VEHICLE_DOOR_SHUT`](#\_0x93D9BD300D7789E5)
----
----Returns vehicle door destroy type previously set with \_SET_VEHICLE_DOOR_DESTROY_TYPE
----@param vehicle number
----@param doorIndex number
----@return number
-function GetVehicleDoorDestroyType(vehicle, doorIndex) end
-
----**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x25BC98A59C2EA962)  
 ---```
 ---enum VehicleLockStatus = {
@@ -1836,6 +1835,17 @@ GetVehicleBodyHealth_2 = GetVehicleHealthPercentage
 function GetVehicleHomingLockonState(vehicle) end
 
 ---**`VEHICLE` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0xCA4AC3EAAE46EC7B)  
+---See eDoorId declared in [`SET_VEHICLE_DOOR_SHUT`](#\_0x93D9BD300D7789E5)
+---@param vehicle number
+---@param doorIndex number
+---@return number
+function GetVehicleIndividualDoorLockStatus(vehicle, doorIndex) end
+
+---@deprecated
+GetVehicleDoorDestroyType = GetVehicleIndividualDoorLockStatus
+
+---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x7D1464D472D32136)  
 ---This native does not have an official description.
 ---@param vehicle number
@@ -1847,11 +1857,7 @@ GetVehicleInteriorColour = GetVehicleInteriorColor
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xD4C4642CB7F50B5D)  
----```
----Only used like this:  
----if (VEHICLE::GET_VEHICLE_IS_MERCENARY(ENTITY::GET_VEHICLE_INDEX_FROM_ENTITY_INDEX(v_3))) {                                                        sub_157e9c(g_40001._f1868, 0);  
----}  
----```
+---Returns whether the specified vehicle is designated as a mercenary vehicle
 ---@param vehicle number
 ---@return boolean
 function GetVehicleIsMercenary(vehicle) end
@@ -1921,9 +1927,7 @@ function GetVehicleMaxTraction(vehicle) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x772960298DA26FDB)  
----```
----Returns -1 if the vehicle mod is stock  
----```
+---This native does not have an official description.
 ---@param vehicle number
 ---@param modType number
 ---@return number
@@ -3153,39 +3157,11 @@ function N_0x063ae2b2cc273588(vehicle, p1) end
 function N_0x065d03a9d6b2c6b5(p0, p1) end
 
 ---**`VEHICLE` `client`**  
----[Native Documentation](https://docs.fivem.net/natives/?_0x0A3F820A9A9A9AC5)  
----```
----NativeDB Introduced: v1180
----```
----@param vehicle number
----@param x number
----@param y number
----@param z number
-function N_0x0a3f820a9a9a9ac5(vehicle, x, y, z) end
-
----**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x0A436B8643716D14)  
 ---```
 ---CLEAR_VEHICLE_*
 ---```
 function N_0x0a436b8643716d14() end
-
----**`VEHICLE` `client`**  
----[Native Documentation](https://docs.fivem.net/natives/?_0x0AD9E8F87FF7C16F)  
----This native does not have an official description.
----@param p0 any
----@param p1 boolean
-function N_0x0ad9e8f87ff7c16f(p0, p1) end
-
----**`VEHICLE` `client`**  
----[Native Documentation](https://docs.fivem.net/natives/?_0x0BBB9A7A8FFE931B)  
----```
----NativeDB Introduced: v1290
----```
----@param p0 any
----@param p1 any
----@param p2 any
-function N_0x0bbb9a7a8ffe931b(p0, p1, p2) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x107A473D7A6647A9)  
@@ -3210,29 +3186,11 @@ function N_0x1312ddd8385aee4e(p0, p1) end
 function N_0x182f266c2d9e2beb(vehicle, p1) end
 
 ---**`VEHICLE` `client`**  
----[Native Documentation](https://docs.fivem.net/natives/?_0x1B212B26DD3C04DF)  
----```
----Sets a value that appears to affect door opening behavior when damaged.
----
----SET_*
----```
----@param vehicle number
----@param toggle boolean
-function N_0x1b212b26dd3c04df(vehicle, toggle) end
-
----**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x1F34B0626C594380)  
 ---This native does not have an official description.
 ---@param p0 any
 ---@param p1 any
 function N_0x1f34b0626c594380(p0, p1) end
-
----**`VEHICLE` `client`**  
----[Native Documentation](https://docs.fivem.net/natives/?_0x1F9FB66F3A3842D2)  
----This native does not have an official description.
----@param vehicle number
----@param p1 boolean
-function N_0x1f9fb66f3a3842d2(vehicle, p1) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x2310A8F9421EBF43)  
@@ -3850,15 +3808,6 @@ function N_0xae3fee8709b39dcb(vehicle) end
 function N_0xaf60e6a2936f982a(p0, p1) end
 
 ---**`VEHICLE` `client`**  
----[Native Documentation](https://docs.fivem.net/natives/?_0xB264C4D2F2B0A78B)  
----```
----This native doesn't seem to do anything, might be a debug-only native.  
----Confirmed, it is a debug native.  
----```
----@param vehicle number
-function N_0xb264c4d2f2b0a78b(vehicle) end
-
----**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xB2E0C0D6922D31F2)  
 ---```
 ---SET_C*
@@ -3882,13 +3831,6 @@ function N_0xb68cfaf83a02768d(vehicle, toggle) end
 ---@param p0 any
 ---@param p1 any
 function N_0xb9562064627ff9db(p0, p1) end
-
----**`VEHICLE` `client`**  
----[Native Documentation](https://docs.fivem.net/natives/?_0xBA91D045575699AD)  
----This native does not have an official description.
----@param vehicle number
----@return boolean
-function N_0xba91d045575699ad(vehicle) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xBB2333BB87DDD87F)  
@@ -4630,10 +4572,21 @@ function SetCarHighSpeedBumpSeverityMultiplier(multiplier) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xF39C4F538B5124C2)  
----This native does not have an official description.
+---This allows for the vehicle's roof to be put on when set to true, and removed when set to false, provided that the vehicle has a version with a roof and a version without a roof.
+---
+---#### Vehicles with both roofed and roofless versions (others may exist; this list is compiled from decompiled scripts).
+---
+---*   chino
+---*   voltic
+---*   buccaneer
+---*   buccaneer2
+---*   chino2
+---*   faction
+---*   faction2
+---*   mamba
 ---@param vehicle number
----@param p1 boolean
-function SetConvertibleRoof(vehicle, p1) end
+---@param toggle boolean
+function SetConvertibleRoof(vehicle, toggle) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x1A78AD3D8240536F)  
@@ -4653,6 +4606,16 @@ function SetConvertibleRoofLatchState(vehicle, state) end
 ---@param deploy boolean
 ---@param p2 boolean
 function SetDeployHeliStubWings(vehicle, deploy, p2) end
+
+---**`VEHICLE` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0x2D55FE374D5FDB91)  
+---Disables wings for `Deluxo` and `Oppressor MK II`. For the Deluxo, it retracts the wings immediately, preventing flight. For the Oppressor Mk II, the wings retract after landing and take-off is not possible, though it can still glide if launched into the air.
+---@param vehicle number
+---@param toggle boolean
+function SetDisableHoverModeFlight(vehicle, toggle) end
+
+---@deprecated
+SetVehicleHoverTransformActive = SetDisableHoverModeFlight
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x25367DE49D64CF16)  
@@ -4836,6 +4799,19 @@ function SetHeliBladesFullSpeed(vehicle) end
 function SetHeliBladesSpeed(vehicle, speed) end
 
 ---**`VEHICLE` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0x0A3F820A9A9A9AC5)  
+---Set a specific offset for helis chasing target in combat
+---
+---```
+---NativeDB Introduced: v1180
+---```
+---@param vehicle number
+---@param x number
+---@param y number
+---@param z number
+function SetHeliCombatOffset(vehicle, x, y, z) end
+
+---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x6E0859B530A365CC)  
 ---```
 ---value between 0.0 and 1.0  
@@ -4874,6 +4850,16 @@ function SetHeliTailRotorHealth(vehicle, health) end
 ---@param vehicle number
 ---@param p1 number
 function SetHeliTurbulenceScalar(vehicle, p1) end
+
+---**`VEHICLE` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0x70A252F60A3E036B)  
+---This native allows opening or closing the wings of the Deluxo/Oppressor. For the Deluxo, wing deployment depends on sufficient altitude.
+---@param vehicle number
+---@param ratio number
+function SetHoverModeWingRatio(vehicle, ratio) end
+
+---@deprecated
+SetSpecialflightWingRatio = SetHoverModeWingRatio
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x28B18377EB6E25F6)  
@@ -4954,6 +4940,13 @@ function SetMissionTrainCoords(train, x, y, z) end
 function SetNumberOfParkedVehicles(value) end
 
 ---**`VEHICLE` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0x1B212B26DD3C04DF)  
+---Enables or disables the opening of a vehicle's rear doors in the event of a sticky bomb explosion. This native is effective for armored vehicles, such as the Stockade (Brinks vehicle), allowing the rear doors to be opened through controlled explosions, which might otherwise remain locked due to the vehicle nature.
+---@param vehicle number
+---@param toggle boolean
+function SetOpenRearDoorsOnExplosion(vehicle, toggle) end
+
+---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x544996C0081ABDEB)  
 ---Set state to true to extend the wings, false to retract them.
 ---@param vehicle number
@@ -5002,6 +4995,37 @@ function SetPlanePropellersHealth(plane, health) end
 ---@param vehicle number
 ---@param toggle boolean
 function SetPlaneResistToExplosion(vehicle, toggle) end
+
+---**`VEHICLE` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0x0BBB9A7A8FFE931B)  
+---Adjusts the scale of damage applied to a specified section of a plane.
+---In the decompiled scripts the `damageScale` is always set to `0f` (maybe to disable damages on the specified section)
+---
+---```cpp
+---enum ePlaneDamageSection {
+---    WING_L = 0,
+---    WING_R = 1,
+---    TAIL = 2,
+---    ENGINE_L = 3,
+---    ENGINE_R = 4,
+---    ELEVATOR_L = 5,
+---    ELEVATOR_R = 6,
+---    AILERON_L = 7,
+---    AILERON_R = 8,
+---    RUDDER = 9,
+---    RUDDER_2 = 10,
+---    AIRBRAKE_L = 11,
+---    AIRBRAKE_R = 12
+---}
+---```
+---
+---```
+---NativeDB Introduced: v1290
+---```
+---@param vehicle number
+---@param damageSection number
+---@param damageScale number
+function SetPlaneSectionDamageScale(vehicle, damageSection, damageScale) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xAD2D28A1AFDFF131)  
@@ -5110,13 +5134,48 @@ function SetRenderTrainAsDerailed(train, toggle) end
 function SetScriptVehicleGenerator(vehicleGenerator, enabled) end
 
 ---**`VEHICLE` `client`**  
----[Native Documentation](https://docs.fivem.net/natives/?_0x70A252F60A3E036B)  
----```
----NativeDB Introduced: v1365
----```
+---[Native Documentation](https://docs.fivem.net/natives/?_0xF1211889DF15A763)  
+---Allows locking the hover/non-hover mode of a vehicle, such as the flying mode of the `Deluxo`. In the decompiled scripts, this native is used on `oppressor2` but couldn't get it to work on it.
+---@param vehicle number
+---@param toggle boolean
+function SetSpecialFlightModeAllowed(vehicle, toggle) end
+
+---@deprecated
+SetVehicleHoverTransformEnabled = SetSpecialFlightModeAllowed
+
+---**`VEHICLE` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0xD138FA15C9776837)  
+---Used alongside [`SET_SPECIAL_FLIGHT_MODE_TARGET_RATIO`](#\_0x438B3D7CA026FE91), this function initiates hover transformation for vehicles with a hover mode, like the `Deluxo`, based on a specified ratio (0.0 to 1.0). Incorrect values can glitch the vehicle. Without pairing, vehicles revert to car mode. Ineffective on the `oppressor2`
 ---@param vehicle number
 ---@param ratio number
-function SetSpecialflightWingRatio(vehicle, ratio) end
+function SetSpecialFlightModeRatio(vehicle, ratio) end
+
+---@deprecated
+SetVehicleHoverTransformRatio = SetSpecialFlightModeRatio
+
+---**`VEHICLE` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0x438B3D7CA026FE91)  
+---According to decompiled scripts this should work with the `deluxo` and `oppressor2` vehicles.
+---Does nothing when used on `oppressor2`.
+---
+---For the deluxo:
+---
+---*   Set `state` to `0.0`: Fully transform to a 'road' vehicle (non-hover mode).
+---*   Set `state` to `1.0`: Fully transform to a 'flying' vehicle (hover mode).
+---
+---If you set it to something like 0.5, then something [weird happens](https://streamable.com/p6wmr), you end up in some 50% hover mode, 50% not hover mode.
+---
+---This doesn't need to be called every tick, just once and the vehicle will transform to that state at the usual transform speed. It'll just stop transforming when it reaches the state you provided.
+---
+---Once this native is used then players will just be able to hit the vehicle transform key to toggle the transformation cycle; it won't block users from using the key.
+---@param vehicle number
+---@param state number
+function SetSpecialFlightModeTargetRatio(vehicle, state) end
+
+---@deprecated
+SetVehicleTransformState = SetSpecialFlightModeTargetRatio
+---@deprecated
+SetVehicleHoverTransformPercentage = SetSpecialFlightModeTargetRatio
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC59872A5134879C7)  
@@ -5301,6 +5360,13 @@ function SetUnkFloatN_0x104ForSubmarineVehicleTask(vehicle, value) end
 ---@param vehicle number
 ---@param toggle boolean
 function SetUseHigherVehicleJumpForce(vehicle, toggle) end
+
+---**`VEHICLE` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0x1F9FB66F3A3842D2)  
+---This native is used to simulate a high-speed impact for a vehicle when it collides with a breakable object (frag). It's particularly useful in scripted sequences where a vehicle is required to break through a barrier but might not actually be moving at a sufficient speed to do so realistically. Note that this setting is temporary and will reset after one frame, so it needs to be called every frame for a lasting effect.
+---@param vehicle number
+---@param actHighSpeed boolean
+function SetVehicleActAsIfHighSpeedForFragSmashing(vehicle, actHighSpeed) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xDFFCEF48E511DB48)  
@@ -6053,59 +6119,6 @@ function SetVehicleHasUnbreakableLights(vehicle, p1) end
 SetVehicleLightsCanBeVisiblyDamaged = SetVehicleHasUnbreakableLights
 
 ---**`VEHICLE` `client`**  
----[Native Documentation](https://docs.fivem.net/natives/?_0x2D55FE374D5FDB91)  
----```
----NativeDB Introduced: v1290
----```
----@param vehicle number
----@param toggle boolean
-function SetVehicleHoverTransformActive(vehicle, toggle) end
-
----**`VEHICLE` `client`**  
----[Native Documentation](https://docs.fivem.net/natives/?_0xF1211889DF15A763)  
----```
----If false, anything related to INPUT_VEH_TRANSFORM are ignored (changing hover state through script natives still possible).
----```
----
----```
----NativeDB Introduced: v1290
----```
----@param vehicle number
----@param toggle boolean
-function SetVehicleHoverTransformEnabled(vehicle, toggle) end
-
----**`VEHICLE` `client`**  
----[Native Documentation](https://docs.fivem.net/natives/?_0x438B3D7CA026FE91)  
----According to decompiled scripts this should work with the `deluxo` and `oppressor2` vehicles.
----I've only seen this work for `deluxo` though, can't figure out what it's supposed to do on `oppressor2`.
----
----For the deluxo:
----
----*   Set `state` to `0.0`: Fully transform to a 'road' vehicle (non-hover mode).
----*   Set `state` to `1.0`: Fully transform to a 'flying' vehicle (hover mode).
----
----If you set it to something like 0.5, then something [weird happens](https://streamable.com/p6wmr), you end up in some 50% hover mode, 50% not hover mode.
----
----This doesn't need to be called every tick, just once and the vehicle will transform to that state at the usual transform speed. It'll just stop transforming when it reaches the state you provided.
----
----Once this native is used then players will just be able to hit the vehicle transform key to toggle the transformation cycle; it won't block users from using the key.
----@param vehicle number
----@param state number
-function SetVehicleHoverTransformPercentage(vehicle, state) end
-
----@deprecated
-SetVehicleTransformState = SetVehicleHoverTransformPercentage
-
----**`VEHICLE` `client`**  
----[Native Documentation](https://docs.fivem.net/natives/?_0xD138FA15C9776837)  
----```
----NativeDB Introduced: v1290
----```
----@param vehicle number
----@param ratio number
-function SetVehicleHoverTransformRatio(vehicle, ratio) end
-
----**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x06582AFF74894C75)  
 ---This native does not have an official description.
 ---@param vehicle number
@@ -6135,6 +6148,15 @@ function SetVehicleIndividualDoorsLocked(vehicle, doorIndex, doorLockStatus) end
 SetPedTargettableVehicleDestroy = SetVehicleIndividualDoorsLocked
 ---@deprecated
 SetVehicleDoorDestroyType = SetVehicleIndividualDoorsLocked
+
+---**`VEHICLE` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0x0AD9E8F87FF7C16F)  
+---This native sets whether a specific vehicle influences the player's wanted level when it is involved in an incident that typically triggers a wanted response, such as being marked as a "victim" vehicle.
+---
+---This is particularly useful when utilizing the wanted system from GTA, and you want to prevent a vehicle from affecting the wanted level when it is stolen. In the decompiled scripts this native is only used to disable the influence of the vehicle on the wanted level.
+---@param vehicle number
+---@param influenceWantedLevel boolean
+function SetVehicleInfluencesWantedLevel(vehicle, influenceWantedLevel) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xF40DD601A65F7F19)  

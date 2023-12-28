@@ -1390,9 +1390,9 @@ function DrawTvChannel(xPos, yPos, xScale, yScale, rotation, red, green, blue, a
 
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x9DCE1F0F78260875)  
----Creates a motion-blur sort of effect, this native does not seem to work, however by using the [`START_SCREEN_EFFECT`](#\_0x2206BF9A37B7F724) native with `"DrugsMichaelAliensFight"` as the effect parameter, you should be able to get the effect.
+---Creates a motion-blur sort of effect, this native does not seem to work, however by using the [`ANIMPOSTFX_PLAY`](#\_0x2206BF9A37B7F724) native with `"DrugsMichaelAliensFight"` as the effect parameter, you should be able to get the effect.
 ---
----This native does not seem to work, however by using the [START_SCREEN_EFFECT](https://runtime.fivem.net/doc/natives/#\_0x2206BF9A37B7F724) native with "DrugsMichaelAliensFight" as the effect parameter, you should be able to get the effect.
+---This native does not seem to work, however by using the [ANIMPOSTFX_PLAY](#\_0x2206BF9A37B7F724) native with "DrugsMichaelAliensFight" as the effect parameter, you should be able to get the effect.
 ---@param toggle boolean
 function EnableAlienBloodVfx(toggle) end
 
@@ -4125,13 +4125,13 @@ function StopParticleFxLooped(ptfxHandle, p1) end
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA356990E161C9E65)  
 ---This native enables/disables the gold putting grid display (https://i.imgur.com/TC6cku6.png).
----This requires these two natives to be called as well to configure the grid: [`0x1c4fc5752bcd8e48`](https://runtime.fivem.net/doc/reference.html#\_0x1C4FC5752BCD8E48) and [`0x5ce62918f8d703c7`](https://runtime.fivem.net/doc/reference.html#\_0x5CE62918F8D703C7).
+---This requires these two natives to be called as well to configure the grid: [`TERRAINGRID_SET_PARAMS`](#\_0x1C4FC5752BCD8E48) and [`TERRAINGRID_SET_COLOURS`](#\_0x5CE62918F8D703C7).
 ---@param toggle boolean
 function TerraingridActivate(toggle) end
 
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x5CE62918F8D703C7)  
----This native is used along with these two natives: [`0xa356990e161c9e65`](https://runtime.fivem.net/doc/reference.html#\_0xA356990E161C9E65) and [`0x1c4fc5752bcd8e48`](https://runtime.fivem.net/doc/reference.html#\_0x1C4FC5752BCD8E48).
+---This native is used along with these two natives: [`TERRAINGRID_ACTIVATE`](#\_0xA356990E161C9E65) and [`TERRAINGRID_SET_PARAMS`](#\_0x1C4FC5752BCD8E48).
 ---This native sets the colors for the golf putting grid. the 'min...' values are for the lower areas that the grid covers, the 'max...' values are for the higher areas that the grid covers, all remaining values are for the 'normal' ground height.
 ---All those natives combined they will output something like this: https://i.imgur.com/TC6cku6.png
 ---
@@ -4155,7 +4155,7 @@ function TerraingridSetColours(lowR, lowG, lowB, lowAlpha, R, G, B, Alpha, highR
 
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x1C4FC5752BCD8E48)  
----This native is used along with these two natives: [`0xa356990e161c9e65`](https://runtime.fivem.net/doc/reference.html#\_0xA356990E161C9E65) and [`0x5ce62918f8d703c7`](https://runtime.fivem.net/doc/reference.html#\_0x5CE62918F8D703C7).
+---This native is used along with these two natives: [`TERRAINGRID_ACTIVATE`](#\_0xA356990E161C9E65) and [`TERRAINGRID_SET_COLOURS`](#\_0x5CE62918F8D703C7).
 ---
 ---This native configures the location, size, rotation, normal height, and the difference ratio between min, normal and max.
 ---

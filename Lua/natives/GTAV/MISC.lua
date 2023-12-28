@@ -427,6 +427,12 @@ SetNextRespawnToCustom = ClearRestartCustomPosition
 function ClearTacticalAnalysisPoints() end
 
 ---**`MISC` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0x0CF97F497FE7D048)  
+---Clears the active weather type after a specific amount of time determined by `transitionTimeInMs`.
+---@param transitionTimeInMs number
+function ClearWeatherTypeNowPersistNetwork(transitionTimeInMs) end
+
+---**`MISC` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xCCC39339BEF76CF5)  
 ---This native does not have an official description.
 function ClearWeatherTypePersist() end
@@ -1683,17 +1689,6 @@ function N_0x02deaac8f8ea7fe7(p0) end
 function N_0x06462a961e94b67c() end
 
 ---**`MISC` `client`**  
----[Native Documentation](https://docs.fivem.net/natives/?_0x0CF97F497FE7D048)  
----```
----0 as param = weird black and green screen
----0.1 - 0.99 = Prevent rain effect from falling (still sound and effects on puddles) and prevent puddles from increase/decrease, seems than it prevent any weather change too
----1 and more = "Unfreeze" rain puddles but clear weather too
----When 'freezing' is enabled, it seem to also freeze value getted with GetRainLevel
----```
----@param p0 number
-function N_0x0cf97f497fe7d048(p0) end
-
----**`MISC` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x1178E104409FE58C)  
 ---```
 ---NativeDB Introduced: v2189
@@ -2392,9 +2387,12 @@ function SetBitsInRange(rangeStart, rangeEnd, p3) end
 
 ---**`MISC` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xF36199225D6D8C86)  
----This native does not have an official description.
+---Allows modification of the cloud opacity. It can also be used in other contexts, such as when the player is in a switch state [`IS_PLAYER_SWITCH_IN_PROGRESS`](#\_0xD9D2CFFF49FAB35F).
 ---@param opacity number
-function SetCloudHatOpacity(opacity) end
+function SetCloudsAlpha(opacity) end
+
+---@deprecated
+SetCloudHatOpacity = SetCloudsAlpha
 
 ---**`MISC` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xB938B7E6D3C0620C)  
@@ -2737,7 +2735,7 @@ function SetWeatherTypeNow(weatherType) end
 
 ---**`MISC` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xED712CA327900C8A)  
----Refer to [`SET_WEATHER_TYPE_NOW`](#0x29B487C359E19889) for weather types.
+---Refer to [`SET_WEATHER_TYPE_NOW`](#\_0x29B487C359E19889) for weather types.
 ---@param weatherType string
 function SetWeatherTypeNowPersist(weatherType) end
 

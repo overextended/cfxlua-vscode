@@ -55,8 +55,8 @@ function ActivateFrontendMenu(menuhash, togglePause, component) end
 ---By default, the blip will show as a *regular* blip with the specified color/sprite if it is outside of the minimap view.
 ---
 ---Example image:
----![minimap](https://w.wew.wtf/pdcjig.png)
----![big map](https://w.wew.wtf/zgcjcm.png)
+---![minimap](https://i.imgur.com/qLbXWcQ.png)
+---![big map](https://i.imgur.com/0j7O7Rh.png)
 ---
 ---(Native name is *likely* to actually be ADD_BLIP_FOR_AREA, but due to the usual reasons this can't be confirmed)
 ---@param x number
@@ -517,7 +517,7 @@ function ClearGpsFlags() end
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x67EEDEA1B9BAFD94)  
----Does the same as [`SET_GPS_MULTI_ROUTE_RENDER(false)`](https://runtime.fivem.net/doc/reference.html#\_0x3DDA37128DD1ACA8)
+---Does the same as [`SET_GPS_MULTI_ROUTE_RENDER(false)`](#\_0x3DDA37128DD1ACA8)
 function ClearGpsMultiRoute() end
 
 ---**`HUD` `client`**  
@@ -1114,8 +1114,6 @@ EndTextCommandThefeedPostMessagetextEntry = EndTextCommandThefeedPostMessagetext
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x1E6611149DB3DB6B)  
----NOTE: 'duration' is a multiplier, so 1.0 is normal, 2.0 is twice as long (very slow), and 0.5 is half as long.
----
 ---Example, only occurrence in the scripts:
 ---
 ---```
@@ -1123,7 +1121,6 @@ EndTextCommandThefeedPostMessagetextEntry = EndTextCommandThefeedPostMessagetext
 ---```
 ---
 ---Example result:
----
 ---![](https://i.imgur.com/YrN4Bcm.png)
 ---@param picTxd string
 ---@param picTxn string
@@ -1131,9 +1128,9 @@ EndTextCommandThefeedPostMessagetextEntry = EndTextCommandThefeedPostMessagetext
 ---@param iconType number
 ---@param nameStr string
 ---@param subtitleStr string
----@param duration number
+---@param durationMultiplier number
 ---@return number
-function EndTextCommandThefeedPostMessagetextTu(picTxd, picTxn, flash, iconType, nameStr, subtitleStr, duration) end
+function EndTextCommandThefeedPostMessagetextTu(picTxd, picTxn, flash, iconType, nameStr, subtitleStr, durationMultiplier) end
 
 ---@deprecated
 SetNotificationMessage_4 = EndTextCommandThefeedPostMessagetextTu
@@ -1962,7 +1959,7 @@ GetBlipInfoIdIterator = GetWaypointBlipEnumId
 ---p1 is either 1 or 2 in the PC scripts.  
 ---```
 ---
----This native is used to "give"/duplicate a player ped to a frontend menu as configured via the `ACTIVATE_FRONTEND_MENU` native, you first must utilize the `CLONE_PED` ( https://runtime.fivem.net/doc/natives/#\_0xEF29A16337FACADB ) to clone said ped.
+---This native is used to "give"/duplicate a player ped to a frontend menu as configured via the `ACTIVATE_FRONTEND_MENU` native, you first must utilize the [CLONE_PED](#\_0xEF29A16337FACADB) to clone said ped.
 ---@param ped number
 ---@param p1 number
 function GivePedToPauseMenu(ped, p1) end
@@ -3313,20 +3310,24 @@ function SetBlipCoords(blip, posX, posY, posZ) end
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x9029B2F3DA924928)  
----**displayId Behaviour** <br>
----0 = Doesn't show up, ever, anywhere. <br>
----1 = Doesn't show up, ever, anywhere. <br>
----2 = Shows on both main map and minimap. (Selectable on map) <br>
----3 = Shows on main map only. (Selectable on map) <br>
----4 = Shows on main map only. (Selectable on map) <br>
----5 = Shows on minimap only. <br>
----6 = Shows on both main map and minimap. (Selectable on map) <br>
----7 = Doesn't show up, ever, anywhere. <br>
----8 = Shows on both main map and minimap. (Not selectable on map) <br>
----9 = Shows on minimap only. <br>
----10 = Shows on both main map and minimap. (Not selectable on map) <br>
----Anything higher than 10 seems to be exactly the same as 10. <br>
----<br>
+---**displayId Behaviour**
+---
+---| display ID 	| Behaviour                                                   	|
+---|------------	|-------------------------------------------------------------	|
+---| 0          	| Doesn't show up, ever, anywhere.                            	|
+---| 1          	| Doesn't show up, ever, anywhere.                            	|
+---| 2          	| Shows on both main map and minimap. (Selectable on map)     	|
+---| 3          	| Shows on main map only. (Selectable on map)                 	|
+---| 4          	| Shows on main map only. (Selectable on map)                 	|
+---| 5          	| Shows on minimap only.                                      	|
+---| 6          	| Shows on both main map and minimap. (Selectable on map)     	|
+---| 7          	| Doesn't show up, ever, anywhere.                            	|
+---| 8          	| Shows on both main map and minimap. (Not selectable on map) 	|
+---| 9          	| Shows on minimap only.                                      	|
+---| 10         	| Shows on both main map and minimap. (Not selectable on map) 	|
+---
+---Anything higher than 10 seems to be exactly the same as 10.
+---
 ---Rockstar seem to only use 0, 2, 3, 4, 5 and 8 in the decompiled scripts.
 ---@param blip number
 ---@param displayId number
@@ -3490,10 +3491,6 @@ function SetBlipShrink(blip, toggle) end
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xDF735600A4696DAF)  
----<!--
----_loc1_.map((name, idx) => `| ${idx} | ${name} | ![${name}](https://runtime.fivem.net/blips/${name}.svg) |`).join('\n')
------>
----
 ---Sets the displayed sprite for a specific blip.
 ---
 ---There's a [list of sprites](https://docs.fivem.net/game-references/blips/) on the FiveM documentation site.
@@ -3536,14 +3533,30 @@ function SetFloatingHelpTextScreenPosition(hudIndex, x, y) end
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x788E7FD431BD67F1)  
----This native does not have an official description.
+---### Arrow Positions
+---
+---*   0 = Off / No arrow
+---*   1 = Top
+---*   2 = Left
+---*   3 = Bottom
+---*   4 = Right
+---
+---### Note
+---
+---Any numeric value greater than 4 will result in a right arrow (Index 4)
+---
+---### Important
+---
+---Needs to be called every frame
+---
+---![Preview of the provided example code](https://forum.cfx.re/uploads/default/original/4X/7/f/3/7f319bc93c3a00b8829bd4ac8dddc235fbf3a9ef.png)
 ---@param hudIndex number
----@param p1 number
----@param p2 number
----@param p3 number
----@param p4 number
----@param p5 number
-function SetFloatingHelpTextStyle(hudIndex, p1, p2, p3, p4, p5) end
+---@param style number
+---@param hudColor number
+---@param alpha number
+---@param arrowPosition number
+---@param boxOffset number
+function SetFloatingHelpTextStyle(hudIndex, style, hudColor, alpha, arrowPosition, boxOffset) end
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xB094BC1DB4018240)  
@@ -3683,21 +3696,29 @@ function SetMinimapBlockWaypoint(toggle) end
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x75A9A10948D1DEA6)  
----This native is used to colorize certain map components like the army base at the top of the map.
+---This native is used to colorize/toggle certain map components like the army base.
 ---
----An incomplete list of components ID:
+---Component IDs 6 through 14 are used by the freemode event King of the Castle in GTA Online.
 ---
----0: Los Santos' air port yellow lift-off markers.
----1: Sandy Shore's air port yellow lift-off markers.
----2: Trevor's air port yellow lift-off markers.
----6: Vespucci Beach lifeguard building.
----15: Army base.
+---### An incomplete list of component IDs:
 ---
----[List of hud colors](https://docs.fivem.net/docs/game-references/hud-colors/)
+---*   **0**: Los Santos International Airport yellow runway markers
+---*   **1**: Sandy Shores Airfield yellow runway markers
+---*   **2**: McKenzie Field yellow runway markers
+---*   **6**: Vespucci Beach lifeguard building
+---*   **7**: Top level zone of Alien Camp (Hippy Camp)
+---*   **8**: Paleto Bay fire station drill tower
+---*   **9** Land Act Dam tower
+---*   **10** Pala Springs Aerial Tramway
+---*   **11** Galileo Observatory power unit
+---*   **12** Small zone (empty "interior") near Central Los Santos Medical Center
+---*   **13** Richman Mansion grotto
+---*   **14** 2 Alien Camp (Hippy Camp) circles
+---*   **15** Fort Zancudo
 ---@param componentID number
 ---@param toggle boolean
 ---@param hudColor number
----@return any
+---@return number
 function SetMinimapComponent(componentID, toggle, hudColor) end
 
 ---**`HUD` `client`**  
@@ -3716,7 +3737,7 @@ function SetMinimapFowRevealCoordinate(x, y, z) end
 ---You need to center the minimap manually as well as change/lock it's zoom and angle in order for it to appear correctly on the minimap.
 ---You'll also need to use the `GOLF` scaleform in order to get the correct minmap border to show up.
 ---
----Use [`N_0x35edd5b2e3ff01c0()`](https://runtime.fivem.net/doc/reference.html#\_0x35EDD5B2E3FF01C0) to reset the map when you no longer want to display any golf holes (you still need to unlock zoom, position and angle of the radar manually after calling this).
+---Use [`SET_MINIMAP_GOLF_COURSE_OFF()`](#\_0x35EDD5B2E3FF01C0) to reset the map when you no longer want to display any golf holes (you still need to unlock zoom, position and angle of the radar manually after calling this).
 ---@param hole number
 function SetMinimapGolfCourse(hole) end
 
@@ -3761,11 +3782,16 @@ KeyHudColour = SetMinimapInSpectatorMode
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x6B50FC8749632EC1)  
+---Enables or disables the sonar sweep animation on the minimap.
+---
 ---```
 ---NativeDB Introduced: v2189
 ---```
 ---@param toggle boolean
-function SetMinimapSonarEnabled(toggle) end
+function SetMinimapSonarSweep(toggle) end
+
+---@deprecated
+SetMinimapSonarEnabled = SetMinimapSonarSweep
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x5F28ECF5FC84772F)  
@@ -4198,9 +4224,11 @@ SetRadarZoomLevelThisFrame = SetRadarZoomToDistance
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x25615540D894B814)  
----```
----Enabling this on a radius blip will make it outline only. See https://cdn.discordapp.com/attachments/553235301632573459/575132227935928330/unknown.png
----```
+---Enabling this on a radius blip will make it outline only.\
+---Please note that this only works on a **radius** blip (i.e. one generated using [`ADD_BLIP_FOR_RADIUS`](#\_0x46818D79B1F7499A)), not a normal blip.
+---
+---**Example result:**\
+---![example-image](https://i.imgur.com/hS6ki7p.png)
 ---@param blip number
 ---@param toggle boolean
 function SetRadiusBlipEdge(blip, toggle) end
@@ -4354,13 +4382,16 @@ function SetTextWrap(start, _end) end
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x5E1460624D194A38)  
----Toggles the Cayo Perico map.
+---Switches the display of the in-game minimap to the Cayo Perico map. This native needs to be called every frame to maintain the toggled state effectively.
 ---
 ---```
 ---NativeDB Introduced: v2189
 ---```
 ---@param toggle boolean
-function SetToggleMinimapHeistIsland(toggle) end
+function SetUseIslandMap(toggle) end
+
+---@deprecated
+SetToggleMinimapHeistIsland = SetUseIslandMap
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x6CDD58146A436083)  

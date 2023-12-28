@@ -97,10 +97,8 @@ function ClearPlayerWantedLevel(player) end
 
 ---**`PLAYER` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x5E6CC07646BBEAB8)  
----```
----Inhibits the player from using any method of combat including melee and firearms.  
----NOTE: Only disables the firing for one frame  
----```
+---Inhibits the player from using any method of combat including melee and firearms.\
+---NOTE: Only disables the firing for one frame
 ---@param player number
 ---@param toggle boolean
 function DisablePlayerFiring(player, toggle) end
@@ -706,6 +704,30 @@ function IsPlayerControlOn(player) end
 function IsPlayerDead(player) end
 
 ---**`PLAYER` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0xF10B44FD479D69F3)  
+---Violation types:
+---
+---```
+---enum eViolationType {
+---  VT_PAVED_PEDESTRIAN_AREAS = 0,
+---  VT_RUNNING_REDS,
+---  VT_AGAINST_TRAFFIC
+---};
+---```
+---
+---Checks if a player is performing a certain type of traffic violation.
+---
+---*   Type 0: Checks if the player is driving outside designated road areas pedestrians would walk on (specifically paved sidewalks).
+---*   Type 1: Checks if the player is running through reds, takes some time to return true.
+---*   Type 2: Checks if the player is driving on the wrong side of the road (against traffic).
+---
+---Used solely in "Al Di Napoli" with type 2 for a voiceline.
+---@param player number
+---@param type number
+---@return boolean
+function IsPlayerDrivingDangerously(player, type) end
+
+---**`PLAYER` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x2E397FD2ECD37C87)  
 ---```
 ---Gets a value indicating whether the specified player is currently aiming freely.  
@@ -1173,16 +1195,6 @@ function N_0xde45d1a1ef45ee61(player, toggle) end
 SetHudAnimStopLevel = N_0xde45d1a1ef45ee61
 
 ---**`PLAYER` `client`**  
----[Native Documentation](https://docs.fivem.net/natives/?_0xF10B44FD479D69F3)  
----```
----Only 1 occurrence. p1 was 2.  
----```
----@param player number
----@param p1 number
----@return boolean
-function N_0xf10b44fd479d69f3(player, p1) end
-
----**`PLAYER` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xFAC75988A7D078D3)  
 ---This native does not have an official description.
 ---@param player number
@@ -1377,7 +1389,7 @@ function SetAirDragMultiplierForPlayersVehicle(player, multiplier) end
 
 ---**`PLAYER` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x056E0FE8534C2949)  
----This native does not have an official description.
+---Sets whether all random peds will run away from the player if they are agitated (threatened) (bool=true), or if they will stand their ground (bool=false).
 ---@param player number
 ---@param toggle boolean
 function SetAllRandomPedsFlee(player, toggle) end
@@ -1912,25 +1924,19 @@ function SetPlayerWantedCentrePosition(player, position, p2, p3) end
 
 ---**`PLAYER` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x39FF19C64EF7DA5B)  
----```
----Call SET_PLAYER_WANTED_LEVEL_NOW for immediate effect  
----wantedLevel is an integer value representing 0 to 5 stars even though the game supports the 6th wanted level but no police will appear since no definitions are present for it in the game files  
----disableNoMission-  Disables When Off Mission- appears to always be false  
----```
+---This native does not have an official description.
 ---@param player number
 ---@param wantedLevel number
----@param disableNoMission boolean
-function SetPlayerWantedLevel(player, wantedLevel, disableNoMission) end
+---@param delayedResponse boolean
+function SetPlayerWantedLevel(player, wantedLevel, delayedResponse) end
 
 ---**`PLAYER` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x340E61DE7F471565)  
----```
----p2 is always false in R* scripts  
----```
+---This native does not have an official description.
 ---@param player number
 ---@param wantedLevel number
----@param p2 boolean
-function SetPlayerWantedLevelNoDrop(player, wantedLevel, p2) end
+---@param delayedResponse boolean
+function SetPlayerWantedLevelNoDrop(player, wantedLevel, delayedResponse) end
 
 ---**`PLAYER` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xE0A7D1E497FFCD6F)  

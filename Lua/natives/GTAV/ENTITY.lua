@@ -197,7 +197,8 @@ function CreateModelSwap(x, y, z, radius, originalModel, newModel, p6) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xAE3CBE5BF394C9C9)  
----Deletes the specified entity, and invalidates the passed handle (i.e. in/out argument).
+---Delete the specified entity, and invalidate the passed handle (i.e., the in/out argument).
+---You might want to check if the entity exists before with [DOES_ENTITY_EXIST](#\_0x7239B21A38F536BA).
 ---@param entity number
 function DeleteEntity(entity) end
 

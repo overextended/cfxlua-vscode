@@ -188,8 +188,6 @@ function GetInteriorGroupId(interior) end
 ---**`INTERIOR` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xF49B58631D9E22D9)  
 ---```
----GET_INTERIOR_*
----
 ---NativeDB Introduced: v1493
 ---```
 ---@param interior number

@@ -421,6 +421,19 @@ function DoorSystemSetSpringRemoved(doorHash, removed, requestDoor, forceUpdate)
 function EnableSavingInGarage(garageHash, toggle) end
 
 ---**`OBJECT` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0xF9C1681347C8BD15)  
+---Resets and brings back all the children of a fragment based object.
+---This should be used when attaching or detaching an object from another entity, especially when the object being detached consists of multiple fragments.
+---
+---Attempting to teleport a fragment-based object using [`SET_ENTITY_COORDS`](#\_0x06843DA7060A026B) such as a flag object, will result in it remaining in place and failing to teleport, given the condition mentioned in the preceding statement.
+---
+---The native should be executed after detaching the object from its parent entity and before calling [`SET_ENTITY_COORDS`](#\_0x06843DA7060A026B).
+---
+---Example given down below.
+---@param object number
+function FixObjectFragment(object) end
+
+---**`OBJECT` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x758A5C1B3B1E1990)  
 ---This native does not have an official description.
 ---@param p0 any
@@ -1234,12 +1247,6 @@ function N_0xeb6f1a9b5510a5d2(p0, p1) end
 ---@param p0 any
 ---@param p1 any
 function N_0xf92099527db8e2a7(p0, p1) end
-
----**`OBJECT` `client`**  
----[Native Documentation](https://docs.fivem.net/natives/?_0xF9C1681347C8BD15)  
----This native does not have an official description.
----@param object number
-function N_0xf9c1681347c8bd15(object) end
 
 ---**`OBJECT` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xFDC07C58E8AAB715)  
