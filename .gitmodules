@@ -1,0 +1,3 @@
+[submodule "fivem-lls-addon"]
+	path = fivem-lls-addon
+	url = https://github.com/thelindat/fivem-lls-addon
