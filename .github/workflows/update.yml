@@ -1,0 +1,20 @@
+name: Update native definitions
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: 10 0 * * SUN
+
+jobs:
+  bump:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Update submodules
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git submodule foreach git pull
+          git add .
+          git diff-index --quiet HEAD || git commit -am "ci: update submodules"
+          git push
