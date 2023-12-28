@@ -1,4 +1,4 @@
-name: update extension
+name: Update VSCode extension
 on: [push]
 
 jobs:

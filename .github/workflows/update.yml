@@ -1,4 +1,4 @@
-name: Update native definitions
+name: Update submodules
 on:
   workflow_dispatch:
   schedule:
