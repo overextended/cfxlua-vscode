@@ -1,5 +1,5 @@
 name: Update VSCode extension
-on: [push]
+on: [push, workflow_dispatch]
 
 jobs:
   bump:
