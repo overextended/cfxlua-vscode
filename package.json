@@ -2,7 +2,7 @@
   "name": "cfxlua-vscode",
   "displayName": "CfxLua (FiveM/RedM) IntelliSense",
   "description": "Natives and IntelliSense support for the Lua Script runtime used by FiveM and RedM.",
-  "version": "1.7.26",
+  "version": "1.7.27",
   "publisher": "overextended",
   "license": "MIT",
   "repository": {
