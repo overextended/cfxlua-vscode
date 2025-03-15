@@ -1,6 +1,6 @@
 import * as path from "path";
-import { path as extensionPath } from "./extension";
+import { extensionPath } from "./extension";
 
 export default function getLuaPath(...args: string[]) {
-  return path.join(extensionPath, "plugin", ...args);
+	return path.join(extensionPath, "plugin", ...args);
 }
