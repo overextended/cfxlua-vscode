@@ -1,10 +1,13 @@
 import { ExtensionContext, extensions, workspace, commands } from "vscode";
 import { homedir } from "os";
+import { normalize } from "path";
 
 export const id = "overextended.cfxlua-vscode";
-export const extensionPath = extensions
-	.getExtension(id)!
-	.extensionPath.replace(homedir(), "~");
+export const extension = extensions.getExtension(id)!;
+export const extensionPath = normalize(extension.extensionPath).replace(
+	normalize(homedir()),
+	"~",
+);
 
 import setPlugin from "./setPlugin";
 import setLibrary from "./setLibrary";
