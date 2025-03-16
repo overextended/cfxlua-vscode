@@ -1,10 +1,11 @@
+import { storagePath } from "./extension";
 import getLuaConfig from "./getLuaConfig";
-import getLuaPath from "./getPath";
 import getSettingsScope from "./getSettingsScope";
+import * as path from "path";
 
 export default async function setPlugin(enable: boolean) {
 	const config = getLuaConfig();
-	const pluginPath = getLuaPath("plugin.lua");
+	const pluginPath = path.join(storagePath, "plugin.lua");
 	const settingsScope = getSettingsScope();
 
 	if (enable) {

@@ -1,6 +1,5 @@
 import * as path from "path";
-import { extensionPath, id as extensionId } from "./extension";
-import getLuaPath from "./getPath";
+import { storagePath } from "./extension";
 import getLuaConfig from "./getLuaConfig";
 import getSettingsScope from "./getSettingsScope";
 
@@ -9,17 +8,7 @@ export default async function setLibrary(folders: string[], enable: boolean) {
 	const library: string[] = config.get("workspace.library")!;
 
 	for (const folder of folders) {
-		const folderPath = getLuaPath(path.join("library", folder));
-
-		for (let i = library.length - 1; i >= 0; i--) {
-			const el = library[i];
-			const isSelfExtension = el.includes(extensionId);
-			const isCurrentVersion = el.includes(extensionPath);
-			if (isSelfExtension && !isCurrentVersion) {
-				library.splice(i, 1);
-			}
-		}
-
+		const folderPath = path.join(storagePath, "library", folder);
 		const index = library.indexOf(folderPath);
 
 		if (enable) {
