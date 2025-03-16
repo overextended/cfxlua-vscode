@@ -1,17 +1,19 @@
 import { ExtensionContext, extensions, workspace, commands } from "vscode";
-import { homedir } from "os";
-import { normalize } from "path";
-
-export const id = "overextended.cfxlua-vscode";
-export const extension = extensions.getExtension(id)!;
-export const extensionPath = normalize(extension.extensionPath).replace(
-	normalize(homedir()),
-	"~",
-);
-
 import setPlugin from "./setPlugin";
 import setLibrary from "./setLibrary";
 import setNativeLibrary from "./setNativeLibrary";
+import { join as pathJoin } from "path";
+
+export const id = "overextended.cfxlua-vscode";
+export const extension = extensions.getExtension(id)!;
+export const extensionPath = (() => {
+	const extensionPath = extension.extensionPath;
+	const pos = extensionPath.indexOf(".vscode");
+
+	if (pos === -1) return extensionPath;
+
+	return pathJoin("~", extensionPath.substring(pos));
+})();
 
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
