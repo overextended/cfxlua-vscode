@@ -3,7 +3,6 @@ import setPlugin from "./setPlugin";
 import setLibrary from "./setLibrary";
 import setNativeLibrary from "./setNativeLibrary";
 import * as path from "path";
-import { platform } from "os";
 
 export const id = "overextended.cfxlua-vscode";
 export const extension = extensions.getExtension(id)!;
@@ -17,14 +16,13 @@ export async function activate(context: ExtensionContext) {
 	const sourceUri = Uri.joinPath(extension.extensionUri, "plugin");
 	const targetUri = Uri.joinPath(storageUri, "cfxlua");
 	storagePath = targetUri.toString();
-	// istg they go out of their way to make referencing the global storage path annoying
-	storagePath = path.join(
-		"~",
-		platform() === "win32" ? "AppData\\Roaming" : ".config",
-		storagePath.substring(storagePath.indexOf("Code")),
-	);
 
-	console.log("storagePath", storagePath);
+	if (storagePath.includes("AppData")) {
+		storagePath = path.join(
+			"~",
+			storagePath.substring(storagePath.indexOf("AppData")),
+		);
+	}
 
 	try {
 		await workspace.fs.stat(targetUri);
