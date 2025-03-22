@@ -34,7 +34,6 @@ export async function activate(context: ExtensionContext) {
     );
   }
 
-  await cloneLibraries(storageUri);
   await setPlugin(true);
   await setLibrary(
     ['runtime', 'natives/CFX-NATIVE', `natives/${game.toUpperCase()}`],
@@ -50,6 +49,8 @@ export async function activate(context: ExtensionContext) {
       setNativeLibrary('rdr3');
     }),
   );
+
+  setTimeout(cloneLibraries, 500, storageUri);
 }
 
 export async function deactivate() {
