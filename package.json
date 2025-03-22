@@ -12,10 +12,7 @@
   "engines": {
     "vscode": "^1.71.0"
   },
-  "categories": [
-    "Linters",
-    "Programming Languages"
-  ],
+  "categories": ["Linters", "Programming Languages"],
   "contributes": {
     "commands": [
       {
@@ -34,24 +31,14 @@
       "properties": {
         "cfxlua.game": {
           "default": "gtav",
-          "enum": [
-            "gtav",
-            "rdr3"
-          ]
+          "enum": ["gtav", "rdr3"]
         }
       }
     }
   },
-  "keywords": [
-    "Lua",
-    "FiveM",
-    "RedM",
-    "IntelliSense"
-  ],
+  "keywords": ["Lua", "FiveM", "RedM", "IntelliSense"],
   "icon": "logo.png",
-  "activationEvents": [
-    "onLanguage:lua"
-  ],
+  "activationEvents": ["onLanguage:lua"],
   "main": "./dist/extension.js",
   "scripts": {
     "vscode:prepublish": "yarn run package",
@@ -60,11 +47,13 @@
     "package": "webpack --mode production --devtool hidden-source-map",
     "compile-tests": "tsc -p . --outDir out",
     "watch-tests": "tsc -p . -w --outDir out",
-    "pretest": "yarn run compile-tests && yarn run compile && yarn run lint",
-    "lint": "eslint src --ext ts",
-    "test": "node ./out/test/runTest.js"
+    "pretest": "yarn run compile-tests && yarn run compile && yarn run lint && yarn run format",
+    "test": "node ./out/test/runTest.js",
+    "format": "pnpm biome format --write",
+    "lint": "pnpm biome lint --write"
   },
   "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
     "@types/vscode": "^1.71.0",
     "@types/glob": "^7.2.0",
     "@types/mocha": "^9.1.1",
@@ -80,7 +69,5 @@
     "webpack-cli": "^4.10.0",
     "@vscode/test-electron": "^2.1.5"
   },
-  "extensionDependencies": [
-    "sumneko.lua"
-  ]
+  "extensionDependencies": ["sumneko.lua"]
 }
