@@ -2,7 +2,7 @@
   "name": "cfxlua-vscode",
   "displayName": "CfxLua (FiveM/RedM) IntelliSense",
   "description": "Natives and IntelliSense support for the Lua Script runtime used by FiveM and RedM.",
-  "version": "1.9.1",
+  "version": "1.9.2",
   "publisher": "overextended",
   "license": "MIT",
   "repository": {
@@ -12,7 +12,10 @@
   "engines": {
     "vscode": "^1.71.0"
   },
-  "categories": ["Linters", "Programming Languages"],
+  "categories": [
+    "Linters",
+    "Programming Languages"
+  ],
   "contributes": {
     "commands": [
       {
@@ -31,14 +34,24 @@
       "properties": {
         "cfxlua.game": {
           "default": "gtav",
-          "enum": ["gtav", "rdr3"]
+          "enum": [
+            "gtav",
+            "rdr3"
+          ]
         }
       }
     }
   },
-  "keywords": ["Lua", "FiveM", "RedM", "IntelliSense"],
+  "keywords": [
+    "Lua",
+    "FiveM",
+    "RedM",
+    "IntelliSense"
+  ],
   "icon": "logo.png",
-  "activationEvents": ["onLanguage:lua"],
+  "activationEvents": [
+    "onLanguage:lua"
+  ],
   "main": "./dist/extension.js",
   "scripts": {
     "vscode:prepublish": "yarn run package",
@@ -69,5 +82,7 @@
     "webpack-cli": "^4.10.0",
     "@vscode/test-electron": "^2.1.5"
   },
-  "extensionDependencies": ["sumneko.lua"]
+  "extensionDependencies": [
+    "sumneko.lua"
+  ]
 }
