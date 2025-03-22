@@ -40,6 +40,9 @@ export default async function (storageUri: Uri) {
 
     await repo.fetch('origin', 'main', 1);
     await repo.getBranch('origin/main');
+    await repo.clean(
+      repo.state.workingTreeChanges.map((change) => change.uri.fsPath),
+    );
     await repo.checkout('main');
     await repo.pull();
   } catch (e: unknown) {
