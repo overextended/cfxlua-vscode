@@ -10,6 +10,7 @@ import setLibrary from './setLibrary';
 import setNativeLibrary from './setNativeLibrary';
 import * as path from 'node:path';
 import * as os from 'node:os';
+import cloneLibraries from './cloneLibraries';
 
 export const id = 'overextended.cfxlua-vscode';
 export const extension = extensions.getExtension(id)!;
@@ -18,7 +19,6 @@ export let storagePath = '';
 export async function activate(context: ExtensionContext) {
   const game = workspace.getConfiguration('cfxlua').get('game', 'GTAV');
   const storageUri = context.globalStorageUri;
-  const sourceUri = Uri.joinPath(extension.extensionUri, 'plugin');
   const targetUri = Uri.joinPath(storageUri, 'cfxlua');
   const platform = os.platform();
   storagePath = targetUri.toString();
@@ -35,12 +35,7 @@ export async function activate(context: ExtensionContext) {
     );
   }
 
-  try {
-    await workspace.fs.stat(targetUri);
-  } catch (e) {
-    await workspace.fs.rename(sourceUri, targetUri, { overwrite: true });
-  }
-
+  await cloneLibraries(storageUri);
   await setPlugin(true);
   await setLibrary(
     ['runtime', 'natives/CFX-NATIVE', `natives/${game.toUpperCase()}`],

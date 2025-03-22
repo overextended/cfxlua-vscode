@@ -83,6 +83,7 @@
     "@vscode/test-electron": "^2.1.5"
   },
   "extensionDependencies": [
-    "sumneko.lua"
+    "sumneko.lua",
+    "vscode.git"
   ]
 }
