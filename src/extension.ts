@@ -19,9 +19,8 @@ export let storagePath = '';
 export async function activate(context: ExtensionContext) {
   const game = workspace.getConfiguration('cfxlua').get('game', 'GTAV');
   const storageUri = context.globalStorageUri;
-  const targetUri = Uri.joinPath(storageUri, 'cfxlua');
   const platform = os.platform();
-  storagePath = targetUri.toString();
+  storagePath = storageUri.toString();
 
   if (platform === 'win32') {
     storagePath = path.join(
