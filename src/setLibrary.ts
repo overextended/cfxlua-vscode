@@ -1,5 +1,5 @@
 import * as path from 'node:path';
-import { storagePath } from './extension';
+import { storagePath, id as extensionId } from './extension';
 import getLuaConfig from './getLuaConfig';
 import getSettingsScope from './getSettingsScope';
 
@@ -9,6 +9,15 @@ export default async function setLibrary(folders: string[], enable: boolean) {
 
   for (const folder of folders) {
     const folderPath = path.join(storagePath, 'library', folder);
+
+    for (let i = library.length - 1; i >= 0; i--) {
+      const el = library[i];
+
+      if (el.includes(extensionId) && !el.includes('globalStorage')) {
+        library.splice(i, 1);
+      }
+    }
+
     const index = library.indexOf(folderPath);
 
     if (enable) {
