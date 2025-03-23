@@ -83,7 +83,6 @@
     "webpack-cli": "^4.10.0"
   },
   "extensionDependencies": [
-    "sumneko.lua",
-    "vscode.git"
+    "sumneko.lua"
   ]
 }
