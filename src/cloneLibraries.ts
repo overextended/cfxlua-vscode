@@ -1,12 +1,11 @@
 // https://github.com/Microsoft/vscode/blob/main/extensions/git/src/api/git.d.ts
 
 import { extensions, type Uri, window, workspace } from 'vscode';
-import type { GitExtension } from './types/git';
 
 const githubRepo = 'https://github.com/overextended/fivem-lls-addon.git';
 
 export default async function (storageUri: Uri) {
-  const gitExtension = extensions.getExtension<GitExtension>('vscode.git');
+  const gitExtension = extensions.getExtension('vscode.git');
 
   if (!gitExtension)
     return window.showErrorMessage('Failed to find Git extension.');
@@ -20,11 +19,7 @@ export default async function (storageUri: Uri) {
   try {
     await workspace.fs.createDirectory(storageUri);
 
-    let repo = await api.init(storageUri);
-
-    if (!repo)
-      throw new Error(`Failed to initialise repository at ${storageUri.path}.`);
-
+    const repo = await api.init(storageUri);
     const configs = await repo.getConfigs();
     const hasRemote = configs.some(
       (config: any) => config.key === 'remote.origin.url',
@@ -43,7 +38,6 @@ export default async function (storageUri: Uri) {
     await repo.checkout('main');
     await repo.pull();
   } catch (e: unknown) {
-    window.showErrorMessage(`An error has occurred...
-${e}`);
+    window.showErrorMessage(`An error has occurred...\n${e}`);
   }
 }
