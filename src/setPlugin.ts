@@ -43,7 +43,7 @@ export default async function setPlugin(enable: boolean) {
     // Drastically improves time to load workspace
     const ignoreDir: string[] = config.get('workspace.ignoreDir') || [];
 
-    ['.vscode', '.git', '.github', 'node_modules'].forEach((item) => {
+    ['.vscode', '.git', '.github', 'node_modules', '\\[cfx\\]'].forEach((item) => {
       if (!ignoreDir.includes(item)) {
         ignoreDir.push(item);
       }
