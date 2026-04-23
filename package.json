@@ -1,13 +1,13 @@
 {
-  "name": "cfxlua-vscode",
-  "displayName": "CfxLua (FiveM/RedM) IntelliSense",
+  "name": "cfxlua-vscode-cox",
+  "displayName": "CfxLua IntelliSense",
   "description": "Natives and IntelliSense support for the Lua Script runtime used by FiveM and RedM.",
-  "version": "1.10.5",
-  "publisher": "overextended",
+  "version": "1.10.12",
+  "publisher": "communityox",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/overextended/cfxlua-vscode"
+    "url": "https://github.com/communityox/cfxlua-vscode"
   },
   "engines": {
     "vscode": "^1.71.0"

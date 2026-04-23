@@ -15,6 +15,12 @@ export default async function setLibrary(folders: string[], enable: boolean) {
 
       if (el.includes(extensionId) && !el.includes('globalStorage')) {
         library.splice(i, 1);
+        continue;
+      }
+
+      // Removes old Ox library folder paths
+      if (el.includes('overextended.cfxlua-vscode')) {
+        library.splice(i, 1);
       }
     }
 

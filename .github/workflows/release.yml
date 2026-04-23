@@ -1,19 +1,26 @@
 name: Update VSCode extension
-on: [push, workflow_dispatch]
+
+on:
+  workflow_dispatch:
+  push:
 
 jobs:
-  bump:
+  bump-vsc-package:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-        with:
-          submodules: true
-
-      - uses: actions/setup-node@v3
+      - name: Install node
+        uses: actions/setup-node@v4
         with:
           node-version: 16
 
-      - name: Bumping version
+
+      - name: Get latest code
+        uses: actions/checkout@v4
+        with:
+          submodules: true
+
+
+      - name: Bump package version
         uses: jpb06/bump-package@latest
         with:
           major-keywords: BREAKING CHANGE
@@ -21,8 +28,9 @@ jobs:
           should-default-to-patch: true
 
       - run: yarn install --frozen-lockfile
+
       - name: Publish to Visual Studio Marketplace
-        uses: HaaLeo/publish-vscode-extension@v1
+        uses: HaaLeo/publish-vscode-extension@v2
         with:
           pat: ${{ secrets.VS_MARKETPLACE_TOKEN }}
           registryUrl: https://marketplace.visualstudio.com

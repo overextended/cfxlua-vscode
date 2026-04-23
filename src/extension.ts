@@ -12,7 +12,7 @@ import * as path from 'node:path';
 import * as os from 'node:os';
 import moveFile from './moveFile';
 
-export const id = 'overextended.cfxlua-vscode';
+export const id = 'communityox.cfxlua-vscode-cox';
 export const extension = extensions.getExtension(id)!;
 export let storagePath = '';
 
@@ -21,7 +21,7 @@ export async function activate(context: ExtensionContext) {
   const storageUri = context.globalStorageUri;
   const sourceUri = Uri.joinPath(extension.extensionUri, 'plugin');
   const platform = os.platform();
-  storagePath = storageUri.toString();
+  storagePath = storageUri.fsPath;
 
   if (platform === 'win32') {
     storagePath = path.join(

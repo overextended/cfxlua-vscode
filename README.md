@@ -1,6 +1,9 @@
-# CfxLua (FiveM/RedM) IntelliSense
+# CfxLua IntelliSense (FiveM / RedM)
 
-![](https://img.shields.io/visual-studio-marketplace/d/overextended.cfxlua-vscode) ![](https://img.shields.io/visual-studio-marketplace/i/overextended.cfxlua-vscode)
+![](https://img.shields.io/visual-studio-marketplace/d/communityox.cfxlua-vscode-cox) ![](https://img.shields.io/visual-studio-marketplace/i/communityox.cfxlua-vscode-cox)
+
+> [!NOTE]
+> **This is a community maintained fork of archived [overextended/cfxlua-vscode](https://github.com/overextended/cfxlua-vscode).**
 
 _This extension is not authored, published, sponsored, nor endorsed by Cfx.re._
 
@@ -14,7 +17,9 @@ _This extension is not authored, published, sponsored, nor endorsed by Cfx.re._
   - Partial support for extended syntax / [power patches](https://github.com/citizenfx/lua/blob/luaglm-dev/cfx/README.md#power-patches).
     - _Use with caution, some patches have been known to cause crashes!_
 
-![image](https://github.com/overextended/cfxlua-vscode/assets/65407488/6f609fa2-ca19-4705-adf5-80635d539cbd)
-![image](https://github.com/overextended/cfxlua-vscode/assets/65407488/b837c0a8-01b0-4e3d-95f9-f925cb1320bf)
+![image](https://github.com/user-attachments/assets/586b960c-3b1e-4911-80dd-788a0917b0f8)
+![image](https://github.com/user-attachments/assets/22bb5f61-9b4d-4461-98f3-0eaba196839b)
 
-**Thanks to CitizenFX, gottfriedleibniz, alloc8or, iTexZoz, and TasoOneAsia**
+---
+
+**Thanks to CitizenFX, gottfriedleibniz, alloc8or, iTexZoz, TasoOneAsia and Overextended**

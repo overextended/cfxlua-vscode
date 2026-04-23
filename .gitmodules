@@ -1,6 +1,6 @@
 [submodule "fivem-lls-addon"]
 	path = fivem-lls-addon
-	url = https://github.com/overextended/fivem-lls-addon
+	url = https://github.com/communityox/fivem-lls-addon
 [submodule "plugin"]
 	path = plugin
-	url = https://github.com/overextended/fivem-lls-addon
+	url = https://github.com/communityox/fivem-lls-addon
