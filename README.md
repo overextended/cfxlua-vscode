@@ -1,9 +1,9 @@
 # CfxLua IntelliSense (FiveM / RedM)
 
-![](https://img.shields.io/visual-studio-marketplace/d/communityox.cfxlua-vscode-cox) ![](https://img.shields.io/visual-studio-marketplace/i/communityox.cfxlua-vscode-cox)
+![](https://img.shields.io/visual-studio-marketplace/d/overextended.cfxlua-vscode) ![](https://img.shields.io/visual-studio-marketplace/i/overextended.cfxlua-vscode)
 
-> [!NOTE]
-> **This is a community maintained fork of archived [overextended/cfxlua-vscode](https://github.com/overextended/cfxlua-vscode).**
+> [!IMPORTANT]
+> **This extension has been discontinued. Refer to the README at [overextended/fivem-lls-addon](https://github.com/overextended/fivem-lls-addon) instead.**
 
 _This extension is not authored, published, sponsored, nor endorsed by Cfx.re._
 
